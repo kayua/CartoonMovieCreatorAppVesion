@@ -1,20 +1,21 @@
 package app.mosquito.appmosquito.appmosquito.ui.Audio;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
+import android.media.AudioTrack;
 import android.media.MediaRecorder;
+import android.os.Environment;
 import android.util.Log;
-import android.widget.Toast;
 
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-import static android.widget.Toast.*;
+import java.io.OutputStream;
 
 public final class WavRecorder {
 
@@ -26,12 +27,14 @@ public final class WavRecorder {
     private static final int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_STEREO;
     private static final int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
     short[] audioData;
-
-    private AudioRecord recorder = null;
-    private int bufferSize = 0;
-    private Thread recordingThread = null;
-    private boolean isRecording = false;
+    int sampleRate = 44100;
+    private static AudioRecord recorder = null;
+    private static int bufferSize = 0;
+    private static Thread recordingThread = null;
+    public static boolean isRecording = false;
     private static Context mContext;
+    AudioRecord record = null;
+    AudioTrack track = null;
 
     private static final WavRecorder INSTANCE = new WavRecorder();
 
@@ -46,7 +49,7 @@ public final class WavRecorder {
         return INSTANCE;
     }
 
-    private String getFilename(){
+    private static String getFilename(){
 
         String filepath = mContext.getFilesDir().getPath();
         File file = new File(filepath,AUDIO_RECORDER_FOLDER);
@@ -61,7 +64,7 @@ public final class WavRecorder {
         return (finalFile.getAbsolutePath());
     }
 
-    private String getTempFilename(Boolean shouldDelete) {
+    private static String getTempFilename(Boolean shouldDelete) {
         String filepath = mContext.getCacheDir().getPath();
         File file = new File(filepath,AUDIO_RECORDER_FOLDER);
 
@@ -77,29 +80,40 @@ public final class WavRecorder {
         return tempFile.getAbsolutePath();
     }
 
-    public void startRecording(Context context) {
-        Log.d("myTag", "This is my message");
-        mContext = context;
-        recorder = new AudioRecord(MediaRecorder.AudioSource.MIC,
-                RECORDER_SAMPLERATE,
-                RECORDER_CHANNELS,
-                RECORDER_AUDIO_ENCODING,
-                bufferSize);
+    private void startRecord()
+    {
+        File recordFile = new File(Environment.getExternalStorageDirectory(), "Record.pcm");
+        try
+        {
+            recordFile.createNewFile();
 
-        int i = recorder.getState();
-        if (i==1)
-            recorder.startRecording();
+            OutputStream outputStream = new FileOutputStream(recordFile);
+            BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream);
+            DataOutputStream dataOutputStream = new DataOutputStream(bufferedOutputStream);
 
-        isRecording = true;
-        getTempFilename(true);
-        recordingThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                writeAudioDataToFile();
+            int minBufferSize = AudioRecord.getMinBufferSize(sampleRate, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT);
+
+            short[] audioData = new short[minBufferSize];
+
+            record = new AudioRecord(MediaRecorder.AudioSource.MIC, sampleRate, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT,
+                    minBufferSize);
+            record.startRecording();
+
+            while (isRecording)
+            {
+                int numberOfShort = record.read(audioData, 0, minBufferSize);
+                for (int i = 0; i < numberOfShort; i++)
+                {
+                    dataOutputStream.writeShort(audioData[i]);
+                }
             }
-        }, "AudioRecorder Thread");
-
-        recordingThread.start();
+            record.stop();
+            dataOutputStream.close();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     private void writeAudioDataToFile() {
@@ -138,7 +152,7 @@ public final class WavRecorder {
         }
     }
 
-    public String stopRecording() {
+    public static String stopRecording() {
 
         if (null != recorder){
             isRecording = false;
@@ -158,12 +172,12 @@ public final class WavRecorder {
         return fileName;
     }
 
-    private void deleteTempFile() {
+    private static void deleteTempFile() {
         File file = new File(getTempFilename(true));
         file.delete();
     }
 
-    private void copyWaveFile(String inFilename,String outFilename){
+    private static void copyWaveFile(String inFilename, String outFilename){
 
         FileInputStream in = null;
         FileOutputStream out = null;
@@ -199,7 +213,7 @@ public final class WavRecorder {
         }
     }
 
-    private void WriteWaveFileHeader(
+    private static void WriteWaveFileHeader(
             FileOutputStream out, long totalAudioLen,
             long totalDataLen, long longSampleRate, int channels,
             long byteRate) throws IOException
@@ -254,7 +268,7 @@ public final class WavRecorder {
         out.write(header, 0, 44);
     }
 
-    public void startRecording() {
+    public static void startRecording() {
         startRecording();
     }
 }

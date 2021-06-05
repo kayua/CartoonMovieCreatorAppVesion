@@ -6,29 +6,38 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.media.AudioRecord;
+import android.media.AudioTrack;
 import android.media.MediaPlayer;
-import android.media.MediaRecorder;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
-import java.io.IOException;
+import app.mosquito.appmosquito.appmosquito.ui.Audio.WavAudioRecorder;
 
 public class ForegroundService extends Service {
 
     public static final String CHANNEL_ID = "Serviço de plano de fundo";
-    private MediaRecorder mRecorder;
     private MediaPlayer mPlayer;
     private static String mFileName = null;
     public static final int REQUEST_AUDIO_PERMISSION_CODE = 1;
+    private WavAudioRecorder mRecorder;
+    private static final String mRcordFilePath = Environment.getExternalStorageDirectory() + "/testwave.wav";
+
+    AudioRecord record = null;
+    AudioTrack track = null;
+
+    boolean isRecording;
+    int sampleRate = 44100;
+
+
     Runnable runnable = new Runnable(){
         public void run() {
-           startRecording();
+           startRecord();
         }
     };
     @Override
@@ -46,7 +55,7 @@ public class ForegroundService extends Service {
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Detecção Ativada:")
                 .setContentText(input)
-                .setSmallIcon(R.drawable.icon_ok)
+                .setSmallIcon(R.drawable.icon_mosquito_bar)
                 .setContentIntent(pendingIntent)
                 .build();
         startForeground(1, notification);
@@ -54,13 +63,24 @@ public class ForegroundService extends Service {
             @Override
             public void run() {
                 while (true){
-                    startRecording();
+                    startRecord();
                 }
-
             }
         });
         return START_NOT_STICKY;
     }
+    private void startRecord()
+    {
+        mRecorder = WavAudioRecorder.getInstanse();
+        mRecorder.setOutputFile(mRcordFilePath);
+        mRecorder.prepare();
+
+        mRecorder.start();
+        mRecorder.stop();
+
+    }
+
+
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -84,58 +104,5 @@ public class ForegroundService extends Service {
         }
     }
 
-
-    private void startRecording() {
-
-
-        mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
-        mFileName += "/AudioRecording.3gp";
-        mRecorder = new MediaRecorder();
-        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-        mRecorder.setOutputFile(mFileName);
-
-        try {
-            mRecorder.prepare();
-        } catch (IOException e) {
-            Log.e("TAG", "prepare() failed");
-        }
-        mRecorder.start();
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        mRecorder.stop();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        playAudio();
-
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-    }
-
-    public void playAudio() {
-
-        mPlayer = new MediaPlayer();
-        try {
-            mPlayer.setDataSource(mFileName);
-            mPlayer.prepare();
-            mPlayer.start();
-        } catch (IOException e) {
-            Log.e("TAG", "prepare() failed");
-        }
-    }
 
 }
