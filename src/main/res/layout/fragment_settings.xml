@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ui.Home.HomeFragment">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/switch10"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="   Deteção Ativa"
+                android:textColor="#504D4D"
+                android:textSize="20sp"/>
+
+            <Switch
+                android:id="@+id/switch11"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Economia de energia"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+            <Switch
+                android:id="@+id/switch56"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Geolocalização precisa"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+            <Switch
+                android:id="@+id/switch57"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Inicialização automática"
+                android:textColor="#504D4D"
+                android:textSize="20sp"/>
+
+            <Switch
+                android:id="@+id/switch58"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Notificações por email"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+            <Switch
+                android:id="@+id/switch59"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Notificações em tempo real"
+                android:textColor="#504D4D"
+                android:textSize="20sp"/>
+
+            <Switch
+                android:id="@+id/switch60"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Notificações de infestação"
+                android:textColor="#504D4D"
+                android:textSize="20sp"/>
+
+            <Switch
+                android:id="@+id/switch61"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:shadowColor="#E1C4C4"
+                android:text="   Notifcações sonoras"
+                android:textColor="#504D4D"
+                android:textSize="20sp"/>
+
+            <Switch
+                android:id="@+id/switch62"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Filtros avançados"
+                android:textColor="#504D4D"
+                android:textSize="20sp"/>
+
+            <Switch
+                android:id="@+id/switch63"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Desativar ao rotacionar"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+            <Switch
+                android:id="@+id/switch64"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Vigilância noturna"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+            <Switch
+                android:id="@+id/switch65"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Vigilância diurna"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+            <Switch
+                android:id="@+id/switch66"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Emparelhamento de dispositivo"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+            <Switch
+                android:id="@+id/switch67"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Sensor Úmidade"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+
+            <Switch
+                android:id="@+id/switch69"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Sensor Pressão"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+            <Switch
+                android:id="@+id/switch70"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:baselineAligned="false"
+                android:text="   Sensor Luminosidade"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

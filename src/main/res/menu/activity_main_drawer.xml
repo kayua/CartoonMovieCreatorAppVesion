@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/abc_vector_test"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_maps"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="@string/menu_maps" />
+
+        <item
+            android:id="@+id/nav_statistics"
+            android:icon="@android:drawable/ic_dialog_dialer"
+            android:title="@string/menu_statistics" />
+
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@android:drawable/ic_input_get"
+            android:title="@string/menu_history" />
+
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="@string/menu_message" />
+
+        <item
+            android:id="@+id/nav_identification"
+            android:icon="@android:drawable/toast_frame"
+            android:title="Reconhecimento" />
+        <item
+            android:id="@+id/nav_information"
+            android:icon="@android:drawable/ic_dialog_info"
+            android:title="@string/menu_information" />
+
+
+
+
+
+    </group>
+</menu>

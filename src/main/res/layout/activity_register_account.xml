@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_color"
+    android:clickable="true"
+    android:hapticFeedbackEnabled="true"
+    android:soundEffectsEnabled="true"
+
+    tools:context=".Activity_register_account">
+
+
+    <EditText
+        android:id="@+id/password_id"
+        android:layout_width="261dp"
+        android:layout_height="42dp"
+        android:autoText="true"
+        android:ems="10"
+        android:hint="Senha: (Obrigatório)"
+        android:password="true"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFEFE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/phone_number"
+        android:layout_width="261dp"
+        android:layout_height="45dp"
+        android:hint="Contato: (Opcional)"
+        android:inputType="phone"
+        android:textColor="#FFEBEE"
+        android:textColorHint="#FFEBEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.364" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/email_id"
+        android:layout_width="262dp"
+        android:layout_height="48dp"
+        android:hint="Email: (Obigatório)"
+        android:textColor="#FFEBEE"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="258dp"
+        android:layout_height="26dp"
+        android:allowUndo="true"
+        android:checked="true"
+        android:text="Ativar notificações por email"
+        android:textColor="#FFEBEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.518" />
+
+    <Switch
+        android:id="@+id/switch10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:hint="Senha:(Obrigatório)"
+        android:text="Ativar notificações em tempo real"
+        android:textColor="#FFEBEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.569" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="258dp"
+        android:layout_height="28dp"
+        android:checked="true"
+        android:text="Ativar notificações de infestação"
+        android:textColor="#FFEBEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.621" />
+
+    <com.google.android.material.textfield.TextInputEditText
+
+        android:id="@+id/username_id"
+        android:layout_width="263dp"
+        android:layout_height="46dp"
+        android:hint="Nome: (Obrigatório)"
+        android:textColor="#FFEBEE"
+        android:textColorHighlight="#EAE0E0"
+        android:textColorHint="#FFEBEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.198" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="277dp"
+        android:layout_height="80dp"
+        android:text="Concordo com os termos de uso. Aceito compartilhar as informações com orgãos de saúde pública."
+        android:textColor="#FFEBEE"
+        android:textColorHighlight="#F1E9E9"
+        android:textColorLink="#E3DCDC"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.748" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="195dp"
+        android:layout_height="68dp"
+        android:background="#00897B"
+        android:onClick="createUser"
+        android:text="Inscreva-se"
+        android:textColor="#FAF9F9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastre-se"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

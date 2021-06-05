@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+
+        android:id="@+id/action_settings"
+        android:checkable="true"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_dialog_dialer"
+        android:orderInCategory="100"
+        android:title=""
+        android:visible="true"
+        android:onClick="tela_view"
+        app:showAsAction="ifRoom" />
+
+
+
+</menu>

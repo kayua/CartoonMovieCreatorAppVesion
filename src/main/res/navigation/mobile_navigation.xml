@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="app.mosquito.appmosquito.appmosquito.ui.Home.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_maps"
+        android:name="app.mosquito.appmosquito.appmosquito.ui.Maps.MapsFragment"
+        android:label="@string/menu_maps"
+        tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/nav_information"
+        android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
+        android:label="@string/menu_information"
+        tools:layout="@layout/fragment_information" />
+
+    <fragment
+        android:id="@+id/nav_statistics"
+        android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
+        android:label="@string/menu_statistics"
+        tools:layout="@layout/fragment_statistics" />
+
+    <fragment
+        android:id="@+id/nav_message"
+        android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
+        android:label="@string/menu_message"
+        tools:layout="@layout/fragment_message" />
+
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/action_settings"
+        android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+
+</navigation>
