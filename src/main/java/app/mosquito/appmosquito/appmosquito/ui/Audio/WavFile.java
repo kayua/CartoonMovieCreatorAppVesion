@@ -42,7 +42,7 @@ public class WavFile {
     private long fileSize;
 
     // Cannot instantiate WavFile directly, must either use newWavFile() or openWavFile()
-    private WavFile() {
+    public WavFile() {
         buffer = new byte[BUFFER_SIZE];
     }
 
@@ -74,7 +74,7 @@ public class WavFile {
         return fileSize;
     }
 
-    public static WavFile openWavFile(InputStream file) throws IOException, WavFileException {
+    public static WavFile openWavFile(String file) throws IOException, WavFileException {
         // Instantiate new Wavfile and store the file reference
         WavFile wavFile = new WavFile();
         wavFile.file = file;
