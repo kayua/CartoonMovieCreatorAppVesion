@@ -142,16 +142,15 @@ public class ForegroundService extends Service {
         wavFile.readFrames(buffer, mNumFrames, 0);
         MFCC mfccConvert = new MFCC();
         int i;
+
         for (i = 0; i < buffer.length; i++) {
 
-            float[][][] results = mfccConvert.processBulkSpectrograms(buffer[i], 40);
+            float[][][] results = mfccConvert.processBulkSpectrograms(buffer[i], 60);
             int j;
 
             for (j=0; j< results.length; j++) {
 
-                val flattenedSpec = flattenSpectrogram(element)
-                predictedResult =
-                        max(loadModelAndMakePredictions(flattenedSpec), predictedResult)
+
             }
 
 
