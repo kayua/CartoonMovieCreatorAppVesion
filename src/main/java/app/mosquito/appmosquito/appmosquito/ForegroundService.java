@@ -105,10 +105,9 @@ public class ForegroundService extends Service {
         mChannels = wavFile.getNumChannels();
 
         try {
-
-            val buffer = Array(mChannels) { DoubleArray(mNumFrames) }
-            wavFile.readFrames(buffer, mNumFrames, 0)
-            val mfccConvert = MFCC()
+            double[][] buffer = new double[mChannels][mNumFrames];
+            wavFile.readFrames(buffer, mNumFrames, 0);
+            val mfccConvert = MFCC();
 
             for (channel in buffer) {
                 updateLoader("Processando áudio...")
