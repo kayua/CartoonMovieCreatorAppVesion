@@ -143,12 +143,12 @@ public class ForegroundService extends Service {
         MFCC mfccConvert = new MFCC();
         int i;
 
-        for (i = 0; i < buffer.length; i++) {
+        for (i=0; i <buffer.length; i++) {
 
             float[][][] results = mfccConvert.processBulkSpectrograms(buffer[i], 60);
             int j;
 
-            for (j=0; j< results.length; j++) {
+            for (j=0; j<results.length; j++) {
 
 
             }
