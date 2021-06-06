@@ -26,6 +26,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        mlModelBinding true
+    }
 }
 
 dependencies {
@@ -42,6 +45,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.2.0'
     testImplementation 'junit:junit:4.+'
     implementation 'org.tensorflow:tensorflow-android:+'
     implementation "com.github.parse-community.Parse-SDK-Android:parse:1.18.5"

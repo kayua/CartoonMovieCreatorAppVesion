@@ -33,13 +33,21 @@ public class ForegroundService extends Service {
     Runnable runnable = new Runnable(){
 
         public void run() {
+
             try {
+
                 startRecord();
+
             } catch (IOException e) {
+
                 e.printStackTrace();
+
             } catch (WavFileException e) {
+
                 e.printStackTrace();
+
             }
+
         }
 
     };
@@ -105,6 +113,7 @@ public class ForegroundService extends Service {
     }
 
     private void createNotificationChannel() {
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel serviceChannel = new NotificationChannel(
                     CHANNEL_ID,
@@ -120,11 +129,11 @@ public class ForegroundService extends Service {
     private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
 
         InputStream inputstream;
-        inputstream = new FileInputStream( mRcordFilePath );
+        inputstream = new FileInputStream(mRcordFilePath);
 
         WavFile wavFile = new WavFile();
         WavFile.openWavFile(inputstream);
-        int mNumFrames =0;
+        int mNumFrames = 0;
         int mChannels = 0;
         mNumFrames = (int) wavFile.getNumFrames();
         mChannels = wavFile.getNumChannels();
@@ -133,24 +142,20 @@ public class ForegroundService extends Service {
         wavFile.readFrames(buffer, mNumFrames, 0);
         MFCC mfccConvert = new MFCC();
         int i;
-        for (i = 0; i<buffer.length; i++ ) {
+        for (i = 0; i < buffer.length; i++) {
 
-            mfccConvert.processBulkSpectrograms(buffer[i], 40);
+            float[][][] results = mfccConvert.processBulkSpectrograms(buffer[i], 40);
+            int j;
 
-            //for (element in mfccInput) {
-            //    val flattenedSpec = flattenSpectrogram(element)
-            //    predictedResult =
-            //            max(loadModelAndMakePredictions(flattenedSpec), predictedResult)
-           // }
+            for (j=0; j< results.length; j++) {
+
+                val flattenedSpec = flattenSpectrogram(element)
+                predictedResult =
+                        max(loadModelAndMakePredictions(flattenedSpec), predictedResult)
+            }
+
+
         }
-        //Log.d("MFCC R", predictedResult.toString())
-        //Log.d("MFCC", "Finished")
-        //return predictedResult > 0.95
-        //{
-        //    Log.d("EXCEPTION", e.toString())
 
-        //}
     }
-
-
 }
