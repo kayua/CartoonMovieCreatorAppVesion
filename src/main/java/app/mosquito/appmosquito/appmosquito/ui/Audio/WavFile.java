@@ -1,5 +1,7 @@
 package app.mosquito.appmosquito.appmosquito.ui.Audio;
 
+import android.util.Log;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -82,10 +84,11 @@ public class WavFile {
         // Create a new file input stream for reading file data
         wavFile.iStream = file;
 
+
         // Read the first 12 bytes of the file
         int bytesRead = wavFile.iStream.read(wavFile.buffer, 0, 12);
         if (bytesRead != 12) throw new WavFileException("Not enough wav file bytes for header");
-
+        Log.i("ERRO", "ERRO");
         // Extract parts from the header
         long riffChunkID = getLE(wavFile.buffer, 0, 4);
         long chunkSize = getLE(wavFile.buffer, 4, 4);
@@ -281,12 +284,15 @@ public class WavFile {
     }
 
     private int readFramesInternal(double[][] sampleBuffer, int frameOffset, int numFramesToRead) throws IOException, WavFileException {
+
         if (ioState != IOState.READING) throw new IOException("Cannot read from WavFile instance");
 
         for (int f = 0; f < numFramesToRead; f++) {
+
             if (frameCounter == numFrames) return frameOffset;
 
             for (int c = 0; c < numChannels; c++) {
+
                 sampleBuffer[c][frameOffset] = (double) readSample();
 
             }

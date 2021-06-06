@@ -6,10 +6,12 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.media.AudioFormat;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
@@ -19,34 +21,24 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import app.mosquito.appmosquito.appmosquito.ui.Audio.MFCC;
-import app.mosquito.appmosquito.appmosquito.ui.Audio.WavAudioRecorder;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFileException;
+import app.mosquito.appmosquito.appmosquito.ui.Audio.WavRecordFile;
 
 public class ForegroundService extends Service {
 
     public static final String CHANNEL_ID = "Serviço de plano de fundo";
     private static String mFileName = null;
-    private WavAudioRecorder mRecorder;
-    private static final String mRcordFilePath = Environment.getExternalStorageDirectory() + "/testwave.wav";
 
+    private int RECORDER_SAMPLE_RATE = 44100;
+    private int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_STEREO;
+    private int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
+    private static final String mRcordFilePath = Environment.getExternalStorageDirectory().toString();
     Runnable runnable = new Runnable(){
 
         public void run() {
 
-            try {
-
-                startRecord();
-
-            } catch (IOException e) {
-
-                e.printStackTrace();
-
-            } catch (WavFileException e) {
-
-                e.printStackTrace();
-
-            }
+            startRecord();
 
         }
 
@@ -76,28 +68,38 @@ public class ForegroundService extends Service {
             @Override
             public void run() {
                 while (true){
-                    try {
-                        startRecord();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (WavFileException e) {
-                        e.printStackTrace();
-                    }
+                    startRecord();
                 }
             }
         });
         return START_NOT_STICKY;
     }
 
-    private void startRecord() throws IOException, WavFileException {
+    private void startRecord(){
 
-        mRecorder = WavAudioRecorder.getInstanse();
-        mRecorder.setOutputFile(mRcordFilePath);
-        mRecorder.prepare();
-        mRecorder.start();
-        mRecorder.stop();
-        extractFeaturesAndRunEvaluation();
-
+        Log.i("Number frames", mRcordFilePath);
+        WavRecordFile waveRecorder = new WavRecordFile(mRcordFilePath );
+        waveRecorder.startRecording();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        waveRecorder.stopRecording("fileName");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        try {
+            extractFeaturesAndRunEvaluation();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (WavFileException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -129,13 +131,13 @@ public class ForegroundService extends Service {
     private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
 
         InputStream inputstream;
-        inputstream = new FileInputStream(mRcordFilePath);
-
+        inputstream = new FileInputStream(mRcordFilePath+"fileName.wav");
         WavFile wavFile = new WavFile();
         WavFile.openWavFile(inputstream);
         int mNumFrames = 0;
         int mChannels = 0;
         mNumFrames = (int) wavFile.getNumFrames();
+        Log.i("Number frames", String.valueOf(mNumFrames));
         mChannels = wavFile.getNumChannels();
 
         double[][] buffer = new double[mChannels][mNumFrames];
@@ -145,16 +147,24 @@ public class ForegroundService extends Service {
 
         for (i=0; i <buffer.length; i++) {
 
-            float[][][] results = mfccConvert.processBulkSpectrograms(buffer[i], 60);
+            float[][][] results = mfccConvert.processBulkSpectrograms(buffer[i], 40);
             int j;
-
+            Log.i("Tamanho", String.valueOf(results.length));
             for (j=0; j<results.length; j++) {
-
-
+                j++;
+                j--;
             }
 
 
         }
+
+    }
+
+
+    private void predict(){
+
+
+
 
     }
 }
