@@ -14,8 +14,11 @@ import android.os.IBinder;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
+import app.mosquito.appmosquito.appmosquito.ui.Audio.MFCC;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavAudioRecorder;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFileException;
@@ -28,10 +31,19 @@ public class ForegroundService extends Service {
     private static final String mRcordFilePath = Environment.getExternalStorageDirectory() + "/testwave.wav";
 
     Runnable runnable = new Runnable(){
+
         public void run() {
-           startRecord();
+            try {
+                startRecord();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (WavFileException e) {
+                e.printStackTrace();
+            }
         }
+
     };
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -39,6 +51,7 @@ public class ForegroundService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+
         String input = intent.getStringExtra("inputExtra");
         createNotificationChannel();
         Intent notificationIntent = new Intent(this, daemonize.class);
@@ -55,19 +68,28 @@ public class ForegroundService extends Service {
             @Override
             public void run() {
                 while (true){
-                    startRecord();
+                    try {
+                        startRecord();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (WavFileException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
         return START_NOT_STICKY;
     }
 
-    private void startRecord() {
+    private void startRecord() throws IOException, WavFileException {
+
         mRecorder = WavAudioRecorder.getInstanse();
         mRecorder.setOutputFile(mRcordFilePath);
         mRecorder.prepare();
         mRecorder.start();
         mRecorder.stop();
+        extractFeaturesAndRunEvaluation();
+
 
     }
 
@@ -97,45 +119,38 @@ public class ForegroundService extends Service {
 
     private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
 
+        InputStream inputstream;
+        inputstream = new FileInputStream( mRcordFilePath );
+
         WavFile wavFile = new WavFile();
-        wavFile = WavFile.openWavFile(mRcordFilePath);
+        WavFile.openWavFile(inputstream);
         int mNumFrames =0;
         int mChannels = 0;
         mNumFrames = (int) wavFile.getNumFrames();
         mChannels = wavFile.getNumChannels();
 
-        try {
-            double[][] buffer = new double[mChannels][mNumFrames];
-            wavFile.readFrames(buffer, mNumFrames, 0);
-            val mfccConvert = MFCC();
+        double[][] buffer = new double[mChannels][mNumFrames];
+        wavFile.readFrames(buffer, mNumFrames, 0);
+        MFCC mfccConvert = new MFCC();
+        int i;
+        for (i = 0; i<buffer.length; i++ ) {
 
-            for (channel in buffer) {
-                updateLoader("Processando áudio...")
-                val mfccInput = mfccConvert.processBulkSpectrograms(channel, 40)
-                updateLoader("Avaliando o áudio...")
-                for (element in mfccInput) {
-                    val flattenedSpec = flattenSpectrogram(element)
-                    predictedResult =
-                            max(loadModelAndMakePredictions(flattenedSpec), predictedResult)
-                }
-            }
-            Log.d("MFCC R", predictedResult.toString())
-            Log.d("MFCC", "Finished")
-            return predictedResult > 0.95
-        } catch (e: Exception) {
-            Log.d("EXCEPTION", e.toString())
-            return false
+            mfccConvert.processBulkSpectrograms(buffer[i], 40);
+
+            //for (element in mfccInput) {
+            //    val flattenedSpec = flattenSpectrogram(element)
+            //    predictedResult =
+            //            max(loadModelAndMakePredictions(flattenedSpec), predictedResult)
+           // }
         }
+        //Log.d("MFCC R", predictedResult.toString())
+        //Log.d("MFCC", "Finished")
+        //return predictedResult > 0.95
+        //{
+        //    Log.d("EXCEPTION", e.toString())
+
+        //}
     }
 
-    private fun flattenSpectrogram(input: Array<FloatArray>): FloatArray {
-        var output: ArrayList<Float> = ArrayList<Float>();
-        input[0].indices.forEach { i ->
-                input.indices.forEach { j ->
-                output.add(input[j][i])
-        }
-        }
-        return output.toFloatArray()
-    }
 
 }

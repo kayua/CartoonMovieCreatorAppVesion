@@ -1,4 +1,5 @@
 package app.mosquito.appmosquito.appmosquito.ui.Audio;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,7 +8,6 @@ Source based on https://github.com/Semantive/waveform-android/blob/master/librar
  */
 
 public class WavFile {
-
     private enum IOState {READING, WRITING, CLOSED}
 
     private final static int BUFFER_SIZE = 4096;
@@ -74,7 +74,7 @@ public class WavFile {
         return fileSize;
     }
 
-    public static WavFile openWavFile(String file) throws IOException, WavFileException {
+    public static WavFile openWavFile(InputStream file) throws IOException, WavFileException {
         // Instantiate new Wavfile and store the file reference
         WavFile wavFile = new WavFile();
         wavFile.file = file;
