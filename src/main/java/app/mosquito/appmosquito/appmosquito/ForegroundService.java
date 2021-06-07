@@ -136,9 +136,9 @@ public class ForegroundService extends Service {
             manager.createNotificationChannel(serviceChannel);
         }
     }
-    private MappedByteBuffer loadModelFile() throws IOException
+    private MappedByteBuffer loadModelFile(String file) throws IOException
     {
-        AssetFileDescriptor assetFileDescriptor = this.getAssets().openFd("1.tflite");
+        AssetFileDescriptor assetFileDescriptor = this.getAssets().openFd(file);
         FileInputStream fileInputStream = new FileInputStream(assetFileDescriptor.getFileDescriptor());
         FileChannel fileChannel = fileInputStream.getChannel();
 
@@ -152,13 +152,18 @@ public class ForegroundService extends Service {
 
         Interpreter interpreter = null;
 
-        interpreter = new Interpreter(loadModelFile(), null);
+        interpreter = new Interpreter(loadModelFile("0.tflite"), null);
         float output[][] = new float[1][1];
 
         interpreter.run(input, output);
 
         Log.i("************************************", String.valueOf(output[0][0]));
 
+        interpreter = new Interpreter(loadModelFile("1.tflite"), null);
+
+        interpreter.run(input, output);
+
+        Log.i("************************************", String.valueOf(output[0][0]));
         return output;
     }
 
