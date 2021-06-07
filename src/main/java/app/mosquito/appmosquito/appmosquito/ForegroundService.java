@@ -22,6 +22,8 @@ import java.io.IOException;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFileException;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavRecordFile;
+import app.mosquito.appmosquito.appmosquito.ui.Audio.MFCC;
+
 
 import static app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile.openWavFile;
 
@@ -146,20 +148,16 @@ public class ForegroundService extends Service {
         int validBits = readWavFile.getValidBits();
         long sampleRate = readWavFile.getSampleRate();
 
-        final int BUF_SIZE = 160000;
-        Log.i("Numero de frames", String.valueOf(numFrames));
-        double[] buffer = new double[BUF_SIZE * numChannels];
+        final int BUF_SIZE = 16000;
 
+        double[] buffer = new double[BUF_SIZE * numChannels];
+        MFCC mfccConvert = new MFCC();
         int framesRead = 0;
         int framesWritten = 0;
-
-        do
-            {
-                framesRead = readWavFile.readFrames(buffer, BUF_SIZE);
-
-            }while (framesRead != 0);
-
-
+        readWavFile.readFrames(buffer, BUF_SIZE);
+        int i = 0;
+        float[][][] mfccInput = mfccConvert.processBulkSpectrograms(buffer, 60);
+        Log.i("BUFFER Warning", String.valueOf(mfccInput[0].length));
     }
 
 }
