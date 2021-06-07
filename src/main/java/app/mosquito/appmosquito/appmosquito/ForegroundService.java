@@ -16,6 +16,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,7 +34,7 @@ public class ForegroundService extends Service {
     private int RECORDER_SAMPLE_RATE = 44100;
     private int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_STEREO;
     private int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
-    private static final String mRcordFilePath = Environment.getExternalStorageDirectory().toString();
+
     Runnable runnable = new Runnable(){
 
         public void run() {
@@ -77,8 +78,8 @@ public class ForegroundService extends Service {
 
     private void startRecord(){
 
-        Log.i("Number frames", mRcordFilePath);
-        WavRecordFile waveRecorder = new WavRecordFile(mRcordFilePath );
+        File path = Environment.getDataDirectory();
+        WavRecordFile waveRecorder = new WavRecordFile(path.getPath());
         waveRecorder.startRecording();
         try {
             Thread.sleep(5000);
@@ -86,7 +87,10 @@ public class ForegroundService extends Service {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        waveRecorder.stopRecording("fileName");
+        waveRecorder.stopRecording("test");
+
+        Log.i("TAG", "***************************************************");
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -95,9 +99,7 @@ public class ForegroundService extends Service {
         }
         try {
             extractFeaturesAndRunEvaluation();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (WavFileException e) {
+        } catch (IOException | WavFileException e) {
             e.printStackTrace();
         }
 
@@ -131,17 +133,25 @@ public class ForegroundService extends Service {
     private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
 
         InputStream inputstream;
-        inputstream = new FileInputStream(mRcordFilePath+"fileName.wav");
+        File path = Environment.getDataDirectory();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+
+        inputstream = new FileInputStream("/storage/emulated/0/data/test.wav");
         WavFile wavFile = new WavFile();
         WavFile.openWavFile(inputstream);
         int mNumFrames = 0;
         int mChannels = 0;
         mNumFrames = (int) wavFile.getNumFrames();
-        Log.i("Number frames", String.valueOf(mNumFrames));
         mChannels = wavFile.getNumChannels();
-
-        double[][] buffer = new double[mChannels][mNumFrames];
-        wavFile.readFrames(buffer, mNumFrames, 0);
+        Log.i("TAG***************************************", String.valueOf(mNumFrames));
+        double[][] buffer = new double[2][216];
+        wavFile.readFrames(buffer, 216, 0);
         MFCC mfccConvert = new MFCC();
         int i;
 

@@ -1,4 +1,5 @@
 package app.mosquito.appmosquito.appmosquito.ui.Audio;
+
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
@@ -156,6 +157,9 @@ public class WavRecordFile {
         try {
             in = new FileInputStream(inFilename);
             out = new FileOutputStream(outFilename);
+
+
+
             totalAudioLen = in.getChannel().size();
             totalDataLen = totalAudioLen + 36;
 
@@ -170,6 +174,7 @@ public class WavRecordFile {
 
             in.close();
             out.close();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

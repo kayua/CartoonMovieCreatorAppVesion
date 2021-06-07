@@ -140,6 +140,7 @@ public class WavFile {
 
                 // Extract the format information
                 wavFile.numChannels = (int) getLE(wavFile.buffer, 2, 2);
+                Log.i("TAG***************************************", String.valueOf(wavFile.numChannels));
                 wavFile.sampleRate = getLE(wavFile.buffer, 4, 4);
                 wavFile.blockAlign = (int) getLE(wavFile.buffer, 12, 2);
                 wavFile.validBits = (int) getLE(wavFile.buffer, 14, 2);
