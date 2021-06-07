@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.media.AudioFormat;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -15,8 +16,13 @@ import android.os.IBinder;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
+import org.tensorflow.lite.Interpreter;
+
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 
 import app.mosquito.appmosquito.appmosquito.ui.Audio.MFCC;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile;
@@ -33,6 +39,8 @@ public class ForegroundService extends Service {
     private int RECORDER_SAMPLE_RATE = 44100;
     private int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_STEREO;
     private int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
+    protected Interpreter tflite;
+
 
     Runnable runnable = new Runnable(){
 
@@ -127,23 +135,42 @@ public class ForegroundService extends Service {
             manager.createNotificationChannel(serviceChannel);
         }
     }
+    private MappedByteBuffer loadModelFile() throws IOException
+    {
+        AssetFileDescriptor assetFileDescriptor = this.getAssets().openFd("0.tflite");
+        FileInputStream fileInputStream = new FileInputStream(assetFileDescriptor.getFileDescriptor());
+        FileChannel fileChannel = fileInputStream.getChannel();
 
-    private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
+        long startOffset = assetFileDescriptor.getStartOffset();
+        long len = assetFileDescriptor.getLength();
 
+        return fileChannel.map(FileChannel.MapMode.READ_ONLY,startOffset,len);
+    }
 
+    public float doInference(float[][] input) {
+        Interpreter interpreter = null;
         try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
+            interpreter = new Interpreter(loadModelFile(), null);
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
+        float output=0;
+
+        interpreter.run(input, output);
+        return output;
+    }
+
+
+
+    private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
 
 
         WavFile readWavFile = openWavFile(new File("/storage/emulated/0/data/test.wav"));
 
         int numChannels = readWavFile.getNumChannels();
 
-        final int BUF_SIZE = 32000;
+        final int BUF_SIZE = 16000;
 
         double[] buffer = new double[BUF_SIZE * numChannels];
         MFCC mfccConvert = new MFCC();
