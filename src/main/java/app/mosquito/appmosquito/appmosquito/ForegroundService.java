@@ -151,21 +151,45 @@ public class ForegroundService extends Service {
     public int doInference(float[][][][] input) throws IOException {
 
         Interpreter interpreter = null;
+        float[] output_signal = new float[23];
+
         for(int i=0; i<23; i++){
+
+            float output[][] = new float[1][1];
             String a = i+".tflite";
             interpreter = new Interpreter(loadModelFile(a), null);
-            float output[][] = new float[1][1];
+
 
             interpreter.run(input, output);
+            output_signal[i] = output[0][0];
 
-            Log.i("************************************", String.valueOf(output[0][0]));
+        }
+
+        interpreter = new Interpreter(loadModelFile("clustering.tflite"), null);
+
+        float[][] output_signal_return = new float[1][23];
+
+
+        interpreter.run(output_signal, output_signal_return);
+
+        float max = 0;
+        int indice =0;
+
+        for(int i=0; i<23; i++){
+
+            if(max<output_signal_return[0][i]){
+
+                max = output_signal_return[0][i];
+                indice=i;
+            }
+
 
 
 
         }
+        Log.i("RESULTADO: ", String.valueOf(indice));
+        return indice;
 
-
-        return 1;
     }
 
     public float[][][][] reshape(float[][] input_image){
