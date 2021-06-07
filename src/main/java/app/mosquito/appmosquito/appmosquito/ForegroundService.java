@@ -81,14 +81,13 @@ public class ForegroundService extends Service {
         WavRecordFile waveRecorder = new WavRecordFile(path.getPath());
         waveRecorder.startRecording();
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
         waveRecorder.stopRecording("test");
 
-        Log.i("TAG", "***************************************************");
 
         try {
             Thread.sleep(1000);
@@ -148,7 +147,7 @@ public class ForegroundService extends Service {
         long sampleRate = readWavFile.getSampleRate();
 
         final int BUF_SIZE = 160000;
-
+        Log.i("Numero de frames", String.valueOf(numFrames));
         double[] buffer = new double[BUF_SIZE * numChannels];
 
         int framesRead = 0;
