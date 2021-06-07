@@ -69,7 +69,7 @@ public class ForegroundService extends Service {
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Detecção Ativada:")
                 .setContentText(input)
-                .setSmallIcon(R.drawable.icon_mosquito_bar)
+                .setSmallIcon(R.drawable.icon_mosquito_app_bar)
                 .setContentIntent(pendingIntent)
                 .build();
         startForeground(1, notification);
