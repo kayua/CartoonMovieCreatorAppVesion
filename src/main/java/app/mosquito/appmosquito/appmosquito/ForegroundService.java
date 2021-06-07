@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
@@ -34,11 +35,11 @@ import static app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile.openWavFile;
 public class ForegroundService extends Service {
 
     public static final String CHANNEL_ID = "Serviço de plano de fundo";
-    private static String mFileName = null;
+    private static final String mFileName = null;
 
-    private int RECORDER_SAMPLE_RATE = 44100;
-    private int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_STEREO;
-    private int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
+    private final int RECORDER_SAMPLE_RATE = 44100;
+    private final int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_STEREO;
+    private final int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
     protected Interpreter tflite;
 
 
@@ -147,20 +148,37 @@ public class ForegroundService extends Service {
         return fileChannel.map(FileChannel.MapMode.READ_ONLY,startOffset,len);
     }
 
-    public float doInference(float[][] input) {
+    public float[][] doInference(float[][][][] input) throws IOException {
         Interpreter interpreter = null;
-        try {
-            interpreter = new Interpreter(loadModelFile(), null);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        float output=0;
+        interpreter = new Interpreter(loadModelFile(), null);
+        float output[][] = new float[1][1];
 
         interpreter.run(input, output);
+
+        Log.i("************************************", String.valueOf(output[0][0]));
+
         return output;
     }
 
+    public float[][][][] reshape(float[][] input_image){
+
+        float[][][][] f = new float[1][60][60][1];
+        int i;
+        int j;
+        for(i=0; i< 60; i++){
+
+            for(j=0; j< 60; j++){
+
+                f[0][i][j][0]= input_image[i][j];
+
+            }
+
+        }
+        
+    return f;
+
+    }
 
 
     private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
@@ -178,6 +196,13 @@ public class ForegroundService extends Service {
         readWavFile.readFrames(buffer, BUF_SIZE);
         int i = 0;
         float[][][] mfccInput = mfccConvert.processBulkSpectrograms(buffer, 60);
+
+        for(i=0; i< mfccInput.length; i++){
+            float[][] a = mfccInput[i];
+            float[][][][] b = reshape(a);
+            doInference(b);
+
+        }
 
     }
 
