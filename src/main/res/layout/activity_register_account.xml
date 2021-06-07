@@ -20,6 +20,7 @@
         android:layout_height="48dp"
         android:autoText="true"
         android:background="@drawable/text_round"
+        android:drawableStart="@drawable/icon_password"
         android:ems="10"
         android:hint="Senha: (Obrigatório)"
         android:password="true"
@@ -37,16 +38,16 @@
         android:layout_width="263dp"
         android:layout_height="48dp"
         android:background="@drawable/text_round"
-        android:drawableStart="@android:drawable/ic_dialog_email"
+        android:drawableStart="@drawable/icon_email"
         android:hint="Email: (Obigatório)"
         android:textColor="#FFEBEE"
         android:textColorHint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352" />
+        app:layout_constraintVertical_bias="0.351" />
 
     <Switch
         android:id="@+id/switch3"
@@ -99,7 +100,7 @@
         android:layout_height="48dp"
         android:background="@drawable/text_round"
         android:drawableStart="@drawable/icon_user"
-        android:hint="  Nome"
+        android:hint="Nome"
         android:textColor="#FFEBEE"
         android:textColorHighlight="#009688"
         android:textColorHint="#009688"
@@ -108,7 +109,7 @@
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255" />
+        app:layout_constraintVertical_bias="0.262" />
 
     <CheckBox
         android:id="@+id/checkBox2"
