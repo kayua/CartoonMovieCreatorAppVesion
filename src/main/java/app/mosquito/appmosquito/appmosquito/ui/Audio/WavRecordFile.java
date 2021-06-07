@@ -28,7 +28,7 @@ public class WavRecordFile {
 
     public WavRecordFile(String destinationFolderName) {
         this.destinationFolderName = destinationFolderName;
-        bufferSize = AudioRecord.getMinBufferSize(8000,
+        bufferSize = AudioRecord.getMinBufferSize(44100,
                 AudioFormat.CHANNEL_CONFIGURATION_MONO,
                 AudioFormat.ENCODING_PCM_16BIT);
     }
@@ -155,9 +155,9 @@ public class WavRecordFile {
         byte[] data = new byte[bufferSize];
 
         try {
+
             in = new FileInputStream(inFilename);
             out = new FileOutputStream(outFilename);
-
 
 
             totalAudioLen = in.getChannel().size();

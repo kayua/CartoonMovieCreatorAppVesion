@@ -17,14 +17,13 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
-import app.mosquito.appmosquito.appmosquito.ui.Audio.MFCC;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFileException;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavRecordFile;
+
+import static app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile.openWavFile;
 
 public class ForegroundService extends Service {
 
@@ -132,8 +131,7 @@ public class ForegroundService extends Service {
 
     private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
 
-        InputStream inputstream;
-        File path = Environment.getDataDirectory();
+
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -142,39 +140,27 @@ public class ForegroundService extends Service {
         }
 
 
-        inputstream = new FileInputStream("/storage/emulated/0/data/test.wav");
-        WavFile wavFile = new WavFile();
-        WavFile.openWavFile(inputstream);
-        int mNumFrames = 0;
-        int mChannels = 0;
-        mNumFrames = (int) wavFile.getNumFrames();
-        mChannels = wavFile.getNumChannels();
-        Log.i("TAG***************************************", String.valueOf(mNumFrames));
-        double[][] buffer = new double[2][216];
-        wavFile.readFrames(buffer, 216, 0);
-        MFCC mfccConvert = new MFCC();
-        int i;
+        WavFile readWavFile = openWavFile(new File("/storage/emulated/0/data/test.wav"));
 
-        for (i=0; i <buffer.length; i++) {
+        long numFrames = readWavFile.getNumFrames();
+        int numChannels = readWavFile.getNumChannels();
+        int validBits = readWavFile.getValidBits();
+        long sampleRate = readWavFile.getSampleRate();
 
-            float[][][] results = mfccConvert.processBulkSpectrograms(buffer[i], 40);
-            int j;
-            Log.i("Tamanho", String.valueOf(results.length));
-            for (j=0; j<results.length; j++) {
-                j++;
-                j--;
-            }
+        final int BUF_SIZE = 160000;
 
+        double[] buffer = new double[BUF_SIZE * numChannels];
 
-        }
+        int framesRead = 0;
+        int framesWritten = 0;
 
-    }
+        do
+            {
+                framesRead = readWavFile.readFrames(buffer, BUF_SIZE);
 
-
-    private void predict(){
-
-
+            }while (framesRead != 0);
 
 
     }
+
 }
