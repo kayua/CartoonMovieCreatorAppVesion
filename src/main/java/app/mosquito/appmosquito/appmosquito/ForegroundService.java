@@ -138,7 +138,7 @@ public class ForegroundService extends Service {
     }
     private MappedByteBuffer loadModelFile() throws IOException
     {
-        AssetFileDescriptor assetFileDescriptor = this.getAssets().openFd("0.tflite");
+        AssetFileDescriptor assetFileDescriptor = this.getAssets().openFd("1.tflite");
         FileInputStream fileInputStream = new FileInputStream(assetFileDescriptor.getFileDescriptor());
         FileChannel fileChannel = fileInputStream.getChannel();
 
@@ -149,6 +149,7 @@ public class ForegroundService extends Service {
     }
 
     public float[][] doInference(float[][][][] input) throws IOException {
+
         Interpreter interpreter = null;
 
         interpreter = new Interpreter(loadModelFile(), null);
