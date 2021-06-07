@@ -148,23 +148,24 @@ public class ForegroundService extends Service {
         return fileChannel.map(FileChannel.MapMode.READ_ONLY,startOffset,len);
     }
 
-    public float[][] doInference(float[][][][] input) throws IOException {
+    public int doInference(float[][][][] input) throws IOException {
 
         Interpreter interpreter = null;
+        for(int i=0; i<23; i++){
+            String a = i+".tflite";
+            interpreter = new Interpreter(loadModelFile(a), null);
+            float output[][] = new float[1][1];
 
-        interpreter = new Interpreter(loadModelFile("0.tflite"), null);
-        float output[][] = new float[1][1];
+            interpreter.run(input, output);
 
-        interpreter.run(input, output);
+            Log.i("************************************", String.valueOf(output[0][0]));
 
-        Log.i("************************************", String.valueOf(output[0][0]));
 
-        interpreter = new Interpreter(loadModelFile("1.tflite"), null);
 
-        interpreter.run(input, output);
+        }
 
-        Log.i("************************************", String.valueOf(output[0][0]));
-        return output;
+
+        return 1;
     }
 
     public float[][][][] reshape(float[][] input_image){
