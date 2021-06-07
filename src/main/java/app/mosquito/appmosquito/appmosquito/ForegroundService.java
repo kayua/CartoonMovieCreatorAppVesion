@@ -11,7 +11,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
@@ -19,11 +18,10 @@ import androidx.core.app.NotificationCompat;
 import java.io.File;
 import java.io.IOException;
 
+import app.mosquito.appmosquito.appmosquito.ui.Audio.MFCC;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFileException;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavRecordFile;
-import app.mosquito.appmosquito.appmosquito.ui.Audio.MFCC;
-
 
 import static app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile.openWavFile;
 
@@ -143,21 +141,17 @@ public class ForegroundService extends Service {
 
         WavFile readWavFile = openWavFile(new File("/storage/emulated/0/data/test.wav"));
 
-        long numFrames = readWavFile.getNumFrames();
         int numChannels = readWavFile.getNumChannels();
-        int validBits = readWavFile.getValidBits();
-        long sampleRate = readWavFile.getSampleRate();
 
-        final int BUF_SIZE = 16000;
+        final int BUF_SIZE = 32000;
 
         double[] buffer = new double[BUF_SIZE * numChannels];
         MFCC mfccConvert = new MFCC();
-        int framesRead = 0;
-        int framesWritten = 0;
+
         readWavFile.readFrames(buffer, BUF_SIZE);
         int i = 0;
         float[][][] mfccInput = mfccConvert.processBulkSpectrograms(buffer, 60);
-        Log.i("BUFFER Warning", String.valueOf(mfccInput[0].length));
+
     }
 
 }
