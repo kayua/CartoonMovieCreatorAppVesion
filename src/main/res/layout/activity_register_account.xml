@@ -16,9 +16,10 @@
 
     <EditText
         android:id="@+id/password_id"
-        android:layout_width="261dp"
-        android:layout_height="42dp"
+        android:layout_width="265dp"
+        android:layout_height="48dp"
         android:autoText="true"
+        android:background="@drawable/text_round"
         android:ems="10"
         android:hint="Senha: (Obrigatório)"
         android:password="true"
@@ -26,39 +27,26 @@
         android:textColorHint="#FFFEFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/phone_number"
-        android:layout_width="261dp"
-        android:layout_height="45dp"
-        android:hint="Contato: (Opcional)"
-        android:inputType="phone"
-        android:textColor="#FFEBEE"
-        android:textColorHint="#FFEBEE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364" />
+        app:layout_constraintVertical_bias="0.443" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/email_id"
-        android:layout_width="262dp"
+        android:layout_width="263dp"
         android:layout_height="48dp"
+        android:background="@drawable/text_round"
+        android:drawableStart="@android:drawable/ic_dialog_email"
         android:hint="Email: (Obigatório)"
         android:textColor="#FFEBEE"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281" />
+        app:layout_constraintVertical_bias="0.352" />
 
     <Switch
         android:id="@+id/switch3"
@@ -70,10 +58,10 @@
         android:textColor="#FFEBEE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintVertical_bias="0.541" />
 
     <Switch
         android:id="@+id/switch10"
@@ -85,40 +73,42 @@
         android:textColor="#FFEBEE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569" />
+        app:layout_constraintVertical_bias="0.592" />
 
     <Switch
         android:id="@+id/switch2"
         android:layout_width="258dp"
-        android:layout_height="28dp"
+        android:layout_height="20dp"
         android:checked="true"
         android:text="Ativar notificações de infestação"
         android:textColor="#FFEBEE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.621" />
+        app:layout_constraintVertical_bias="0.642" />
 
     <com.google.android.material.textfield.TextInputEditText
 
         android:id="@+id/username_id"
-        android:layout_width="263dp"
-        android:layout_height="46dp"
-        android:hint="Nome: (Obrigatório)"
+        android:layout_width="268dp"
+        android:layout_height="48dp"
+        android:background="@drawable/text_round"
+        android:drawableStart="@drawable/icon_user"
+        android:hint="  Nome"
         android:textColor="#FFEBEE"
-        android:textColorHighlight="#EAE0E0"
-        android:textColorHint="#FFEBEE"
+        android:textColorHighlight="#009688"
+        android:textColorHint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.198" />
+        app:layout_constraintVertical_bias="0.255" />
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -134,7 +124,7 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748" />
+        app:layout_constraintVertical_bias="0.758" />
 
     <Button
         android:id="@+id/button2"

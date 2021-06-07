@@ -1,7 +1,5 @@
 package app.mosquito.appmosquito.appmosquito;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +8,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.parse.Parse;
 import com.parse.ParseUser;
@@ -40,7 +40,6 @@ public class Activity_register_account extends AppCompatActivity {
         username = (EditText) findViewById(R.id.username_id);
         password = (EditText) findViewById(R.id.password_id);
         email = (EditText) findViewById(R.id.email_id);
-        phoneNumber = (EditText) findViewById(R.id.phone_number);
 
         active_email_notification = (Switch) findViewById(R.id.switch3);
         active_realtime_notification = (Switch) findViewById(R.id.switch10);
@@ -59,7 +58,7 @@ public class Activity_register_account extends AppCompatActivity {
 
             user.setPassword(password.getText().toString());
             user.setEmail(email.getText().toString());
-            user.put("phoneNumber", phoneNumber.getText().toString());
+            user.put("phoneNumber", "99999999");
 
             user.put("email_notification", active_email_notification.isChecked());
             user.put("realtime_notification", active_realtime_notification.isChecked());
