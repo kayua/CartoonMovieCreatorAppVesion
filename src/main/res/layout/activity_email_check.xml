@@ -42,10 +42,11 @@
         android:id="@+id/button"
         android:layout_width="209dp"
         android:layout_height="62dp"
-        android:background="#00897B"
-        android:text="Acessar App"
+        android:background="@drawable/button_round"
         android:onClick="init_section_user"
+        android:text="Acessar App"
 
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
