@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.AppMosquito" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/color_top_bar</item>
+        <item name="colorPrimary">#029E8E</item>
         <item name="colorPrimaryVariant">@color/color_main_bar</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
