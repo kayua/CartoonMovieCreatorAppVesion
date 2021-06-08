@@ -27,8 +27,7 @@
             android:value="AIzaSyBTA_mFf6oSglEz2nfklV-jQUAH4ri1Rao" />
 
         <activity android:name=".Activity_email_check" />
-        <activity
-            android:name=".Activity_user_interface"/>
+
         <activity
             android:name=".Activity_register_account"/>
         <activity android:name=".daemonize" />
@@ -39,7 +38,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".Activity_splash_screen"
+            android:name=".Activity_user_interface"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             tools:ignore="DuplicateActivity">

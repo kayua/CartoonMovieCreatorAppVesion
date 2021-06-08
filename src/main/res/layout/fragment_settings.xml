@@ -36,10 +36,16 @@
             <Switch
                 android:id="@+id/switch10"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="37dp"
                 android:text="   Deteção Ativa"
                 android:textColor="#504D4D"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch11"
@@ -49,6 +55,11 @@
                 android:text="   Economia de energia"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch56"
@@ -58,6 +69,11 @@
                 android:text="   Geolocalização precisa"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch57"
@@ -67,6 +83,11 @@
                 android:text="   Inicialização automática"
                 android:textColor="#504D4D"
                 android:textSize="20sp"/>
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch58"
@@ -76,6 +97,11 @@
                 android:text="   Notificações por email"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch59"
@@ -85,6 +111,11 @@
                 android:text="   Notificações em tempo real"
                 android:textColor="#504D4D"
                 android:textSize="20sp"/>
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch60"
@@ -94,6 +125,11 @@
                 android:text="   Notificações de infestação"
                 android:textColor="#504D4D"
                 android:textSize="20sp"/>
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch61"
@@ -104,6 +140,11 @@
                 android:text="   Notifcações sonoras"
                 android:textColor="#504D4D"
                 android:textSize="20sp"/>
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch62"
@@ -113,6 +154,11 @@
                 android:text="   Filtros avançados"
                 android:textColor="#504D4D"
                 android:textSize="20sp"/>
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch63"
@@ -122,6 +168,11 @@
                 android:text="   Desativar ao rotacionar"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch64"
@@ -131,6 +182,11 @@
                 android:text="   Vigilância noturna"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch65"
@@ -140,6 +196,11 @@
                 android:text="   Vigilância diurna"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch66"
@@ -149,6 +210,11 @@
                 android:text="   Emparelhamento de dispositivo"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch67"
@@ -158,6 +224,11 @@
                 android:text="   Sensor Úmidade"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
 
             <Switch
@@ -168,6 +239,11 @@
                 android:text="   Sensor Pressão"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
 
             <Switch
                 android:id="@+id/switch70"
