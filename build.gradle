@@ -48,6 +48,7 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
     implementation 'org.tensorflow:tensorflow-lite-gpu:2.2.0'
     testImplementation 'junit:junit:4.+'
+    compile 'com.google.maps.android:android-maps-utils:0.4+'
     implementation 'org.tensorflow:tensorflow-android:+'
     implementation "com.github.parse-community.Parse-SDK-Android:parse:1.18.5"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

@@ -25,6 +25,13 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.TileOverlay;
+import com.google.android.gms.maps.model.TileOverlayOptions;
+import com.google.maps.android.heatmaps.Gradient;
+import com.google.maps.android.heatmaps.HeatmapTileProvider;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import app.mosquito.appmosquito.appmosquito.R;
 import app.mosquito.appmosquito.appmosquito.ui.Maps.GPS_Sistem.GpsTracker;
@@ -69,11 +76,7 @@ public class HomeFragment extends Fragment {
 
                 LatLng latLng= new LatLng(latitude, longitude);
                 CameraPosition cameraPosition = new CameraPosition.Builder()
-                        .target(latLng)
-                        .zoom(17)
-                        .bearing(0)                // Sets the orientation of the camera to east
-                        .tilt(40)                   // Sets the tilt of the camera to 30 degrees
-                        .build();
+                        .target(latLng).zoom(17).bearing(0).tilt(40).build();
 
                 mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 Log.i(Double. toString(latitude),Double. toString(longitude));
@@ -97,7 +100,35 @@ public class HomeFragment extends Fragment {
                         .position(new LatLng(latitude ,longitude))
                         .title("Sydney")
                         .snippet("Population: 4,627,300")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon)));
+                        .zIndex(1.0f)
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon)).alpha((float) 0.65));
+
+                List<LatLng> result = new ArrayList<>();
+                result.add(new LatLng(-30.80, -55.77));
+                result.add(new LatLng(-29.89, -55.47));
+                result.add(new LatLng(-29.78, -55.87));
+                int[] colors = {
+                        Color.rgb(50, 200, 50), // green
+                        Color.rgb(200, 50, 50)    // red
+                };
+
+                float[] startPoints = {
+                        0.1f, 1.0f
+                };
+
+                Gradient gradient = new Gradient(colors, startPoints);
+                HeatmapTileProvider provider = new HeatmapTileProvider.Builder().radius(40)
+                        .data(result).opacity(0.2).gradient(gradient)
+                        .build();
+
+
+                HeatmapTileProvider provider1 = new HeatmapTileProvider.Builder().radius(40)
+                        .data(result).opacity(0.8).gradient(gradient)
+                        .build();
+
+
+                // Add a tile overlay to the map, using the heat map tile provider.
+                TileOverlay overlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(provider));
 
 
             }

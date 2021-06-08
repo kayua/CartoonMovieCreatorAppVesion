@@ -1,19 +1,16 @@
 package app.mosquito.appmosquito.appmosquito;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ActivityManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
-import android.widget.EditText;
-import android.widget.Button;
-import android.widget.ToggleButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.parse.Parse;
 import com.parse.ParseUser;
+
+import app.mosquito.appmosquito.appmosquito.ui.Maps.Gradient_map;
 
 public class Activity_splash_screen extends AppCompatActivity {
 
@@ -103,6 +100,8 @@ public class Activity_splash_screen extends AppCompatActivity {
             if (user != null) {
 
                 boolean emailVerified = user.getBoolean("emailVerified");
+                Gradient_map a = new Gradient_map();
+                a.access_account();
 
                 if (emailVerified == true) {
 
