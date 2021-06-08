@@ -121,10 +121,10 @@ public class HomeFragment extends Fragment {
                                     Color.rgb(30, 160, 30),
                                     Color.rgb(160, 30, 30)};
 
-                            float[] startPoints = {0.1f, 1.0f};
+                            float[] gradientLimits = {0.1f, 1.0f};
 
 
-                            Gradient gradientDimension = new Gradient(gradientColors, startPoints);
+                            Gradient gradientDimension = new Gradient(gradientColors, gradientLimits);
                             HeatmapTileProvider structureProvider = new HeatmapTileProvider.Builder()
                                     .radius(25)
                                     .data(arrayCoordinates).opacity(0.2).gradient(gradientDimension)
