@@ -1,6 +1,7 @@
 package app.mosquito.appmosquito.appmosquito.ui.Home;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +15,9 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import app.mosquito.appmosquito.appmosquito.R;
 
@@ -44,13 +46,15 @@ public class HomeFragment extends Fragment {
             @Override
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
+                Circle circle = mMap.addCircle(new CircleOptions()
+                        .center(new LatLng(-29.78, -55.77))
+                        .radius(100)
+                        .strokeColor(0xff018733)
+                        .fillColor(Color.TRANSPARENT)
+                        .strokeWidth(3)
 
-                // For dropping a marker at a point on the Map
-                LatLng sydney = new LatLng(-29.7895716, -55.7685971);
-                mMap.addMarker(new MarkerOptions()
-                         .position(sydney)
-                         .title("Sydney")
-                         .snippet("size: 2,2,2"));
+                );
+
 
                 googleMap.setMyLocationEnabled(true);
             }
