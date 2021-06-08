@@ -13,7 +13,7 @@
         android:orderInCategory="100"
         android:title=""
         android:visible="true"
-        android:onClick="tela_view"
+        android:onClick="screenView"
         app:showAsAction="ifRoom" />
 
 

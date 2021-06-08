@@ -71,7 +71,7 @@
         android:background="@drawable/button_round"
         android:checked="true"
         android:elevation="20dp"
-        android:onClick="tela"
+        android:onClick="screenIntent"
         android:textColor="#F6F2F2"
         android:textOff="Desativar Detecção"
         android:textOn="Ativar Detecção"

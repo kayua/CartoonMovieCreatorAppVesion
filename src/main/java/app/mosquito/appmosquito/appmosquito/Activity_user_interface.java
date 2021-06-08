@@ -6,17 +6,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.google.android.material.navigation.NavigationView;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.navigation.NavigationView;
 
 import app.mosquito.appmosquito.appmosquito.ui.Settings.SettingsFragment;
 
@@ -61,12 +61,12 @@ public class Activity_user_interface extends AppCompatActivity{
     }
 
 
-    public void tela(View view) {
+    public void screenIntent(View view) {
         Intent intent = new Intent(this, daemonize.class);
         startActivity(intent);
     }
 
-    public void tela_view(MenuItem item) {
+    public void screenView(MenuItem item) {
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
