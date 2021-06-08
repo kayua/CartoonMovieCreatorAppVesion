@@ -65,9 +65,9 @@
 
     <ToggleButton
         android:id="@+id/toggleButton3"
-        android:layout_width="198dp"
-        android:layout_height="73dp"
-        android:alpha="0.65"
+        android:layout_width="180dp"
+        android:layout_height="67dp"
+        android:alpha="0.60"
         android:background="@drawable/button_round"
         android:checked="true"
         android:elevation="20dp"
