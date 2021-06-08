@@ -29,6 +29,10 @@ import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.maps.android.heatmaps.Gradient;
 import com.google.maps.android.heatmaps.HeatmapTileProvider;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,37 +102,58 @@ public class HomeFragment extends Fragment {
                 );
                 Marker mSydney = mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(latitude ,longitude))
-                        .title("Sydney")
-                        .snippet("Population: 4,627,300")
+                        .title("Seu local Atual")
+                        .snippet("Dispositivo conectado")
                         .zIndex(1.0f)
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon)).alpha((float) 0.65));
 
-                List<LatLng> result = new ArrayList<>();
-                result.add(new LatLng(-30.80, -55.77));
-                result.add(new LatLng(-29.89, -55.47));
-                result.add(new LatLng(-29.78, -55.87));
-                int[] colors = {
-                        Color.rgb(50, 200, 50), // green
-                        Color.rgb(200, 50, 50)    // red
-                };
+                ParseUser.logInInBackground("Admin", "admin", (user, e) -> {
+                    ParseQuery<ParseObject> query = ParseQuery.getQuery("Detections");
 
-                float[] startPoints = {
-                        0.1f, 1.0f
-                };
+                    try {
 
-                Gradient gradient = new Gradient(colors, startPoints);
-                HeatmapTileProvider provider = new HeatmapTileProvider.Builder().radius(40)
-                        .data(result).opacity(0.2).gradient(gradient)
-                        .build();
+                        List<ParseObject> results = query.find();
 
 
-                HeatmapTileProvider provider1 = new HeatmapTileProvider.Builder().radius(40)
-                        .data(result).opacity(0.8).gradient(gradient)
-                        .build();
+                        for (int i=0; i< results.size(); i++) {
+
+                            ParseObject  b = results.get(i);
+                            ParseObject a = query.get(b.getObjectId());
+
+                            String c = a.getString("latitude");
+                            String d = a.getString("longitude");
+                            List<LatLng> result = new ArrayList<>();
+                            float lat =Float.parseFloat(c);
+                            float log =Float.parseFloat(d);
+
+                            result.add(new LatLng(lat, log));
+
+                            int[] colors = {
+                                    Color.rgb(30, 160, 30), // green
+                                    Color.rgb(160, 30, 30)    // red
+                            };
+
+                            float[] startPoints = {
+                                    0.1f, 1.0f
+                            };
 
 
-                // Add a tile overlay to the map, using the heat map tile provider.
-                TileOverlay overlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(provider));
+                            Gradient gradient = new Gradient(colors, startPoints);
+                            HeatmapTileProvider provider = new HeatmapTileProvider.Builder().radius(25)
+                                    .data(result).opacity(0.2).gradient(gradient)
+                                    .build();
+                            TileOverlay overlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(provider));
+
+
+                        }
+                    } catch (ParseException ei) {
+                        e.printStackTrace();
+                    }
+
+
+                });
+
+
 
 
             }

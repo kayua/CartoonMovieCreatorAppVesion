@@ -10,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.parse.Parse;
 import com.parse.ParseUser;
 
-import app.mosquito.appmosquito.appmosquito.ui.Maps.Gradient_map;
-
 public class Activity_splash_screen extends AppCompatActivity {
 
     String username_registered;
@@ -100,8 +98,7 @@ public class Activity_splash_screen extends AppCompatActivity {
             if (user != null) {
 
                 boolean emailVerified = user.getBoolean("emailVerified");
-                Gradient_map a = new Gradient_map();
-                a.access_account();
+
 
                 if (emailVerified == true) {
 
