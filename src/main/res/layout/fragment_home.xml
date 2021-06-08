@@ -82,4 +82,18 @@
         app:layout_constraintVertical_bias="0.84"
         tools:ignore="OnClick" />
 
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    Nada\ndetectado"
+        android:textColor="#3C5150"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.004" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
