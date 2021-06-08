@@ -41,9 +41,8 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     MapView mMapView;
-    GpsTracker gps;
+    GpsTracker gpsDaemonTracker;
     private GoogleMap googleMap;
-    Context mContext;
     private Context context;
 
     @Override
@@ -70,30 +69,29 @@ public class HomeFragment extends Fragment {
 
             @SuppressLint("MissingPermission")
             @Override
-            public void onMapReady(GoogleMap mMap) {
+            public void onMapReady(GoogleMap fragmentMaps) {
 
-                googleMap = mMap;
+                googleMap = fragmentMaps;
+                gpsDaemonTracker = new GpsTracker(getActivity().getApplicationContext());
+                double relativeLatitude = gpsDaemonTracker.getLatitude();
+                double relativeLongitude = gpsDaemonTracker.getLongitude();
 
-                gps = new GpsTracker(getActivity().getApplicationContext());
-                double latitude = gps.getLatitude();
-                double longitude = gps.getLongitude();
-
-                LatLng latLng= new LatLng(latitude, longitude);
+                LatLng latLng= new LatLng(relativeLatitude, relativeLongitude);
                 CameraPosition cameraPosition = new CameraPosition.Builder()
-                        .target(latLng).zoom(17).bearing(0).tilt(40).build();
+                        .target(latLng).zoom(16).bearing(0).tilt(40).build();
 
-                mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                Log.i(Double. toString(latitude),Double. toString(longitude));
+                fragmentMaps.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                Log.i(Double. toString(relativeLatitude),Double. toString(relativeLongitude));
 
-                mMap.addCircle(new CircleOptions().center(new LatLng(latitude ,longitude))
+                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude ,relativeLongitude))
                         .radius(35).strokeColor(0xff018783)
                         .fillColor(Color.TRANSPARENT).strokeWidth(3));
 
-                mMap.addCircle(new CircleOptions().center(new LatLng(latitude ,longitude))
+                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude ,relativeLongitude))
                         .radius(1).strokeColor(0xff018783)
                         .fillColor(Color.TRANSPARENT).strokeWidth(5));
 
-                mMap.addMarker(new MarkerOptions().position(new LatLng(latitude ,longitude))
+                fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(relativeLatitude ,relativeLongitude))
                         .title("Seu local Atual").snippet("Dispositivo conectado")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon))
                         .alpha((float) 0.65));
@@ -110,28 +108,28 @@ public class HomeFragment extends Fragment {
                         for (int i=0; i< databaseRequest.size(); i++) {
 
                             ParseObject  idInfoRequest = databaseRequest.get(i);
-                            ParseObject a = query.get(idInfoRequest.getObjectId());
+                            ParseObject setFileRequest = query.get(idInfoRequest.getObjectId());
+                            String latitudeRequested = setFileRequest.getString("latitude");
+                            String longitudeRequested = setFileRequest.getString("longitude");
+                            List<LatLng> arrayCoordinates = new ArrayList<>();
+                            float latitudeValue =Float.parseFloat(latitudeRequested);
+                            float longitudevalue =Float.parseFloat(longitudeRequested);
 
-                            String c = a.getString("latitude");
-                            String d = a.getString("longitude");
-                            List<LatLng> result = new ArrayList<>();
-                            float lat =Float.parseFloat(c);
-                            float log =Float.parseFloat(d);
+                            arrayCoordinates.add(new LatLng(latitudeValue, longitudevalue));
 
-                            result.add(new LatLng(lat, log));
-
-                            int[] colors = {
+                            int[] gradientColors = {
                                     Color.rgb(30, 160, 30),
                                     Color.rgb(160, 30, 30)};
 
                             float[] startPoints = {0.1f, 1.0f};
 
 
-                            Gradient gradient = new Gradient(colors, startPoints);
-                            HeatmapTileProvider provider = new HeatmapTileProvider.Builder().radius(25)
-                                    .data(result).opacity(0.2).gradient(gradient)
+                            Gradient gradientDimension = new Gradient(gradientColors, startPoints);
+                            HeatmapTileProvider structureProvider = new HeatmapTileProvider.Builder()
+                                    .radius(25)
+                                    .data(arrayCoordinates).opacity(0.2).gradient(gradientDimension)
                                     .build();
-                            mMap.addTileOverlay(new TileOverlayOptions().tileProvider(provider));
+                            fragmentMaps.addTileOverlay(new TileOverlayOptions().tileProvider(structureProvider));
 
 
                         }
@@ -143,13 +141,8 @@ public class HomeFragment extends Fragment {
                 });
 
 
-
-
             }
         });
-
-        Context context;
-
 
         return root;
     }
