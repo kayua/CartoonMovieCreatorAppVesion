@@ -12,8 +12,8 @@ import com.parse.ParseUser;
 
 public class Activity_splash_screen extends AppCompatActivity {
 
-    String username_registered;
-    String password_registered;
+    String usernameRegistered;
+    String passwordRegistered;
     public static final String PREFS_NAME = "PersonalDatabase";
 
     @Override
@@ -44,17 +44,17 @@ public class Activity_splash_screen extends AppCompatActivity {
                     screen_register();
 
                 }
-            }}, 12000);
+            }}, 10000);
 
     }
 
     private boolean recovery_login() {
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        username_registered = settings.getString("username", "");
-        password_registered = settings.getString("password", "");
+        usernameRegistered = settings.getString("username", "");
+        passwordRegistered = settings.getString("password", "");
 
-        if (username_registered.isEmpty()){
+        if (usernameRegistered.isEmpty()){
 
             return false;
 
@@ -63,7 +63,6 @@ public class Activity_splash_screen extends AppCompatActivity {
             return true;
 
         }
-
 
     }
 
@@ -93,7 +92,7 @@ public class Activity_splash_screen extends AppCompatActivity {
 
     private void access_account(){
 
-        ParseUser.logInInBackground(username_registered, password_registered, (user, e) -> {
+        ParseUser.logInInBackground(usernameRegistered, passwordRegistered, (user, e) -> {
 
             if (user != null) {
 
