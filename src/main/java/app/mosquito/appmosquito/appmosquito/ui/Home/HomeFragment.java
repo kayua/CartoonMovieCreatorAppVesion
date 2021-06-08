@@ -20,12 +20,9 @@ import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.maps.android.heatmaps.Gradient;
 import com.google.maps.android.heatmaps.HeatmapTileProvider;
@@ -56,22 +53,25 @@ public class HomeFragment extends Fragment {
     }
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         mMapView = (MapView) root.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
 
         try {
+
             MapsInitializer.initialize(getActivity().getApplicationContext());
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         mMapView.getMapAsync(new OnMapReadyCallback() {
+
             @SuppressLint("MissingPermission")
             @Override
             public void onMapReady(GoogleMap mMap) {
+
                 googleMap = mMap;
 
                 gps = new GpsTracker(getActivity().getApplicationContext());
@@ -84,41 +84,33 @@ public class HomeFragment extends Fragment {
 
                 mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 Log.i(Double. toString(latitude),Double. toString(longitude));
-                Circle circle = mMap.addCircle(new CircleOptions()
-                        .center(new LatLng(latitude ,longitude))
-                        .radius(35)
-                        .strokeColor(0xff018783)
-                        .fillColor(Color.TRANSPARENT)
-                        .strokeWidth(3)
 
-                );
-                Circle circle1 = mMap.addCircle(new CircleOptions()
-                        .center(new LatLng(latitude ,longitude))
-                        .radius(1)
-                        .strokeColor(0xff018783)
-                        .fillColor(Color.TRANSPARENT)
-                        .strokeWidth(5)
+                mMap.addCircle(new CircleOptions().center(new LatLng(latitude ,longitude))
+                        .radius(35).strokeColor(0xff018783)
+                        .fillColor(Color.TRANSPARENT).strokeWidth(3));
 
-                );
-                Marker mSydney = mMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(latitude ,longitude))
-                        .title("Seu local Atual")
-                        .snippet("Dispositivo conectado")
-                        .zIndex(1.0f)
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon)).alpha((float) 0.65));
+                mMap.addCircle(new CircleOptions().center(new LatLng(latitude ,longitude))
+                        .radius(1).strokeColor(0xff018783)
+                        .fillColor(Color.TRANSPARENT).strokeWidth(5));
+
+                mMap.addMarker(new MarkerOptions().position(new LatLng(latitude ,longitude))
+                        .title("Seu local Atual").snippet("Dispositivo conectado")
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon))
+                        .alpha((float) 0.65));
 
                 ParseUser.logInInBackground("Admin", "admin", (user, e) -> {
+
                     ParseQuery<ParseObject> query = ParseQuery.getQuery("Detections");
 
                     try {
 
-                        List<ParseObject> results = query.find();
+                        List<ParseObject> databaseRequest = query.find();
 
 
-                        for (int i=0; i< results.size(); i++) {
+                        for (int i=0; i< databaseRequest.size(); i++) {
 
-                            ParseObject  b = results.get(i);
-                            ParseObject a = query.get(b.getObjectId());
+                            ParseObject  idInfoRequest = databaseRequest.get(i);
+                            ParseObject a = query.get(idInfoRequest.getObjectId());
 
                             String c = a.getString("latitude");
                             String d = a.getString("longitude");
@@ -129,20 +121,17 @@ public class HomeFragment extends Fragment {
                             result.add(new LatLng(lat, log));
 
                             int[] colors = {
-                                    Color.rgb(30, 160, 30), // green
-                                    Color.rgb(160, 30, 30)    // red
-                            };
+                                    Color.rgb(30, 160, 30),
+                                    Color.rgb(160, 30, 30)};
 
-                            float[] startPoints = {
-                                    0.1f, 1.0f
-                            };
+                            float[] startPoints = {0.1f, 1.0f};
 
 
                             Gradient gradient = new Gradient(colors, startPoints);
                             HeatmapTileProvider provider = new HeatmapTileProvider.Builder().radius(25)
                                     .data(result).opacity(0.2).gradient(gradient)
                                     .build();
-                            TileOverlay overlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(provider));
+                            mMap.addTileOverlay(new TileOverlayOptions().tileProvider(provider));
 
 
                         }
