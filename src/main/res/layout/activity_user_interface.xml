@@ -25,5 +25,15 @@
         android:fitsSystemWindows="true"
         android:alpha="0.75"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer" >
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_gravity="bottom"
+            app:srcCompat="@drawable/side_nav_bar" />
+
+
+    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -37,7 +37,7 @@
         app:layout_constraintHorizontal_bias="0.979"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.009" />
 
     <com.google.android.gms.maps.MapView
 
@@ -65,8 +65,8 @@
 
     <ToggleButton
         android:id="@+id/toggleButton3"
-        android:layout_width="180dp"
-        android:layout_height="67dp"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
         android:alpha="0.60"
         android:background="@drawable/button_round"
         android:checked="true"
@@ -77,9 +77,10 @@
         android:textOn="Ativar Detecção"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84"
+        app:layout_constraintVertical_bias="0.861"
         tools:ignore="OnClick" />
 
     <TextView
@@ -91,9 +92,9 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
