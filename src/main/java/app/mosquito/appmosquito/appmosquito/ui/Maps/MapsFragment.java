@@ -124,7 +124,7 @@ public class MapsFragment extends Fragment {
 
                      @Override
                     public void onCameraChange(CameraPosition cameraPosition) {
-                        if (cameraPosition.zoom > 15) {
+                        if (cameraPosition.zoom > 12) {
 
                             for(int i=0; i<listMarker.size(); i++){
 
