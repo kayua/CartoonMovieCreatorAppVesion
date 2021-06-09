@@ -119,7 +119,7 @@ public class MapsFragment extends Fragment {
 
                             Gradient gradientDimension = new Gradient(gradientColors, gradientLimits);
                             HeatmapTileProvider structureProvider = new HeatmapTileProvider.Builder()
-                                    .radius(25)
+                                    .radius(50)
                                     .data(arrayCoordinates).opacity(0.2).gradient(gradientDimension)
                                     .build();
                             fragmentMaps.addTileOverlay(new TileOverlayOptions().tileProvider(structureProvider));
