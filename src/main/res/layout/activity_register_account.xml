@@ -16,8 +16,8 @@
 
     <EditText
         android:id="@+id/password_id"
-        android:layout_width="265dp"
-        android:layout_height="48dp"
+        android:layout_width="268dp"
+        android:layout_height="47dp"
         android:autoText="true"
         android:background="@drawable/text_round"
         android:drawableStart="@drawable/icon_password"
@@ -36,8 +36,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/email_id"
-        android:layout_width="263dp"
-        android:layout_height="48dp"
+        android:layout_width="268dp"
+        android:layout_height="47dp"
         android:background="@drawable/text_round"
         android:drawableStart="@drawable/icon_email"
         android:hint="Email"
@@ -106,7 +106,7 @@
 
         android:id="@+id/username_id"
         android:layout_width="268dp"
-        android:layout_height="48dp"
+        android:layout_height="47dp"
         android:background="@drawable/text_round"
         android:drawableStart="@drawable/icon_user"
         android:hint="Nome"

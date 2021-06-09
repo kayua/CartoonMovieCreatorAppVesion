@@ -7,39 +7,36 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
-import android.media.AudioFormat;
+import android.hardware.SensorManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
-
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
-
+import com.parse.ParseObject;
 import org.tensorflow.lite.Interpreter;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
-
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.MFCC;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFileException;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavRecordFile;
+import app.mosquito.appmosquito.appmosquito.ui.Maps.GPS_Sistem.GpsTracker;
 
 import static app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile.openWavFile;
 
 public class ForegroundService extends Service {
 
     public static final String CHANNEL_ID = "Serviço de plano de fundo";
-    private static final String mFileName = null;
-
-    private final int RECORDER_SAMPLE_RATE = 44100;
-    private final int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_STEREO;
-    private final int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
+    private SensorManager sensorManager;
     protected Interpreter tflite;
 
 
@@ -136,6 +133,7 @@ public class ForegroundService extends Service {
             manager.createNotificationChannel(serviceChannel);
         }
     }
+
     private MappedByteBuffer loadModelFile(String file) throws IOException
     {
         AssetFileDescriptor assetFileDescriptor = this.getAssets().openFd(file);
@@ -148,7 +146,7 @@ public class ForegroundService extends Service {
         return fileChannel.map(FileChannel.MapMode.READ_ONLY,startOffset,len);
     }
 
-    public int doInference(float[][][][] input) throws IOException {
+    public void doInference(float[][][][] input) throws IOException {
 
         Interpreter interpreter = null;
         float[] output_signal = new float[23];
@@ -184,11 +182,14 @@ public class ForegroundService extends Service {
             }
 
 
-
-
         }
-        Log.i("RESULTADO: ", String.valueOf(indice));
-        return indice;
+
+
+        if(indice == 0){
+            Log.i("RESULTADO: ", "*****************************");
+            //registerDetection();
+        }
+
 
     }
 
@@ -210,7 +211,6 @@ public class ForegroundService extends Service {
     return f;
 
     }
-
 
     private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
 
@@ -237,4 +237,29 @@ public class ForegroundService extends Service {
 
     }
 
+    private void registerDetection(){
+
+        ParseObject entity = new ParseObject("Detections");
+        DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
+        String date = df.format(Calendar.getInstance().getTime());
+        GpsTracker gpsDaemonTracker = new GpsTracker(this);
+        double relativeLatitude = gpsDaemonTracker.getLatitude();
+        double relativeLongitude = gpsDaemonTracker.getLongitude();
+        entity.put("code_type", 1);
+        entity.put("humidity", 1);
+        entity.put("Temperature", "16.1");
+        entity.put("Luminosity", 1);
+        entity.put("DataTime", date);
+        entity.put("latitude", String.valueOf(relativeLatitude));
+        entity.put("longitude", String.valueOf(relativeLongitude));
+        entity.put("id_type", 1);
+
+
+        try {
+            entity.saveInBackground(e -> { });
+        }catch (Exception e){
+
+        }
+
+    }
 }
