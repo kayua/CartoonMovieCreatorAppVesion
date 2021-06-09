@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +24,12 @@ public class StatisticsFragment extends Fragment {
         galleryViewModel =
                 new ViewModelProvider(this).get(StatisticsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_statistics, container, false);
+
+        WebView webView = (WebView) root.findViewById(R.id.webview_statistics);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setBuiltInZoomControls(true);
+
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

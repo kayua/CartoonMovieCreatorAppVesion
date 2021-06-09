@@ -1,6 +1,7 @@
 package app.mosquito.appmosquito.appmosquito;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +25,9 @@ import app.mosquito.appmosquito.appmosquito.ui.Settings.SettingsFragment;
 public class Activity_user_interface extends AppCompatActivity{
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    String usernameRegistered;
+    String passwordRegistered;
+    public static final String PREFS_NAME = "PersonalDatabase";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +41,13 @@ public class Activity_user_interface extends AppCompatActivity{
         NavigationView navigationView = findViewById(R.id.nav_view);
         TextView email_textview = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textView8);
         String text = new String();
-        text = "  "+
-        email_textview.setText("test");
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        usernameRegistered = settings.getString("username", "");
+        passwordRegistered = settings.getString("password", "");
+
+        text = "  Olá, "+usernameRegistered;
+        email_textview.setText(text);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_maps, R.id.nav_history,
                 R.id.nav_message, R.id.nav_statistics, R.id.nav_information, R.id.action_settings)
