@@ -57,7 +57,7 @@
         android:id="@+id/button"
         android:layout_width="209dp"
         android:layout_height="62dp"
-        android:background="@drawable/button_round"
+        android:background="@drawable/button_round_register"
         android:onClick="init_section_user"
         android:text="Acessar App"
 
