@@ -33,8 +33,8 @@
 
     <fragment
         android:id="@+id/nav_message"
-        android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
-        android:label="@string/menu_message"
+        android:name="app.mosquito.appmosquito.appmosquito.ui.Message.MessageFragment"
+        android:label="Dúvidas"
         tools:layout="@layout/fragment_message" />
 
     <fragment
