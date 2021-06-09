@@ -93,7 +93,7 @@ public class HomeFragment extends Fragment {
 
                 fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(relativeLatitude ,relativeLongitude))
                         .title("Seu local Atual").snippet("Dispositivo conectado")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon))
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_users))
                         .alpha((float) 0.65));
 
                 ParseUser.logInInBackground("admin", "admin", (user, e) -> {
@@ -127,7 +127,7 @@ public class HomeFragment extends Fragment {
                             Gradient gradientDimension = new Gradient(gradientColors, gradientLimits);
                             HeatmapTileProvider structureProvider = new HeatmapTileProvider.Builder()
                                     .radius(25)
-                                    .data(arrayCoordinates).opacity(0.2).gradient(gradientDimension)
+                                    .data(arrayCoordinates).opacity(0.15).gradient(gradientDimension)
                                     .build();
                             fragmentMaps.addTileOverlay(new TileOverlayOptions().tileProvider(structureProvider));
 

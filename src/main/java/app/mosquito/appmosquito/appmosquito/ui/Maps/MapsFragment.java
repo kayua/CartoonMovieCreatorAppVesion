@@ -86,7 +86,7 @@ public class MapsFragment extends Fragment {
 
                 fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(relativeLatitude ,relativeLongitude))
                         .title("Seu local Atual").snippet("Dispositivo conectado")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon))
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_users))
                         .alpha((float) 0.65));
 
                 ParseUser.logInInBackground("admin", "admin", (user, e) -> {
@@ -124,6 +124,10 @@ public class MapsFragment extends Fragment {
                                     .build();
                             fragmentMaps.addTileOverlay(new TileOverlayOptions().tileProvider(structureProvider));
 
+                            fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(latitudeValue ,longitudevalue))
+                                    .title("Seu local Atual").snippet("Dispositivo conectado")
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_mosquito))
+                                    .alpha((float) 0.65));
 
                         }
                     } catch (ParseException ei) {
