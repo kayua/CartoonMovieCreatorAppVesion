@@ -20,7 +20,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.maps.android.heatmaps.Gradient;
@@ -36,10 +35,14 @@ import java.util.List;
 import app.mosquito.appmosquito.appmosquito.R;
 import app.mosquito.appmosquito.appmosquito.ui.Maps.GPS_Sistem.GpsTracker;
 
-public class MapsFragment extends Fragment {
+public class MapsFragmentBackup extends Fragment {
 
     MapView mMapView;
     private GoogleMap googleMap;
+
+    public GoogleMap getGoogleMap() {
+        return googleMap;
+    }
 
     GpsTracker gpsDaemonTracker;
 
@@ -69,7 +72,26 @@ public class MapsFragment extends Fragment {
                 gpsDaemonTracker = new GpsTracker(getActivity().getApplicationContext());
                 double relativeLatitude = gpsDaemonTracker.getLatitude();
                 double relativeLongitude = gpsDaemonTracker.getLongitude();
-                List<Marker> listMarker = new ArrayList<Marker>();
+
+                LatLng latLng= new LatLng(relativeLatitude, relativeLongitude);
+                CameraPosition cameraPosition = new CameraPosition.Builder()
+                        .target(latLng).zoom(16).bearing(0).tilt(40).build();
+
+                fragmentMaps.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                Log.i(Double. toString(relativeLatitude),Double. toString(relativeLongitude));
+
+                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude ,relativeLongitude))
+                        .radius(35).strokeColor(0xff018783)
+                        .fillColor(Color.TRANSPARENT).strokeWidth(3));
+
+                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude ,relativeLongitude))
+                        .radius(1).strokeColor(0xff018783)
+                        .fillColor(Color.TRANSPARENT).strokeWidth(5));
+
+                fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(relativeLatitude ,relativeLongitude))
+                        .title("Seu local Atual").snippet("Dispositivo conectado")
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_users))
+                        .alpha((float) 0.65));
 
                 ParseUser.logInInBackground("admin", "admin", (user, e) -> {
 
@@ -106,10 +128,10 @@ public class MapsFragment extends Fragment {
                                     .build();
                             fragmentMaps.addTileOverlay(new TileOverlayOptions().tileProvider(structureProvider));
 
-                            listMarker.add(fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(latitudeValue ,longitudevalue))
+                            fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(latitudeValue ,longitudevalue))
                                     .title("Seu local Atual").snippet("Dispositivo conectado")
                                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_mosquito))
-                                    .alpha((float) 0.65)));
+                                    .alpha((float) 0.65));
 
                         }
                     } catch (ParseException ei) {
@@ -119,61 +141,10 @@ public class MapsFragment extends Fragment {
 
                 });
 
-                fragmentMaps.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
-
-
-                     @Override
-                    public void onCameraChange(CameraPosition cameraPosition) {
-                        if (cameraPosition.zoom > 15) {
-
-                            for(int i=0; i<listMarker.size(); i++){
-
-                                listMarker.get(i).setVisible(true);
-
-                            }
-
-
-                        }else {
-
-                            for(int i=0; i<listMarker.size(); i++){
-
-                                listMarker.get(i).setVisible(false);
-
-                            }
-
-
-
-                        }
-
-
-                    }
-                });
-
-
-
-                LatLng latLng= new LatLng(relativeLatitude, relativeLongitude);
-                CameraPosition cameraPosition = new CameraPosition.Builder()
-                        .target(latLng).zoom(16).bearing(0).tilt(40).build();
-
-                fragmentMaps.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                Log.i(Double. toString(relativeLatitude),Double. toString(relativeLongitude));
-
-                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude ,relativeLongitude))
-                        .radius(35).strokeColor(0xff018783)
-                        .fillColor(Color.TRANSPARENT).strokeWidth(3));
-
-                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude ,relativeLongitude))
-                        .radius(1).strokeColor(0xff018783)
-                        .fillColor(Color.TRANSPARENT).strokeWidth(5));
-
-                fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(relativeLatitude ,relativeLongitude))
-                        .title("Seu local Atual").snippet("Dispositivo conectado")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_users))
-                        .alpha((float) 0.65));
-
-
 
             }
+
+
         });
 
         return rootView;
