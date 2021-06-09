@@ -96,7 +96,7 @@ public class HomeFragment extends Fragment {
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_icon))
                         .alpha((float) 0.65));
 
-                ParseUser.logInInBackground("Admin", "admin", (user, e) -> {
+                ParseUser.logInInBackground("admin", "admin", (user, e) -> {
 
                     ParseQuery<ParseObject> query = ParseQuery.getQuery("Detections");
 
