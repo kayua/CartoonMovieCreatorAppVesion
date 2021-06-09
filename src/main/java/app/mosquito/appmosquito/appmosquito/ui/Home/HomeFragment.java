@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -44,6 +45,7 @@ public class HomeFragment extends Fragment {
     GpsTracker gpsDaemonTracker;
     private GoogleMap googleMap;
     private Context context;
+    private TextView userName;
 
     @Override
     public void onAttach(Context context) {
@@ -55,6 +57,7 @@ public class HomeFragment extends Fragment {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         mMapView = (MapView) root.findViewById(R.id.mapView);
+
         mMapView.onCreate(savedInstanceState);
 
         try {
@@ -75,6 +78,7 @@ public class HomeFragment extends Fragment {
                 gpsDaemonTracker = new GpsTracker(getActivity().getApplicationContext());
                 double relativeLatitude = gpsDaemonTracker.getLatitude();
                 double relativeLongitude = gpsDaemonTracker.getLongitude();
+
 
                 LatLng latLng= new LatLng(relativeLatitude, relativeLongitude);
                 CameraPosition cameraPosition = new CameraPosition.Builder()
