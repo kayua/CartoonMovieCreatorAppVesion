@@ -49,8 +49,8 @@ public class Activity_user_interface extends AppCompatActivity{
         text = "  Olá, "+usernameRegistered;
         email_textview.setText(text);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_maps, R.id.nav_history,
-                R.id.nav_message, R.id.nav_statistics, R.id.nav_information, R.id.action_settings)
+                R.id.nav_home, R.id.nav_maps, R.id.nav_statistics,
+                R.id.nav_message, R.id.nav_history, R.id.nav_information, R.id.action_settings)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

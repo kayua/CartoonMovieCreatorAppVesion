@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,28 +11,70 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class StatisticsFragment extends Fragment {
 
     private StatisticsViewModel galleryViewModel;
-
+    public static final String ASSET_PATH = "";
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel =
                 new ViewModelProvider(this).get(StatisticsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_statistics, container, false);
 
-        WebView webView = (WebView) root.findViewById(R.id.webview_statistics);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setBuiltInZoomControls(true);
+        BarChart bchart = (BarChart) root.findViewById(R.id.barchart);
 
+        ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
+
+        for (int i = (int) 0; i < 10 + 1; i++) {
+            float val = (float) (Math.random());
+            yVals1.add(new BarEntry(i, val));
+        }
+
+        BarDataSet set1;
+
+        set1 = new BarDataSet(yVals1, "The year 2017");
+        set1.addColor(1);
+        set1.addColor(200);
+
+        ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
+        dataSets.add(set1);
+
+        BarData data = new BarData(dataSets);
+
+        data.setValueTextSize(10f);
+        data.setBarWidth(0.9f);
+
+        bchart.setTouchEnabled(false);
+        bchart.setData(data);
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
             }
         });
         return root;
+    }
+
+
+
+    private static byte[] readFully(InputStream in) throws IOException {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        for (int count; (count = in.read(buffer)) != -1; ) {
+            out.write(buffer, 0, count);
+        }
+        return out.toByteArray();
     }
 }

@@ -20,16 +20,16 @@
         tools:layout="@layout/fragment_maps" />
 
     <fragment
+        android:id="@+id/nav_statistics"
+        android:name="app.mosquito.appmosquito.appmosquito.ui.Statistics.StatisticsFragment"
+        android:label="@string/menu_statistics"
+        tools:layout="@layout/fragment_statistics" />
+
+    <fragment
         android:id="@+id/nav_information"
         android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
         android:label="@string/menu_information"
         tools:layout="@layout/fragment_information" />
-
-    <fragment
-        android:id="@+id/nav_statistics"
-        android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
-        android:label="@string/menu_statistics"
-        tools:layout="@layout/fragment_statistics" />
 
     <fragment
         android:id="@+id/nav_message"

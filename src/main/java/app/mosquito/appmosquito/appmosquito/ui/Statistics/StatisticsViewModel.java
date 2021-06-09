@@ -11,9 +11,11 @@ public class StatisticsViewModel extends ViewModel {
     public StatisticsViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is gallery fragment");
+
     }
 
     public LiveData<String> getText() {
         return mText;
     }
 }
+
