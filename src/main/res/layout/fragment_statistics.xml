@@ -67,6 +67,11 @@
             </LinearLayout>
 
         </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="4px"
+            android:src="@drawable/gradient_color_background" />
 
         <TextView
             android:id="@+id/textView155"
@@ -76,25 +81,133 @@
             android:text="Detecção Mensal -  local"
             android:textColor="#009688"
             android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="265dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+            <LinearLayout
+                android:layout_width="14dp"
+                android:layout_height="275dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="50dp">
+
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart2"
+                android:layout_width="330dp"
+                android:layout_height="264dp"
+                android:layout_gravity="bottom" />
+
+            <LinearLayout
+                android:layout_width="49dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="50dp">
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="4px"
+            android:src="@drawable/gradient_color_background" />
+
         <TextView
-            android:id="@+id/text_home"
-            android:layout_width="339dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/textView156"
+            android:layout_width="375dp"
+            android:layout_height="43dp"
+            android:gravity="center"
+            android:text="Detecção Diária -  Região"
+            android:textColor="#009688"
+            android:textSize="18sp" />
 
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/barchart2"
-            android:layout_width="371dp"
-            android:layout_height="385dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="265dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
 
+            <LinearLayout
+                android:layout_width="14dp"
+                android:layout_height="275dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="50dp">
+
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart3"
+                android:layout_width="330dp"
+                android:layout_height="264dp"
+                android:layout_gravity="bottom" />
+
+            <LinearLayout
+                android:layout_width="49dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="50dp">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="4px"
+            android:src="@drawable/gradient_color_background" />
+
+        <TextView
+            android:id="@+id/textView1566"
+            android:layout_width="375dp"
+            android:layout_height="43dp"
+            android:gravity="center"
+            android:text="Detecção Mensal -  Região"
+            android:textColor="#009688"
+            android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="265dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+            <LinearLayout
+                android:layout_width="14dp"
+                android:layout_height="275dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="50dp">
+
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart4"
+                android:layout_width="330dp"
+                android:layout_height="264dp"
+                android:layout_gravity="bottom" />
+
+            <LinearLayout
+                android:layout_width="49dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="50dp">
+
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

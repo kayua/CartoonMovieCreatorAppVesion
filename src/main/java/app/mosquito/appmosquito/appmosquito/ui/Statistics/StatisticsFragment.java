@@ -28,7 +28,7 @@ import app.mosquito.appmosquito.appmosquito.R;
 public class StatisticsFragment extends Fragment {
 
     private StatisticsViewModel galleryViewModel;
-    public static final String ASSET_PATH = "";
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel =
@@ -36,7 +36,9 @@ public class StatisticsFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_statistics, container, false);
 
         BarChart bchart = (BarChart) root.findViewById(R.id.barchart);
+        BarChart bchart2 = (BarChart) root.findViewById(R.id.barchart2);
         bchart.setBorderColor(1);
+        bchart2.setBorderColor(1);
         ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
 
         for (int i = (int) 0; i < 12 + 1; i++) {
@@ -60,7 +62,9 @@ public class StatisticsFragment extends Fragment {
         data.setBarWidth(0.9f);
 
         bchart.setTouchEnabled(false);
+        bchart2.setTouchEnabled(false);
         bchart.setData(data);
+        bchart2.setData(data);
 
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
