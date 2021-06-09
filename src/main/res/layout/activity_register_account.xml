@@ -144,7 +144,7 @@
         android:onClick="createUser"
         android:text="Inscreva-se"
         android:textColor="#FAF9F9"
-        android:background="@drawable/button_round"
+        android:background="@drawable/button_round_register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -36,7 +36,7 @@
             <Switch
                 android:id="@+id/switch10"
                 android:layout_width="match_parent"
-                android:layout_height="37dp"
+                android:layout_height="39dp"
                 android:text="   Deteção Ativa"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
@@ -50,7 +50,7 @@
             <Switch
                 android:id="@+id/switch11"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Economia de energia"
                 android:textColor="#504D4D"
@@ -64,7 +64,7 @@
             <Switch
                 android:id="@+id/switch56"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Geolocalização precisa"
                 android:textColor="#504D4D"
@@ -78,11 +78,11 @@
             <Switch
                 android:id="@+id/switch57"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Inicialização automática"
                 android:textColor="#504D4D"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="match_parent"
@@ -92,7 +92,7 @@
             <Switch
                 android:id="@+id/switch58"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Notificações por email"
                 android:textColor="#504D4D"
@@ -106,11 +106,11 @@
             <Switch
                 android:id="@+id/switch59"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Notificações em tempo real"
                 android:textColor="#504D4D"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
             <ImageView
                 android:id="@+id/imageView10"
                 android:layout_width="match_parent"
@@ -120,11 +120,11 @@
             <Switch
                 android:id="@+id/switch60"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Notificações de infestação"
                 android:textColor="#504D4D"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
             <ImageView
                 android:id="@+id/imageView11"
                 android:layout_width="match_parent"
@@ -134,12 +134,12 @@
             <Switch
                 android:id="@+id/switch61"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:shadowColor="#E1C4C4"
                 android:text="   Notifcações sonoras"
                 android:textColor="#504D4D"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
             <ImageView
                 android:id="@+id/imageView12"
                 android:layout_width="match_parent"
@@ -149,11 +149,11 @@
             <Switch
                 android:id="@+id/switch62"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Filtros avançados"
                 android:textColor="#504D4D"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
             <ImageView
                 android:id="@+id/imageView14"
                 android:layout_width="match_parent"
@@ -163,7 +163,7 @@
             <Switch
                 android:id="@+id/switch63"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Desativar ao rotacionar"
                 android:textColor="#504D4D"
@@ -177,7 +177,7 @@
             <Switch
                 android:id="@+id/switch64"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Vigilância noturna"
                 android:textColor="#504D4D"
@@ -191,7 +191,7 @@
             <Switch
                 android:id="@+id/switch65"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Vigilância diurna"
                 android:textColor="#504D4D"
@@ -205,7 +205,7 @@
             <Switch
                 android:id="@+id/switch66"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Emparelhamento de dispositivo"
                 android:textColor="#504D4D"
@@ -219,7 +219,7 @@
             <Switch
                 android:id="@+id/switch67"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Sensor Úmidade"
                 android:textColor="#504D4D"
@@ -234,7 +234,7 @@
             <Switch
                 android:id="@+id/switch69"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Sensor Pressão"
                 android:textColor="#504D4D"
@@ -248,7 +248,7 @@
             <Switch
                 android:id="@+id/switch70"
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Sensor Luminosidade"
                 android:textColor="#504D4D"
