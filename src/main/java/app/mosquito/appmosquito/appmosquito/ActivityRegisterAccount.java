@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.parse.Parse;
 import com.parse.ParseUser;
 
-public class Activity_register_account extends AppCompatActivity {
+public class ActivityRegisterAccount extends AppCompatActivity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
     private EditText username, password, email, phoneNumber;
@@ -73,7 +73,7 @@ public class Activity_register_account extends AppCompatActivity {
                         Toast.makeText(this, "Cadastro efetuado com sucesso", Toast.LENGTH_SHORT).show();
 
                         store_login();
-                        Intent i = new Intent(Activity_register_account.this, Activity_email_check.class);
+                        Intent i = new Intent(ActivityRegisterAccount.this, ActivityEmailChecking.class);
                         finish();
                         startActivity(i);
 

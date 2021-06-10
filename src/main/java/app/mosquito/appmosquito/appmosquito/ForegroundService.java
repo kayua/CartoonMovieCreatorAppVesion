@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.system.Services;
+package app.mosquito.appmosquito.appmosquito;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -31,13 +31,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import app.mosquito.appmosquito.appmosquito.R;
-import app.mosquito.appmosquito.appmosquito.system.Audio.MelFrequency;
-import app.mosquito.appmosquito.appmosquito.system.Audio.ReaderWav;
-import app.mosquito.appmosquito.appmosquito.system.Audio.WavFileException;
-import app.mosquito.appmosquito.appmosquito.system.Audio.RecorderWav;
+import app.mosquito.appmosquito.appmosquito.Audio.MelFrequency;
+import app.mosquito.appmosquito.appmosquito.Audio.ReaderWav;
+import app.mosquito.appmosquito.appmosquito.Audio.WavFileException;
+import app.mosquito.appmosquito.appmosquito.Audio.RecorderWav;
 
-import static app.mosquito.appmosquito.appmosquito.system.Audio.ReaderWav.openWavFile;
+import static app.mosquito.appmosquito.appmosquito.Audio.ReaderWav.openWavFile;
 
 public class ForegroundService extends Service {
 

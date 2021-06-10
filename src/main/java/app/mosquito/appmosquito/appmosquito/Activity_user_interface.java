@@ -20,7 +20,6 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
-import app.mosquito.appmosquito.appmosquito.system.Services.DaemonService;
 import app.mosquito.appmosquito.appmosquito.ui.Settings.SettingsFragment;
 
 public class Activity_user_interface extends AppCompatActivity{

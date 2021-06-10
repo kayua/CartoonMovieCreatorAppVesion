@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.parse.Parse;
 import com.parse.ParseUser;
 
-public class Activity_email_check extends AppCompatActivity {
+public class ActivityEmailChecking extends AppCompatActivity {
 
     String username_registered;
     String password_registered;
@@ -56,7 +56,7 @@ public class Activity_email_check extends AppCompatActivity {
 
     public void open_mosquito_app(View view){
 
-        Intent i = new Intent(Activity_email_check.this, Activity_user_interface.class);
+        Intent i = new Intent(ActivityEmailChecking.this, Activity_user_interface.class);
         finish();
         startActivity(i);
 

@@ -68,7 +68,7 @@ public class Activity_splash_screen extends AppCompatActivity {
 
     private void screen_check_email(){
 
-        Intent s = new Intent(Activity_splash_screen.this, Activity_email_check.class);
+        Intent s = new Intent(Activity_splash_screen.this, ActivityEmailChecking.class);
         finish();
         startActivity(s);
 
@@ -84,7 +84,7 @@ public class Activity_splash_screen extends AppCompatActivity {
 
     private void screen_register(){
 
-        Intent s = new Intent(Activity_splash_screen.this, Activity_register_account.class);
+        Intent s = new Intent(Activity_splash_screen.this, ActivityRegisterAccount.class);
         finish();
         startActivity(s);
 

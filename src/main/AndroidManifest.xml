@@ -26,16 +26,16 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBTA_mFf6oSglEz2nfklV-jQUAH4ri1Rao" />
 
-        <activity android:name=".Activity_email_check" />
+        <activity android:name=".ActivityEmailChecking" />
 
         <activity
-            android:name=".Activity_register_account"/>
+            android:name=".ActivityRegisterAccount"/>
         <activity
             android:name=".Activity_user_interface"/>
-        <activity android:name=".system.Services.DaemonService" />
+        <activity android:name=".DaemonService" />
 
         <service
-            android:name=".system.Services.ForegroundService"
+            android:name=".ForegroundService"
             android:enabled="true"
             android:exported="true" />
 
