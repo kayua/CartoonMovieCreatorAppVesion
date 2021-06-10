@@ -30,7 +30,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import app.mosquito.appmosquito.appmosquito.ui.Audio.MFCC;
+import app.mosquito.appmosquito.appmosquito.ui.Audio.MelFrequency;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFileException;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavRecordFile;
@@ -227,11 +227,11 @@ public class ForegroundService extends Service {
         final int BUF_SIZE = 16000;
 
         double[] buffer = new double[BUF_SIZE * numChannels];
-        MFCC mfccConvert = new MFCC();
+        MelFrequency mfccConvert = new MelFrequency();
 
         readWavFile.readFrames(buffer, BUF_SIZE);
         int i = 0;
-        float[][][] mfccInput = mfccConvert.processBulkSpectrograms(buffer, 60);
+        float[][][] mfccInput = mfccConvert.processBulkSpectrogram(buffer, 60);
 
         for(i=0; i< mfccInput.length; i++){
             float[][] a = mfccInput[i];

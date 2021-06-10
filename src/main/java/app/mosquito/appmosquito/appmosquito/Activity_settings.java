@@ -1,10 +1,10 @@
 package app.mosquito.appmosquito.appmosquito;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-import app.mosquito.appmosquito.appmosquito.ui.main.ActivitySettingsFragment;
+import androidx.appcompat.app.AppCompatActivity;
+
+import app.mosquito.appmosquito.appmosquito.ui.Main.ActivitySettingsFragment;
 
 public class Activity_settings extends AppCompatActivity {
 

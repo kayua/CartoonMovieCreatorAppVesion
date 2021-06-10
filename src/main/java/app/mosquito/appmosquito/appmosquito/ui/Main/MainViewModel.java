@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.ui.main;
+package app.mosquito.appmosquito.appmosquito.ui.Main;
 
 import androidx.lifecycle.ViewModel;
 
