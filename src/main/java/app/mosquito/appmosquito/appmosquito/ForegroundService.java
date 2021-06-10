@@ -32,11 +32,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import app.mosquito.appmosquito.appmosquito.ui.Audio.MelFrequency;
-import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile;
+import app.mosquito.appmosquito.appmosquito.ui.Audio.ReaderWav;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFileException;
-import app.mosquito.appmosquito.appmosquito.ui.Audio.WavRecordFile;
+import app.mosquito.appmosquito.appmosquito.ui.Audio.RecorderWav;
 
-import static app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile.openWavFile;
+import static app.mosquito.appmosquito.appmosquito.ui.Audio.ReaderWav.openWavFile;
 
 public class ForegroundService extends Service {
 
@@ -94,7 +94,7 @@ public class ForegroundService extends Service {
     private void startRecord(){
 
         File path = Environment.getDataDirectory();
-        WavRecordFile waveRecorder = new WavRecordFile(path.getPath());
+        RecorderWav waveRecorder = new RecorderWav(path.getPath());
         waveRecorder.startRecording();
         try {
             Thread.sleep(2000);
@@ -227,7 +227,7 @@ public class ForegroundService extends Service {
     private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
 
 
-        WavFile readWavFile = openWavFile(new File("/storage/emulated/0/data/test.wav"));
+        ReaderWav readWavFile = openWavFile(new File("/storage/emulated/0/data/test.wav"));
 
         int numChannels = readWavFile.getNumChannels();
 

@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class WavFile
+public class ReaderWav
 {
     private enum IOState {READING, WRITING, CLOSED};
     private final static int BUFFER_SIZE = 4096;
@@ -32,7 +32,7 @@ public class WavFile
     private int bytesRead;
     private long frameCounter;
 
-    private WavFile()
+    private ReaderWav()
     {
         buffer = new byte[BUFFER_SIZE];
     }
@@ -42,10 +42,10 @@ public class WavFile
         return numChannels;
     }
 
-    public static WavFile openWavFile(File file) throws IOException, WavFileException
+    public static ReaderWav openWavFile(File file) throws IOException, WavFileException
     {
 
-        WavFile wavFile = new WavFile();
+        ReaderWav wavFile = new ReaderWav();
         wavFile.file = file;
         wavFile.iStream = new FileInputStream(file);
         int bytesRead = wavFile.iStream.read(wavFile.buffer, 0, 12);
