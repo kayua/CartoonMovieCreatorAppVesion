@@ -67,11 +67,21 @@ public class RecognizeFragment extends Fragment {
                     //deprecated in API 26
                     vs.vibrate(500);
                 }
+
                 startRecord();
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    vs.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                } else {
+                    //deprecated in API 26
+                    vs.vibrate(500);
+                }
             }
         });
+
+
         List<PieEntry> pieEntires = new ArrayList<>();
-        for( int i = 0 ; i<4;i++){
+        for( int i = 0 ; i<2;i++){
             pieEntires.add(new PieEntry(i,i));
         }
         PieDataSet dataSet = new PieDataSet(pieEntires,"");
@@ -81,14 +91,13 @@ public class RecognizeFragment extends Fragment {
         pieChart.setData(data);
         pieChart.invalidate();
         data.setDrawValues(true);
-        pieChart.setCenterText("50% \n ");
-        pieChart.setDrawEntryLabels(false);
+        pieChart.setCenterText("Inicie a gravação \n ");
+        pieChart.setCenterTextSize(18);
         pieChart.setContentDescription("");
-        pieChart.setEntryLabelTextSize(12);
         pieChart.setHoleRadius(60);
         Legend legend = pieChart.getLegend();
         legend.setForm(Legend.LegendForm.CIRCLE);
-        legend.setTextSize(12);
+        legend.setTextSize(40);
         legend.setFormSize(20);
         legend.setFormToTextSpace(2);
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -151,18 +160,28 @@ public class RecognizeFragment extends Fragment {
         PieChart pieChart = (PieChart) getActivity().findViewById(R.id.pieChart_sound);
 
         List<PieEntry> pieEntires = new ArrayList<>();
+        float percentual = output_signal_return[0][0];
+        percentual += output_signal_return[0][1];
+        percentual += output_signal_return[0][2];
+        percentual += output_signal_return[0][3];
         for( int i = 0 ; i<4;i++){
-            pieEntires.add(new PieEntry(30,89));
+            pieEntires.add(new PieEntry((output_signal_return[0][i]/ percentual)*10,89));
         }
         PieDataSet dataSet = new PieDataSet(pieEntires,"");
         dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
         PieData data = new PieData(dataSet);
+
+
         data.setDrawValues(true);
         pieChart.setData(data);
 
         if(indice == 0){
             Log.i("RESULTADO: ", "*****************************");
-            //registerDetection();
+            pieChart.setCenterText("Aedes Aegipty Detectado ");
+        }else{
+
+            pieChart.setCenterText("Não Aedes Aegipty ");
+
         }
         pieChart.notifyDataSetChanged();
 

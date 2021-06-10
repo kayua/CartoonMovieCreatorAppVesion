@@ -27,10 +27,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBTA_mFf6oSglEz2nfklV-jQUAH4ri1Rao" />
 
-        <activity android:name=".ActivityEmailChecking" />
+        <activity android:name=".ActivityEmailChecking"
+            android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ActivityRegisterAccount"/>
+            android:name=".ActivityRegisterAccount"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ActivityUserInterface"/>
         <activity android:name=".DaemonService" />
@@ -47,7 +49,8 @@
             tools:ignore="DuplicateActivity">
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"
+                    android:screenOrientation="portrait"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

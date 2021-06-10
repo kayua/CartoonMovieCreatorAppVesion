@@ -26,7 +26,6 @@
         app:layout_constraintVertical_bias="0.034" />
 
     <com.github.mikephil.charting.charts.PieChart
-
         android:id="@+id/pieChart_sound"
         android:layout_width="342dp"
         android:layout_height="321dp"
