@@ -2,6 +2,7 @@ package app.mosquito.appmosquito.appmosquito.ui.Recognize;
 
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -56,9 +57,30 @@ public class RecognizeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_recognize, container, false);
         PieChart pieChart = (PieChart) root.findViewById(R.id.pieChart_sound);
         final Button button = (Button) root.findViewById(R.id.recognize_button);
+        List<PieEntry> pieEntires = new ArrayList<>();
+        for( int i = 0 ; i<2;i++){
+            pieEntires.add(new PieEntry(i,""));
+        }
+        PieDataSet dataSet = new PieDataSet(pieEntires,"");
+        dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
+        PieData data = new PieData(dataSet);
+
+        pieChart.setData(data);
+
+        pieChart.setCenterText("Inicie a gravação \n ");
+        pieChart.setCenterTextSize(18);
+        pieChart.setContentDescription("");
+        pieChart.setHoleRadius(60);
+        Legend legend = pieChart.getLegend();
+        legend.setForm(Legend.LegendForm.CIRCLE);
+        legend.setTextSize(40);
+        legend.setFormSize(20);
+        legend.setFormToTextSpace(2);
+        pieChart.invalidate();
         button.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             public void onClick(View v) {
+
                 Vibrator vs = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -67,8 +89,20 @@ public class RecognizeFragment extends Fragment {
                     //deprecated in API 26
                     vs.vibrate(500);
                 }
+                pieChart.setCenterText("Gravando ");
+                pieChart.notifyDataSetChanged();
 
-                startRecord();
+                pieChart.invalidate();
+
+
+                new Thread(new Runnable() {
+                    public void run() {
+                        startRecord();
+                        }
+
+                }).start();
+
+
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     vs.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
@@ -80,26 +114,7 @@ public class RecognizeFragment extends Fragment {
         });
 
 
-        List<PieEntry> pieEntires = new ArrayList<>();
-        for( int i = 0 ; i<2;i++){
-            pieEntires.add(new PieEntry(i,i));
-        }
-        PieDataSet dataSet = new PieDataSet(pieEntires,"");
-        dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
-        PieData data = new PieData(dataSet);
 
-        pieChart.setData(data);
-        pieChart.invalidate();
-        data.setDrawValues(true);
-        pieChart.setCenterText("Inicie a gravação \n ");
-        pieChart.setCenterTextSize(18);
-        pieChart.setContentDescription("");
-        pieChart.setHoleRadius(60);
-        Legend legend = pieChart.getLegend();
-        legend.setForm(Legend.LegendForm.CIRCLE);
-        legend.setTextSize(40);
-        legend.setFormSize(20);
-        legend.setFormToTextSpace(2);
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -165,7 +180,7 @@ public class RecognizeFragment extends Fragment {
         percentual += output_signal_return[0][2];
         percentual += output_signal_return[0][3];
         for( int i = 0 ; i<4;i++){
-            pieEntires.add(new PieEntry((output_signal_return[0][i]/ percentual)*10,89));
+            pieEntires.add(new PieEntry((output_signal_return[0][i]/ percentual)*100,89));
         }
         PieDataSet dataSet = new PieDataSet(pieEntires,"");
         dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
@@ -245,6 +260,7 @@ public class RecognizeFragment extends Fragment {
         RecorderWav waveRecorder = new RecorderWav(path.getPath());
         waveRecorder.startRecording();
         try {
+
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
