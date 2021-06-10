@@ -44,7 +44,6 @@ public class ForegroundService extends Service {
     private SensorManager sensorManager;
     protected Interpreter tflite;
 
-
     Runnable runnable = new Runnable(){
 
         public void run() {
