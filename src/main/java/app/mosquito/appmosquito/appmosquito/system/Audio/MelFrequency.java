@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.ui.Audio;
+package app.mosquito.appmosquito.appmosquito.system.Audio;
 
 import android.os.Build;
 import androidx.annotation.RequiresApi;

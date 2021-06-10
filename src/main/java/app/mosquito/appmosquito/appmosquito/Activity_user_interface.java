@@ -20,6 +20,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import app.mosquito.appmosquito.appmosquito.system.Services.DaemonService;
 import app.mosquito.appmosquito.appmosquito.ui.Settings.SettingsFragment;
 
 public class Activity_user_interface extends AppCompatActivity{
@@ -75,7 +76,7 @@ public class Activity_user_interface extends AppCompatActivity{
 
     public void screenIntent(View view) {
 
-        Intent intent = new Intent(this, daemonize.class);
+        Intent intent = new Intent(this, DaemonService.class);
         startActivity(intent);
     }
 

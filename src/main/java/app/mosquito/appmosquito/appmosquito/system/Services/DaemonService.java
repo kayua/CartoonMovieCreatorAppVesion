@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito;
+package app.mosquito.appmosquito.appmosquito.system.Services;
 
 import android.app.ActivityManager;
 import android.content.Intent;
@@ -9,7 +9,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-public class daemonize extends AppCompatActivity {
+import app.mosquito.appmosquito.appmosquito.Activity_user_interface;
+import app.mosquito.appmosquito.appmosquito.R;
+
+public class DaemonService extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,7 @@ public class daemonize extends AppCompatActivity {
 
     private boolean isServicoRodando(String servico){
 
-        servico = "app.mosquito.appmosquito.appmosquito.ForegroundService";
+        servico = "app.mosquito.appmosquito.appmosquito.system.Daemons.ForegroundService";
         boolean toReturnServicoIsRodando = false;
 
         try{

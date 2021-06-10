@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.ui.Audio;
+package app.mosquito.appmosquito.appmosquito.system.Audio;
 
 import java.io.File;
 import java.io.FileInputStream;

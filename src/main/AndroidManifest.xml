@@ -32,10 +32,10 @@
             android:name=".Activity_register_account"/>
         <activity
             android:name=".Activity_user_interface"/>
-        <activity android:name=".daemonize" />
+        <activity android:name=".system.Services.DaemonService" />
 
         <service
-            android:name=".ForegroundService"
+            android:name=".system.Services.ForegroundService"
             android:enabled="true"
             android:exported="true" />
 

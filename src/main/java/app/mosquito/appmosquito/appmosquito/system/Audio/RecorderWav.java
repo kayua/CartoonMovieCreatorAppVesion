@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.ui.Audio;
+package app.mosquito.appmosquito.appmosquito.system.Audio;
 
 import android.media.AudioFormat;
 import android.media.AudioRecord;

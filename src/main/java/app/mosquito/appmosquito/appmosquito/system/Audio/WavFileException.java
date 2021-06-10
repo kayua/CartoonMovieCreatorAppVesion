@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.ui.Audio;
+package app.mosquito.appmosquito.appmosquito.system.Audio;
 
 public class WavFileException extends Exception {
     public WavFileException(final String message) {

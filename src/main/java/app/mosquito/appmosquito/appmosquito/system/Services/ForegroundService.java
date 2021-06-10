@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito;
+package app.mosquito.appmosquito.appmosquito.system.Services;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -31,12 +31,13 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import app.mosquito.appmosquito.appmosquito.ui.Audio.MelFrequency;
-import app.mosquito.appmosquito.appmosquito.ui.Audio.ReaderWav;
-import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFileException;
-import app.mosquito.appmosquito.appmosquito.ui.Audio.RecorderWav;
+import app.mosquito.appmosquito.appmosquito.R;
+import app.mosquito.appmosquito.appmosquito.system.Audio.MelFrequency;
+import app.mosquito.appmosquito.appmosquito.system.Audio.ReaderWav;
+import app.mosquito.appmosquito.appmosquito.system.Audio.WavFileException;
+import app.mosquito.appmosquito.appmosquito.system.Audio.RecorderWav;
 
-import static app.mosquito.appmosquito.appmosquito.ui.Audio.ReaderWav.openWavFile;
+import static app.mosquito.appmosquito.appmosquito.system.Audio.ReaderWav.openWavFile;
 
 public class ForegroundService extends Service {
 
@@ -67,7 +68,7 @@ public class ForegroundService extends Service {
 
         String input = intent.getStringExtra("inputExtra");
         createNotificationChannel();
-        Intent notificationIntent = new Intent(this, daemonize.class);
+        Intent notificationIntent = new Intent(this, DaemonService.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, notificationIntent, 0);
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
@@ -193,7 +194,7 @@ public class ForegroundService extends Service {
 
 
         }
-
+        Log.i("RESULTADO >>>>>>>>>>>>>>>>>>>>>: ", String.valueOf(indice));
 
         if(indice == 0){
             Log.i("RESULTADO: ", "*****************************");

@@ -7,7 +7,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".daemonize">
+    tools:context=".system.Services.DaemonService">
     <Button
         android:id="@+id/buttonStartService"
         android:layout_width="wrap_content"
