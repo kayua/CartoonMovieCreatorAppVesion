@@ -10,7 +10,6 @@
     tools:context=".ui.Home.HomeFragment">
 
 
-
     <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyleHorizontal"
