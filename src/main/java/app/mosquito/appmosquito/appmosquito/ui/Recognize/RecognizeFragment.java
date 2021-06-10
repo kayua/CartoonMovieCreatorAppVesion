@@ -78,8 +78,7 @@ public class RecognizeFragment extends Fragment {
         return root;
     }
 
-    private MappedByteBuffer loadModelFile(String file) throws IOException
-    {
+    private MappedByteBuffer loadModelFile(String file) throws IOException {
         AssetFileDescriptor assetFileDescriptor = getContext().getAssets().openFd(file);
         FileInputStream fileInputStream = new FileInputStream(assetFileDescriptor.getFileDescriptor());
         FileChannel fileChannel = fileInputStream.getChannel();
