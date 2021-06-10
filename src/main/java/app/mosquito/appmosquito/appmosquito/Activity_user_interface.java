@@ -74,6 +74,7 @@ public class Activity_user_interface extends AppCompatActivity{
 
 
     public void screenIntent(View view) {
+
         Intent intent = new Intent(this, daemonize.class);
         startActivity(intent);
     }

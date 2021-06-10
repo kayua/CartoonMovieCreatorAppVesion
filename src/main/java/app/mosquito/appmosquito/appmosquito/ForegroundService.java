@@ -13,10 +13,14 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
+
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
+
 import com.parse.ParseObject;
+
 import org.tensorflow.lite.Interpreter;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -25,11 +29,11 @@ import java.nio.channels.FileChannel;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
 import app.mosquito.appmosquito.appmosquito.ui.Audio.MFCC;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavFileException;
 import app.mosquito.appmosquito.appmosquito.ui.Audio.WavRecordFile;
-import app.mosquito.appmosquito.appmosquito.ui.Maps.GPS_Sistem.GpsTracker;
 
 import static app.mosquito.appmosquito.appmosquito.ui.Audio.WavFile.openWavFile;
 
@@ -187,6 +191,7 @@ public class ForegroundService extends Service {
 
         if(indice == 0){
             Log.i("RESULTADO: ", "*****************************");
+            registerDetection();
             //registerDetection();
         }
 
@@ -242,24 +247,8 @@ public class ForegroundService extends Service {
         ParseObject entity = new ParseObject("Detections");
         DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
         String date = df.format(Calendar.getInstance().getTime());
-        GpsTracker gpsDaemonTracker = new GpsTracker(this);
-        double relativeLatitude = gpsDaemonTracker.getLatitude();
-        double relativeLongitude = gpsDaemonTracker.getLongitude();
-        entity.put("code_type", 1);
-        entity.put("humidity", 1);
-        entity.put("Temperature", "16.1");
-        entity.put("Luminosity", 1);
-        entity.put("DataTime", date);
-        entity.put("latitude", String.valueOf(relativeLatitude));
-        entity.put("longitude", String.valueOf(relativeLongitude));
-        entity.put("id_type", 1);
 
 
-        try {
-            entity.saveInBackground(e -> { });
-        }catch (Exception e){
-
-        }
 
     }
 }

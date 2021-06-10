@@ -1,4 +1,5 @@
 package app.mosquito.appmosquito.appmosquito;
+
 import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
@@ -65,6 +66,7 @@ public class daemonize extends AppCompatActivity {
 
     public void startService() {
 
+
         Toast.makeText(this, "Aplicativo rodando em plano de fundo", Toast.LENGTH_LONG).show();
         Intent serviceIntent = new Intent(this, ForegroundService.class);
         serviceIntent.putExtra("inputExtra", "Plano de fundo");
@@ -81,6 +83,7 @@ public class daemonize extends AppCompatActivity {
 
     public void tela() {
         Intent intent = new Intent(this, Activity_user_interface.class);
+
         startActivity(intent);
     }
 
