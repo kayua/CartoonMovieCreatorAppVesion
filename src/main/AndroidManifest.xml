@@ -31,7 +31,7 @@
         <activity
             android:name=".ActivityRegisterAccount"/>
         <activity
-            android:name=".Activity_user_interface"/>
+            android:name=".ActivityUserInterface"/>
         <activity android:name=".DaemonService" />
 
         <service
@@ -40,7 +40,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".Activity_splash_screen"
+            android:name=".ActivitySplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             tools:ignore="DuplicateActivity">

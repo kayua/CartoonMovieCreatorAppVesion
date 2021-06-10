@@ -82,7 +82,7 @@ public class DaemonService extends AppCompatActivity {
     }
 
     public void tela() {
-        Intent intent = new Intent(this, Activity_user_interface.class);
+        Intent intent = new Intent(this, ActivityUserInterface.class);
 
         startActivity(intent);
     }

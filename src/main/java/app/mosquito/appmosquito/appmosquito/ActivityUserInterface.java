@@ -22,7 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import app.mosquito.appmosquito.appmosquito.ui.Settings.SettingsFragment;
 
-public class Activity_user_interface extends AppCompatActivity{
+public class ActivityUserInterface extends AppCompatActivity{
 
     private AppBarConfiguration mAppBarConfiguration;
     String usernameRegistered;
@@ -49,7 +49,7 @@ public class Activity_user_interface extends AppCompatActivity{
         text = "  Olá, "+usernameRegistered;
         email_textview.setText(text);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_maps, R.id.nav_statistics,
+                R.id.nav_home, R.id.nav_maps, R.id.nav_statistics, R.id.nav_recognize,
                 R.id.nav_message, R.id.nav_history, R.id.nav_information, R.id.action_settings)
                 .setDrawerLayout(drawer)
                 .build();

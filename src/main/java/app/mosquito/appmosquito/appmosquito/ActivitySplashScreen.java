@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.parse.Parse;
 import com.parse.ParseUser;
 
-public class Activity_splash_screen extends AppCompatActivity {
+public class ActivitySplashScreen extends AppCompatActivity {
 
     String usernameRegistered;
     String passwordRegistered;
@@ -68,7 +66,7 @@ public class Activity_splash_screen extends AppCompatActivity {
 
     private void screen_check_email(){
 
-        Intent s = new Intent(Activity_splash_screen.this, ActivityEmailChecking.class);
+        Intent s = new Intent(ActivitySplashScreen.this, ActivityEmailChecking.class);
         finish();
         startActivity(s);
 
@@ -76,7 +74,7 @@ public class Activity_splash_screen extends AppCompatActivity {
 
     private void screen_login(){
 
-        Intent s = new Intent(Activity_splash_screen.this, Activity_user_interface.class);
+        Intent s = new Intent(ActivitySplashScreen.this, ActivityUserInterface.class);
         finish();
         startActivity(s);
 
@@ -84,7 +82,7 @@ public class Activity_splash_screen extends AppCompatActivity {
 
     private void screen_register(){
 
-        Intent s = new Intent(Activity_splash_screen.this, ActivityRegisterAccount.class);
+        Intent s = new Intent(ActivitySplashScreen.this, ActivityRegisterAccount.class);
         finish();
         startActivity(s);
 

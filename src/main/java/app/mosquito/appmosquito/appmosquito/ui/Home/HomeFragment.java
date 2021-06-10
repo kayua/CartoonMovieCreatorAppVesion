@@ -93,7 +93,7 @@ public class HomeFragment extends Fragment {
                         .radius(1).strokeColor(0xff018783)
                         .fillColor(Color.TRANSPARENT).strokeWidth(5));
 
-                fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(relativeLatitude ,relativeLongitude))
+                fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(-29.783223, -55.794506))
                         .title("Seu local Atual").snippet("Dispositivo conectado")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_users))
                         .alpha((float) 0.65));

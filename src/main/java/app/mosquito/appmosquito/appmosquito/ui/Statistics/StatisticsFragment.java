@@ -18,9 +18,6 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import app.mosquito.appmosquito.appmosquito.R;
@@ -39,9 +36,7 @@ public class StatisticsFragment extends Fragment {
         BarChart bchart3 = (BarChart) root.findViewById(R.id.barchart3);
         BarChart bchart4 = (BarChart) root.findViewById(R.id.barchart4);
         bchart.setBorderColor(1);
-        bchart2.setBorderColor(1);
-        bchart3.setBorderColor(1);
-        bchart4.setBorderColor(1);
+
 
         ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
 
@@ -83,13 +78,4 @@ public class StatisticsFragment extends Fragment {
     }
 
 
-
-    private static byte[] readFully(InputStream in) throws IOException {
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        byte[] buffer = new byte[1024];
-        for (int count; (count = in.read(buffer)) != -1; ) {
-            out.write(buffer, 0, count);
-        }
-        return out.toByteArray();
-    }
 }

@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import app.mosquito.appmosquito.appmosquito.ui.Main.ActivitySettingsFragment;
 
-public class Activity_settings extends AppCompatActivity {
+public class ActivitySettings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

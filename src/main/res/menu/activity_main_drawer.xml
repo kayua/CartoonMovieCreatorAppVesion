@@ -30,7 +30,7 @@
             android:title="Dúvidas" />
 
         <item
-            android:id="@+id/nav_identification"
+            android:id="@+id/nav_recognize"
             android:icon="@android:drawable/toast_frame"
             android:title="Reconhecimento" />
         <item

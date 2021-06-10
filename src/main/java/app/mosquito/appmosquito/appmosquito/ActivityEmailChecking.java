@@ -56,7 +56,7 @@ public class ActivityEmailChecking extends AppCompatActivity {
 
     public void open_mosquito_app(View view){
 
-        Intent i = new Intent(ActivityEmailChecking.this, Activity_user_interface.class);
+        Intent i = new Intent(ActivityEmailChecking.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
 

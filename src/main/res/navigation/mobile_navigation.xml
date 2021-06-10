@@ -44,10 +44,10 @@
         tools:layout="@layout/fragment_history" />
 
     <fragment
-        android:id="@+id/action_settings"
-        android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
+        android:id="@+id/nav_recognize"
+        android:name="app.mosquito.appmosquito.appmosquito.ui.Recognize.RecognizeFragment"
         android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_recognize" />
 
 
 </navigation>

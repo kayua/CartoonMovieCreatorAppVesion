@@ -191,7 +191,6 @@ public class ForegroundService extends Service {
                 indice=i;
             }
 
-
         }
         Log.i("RESULTADO >>>>>>>>>>>>>>>>>>>>>: ", String.valueOf(indice));
 
