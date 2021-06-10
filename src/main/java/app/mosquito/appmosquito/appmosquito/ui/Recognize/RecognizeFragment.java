@@ -1,12 +1,17 @@
 package app.mosquito.appmosquito.appmosquito.ui.Recognize;
 
+import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,6 +39,7 @@ import java.util.List;
 
 import app.mosquito.appmosquito.appmosquito.Audio.MelFrequency;
 import app.mosquito.appmosquito.appmosquito.Audio.ReaderWav;
+import app.mosquito.appmosquito.appmosquito.Audio.RecorderWav;
 import app.mosquito.appmosquito.appmosquito.Audio.WavFileException;
 import app.mosquito.appmosquito.appmosquito.R;
 
@@ -49,7 +55,21 @@ public class RecognizeFragment extends Fragment {
                 new ViewModelProvider(this).get(RecognizeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_recognize, container, false);
         PieChart pieChart = (PieChart) root.findViewById(R.id.pieChart_sound);
+        final Button button = (Button) root.findViewById(R.id.recognize_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            public void onClick(View v) {
+                Vibrator vs = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
 
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    vs.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                } else {
+                    //deprecated in API 26
+                    vs.vibrate(500);
+                }
+                startRecord();
+            }
+        });
         List<PieEntry> pieEntires = new ArrayList<>();
         for( int i = 0 ; i<4;i++){
             pieEntires.add(new PieEntry(i,i));
@@ -60,6 +80,7 @@ public class RecognizeFragment extends Fragment {
 
         pieChart.setData(data);
         pieChart.invalidate();
+        data.setDrawValues(true);
         pieChart.setCenterText("50% \n ");
         pieChart.setDrawEntryLabels(false);
         pieChart.setContentDescription("");
@@ -88,6 +109,7 @@ public class RecognizeFragment extends Fragment {
 
         return fileChannel.map(FileChannel.MapMode.READ_ONLY,startOffset,len);
     }
+
     public void doInference(float[][][][] input) throws IOException {
 
         Interpreter interpreter = null;
@@ -126,10 +148,28 @@ public class RecognizeFragment extends Fragment {
         }
         Log.i("RESULTADO >>>>>>>>>>>>>>>>>>>>>: ", String.valueOf(indice));
 
+        PieChart pieChart = (PieChart) getActivity().findViewById(R.id.pieChart_sound);
+
+        List<PieEntry> pieEntires = new ArrayList<>();
+        for( int i = 0 ; i<4;i++){
+            pieEntires.add(new PieEntry(30,89));
+        }
+        PieDataSet dataSet = new PieDataSet(pieEntires,"");
+        dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
+        PieData data = new PieData(dataSet);
+        data.setDrawValues(true);
+        pieChart.setData(data);
+
         if(indice == 0){
             Log.i("RESULTADO: ", "*****************************");
             //registerDetection();
         }
+        pieChart.notifyDataSetChanged();
+
+        pieChart.invalidate();
+
+
+
 
 
     }
@@ -179,4 +219,32 @@ public class RecognizeFragment extends Fragment {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private void startRecord(){
+
+        File path = Environment.getDataDirectory();
+        RecorderWav waveRecorder = new RecorderWav(path.getPath());
+        waveRecorder.startRecording();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        waveRecorder.stopRecording("test");
+
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        try {
+            extractFeaturesAndRunEvaluation();
+        } catch (IOException | WavFileException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
