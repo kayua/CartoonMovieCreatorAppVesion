@@ -1,5 +1,7 @@
 package app.mosquito.appmosquito.appmosquito.ui.Audio;
 
+import android.os.Build;
+import androidx.annotation.RequiresApi;
 import java.util.Arrays;
 import static java.lang.Double.max;
 
@@ -15,6 +17,7 @@ public class MelFrequency {
 
     FourieTransform fft = new FourieTransform();
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public float[][][] processBulkSpectrogram(double[] doubleInputBuffer, int frameSize) {
 
         int windowSize =  hop_length * (frameSize - 1);
@@ -169,6 +172,7 @@ public class MelFrequency {
         return winFrames;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private double[][] powerToDb(double[][] melS){
 
         double[][] log_spec = new double[melS.length][melS[0].length];

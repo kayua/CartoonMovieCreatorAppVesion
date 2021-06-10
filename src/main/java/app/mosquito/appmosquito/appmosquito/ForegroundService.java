@@ -15,6 +15,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 import com.parse.ParseObject;
@@ -48,7 +49,9 @@ public class ForegroundService extends Service {
 
         public void run() {
 
-            startRecord();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                startRecord();
+            }
 
         }
 
@@ -78,13 +81,16 @@ public class ForegroundService extends Service {
             @Override
             public void run() {
                 while (true){
-                    startRecord();
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        startRecord();
+                    }
                 }
             }
         });
         return START_NOT_STICKY;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void startRecord(){
 
         File path = Environment.getDataDirectory();
@@ -217,6 +223,7 @@ public class ForegroundService extends Service {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
 
 
