@@ -2,7 +2,6 @@ package app.mosquito.appmosquito.appmosquito.ui.Recognize;
 
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
-import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -13,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -73,8 +71,8 @@ public class RecognizeFragment extends Fragment {
         pieChart.setHoleRadius(60);
         Legend legend = pieChart.getLegend();
         legend.setForm(Legend.LegendForm.CIRCLE);
-        legend.setTextSize(40);
-        legend.setFormSize(20);
+        legend.setTextSize(10);
+        legend.setFormSize(18);
         legend.setFormToTextSpace(2);
         pieChart.invalidate();
         button.setOnClickListener(new View.OnClickListener() {
@@ -157,9 +155,39 @@ public class RecognizeFragment extends Fragment {
 
 
         interpreter.run(output_signal, output_signal_return);
+        ArrayList<String> nomes = new ArrayList<String>();
+        nomes.add("Aedes Aegipty");
+        nomes.add("Aedes Albopictus");
+        nomes.add("Aedes Mediovittatus");
+        nomes.add("Aedes Sierrensis");
+        nomes.add("Anopheles Albimanus");
+        nomes.add("Anopheles Dongola");
+        nomes.add("Anopheles Rufisque");
+        nomes.add("Anopheles Atroparvus");
+        nomes.add("Anopheles Dirus");
+        nomes.add("Aedes10");
+        nomes.add("Aedes11");
+        nomes.add("Aedes12");
+        nomes.add("Aedes13");
+        nomes.add("Aedes14");
+        nomes.add("Aedes15");
+        nomes.add("Aedes16");
+        nomes.add("Aedes17");
+        nomes.add("Aedes18");
+        nomes.add("Aedes19");
+        nomes.add("Aedes20");
+        nomes.add("Aedes21");
+        nomes.add("Aedes22");
+        nomes.add("Aedes23");
 
         float max = 0;
         int indice =0;
+        int indice_2 =0;
+        int indice_3 =0;
+        int indice_4 =0;
+        float max_2 = 0;
+        float max_3 = 0;
+        float max_4 = 0;
 
         for(int i=0; i<23; i++){
 
@@ -170,18 +198,45 @@ public class RecognizeFragment extends Fragment {
             }
 
         }
-        Log.i("RESULTADO >>>>>>>>>>>>>>>>>>>>>: ", String.valueOf(indice));
+        for(int i=0; i<23; i++){
 
-        PieChart pieChart = (PieChart) getActivity().findViewById(R.id.pieChart_sound);
+            if(max_2<output_signal_return[0][i] && indice!=i){
 
-        List<PieEntry> pieEntires = new ArrayList<>();
-        float percentual = output_signal_return[0][0];
-        percentual += output_signal_return[0][1];
-        percentual += output_signal_return[0][2];
-        percentual += output_signal_return[0][3];
-        for( int i = 0 ; i<4;i++){
-            pieEntires.add(new PieEntry((output_signal_return[0][i]/ percentual)*100,89));
+                max_2 = output_signal_return[0][i];
+                indice_2=i;
+            }
+
         }
+        for(int i=0; i<23; i++){
+
+            if(max_3<output_signal_return[0][i] && indice!=i && indice_2!=i){
+
+                max_3 = output_signal_return[0][i];
+                indice_3=i;
+            }
+
+        }
+        for(int i=0; i<23; i++){
+
+            if(max_4<output_signal_return[0][i]&& indice!=i && indice_2!=i && indice_3!=i){
+
+                max_4 = output_signal_return[0][i];
+                indice_4=i;
+            }
+
+        }
+
+        Log.i("RESULTADO >>>>>>>>>>>>>>>>>>>>>: ", String.valueOf(indice));
+        PieChart pieChart = (PieChart) getActivity().findViewById(R.id.pieChart_sound);
+        List<PieEntry> pieEntires = new ArrayList<>();
+        float percentual = output_signal_return[0][indice];
+        percentual += output_signal_return[0][indice_2];
+        percentual += output_signal_return[0][indice_3];
+
+
+        pieEntires.add(new PieEntry((output_signal_return[0][indice]/ percentual)*100,nomes.get(indice)));
+        pieEntires.add(new PieEntry((output_signal_return[0][indice_2]/ percentual)*100,nomes.get(indice_2)));
+        pieEntires.add(new PieEntry((output_signal_return[0][indice_3]/ percentual)*100,nomes.get(indice_3)));
         PieDataSet dataSet = new PieDataSet(pieEntires,"");
         dataSet.setColors(ColorTemplate.LIBERTY_COLORS);
         PieData data = new PieData(dataSet);
