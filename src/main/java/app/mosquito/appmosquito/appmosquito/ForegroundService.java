@@ -33,7 +33,6 @@ import java.util.Calendar;
 
 import app.mosquito.appmosquito.appmosquito.Audio.MelFrequency;
 import app.mosquito.appmosquito.appmosquito.Audio.ReaderWav;
-import app.mosquito.appmosquito.appmosquito.Audio.WavFileException;
 import app.mosquito.appmosquito.appmosquito.Audio.RecorderWav;
 
 import static app.mosquito.appmosquito.appmosquito.Audio.ReaderWav.openWavFile;
@@ -111,11 +110,13 @@ public class ForegroundService extends Service {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
         try {
             extractFeaturesAndRunEvaluation();
-        } catch (IOException | WavFileException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
 
@@ -223,7 +224,7 @@ public class ForegroundService extends Service {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
+    private void extractFeaturesAndRunEvaluation() throws IOException{
 
 
         ReaderWav readWavFile = openWavFile(new File("/storage/emulated/0/data/test.wav"));

@@ -39,7 +39,6 @@ import java.util.List;
 import app.mosquito.appmosquito.appmosquito.Audio.MelFrequency;
 import app.mosquito.appmosquito.appmosquito.Audio.ReaderWav;
 import app.mosquito.appmosquito.appmosquito.Audio.RecorderWav;
-import app.mosquito.appmosquito.appmosquito.Audio.WavFileException;
 import app.mosquito.appmosquito.appmosquito.R;
 
 import static app.mosquito.appmosquito.appmosquito.Audio.ReaderWav.openWavFile;
@@ -50,8 +49,7 @@ public class RecognizeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                new ViewModelProvider(this).get(RecognizeViewModel.class);
+        galleryViewModel = new ViewModelProvider(this).get(RecognizeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_recognize, container, false);
         PieChart pieChart = (PieChart) root.findViewById(R.id.pieChart_sound);
         final Button button = (Button) root.findViewById(R.id.recognize_button);
@@ -75,6 +73,7 @@ public class RecognizeFragment extends Fragment {
         legend.setFormSize(18);
         legend.setFormToTextSpace(2);
         pieChart.invalidate();
+
         button.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             public void onClick(View v) {
@@ -87,27 +86,27 @@ public class RecognizeFragment extends Fragment {
                     //deprecated in API 26
                     vs.vibrate(500);
                 }
+
                 pieChart.setCenterText("Gravando ");
                 pieChart.notifyDataSetChanged();
-
                 pieChart.invalidate();
 
 
                 new Thread(new Runnable() {
                     public void run() {
                         startRecord();
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            vs.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                        } else {
+                            //deprecated in API 26
+                            vs.vibrate(500);
+                        }
                         }
 
                 }).start();
 
 
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    vs.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
-                } else {
-                    //deprecated in API 26
-                    vs.vibrate(500);
-                }
             }
         });
 
@@ -274,7 +273,7 @@ public class RecognizeFragment extends Fragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private void extractFeaturesAndRunEvaluation() throws IOException, WavFileException {
+    private void extractFeaturesAndRunEvaluation() throws IOException {
 
 
         ReaderWav readWavFile = openWavFile(new File("/storage/emulated/0/data/test.wav"));
@@ -321,11 +320,13 @@ public class RecognizeFragment extends Fragment {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
         try {
             extractFeaturesAndRunEvaluation();
-        } catch (IOException | WavFileException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
 }

@@ -7,12 +7,11 @@ import java.io.IOException;
 
 public class ReaderWav
 {
-    private enum IOState {READING, WRITING, CLOSED};
+    private enum IOState {READING};
     private final static int BUFFER_SIZE = 4096;
     private final static int FMT_CHUNK_ID = 0x20746D66;
     private final static int DATA_CHUNK_ID = 0x61746164;
-    private final static int RIFF_CHUNK_ID = 0x46464952;
-    private final static int RIFF_TYPE_ID = 0x45564157;
+
 
     private File file;
     private IOState ioState;
@@ -42,31 +41,17 @@ public class ReaderWav
         return numChannels;
     }
 
-    public static ReaderWav openWavFile(File file) throws IOException, WavFileException
+    public static ReaderWav openWavFile(File file) throws IOException
     {
 
         ReaderWav wavFile = new ReaderWav();
         wavFile.file = file;
         wavFile.iStream = new FileInputStream(file);
         int bytesRead = wavFile.iStream.read(wavFile.buffer, 0, 12);
-        if (bytesRead != 12) throw new WavFileException("Not enough wav file bytes for header");
         long riffChunkID = getLE(wavFile.buffer, 0, 4);
         long chunkSize = getLE(wavFile.buffer, 4, 4);
         long riffTypeID = getLE(wavFile.buffer, 8, 4);
 
-        if (riffChunkID != RIFF_CHUNK_ID)
-
-            throw new WavFileException("Invalid Wav Header data, incorrect riff chunk ID");
-
-        if (riffTypeID != RIFF_TYPE_ID)
-
-            throw new WavFileException("Invalid Wav Header data, incorrect riff type ID");
-
-        if (file.length() != chunkSize+8) {
-
-            throw new WavFileException("Header chunk size (" + chunkSize + ") does not match file size (" + file.length() + ")");
-
-        }
 
         boolean foundFormat = false;
         boolean foundData = false;
@@ -74,8 +59,7 @@ public class ReaderWav
         while (true)
         {
             bytesRead = wavFile.iStream.read(wavFile.buffer, 0, 8);
-            if (bytesRead == -1) throw new WavFileException("Reached end of file without finding format chunk");
-            if (bytesRead != 8) throw new WavFileException("Could not read chunk header");
+
             long chunkID = getLE(wavFile.buffer, 0, 4);
             chunkSize = getLE(wavFile.buffer, 4, 4);
             long numChunkBytes = (chunkSize%2 == 1) ? chunkSize+1 : chunkSize;
@@ -85,42 +69,17 @@ public class ReaderWav
                 foundFormat = true;
                 bytesRead = wavFile.iStream.read(wavFile.buffer, 0, 16);
                 int compressionCode = (int) getLE(wavFile.buffer, 0, 2);
-                if (compressionCode != 1) throw new WavFileException("Compression Code " + compressionCode + " not supported");
                 wavFile.numChannels = (int) getLE(wavFile.buffer, 2, 2);
                 wavFile.sampleRate = getLE(wavFile.buffer, 4, 4);
                 wavFile.blockAlign = (int) getLE(wavFile.buffer, 12, 2);
                 wavFile.validBits = (int) getLE(wavFile.buffer, 14, 2);
-
-                if (wavFile.numChannels == 0)
-                    throw new WavFileException("Number of channels specified in header is equal to zero");
-
-                if (wavFile.blockAlign == 0)
-                    throw new WavFileException("Block Align specified in header is equal to zero");
-
-                if (wavFile.validBits < 2)
-                    throw new WavFileException("Valid Bits specified in header is less than 2");
-
-                if (wavFile.validBits > 64)
-                    throw new WavFileException("Valid Bits specified in header is greater than 64, this is greater than a long can hold");
-
                 wavFile.bytesPerSample = (wavFile.validBits + 7) / 8;
-
-                if (wavFile.bytesPerSample * wavFile.numChannels != wavFile.blockAlign)
-
-                    throw new WavFileException("Block Align does not agree with bytes required for validBits and number of channels");
-
                 numChunkBytes -= 16;
-
                 if (numChunkBytes > 0) wavFile.iStream.skip(numChunkBytes);
 
             }
             else if (chunkID == DATA_CHUNK_ID)
             {
-                if (foundFormat == false)
-                    throw new WavFileException("Data chunk found before Format chunk");
-                if (chunkSize % wavFile.blockAlign != 0)
-                    throw new WavFileException("Data Chunk size is not multiple of Block Align");
-
                 wavFile.numFrames = chunkSize / wavFile.blockAlign;
                 foundData = true;
                 break;
@@ -130,8 +89,6 @@ public class ReaderWav
                 wavFile.iStream.skip(numChunkBytes);
             }
         }
-
-        if (foundData == false) throw new WavFileException("Did not find a data chunk");
 
         if (wavFile.validBits > 8)
         {
@@ -164,7 +121,7 @@ public class ReaderWav
         return val;
     }
 
-    private long readSample() throws IOException, WavFileException
+    private long readSample() throws IOException
     {
         long val = 0;
 
@@ -173,7 +130,6 @@ public class ReaderWav
             if (bufferPointer == bytesRead)
             {
                 int read = iStream.read(buffer, 0, BUFFER_SIZE);
-                if (read == -1) throw new WavFileException("Not enough data available");
                 bytesRead = read;
                 bufferPointer = 0;
             }
@@ -188,14 +144,13 @@ public class ReaderWav
         return val;
     }
 
-    public int readFrames(double[] sampleBuffer, int numFramesToRead) throws IOException, WavFileException
+    public int readFrames(double[] sampleBuffer, int numFramesToRead) throws IOException
     {
         return readFrames(sampleBuffer, 0, numFramesToRead);
     }
 
-    public int readFrames(double[] sampleBuffer, int offset, int numFramesToRead) throws IOException, WavFileException
+    public int readFrames(double[] sampleBuffer, int offset, int numFramesToRead) throws IOException
     {
-        if (ioState != IOState.READING) throw new IOException("Cannot read from WavFile instance");
 
         for (int f=0 ; f<numFramesToRead ; f++)
         {

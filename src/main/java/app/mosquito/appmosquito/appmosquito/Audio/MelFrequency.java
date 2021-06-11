@@ -129,11 +129,11 @@ public class MelFrequency {
     private double[] magSpectrogram(double[] frame){
 
         double[] magSpec = new double[frame.length];
-        fft.process(frame);
+        fft.getTransform(frame);
 
         for (int m = 0; m < frame.length; m++) {
 
-            magSpec[m] = fft.real[m] * fft.real[m] + fft.imag[m] * fft.imag[m];
+            magSpec[m] = fft.realPhase[m] * fft.realPhase[m] + fft.imaginaryPhase[m] * fft.imaginaryPhase[m];
 
         }
 
