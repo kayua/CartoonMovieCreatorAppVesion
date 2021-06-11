@@ -184,7 +184,6 @@ public class RecognizeFragment extends Fragment {
         int indice =0;
         int indice_2 =0;
         int indice_3 =0;
-        int indice_4 =0;
         float max_2 = 0;
         float max_3 = 0;
         float max_4 = 0;
@@ -216,15 +215,7 @@ public class RecognizeFragment extends Fragment {
             }
 
         }
-        for(int i=0; i<23; i++){
 
-            if(max_4<output_signal_return[0][i]&& indice!=i && indice_2!=i && indice_3!=i){
-
-                max_4 = output_signal_return[0][i];
-                indice_4=i;
-            }
-
-        }
 
         Log.i("RESULTADO >>>>>>>>>>>>>>>>>>>>>: ", String.valueOf(indice));
         PieChart pieChart = (PieChart) getActivity().findViewById(R.id.pieChart_sound);
