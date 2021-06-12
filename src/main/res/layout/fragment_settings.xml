@@ -34,13 +34,12 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/imageView5"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch11"
+                android:id="@+id/lowPowerSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
@@ -49,14 +48,14 @@
                 android:text="   Economia de energia"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView6"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch56"
+                android:id="@+id/geoPrecisionSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
@@ -65,13 +64,13 @@
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
             <ImageView
-                android:id="@+id/imageView7"
+
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch57"
+                android:id="@+id/autoStartSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
@@ -79,28 +78,28 @@
                 android:text="   Inicialização automática"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView8"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch58"
+                android:id="@+id/emailNotificationSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Notificações por email"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView9"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch59"
+                android:id="@+id/realTimeNotificationSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
@@ -108,14 +107,16 @@
                 android:text="   Notificações em tempo real"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView10"
+
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch60"
+
+                android:id="@+id/infectNotificationSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
@@ -123,14 +124,14 @@
                 android:text="   Notificações de infestação"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView11"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch61"
+                android:id="@+id/soundNotificationSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
@@ -138,42 +139,42 @@
                 android:text="   Notifcações sonoras"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView12"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch62"
+                android:id="@+id/advancedNotificationSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Filtros avançados"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView14"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch63"
+                android:id="@+id/rotationSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Desativar ao rotacionar"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView15"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch64"
+                android:id="@+id/nightActivitySwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
@@ -183,28 +184,28 @@
 
 
             <ImageView
-                android:id="@+id/imageView16"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch65"
+                android:id="@+id/dayActivitySwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Vigilância diurna"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView17"
+
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
 
             <Switch
-                android:id="@+id/switch67"
+                android:id="@+id/sensorHumiditySwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
@@ -212,15 +213,15 @@
                 android:text="   Sensor Úmidade"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView19"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
 
             <Switch
-                android:id="@+id/switch69"
+                android:id="@+id/sensorPressureSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
@@ -228,14 +229,14 @@
                 android:text="   Sensor Pressão"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
+
             <ImageView
-                android:id="@+id/imageView20"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch70"
+                android:id="@+id/sensorLuminositySwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
@@ -244,13 +245,12 @@
                 android:textSize="20sp" />
 
             <ImageView
-                android:id="@+id/imageView410"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
                 android:src="@drawable/gradient_color_background" />
 
             <Switch
-                android:id="@+id/switch740"
+                android:id="@+id/sensorTemperatureSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:baselineAligned="false"
