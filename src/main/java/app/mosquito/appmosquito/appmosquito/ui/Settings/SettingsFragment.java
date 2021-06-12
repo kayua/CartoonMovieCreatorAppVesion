@@ -128,7 +128,6 @@ public class SettingsFragment extends Fragment {
 
             });
 
-
         infectionNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,14 +150,14 @@ public class SettingsFragment extends Fragment {
 
                 if(soundNotification.isChecked()){
 
-                    editor.putString("soundNotification", "on");}
+                    editor.putString("soundNotification", "on");
 
             }else{
 
-                editor.putString("soundNotification", "off");}
+                editor.putString("soundNotification", "off");
 
 
-        });
+        }}});
 
         advancedFilters.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,11 +180,36 @@ public class SettingsFragment extends Fragment {
 
         rotation.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("rotationSwitch", "on");}});
+            public void onClick(View view) {
+
+                if(rotation.isChecked()){
+
+                    editor.putString("rotationSwitch", "on");
+
+                }else{
+
+
+            editor.putString("rotationSwitch", "off");}}});
 
         humidity.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("humiditySensor", "on");}});
+            public void onClick(View view) {
+
+                if(humidity.isChecked()){
+
+
+
+                    editor.putString("humiditySensor", "on");
+
+
+                }else{
+
+
+                editor.putString("humiditySensor", "off");}}
+
+
+                });
+
 
         pressure.setOnClickListener(new View.OnClickListener() {
             @Override
