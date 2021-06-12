@@ -2,6 +2,7 @@ package app.mosquito.appmosquito.appmosquito.ui.Settings;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,17 +18,26 @@ import androidx.lifecycle.ViewModelProvider;
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class SettingsFragment extends Fragment {
+
     public static final String PREFS_NAME = "PersonalDatabase";
     private SettingsViewModel settingsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        settingsViewModel =
-                new ViewModelProvider(this).get(SettingsViewModel.class);
+        settingsViewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_settings, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
-
+        SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
         Switch lowPower = (Switch) root.findViewById(R.id.lowPowerSwitch);
+
+        String switchLowPower = settings.getString("lowPower", "");
+        Log.i(switchLowPower, "----------------------------");
+        if(switchLowPower.equals("on")){
+
+           lowPower.setChecked(true);
+
+        }else{ lowPower.setChecked(false); }
         Switch geoPrecision = (Switch) root.findViewById(R.id.geoPrecisionSwitch);
         Switch autoStart = (Switch) root.findViewById(R.id.autoStartSwitch);
         Switch emailNotification = (Switch) root.findViewById(R.id.emailNotificationSwitch);
@@ -43,9 +53,6 @@ public class SettingsFragment extends Fragment {
         Switch dayActivity = (Switch) root.findViewById(R.id.dayActivitySwitch);
         Switch nightActivity = (Switch) root.findViewById(R.id.nightActivitySwitch);
 
-        SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
-
         lowPower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +66,7 @@ public class SettingsFragment extends Fragment {
                     editor.putString("lowPower", "off");
 
                 }
+                editor.commit();
 
             }});
 
@@ -75,7 +83,7 @@ public class SettingsFragment extends Fragment {
                     editor.putString("lowPower", "off");
 
                 }
-
+                editor.commit();
 
             }});
 
@@ -92,7 +100,7 @@ public class SettingsFragment extends Fragment {
                     editor.putString("autoStart", "off");
 
                 }
-
+                editor.commit();
             }});
 
         emailNotification.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +115,7 @@ public class SettingsFragment extends Fragment {
 
                 editor.putString("emailNotification", "off");
                 }
-
+                editor.commit();
         }
 
         });
@@ -123,7 +131,7 @@ public class SettingsFragment extends Fragment {
                 }else{
 
                     editor.putString("realTimeNotification", "off");}
-
+                editor.commit();
             }
 
             });
@@ -141,7 +149,7 @@ public class SettingsFragment extends Fragment {
                     editor.putString("infectionNotification", "off");
 
                 }
-
+                editor.commit();
             }});
 
         soundNotification.setOnClickListener(new View.OnClickListener() {
@@ -155,9 +163,9 @@ public class SettingsFragment extends Fragment {
             }else{
 
                 editor.putString("soundNotification", "off");
-
-
-        }}});
+                }
+                editor.commit();
+            }});
 
         advancedFilters.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,6 +183,7 @@ public class SettingsFragment extends Fragment {
 
 
                 }
+                editor.commit();
 
             }});
 
@@ -189,7 +198,9 @@ public class SettingsFragment extends Fragment {
                 }else{
 
 
-            editor.putString("rotationSwitch", "off");}}});
+            editor.putString("rotationSwitch", "off");}
+                editor.commit();
+            }});
 
         humidity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,9 +216,10 @@ public class SettingsFragment extends Fragment {
                 }else{
 
 
-                editor.putString("humiditySensor", "off");}}
+                editor.putString("humiditySensor", "off");}
 
-
+                editor.commit();
+            }
                 });
 
         pressure.setOnClickListener(new View.OnClickListener() {
@@ -223,7 +235,7 @@ public class SettingsFragment extends Fragment {
                     editor.putString("pressureSensor", "off");
 
                 }
-
+                editor.commit();
             }});
 
         luminosity.setOnClickListener(new View.OnClickListener() {
@@ -238,7 +250,9 @@ public class SettingsFragment extends Fragment {
 
 
                     editor.putString("luminositySensor", "off");
-                }}});
+                }
+
+                editor.commit();}});
 
         dayActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -253,6 +267,7 @@ public class SettingsFragment extends Fragment {
                     editor.putString("dayActivity", "off");
 
                 }
+                editor.commit();
             }
         });
 
@@ -269,6 +284,7 @@ public class SettingsFragment extends Fragment {
                     editor.putString("nightActivity", "off");
 
                 }
+                editor.commit();
             }
         });
 
@@ -288,6 +304,8 @@ public class SettingsFragment extends Fragment {
 
 
                 }
+
+                editor.commit();
 
             }});
 

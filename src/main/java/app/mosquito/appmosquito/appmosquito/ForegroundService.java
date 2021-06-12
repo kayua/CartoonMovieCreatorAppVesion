@@ -211,10 +211,7 @@ public class ForegroundService extends Service {
         }
 
         interpreter = new Interpreter(loadModelFile("clustering.tflite"), null);
-
         float[][] output_signal_return = new float[1][23];
-
-
         interpreter.run(output_signal, output_signal_return);
 
         float max = 0;
@@ -235,7 +232,6 @@ public class ForegroundService extends Service {
             registerDetection();
             //registerDetection();
         }
-
 
     }
 
