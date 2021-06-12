@@ -2,6 +2,7 @@ package app.mosquito.appmosquito.appmosquito;
 
 import android.app.ActivityManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -10,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 public class DaemonService extends AppCompatActivity {
+    public static final String CHANNEL_ID = "Serviço de plano de fundo";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,13 +21,18 @@ public class DaemonService extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         String a = new String();
-
+        SharedPreferences settings= getSharedPreferences("PersonalDatabase", 0);
         if (isServicoRodando(a) != true){
 
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putString("daemonActivity", "off");
+            editor.commit();
             startService();
 
         }else{
-
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putString("daemonActivity", "on");
+            editor.commit();
           stopService();
 
         };

@@ -2,13 +2,18 @@ package app.mosquito.appmosquito.appmosquito.ui.Home;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -37,6 +42,7 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.mosquito.appmosquito.appmosquito.DaemonService;
 import app.mosquito.appmosquito.appmosquito.R;
 import app.mosquito.appmosquito.appmosquito.ui.Maps.GPS_Sistem.GpsTracker;
 
@@ -60,6 +66,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         mMapView = (MapView) root.findViewById(R.id.mapView);
         ToggleButton startDaemon = root.findViewById(R.id.toggleButton3);
+        ImageView goToHome = root.findViewById(R.id.imageView3);
 
         SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
@@ -69,6 +76,28 @@ public class HomeFragment extends Fragment {
 
             startDaemon.setChecked(true); }else{ startDaemon.setChecked(false); }
 
+        startDaemon.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View v) {
+
+                Vibrator vs = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    vs.vibrate(VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE));
+                } else {
+                    //deprecated in API 26
+                    vs.vibrate(250);
+                }
+                Intent intent = new Intent(getContext(), DaemonService.class);
+                startActivity(intent);
+
+                String switchLowPower = settings.getString("daemonActivity", "");
+                if(switchLowPower.equals("on")){
+
+                    startDaemon.setChecked(true); }else{ startDaemon.setChecked(false); }
+            }
+        });
 
         mMapView.onCreate(savedInstanceState);
 
@@ -91,6 +120,25 @@ public class HomeFragment extends Fragment {
                 double relativeLatitude = gpsDaemonTracker.getLatitude();
                 double relativeLongitude = gpsDaemonTracker.getLongitude();
 
+                goToHome.setOnClickListener(new View.OnClickListener() {
+                    @Override
+
+                    public void onClick(View v) {
+                        Vibrator vs = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            vs.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE));
+                        } else {
+
+                            vs.vibrate(50);
+                        }
+                        LatLng latLng= new LatLng(relativeLatitude, relativeLongitude);
+                        CameraPosition cameraPosition = new CameraPosition.Builder()
+                                .target(latLng).zoom(16).bearing(0).tilt(40).build();
+                        fragmentMaps.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+                    }
+                });
 
                 LatLng latLng= new LatLng(relativeLatitude, relativeLongitude);
                 CameraPosition cameraPosition = new CameraPosition.Builder()
@@ -107,7 +155,7 @@ public class HomeFragment extends Fragment {
                         .radius(1).strokeColor(0xff018783)
                         .fillColor(Color.TRANSPARENT).strokeWidth(5));
 
-                fragmentMaps.addMarker(new MarkerOptions().position(new LatLng(-29.783223, -55.794506))
+                fragmentMaps.addMarker(new MarkerOptions().position(latLng)
                         .title("Seu local Atual").snippet("Dispositivo conectado")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_users))
                         .alpha((float) 0.65));
@@ -162,6 +210,8 @@ public class HomeFragment extends Fragment {
 
         return root;
     }
+
+
 
     @Override
     public void onResume() {

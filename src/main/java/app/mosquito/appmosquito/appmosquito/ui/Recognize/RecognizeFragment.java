@@ -81,10 +81,10 @@ public class RecognizeFragment extends Fragment {
                 Vibrator vs = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    vs.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                    vs.vibrate(VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE));
                 } else {
                     //deprecated in API 26
-                    vs.vibrate(500);
+                    vs.vibrate(250);
                 }
 
                 pieChart.setCenterText("Gravando ");
@@ -96,10 +96,10 @@ public class RecognizeFragment extends Fragment {
                     public void run() {
                         startRecord();
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            vs.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                            vs.vibrate(VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE));
                         } else {
                             //deprecated in API 26
-                            vs.vibrate(500);
+                            vs.vibrate(250);
                         }
                         }
 

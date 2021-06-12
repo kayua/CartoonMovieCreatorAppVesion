@@ -82,9 +82,6 @@ public class ForegroundService extends Service {
             @Override
             public void run() {
 
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putString("daemonActivity", "on");
-                editor.commit();
                 while (true){
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -158,9 +155,7 @@ public class ForegroundService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("daemonActivity", "off");
-        editor.commit();
+
     }
 
     @Nullable
