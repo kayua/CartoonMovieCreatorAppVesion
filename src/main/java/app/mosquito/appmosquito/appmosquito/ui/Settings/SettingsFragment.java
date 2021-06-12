@@ -42,92 +42,82 @@ public class SettingsFragment extends Fragment {
             geoPrecision.setChecked(false); }
 
         Switch autoStart = (Switch) root.findViewById(R.id.autoStartSwitch);
-
         String switchAutoStart = settings.getString("autoStart", "");
         if(switchAutoStart.equals("on")){
-
             autoStart.setChecked(true); }else{
             autoStart.setChecked(false); }
 
         Switch emailNotification = (Switch) root.findViewById(R.id.emailNotificationSwitch);
-
         String switchEmailNotification = settings.getString("emailNotification", "");
-
         if(switchEmailNotification.equals("on")){
-
             emailNotification.setChecked(true); }else{
             emailNotification.setChecked(false); }
 
         Switch realTimeNotification = (Switch) root.findViewById(R.id.realTimeNotificationSwitch);
-
         String switchRealTimeNotification = settings.getString("realTimeNotification", "");
-
         if(switchRealTimeNotification.equals("on")){
-
             realTimeNotification.setChecked(true); }else{
             realTimeNotification.setChecked(false); }
 
         Switch infectionNotification = (Switch) root.findViewById(R.id.infectNotificationSwitch);
         String switchInfectionNotification = settings.getString("infectionNotification", "");
-
         if(switchInfectionNotification.equals("on")){
-
             infectionNotification.setChecked(true); }else{
             infectionNotification.setChecked(false); }
 
         Switch soundNotification = (Switch) root.findViewById(R.id.soundNotificationSwitch);
-
         String switchSoundNotification = settings.getString("soundNotification", "");
-
         if(switchSoundNotification.equals("on")){
-
             soundNotification.setChecked(true); }else{
             soundNotification.setChecked(false); }
 
-
         Switch advancedFilters = (Switch) root.findViewById(R.id.advancedNotificationSwitch);
-
         String switchAdvancedFilters = settings.getString("advancedFilters", "");
-
         if(switchAdvancedFilters.equals("on")){
-
             advancedFilters.setChecked(true); }else{
             advancedFilters.setChecked(false); }
 
-
-
         Switch rotation = (Switch) root.findViewById(R.id.rotationSwitch);
-
         String switchRotation = settings.getString("rotationSwitch", "");
-
         if(switchRotation.equals("on")){
-
             rotation.setChecked(true); }else{
             rotation.setChecked(false); }
 
-
         Switch humidity = (Switch) root.findViewById(R.id.sensorHumiditySwitch);
-
         String switchHumidity = settings.getString("humiditySensor", "");
-
         if(switchHumidity.equals("on")){
-
             humidity .setChecked(true); }else{
             humidity .setChecked(false); }
 
-
-
         Switch pressure = (Switch) root.findViewById(R.id.sensorPressureSwitch);
+        String switchPressure= settings.getString("pressureSensor", "");
+        if(switchPressure.equals("on")){
+            pressure.setChecked(true); }else{
+            pressure.setChecked(false); }
 
         Switch luminosity = (Switch) root.findViewById(R.id.sensorLuminositySwitch);
+        String switchLuminosity= settings.getString("luminositySensor", "");
+        if(switchLuminosity.equals("on")){
+            luminosity.setChecked(true); }else{
+            luminosity.setChecked(false); }
 
         Switch temperature = (Switch) root.findViewById(R.id.sensorTemperatureSwitch);
+        String switchTemperature = settings.getString("temperatureSensor", "");
+        if(switchTemperature.equals("on")){
+            temperature.setChecked(true); }else{
+            temperature.setChecked(false); }
 
         Switch dayActivity = (Switch) root.findViewById(R.id.dayActivitySwitch);
+        String switchDayActivity  = settings.getString("dayActivity", "");
+        if(switchDayActivity.equals("on")){
+            dayActivity.setChecked(true); }else{
+            dayActivity.setChecked(false); }
 
         Switch nightActivity = (Switch) root.findViewById(R.id.nightActivitySwitch);
-
-
+        String switchNightActivity  = settings.getString("nightActivity", "");
+        if(switchDayActivity.equals("on")){
+            nightActivity.setChecked(true); }else{
+            nightActivity.setChecked(false); }
 
         lowPower.setOnClickListener(new View.OnClickListener() {
             @Override
