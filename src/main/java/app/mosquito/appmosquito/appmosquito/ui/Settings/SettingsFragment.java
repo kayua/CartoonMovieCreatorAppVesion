@@ -210,22 +210,70 @@ public class SettingsFragment extends Fragment {
 
                 });
 
-
         pressure.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("pressureSensor", "on");}});
+            public void onClick(View view) {
+
+                if(pressure.isChecked()){
+
+                    editor.putString("pressureSensor", "on");
+
+                }else{
+
+                    editor.putString("pressureSensor", "off");
+
+                }
+
+            }});
 
         luminosity.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("luminositySensor", "on");}});
+            public void onClick(View view) {
+
+
+                if(luminosity.isChecked()){
+
+                    editor.putString("luminositySensor", "on");
+                }else{
+
+
+                    editor.putString("luminositySensor", "off");
+                }}});
 
         dayActivity.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("dayActivity", "on");}});
+            public void onClick(View view) {
+
+                if(dayActivity.isChecked()){
+
+                    editor.putString("dayActivity", "on");
+
+                }else{
+
+                    editor.putString("dayActivity", "off");
+
+                }
+            }
+        });
 
         temperature.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("temperatureSensor", "on");}});
+            public void onClick(View view) {
+
+                if(temperature.isChecked()){
+
+
+                    editor.putString("temperatureSensor", "on");
+
+
+                }else{
+
+                    editor.putString("temperatureSensor", "off");
+
+
+                }
+
+            }});
 
 
         settingsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
