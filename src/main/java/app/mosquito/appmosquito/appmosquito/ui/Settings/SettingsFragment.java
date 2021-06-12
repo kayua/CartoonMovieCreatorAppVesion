@@ -146,7 +146,7 @@ public class SettingsFragment extends Fragment {
 
                 }else{
 
-                    editor.putString("lowPower", "off");
+                    editor.putString("geoPrecision", "off");
 
                 }
                 editor.commit();
