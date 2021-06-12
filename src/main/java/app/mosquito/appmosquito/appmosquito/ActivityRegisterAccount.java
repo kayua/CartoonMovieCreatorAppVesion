@@ -117,7 +117,6 @@ public class ActivityRegisterAccount extends AppCompatActivity {
         editor.putString("rotationSwitch", "on");
         editor.putString("humiditySensor", "on");
         editor.putString("pressureSensor", "on");
-        editor.putString("soundNotification", "on");
         editor.putString("luminositySensor", "on");
         editor.putString("temperatureSensor", "on");
         editor.putString("nightActivity", "on");
