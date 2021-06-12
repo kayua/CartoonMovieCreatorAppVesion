@@ -103,6 +103,10 @@ public class ActivityRegisterAccount extends AppCompatActivity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("username", username.getText().toString());
         editor.putString("password", password.getText().toString());
+
+        editor.putString("nightActivity", "on");
+        editor.putString("dayActivity", "on");
+        editor.putString("daemonActivity", "off");
         editor.commit();
     }
 

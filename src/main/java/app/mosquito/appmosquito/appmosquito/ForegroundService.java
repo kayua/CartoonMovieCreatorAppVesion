@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
 import android.hardware.SensorManager;
 import android.os.AsyncTask;
@@ -13,7 +14,6 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
-
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
@@ -30,6 +30,8 @@ import java.nio.channels.FileChannel;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 import app.mosquito.appmosquito.appmosquito.Audio.MelFrequency;
 import app.mosquito.appmosquito.appmosquito.Audio.ReaderWav;
@@ -42,6 +44,7 @@ public class ForegroundService extends Service {
     public static final String CHANNEL_ID = "Serviço de plano de fundo";
     private SensorManager sensorManager;
     protected Interpreter tflite;
+    SharedPreferences settings;
 
 
     Runnable runnable = new Runnable(){
@@ -59,6 +62,7 @@ public class ForegroundService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        settings = getSharedPreferences("PersonalDatabase", 0);
     }
 
     @Override
@@ -79,9 +83,40 @@ public class ForegroundService extends Service {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
+
                 while (true){
+
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        startRecord();
+
+                        String night_on = settings.getString("nightActivity", "");
+                        String day_on = settings.getString("dayActivity", "");
+                        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+                        String s = sdf.format(new Date()).substring(0, 2);
+
+
+                        if(night_on.equals("on") && (Integer.parseInt(s)>18) || (Integer.parseInt(s)<6)){
+
+                            Log.i("*Night mode on: ", s );
+                            startRecord();
+
+                        }else{
+
+                            if(day_on.equals("on") && (Integer.parseInt(s)<18) && (Integer.parseInt(s)>6)){
+
+                                Log.i("*Day mode on: ", s );
+                                startRecord();
+                            }else{
+
+                                try {
+                                    Thread.sleep(5000);
+                                } catch (InterruptedException e) {
+                                    // TODO Auto-generated catch block
+                                    e.printStackTrace();
+                                }
+                            }
+
+                        }
+
                     }
                 }
             }
