@@ -215,8 +215,6 @@ public class RecognizeFragment extends Fragment {
 
         }
 
-
-        Log.i("RESULTADO >>>>>>>>>>>>>>>>>>>>>: ", String.valueOf(indice));
         PieChart pieChart = (PieChart) getActivity().findViewById(R.id.pieChart_sound);
         List<PieEntry> pieEntires = new ArrayList<>();
         float percentual = output_signal_return[0][indice];

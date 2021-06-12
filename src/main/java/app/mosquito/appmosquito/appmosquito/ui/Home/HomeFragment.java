@@ -69,6 +69,7 @@ public class HomeFragment extends Fragment {
 
             startDaemon.setChecked(true); }else{ startDaemon.setChecked(false); }
 
+
         mMapView.onCreate(savedInstanceState);
 
         try {
