@@ -82,6 +82,9 @@ public class ForegroundService extends Service {
             @Override
             public void run() {
 
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("daemonActivity", "on");
+                editor.commit();
                 while (true){
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -107,15 +110,11 @@ public class ForegroundService extends Service {
                             }else{
 
                                 try {
-
                                     Thread.sleep(5000);
-
                                 } catch (InterruptedException e) {
                                     // TODO Auto-generated catch block
                                     e.printStackTrace();
-
                                 }
-
                             }
                         }
                     }
@@ -159,6 +158,9 @@ public class ForegroundService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("daemonActivity", "off");
+        editor.commit();
     }
 
     @Nullable
@@ -211,7 +213,10 @@ public class ForegroundService extends Service {
         }
 
         interpreter = new Interpreter(loadModelFile("clustering.tflite"), null);
+
         float[][] output_signal_return = new float[1][23];
+
+
         interpreter.run(output_signal, output_signal_return);
 
         float max = 0;
@@ -232,6 +237,7 @@ public class ForegroundService extends Service {
             registerDetection();
             //registerDetection();
         }
+
 
     }
 

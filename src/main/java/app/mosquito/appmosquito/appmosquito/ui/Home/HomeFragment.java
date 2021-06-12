@@ -2,6 +2,7 @@ package app.mosquito.appmosquito.appmosquito.ui.Home;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.ToggleButton;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -44,7 +48,7 @@ public class HomeFragment extends Fragment {
     private GoogleMap googleMap;
     private Context context;
     private TextView userName;
-
+    public static final String PREFS_NAME = "PersonalDatabase";
     @Override
     public void onAttach(Context context) {
         this.context = context;
@@ -55,6 +59,15 @@ public class HomeFragment extends Fragment {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         mMapView = (MapView) root.findViewById(R.id.mapView);
+        ToggleButton startDaemon = root.findViewById(R.id.toggleButton3);
+
+        SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+
+        String switchLowPower = settings.getString("daemonActivity", "");
+        if(switchLowPower.equals("on")){
+
+            startDaemon.setChecked(true); }else{ startDaemon.setChecked(false); }
 
         mMapView.onCreate(savedInstanceState);
 
