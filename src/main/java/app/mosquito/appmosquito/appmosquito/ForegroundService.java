@@ -8,12 +8,12 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
-import android.hardware.SensorManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
@@ -31,7 +31,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
 
 import app.mosquito.appmosquito.appmosquito.Audio.MelFrequency;
 import app.mosquito.appmosquito.appmosquito.Audio.ReaderWav;
@@ -42,7 +41,6 @@ import static app.mosquito.appmosquito.appmosquito.Audio.ReaderWav.openWavFile;
 public class ForegroundService extends Service {
 
     public static final String CHANNEL_ID = "Serviço de plano de fundo";
-    private SensorManager sensorManager;
     protected Interpreter tflite;
     SharedPreferences settings;
 
@@ -105,18 +103,21 @@ public class ForegroundService extends Service {
 
                                 Log.i("*Day mode on: ", s );
                                 startRecord();
+
                             }else{
 
                                 try {
+
                                     Thread.sleep(5000);
+
                                 } catch (InterruptedException e) {
                                     // TODO Auto-generated catch block
                                     e.printStackTrace();
+
                                 }
+
                             }
-
                         }
-
                     }
                 }
             }
@@ -228,7 +229,6 @@ public class ForegroundService extends Service {
             }
 
         }
-        Log.i("RESULTADO >>>>>>>>>>>>>>>>>>>>>: ", String.valueOf(indice));
 
         if(indice == 0){
             Log.i("RESULTADO: ", "*****************************");
@@ -276,6 +276,7 @@ public class ForegroundService extends Service {
         float[][][] mfccInput = mfccConvert.processBulkSpectrogram(buffer, 60);
 
         for(i=0; i< mfccInput.length; i++){
+
             float[][] a = mfccInput[i];
             float[][][][] b = reshape(a);
             doInference(b);
@@ -289,7 +290,6 @@ public class ForegroundService extends Service {
         ParseObject entity = new ParseObject("Detections");
         DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
         String date = df.format(Calendar.getInstance().getTime());
-
 
 
     }

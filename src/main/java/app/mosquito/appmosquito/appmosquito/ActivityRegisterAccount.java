@@ -104,9 +104,26 @@ public class ActivityRegisterAccount extends AppCompatActivity {
         editor.putString("username", username.getText().toString());
         editor.putString("password", password.getText().toString());
 
+       // User settings
+
+        editor.putString("lowPower", "on");
+        editor.putString("geoPrecision", "on");
+        editor.putString("autoStart", "on");
+        editor.putString("emailNotification", "on");
+        editor.putString("realTimeNotification", "on");
+        editor.putString("infectionNotification", "on");
+        editor.putString("soundNotification", "on");
+        editor.putString("advancedFilters", "on");
+        editor.putString("rotationSwitch", "on");
+        editor.putString("humiditySensor", "on");
+        editor.putString("pressureSensor", "on");
+        editor.putString("soundNotification", "on");
+        editor.putString("luminositySensor", "on");
+        editor.putString("temperatureSensor", "on");
         editor.putString("nightActivity", "on");
         editor.putString("dayActivity", "on");
         editor.putString("daemonActivity", "off");
+
         editor.commit();
     }
 

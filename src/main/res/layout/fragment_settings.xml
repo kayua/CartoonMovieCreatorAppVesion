@@ -33,14 +33,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <Switch
-                android:id="@+id/switch10"
-                android:layout_width="match_parent"
-                android:layout_height="39dp"
-                android:text="   Deteção Ativa"
-                android:textColor="#504D4D"
-                android:textSize="20sp" />
-
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="match_parent"
@@ -248,6 +240,21 @@
                 android:layout_height="49dp"
                 android:baselineAligned="false"
                 android:text="   Sensor Luminosidade"
+                android:textColor="#504D4D"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imageView410"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:src="@drawable/gradient_color_background" />
+
+            <Switch
+                android:id="@+id/switch740"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:baselineAligned="false"
+                android:text="   Sensor Temperatura"
                 android:textColor="#504D4D"
                 android:textSize="20sp" />
 
