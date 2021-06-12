@@ -2,7 +2,6 @@ package app.mosquito.appmosquito.appmosquito.ui.Settings;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,29 +28,106 @@ public class SettingsFragment extends Fragment {
         final TextView textView = root.findViewById(R.id.text_home);
         SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
+
         Switch lowPower = (Switch) root.findViewById(R.id.lowPowerSwitch);
-
         String switchLowPower = settings.getString("lowPower", "");
-        Log.i(switchLowPower, "----------------------------");
         if(switchLowPower.equals("on")){
+            lowPower.setChecked(true); }else{
+            lowPower.setChecked(false); }
 
-           lowPower.setChecked(true);
-
-        }else{ lowPower.setChecked(false); }
         Switch geoPrecision = (Switch) root.findViewById(R.id.geoPrecisionSwitch);
+        String switchGeoPrecision = settings.getString("geoPrecision", "");
+        if(switchGeoPrecision.equals("on")){
+            geoPrecision.setChecked(true); }else{
+            geoPrecision.setChecked(false); }
+
         Switch autoStart = (Switch) root.findViewById(R.id.autoStartSwitch);
+
+        String switchAutoStart = settings.getString("autoStart", "");
+        if(switchAutoStart.equals("on")){
+
+            autoStart.setChecked(true); }else{
+            autoStart.setChecked(false); }
+
         Switch emailNotification = (Switch) root.findViewById(R.id.emailNotificationSwitch);
+
+        String switchEmailNotification = settings.getString("emailNotification", "");
+
+        if(switchEmailNotification.equals("on")){
+
+            emailNotification.setChecked(true); }else{
+            emailNotification.setChecked(false); }
+
         Switch realTimeNotification = (Switch) root.findViewById(R.id.realTimeNotificationSwitch);
+
+        String switchRealTimeNotification = settings.getString("realTimeNotification", "");
+
+        if(switchRealTimeNotification.equals("on")){
+
+            realTimeNotification.setChecked(true); }else{
+            realTimeNotification.setChecked(false); }
+
         Switch infectionNotification = (Switch) root.findViewById(R.id.infectNotificationSwitch);
+        String switchInfectionNotification = settings.getString("infectionNotification", "");
+
+        if(switchInfectionNotification.equals("on")){
+
+            infectionNotification.setChecked(true); }else{
+            infectionNotification.setChecked(false); }
+
         Switch soundNotification = (Switch) root.findViewById(R.id.soundNotificationSwitch);
+
+        String switchSoundNotification = settings.getString("soundNotification", "");
+
+        if(switchSoundNotification.equals("on")){
+
+            soundNotification.setChecked(true); }else{
+            soundNotification.setChecked(false); }
+
+
         Switch advancedFilters = (Switch) root.findViewById(R.id.advancedNotificationSwitch);
+
+        String switchAdvancedFilters = settings.getString("advancedFilters", "");
+
+        if(switchAdvancedFilters.equals("on")){
+
+            advancedFilters.setChecked(true); }else{
+            advancedFilters.setChecked(false); }
+
+
+
         Switch rotation = (Switch) root.findViewById(R.id.rotationSwitch);
+
+        String switchRotation = settings.getString("rotationSwitch", "");
+
+        if(switchRotation.equals("on")){
+
+            rotation.setChecked(true); }else{
+            rotation.setChecked(false); }
+
+
         Switch humidity = (Switch) root.findViewById(R.id.sensorHumiditySwitch);
+
+        String switchHumidity = settings.getString("humiditySensor", "");
+
+        if(switchHumidity.equals("on")){
+
+            humidity .setChecked(true); }else{
+            humidity .setChecked(false); }
+
+
+
         Switch pressure = (Switch) root.findViewById(R.id.sensorPressureSwitch);
+
         Switch luminosity = (Switch) root.findViewById(R.id.sensorLuminositySwitch);
+
         Switch temperature = (Switch) root.findViewById(R.id.sensorTemperatureSwitch);
+
         Switch dayActivity = (Switch) root.findViewById(R.id.dayActivitySwitch);
+
         Switch nightActivity = (Switch) root.findViewById(R.id.nightActivitySwitch);
+
+
 
         lowPower.setOnClickListener(new View.OnClickListener() {
             @Override
