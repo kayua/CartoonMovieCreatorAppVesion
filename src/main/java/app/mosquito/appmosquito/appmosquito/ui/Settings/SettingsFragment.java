@@ -48,35 +48,136 @@ public class SettingsFragment extends Fragment {
 
         lowPower.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("lowPower", "on");}});
+            public void onClick(View view) {
+
+                if(lowPower.isChecked()){
+
+                    editor.putString("lowPower", "on");
+
+                }else{
+
+                    editor.putString("lowPower", "off");
+
+                }
+
+            }});
 
         geoPrecision.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("geoPrecision", "on");}});
+            public void onClick(View view) {
+
+                if (geoPrecision.isChecked()){
+
+                    editor.putString("geoPrecision", "on");
+
+                }else{
+
+                    editor.putString("lowPower", "off");
+
+                }
+
+
+            }});
 
         autoStart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("autoStart", "on");}});
+            public void onClick(View view) {
+
+                if(autoStart.isChecked()){
+
+                    editor.putString("autoStart", "on");
+
+                }else{
+
+                    editor.putString("autoStart", "off");
+
+                }
+
+            }});
 
         emailNotification.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("emailNotification", "on");}});
+            public void onClick(View view) {
+
+                if(emailNotification.isChecked()){
+
+                editor.putString("emailNotification", "on");
+
+                }else{
+
+                editor.putString("emailNotification", "off");
+                }
+
+        }
+
+        });
 
         realTimeNotification.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("realTimeNotification", "on");}});
+            public void onClick(View view) {
+
+                if(realTimeNotification.isChecked()){
+
+                    editor.putString("realTimeNotification", "on");
+
+                }else{
+
+                    editor.putString("realTimeNotification", "off");}
+
+            }
+
+            });
+
 
         infectionNotification.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("infectionNotification", "on");}});
+            public void onClick(View view) {
+
+                if(infectionNotification.isChecked()){
+
+                    editor.putString("infectionNotification", "on");
+
+                }else{
+
+                    editor.putString("infectionNotification", "off");
+
+                }
+
+            }});
 
         soundNotification.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("soundNotification", "on");}});
+            public void onClick(View view) {
+
+                if(soundNotification.isChecked()){
+
+                    editor.putString("soundNotification", "on");}
+
+            }else{
+
+                editor.putString("soundNotification", "off");}
+
+
+        });
 
         advancedFilters.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {editor.putString("advancedFilters", "on");}});
+            public void onClick(View view) {
+
+
+                if(advancedFilters.isChecked()){
+
+                    editor.putString("advancedFilters", "on");
+
+
+                }else{
+
+                    editor.putString("advancedFilters", "off");
+
+
+                }
+
+            }});
 
         rotation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +194,7 @@ public class SettingsFragment extends Fragment {
         luminosity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {editor.putString("luminositySensor", "on");}});
+
         dayActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {editor.putString("dayActivity", "on");}});
