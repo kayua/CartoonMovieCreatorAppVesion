@@ -256,6 +256,22 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        nightActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(nightActivity.isChecked()){
+
+                    editor.putString("nightActivity", "on");
+
+                }else{
+
+                    editor.putString("nightActivity", "off");
+
+                }
+            }
+        });
+
         temperature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
