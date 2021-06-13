@@ -15,7 +15,7 @@ public class MelFrequency {
     private final static double    fMax                 = sampleRate/2.0;
 
 
-    FourieTransform fft = new FourieTransform();
+    ShortTransformed fft = new ShortTransformed();
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public float[][][] processBulkSpectrogram(double[] doubleInputBuffer, int frameSize) {
@@ -129,7 +129,7 @@ public class MelFrequency {
     private double[] magSpectrogram(double[] frame){
 
         double[] magSpec = new double[frame.length];
-        fft.getTransform(frame);
+        fft.getTransformed(frame);
 
         for (int m = 0; m < frame.length; m++) {
 

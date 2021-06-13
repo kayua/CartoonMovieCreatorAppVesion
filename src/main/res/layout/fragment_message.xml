@@ -11,16 +11,17 @@
         android:id="@+id/chat_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="8dp"
+        android:layout_above="@+id/bottomlayout"
+        android:layout_marginBottom="4dp"
+        android:background="#E4EDEA"
+
+        android:clipToPadding="false"
         android:divider="@android:color/transparent"
         android:dividerHeight="5dp"
-
+        android:paddingTop="8dp"
         android:paddingBottom="4dp"
-        android:layout_marginBottom="4dp"
-        android:clipToPadding="false"
-        android:layout_above="@+id/bottomlayout"
         android:stackFromBottom="false"
-        android:transcriptMode="normal"/>
+        android:transcriptMode="normal" />
 
     <LinearLayout
         android:id="@+id/bottomlayout"

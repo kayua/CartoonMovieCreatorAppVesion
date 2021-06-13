@@ -1,39 +1,37 @@
 package app.mosquito.appmosquito.appmosquito.Audio;
 
-public class FourieTransform {
+public class ShortTransformed {
 
     public double[] realPhase;
     public double[] imaginaryPhase;
-    private double constantPi = Math.PI;
 
-    public void getTransform(double[] signalWav) {
+    public void getTransformed(double[] signalWav) {
 
         final int signalSize = signalWav.length;
         realPhase = signalWav;
         imaginaryPhase = new double[signalSize];
-
-
         final int numStagesWav = (int) (Math.log(signalSize) / Math.log(2));
         final int shiftSignalSize = signalSize >> 1;
+
         copyWavToList(signalSize, shiftSignalSize);
 
-        for (int stage = 1; stage <= numStagesWav; stage++) {
-            int LE = 1;
-            for (int i = 0; i < stage; i++) {
-                LE <<= 1;
+        for (int valueSFTF = 1; valueSFTF <= numStagesWav; valueSFTF++) {
+            int signalLeft = 1;
+            for (int i = 0; i < valueSFTF; i++) {
+                signalLeft <<= 1;
             }
-            final int LE2 = LE >> 1;
+            final int tempSignalLeft = signalLeft >> 1;
             double UR = 1;
             double UI = 0;
 
-            final double angleCosSignal =  Math.cos(constantPi / LE2);
-            final double angleSinSignal = -Math.sin(constantPi / LE2);
+            final double angleCosSignal =  Math.cos(Math.PI / tempSignalLeft);
+            final double angleSinSignal = -Math.sin(Math.PI / tempSignalLeft);
 
-            for (int subDFT = 1; subDFT <= LE2; subDFT++) {
+            for (int partialTransform = 1; partialTransform <= tempSignalLeft; partialTransform++) {
 
-                for (int valueDFT = subDFT - 1; valueDFT <= signalSize - 1; valueDFT += LE) {
+                for (int valueDFT = partialTransform - 1; valueDFT <= signalSize - 1; valueDFT += signalLeft) {
 
-                    int ip = valueDFT + LE2;
+                    int ip = valueDFT + tempSignalLeft;
                     double tempReal = (double) (realPhase[ip] * UR - imaginaryPhase[ip] * UI);
                     double tempImag = (double) (realPhase[ip] * UI + imaginaryPhase[ip] * UR);
                     realPhase[ip] = realPhase[valueDFT] - tempReal;
@@ -42,9 +40,9 @@ public class FourieTransform {
                     imaginaryPhase[valueDFT] += tempImag;
                 }
 
-                double tempUR = UR;
-                UR = tempUR * angleCosSignal - UI * angleSinSignal;
-                UI = tempUR * angleSinSignal + UI * angleCosSignal;
+                double tempConstant = UR;
+                UR = tempConstant * angleCosSignal - UI * angleSinSignal;
+                UI = tempConstant * angleSinSignal + UI * angleCosSignal;
             }
         }
     }

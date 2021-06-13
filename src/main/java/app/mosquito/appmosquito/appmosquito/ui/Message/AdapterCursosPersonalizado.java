@@ -73,16 +73,6 @@ public class AdapterCursosPersonalizado extends BaseAdapter {
             imagem.setImageResource(R.drawable.icon_casa_verde);
             nome.setText(curso.getNome());
             descricao.setText(curso.getDescricao());
-        } else if (categoria.equals(Categoria.HTML)) {
-            view = act.getLayoutInflater().inflate(R.layout.lista_curso_personalizada, parent, false);
-            TextView nome = (TextView)
-                    view.findViewById(R.id.lista_curso_personalizada_nome);
-            TextView descricao = (TextView)
-                    view.findViewById(R.id.lista_curso_personalizada_descricao);
-            ImageView imagem = (ImageView)
-                    view.findViewById(R.id.lista_curso_personalizada_imagem);
-            imagem.setImageResource(R.drawable.icon_casa_verde);
-            nome.setText(curso.getNome());
         }
 
         return view;
