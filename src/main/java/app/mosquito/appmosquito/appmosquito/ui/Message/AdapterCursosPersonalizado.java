@@ -60,9 +60,9 @@ public class AdapterCursosPersonalizado extends BaseAdapter {
         Categoria categoria = curso.getCategoria();
 
         if (categoria.equals(Categoria.JAVA)) {
-            imagem.setImageResource(R.drawable.icon_mosquito);
+            imagem.setImageResource(R.drawable.icon_casa_verde);
         } else if (categoria.equals(Categoria.ANDROID)) {
-            imagem.setImageResource(R.drawable.android);
+            imagem.setImageResource(R.drawable.icone_casa_vermelha);
         } else if (categoria.equals(Categoria.HTML)) {
             imagem.setImageResource(R.drawable.html);
         }
