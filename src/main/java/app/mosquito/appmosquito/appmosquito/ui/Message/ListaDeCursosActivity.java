@@ -32,9 +32,9 @@ public class ListaDeCursosActivity extends AppCompatActivity {
      */
     private List<Curso> todosOsCursos() {
         return new ArrayList<>(Arrays.asList(
-                new Curso("Java", "  Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
-                new Curso("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, Categoria.HTML),
-                new Curso("Java", "  básico de Java", EstadoAtual.FINALIZADO, Categoria.JAVA),
+                new Curso("Java", "    Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
+                new Curso("HTML e CSS", "    HTML 5 e suas novidades", EstadoAtual.FAZENDO, Categoria.HTML),
+                new Curso("Java", "básico de Java", EstadoAtual.FINALIZADO, Categoria.JAVA),
                 new Curso("HTML e CSS", "HTML 5 e suas novidades", EstadoAtual.FAZENDO, Categoria.HTML),
                 new Curso("Java", "  básico de Java", EstadoAtual.FINALIZADO, Categoria.JAVA),
                 new Curso("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, Categoria.HTML),

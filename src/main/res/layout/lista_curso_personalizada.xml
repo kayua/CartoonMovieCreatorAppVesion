@@ -1,36 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:orientation="horizontal"
+    android:layout_height="wrap_content"
     android:divider="@android:color/transparent"
     android:dividerHeight="5dp"
+    android:gravity="center|left"
 
-    >
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="8dp"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/arrow" />
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_gravity=""
+        android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="match_parent"
-            android:layout_height="27dp"
-            app:srcCompat="@drawable/arrow" />
 
         <ImageView
             android:id="@+id/lista_curso_personalizada_imagem"
             android:layout_width="36dp"
-            android:layout_height="36dp" />
+            android:layout_height="36dp"
+            android:layout_gravity="center" />
 
         <TextView
             android:id="@+id/lista_curso_personalizada_nome"
@@ -38,47 +30,28 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Titulo"
-            android:textSize="12dp" />
+            android:textSize="8sp" />
 
     </LinearLayout>
 
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="8dp"
-        android:layout_height="85dp"
-        app:srcCompat="@drawable/arrow" />
+    <TextView
+        android:id="@+id/lista_curso_personalizada_descricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
+        android:alpha="0.85"
+        android:background="@drawable/text_round"
+        android:padding="6dp"
+        android:textColor="#254025"
+        android:textSize="14sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="8dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                app:srcCompat="@drawable/arrow" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/lista_curso_personalizada_descricao"
-            android:layout_width="match_parent"
-            android:layout_height="87dp"
-
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/gradient_color_msg"
-            android:text="descriçao"
-            android:textColor="#191818"
-            android:textSize="16sp" />
-
-    </LinearLayout>
 
 </LinearLayout>

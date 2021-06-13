@@ -43,28 +43,45 @@ public class AdapterCursosPersonalizado extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = act.getLayoutInflater().inflate(R.layout.lista_curso_personalizada, parent, false);
+
 
         Curso curso = cursos.get(position);
 
-        TextView nome = (TextView)
-                view.findViewById(R.id.lista_curso_personalizada_nome);
-        TextView descricao = (TextView)
-                view.findViewById(R.id.lista_curso_personalizada_descricao);
-        ImageView imagem = (ImageView)
-                view.findViewById(R.id.lista_curso_personalizada_imagem);
-
-        nome.setText(curso.getNome());
-        descricao.setText(curso.getDescricao());
+        View view = null;
 
         Categoria categoria = curso.getCategoria();
 
         if (categoria.equals(Categoria.JAVA)) {
+            view = act.getLayoutInflater().inflate(R.layout.lista_curso_personalizada, parent, false);
+            TextView nome = (TextView)
+                    view.findViewById(R.id.lista_curso_personalizada_nome);
+            TextView descricao = (TextView)
+                    view.findViewById(R.id.lista_curso_personalizada_descricao);
+            ImageView imagem = (ImageView)
+                    view.findViewById(R.id.lista_curso_personalizada_imagem);
             imagem.setImageResource(R.drawable.icon_casa_verde);
+            nome.setText(curso.getNome());
+            descricao.setText(curso.getDescricao());
         } else if (categoria.equals(Categoria.ANDROID)) {
-            imagem.setImageResource(R.drawable.icone_casa_vermelha);
+            view = act.getLayoutInflater().inflate(R.layout.list_msg, parent, false);
+            TextView nome = (TextView)
+                    view.findViewById(R.id.lista_curso_personalizada_nome);
+            TextView descricao = (TextView)
+                    view.findViewById(R.id.lista_curso_personalizada_descricao);
+            ImageView imagem = (ImageView)
+                    view.findViewById(R.id.lista_curso_personalizada_imagem);
+            imagem.setImageResource(R.drawable.icon_casa_verde);
+            nome.setText(curso.getNome());
         } else if (categoria.equals(Categoria.HTML)) {
-            imagem.setImageResource(R.drawable.html);
+            view = act.getLayoutInflater().inflate(R.layout.lista_curso_personalizada, parent, false);
+            TextView nome = (TextView)
+                    view.findViewById(R.id.lista_curso_personalizada_nome);
+            TextView descricao = (TextView)
+                    view.findViewById(R.id.lista_curso_personalizada_descricao);
+            ImageView imagem = (ImageView)
+                    view.findViewById(R.id.lista_curso_personalizada_imagem);
+            imagem.setImageResource(R.drawable.icon_casa_verde);
+            nome.setText(curso.getNome());
         }
 
         return view;

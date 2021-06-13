@@ -43,7 +43,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".ActivitySplashScreen"
+            android:name=".ui.Message.ListaDeCursosActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             tools:ignore="DuplicateActivity">

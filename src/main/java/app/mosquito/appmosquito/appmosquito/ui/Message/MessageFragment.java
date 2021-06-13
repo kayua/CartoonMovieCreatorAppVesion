@@ -50,17 +50,17 @@ public class MessageFragment extends Fragment {
     }
     private List<Curso> todosOsCursos() {
     return new ArrayList<>(Arrays.asList(
-            new Curso("Java", "  Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
-            new Curso("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, Categoria.HTML),
-            new Curso("Android", "  boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
-            new Curso("Java", "  Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
-            new Curso("Java", "  Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
-            new Curso("Android", "  boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
-            new Curso("Android", "  boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
-            new Curso("Java", "  Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
-            new Curso("Android", "  boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
-            new Curso("Java", "  Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
-            new Curso("Android", "  boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
-            new Curso("Android", "  boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID)));
+            new Curso("Java", "      Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
+            new Curso("HTML e CSS", "      HTML 5 e suas novidades", EstadoAtual.FAZENDO, Categoria.HTML),
+            new Curso("Android", "      boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
+            new Curso("Java", "      Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
+            new Curso("Java", "      Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
+            new Curso("Android", "      boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
+            new Curso("Android", "      boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
+            new Curso("Java", "    Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
+            new Curso("Android", "    boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
+            new Curso("Java", "     Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
+            new Curso("Android", "    boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
+            new Curso("Android", "    boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID)));
 }
 }
