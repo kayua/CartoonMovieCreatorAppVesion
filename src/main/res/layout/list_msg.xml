@@ -36,7 +36,7 @@
             android:textSize="14sp" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="47dp"
             android:layout_height="wrap_content"
             android:layout_gravity=""
             android:gravity="top"
@@ -54,6 +54,7 @@
                 android:id="@+id/lista_curso_personalizada_nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
                 android:gravity="center"
                 android:text="Titulo"
                 android:textSize="8dp" />

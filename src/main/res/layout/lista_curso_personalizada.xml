@@ -11,7 +11,7 @@
     android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_gravity=""
         android:gravity="center"
@@ -22,12 +22,14 @@
             android:id="@+id/lista_curso_personalizada_imagem"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_marginLeft="6dp" />
 
         <TextView
             android:id="@+id/lista_curso_personalizada_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
             android:gravity="center"
             android:text="Titulo"
             android:textSize="8sp" />
