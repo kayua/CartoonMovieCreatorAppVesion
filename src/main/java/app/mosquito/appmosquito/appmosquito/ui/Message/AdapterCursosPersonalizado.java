@@ -72,6 +72,7 @@ public class AdapterCursosPersonalizado extends BaseAdapter {
                     view.findViewById(R.id.lista_curso_personalizada_imagem);
             imagem.setImageResource(R.drawable.icon_casa_verde);
             nome.setText(curso.getNome());
+            descricao.setText(curso.getDescricao());
         } else if (categoria.equals(Categoria.HTML)) {
             view = act.getLayoutInflater().inflate(R.layout.lista_curso_personalizada, parent, false);
             TextView nome = (TextView)

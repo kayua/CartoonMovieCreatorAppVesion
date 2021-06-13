@@ -30,13 +30,13 @@
             android:alpha="1.0"
             android:background="@drawable/text_round_other"
             android:gravity="center|right"
-            android:padding="6dp"
+            android:padding="8dp"
             android:text="descriçao"
-            android:textColor="#191818"
+            android:textColor="#254025"
             android:textSize="14sp" />
 
         <LinearLayout
-            android:layout_width="56dp"
+            android:layout_width="64dp"
             android:layout_height="wrap_content"
             android:layout_gravity=""
             android:gravity="top"
@@ -46,14 +46,14 @@
 
             <ImageView
                 android:id="@+id/lista_curso_personalizada_imagem"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:layout_marginRight="8dp" />
 
             <TextView
                 android:id="@+id/lista_curso_personalizada_nome"
-                android:layout_width="match_parent"
+                android:layout_width="39dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="6dp"
                 android:gravity="center"
