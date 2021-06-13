@@ -11,11 +11,12 @@
     android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="45dp"
+        android:layout_width="54dp"
         android:layout_height="wrap_content"
         android:layout_gravity=""
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="4dp">
 
 
         <ImageView

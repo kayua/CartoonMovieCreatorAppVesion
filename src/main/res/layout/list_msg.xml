@@ -28,7 +28,7 @@
             android:layout_marginRight="12dp"
             android:layout_marginBottom="12dp"
             android:alpha="1.0"
-            android:background="@drawable/text_round"
+            android:background="@drawable/text_round_other"
             android:gravity="center|right"
             android:padding="6dp"
             android:text="descriçao"
@@ -36,11 +36,12 @@
             android:textSize="14sp" />
 
         <LinearLayout
-            android:layout_width="47dp"
+            android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:layout_gravity=""
             android:gravity="top"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="2dp">
 
 
             <ImageView
