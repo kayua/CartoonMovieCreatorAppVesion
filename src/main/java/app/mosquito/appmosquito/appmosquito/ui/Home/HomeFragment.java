@@ -84,11 +84,14 @@ public class HomeFragment extends Fragment {
                 Vibrator vs = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
                     vs.vibrate(VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE));
+
                 } else {
-                    //deprecated in API 26
+
                     vs.vibrate(250);
                 }
+
                 Intent intent = new Intent(getContext(), DaemonService.class);
                 startActivity(intent);
 
@@ -132,6 +135,24 @@ public class HomeFragment extends Fragment {
 
                             vs.vibrate(50);
                         }
+                        String emailsend = "kayuapaim.aluno@unipampa.edu.br";
+                        String emailsubject = "kayuaolequesp@gmail.com";
+                        String emailbody = "test";
+
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+
+                        intent.putExtra(Intent.EXTRA_EMAIL,
+                                new String[] { emailsend });
+                        intent.putExtra(Intent.EXTRA_SUBJECT, emailsubject);
+                        intent.putExtra(Intent.EXTRA_TEXT, emailbody);
+
+                        intent.setType("message/plain");
+
+                        startActivity(
+                                Intent
+                                        .createChooser(intent,
+                                                "Choose an Email client :"));
+
                         LatLng latLng= new LatLng(relativeLatitude, relativeLongitude);
                         CameraPosition cameraPosition = new CameraPosition.Builder()
                                 .target(latLng).zoom(16).bearing(0).tilt(40).build();

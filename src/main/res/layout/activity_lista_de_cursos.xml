@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="NamespaceTypo"
+    android:orientation="vertical">
+
+
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/lista"
+                    android:layout_width="match_parent"
+                    android:layout_height="587dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:alpha="0.75"
+                    android:background="#FAF8F8"
+                    android:backgroundTint="#FDFCFC"
+                    android:cacheColorHint="#00FFFFFF"
+                    android:foregroundTint="#FAF9F9"
+                    android:listSelector="@drawable/arrow"
+                    android:scrollbarThumbHorizontal="@drawable/arrow"
+                    android:scrollbarThumbVertical="@drawable/button_round">
+
+                </ListView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@android:color/transparent"
+                >
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/editTextTextMultiLine3"
+                    android:layout_width="287dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/msgbox"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint=" Digite a mensagem"
+                    android:inputType="textMultiLine" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/send" />
+
+            </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+
+</LinearLayout>
+
+
+
