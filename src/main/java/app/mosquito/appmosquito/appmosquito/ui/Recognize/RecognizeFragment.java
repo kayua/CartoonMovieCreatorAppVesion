@@ -285,7 +285,7 @@ public class RecognizeFragment extends Fragment {
 
         readWavFile.readFrames(buffer, BUF_SIZE);
         int i = 0;
-        float[][][] mfccInput = mfccConvert.processBulkSpectrogram(buffer, 60);
+        float[][][] mfccInput = mfccConvert.processingSpectrogram(buffer, 60);
 
         for(i=0; i< mfccInput.length; i++){
             float[][] a = mfccInput[i];

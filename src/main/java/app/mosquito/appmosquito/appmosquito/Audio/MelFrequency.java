@@ -8,16 +8,17 @@ import static java.lang.Double.max;
 public class MelFrequency {
 
     private final static int numberWindows = 1024;
-    private final static int successiveNumberFrames = 256;
-    private final static double sampleRate = 8000.0;
     private final static int melResolution = 60;
+    private final static int successiveNumberFrames = 256;
+
+    private final static double sampleRate = 8000.0;
     private final static double minFrequency = 0.0;
     private final static double maxFrequency = sampleRate/2.0;
     
     ShortTransformed shortTransformed = new ShortTransformed();
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public float[][][] processBulkSpectrogram(double[] signalWave, int sizeFrame) {
+    public float[][][] processingSpectrogram(double[] signalWave, int sizeFrame) {
 
         int sizeWindows =  successiveNumberFrames * (sizeFrame - 1);
         int numberSpectrogramFrames = signalWave.length / sizeWindows;
@@ -84,23 +85,23 @@ public class MelFrequency {
 
     private double[][] castShortTransformedToMelSpec(double[] y){
 
-        final double[] fftwin = getWindow();
-        double[] ypad = new double[numberWindows +y.length];
+        final double[] arrayShortTransformedWindows = getWindow();
+        double[] axisNormalization = new double[numberWindows +y.length];
 
         for (int i = 0; i < numberWindows /2; i++){
 
-            ypad[(numberWindows /2)-i-1] = y[i+1];
-            ypad[(numberWindows /2)+y.length+i] = y[y.length-2-i];
+            axisNormalization[(numberWindows /2)-i-1] = y[i+1];
+            axisNormalization[(numberWindows /2)+y.length+i] = y[y.length-2-i];
 
         }
 
         for (int j = 0; j < y.length; j++){
 
-            ypad[(numberWindows /2)+j] = y[j];
+            axisNormalization[(numberWindows /2)+j] = y[j];
 
         }
 
-        final double[][] frame = yFrame(ypad);
+        final double[][] frame = yFrame(axisNormalization);
         double[][] shortTransformedToMel = new double[1+ numberWindows /2][frame[0].length];
         double[] fftFrame = new double[numberWindows];
 
@@ -108,7 +109,7 @@ public class MelFrequency {
 
             for (int l = 0; l < numberWindows; l++){
 
-                fftFrame[l] = fftwin[l]*frame[l][k];
+                fftFrame[l] = arrayShortTransformedWindows[l]*frame[l][k];
 
             }
 
@@ -234,11 +235,11 @@ public class MelFrequency {
 
         final double[] shortTransformedFrequency = fftFreq();
         final double[] melF = melFreq();
-        double[] fdiff = new double[melF.length-1];
+        double[] filterDif = new double[melF.length-1];
 
         for (int i = 0; i < melF.length-1; i++){
 
-            fdiff[i] = melF[i+1]-melF[i];
+            filterDif[i] = melF[i+1]-melF[i];
 
         }
 
@@ -259,8 +260,8 @@ public class MelFrequency {
 
             for (int j = 0; j < shortTransformedFrequency.length; j++){
 
-                double lowerF = -ramps[i][j] / fdiff[i];
-                double upperF = ramps[i+2][j] / fdiff[i+1];
+                double lowerF = -ramps[i][j] / filterDif[i];
+                double upperF = ramps[i+2][j] / filterDif[i+1];
 
                 if (lowerF > upperF && upperF>0){
 
