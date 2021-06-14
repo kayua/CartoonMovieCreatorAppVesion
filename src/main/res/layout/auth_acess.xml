@@ -24,68 +24,28 @@
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115" />
+        app:layout_constraintVertical_bias="0.133" />
 
-    <ImageButton
-        android:id="@+id/imageButtonAuthFacebook"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="8dp"
-        android:foreground="@drawable/icon_facebook"
+    <TextView
+        android:id="@+id/textViewAuthBeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beta"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.772"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.523" />
-
-    <ImageButton
-        android:id="@+id/imageButtonAuthGoogle"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="56dp"
-        android:foreground="@drawable/icon_google"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
-
-    <ImageButton
-        android:id="@+id/imageButtonAuthTwitter"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="8dp"
-        android:foreground="@drawable/icon_twitter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58" />
-
-    <Button
-        android:id="@+id/buttonAuthAcess"
-        android:layout_width="191dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_round_register"
-        android:onClick="createUser"
-        android:text="@string/acess_now"
-        android:textColor="#FAF9F9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.81" />
+        app:layout_constraintVertical_bias="0.103" />
 
     <EditText
 
         android:id="@+id/editTextAuthAcessUser"
-        android:layout_width="268dp"
-        android:layout_height="47dp"
+        android:layout_width="250dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="20dp"
         android:autofillHints=""
         android:background="@drawable/edit_text_design"
@@ -100,13 +60,67 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.305" />
+        app:layout_constraintVertical_bias="0.355" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAuthFacebook"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:foreground="@drawable/icon_facebook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAuthGoogle"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="56dp"
+        android:foreground="@drawable/icon_google"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAuthTwitter"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:foreground="@drawable/icon_twitter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.607" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/acess"
+        android:textColor="#FAF8F8"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.261" />
 
     <EditText
 
         android:id="@+id/editTextAuthAcessPassword"
-        android:layout_width="268dp"
-        android:layout_height="47dp"
+        android:layout_width="250dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="40dp"
         android:autofillHints=""
         android:background="@drawable/edit_text_design"
@@ -122,22 +136,23 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
+        app:layout_constraintVertical_bias="0.469" />
 
-    <TextView
-        android:id="@+id/textViewAuthBeta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Beta"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
+    <Button
+        android:id="@+id/buttonAuthAcess"
+        android:layout_width="171dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_round_register"
+        android:onClick="createUser"
+        android:text="@string/acess_now"
+        android:textColor="#FAF9F9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintVertical_bias="0.824" />
 
     <TextView
         android:id="@+id/textView7"
@@ -151,22 +166,7 @@
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/acess"
-        android:textColor="#FAF8F8"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221" />
+        app:layout_constraintVertical_bias="0.887" />
 
     <TextView
         android:id="@+id/textView18"
@@ -177,9 +177,8 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.925" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
