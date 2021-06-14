@@ -20,16 +20,16 @@ public class MelFrequency {
     public float[][][] processBulkSpectrogram(double[] signalWave, int sizeFrame) {
 
         int sizeWindows =  successiveNumberFrames * (sizeFrame - 1);
-        int numberOfSpectrogram = signalWave.length / sizeWindows;
-        final float[][][] spectrogramBuffer = new float[numberOfSpectrogram * 2][][];
-        int start = 0;
-        int end = sizeWindows;
+        int numberSpectrogramFrames = signalWave.length / sizeWindows;
+        final float[][][] spectrogramBuffer = new float[numberSpectrogramFrames * 2][][];
+        int startWindows = 0;
+        int endWindows = sizeWindows;
 
-        for(int i = 0; i < numberOfSpectrogram * 2; i++) {
+        for(int i = 0; i < numberSpectrogramFrames * 2; i++) {
 
-            spectrogramBuffer[i] = convert(powerToDb(melSpectrogram(Arrays.copyOfRange(signalWave, start, end))));
-            start += sizeWindows / 2;
-            end += sizeWindows / 2;
+            spectrogramBuffer[i] = convert(SoundAmplification(melSpectrogram(Arrays.copyOfRange(signalWave, startWindows, endWindows))));
+            startWindows += sizeWindows / 2;
+            endWindows += sizeWindows / 2;
 
         }
 
@@ -101,7 +101,7 @@ public class MelFrequency {
         }
 
         final double[][] frame = yFrame(ypad);
-        double[][] fftmagSpec = new double[1+ numberWindows /2][frame[0].length];
+        double[][] shortTransformedToMel = new double[1+ numberWindows /2][frame[0].length];
         double[] fftFrame = new double[numberWindows];
 
         for (int k = 0; k < frame[0].length; k++){
@@ -116,13 +116,13 @@ public class MelFrequency {
 
             for (int i = 0; i < 1+ numberWindows /2; i++){
 
-                fftmagSpec[i][k] = magSpec[i];
+                shortTransformedToMel[i][k] = magSpec[i];
 
             }
 
         }
 
-        return fftmagSpec;
+        return shortTransformedToMel;
     }
 
     private double[] magSpectrogram(double[] frame){
@@ -172,7 +172,7 @@ public class MelFrequency {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private double[][] powerToDb(double[][] melS){
+    private double[][] SoundAmplification(double[][] melS){
 
         double[][] log_spec = new double[melS.length][melS[0].length];
         double maxValue = -100;
@@ -233,7 +233,7 @@ public class MelFrequency {
     private double[][] melFilter(){
 
         final double[] fftFreqs = fftFreq();
-        final double[] melF = melFreq(melResolution +2);
+        final double[] melF = melFreq();
         double[] fdiff = new double[melF.length-1];
 
         for (int i = 0; i < melF.length-1; i++){
@@ -278,19 +278,19 @@ public class MelFrequency {
 
                     weights[i][j] = 0;
 
-                }else {}
+                }
             }
         }
 
-        double enorm[] = new double[melResolution];
+        double[] vectorMelScale = new double[melResolution];
 
         for (int i = 0; i < melResolution; i++){
 
-            enorm[i] = 2.0 / (melF[i+2]-melF[i]);
+            vectorMelScale[i] = 2.0 / (melF[i+2]-melF[i]);
 
             for (int j = 0; j < fftFreqs.length; j++){
 
-                weights[i][j] *= enorm[i];
+                weights[i][j] *= vectorMelScale[i];
 
             }
 
@@ -314,7 +314,7 @@ public class MelFrequency {
     }
 
 
-    private double[] melFreq(int numMels) {
+    private double[] melFreq() {
 
         double[] LowFFreq = new double[1];
         double[] HighFFreq = new double[1];
@@ -322,11 +322,11 @@ public class MelFrequency {
         HighFFreq[0] = maxFrequency;
         final double[] melFLow    = freqToMel(LowFFreq);
         final double[] melFHigh   = freqToMel(HighFFreq);
-        double[] mels = new double[numMels];
+        double[] mels = new double[62];
 
-        for (int i = 0; i < numMels; i++) {
+        for (int i = 0; i < 62; i++) {
 
-            mels[i] = melFLow[0] + (melFHigh[0] - melFLow[0]) / (numMels-1) * i;
+            mels[i] = melFLow[0] + (melFHigh[0] - melFLow[0]) / (62 -1) * i;
 
         }
 
@@ -335,24 +335,24 @@ public class MelFrequency {
     }
 
 
-    private double[] melToFreq(double[] mels) {
+    private double[] melToFreq(double[] melSec) {
 
         final double f_min = 0.0;
         final double f_sp = 200.0 / 3;
-        double[] freqs = new double[mels.length];
+        double[] freqs = new double[melSec.length];
         final double min_log_hz = 1000.0;
         final double min_log_mel = (min_log_hz - f_min) / f_sp;
         final double logstep = Math.log(6.4) / 27.0;
 
-        for (int i = 0; i < mels.length; i++) {
+        for (int i = 0; i < melSec.length; i++) {
 
-            if (mels[i] < min_log_mel){
+            if (melSec[i] < min_log_mel){
 
-                freqs[i] =  f_min + f_sp * mels[i];
+                freqs[i] =  f_min + f_sp * melSec[i];
 
             }else{
 
-                freqs[i] = min_log_hz * Math.exp(logstep * (mels[i] - min_log_mel));
+                freqs[i] = min_log_hz * Math.exp(logstep * (melSec[i] - min_log_mel));
 
             }
 
