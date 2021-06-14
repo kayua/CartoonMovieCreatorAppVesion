@@ -11,25 +11,6 @@
     android:soundEffectsEnabled="true"
     tools:context=".Authentication.ActivityRegisterAccount">
 
-    <EditText
-
-        android:id="@+id/editTextAuthAcessUser"
-        android:layout_width="268dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="20dp"
-        android:autofillHints=""
-        android:background="@drawable/edit_text_design"
-        android:drawableStart="@drawable/icon_user"
-        android:ems="10"
-        android:hint="@string/user"
-        android:inputType="textPassword"
-        android:textColor="#FF777575"
-        android:textColorHint="#FF777575"
-        app:layout_constraintBottom_toTopOf="@+id/editTextAuthAcessPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/buttonAuthAcess"
         android:layout_width="195dp"
@@ -44,22 +25,11 @@
         app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButtonAuthTwitter"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="4dp"
-        android:foreground="@drawable/icon_twitter"
-        app:layout_constraintBottom_toTopOf="@+id/imageButtonAuthGoogle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/textViewRegisterNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="56dp"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -81,28 +51,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697"
+        app:layout_constraintVertical_bias="0.704"
         tools:text="@string/acess" />
-
-    <TextView
-        android:id="@+id/textViewNotRegistered"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textViewRegisterNow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="@string/NotRegister" />
 
     <ImageButton
         android:id="@+id/imageButtonAuthFacebook"
         android:layout_width="180dp"
         android:layout_height="30dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:foreground="@drawable/icon_facebook"
         app:layout_constraintBottom_toTopOf="@+id/imageButtonAuthTwitter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,11 +69,41 @@
         android:id="@+id/imageButtonAuthGoogle"
         android:layout_width="180dp"
         android:layout_height="30dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="56dp"
         android:foreground="@drawable/icon_google"
         app:layout_constraintBottom_toTopOf="@+id/buttonAuthAcess"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAuthTwitter"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:foreground="@drawable/icon_twitter"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonAuthGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+
+        android:id="@+id/editTextAuthAcessUser"
+        android:layout_width="268dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints=""
+        android:background="@drawable/edit_text_design"
+        android:drawableStart="@drawable/icon_user"
+        android:ems="10"
+        android:hint="@string/user"
+        android:inputType="textPassword"
+        android:textColor="#FF777575"
+        android:textColorHint="#FF777575"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAuthAcessPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -125,7 +111,7 @@
         android:id="@+id/editTextAuthAcessPassword"
         android:layout_width="268dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="40dp"
         android:autofillHints=""
         android:background="@drawable/edit_text_design"
         android:drawableStart="@drawable/icon_password"
@@ -141,17 +127,31 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/textViewNotRegistered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewRegisterNow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/NotRegister" />
+
+    <TextView
         android:id="@+id/textViewAuthTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="92dp"
         android:text="App Mosquito"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.115" />
@@ -169,6 +169,6 @@
         app:layout_constraintHorizontal_bias="0.772"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
+        app:layout_constraintVertical_bias="0.446" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
