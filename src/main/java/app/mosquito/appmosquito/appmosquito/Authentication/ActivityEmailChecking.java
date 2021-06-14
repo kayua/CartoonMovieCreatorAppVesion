@@ -28,7 +28,7 @@ public class ActivityEmailChecking extends AppCompatActivity {
                 .server("https://parseapi.back4app.com")
                 .build()
         );
-        setContentView(R.layout.activity_email_check);
+        setContentView(R.layout.auth_email);
     }
 
     public void init_section_user(View view){
