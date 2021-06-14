@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.parse.Parse;
 import com.parse.ParseUser;
 
+import app.mosquito.appmosquito.appmosquito.Authentication.ActivityEmailChecking;
+import app.mosquito.appmosquito.appmosquito.Authentication.ActivityRegisterAccount;
+
 public class ActivitySplashScreen extends AppCompatActivity {
 
     String usernameRegistered;

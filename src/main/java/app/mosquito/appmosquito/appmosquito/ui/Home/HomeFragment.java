@@ -54,7 +54,9 @@ public class HomeFragment extends Fragment {
     private GoogleMap googleMap;
     private Context context;
     private TextView userName;
+
     public static final String PREFS_NAME = "PersonalDatabase";
+
     @Override
     public void onAttach(Context context) {
         this.context = context;
@@ -69,9 +71,9 @@ public class HomeFragment extends Fragment {
         ImageView goToHome = root.findViewById(R.id.imageView3);
 
         SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
 
         String switchLowPower = settings.getString("daemonActivity", "");
+
         if(switchLowPower.equals("on")){
 
             startDaemon.setChecked(true); }else{ startDaemon.setChecked(false); }

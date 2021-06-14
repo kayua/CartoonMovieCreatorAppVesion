@@ -11,7 +11,7 @@
     android:hapticFeedbackEnabled="true"
     android:soundEffectsEnabled="true"
 
-    tools:context=".ActivityRegisterAccount">
+    tools:context=".Authentication.ActivityRegisterAccount">
 
 
     <EditText

@@ -1,6 +1,4 @@
-package app.mosquito.appmosquito.appmosquito;
-
-import androidx.appcompat.app.AppCompatActivity;
+package app.mosquito.appmosquito.appmosquito.Authentication;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,8 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.parse.Parse;
 import com.parse.ParseUser;
+
+import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
+import app.mosquito.appmosquito.appmosquito.R;
 
 public class ActivityEmailChecking extends AppCompatActivity {
 

@@ -15,12 +15,9 @@ import app.mosquito.appmosquito.appmosquito.R;
 
 public class HistoryFragment extends Fragment {
 
-    private HistoryViewModel historyViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        historyViewModel =
-                new ViewModelProvider(this).get(HistoryViewModel.class);
+        HistoryViewModel historyViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_history, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
         historyViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
