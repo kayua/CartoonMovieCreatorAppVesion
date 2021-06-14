@@ -61,7 +61,7 @@ public class MelFrequency {
     private double[][] melSpectrogram(double[] y){
 
         double[][] melBasis = melFilter();
-        double[][] spectrogram = stftMagSpec(y);
+        double[][] spectrogram = castShortTransformedToMelSpec(y);
         double[][] melS = new double[melBasis.length][spectrogram[0].length];
 
         for (int i = 0; i < melBasis.length; i++){
@@ -82,7 +82,7 @@ public class MelFrequency {
     }
 
 
-    private double[][] stftMagSpec(double[] y){
+    private double[][] castShortTransformedToMelSpec(double[] y){
 
         final double[] fftwin = getWindow();
         double[] ypad = new double[numberWindows +y.length];
@@ -232,7 +232,7 @@ public class MelFrequency {
 
     private double[][] melFilter(){
 
-        final double[] fftFreqs = fftFreq();
+        final double[] shortTransformedFrequency = fftFreq();
         final double[] melF = melFreq();
         double[] fdiff = new double[melF.length-1];
 
@@ -242,13 +242,13 @@ public class MelFrequency {
 
         }
 
-        double[][] ramps = new double[melF.length][fftFreqs.length];
+        double[][] ramps = new double[melF.length][shortTransformedFrequency.length];
 
         for (int i = 0; i < melF.length; i++){
 
-            for (int j = 0; j < fftFreqs.length; j++){
+            for (int j = 0; j < shortTransformedFrequency.length; j++){
 
-                ramps[i][j] = melF[i]-fftFreqs[j];
+                ramps[i][j] = melF[i]-shortTransformedFrequency[j];
 
             }
         }
@@ -257,7 +257,7 @@ public class MelFrequency {
 
         for (int i = 0; i < melResolution; i++){
 
-            for (int j = 0; j < fftFreqs.length; j++){
+            for (int j = 0; j < shortTransformedFrequency.length; j++){
 
                 double lowerF = -ramps[i][j] / fdiff[i];
                 double upperF = ramps[i+2][j] / fdiff[i+1];
@@ -288,7 +288,7 @@ public class MelFrequency {
 
             vectorMelScale[i] = 2.0 / (melF[i+2]-melF[i]);
 
-            for (int j = 0; j < fftFreqs.length; j++){
+            for (int j = 0; j < shortTransformedFrequency.length; j++){
 
                 weights[i][j] *= vectorMelScale[i];
 
@@ -330,62 +330,62 @@ public class MelFrequency {
 
         }
 
-        return melToFreq(mels);
+        return scaleToDomainFrequencies(mels);
 
     }
 
 
-    private double[] melToFreq(double[] melSec) {
+    private double[] scaleToDomainFrequencies(double[] melSec) {
 
-        final double f_min = 0.0;
-        final double f_sp = 200.0 / 3;
-        double[] freqs = new double[melSec.length];
+        final double domainMinFrequency = 0.0;
+        final double domainsMaxFrequency = 200.0 / 3;
+        double[] arrayFrequencies = new double[melSec.length];
         final double min_log_hz = 1000.0;
-        final double min_log_mel = (min_log_hz - f_min) / f_sp;
-        final double logstep = Math.log(6.4) / 27.0;
+        final double min_log_mel = (min_log_hz - domainMinFrequency) / domainsMaxFrequency;
+        final double castToLogScale = Math.log(6.4) / 27.0;
 
         for (int i = 0; i < melSec.length; i++) {
 
             if (melSec[i] < min_log_mel){
 
-                freqs[i] =  f_min + f_sp * melSec[i];
+                arrayFrequencies[i] =  domainMinFrequency + domainsMaxFrequency * melSec[i];
 
             }else{
 
-                freqs[i] = min_log_hz * Math.exp(logstep * (melSec[i] - min_log_mel));
+                arrayFrequencies[i] = min_log_hz * Math.exp(castToLogScale * (melSec[i] - min_log_mel));
 
             }
 
         }
 
-        return freqs;
+        return arrayFrequencies;
 
     }
 
-    protected double[] freqToMel(double[] freqs) {
+    protected double[] freqToMel(double[] vectorFrequencies) {
 
-        final double f_min = 0.0;
-        final double f_sp = 200.0 / 3;
-        double[] mels = new double[freqs.length];
-        final double min_log_hz = 1000.0;
-        final double min_log_mel = (min_log_hz - f_min) / f_sp ;
-        final double logstep = Math.log(6.4) / 27.0;
+        final double minFrequency = 0.0;
+        final double highFrequency = 200.0 / 3;
+        double[] vectorMelSpec = new double[vectorFrequencies.length];
+        final double minLogScale = 1000.0;
+        final double minLogMel = (minLogScale - minFrequency) / highFrequency ;
+        final double logScale = Math.log(6.4) / 27.0;
 
-        for (int i = 0; i < freqs.length; i++) {
+        for (int i = 0; i < vectorFrequencies.length; i++) {
 
-            if (freqs[i] < min_log_hz){
+            if (vectorFrequencies[i] < minLogScale){
 
-                mels[i] = (freqs[i] - f_min) / f_sp;
+                vectorMelSpec[i] = (vectorFrequencies[i] - minFrequency) / highFrequency;
 
             }else{
 
-                mels[i] = min_log_mel + Math.log(freqs[i]/min_log_hz) / logstep;
+                vectorMelSpec[i] = minLogMel + Math.log(vectorFrequencies[i]/minLogScale) / logScale;
 
             }
 
         }
 
-        return mels;
+        return vectorMelSpec;
 
     }
 
