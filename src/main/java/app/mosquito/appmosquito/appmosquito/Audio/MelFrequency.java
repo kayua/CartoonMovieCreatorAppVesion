@@ -7,34 +7,33 @@ import static java.lang.Double.max;
 
 public class MelFrequency {
 
-    private final static int       n_fft                = 1024;
-    private final static int       hop_length           = 256;
-    private final static double    sampleRate           = 8000.0;
-    private final static int	   n_mels               = 60;
-    private final static double    fMin                 = 0.0;
-    private final static double    fMax                 = sampleRate/2.0;
-
-
-    ShortTransformed fft = new ShortTransformed();
+    private final static int numberWindows = 1024;
+    private final static int successiveNumberFrames = 256;
+    private final static double sampleRate = 8000.0;
+    private final static int melResolution = 60;
+    private final static double minFrequency = 0.0;
+    private final static double maxFrequency = sampleRate/2.0;
+    
+    ShortTransformed shortTransformed = new ShortTransformed();
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public float[][][] processBulkSpectrogram(double[] doubleInputBuffer, int frameSize) {
+    public float[][][] processBulkSpectrogram(double[] signalWave, int sizeFrame) {
 
-        int windowSize =  hop_length * (frameSize - 1);
-        int numberOfSpectrogram = doubleInputBuffer.length / windowSize;
-        final float[][][] spectrogram = new float[numberOfSpectrogram * 2][][];
+        int sizeWindows =  successiveNumberFrames * (sizeFrame - 1);
+        int numberOfSpectrogram = signalWave.length / sizeWindows;
+        final float[][][] spectrogramBuffer = new float[numberOfSpectrogram * 2][][];
         int start = 0;
-        int end = windowSize;
+        int end = sizeWindows;
 
         for(int i = 0; i < numberOfSpectrogram * 2; i++) {
 
-            spectrogram[i] = convert(powerToDb(melSpectrogram(Arrays.copyOfRange(doubleInputBuffer, start, end))));
-            start += windowSize / 2;
-            end += windowSize / 2;
+            spectrogramBuffer[i] = convert(powerToDb(melSpectrogram(Arrays.copyOfRange(signalWave, start, end))));
+            start += sizeWindows / 2;
+            end += sizeWindows / 2;
 
         }
 
-        return spectrogram;
+        return spectrogramBuffer;
     }
 
     public float[][] convert(double[][] doubleInput) {
@@ -86,28 +85,28 @@ public class MelFrequency {
     private double[][] stftMagSpec(double[] y){
 
         final double[] fftwin = getWindow();
-        double[] ypad = new double[n_fft+y.length];
+        double[] ypad = new double[numberWindows +y.length];
 
-        for (int i = 0; i < n_fft/2; i++){
+        for (int i = 0; i < numberWindows /2; i++){
 
-            ypad[(n_fft/2)-i-1] = y[i+1];
-            ypad[(n_fft/2)+y.length+i] = y[y.length-2-i];
+            ypad[(numberWindows /2)-i-1] = y[i+1];
+            ypad[(numberWindows /2)+y.length+i] = y[y.length-2-i];
 
         }
 
         for (int j = 0; j < y.length; j++){
 
-            ypad[(n_fft/2)+j] = y[j];
+            ypad[(numberWindows /2)+j] = y[j];
 
         }
 
         final double[][] frame = yFrame(ypad);
-        double[][] fftmagSpec = new double[1+n_fft/2][frame[0].length];
-        double[] fftFrame = new double[n_fft];
+        double[][] fftmagSpec = new double[1+ numberWindows /2][frame[0].length];
+        double[] fftFrame = new double[numberWindows];
 
         for (int k = 0; k < frame[0].length; k++){
 
-            for (int l =0; l < n_fft; l++){
+            for (int l = 0; l < numberWindows; l++){
 
                 fftFrame[l] = fftwin[l]*frame[l][k];
 
@@ -115,7 +114,7 @@ public class MelFrequency {
 
             double[] magSpec = magSpectrogram(fftFrame);
 
-            for (int i =0; i < 1+n_fft/2; i++){
+            for (int i = 0; i < 1+ numberWindows /2; i++){
 
                 fftmagSpec[i][k] = magSpec[i];
 
@@ -129,11 +128,11 @@ public class MelFrequency {
     private double[] magSpectrogram(double[] frame){
 
         double[] magSpec = new double[frame.length];
-        fft.getTransformed(frame);
+        shortTransformed.getTransformed(frame);
 
         for (int m = 0; m < frame.length; m++) {
 
-            magSpec[m] = fft.realPhase[m] * fft.realPhase[m] + fft.imaginaryPhase[m] * fft.imaginaryPhase[m];
+            magSpec[m] = shortTransformed.realPhase[m] * shortTransformed.realPhase[m] + shortTransformed.imaginaryPhase[m] * shortTransformed.imaginaryPhase[m];
 
         }
 
@@ -143,11 +142,11 @@ public class MelFrequency {
 
     private double[] getWindow(){
 
-        double[] win = new double[n_fft];
+        double[] win = new double[numberWindows];
 
-        for (int i = 0; i < n_fft; i++){
+        for (int i = 0; i < numberWindows; i++){
 
-            win[i] = 0.5 - 0.5 * Math.cos(2.0*Math.PI*i/n_fft);
+            win[i] = 0.5 - 0.5 * Math.cos(2.0*Math.PI*i/ numberWindows);
 
         }
 
@@ -156,14 +155,14 @@ public class MelFrequency {
 
     private double[][] yFrame(double[] ypad){
 
-        final int n_frames = 1 + (ypad.length - n_fft) / hop_length;
-        double[][] winFrames = new double[n_fft][n_frames];
+        final int n_frames = 1 + (ypad.length - numberWindows) / successiveNumberFrames;
+        double[][] winFrames = new double[numberWindows][n_frames];
 
-        for (int i = 0; i < n_fft; i++){
+        for (int i = 0; i < numberWindows; i++){
 
             for (int j = 0; j < n_frames; j++){
 
-                winFrames[i][j] = ypad[j*hop_length+i];
+                winFrames[i][j] = ypad[j* successiveNumberFrames +i];
 
             }
 
@@ -234,7 +233,7 @@ public class MelFrequency {
     private double[][] melFilter(){
 
         final double[] fftFreqs = fftFreq();
-        final double[] melF = melFreq(n_mels+2);
+        final double[] melF = melFreq(melResolution +2);
         double[] fdiff = new double[melF.length-1];
 
         for (int i = 0; i < melF.length-1; i++){
@@ -254,9 +253,9 @@ public class MelFrequency {
             }
         }
 
-        double[][] weights = new double[n_mels][1+n_fft/2];
+        double[][] weights = new double[melResolution][1+ numberWindows /2];
 
-        for (int i = 0; i < n_mels; i++){
+        for (int i = 0; i < melResolution; i++){
 
             for (int j = 0; j < fftFreqs.length; j++){
 
@@ -283,9 +282,9 @@ public class MelFrequency {
             }
         }
 
-        double enorm[] = new double[n_mels];
+        double enorm[] = new double[melResolution];
 
-        for (int i = 0; i < n_mels; i++){
+        for (int i = 0; i < melResolution; i++){
 
             enorm[i] = 2.0 / (melF[i+2]-melF[i]);
 
@@ -303,11 +302,11 @@ public class MelFrequency {
 
     private double[] fftFreq() {
 
-        double[] freqs = new double[1+n_fft/2];
+        double[] freqs = new double[1+ numberWindows /2];
 
-        for (int i = 0; i < 1+n_fft/2; i++){
+        for (int i = 0; i < 1+ numberWindows /2; i++){
 
-            freqs[i] = 0 + (sampleRate/2)/(n_fft/2) * i;
+            freqs[i] = 0 + (sampleRate/2)/(numberWindows /2) * i;
 
         }
 
@@ -319,8 +318,8 @@ public class MelFrequency {
 
         double[] LowFFreq = new double[1];
         double[] HighFFreq = new double[1];
-        LowFFreq[0] = fMin;
-        HighFFreq[0] = fMax;
+        LowFFreq[0] = minFrequency;
+        HighFFreq[0] = maxFrequency;
         final double[] melFLow    = freqToMel(LowFFreq);
         final double[] melFHigh   = freqToMel(HighFFreq);
         double[] mels = new double[numMels];
