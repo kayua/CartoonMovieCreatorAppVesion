@@ -21,7 +21,7 @@ public class ActivityStart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.auth_start);
-        Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcess);
+        Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessAccount);
         buttonAcess.setOnClickListener( new View.OnClickListener() {
 
             @Override

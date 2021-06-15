@@ -2,9 +2,9 @@ package app.mosquito.appmosquito.appmosquito.Authentication;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +20,6 @@ public class ActivityAcessAccount extends AppCompatActivity {
     private CheckBox license;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private Switch active_email_notification, active_realtime_notification, active_infestations_detect;
 
 
     @Override
@@ -30,21 +29,25 @@ public class ActivityAcessAccount extends AppCompatActivity {
 
         setContentView(R.layout.auth_acess);
 
-    }
-    @Override
-    public void onStart() {
-        super.onStart();
 
     }
+    private void authentication(){
 
-    @Override
-    public void onStop() {
-        super.onStop();
+        Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessAccount);
+        EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthUser);
+        buttonAcess.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                screen_user();
+            }});
+
     }
 
 
-    public void createUser(View view) throws InterruptedException {
 
 
-    }
+
+
+
 }
