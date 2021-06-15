@@ -11,175 +11,157 @@
     android:soundEffectsEnabled="true"
     tools:context=".Authentication.ActivityRegisterAccount">
 
-    <TextView
-        android:id="@+id/textViewAuthTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="App Mosquito"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14" />
-
-    <TextView
-        android:id="@+id/textViewAuthBeta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Beta"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.762"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117" />
-
-    <ImageButton
-        android:id="@+id/imageButtonAuthFacebook"
-        android:layout_width="160dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:foreground="@drawable/icon_facebook"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
-
-    <ImageButton
-        android:id="@+id/imageButtonAuthGoogle"
-        android:layout_width="160dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="56dp"
-        android:foreground="@drawable/icon_google"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666" />
-
-    <ImageButton
-        android:id="@+id/imageButtonAuthTwitter"
-        android:layout_width="160dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:foreground="@drawable/icon_twitter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/acess"
-        android:textColor="#FAF8F8"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
-
-    <EditText
-
-        android:id="@+id/editTextAuthAcessUser"
-        android:layout_width="220dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="20dp"
-        android:autofillHints=""
-        android:background="@drawable/button_design_white"
-        android:drawableStart="@drawable/icon_user"
-        android:ems="10"
-        android:hint="@string/user"
-        android:inputType="textPassword"
-        android:textColor="#FF777575"
-        android:textColorHint="#FF777575"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.347" />
-
-    <EditText
-
-        android:id="@+id/editTextAuthAcessPassword"
-        android:layout_width="220dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="40dp"
-        android:autofillHints=""
-        android:background="@drawable/button_design_white"
-        android:drawableStart="@drawable/icon_password"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:textColor="#FF777575"
-        android:textColorHint="#FF777575"
-
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.436" />
-
     <Button
-        android:id="@+id/buttonAuthAcess"
-        android:layout_width="157dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_design_white"
+        android:id="@+id/buttonAuthAcess2"
+        android:layout_width="296dp"
+        android:layout_height="55dp"
+        android:background="@drawable/button_design"
         android:onClick="createUser"
-        android:text="@string/acess_now"
+        android:text="Cadastro"
         android:textColor="#00897B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
+        app:layout_constraintVertical_bias="0.763" />
+
+    <Button
+        android:id="@+id/buttonAuthAcess5"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:background="@drawable/button_design"
+        android:backgroundTint="#3B5998"
+        android:foreground="@drawable/icon_facebook"
+        android:onClick="createUser"
+        android:text=""
+        android:textColor="#DD4B39"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="616dp" />
+
+    <Button
+        android:id="@+id/buttonAuthAcess7"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:background="@drawable/button_design"
+        android:backgroundTint="#3B5998"
+        android:foreground="@drawable/icon_facebook"
+        android:onClick="createUser"
+        android:text=""
+        android:textColor="#DD4B39"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="616dp" />
+
+    <Button
+        android:id="@+id/buttonAuthAcess3"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:background="@drawable/button_design"
+        android:backgroundTint="#DD4B39"
+        android:foreground="@drawable/icon_google"
+        android:onClick="createUser"
+        android:text=""
+        android:textColor="#DD4B39"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="616dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="335dp"
+        android:layout_height="41dp"
+        android:backgroundTint="#FDFCFC"
+        android:ems="10"
+        android:hint="Nome ou Email"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:textColor="#FBFBFB"
+        android:textColorHighlight="#FBF9F9"
+        android:textColorHint="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="276dp" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_now"
-        android:textColor="#FAF8F8"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.949" />
+        android:text="@string/user"
+        android:textColor="#F9FBFB"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="235dp" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="92dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/icon_mosquito_bar"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="80dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/not_register"
-        android:textColor="#FAF8F8"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911" />
+        android:text="@string/user"
+        android:textColor="#F9FBFB"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="235dp"
+        tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user"
+        android:textColor="#F9FBFB"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="340dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user"
+        android:textColor="#F9FBFB"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="299dp"
+        tools:layout_editor_absoluteY="441dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="335dp"
+        android:layout_height="41dp"
+        android:backgroundTint="#FDFCFC"
+        android:ems="10"
+        android:hint="Nome ou Email"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:textColor="#FBFBFB"
+        android:textColorHighlight="#FBF9F9"
+        android:textColorHint="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="381dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="269dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/button_design"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="596dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

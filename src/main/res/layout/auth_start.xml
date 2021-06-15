@@ -25,8 +25,8 @@
 
     <Button
         android:id="@+id/buttonAuthAcess6"
-        android:layout_width="279dp"
-        android:layout_height="55dp"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
         android:background="@drawable/button_design"
         android:onClick="createUser"
         android:text="Cadastro"
@@ -51,7 +51,7 @@
 
     <Button
         android:id="@+id/buttonAuthAcess"
-        android:layout_width="279dp"
+        android:layout_width="293dp"
         android:layout_height="55dp"
         android:background="@drawable/button_design_white"
         android:onClick="createUser"

@@ -46,7 +46,6 @@ public class ActivityRegisterAccount extends AppCompatActivity {
                 .server("https://parseapi.back4app.com")
                 .build()
         );
-        setContentView(R.layout.auth_register);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
