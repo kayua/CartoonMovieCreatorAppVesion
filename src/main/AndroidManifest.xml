@@ -39,7 +39,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".Authentication.ActivityEmailChecking"
+            android:name=".Authentication.ActivitySplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             tools:ignore="DuplicateActivity">
