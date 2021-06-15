@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
@@ -30,12 +29,12 @@ public class ActivityStart extends AppCompatActivity {
                 screen_user();
             }});
 
-        Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcess);
-        buttonAcess.setOnClickListener( new View.OnClickListener() {
+        Button buttonRegister = (Button) findViewById(R.id.buttonAuthRegister);
+        buttonRegister.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                screen_user();
+                screen_register();
             }});
 
     }
@@ -56,4 +55,4 @@ public class ActivityStart extends AppCompatActivity {
             startActivity(i);
         }
 
-}}
+}
