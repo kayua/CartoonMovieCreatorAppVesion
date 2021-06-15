@@ -39,7 +39,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editTextAuthPassword"
         android:layout_width="270dp"
         android:layout_height="52dp"
         android:backgroundTint="#FDFCFC"
