@@ -35,13 +35,15 @@
     <string name="user_or_email">Usuário ou Email</string>
     <string name="user">Usuário</string>
     <string name="acess">Entrar</string>
+    <string name="acess_free">Acessar sem cadastro</string>
     <string name="password">Senha</string>
+    <string name="register">Cadastra-se</string>
     <string name="acess_with">Acessar com</string>
     <string name="password_acess">Senha de acesso</string>
     <string name="recovery">Esqueceu a senha?</string>
     <string name="not_register">Ainda não é registrado?</string>
     <string name="register_now">Registre-se agora</string>
-    Registre-se agora.
+
 
 
 

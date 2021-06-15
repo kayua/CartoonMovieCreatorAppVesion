@@ -29,7 +29,7 @@
         android:layout_height="56dp"
         android:background="@drawable/button_design"
         android:onClick="createUser"
-        android:text="Cadastro"
+        android:text="@string/register"
         android:textColor="#00897B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.881" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageViewAuthLogo"
         android:layout_width="98dp"
         android:layout_height="116dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +56,7 @@
         android:layout_height="55dp"
         android:background="@drawable/button_design_white"
         android:onClick="createUser"
-        android:text="Entrar"
+        android:text="@string/acess"
         android:textColor="#FAF9F9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +84,7 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Acesso sem cadastro"
+        android:text="@string/acess_free"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         android:textStyle="bold"
