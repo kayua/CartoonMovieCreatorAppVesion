@@ -77,7 +77,7 @@
         android:id="@+id/textViewAuthAcessBar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/acess_with"
+        android:text="@string/app_mosquito"
         android:textColor="#F9FBFB"
         android:textSize="12sp"
         android:textStyle="bold"
