@@ -34,9 +34,19 @@
 
     <string name="user_or_email">Usuário ou Email</string>
     <string name="user">Usuário</string>
+    <string name="go_back">Voltar a início</string>
+
     <string name="acess">Entrar</string>
+    <string name="help">Dúvidas?</string>
+    <string name="recovery_password">Pressione modificar e aguarde email</string>
+    <string name="code">Código</string>
+    <string name="user_name">Nome completo</string>
     <string name="acess_free">Acessar sem cadastro</string>
     <string name="password">Senha</string>
+    <string name="email">Email</string>
+    <string name="terms">Termos de uso</string>
+    <string name="password_char">Senha (Mínimo 8 digitos)</string>
+    <string name="email_user">Email de usuário</string>
     <string name="register">Cadastra-se</string>
     <string name="acess_with">Acessar com</string>
     <string name="password_acess">Senha de acesso</string>

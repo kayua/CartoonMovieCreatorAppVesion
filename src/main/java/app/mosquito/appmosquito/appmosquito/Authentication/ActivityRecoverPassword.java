@@ -21,8 +21,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.parse.Parse;
 import com.parse.ParseUser;
 
-import app.mosquito.appmosquito.appmosquito.R;
-
 
 public class ActivityRecoverPassword extends AppCompatActivity {
 
@@ -119,14 +117,6 @@ public class ActivityRecoverPassword extends AppCompatActivity {
 
     public void createUser(View view) throws InterruptedException {
 
-        username = (EditText) findViewById(R.id.username_id);
-        password = (EditText) findViewById(R.id.password_id);
-        email = (EditText) findViewById(R.id.email_id);
-
-        active_email_notification = (Switch) findViewById(R.id.switch3);
-        active_realtime_notification = (Switch) findViewById(R.id.switch10);
-        active_infestations_detect = (Switch) findViewById(R.id.switch2);
-        license = (CheckBox) findViewById(R.id.checkBox2);
 
         if (username.getText().toString().isEmpty() || password.getText().toString().isEmpty()){
 

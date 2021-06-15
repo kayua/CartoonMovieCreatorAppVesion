@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,7 +17,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.parse.Parse;
 import com.parse.ParseUser;
 
 import app.mosquito.appmosquito.appmosquito.R;
@@ -31,22 +29,16 @@ public class ActivityRegisterAccount extends AppCompatActivity {
     private CheckBox license;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private Switch active_email_notification, active_realtime_notification, active_infestations_detect;
 
-    public ActivityRegisterAccount() {
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("zaCP2VZI9fujPU1PpQMzoXYVK75Q5KvhTOmJMoM7")
-                .clientKey("FWqAGbF91QUtnDtv3h7XpKh6KQBiQCBmiDW6aG0d")
-                .server("https://parseapi.back4app.com")
-                .build()
-        );
+
         mAuth = FirebaseAuth.getInstance();
+        setContentView(R.layout.auth_register);
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -118,14 +110,6 @@ public class ActivityRegisterAccount extends AppCompatActivity {
 
     public void createUser(View view) throws InterruptedException {
 
-        username = (EditText) findViewById(R.id.username_id);
-        password = (EditText) findViewById(R.id.password_id);
-        email = (EditText) findViewById(R.id.email_id);
-
-        active_email_notification = (Switch) findViewById(R.id.switch3);
-        active_realtime_notification = (Switch) findViewById(R.id.switch10);
-        active_infestations_detect = (Switch) findViewById(R.id.switch2);
-        license = (CheckBox) findViewById(R.id.checkBox2);
 
         if (username.getText().toString().isEmpty() || password.getText().toString().isEmpty()){
 
@@ -141,9 +125,6 @@ public class ActivityRegisterAccount extends AppCompatActivity {
             user.setEmail(email.getText().toString());
             user.put("phoneNumber", "99999999");
 
-            user.put("email_notification", active_email_notification.isChecked());
-            user.put("realtime_notification", active_realtime_notification.isChecked());
-            user.put("infection_notification", active_infestations_detect.isChecked());
 
             if (license.isChecked()) {
 

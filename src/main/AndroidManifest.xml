@@ -41,7 +41,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".Authentication.ActivityAcessAccount"
+            android:name=".Authentication.ActivityRegisterAccount"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             tools:ignore="DuplicateActivity">
@@ -53,7 +53,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Authentication.ActivityRegisterAccount" />
+
     </application>
 
 </manifest>
