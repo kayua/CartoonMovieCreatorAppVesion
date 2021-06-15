@@ -7,6 +7,78 @@
     android:background="@drawable/gradient_color"
     tools:context=".Authentication.ActivityEmailChecking">
 
+    <Button
+        android:id="@+id/buttonAuthAcess4"
+        android:layout_width="286dp"
+        android:layout_height="54dp"
+        android:background="@drawable/button_design"
+        android:text="@string/change"
+        android:textColor="#00897B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.815" />
+
+    <TextView
+        android:id="@+id/textViewAuthAcessBar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_mosquito"
+        android:textColor="#F9FBFB"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.881"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="50dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872"
+        app:srcCompat="@drawable/button_design"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="50dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872"
+        app:srcCompat="@drawable/button_design"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go_back"
+        android:textColor="#F9FBFB"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.932"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
@@ -22,20 +94,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.084" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="306dp"
-        android:layout_height="323dp"
-        android:text="Olá, estamos quase concluíndo seu cadastro.\n\nPrecisamos que você confirme seu email. Acesse sua conta de email e click no link fornecido pela mensagem. Caso já tenha efetuado esse passo, click no botão abaixo.\n\nAgradeçemos por colabora com nossa rede de monitoramento. Caso tenha algum problema de acesso, contate o administrado através do email. XXXXXX
-"       android:onClick="open_mosquito_app"
-        android:textColor="#F0F5F8"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.458" />
 
     <TextView
         android:id="@+id/textView3"
@@ -53,19 +111,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.108" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="209dp"
-        android:layout_height="62dp"
-        android:background="@drawable/button_round_register"
-        android:onClick="init_section_user"
-        android:text="Acessar App"
+    <ScrollView
+        android:layout_width="276dp"
 
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862" />
+        android:layout_height="338dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="163dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="333dp"
+                android:foreground="@drawable/text_box_border"
+                android:onClick="open_mosquito_app"
+                android:text="Olá, estamos quase concluíndo seu cadastro.\n\nPrecisamos que você confirme seu email. Acesse sua conta de email e click no link fornecido pela mensagem. Caso já tenha efetuado esse passo, click no botão abaixo.\n\nAgradeçemos por colabora com nossa rede de monitoramento. Caso tenha algum problema de acesso, contate o administrado através do email. XXXXXX
+"
+                android:textColor="#F0F5F8"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.467"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.409" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
