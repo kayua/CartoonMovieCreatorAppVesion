@@ -24,7 +24,7 @@
         tools:layout_editor_absoluteY="-16dp" />
 
     <Button
-        android:id="@+id/buttonAuthAcess6"
+        android:id="@+id/buttonAuthRegister"
         android:layout_width="296dp"
         android:layout_height="56dp"
         android:background="@drawable/button_design"
@@ -42,11 +42,12 @@
         android:id="@+id/imageView8"
         android:layout_width="98dp"
         android:layout_height="116dp"
-        android:layout_marginTop="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19"
         app:srcCompat="@drawable/icon_mosquito_bar" />
 
     <Button
@@ -77,7 +78,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.278" />
+        app:layout_constraintVertical_bias="0.346" />
 
     <TextView
         android:id="@+id/textView17"

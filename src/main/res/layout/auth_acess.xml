@@ -12,7 +12,7 @@
     tools:context=".Authentication.ActivityRegisterAccount">
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/imageViewGradient"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.75"
@@ -21,7 +21,7 @@
         tools:layout_editor_absoluteY="228dp" />
 
     <Button
-        android:id="@+id/buttonAuthAcess8"
+        android:id="@+id/buttonAuthFacebook"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:background="@drawable/button_design"
@@ -75,7 +75,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthAcess9"
+        android:id="@+id/buttonAuthAcess"
         android:layout_width="286dp"
         android:layout_height="54dp"
         android:background="@drawable/button_design"
@@ -90,10 +90,10 @@
         app:layout_constraintVertical_bias="0.794" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/textViewAuthAcessBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Acessar usando"
+        android:text="@string/acess_with"
         android:textColor="#F9FBFB"
         android:textSize="12sp"
         android:textStyle="bold"
@@ -106,12 +106,12 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/editTextAuthUser"
         android:layout_width="280dp"
         android:layout_height="53dp"
         android:backgroundTint="#FDFCFC"
         android:ems="10"
-        android:hint="Nome ou Email"
+        android:hint="@string/user_or_email"
         android:inputType="textPersonName"
         android:padding="8dp"
         android:textColor="#FBFBFB"
@@ -126,15 +126,12 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthAcess10"
+        android:id="@+id/buttonAuthAcessTwitter"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:background="@drawable/button_design"
         android:backgroundTint="#55ACEE"
         android:foreground="@drawable/icon_twitter"
-        android:onClick="createUser"
-        android:text=""
-        android:textColor="#DD4B39"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.68"
@@ -144,7 +141,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/textViewAuthUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/user"
@@ -160,7 +157,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/iconAuthAcess"
         android:layout_width="92dp"
         android:layout_height="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -170,10 +167,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.096"
         app:srcCompat="@drawable/icon_mosquito_bar"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthAcess11"
+        android:id="@+id/buttonAuthGoogle"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:background="@drawable/button_design"
