@@ -27,12 +27,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBTA_mFf6oSglEz2nfklV-jQUAH4ri1Rao" />
 
-
-
         <activity
             android:name=".ActivityUserInterface"/>
         <activity android:name=".DaemonService" />
-
+        <activity android:name=".Authentication.ActivityStart"  />
         <service
             android:name=".ForegroundService"
             android:enabled="true"

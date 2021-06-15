@@ -3,6 +3,7 @@ package app.mosquito.appmosquito.appmosquito.Authentication;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,19 @@ public class ActivitySplashScreen extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash_screen);
 
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+
+                authentication();
+            }}, 10000);
+
+       }
+
+    private void authentication(){
+
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -44,19 +58,19 @@ public class ActivitySplashScreen extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(usernameRegistered ,
                 passwordRegistered).addOnCompleteListener(this,
                 new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
 
-                if (!task.isSuccessful()) {
-                    screen_start();
-                }else{
-                    screen_user();
-                }
-            }
-        });
+                        if (!task.isSuccessful()) {
+                            screen_start();
+                        }else{
+                            screen_user();
+                        }
 
+
+
+                    } });
     }
-
 
     private void screen_user(){
 
