@@ -36,7 +36,7 @@
         android:text=""
         android:textColor="#DD4B39"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteX="181dp"
         tools:layout_editor_absoluteY="616dp" />
 
     <Button
@@ -44,13 +44,13 @@
         android:layout_width="48dp"
         android:layout_height="47dp"
         android:background="@drawable/button_design"
-        android:backgroundTint="#3B5998"
-        android:foreground="@drawable/icon_facebook"
+        android:backgroundTint="#55ACEE"
+        android:foreground="@drawable/icon_twitter"
         android:onClick="createUser"
         android:text=""
         android:textColor="#DD4B39"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteX="261dp"
         tools:layout_editor_absoluteY="616dp" />
 
     <Button
