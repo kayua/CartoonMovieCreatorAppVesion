@@ -53,7 +53,7 @@ public class ActivitySplashScreen extends AppCompatActivity {
             }
         };
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        usernameRegistered = settings.getString("username", "");
+        usernameRegistered = settings.getString("email", "");
         passwordRegistered = settings.getString("password", "");
         mAuth.signInWithEmailAndPassword(usernameRegistered ,
                 passwordRegistered).addOnCompleteListener(this,

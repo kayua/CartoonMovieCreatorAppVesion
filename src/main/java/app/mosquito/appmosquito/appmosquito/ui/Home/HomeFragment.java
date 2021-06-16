@@ -34,10 +34,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.maps.android.heatmaps.Gradient;
 import com.google.maps.android.heatmaps.HeatmapTileProvider;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -144,7 +140,7 @@ public class HomeFragment extends Fragment {
                         Intent intent = new Intent(Intent.ACTION_SEND);
 
                         intent.putExtra(Intent.EXTRA_EMAIL,
-                                new String[] { emailsend });
+                                new String[]{emailsend});
                         intent.putExtra(Intent.EXTRA_SUBJECT, emailsubject);
                         intent.putExtra(Intent.EXTRA_TEXT, emailbody);
 
@@ -155,7 +151,7 @@ public class HomeFragment extends Fragment {
                                         .createChooser(intent,
                                                 "Choose an Email client :"));
 
-                        LatLng latLng= new LatLng(relativeLatitude, relativeLongitude);
+                        LatLng latLng = new LatLng(relativeLatitude, relativeLongitude);
                         CameraPosition cameraPosition = new CameraPosition.Builder()
                                 .target(latLng).zoom(16).bearing(0).tilt(40).build();
                         fragmentMaps.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
@@ -163,18 +159,18 @@ public class HomeFragment extends Fragment {
                     }
                 });
 
-                LatLng latLng= new LatLng(relativeLatitude, relativeLongitude);
+                LatLng latLng = new LatLng(relativeLatitude, relativeLongitude);
                 CameraPosition cameraPosition = new CameraPosition.Builder()
                         .target(latLng).zoom(16).bearing(0).tilt(40).build();
 
                 fragmentMaps.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                Log.i(Double. toString(relativeLatitude),Double. toString(relativeLongitude));
+                Log.i(Double.toString(relativeLatitude), Double.toString(relativeLongitude));
 
-                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude ,relativeLongitude))
+                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude, relativeLongitude))
                         .radius(35).strokeColor(0xff018783)
                         .fillColor(Color.TRANSPARENT).strokeWidth(3));
 
-                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude ,relativeLongitude))
+                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude, relativeLongitude))
                         .radius(1).strokeColor(0xff018783)
                         .fillColor(Color.TRANSPARENT).strokeWidth(5));
 
@@ -183,52 +179,35 @@ public class HomeFragment extends Fragment {
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_users))
                         .alpha((float) 0.65));
 
-                ParseUser.logInInBackground("admin", "admin", (user, e) -> {
 
-                    ParseQuery<ParseObject> query = ParseQuery.getQuery("Detections");
-
-                    try {
-
-                        List<ParseObject> databaseRequest = query.find();
+                for (int i = 0; i < 0; i++) {
 
 
-                        for (int i=0; i< databaseRequest.size(); i++) {
+                    List<LatLng> arrayCoordinates = new ArrayList<>();
 
-                            ParseObject  idInfoRequest = databaseRequest.get(i);
-                            ParseObject setFileRequest = query.get(idInfoRequest.getObjectId());
-                            String latitudeRequested = setFileRequest.getString("latitude");
-                            String longitudeRequested = setFileRequest.getString("longitude");
-                            List<LatLng> arrayCoordinates = new ArrayList<>();
-                            float latitudeValue =Float.parseFloat(latitudeRequested);
-                            float longitudevalue =Float.parseFloat(longitudeRequested);
+                    arrayCoordinates.add(new LatLng(10, 10));
 
-                            arrayCoordinates.add(new LatLng(latitudeValue, longitudevalue));
+                    int[] gradientColors = {
+                            Color.rgb(30, 160, 30),
+                            Color.rgb(160, 30, 30)};
 
-                            int[] gradientColors = {
-                                    Color.rgb(30, 160, 30),
-                                    Color.rgb(160, 30, 30)};
-
-                            float[] gradientLimits = {0.1f, 1.0f};
+                    float[] gradientLimits = {0.1f, 1.0f};
 
 
-                            Gradient gradientDimension = new Gradient(gradientColors, gradientLimits);
-                            HeatmapTileProvider structureProvider = new HeatmapTileProvider.Builder()
-                                    .radius(25)
-                                    .data(arrayCoordinates).opacity(0.15).gradient(gradientDimension)
-                                    .build();
-                            fragmentMaps.addTileOverlay(new TileOverlayOptions().tileProvider(structureProvider));
+                    Gradient gradientDimension = new Gradient(gradientColors, gradientLimits);
+                    HeatmapTileProvider structureProvider = new HeatmapTileProvider.Builder()
+                            .radius(25)
+                            .data(arrayCoordinates).opacity(0.15).gradient(gradientDimension)
+                            .build();
+                    fragmentMaps.addTileOverlay(new TileOverlayOptions().tileProvider(structureProvider));
 
 
-                        }
-                    } catch (ParseException ei) {
-                        e.printStackTrace();
-                    }
-
-
-                });
+                }
 
 
             }
+
+
         });
 
         return root;
