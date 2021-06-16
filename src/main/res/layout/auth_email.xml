@@ -7,6 +7,23 @@
     android:background="@drawable/gradient_color"
     tools:context=".Authentication.ActivityEmailChecking">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="255dp"
+        android:layout_height="306dp"
+
+
+        android:padding="8dp"
+        android:text="Olá, estamos quase concluíndo seu cadastro.\n\nPrecisamos que você confirme seu email. Acesse sua conta de email e click no link fornecido pela mensagem. Caso já tenha efetuado esse passo, click no botão abaixo.\n\nAgradeçemos por colabora com nossa rede de monitoramento. Caso tenha algum problema de acesso, contate o administrado através do email. XXXXXX
+"
+        android:textColor="#F0F5F8"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.392" />
+
     <Button
         android:id="@+id/buttonAuthAcess4"
         android:layout_width="286dp"
@@ -111,48 +128,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.108" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="274dp"
-        android:layout_height="319dp"
-        android:layout_margin="80dp"
-        android:layout_marginTop="33dp"
-        android:background="@drawable/text_box_border"
-        android:scrollbarThumbHorizontal="@drawable/button_round"
-        android:scrollbarThumbVertical="@drawable/button_round"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAuthAcess4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
-
-                android:padding="8dp"
-                android:text="Olá, estamos quase concluíndo seu cadastro.\n\nPrecisamos que você confirme seu email. Acesse sua conta de email e click no link fornecido pela mensagem. Caso já tenha efetuado esse passo, click no botão abaixo.\n\nAgradeçemos por colabora com nossa rede de monitoramento. Caso tenha algum problema de acesso, contate o administrado através do email. XXXXXX
-"
-                android:textColor="#F0F5F8"
-                android:textSize="18dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.467"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.409" />
-
-
-        </LinearLayout>
-    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
