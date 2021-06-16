@@ -137,4 +137,12 @@ public class ActivityRegisterAccount extends AppCompatActivity {
         finish();
         startActivity(i);
     }
+
+    private void screen_user(){
+
+        Intent i = new Intent(ActivityRegisterAccount .this, ActivityAcessAccount.class);
+        finish();
+        startActivity(i);
+    }
+
 }
