@@ -51,7 +51,7 @@
         app:srcCompat="@drawable/icon_mosquito_bar" />
 
     <Button
-        android:id="@+id/buttonAuthAcessAccount"
+        android:id="@+id/buttonAuthAcessRegisterAccount"
         android:layout_width="293dp"
         android:layout_height="55dp"
         android:background="@drawable/button_design_white"

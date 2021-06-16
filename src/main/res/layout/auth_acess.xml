@@ -76,7 +76,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthAcessAccount"
+        android:id="@+id/buttonAuthAcessRegisterAccount"
         android:layout_width="286dp"
         android:layout_height="54dp"
         android:background="@drawable/button_design"

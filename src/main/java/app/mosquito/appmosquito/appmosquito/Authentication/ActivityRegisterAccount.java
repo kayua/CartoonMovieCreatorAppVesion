@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,11 +24,8 @@ import app.mosquito.appmosquito.appmosquito.R;
 public class ActivityRegisterAccount extends AppCompatActivity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
-    private CheckBox license;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +34,11 @@ public class ActivityRegisterAccount extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.auth_register);
-        Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegister);
-        EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthUserRegister);
-        EditText textBoxEmail = (EditText) findViewById(R.id.editTextAuthEmailRegister);
-        EditText textBoxPassword = (EditText) findViewById(R.id.editTextAuthPasswordRegister);
+        Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount);
+        EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthUser);
+        EditText textBoxEmail = (EditText) findViewById(R.id.editTextAuthEmailRegisterApp);
+        EditText textBoxPassword = (EditText) findViewById(R.id.editTextAuthPasswordApp);
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -54,6 +51,7 @@ public class ActivityRegisterAccount extends AppCompatActivity {
 
             }
         };
+
         buttonRegister.setOnClickListener(new View.OnClickListener() {
 
             @Override

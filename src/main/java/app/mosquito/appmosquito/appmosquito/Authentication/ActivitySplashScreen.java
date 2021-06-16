@@ -53,23 +53,29 @@ public class ActivitySplashScreen extends AppCompatActivity {
             }
         };
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        usernameRegistered = settings.getString("email", "");
-        passwordRegistered = settings.getString("password", "");
-        mAuth.signInWithEmailAndPassword(usernameRegistered ,
-                passwordRegistered).addOnCompleteListener(this,
-                new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+        try {
+            usernameRegistered = settings.getString("email", "");
+            passwordRegistered = settings.getString("password", "");
+            mAuth.signInWithEmailAndPassword(usernameRegistered ,
+                    passwordRegistered).addOnCompleteListener(this,
+                    new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if (!task.isSuccessful()) {
-                            screen_start();
-                        }else{
-                            screen_user();
-                        }
+                            if (!task.isSuccessful()) {
+                                screen_start();
+                            }else{
+                                screen_user();
+                            }
 
 
+                        } });
+        }catch (Exception e){
 
-                    } });
+            screen_start();
+        }
+
+
     }
 
     private void screen_user(){

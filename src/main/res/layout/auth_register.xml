@@ -18,7 +18,7 @@
         android:background="@drawable/button_design"
         android:backgroundTint="#3B5998"
         android:foreground="@drawable/icon_facebook"
-        android:onClick="createUser"
+
         android:text=""
         android:textColor="#DD4B39"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,11 +46,10 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthAcessAccount"
+        android:id="@+id/buttonAuthAcessRegisterAccount"
         android:layout_width="286dp"
         android:layout_height="54dp"
         android:background="@drawable/button_design"
-        android:onClick="createUser"
         android:text="@string/acess"
         android:textColor="#00897B"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -129,7 +128,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editTextAuthPasswordApp"
         android:layout_width="270dp"
         android:layout_height="52dp"
         android:backgroundTint="#FDFCFC"
@@ -182,7 +181,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextAuthUser2"
+        android:id="@+id/editTextAuthEmailRegisterApp"
         android:layout_width="270dp"
         android:layout_height="53dp"
         android:backgroundTint="#FDFCFC"
@@ -222,7 +221,6 @@
         android:background="@drawable/button_design"
         android:backgroundTint="#DD4B39"
         android:foreground="@drawable/icon_google"
-        android:onClick="createUser"
         android:text=""
         android:textColor="#DD4B39"
         app:layout_constraintBottom_toBottomOf="parent"
