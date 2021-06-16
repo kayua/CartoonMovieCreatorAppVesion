@@ -1,8 +1,10 @@
 package app.mosquito.appmosquito.appmosquito.Authentication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -36,11 +38,10 @@ public class ActivityRegisterAccount extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.auth_register);
-        Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegister);
+        Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegister);
         EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthUserRegister);
         EditText textBoxEmail = (EditText) findViewById(R.id.editTextAuthEmailRegister);
         EditText textBoxPassword = (EditText) findViewById(R.id.editTextAuthPasswordRegister);
-
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -53,33 +54,39 @@ public class ActivityRegisterAccount extends AppCompatActivity {
 
             }
         };
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
 
-        mAuth.createUserWithEmailAndPassword(textBoxEmail.getText().toString(),
-                textBoxPassword.getText().toString())
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onClick(View view) {
+                mAuth.createUserWithEmailAndPassword(textBoxEmail.getText().toString(),
+                        textBoxPassword.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task)
-                    {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(),
-                                    "Registrado com sucesso",
-                                    Toast.LENGTH_LONG).show();
-                            store_login(textBoxUsername.getText().toString(),
-                                    textBoxEmail.getText().toString(),
-                                    textBoxPassword.getText().toString());
-                        }
-                        else {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task)
+                            {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(getApplicationContext(),
+                                            "Registrado com sucesso",
+                                            Toast.LENGTH_LONG).show();
+                                    store_login(textBoxUsername.getText().toString(),
+                                            textBoxEmail.getText().toString(),
+                                            textBoxPassword.getText().toString());
+                                    screen_email_verification();
+                                }
+                                else {
 
-                            Toast.makeText(
-                                    getApplicationContext(),
-                                    "Problemas durante o registro, favor tente novamente",
-                                    Toast.LENGTH_LONG)
-                                    .show();
+                                    Toast.makeText(
+                                            getApplicationContext(),
+                                            "Problemas durante o registro, favor tente novamente",
+                                            Toast.LENGTH_LONG)
+                                            .show();
 
-                        }
-                    }
-                });
+                                }
+                            }
+                        });
+            }
+        });
 
     }
 
@@ -122,8 +129,14 @@ public class ActivityRegisterAccount extends AppCompatActivity {
         editor.putString("nightActivity", "on");
         editor.putString("dayActivity", "on");
         editor.putString("daemonActivity", "off");
-
-        editor.commit();
+        editor.apply();
     }
 
+
+    private void screen_email_verification(){
+
+        Intent i = new Intent(ActivityRegisterAccount.this, ActivityEmailChecking.class);
+        finish();
+        startActivity(i);
+    }
 }
