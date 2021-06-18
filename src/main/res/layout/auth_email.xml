@@ -8,7 +8,7 @@
     tools:context=".Authentication.ActivityEmailChecking">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewAuthEmailText"
         android:layout_width="255dp"
         android:layout_height="306dp"
 
@@ -17,7 +17,7 @@
         android:text="Olá, estamos quase concluíndo seu cadastro.\n\nPrecisamos que você confirme seu email. Acesse sua conta de email e click no link fornecido pela mensagem. Caso já tenha efetuado esse passo, click no botão abaixo.\n\nAgradeçemos por colabora com nossa rede de monitoramento. Caso tenha algum problema de acesso, contate o administrado através do email. XXXXXX
 "
         android:textColor="#F0F5F8"
-        android:textSize="16sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

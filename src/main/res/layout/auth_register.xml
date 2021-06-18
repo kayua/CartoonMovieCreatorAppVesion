@@ -180,6 +180,22 @@
         app:layout_constraintVertical_bias="0.322"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/textViewAuthUser5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textColor="#F9FBFB"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238"
+        tools:ignore="MissingConstraints" />
+
     <EditText
         android:id="@+id/editTextAuthEmailRegisterApp"
         android:layout_width="270dp"
@@ -203,15 +219,15 @@
 
     <ImageView
         android:id="@+id/iconAuthAcess"
-        android:layout_width="92dp"
-        android:layout_height="90dp"
+        android:layout_width="98dp"
+        android:layout_height="121dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096"
-        app:srcCompat="@drawable/icon_mosquito_bar"
+        app:layout_constraintVertical_bias="0.077"
+        app:srcCompat="@drawable/icon_cartoon"
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <Button

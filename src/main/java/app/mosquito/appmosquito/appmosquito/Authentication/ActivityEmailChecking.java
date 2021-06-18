@@ -43,7 +43,7 @@ public class ActivityEmailChecking extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                screen_start();
+                screen_user();
             }
 
         });

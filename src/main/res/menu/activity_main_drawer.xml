@@ -11,31 +11,36 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_maps"
-            android:icon="@android:drawable/ic_dialog_map"
+            android:icon="@drawable/send"
             android:title="@string/menu_maps" />
 
         <item
             android:id="@+id/nav_statistics"
-            android:icon="@android:drawable/ic_dialog_dialer"
+            android:icon="@drawable/icon_filters"
             android:title="@string/menu_statistics" />
 
         <item
             android:id="@+id/nav_history"
-            android:icon="@android:drawable/ic_input_get"
+            android:icon="@drawable/icon_balance"
             android:title="@string/menu_history" />
 
         <item
             android:id="@+id/nav_message"
-            android:icon="@android:drawable/ic_dialog_email"
+            android:icon="@android:drawable/stat_sys_download_done"
             android:title="Dúvidas" />
 
         <item
             android:id="@+id/nav_recognize"
-            android:icon="@android:drawable/toast_frame"
+            android:icon="@drawable/icon_tranference"
             android:title="Reconhecimento" />
         <item
             android:id="@+id/nav_information"
-            android:icon="@android:drawable/ic_dialog_info"
+            android:icon="@drawable/icon_upscale"
+            android:title="@string/menu_information" />
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/icon_information"
             android:title="@string/menu_information" />
 
 

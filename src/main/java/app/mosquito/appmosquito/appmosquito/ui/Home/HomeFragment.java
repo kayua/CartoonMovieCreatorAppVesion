@@ -1,44 +1,22 @@
 package app.mosquito.appmosquito.appmosquito.ui.Home;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.os.Build;
+import android.content.pm.PackageManager;
+import android.hardware.Camera;
 import android.os.Bundle;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.CircleOptions;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.TileOverlayOptions;
-import com.google.maps.android.heatmaps.Gradient;
-import com.google.maps.android.heatmaps.HeatmapTileProvider;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import app.mosquito.appmosquito.appmosquito.DaemonService;
 import app.mosquito.appmosquito.appmosquito.R;
 import app.mosquito.appmosquito.appmosquito.ui.Maps.GPS_Sistem.GpsTracker;
 
@@ -62,181 +40,38 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        mMapView = (MapView) root.findViewById(R.id.mapView);
-        ToggleButton startDaemon = root.findViewById(R.id.toggleButton3);
-        ImageView goToHome = root.findViewById(R.id.imageView3);
+        Camera mCamera = getCameraInstance();
 
-        SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, 0);
+        CameraPreview mPreview = new CameraPreview(getContext(), mCamera);
 
-        String switchLowPower = settings.getString("daemonActivity", "");
+        FrameLayout preview = (FrameLayout) root.findViewById(R.id.camera_preview);
 
-        if(switchLowPower.equals("on")){
-
-            startDaemon.setChecked(true); }else{ startDaemon.setChecked(false); }
-
-        startDaemon.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View v) {
-
-                Vibrator vs = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
-                    vs.vibrate(VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE));
-
-                } else {
-
-                    vs.vibrate(250);
-                }
-
-                Intent intent = new Intent(getContext(), DaemonService.class);
-                startActivity(intent);
-
-                String switchLowPower = settings.getString("daemonActivity", "");
-                if(switchLowPower.equals("on")){
-
-                    startDaemon.setChecked(true); }else{ startDaemon.setChecked(false); }
-            }
-        });
-
-        mMapView.onCreate(savedInstanceState);
-
-        try {
-
-            MapsInitializer.initialize(getActivity().getApplicationContext());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        mMapView.getMapAsync(new OnMapReadyCallback() {
-
-            @SuppressLint("MissingPermission")
-            @Override
-            public void onMapReady(GoogleMap fragmentMaps) {
-
-                googleMap = fragmentMaps;
-                gpsDaemonTracker = new GpsTracker(getActivity().getApplicationContext());
-                double relativeLatitude = gpsDaemonTracker.getLatitude();
-                double relativeLongitude = gpsDaemonTracker.getLongitude();
-
-                goToHome.setOnClickListener(new View.OnClickListener() {
-                    @Override
-
-                    public void onClick(View v) {
-                        Vibrator vs = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
-
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            vs.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE));
-                        } else {
-
-                            vs.vibrate(50);
-                        }
-                        String emailsend = "kayuapaim.aluno@unipampa.edu.br";
-                        String emailsubject = "kayuaolequesp@gmail.com";
-                        String emailbody = "test";
-
-                        Intent intent = new Intent(Intent.ACTION_SEND);
-
-                        intent.putExtra(Intent.EXTRA_EMAIL,
-                                new String[]{emailsend});
-                        intent.putExtra(Intent.EXTRA_SUBJECT, emailsubject);
-                        intent.putExtra(Intent.EXTRA_TEXT, emailbody);
-
-                        intent.setType("message/plain");
-
-                        startActivity(
-                                Intent
-                                        .createChooser(intent,
-                                                "Choose an Email client :"));
-
-                        LatLng latLng = new LatLng(relativeLatitude, relativeLongitude);
-                        CameraPosition cameraPosition = new CameraPosition.Builder()
-                                .target(latLng).zoom(16).bearing(0).tilt(40).build();
-                        fragmentMaps.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-
-                    }
-                });
-
-                LatLng latLng = new LatLng(relativeLatitude, relativeLongitude);
-                CameraPosition cameraPosition = new CameraPosition.Builder()
-                        .target(latLng).zoom(16).bearing(0).tilt(40).build();
-
-                fragmentMaps.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                Log.i(Double.toString(relativeLatitude), Double.toString(relativeLongitude));
-
-                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude, relativeLongitude))
-                        .radius(35).strokeColor(0xff018783)
-                        .fillColor(Color.TRANSPARENT).strokeWidth(3));
-
-                fragmentMaps.addCircle(new CircleOptions().center(new LatLng(relativeLatitude, relativeLongitude))
-                        .radius(1).strokeColor(0xff018783)
-                        .fillColor(Color.TRANSPARENT).strokeWidth(5));
-
-                fragmentMaps.addMarker(new MarkerOptions().position(latLng)
-                        .title("Seu local Atual").snippet("Dispositivo conectado")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.location_users))
-                        .alpha((float) 0.65));
-
-
-                for (int i = 0; i < 0; i++) {
-
-
-                    List<LatLng> arrayCoordinates = new ArrayList<>();
-
-                    arrayCoordinates.add(new LatLng(10, 10));
-
-                    int[] gradientColors = {
-                            Color.rgb(30, 160, 30),
-                            Color.rgb(160, 30, 30)};
-
-                    float[] gradientLimits = {0.1f, 1.0f};
-
-
-                    Gradient gradientDimension = new Gradient(gradientColors, gradientLimits);
-                    HeatmapTileProvider structureProvider = new HeatmapTileProvider.Builder()
-                            .radius(25)
-                            .data(arrayCoordinates).opacity(0.15).gradient(gradientDimension)
-                            .build();
-                    fragmentMaps.addTileOverlay(new TileOverlayOptions().tileProvider(structureProvider));
-
-
-                }
-
-
-            }
-
-
-        });
+        preview.addView(mPreview);
 
         return root;
     }
 
+    private boolean checkCameraHardware(Context context) {
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)){
+            // this device has a camera
+            return true;
+        } else {
+            // no camera on this device
+            return false;
+        }
+    }
+    public static Camera getCameraInstance(){
+        Camera c = null;
 
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mMapView.onResume();
-
+        try {
+            c = Camera.open(); // attempt to get a Camera instance
+            c.setDisplayOrientation(90);
+        }
+        catch (Exception e){
+            // Camera is not available (in use or does not exist)
+        }
+        return c; // returns null if camera is unavailable
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        mMapView.onPause();
-    }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mMapView.onDestroy();
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        mMapView.onLowMemory();
-    }
 }
