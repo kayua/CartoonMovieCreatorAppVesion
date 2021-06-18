@@ -56,6 +56,15 @@
     <string name="not_register">Ainda não é registrado?</string>
     <string name="register_now">Registre-se agora</string>
 
+    <string name="open_file">Abrir arquivo externo</string>
+    <string name="filters">Filtros inteligentes</string>
+    <string name="color_balance">Balanço de cores</string>
+    <string name="tasks">Tarefas em andamento</string>
+    <string name="style_transference">Transferência de estilos</string>
+    <string name="edit">Editor de imagens</string>
+    <string name="informations">Email de usuário</string>
+
+
 
 
 

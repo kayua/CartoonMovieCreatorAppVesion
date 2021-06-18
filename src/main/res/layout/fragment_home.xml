@@ -24,8 +24,8 @@
 
     <ImageView
         android:id="@+id/imageView21"
-        android:layout_width="413dp"
-        android:layout_height="111dp"
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
         android:alpha="0.1"
         android:foreground="@drawable/gradient_color"
 
@@ -39,8 +39,8 @@
 
     <ImageView
         android:id="@+id/imageView15"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/icon_play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,8 +51,8 @@
 
     <ImageView
         android:id="@+id/imageView14"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
@@ -63,8 +63,8 @@
 
     <ImageView
         android:id="@+id/imageView20"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/icon_rec"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,8 +75,8 @@
 
     <ImageView
         android:id="@+id/imageView18"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:src="@drawable/icon_next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,8 +87,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/icon_record"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,6 +96,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.961" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/icon_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

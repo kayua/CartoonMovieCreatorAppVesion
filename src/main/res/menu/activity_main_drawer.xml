@@ -12,31 +12,31 @@
         <item
             android:id="@+id/nav_maps"
             android:icon="@drawable/send"
-            android:title="@string/menu_maps" />
+            android:title="@string/open_file" />
 
         <item
             android:id="@+id/nav_statistics"
             android:icon="@drawable/icon_filters"
-            android:title="@string/menu_statistics" />
+            android:title="@string/filters" />
 
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/icon_balance"
-            android:title="@string/menu_history" />
+            android:title="@string/color_balance" />
 
         <item
             android:id="@+id/nav_message"
             android:icon="@android:drawable/stat_sys_download_done"
-            android:title="Dúvidas" />
+            android:title="@string/tasks" />
 
         <item
             android:id="@+id/nav_recognize"
             android:icon="@drawable/icon_tranference"
-            android:title="Reconhecimento" />
+            android:title="@string/edit" />
         <item
             android:id="@+id/nav_information"
             android:icon="@drawable/icon_upscale"
-            android:title="@string/menu_information" />
+            android:title="@string/informations" />
 
         <item
             android:id="@+id/nav_help"
