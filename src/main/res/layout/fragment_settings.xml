@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".ui.Home.HomeFragment">
+    tools:context=".Camera.CameraFragment">
 
 
     <androidx.core.widget.NestedScrollView
@@ -36,7 +36,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/lowPowerSwitch"
@@ -52,7 +52,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/geoPrecisionSwitch"
@@ -67,7 +67,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/autoStartSwitch"
@@ -82,7 +82,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/emailNotificationSwitch"
@@ -96,7 +96,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/realTimeNotificationSwitch"
@@ -112,7 +112,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
 
@@ -128,7 +128,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/soundNotificationSwitch"
@@ -143,7 +143,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/advancedNotificationSwitch"
@@ -157,7 +157,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/rotationSwitch"
@@ -171,7 +171,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/nightActivitySwitch"
@@ -186,7 +186,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/dayActivitySwitch"
@@ -201,7 +201,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
 
             <Switch
@@ -217,7 +217,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
 
             <Switch
@@ -233,7 +233,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/sensorLuminositySwitch"
@@ -247,7 +247,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:src="@drawable/gradient_color_background" />
+                android:src="@drawable/gradient_color" />
 
             <Switch
                 android:id="@+id/sensorTemperatureSwitch"

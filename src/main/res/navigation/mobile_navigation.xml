@@ -9,45 +9,36 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="app.mosquito.appmosquito.appmosquito.ui.Home.HomeFragment"
-        android:label="@string/app_name"
+        android:name="app.mosquito.appmosquito.appmosquito.Gallery.GalleryFragment"
+        android:label="@string/gallery"
+        tools:layout="@layout/activity_videos" />
+
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="app.mosquito.appmosquito.appmosquito.Camera.CameraFragment"
+        android:label="@string/gallery"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/nav_maps"
-        android:name="app.mosquito.appmosquito.appmosquito.ui.Maps.MapsFragment"
-        android:label="@string/menu_maps"
-        tools:layout="@layout/fragment_maps" />
-
-    <fragment
-        android:id="@+id/nav_statistics"
-        android:name="app.mosquito.appmosquito.appmosquito.ui.Statistics.StatisticsFragment"
-        android:label="@string/menu_statistics"
-        tools:layout="@layout/fragment_statistics" />
-
+   
     <fragment
         android:id="@+id/nav_information"
-        android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
+        android:name="app.mosquito.appmosquito.appmosquito.Cartoon.CartoonizeFragment"
         android:label="@string/menu_information"
         tools:layout="@layout/fragment_information" />
 
     <fragment
-        android:id="@+id/nav_message"
-        android:name="app.mosquito.appmosquito.appmosquito.ui.Message.MessageFragment"
-        android:label="Dúvidas"
-        tools:layout="@layout/fragment_message" />
+        android:id="@+id/nav_filters"
+        android:name="app.mosquito.appmosquito.appmosquito.Filters.FiltersFragment"
+        android:label="@string/filters"
+        tools:layout="@layout/fragment_filters" />
+
 
     <fragment
         android:id="@+id/nav_history"
-        android:name="app.mosquito.appmosquito.appmosquito.ui.Information.InformationFragment"
+        android:name="app.mosquito.appmosquito.appmosquito.Cartoon.CartoonFragment"
         android:label="@string/menu_history"
         tools:layout="@layout/fragment_history" />
 
-    <fragment
-        android:id="@+id/nav_recognize"
-        android:name="app.mosquito.appmosquito.appmosquito.ui.Recognize.RecognizeFragment"
-        android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_recognize" />
 
 
 </navigation>

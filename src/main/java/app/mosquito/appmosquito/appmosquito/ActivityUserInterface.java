@@ -1,11 +1,9 @@
 package app.mosquito.appmosquito.appmosquito;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +18,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
-import app.mosquito.appmosquito.appmosquito.ui.Settings.SettingsFragment;
+import app.mosquito.appmosquito.appmosquito.Settings.SettingsFragment;
 
 public class ActivityUserInterface extends AppCompatActivity{
 
@@ -45,11 +43,14 @@ public class ActivityUserInterface extends AppCompatActivity{
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         usernameRegistered = settings.getString("username", "");
         passwordRegistered = settings.getString("password", "");
-
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("temp_select_movie", "0");
+        editor.putString("temp_select_filter", "0");
+        editor.apply();
         text = "  Olá, "+usernameRegistered;
         email_textview.setText(text);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_maps, R.id.nav_statistics, R.id.nav_recognize,
+                R.id.nav_home, R.id.nav_camera, R.id.nav_filters, R.id.nav_recognize,
                 R.id.nav_message, R.id.nav_history, R.id.nav_information, R.id.action_settings)
                 .setDrawerLayout(drawer)
                 .build();
@@ -73,11 +74,6 @@ public class ActivityUserInterface extends AppCompatActivity{
     }
 
 
-    public void screenIntent(View view) {
-
-        Intent intent = new Intent(this, DaemonService.class);
-        startActivity(intent);
-    }
 
     public void screenView(MenuItem item) {
 

@@ -55,14 +55,19 @@
     <string name="recovery">Esqueceu a senha?</string>
     <string name="not_register">Ainda não é registrado?</string>
     <string name="register_now">Registre-se agora</string>
-
+    <string name="gallery">Galeria de vídeos</string>
+    <string name="camera">Gravação de vídeos</string>
     <string name="open_file">Abrir arquivo externo</string>
-    <string name="filters">Filtros inteligentes</string>
-    <string name="color_balance">Balanço de cores</string>
-    <string name="tasks">Tarefas em andamento</string>
+    <string name="filters">Filtros inteligêntes</string>
+    <string name="color_balance">Balanceamento de cores</string>
+    <string name="tasks">Processos em andamento</string>
     <string name="style_transference">Transferência de estilos</string>
     <string name="edit">Editor de imagens</string>
-    <string name="informations">Email de usuário</string>
+    <string name="informations">Ajuda e informações</string>
+    <string name="aplication_name">Cartoon Movie Creator</string>
+    <string name="aplication_short_name">CMovie Creator</string>
+    <string name="recovery_register">Recuperação de cadastro</string>
+
 
 
 

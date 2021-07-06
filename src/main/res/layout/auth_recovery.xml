@@ -6,12 +6,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_color"
+    android:background="@drawable/abs_image"
     android:clickable="true"
     android:hapticFeedbackEnabled="true"
     android:soundEffectsEnabled="true"
-
     tools:context=".Authentication.ActivityRegisterAccount">
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.30"
+        android:background="@drawable/fosco"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="37dp" />
+    <TextView
+        android:id="@+id/textViewAuthUser6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recovery_register"
+        android:textColor="#F9FBFB"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -23,7 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.853"
-        app:srcCompat="@drawable/button_design"
+        app:srcCompat="@drawable/button_design_fill"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -36,7 +58,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.853"
-        app:srcCompat="@drawable/button_design"
+        app:srcCompat="@drawable/button_design_fill"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -183,10 +205,11 @@
         android:id="@+id/buttonAuthAcessRegister"
         android:layout_width="286dp"
         android:layout_height="54dp"
-        android:background="@drawable/button_design"
+        android:background="@drawable/button_design_fill"
         android:onClick="createUser"
         android:text="@string/change"
-        android:textColor="#00897B"
+        android:textColor="#AE9D9D"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -225,4 +248,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.45"
         tools:ignore="MissingConstraints" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

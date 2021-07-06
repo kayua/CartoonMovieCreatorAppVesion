@@ -6,42 +6,44 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-
             android:icon="@drawable/abc_vector_test"
-            android:title="@string/menu_home" />
+            android:title="@string/gallery" />
         <item
-            android:id="@+id/nav_maps"
-            android:icon="@drawable/send"
-            android:title="@string/open_file" />
+            android:id="@+id/nav_information"
+            android:icon="@drawable/ic_gallery"
+            android:title="Galeria de imagens" />
 
         <item
-            android:id="@+id/nav_statistics"
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_camera"
+            android:title="@string/camera" />
+
+
+        <item
+            android:id="@+id/nav_filters"
             android:icon="@drawable/icon_filters"
-            android:title="@string/filters" />
+            android:title="Filtros Básicos" />
 
         <item
             android:id="@+id/nav_history"
-            android:icon="@drawable/icon_balance"
-            android:title="@string/color_balance" />
+            android:icon="@drawable/ic_photo_filter"
+            android:title="Filtros Inteligentes" />
 
         <item
             android:id="@+id/nav_message"
-            android:icon="@android:drawable/stat_sys_download_done"
+            android:icon="@drawable/icon_tasks"
             android:title="@string/tasks" />
 
         <item
             android:id="@+id/nav_recognize"
-            android:icon="@drawable/icon_tranference"
-            android:title="@string/edit" />
-        <item
-            android:id="@+id/nav_information"
-            android:icon="@drawable/icon_upscale"
-            android:title="@string/informations" />
+            android:icon="@android:drawable/btn_star_big_off"
+            android:title="@string/style_transference"/>
+
 
         <item
             android:id="@+id/nav_help"
             android:icon="@drawable/icon_information"
-            android:title="@string/menu_information" />
+            android:title="@string/informations" />
 
 
 

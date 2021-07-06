@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -39,7 +40,7 @@ public class ActivityAcessAccount extends Activity {
         Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount);
         EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthUser);
         EditText textBoxPassword = (EditText) findViewById(R.id.editTextAuthPassword);
-
+        TextView recovery = (TextView ) findViewById(R.id.textView25);
         buttonAcess.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -48,9 +49,15 @@ public class ActivityAcessAccount extends Activity {
                 Log.i(textBoxUsername.getText().toString(),textBoxPassword.getText().toString());
             }
         });
+        recovery.setOnClickListener(new View.OnClickListener() {
 
-
-
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), ActivityRecoverPassword.class);
+                finish();
+                startActivity(i);
+            }
+        });
 
     }
     private void acess(String textBoxUsername, String textBoxPassword){

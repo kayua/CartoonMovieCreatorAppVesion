@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/gradient_color_background"
+    android:background="@drawable/gradient_color"
     tools:openDrawer="start">
 
     <include
@@ -23,7 +23,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        android:alpha="0.75"
+        android:alpha="0.85"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" >
 
@@ -31,9 +31,9 @@
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="59dp"
+            android:alpha="0.75"
             android:layout_gravity="bottom"
-            app:srcCompat="@drawable/side_nav_bar" />
-
+           android:background="@drawable/background_user"/>
         <TextView
             android:id="@+id/textView13"
             android:layout_width="match_parent"
