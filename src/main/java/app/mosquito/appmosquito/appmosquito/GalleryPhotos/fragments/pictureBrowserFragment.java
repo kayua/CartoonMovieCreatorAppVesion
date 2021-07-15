@@ -4,12 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,15 +31,12 @@ import org.tensorflow.lite.support.image.TensorImage;
 import org.tensorflow.lite.support.image.ops.ResizeOp;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import app.mosquito.appmosquito.appmosquito.GalleryPhotos.utils.imageIndicatorListener;
 import app.mosquito.appmosquito.appmosquito.GalleryPhotos.utils.pictureFacer;
@@ -122,52 +116,8 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
 
         mStyleImageView =  root.findViewById(R.id.imasddageda10);
 
-        ;
 
 
-        mTransferButton = root.findViewById(R.id.imasddgdeda10);
-        mTransferButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-                    File root = Environment.getExternalStorageDirectory();
-                    Log.i(root+"/a.jpg","as");
-                    Bitmap bMap = BitmapFactory.decodeFile("/storage/emulated/0/storage/emulated/0/a.jpg");
-                    bMap = getResizedBitmap(bMap,360, 360);
-
-                    float[][][][] array_input_red = bitmapToInputArrayRed(bMap);
-                    float[][][][] array_input_green = bitmapToInputArrayGreen(bMap);
-                    float[][][][] array_input_blue = bitmapToInputArrayBlue(bMap);
-
-                    float[][][][] red_channel = new float[1][360][360][1];
-                    float[][][][] green_channel = new float[1][360][360][1];
-                    float[][][][] blue_channel = new float[1][360][360][1];
-
-                Interpreter interpreter = null;
-                try {
-                    interpreter = new Interpreter(loadModelFile( PREDICT_MODEL));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                float[][][][] out1 = new float[1][348][348][1];
-                    float[][][][] out2 = new float[1][348][348][1];
-                    float[][][][] out3 = new float[1][348][348][1];
-
-                    Map<Integer, Object> outputs = new HashMap<>();
-                    outputs.put(0, out1);
-                    outputs.put(1, out2);
-                    outputs.put(2, out3);
-
-                    Object[] inputs = {array_input_red,array_input_green, array_input_blue};
-
-                    interpreter.runForMultipleInputsOutputs(inputs, outputs);
-
-
-            }
-        });
         return root;
     }
 
