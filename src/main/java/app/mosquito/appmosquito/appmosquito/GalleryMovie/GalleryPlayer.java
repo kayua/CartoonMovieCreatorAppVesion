@@ -1,13 +1,10 @@
-package app.mosquito.appmosquito.appmosquito.Gallery;
+package app.mosquito.appmosquito.appmosquito.GalleryMovie;
 
-import android.annotation.SuppressLint;
 import android.content.ContentUris;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,24 +37,7 @@ public class GalleryPlayer extends AppCompatActivity {
         editor.putString("temp_select_movie", String.valueOf(videoId));
         editor.apply();
 
-        Button buttonBasicFilters = findViewById(R.id.buttonAuthAcessRegisterAccount3);
-        Button buttonAdvancedFilters = findViewById(R.id.buttonAuthRegister2);
 
-        buttonBasicFilters.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        buttonAdvancedFilters.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceType")
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
 
     }
 

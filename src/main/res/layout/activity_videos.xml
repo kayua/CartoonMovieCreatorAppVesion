@@ -10,7 +10,6 @@
         android:id="@+id/recyclerView_videos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"
 
         android:paddingRight="16dp"
         android:paddingBottom="54dp"

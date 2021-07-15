@@ -6,19 +6,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/abs_image"
+    android:background="@drawable/gradient_color"
     android:clickable="true"
     android:hapticFeedbackEnabled="true"
     android:soundEffectsEnabled="true"
     tools:context=".Authentication.ActivityRegisterAccount">
-    <ImageView
-        android:id="@+id/imageView20"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.30"
-        android:background="@drawable/fosco"
-        tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="37dp" />
+
     <TextView
         android:id="@+id/textViewAuthUser6"
         android:layout_width="wrap_content"

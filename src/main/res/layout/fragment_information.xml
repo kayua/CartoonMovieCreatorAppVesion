@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Gallery.InformationFragment">
+    tools:context=".GalleryMovie.InformationFragment">
 
     <TextView
         android:id="@+id/text_slideshow"

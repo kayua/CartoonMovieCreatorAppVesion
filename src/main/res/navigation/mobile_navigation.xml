@@ -8,23 +8,23 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="app.mosquito.appmosquito.appmosquito.Gallery.GalleryFragment"
-        android:label="@string/gallery"
+        android:id="@+id/nav_image"
+        android:name="app.mosquito.appmosquito.appmosquito.GalleryMovie.GalleryFragment"
+        android:label="Galeria de videos"
         tools:layout="@layout/activity_videos" />
 
     <fragment
         android:id="@+id/nav_camera"
         android:name="app.mosquito.appmosquito.appmosquito.Camera.CameraFragment"
-        android:label="@string/gallery"
+        android:label="Câmera"
         tools:layout="@layout/fragment_home" />
 
    
     <fragment
-        android:id="@+id/nav_information"
-        android:name="app.mosquito.appmosquito.appmosquito.Cartoon.CartoonizeFragment"
-        android:label="@string/menu_information"
-        tools:layout="@layout/fragment_information" />
+        android:id="@+id/nav_home"
+        android:name="app.mosquito.appmosquito.appmosquito.GalleryPhotos.GalleryFragment"
+        android:label="Galeria de imagens"
+        tools:layout="@layout/activity_main" />
 
     <fragment
         android:id="@+id/nav_filters"

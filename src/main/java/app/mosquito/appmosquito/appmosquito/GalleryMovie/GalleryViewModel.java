@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Gallery;
+package app.mosquito.appmosquito.appmosquito.GalleryMovie;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

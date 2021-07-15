@@ -25,7 +25,7 @@
                 android:id="@+id/imagdasd"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@drawable/background_bar"
+
                 android:padding="12dp" />
 
             <LinearLayout
@@ -64,7 +64,7 @@
                         android:id="@+id/textVfeiew11"
                         android:layout_width="186dp"
                         android:layout_height="62dp"
-                        android:text="Descrever o modelo aqui"
+                        android:text="Efeito transformação imagens em desenhos realistas"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -74,8 +74,226 @@
                 android:id="@+id/imagzczeVasiew51"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@drawable/background_bar"
+
                 android:padding="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left|center_vertical"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imagezddaasa"
+                    android:layout_width="158dp"
+                    android:layout_height="120dp"
+                    android:padding="12dp"
+                    app:srcCompat="@drawable/example2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="13dp"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVfdzzsiewxx14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Modelo Art II"
+                        android:textColor="#494848"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textv11cVqqwiew11"
+                        android:layout_width="186dp"
+                        android:layout_height="62dp"
+                        android:text="Efeito cartoonização de traços simples"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left|center_vertical"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imagedasdagzdasa"
+                    android:layout_width="158dp"
+                    android:layout_height="120dp"
+                    android:padding="12dp"
+                    app:srcCompat="@drawable/example2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="13dp"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVfdzzsiedasw14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Modelo Art III"
+                        android:textColor="#494848"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textv11cViasdaaaew11"
+                        android:layout_width="186dp"
+                        android:layout_height="62dp"
+                        android:text="Efeito cartoon Anime tradicional"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left|center_vertical"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imagdasdasezdasa"
+                    android:layout_width="158dp"
+                    android:layout_height="120dp"
+                    android:padding="12dp"
+                    app:srcCompat="@drawable/example2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="13dp"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVfdzzdddsiew14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Modelo Art IV"
+                        android:textColor="#494848"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textv11cVddddiew11"
+                        android:layout_width="186dp"
+                        android:layout_height="62dp"
+                        android:text="Efeito cartoon complexo estilo Shinkai"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left|center_vertical"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imagezdasa"
+                    android:layout_width="158dp"
+                    android:layout_height="120dp"
+                    android:padding="12dp"
+                    app:srcCompat="@drawable/example2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="13dp"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVfdzzsiew14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Modelo Art V"
+                        android:textColor="#494848"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textv11cView11"
+                        android:layout_width="186dp"
+                        android:layout_height="62dp"
+                        android:text="Efeito cinematrográfico de alta resolução"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left|center_vertical"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imagezdasa"
+                    android:layout_width="158dp"
+                    android:layout_height="120dp"
+                    android:padding="12dp"
+                    app:srcCompat="@drawable/example2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="13dp"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVfdzzsiew14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Modelo Art VI"
+                        android:textColor="#494848"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textv11cView11"
+                        android:layout_width="186dp"
+                        android:layout_height="62dp"
+                        android:text="Efeito desenho animado estilo americano"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -118,7 +336,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-
 
         </LinearLayout>
 

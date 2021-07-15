@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/abc_vector_test"
-            android:title="@string/gallery" />
-        <item
-            android:id="@+id/nav_information"
             android:icon="@drawable/ic_gallery"
             android:title="Galeria de imagens" />
+        <item
+            android:id="@+id/nav_image"
+            android:icon="@drawable/icon_play"
+            android:title="Galeria de videos" />
 
         <item
             android:id="@+id/nav_camera"

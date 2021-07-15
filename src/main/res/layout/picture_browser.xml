@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="646dp"
+      android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/imageView26"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#AE9D9D"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+          android:id="@+id/textView11"
+          android:layout_width="257dp"
+          android:layout_height="24dp"
+          android:layout_alignParentStart="true"
+          android:layout_alignParentTop="true"
+          android:layout_alignParentEnd="true"
+          android:layout_alignParentBottom="true"
+          android:layout_marginStart="59dp"
+          android:layout_marginTop="15dp"
+          android:layout_marginEnd="94dp"
+          android:layout_marginBottom="13dp"
+          android:text="Filtros de imagem"
+          android:textColor="#FFFFFF"
+          android:textSize="18sp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toTopOf="@+id/playerView"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="@+id/imageView22"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.814" />
+
+      <ImageView
+          android:id="@+id/imageView22"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="8dp"
+          android:background="@drawable/icon_previous"
+          app:layout_constraintBottom_toTopOf="@+id/playerView"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.0" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="top"
+        android:visibility="gone"
+        app:cardBackgroundColor="@android:color/transparent">
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_photo_filter"
+            android:tint="@color/white" />
+
+      </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!--android:scaleType="centerCrop"-->
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/imagePager"
+        android:layout_width="match_parent"
+        android:layout_height="346dp"
+        android:layout_marginTop="5dp">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:orientation="vertical">
+
+      <SeekBar
+          android:id="@+id/seekBar2"
+          android:layout_width="172dp"
+          android:layout_height="42dp"
+          android:layout_alignParentStart="true"
+          android:layout_alignParentTop="true"
+          android:layout_alignParentEnd="true"
+          android:layout_alignParentBottom="true"
+          android:layout_marginStart="185dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginEnd="53dp"
+          android:layout_marginBottom="18dp"
+          android:progressBackgroundTint="#373536"
+          android:progressBackgroundTintMode="screen"
+          android:progressTint="#EC9898"
+          android:progressTintMode="src_atop"
+          android:thumb="@drawable/custom_tumb_blue"
+          android:thumbTint="#DAD8D8"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.895"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.675"
+          app:tickMarkTint="#DD1515" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="408dp"
+        android:layout_height="185dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.995">
+
+      <HorizontalScrollView
+
+          android:id="@+id/ffda"
+          android:layout_width="match_parent"
+          android:layout_height="146dp"
+          android:background="#00FFFFFF"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.487"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.951">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|left|center_vertical"
+
+            android:orientation="horizontal">
+
+          <ImageView
+              android:id="@+id/imasddgeda10"
+              android:layout_width="129dp"
+              android:layout_height="109dp"
+              android:layout_margin="6dp"
+              android:layout_weight="1"
+              android:background="@drawable/example2"
+              app:srcCompat="@drawable/original" />
+
+          <ImageView
+              android:id="@+id/imasddageda10"
+              android:layout_width="129dp"
+              android:layout_height="109dp"
+              android:layout_margin="6dp"
+              android:layout_weight="1"
+              android:background="@drawable/example2" />
+
+          <ImageView
+              android:id="@+id/imasddgdeda10"
+              android:layout_width="129dp"
+              android:layout_height="109dp"
+              android:layout_margin="6dp"
+              android:layout_weight="1"
+              android:background="@drawable/example2" />
+
+
+          <ImageView
+              android:id="@+id/imasddgefda10"
+              android:layout_width="129dp"
+              android:layout_height="109dp"
+              android:layout_margin="6dp"
+              android:layout_weight="1"
+              android:background="@drawable/example2" />
+
+
+          <ImageView
+              android:id="@+id/imasddgedwa10"
+              android:layout_width="129dp"
+              android:layout_height="109dp"
+              android:layout_margin="6dp"
+              android:layout_weight="1"
+              android:background="@drawable/example2" />
+
+
+          <ImageView
+              android:id="@+id/imasddgedar10"
+              android:layout_width="129dp"
+              android:layout_height="109dp"
+              android:layout_margin="6dp"
+              android:layout_weight="1"
+              android:background="@drawable/example2" />
+
+          <ImageView
+              android:id="@+id/imasddgeda1w0"
+              android:layout_width="129dp"
+              android:layout_height="109dp"
+              android:layout_margin="6dp"
+              android:layout_weight="1"
+              android:background="@drawable/example2" />
+
+
+        </LinearLayout>
+
+      </HorizontalScrollView>
+
+
+    </LinearLayout>
+
+
+  </LinearLayout>
+
+
+</FrameLayout>

@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/abs_image"
+    android:background="@drawable/gradient_color"
     android:soundEffectsEnabled="false">
     <ImageView
         android:id="@+id/imageView6"
@@ -49,24 +49,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
-
-
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieChart_sound"
-        android:layout_width="342dp"
-
-        android:layout_height="321dp"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="36dp"
-
-        android:alpha="0.75"
-        android:clickable="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
-        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonAuthAcessRegisterAccount"

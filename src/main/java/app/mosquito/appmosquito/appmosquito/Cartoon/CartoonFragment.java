@@ -23,8 +23,6 @@ import androidx.fragment.app.Fragment;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
 import org.tensorflow.lite.Tensor;
-import org.tensorflow.lite.gpu.GpuDelegate;
-import org.tensorflow.lite.nnapi.NnApiDelegate;
 import org.tensorflow.lite.support.common.ops.NormalizeOp;
 import org.tensorflow.lite.support.image.ImageProcessor;
 import org.tensorflow.lite.support.image.TensorImage;
@@ -139,26 +137,11 @@ public class CartoonFragment extends Fragment {
                 Interpreter predictInterpreter;
                 Interpreter transformInterpreter;
 
-                Interpreter.Options predictOptions = new Interpreter.Options();
-                //predictOptions.setNumThreads(5);
-                switch (mDelegationMode) {
-                    case USING_CPU:
-                        TimerRecorder.getInstance().setPredictType(TimerRecorder.CPU);
-                        break;
-                    case USING_GPU:
-                        predictOptions.addDelegate(new GpuDelegate());
-                        TimerRecorder.getInstance().setPredictType(TimerRecorder.GPU);
-                        break;
-                    case USING_NNAPI:
-                        predictOptions.addDelegate(new NnApiDelegate());
-                        TimerRecorder.getInstance().setPredictType(TimerRecorder.NNAPI);
-                        break;
-                }
 
                 try {
                     // init two interpreter instances: style predict and style transform
                     predictInterpreter = new Interpreter(
-                            loadModelFile(getActivity(), PREDICT_MODEL), predictOptions);
+                            loadModelFile(getActivity(), PREDICT_MODEL), 1);
 
                     Interpreter.Options transformOptions = new Interpreter.Options();
                     transformInterpreter = new Interpreter(
@@ -244,7 +227,6 @@ public class CartoonFragment extends Fragment {
         return result;
     }
 
-    /** Memory-map the model file in Assets. */
     private MappedByteBuffer loadModelFile(Activity activity, String modePath) throws IOException {
         AssetFileDescriptor fileDescriptor = activity.getAssets().openFd(modePath);
         FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor());

@@ -6,20 +6,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3C0CA"
+    android:background="#E9018373"
     tools:context=".ActivityUserInterface">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#EC8B9E"
+        android:background="@drawable/gradient_color"
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#AE9D9D"
+            android:background="#FFFFFF"
             app:popupTheme="@style/Theme.AppCompat.NoActionBar" />
 
     </com.google.android.material.appbar.AppBarLayout>
