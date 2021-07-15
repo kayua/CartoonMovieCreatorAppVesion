@@ -15,7 +15,7 @@
             android:id="@+id/head"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            app:cardBackgroundColor="#0B0B0B">
+            app:cardBackgroundColor="#FFFFFF">
 
 
             <LinearLayout
@@ -29,7 +29,7 @@
                     android:layout_height="43dp"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="6dp"
-                    app:srcCompat="@drawable/icon_previous" />
+                    app:srcCompat="@drawable/arrow" />
 
                 <TextView
                     android:id="@+id/foldername"
@@ -39,7 +39,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
                     android:text="test"
-                    android:textColor="@color/white"
+                    android:textColor="@color/color_main_bar"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
