@@ -39,7 +39,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
                     android:text="test"
-                    android:textColor="@color/color_main_bar"
+                    android:textColor="#61BCE6"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

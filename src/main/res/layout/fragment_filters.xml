@@ -96,11 +96,6 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="13dp"
-                        android:orientation="horizontal"></LinearLayout>
-
                     <TextView
                         android:id="@+id/textVfdzzsiewxx14"
                         android:layout_width="match_parent"
@@ -117,8 +112,16 @@
                         android:textSize="14sp" />
                 </LinearLayout>
 
+
+
             </LinearLayout>
 
+            <ImageView
+                android:layout_width="334dp"
+
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#CBCDCD" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -141,7 +144,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="13dp"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal"></LinearLayout>
 
                     <TextView
@@ -162,7 +165,12 @@
 
             </LinearLayout>
 
+            <ImageView
+                android:layout_width="334dp"
 
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#CBCDCD" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -206,6 +214,12 @@
 
             </LinearLayout>
 
+            <ImageView
+
+                android:layout_width="334dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#CBCDCD" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -215,7 +229,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imagezdasa"
+                    android:id="@+id/imagezdfaasa"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -232,7 +246,7 @@
                         android:orientation="horizontal"></LinearLayout>
 
                     <TextView
-                        android:id="@+id/textVfdzzsiew14"
+                        android:id="@+id/textVfdzdaszsiew14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Modelo Art V"
@@ -240,7 +254,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/textv11cView11"
+                        android:id="@+id/textv11cVdiew11"
                         android:layout_width="186dp"
                         android:layout_height="62dp"
                         android:text="Efeito cinematrográfico de alta resolução"
@@ -249,7 +263,12 @@
 
             </LinearLayout>
 
+            <ImageView
+                android:layout_width="334dp"
 
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#CBCDCD" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -259,7 +278,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imagezdasa"
+                    android:id="@+id/imaasgezdasa"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -276,7 +295,7 @@
                         android:orientation="horizontal"></LinearLayout>
 
                     <TextView
-                        android:id="@+id/textVfdzzsiew14"
+                        android:id="@+id/textVfasdzzsiew14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Modelo Art VI"
@@ -293,7 +312,12 @@
 
             </LinearLayout>
 
+            <ImageView
+                android:layout_width="334dp"
 
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#CBCDCD" />
 
             <LinearLayout
                 android:layout_width="match_parent"
