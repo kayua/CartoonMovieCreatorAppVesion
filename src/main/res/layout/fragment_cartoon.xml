@@ -8,16 +8,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_color"
     android:soundEffectsEnabled="false">
-    <ImageView
-        android:id="@+id/imageView6"
-        android:alpha="0.60"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/fosco"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/buttonAuthRegister3"
