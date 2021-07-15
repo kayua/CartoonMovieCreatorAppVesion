@@ -10,7 +10,7 @@
         android:id="@+id/action_settings"
         android:checkable="true"
         android:enabled="true"
-        android:icon="@android:drawable/ic_dialog_dialer"
+        android:icon="@drawable/dots_menu"
         android:orderInCategory="100"
         android:title=""
         android:visible="true"

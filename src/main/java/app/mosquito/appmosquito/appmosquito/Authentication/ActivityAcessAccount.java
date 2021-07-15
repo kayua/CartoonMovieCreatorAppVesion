@@ -28,7 +28,6 @@ public class ActivityAcessAccount extends Activity {
     private FirebaseAuth mAuth;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

@@ -24,6 +24,9 @@ public class ActivityRecoverPassword extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private Switch active_email_notification, active_realtime_notification, active_infestations_detect;
 
+    public ActivityRecoverPassword() {
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
