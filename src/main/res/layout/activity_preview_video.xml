@@ -36,50 +36,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <ImageView
-            android:id="@+id/imgUndo"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:background="@color/black_trasp"
-            android:padding="8dp"
-            android:src="@drawable/ic_undo"
-            app:layout_constraintEnd_toStartOf="@id/imgText"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <ImageView
-            android:id="@+id/imgText"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:background="@color/black_trasp"
-            android:padding="8dp"
-            android:src="@drawable/ic_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imgDraw"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@color/black_trasp"
-            android:padding="8dp"
-            android:src="@drawable/ic_brush"
-            app:layout_constraintStart_toStartOf="@id/imgText"
-            app:layout_constraintTop_toBottomOf="@id/imgText" />
-
-        <ImageView
-            android:id="@+id/imgSticker"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@color/black_trasp"
-            android:padding="8dp"
-            android:src="@drawable/ic_sticker"
-            app:layout_constraintStart_toStartOf="@id/imgDraw"
-            app:layout_constraintTop_toBottomOf="@id/imgDraw" />
 
 
 

@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="198dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/icon_cartoon_2" />
+            app:srcCompat="@drawable/icon_cartoon" />
 
     </LinearLayout>
 
