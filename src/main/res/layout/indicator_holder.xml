@@ -34,7 +34,7 @@
             <View
                 android:id="@+id/activeImage"
                 android:layout_width="179dp"
-                android:layout_height="168dp"
+                android:layout_height="144dp"
                 android:background="#8c000000" />
 
 
