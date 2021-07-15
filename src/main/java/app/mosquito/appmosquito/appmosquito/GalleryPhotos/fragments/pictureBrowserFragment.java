@@ -2,10 +2,7 @@ package app.mosquito.appmosquito.appmosquito.GalleryPhotos.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,19 +20,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
-import org.tensorflow.lite.Tensor;
-import org.tensorflow.lite.support.image.ImageProcessor;
-import org.tensorflow.lite.support.image.TensorImage;
-import org.tensorflow.lite.support.image.ops.ResizeOp;
-import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 
 import app.mosquito.appmosquito.appmosquito.GalleryPhotos.utils.imageIndicatorListener;
@@ -117,83 +103,11 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
         mStyleImageView =  root.findViewById(R.id.imasddageda10);
 
 
+        mTransferButton = root.findViewById(R.id.imasddgdeda10);
 
         return root;
     }
 
-    private float[][][][] bitmapToInputArrayRed(Bitmap bitmap) {
-
-
-        int batchNum = 0;
-        float[][][][] input = new float[1][360][360][1];
-        for (int x = 0; x < 360; x++) {
-            for (int y = 0; y < 360; y++) {
-                int pixel = bitmap.getPixel(x, y);
-
-                input[batchNum][x][y][0] = (Color.red(pixel))/ 255.0f;
-
-            }
-        }
-
-        return input;
-    }
-
-    private float[][][][] bitmapToInputArrayGreen(Bitmap bitmap) {
-
-
-        int batchNum = 0;
-        float[][][][] input = new float[1][360][360][1];
-        for (int x = 0; x < 360; x++) {
-            for (int y = 0; y < 360; y++) {
-                int pixel = bitmap.getPixel(x, y);
-
-                input[batchNum][x][y][0] = (Color.red(pixel))/ 255.0f;
-
-            }
-        }
-
-        return input;
-    }
-
-    private float[][][][] bitmapToInputArrayBlue(Bitmap bitmap) {
-
-
-        int batchNum = 0;
-        float[][][][] input = new float[1][360][360][1];
-        for (int x = 0; x < 360; x++) {
-            for (int y = 0; y < 360; y++) {
-                int pixel = bitmap.getPixel(x, y);
-
-                input[batchNum][x][y][0] = (Color.red(pixel))/ 255.0f;
-
-            }
-        }
-
-        return input;
-    }
-
-
-    private ByteBuffer runPredict(Interpreter tflite, Bitmap styleImage) {
-
-        TensorImage inputTensorImage = getInputTensorImage(tflite, styleImage);
-        Tensor outputTensor = tflite.getOutputTensor(/* outputTensorIndex */ 0);
-        TensorBuffer outputTensorBuffer = TensorBuffer.createFixedSize(outputTensor.shape(), outputTensor.dataType());
-        tflite.run(inputTensorImage.getBuffer(), outputTensorBuffer.getBuffer());
-
-        return outputTensorBuffer.getBuffer();
-    }
-
-    private TensorImage getInputTensorImage(Interpreter tflite, Bitmap inputBitmap) {
-
-        DataType imageDataType = tflite.getInputTensor(/* imageTensorIndex */0).dataType();
-        TensorImage inputTensorImage = new TensorImage(imageDataType);
-        inputTensorImage.load(inputBitmap);
-
-        ImageProcessor imageProcessor =
-                new ImageProcessor.Builder().add(new ResizeOp(256, 256, ResizeOp.ResizeMethod.BILINEAR)).build();
-
-        return imageProcessor.process(inputTensorImage);
-    }
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -241,7 +155,6 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
     @Override
     public void onImageIndicatorClicked(int ImagePosition) {
 
-        //the below lines of code highlights the currently select image in  the indicatorRecycler with respect to the viewPager position
         if(previousSelected != -1){
             allImages.get(previousSelected).setSelected(false);
             previousSelected = ImagePosition;
@@ -301,33 +214,6 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
     }
 
 
-    private MappedByteBuffer loadModelFile(String file) throws IOException {
-        AssetFileDescriptor assetFileDescriptor = getContext().getAssets().openFd(file);
-        FileInputStream fileInputStream = new FileInputStream(assetFileDescriptor.getFileDescriptor());
-        FileChannel fileChannel = fileInputStream.getChannel();
-
-        long startOffset = assetFileDescriptor.getStartOffset();
-        long len = assetFileDescriptor.getLength();
-
-        return fileChannel.map(FileChannel.MapMode.READ_ONLY,startOffset,len);
-    }
-
-    public Bitmap getResizedBitmap(Bitmap bm, int newWidth, int newHeight) {
-        int width = bm.getWidth();
-        int height = bm.getHeight();
-        float scaleWidth = ((float) newWidth) / width;
-        float scaleHeight = ((float) newHeight) / height;
-        // CREATE A MATRIX FOR THE MANIPULATION
-        Matrix matrix = new Matrix();
-        // RESIZE THE BIT MAP
-        matrix.postScale(scaleWidth, scaleHeight);
-
-        // "RECREATE" THE NEW BITMAP
-        Bitmap resizedBitmap = Bitmap.createBitmap(
-                bm, 0, 0, width, height, matrix, false);
-        bm.recycle();
-        return resizedBitmap;
-    }
 
 
 }
