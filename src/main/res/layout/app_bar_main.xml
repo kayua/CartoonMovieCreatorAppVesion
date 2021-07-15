@@ -6,21 +6,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E9018373"
+
+
+
     tools:context=".ActivityUserInterface">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradient_color"
+
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#FFFFFF"
-            app:popupTheme="@style/Theme.AppCompat.NoActionBar" />
+
+            android:background='@drawable/bar'
+            android:focusableInTouchMode="true"
+
+            android:nestedScrollingEnabled="false"
+            app:navigationIcon="@drawable/full_tranperant"
+            app:popupTheme="@style/Theme.AppMosquito"
+            app:titleTextColor="#304FFE" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

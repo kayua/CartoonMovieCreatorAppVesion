@@ -50,7 +50,10 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ActivityUserInterface"
-            android:screenOrientation="portrait"/>
+
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppMosquito"
+            />
         <activity
             android:name=".Authentication.ActivityRecoverPassword"
             android:screenOrientation="portrait"/>

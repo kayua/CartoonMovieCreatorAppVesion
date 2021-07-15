@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -25,6 +26,7 @@ public class ActivityUserInterface extends AppCompatActivity{
     private AppBarConfiguration mAppBarConfiguration;
     String usernameRegistered;
     String passwordRegistered;
+    protected ActionBarDrawerToggle drawerToggle;
     public static final String PREFS_NAME = "PersonalDatabase";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +37,14 @@ public class ActivityUserInterface extends AppCompatActivity{
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationIcon(R.drawable.exo_icon_play);
+
 
         TextView email_textview = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textView8);
         String text = new String();
@@ -51,6 +58,15 @@ public class ActivityUserInterface extends AppCompatActivity{
         editor.apply();
         text = "  Olá, "+usernameRegistered;
         email_textview.setText(text);
+
+
+
+
+
+
+
+
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_camera, R.id.nav_filters, R.id.nav_recognize,
                 R.id.nav_message, R.id.nav_history, R.id.nav_image, R.id.action_settings)

@@ -2,18 +2,25 @@
     <!-- Base application theme. -->
     <style name="Theme.AppMosquito" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#000000</item>
-        <item name="colorPrimaryVariant">@color/color_main_bar</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="colorPrimaryVariant">#FFFFFF</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/black</item>
-        <item name="colorSecondaryVariant">@color/black</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="colorSecondary">#FFFFFF</item>
+        <item name="colorSecondaryVariant">#FFFFFF</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
         <!-- Status bar color. -->
+
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="colorControlNormal">@color/black</item>
+        <item name="colorControlNormal">#FFFFFF</item>
     </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">#FF001C</item>
+    </style>
+
 
 
 

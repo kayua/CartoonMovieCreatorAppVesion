@@ -7,9 +7,9 @@
     <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="colorPrimary">#0091EA</item>
-        <item name="colorPrimaryDark">#0091EA</item>
-        <item name="colorAccent">#0091EA</item>
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#000000</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
     </style>
 

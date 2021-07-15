@@ -15,7 +15,7 @@
             android:id="@+id/head"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            app:cardBackgroundColor="#008BAE">
+            app:cardBackgroundColor="#0B0B0B">
 
 
             <LinearLayout
