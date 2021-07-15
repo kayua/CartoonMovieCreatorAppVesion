@@ -1,6 +1,8 @@
 package app.mosquito.appmosquito.appmosquito;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +30,7 @@ public class ActivityUserInterface extends AppCompatActivity{
     String passwordRegistered;
     protected ActionBarDrawerToggle drawerToggle;
     public static final String PREFS_NAME = "PersonalDatabase";
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +46,8 @@ public class ActivityUserInterface extends AppCompatActivity{
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationIcon(R.drawable.exo_icon_play);
+        toolbar.setTitleTextColor(Color.argb(220,150,150,150));
+
 
 
         TextView email_textview = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textView8);
@@ -58,12 +62,6 @@ public class ActivityUserInterface extends AppCompatActivity{
         editor.apply();
         text = "  Olá, "+usernameRegistered;
         email_textview.setText(text);
-
-
-
-
-
-
 
 
 
