@@ -848,7 +848,7 @@
                         android:orientation="horizontal"></LinearLayout>
 
                     <TextView
-                        android:id="@+id/textVfdzzdddsiew14"
+                        android:id="@+id/textVfdzzdddsfiew14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Modelo Art IV"
