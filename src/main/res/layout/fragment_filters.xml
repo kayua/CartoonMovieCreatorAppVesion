@@ -25,11 +25,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|left|center_vertical"
-
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imasdgeda"
+                    android:id="@+id/imageViewFilters1"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -78,7 +77,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imagesdzddaasa"
+                    android:id="@+id/imageViewFilters2"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -129,7 +128,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imagedasasdagzdasa"
+                    android:id="@+id/imageViewFilters3"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -182,7 +181,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/iasmagdasdasezdasa"
+                    android:id="@+id/imageViewFilters4"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -231,7 +230,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imaaagezdfaasa"
+                    android:id="@+id/imageViewFilters5"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -280,7 +279,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imrraasgezdasa"
+                    android:id="@+id/imageViewFilters6"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -329,7 +328,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/irrmagppezdasa"
+                    android:id="@+id/imageViewFilters7"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -378,7 +377,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imalllgezddaasa"
+                    android:id="@+id/imageViewFilters8"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -422,6 +421,7 @@
                 android:background="#CBCDCD" />
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|left|center_vertical"
@@ -429,7 +429,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imagedasdaççgzdasa"
+                    android:id="@+id/imageViewFilters9"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -482,7 +482,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/cccimagdasdasezdasa"
+                    android:id="@+id/imageViewFilters10"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -531,7 +531,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/ippmagezdfaasa"
+                    android:id="@+id/imageViewFilters11"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -580,7 +580,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/izzzmaasgezdasa"
+                    android:id="@+id/izimageViewFilters12"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -629,7 +629,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imaxxxgezdasa"
+                    android:id="@+id/imageViewFilters13"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -678,7 +678,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/irrmagezdasa"
+                    android:id="@+id/imageViewFilters14"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -727,7 +727,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imagezddaasa"
+                    android:id="@+id/imageViewFilters15"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -778,7 +778,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imagedasdagzdasa"
+                    android:id="@+id/imageViewFilters16"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -831,7 +831,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imagdasdasezdasa"
+                    android:id="@+id/imageViewFilters17"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -880,7 +880,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imagezdfaasa"
+                    android:id="@+id/imageViewFilters18"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -929,7 +929,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imaasgezdasa"
+                    android:id="@+id/imageViewFilters19"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
@@ -978,7 +978,203 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imagezdasa"
+                    android:id="@+id/imageViewFilters20"
+                    android:layout_width="158dp"
+                    android:layout_height="120dp"
+                    android:padding="12dp"
+                    app:srcCompat="@drawable/example2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="13dp"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVfdzzsiew14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Modelo Art I"
+                        android:textColor="#494848"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textv1sda1cView11"
+                        android:layout_width="186dp"
+                        android:layout_height="62dp"
+                        android:text="Descrever o modelo aqui"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="334dp"
+
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#CBCDCD" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left|center_vertical"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageViewFilters21"
+                    android:layout_width="158dp"
+                    android:layout_height="120dp"
+                    android:padding="12dp"
+                    app:srcCompat="@drawable/example2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="13dp"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVfdzzdddsiew14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Modelo Art IV"
+                        android:textColor="#494848"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textv11cVddddiew11"
+                        android:layout_width="186dp"
+                        android:layout_height="62dp"
+                        android:text="Efeito cartoon complexo estilo Shinkai"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+
+                android:layout_width="334dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#CBCDCD" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left|center_vertical"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageViewFilters22"
+                    android:layout_width="158dp"
+                    android:layout_height="120dp"
+                    android:padding="12dp"
+                    app:srcCompat="@drawable/example2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="13dp"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVfdzdaszsiew14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Modelo Art V"
+                        android:textColor="#494848"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textv11cVdiew11"
+                        android:layout_width="186dp"
+                        android:layout_height="62dp"
+                        android:text="Efeito cinematrográfico de alta resolução"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="334dp"
+
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#CBCDCD" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left|center_vertical"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageViewFilters23"
+                    android:layout_width="158dp"
+                    android:layout_height="120dp"
+                    android:padding="12dp"
+                    app:srcCompat="@drawable/example2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="13dp"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVfasdzzsiew14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Modelo Art VI"
+                        android:textColor="#494848"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textv11cView11"
+                        android:layout_width="186dp"
+                        android:layout_height="62dp"
+                        android:text="Efeito desenho animado estilo americano"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="334dp"
+
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#CBCDCD" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|left|center_vertical"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageViewFilters24"
                     android:layout_width="158dp"
                     android:layout_height="120dp"
                     android:padding="12dp"
