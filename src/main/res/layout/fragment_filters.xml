@@ -21,12 +21,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imagdasd"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-
-                android:padding="12dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,11 +65,11 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/imagzczeVasiew51"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_width="334dp"
 
-                android:padding="12dp" />
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#CBCDCD" />
 
             <LinearLayout
                 android:layout_width="match_parent"
