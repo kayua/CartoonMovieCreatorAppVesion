@@ -105,31 +105,6 @@
         android:layout_height="67dp"
         android:orientation="vertical">
 
-      <SeekBar
-          android:id="@+id/seekBar2"
-          android:layout_width="172dp"
-          android:layout_height="42dp"
-          android:layout_alignParentStart="true"
-          android:layout_alignParentTop="true"
-          android:layout_alignParentEnd="true"
-          android:layout_alignParentBottom="true"
-          android:layout_marginStart="185dp"
-          android:layout_marginTop="30dp"
-          android:layout_marginEnd="53dp"
-          android:layout_marginBottom="18dp"
-          android:progressBackgroundTint="#373536"
-          android:progressBackgroundTintMode="screen"
-          android:progressTint="#EC9898"
-          android:progressTintMode="src_atop"
-          android:thumb="@drawable/custom_tumb_blue"
-          android:thumbTint="#DAD8D8"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.895"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.675"
-          app:tickMarkTint="#DD1515" />
     </RelativeLayout>
 
     <LinearLayout

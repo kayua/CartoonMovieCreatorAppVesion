@@ -151,23 +151,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="171dp"
-        android:layout_height="37dp"
-        android:progressBackgroundTint="#373536"
-        android:progressBackgroundTintMode="screen"
-        android:progressTint="#EC9898"
-        android:progressTintMode="src_atop"
-        android:thumb="@drawable/custom_tumb_blue"
-        android:thumbTint="#DAD8D8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.895"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675"
-        app:tickMarkTint="#DD1515" />
+
 
     <TextView
         android:id="@+id/textView9"
