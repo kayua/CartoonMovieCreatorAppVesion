@@ -44,12 +44,10 @@
     <LinearLayout
         android:layout_width="263dp"
         android:layout_height="60dp"
-
-        android:background="@drawable/background_image_user"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="10dp"
+            android:layout_width="16dp"
             android:layout_height="50dp"
             android:orientation="horizontal">
 
@@ -57,8 +55,8 @@
 
         <ImageView
             android:id="@+id/imagceViewv5"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:background="@drawable/icon_temp" />
 
@@ -71,8 +69,8 @@
 
         <ImageView
             android:id="@+id/imagceView5"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:background="@drawable/icon_temp" />
 
@@ -85,8 +83,8 @@
 
         <ImageView
             android:id="@+id/imazgeView5"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:background="@drawable/icon_temp" />
 
@@ -99,8 +97,8 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:background="@drawable/icon_temp" />
 
@@ -111,12 +109,48 @@
 
         </LinearLayout>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="263dp"
+        android:layout_height="21dp"
+        android:orientation="horizontal"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="262dp"
+        android:layout_height="286dp"
+
+        android:background="@drawable/background_image_user"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
         <ImageView
-            android:id="@+id/imageVifew5"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
+            android:id="@+id/imaxgceViewv5"
+            android:layout_width="110dp"
+            android:layout_height="90dp"
             android:layout_gravity="center"
-            android:background="@drawable/icon_temp" />
+            android:background="@drawable/icon_cubic" />
+
+        <LinearLayout
+            android:layout_width="8dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imaxgceViewv"
+            android:layout_width="110dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+
+            android:background="@drawable/icon_cubic" />
 
     </LinearLayout>
 
