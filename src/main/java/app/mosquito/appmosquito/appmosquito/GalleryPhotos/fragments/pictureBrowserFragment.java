@@ -76,9 +76,7 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
         View root = inflater.inflate(R.layout.picture_browser, container, false);
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mContentImageView =  root.findViewById(R.id.imasddgeda10);
-
         mStyleImageView =  root.findViewById(R.id.imasddageda10);
-
 
         return root;
     }
@@ -199,7 +197,9 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        //getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
     }
 }

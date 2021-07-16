@@ -46,6 +46,7 @@ public class GalleryFragment extends Fragment implements itemClickListener {
         settingsViewModel = new ViewModelProvider(this).get(FiltersViewModel.class);
         View root = inflater.inflate(R.layout.activity_main, container, false);
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+
         if(ContextCompat.checkSelfPermission(root.getContext(),
                 Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED)

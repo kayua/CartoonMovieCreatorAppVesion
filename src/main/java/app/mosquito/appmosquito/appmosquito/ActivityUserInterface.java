@@ -33,6 +33,7 @@ public class ActivityUserInterface extends AppCompatActivity{
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_interface);
 
@@ -40,15 +41,12 @@ public class ActivityUserInterface extends AppCompatActivity{
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(Color.argb(220,150,150,150));
-
-
 
         TextView email_textview = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textView8);
         String text = new String();
@@ -62,7 +60,6 @@ public class ActivityUserInterface extends AppCompatActivity{
         editor.apply();
         text = "  Olá, "+usernameRegistered;
         email_textview.setText(text);
-
 
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
