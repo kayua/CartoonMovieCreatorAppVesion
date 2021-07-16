@@ -9,12 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import app.mosquito.appmosquito.appmosquito.R;
 
-
-/**
- * Author CodeBoy722
- *
- * recyclerViewPagerImageIndicator's ViewHolder
- */
 public class indicatorHolder extends RecyclerView.ViewHolder{
 
     public ImageView image;

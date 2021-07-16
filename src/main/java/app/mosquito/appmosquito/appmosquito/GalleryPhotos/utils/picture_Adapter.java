@@ -17,24 +17,13 @@ import app.mosquito.appmosquito.appmosquito.R;
 
 import static androidx.core.view.ViewCompat.setTransitionName;
 
-/**
- * Author CodeBoy722
- *
- * A RecyclerView Adapter class that's populates a RecyclerView with images from
- * a folder on the device external storage
- */
 public class picture_Adapter extends RecyclerView.Adapter<PicHolder> {
 
     private ArrayList<pictureFacer> pictureList;
     private Context pictureContx;
     private final itemClickListener picListerner;
 
-    /**
-     *
-     * @param pictureList ArrayList of pictureFacer objects
-     * @param pictureContx The Activities Context
-     * @param picListerner An interface for listening to clicks on the RecyclerView's items
-     */
+
     public picture_Adapter(ArrayList<pictureFacer> pictureList, Context pictureContx,itemClickListener picListerner) {
         this.pictureList = pictureList;
         this.pictureContx = pictureContx;

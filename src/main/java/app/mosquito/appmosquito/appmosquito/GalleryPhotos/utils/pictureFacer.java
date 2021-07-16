@@ -1,10 +1,6 @@
 package app.mosquito.appmosquito.appmosquito.GalleryPhotos.utils;
 
-/**
- * Author CodeBoy722
- *
- * Custom class for holding data of images on the device external storage
- */
+
 public class pictureFacer {
 
     private String picturName;

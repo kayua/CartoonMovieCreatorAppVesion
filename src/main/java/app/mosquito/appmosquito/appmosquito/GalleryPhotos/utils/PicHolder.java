@@ -9,11 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-/**
- *Author CodeBoy722
- *
- * picture_Adapter's ViewHolder
- */
 
 public class PicHolder extends RecyclerView.ViewHolder{
 

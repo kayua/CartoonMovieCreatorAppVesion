@@ -52,7 +52,7 @@ public class GalleryFragment extends Fragment implements itemClickListener {
             ActivityCompat.requestPermissions(getActivity(),
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
-        //____________________________________________________________________________________
+
 
         empty =root.findViewById(R.id.empty);
 
@@ -91,7 +91,6 @@ public class GalleryFragment extends Fragment implements itemClickListener {
                 String folder = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.BUCKET_DISPLAY_NAME));
                 String datapath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA));
 
-                //String folderpaths =  datapath.replace(name,"");
                 String folderpaths = datapath.substring(0, datapath.lastIndexOf(folder+"/"));
                 folderpaths = folderpaths+folder+"/";
                 if (!picPaths.contains(folderpaths)) {
@@ -99,7 +98,7 @@ public class GalleryFragment extends Fragment implements itemClickListener {
 
                     folds.setPath(folderpaths);
                     folds.setFolderName(folder);
-                    folds.setFirstPic(datapath);//if the folder has only one picture this line helps to set it as first so as to avoid blank image in itemview
+                    folds.setFirstPic(datapath);
                     folds.addpics();
                     picFolders.add(folds);
                 }else{
@@ -119,12 +118,6 @@ public class GalleryFragment extends Fragment implements itemClickListener {
             Log.d("picture folders",picFolders.get(i).getFolderName()+" and path = "+picFolders.get(i).getPath()+" "+picFolders.get(i).getNumberOfPics());
         }
 
-        //reverse order ArrayList
-       /* ArrayList<imageFolder> reverseFolders = new ArrayList<>();
-
-        for(int i = picFolders.size()-1;i > reverseFolders.size()-1;i--){
-            reverseFolders.add(picFolders.get(i));
-        }*/
 
         return picFolders;
     }

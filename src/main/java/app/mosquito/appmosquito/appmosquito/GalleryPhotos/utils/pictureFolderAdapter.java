@@ -18,23 +18,14 @@ import java.util.ArrayList;
 
 import app.mosquito.appmosquito.appmosquito.R;
 
-/**
- * Author CodeBoy722
- *
- * An adapter for populating RecyclerView with items representing folders that contain images
- */
+
 public class pictureFolderAdapter extends RecyclerView.Adapter<pictureFolderAdapter.FolderHolder>{
 
     private ArrayList<imageFolder> folders;
     private Context folderContx;
     private itemClickListener listenToClick;
 
-    /**
-     *
-     * @param folders An ArrayList of String that represents paths to folders on the external storage that contain pictures
-     * @param folderContx The Activity or fragment Context
-     * @param listen interFace for communication between adapter and fragment or activity
-     */
+
     public pictureFolderAdapter(ArrayList<imageFolder> folders, Context folderContx, itemClickListener listen) {
         this.folders = folders;
         this.folderContx = folderContx;
@@ -59,7 +50,6 @@ public class pictureFolderAdapter extends RecyclerView.Adapter<pictureFolderAdap
                 .apply(new RequestOptions().centerCrop())
                 .into(holder.folderPic);
 
-        //setting the number of images
         String text = ""+folder.getFolderName();
         String folderSizeString=""+folder.getNumberOfPics()+" Media";
         holder.folderSize.setText(folderSizeString);
@@ -81,9 +71,9 @@ public class pictureFolderAdapter extends RecyclerView.Adapter<pictureFolderAdap
 
 
     public class FolderHolder extends RecyclerView.ViewHolder{
+
         ImageView folderPic;
         TextView folderName;
-        //set textview for foldersize
         TextView folderSize;
 
         CardView folderCard;

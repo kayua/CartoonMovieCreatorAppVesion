@@ -16,21 +16,13 @@ import java.util.ArrayList;
 
 import app.mosquito.appmosquito.appmosquito.R;
 
-/**
- * Author CodeBoy722
- */
 public class recyclerViewPagerImageIndicator extends RecyclerView.Adapter<indicatorHolder> {
 
     ArrayList<pictureFacer> pictureList;
     Context pictureContx;
     private final imageIndicatorListener imageListerner;
 
-    /**
-     *
-     * @param pictureList ArrayList of pictureFacer objects
-     * @param pictureContx The Activity of fragment context
-     * @param imageListerner Interface for communication between adapter and fragment
-     */
+
     public recyclerViewPagerImageIndicator(ArrayList<pictureFacer> pictureList, Context pictureContx, imageIndicatorListener imageListerner) {
         this.pictureList = pictureList;
         this.pictureContx = pictureContx;
@@ -61,7 +53,7 @@ public class recyclerViewPagerImageIndicator extends RecyclerView.Adapter<indica
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //holder.card.setCardElevation(5);
+
                 pic.setSelected(true);
                 notifyDataSetChanged();
                 imageListerner.onImageIndicatorClicked(position);
