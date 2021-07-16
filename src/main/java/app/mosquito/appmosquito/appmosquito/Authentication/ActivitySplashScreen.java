@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -33,16 +31,9 @@ public class ActivitySplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash_screen);
-        Window window = this.getWindow();
 
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-
-// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-
-// finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(this,R.color.purple_700));
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
 
