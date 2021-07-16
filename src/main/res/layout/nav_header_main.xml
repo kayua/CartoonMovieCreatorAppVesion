@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="680dp"
-    android:alpha="0.9"
+    android:alpha="1"
 
     android:orientation="vertical"
-    android:background="#A9FFFFFF"
+    android:background="#00FFFFFF"
     android:paddingLeft="8dp"
     android:paddingTop="8dp"
     android:paddingRight="8dp"
@@ -57,8 +57,8 @@
 
         <ImageView
             android:id="@+id/imagceViewv5"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_gravity="center"
             android:background="@drawable/icon_temp" />
 
@@ -71,8 +71,8 @@
 
         <ImageView
             android:id="@+id/imagceView5"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_gravity="center"
             android:background="@drawable/icon_temp" />
 
@@ -85,8 +85,8 @@
 
         <ImageView
             android:id="@+id/imazgeView5"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_gravity="center"
             android:background="@drawable/icon_temp" />
 
@@ -99,8 +99,22 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:background="@drawable/icon_temp" />
+
+        <LinearLayout
+            android:layout_width="8dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageVifew5"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_gravity="center"
             android:background="@drawable/icon_temp" />
 
