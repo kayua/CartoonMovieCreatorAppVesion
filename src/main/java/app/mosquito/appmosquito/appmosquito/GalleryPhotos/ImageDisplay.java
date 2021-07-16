@@ -34,19 +34,17 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_display);
-
         folderName = findViewById(R.id.foldername);
         folderName.setText(getIntent().getStringExtra("folderName"));
-
         foldePath =  getIntent().getStringExtra("folderPath");
         allpictures = new ArrayList<>();
         imageRecycler = findViewById(R.id.recycler);
         imageRecycler.addItemDecoration(new MarginDecoration(this));
         imageRecycler.hasFixedSize();
         load = findViewById(R.id.loader);
-
 
         if(allpictures.isEmpty()){
             load.setVisibility(View.VISIBLE);
@@ -91,25 +89,29 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
         try {
             cursor.moveToFirst();
             do{
+
                 pictureFacer pic = new pictureFacer();
-
                 pic.setPicturName(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DISPLAY_NAME)));
-
                 pic.setPicturePath(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)));
-
                 pic.setPictureSize(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.SIZE)));
-
                 images.add(pic);
+
             }while(cursor.moveToNext());
+
             cursor.close();
+
             ArrayList<pictureFacer> reSelection = new ArrayList<>();
+
             for(int i = images.size()-1;i > -1;i--){
                 reSelection.add(images.get(i));
             }
+
             images = reSelection;
-        } catch (Exception e) {
+
+        }catch (Exception e) {
             e.printStackTrace();
         }
+
         return images;
     }
 

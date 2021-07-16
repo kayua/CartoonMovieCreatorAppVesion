@@ -197,7 +197,7 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        //getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+
         getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
