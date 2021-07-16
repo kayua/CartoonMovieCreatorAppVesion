@@ -103,7 +103,6 @@ public class CartoonFragment extends Fragment {
             }
         });
 
-        // init radio group
         mRadioGroup = rootView.findViewById(R.id.rg_model);
         mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -118,7 +117,6 @@ public class CartoonFragment extends Fragment {
             }
         });
 
-        // init transfer button
         mTransferButton = rootView.findViewById(R.id.bt_transfer);
         mTransferButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,14 +130,13 @@ public class CartoonFragment extends Fragment {
                     return;
                 }
 
-                // init some key things
                 TimerRecorder.getInstance().clean();
                 Interpreter predictInterpreter;
                 Interpreter transformInterpreter;
 
 
                 try {
-                    // init two interpreter instances: style predict and style transform
+
                     predictInterpreter = new Interpreter(
                             loadModelFile(getActivity(), PREDICT_MODEL), 1);
 
@@ -165,8 +162,8 @@ public class CartoonFragment extends Fragment {
 
 
     private ByteBuffer runPredict(Interpreter tflite, Bitmap styleImage) {
-        TensorImage inputTensorImage = getInputTensorImage(tflite, styleImage);
 
+        TensorImage inputTensorImage = getInputTensorImage(tflite, styleImage);
         Tensor outputTensor = tflite.getOutputTensor(/* outputTensorIndex */ 0);
         TensorBuffer outputTensorBuffer
                 = TensorBuffer.createFixedSize(outputTensor.shape(), outputTensor.dataType());
@@ -180,8 +177,8 @@ public class CartoonFragment extends Fragment {
     }
 
     private Bitmap runTransform(Interpreter tflite, Bitmap contentImage, ByteBuffer bottleneck) {
-        TensorImage inputTensorImage = getInputTensorImage(tflite, contentImage);
 
+        TensorImage inputTensorImage = getInputTensorImage(tflite, contentImage);
         Object[] inputs = new Object[2];
         inputs[0] = inputTensorImage.getBuffer();
         inputs[1] = bottleneck;

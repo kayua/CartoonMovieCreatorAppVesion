@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -59,7 +58,6 @@ public class GalleryAdapterList extends RecyclerView.Adapter<GalleryAdapterList.
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgView_thumbnail;
-        TextView tv_title, tv_duration;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
