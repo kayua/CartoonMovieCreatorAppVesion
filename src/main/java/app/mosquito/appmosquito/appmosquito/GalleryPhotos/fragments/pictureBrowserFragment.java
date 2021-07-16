@@ -89,33 +89,18 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        /**
-         * initialisation of the recyclerView visibility control integers
-         */
         viewVisibilityController = 0;
         viewVisibilitylooper = 0;
-
-        /**
-         * setting up the viewPager with images
-         */
         imagePager = view.findViewById(R.id.imagePager);
         pagingImages = new ImagesPagerAdapter();
         imagePager.setAdapter(pagingImages);
         imagePager.setOffscreenPageLimit(3);
-        imagePager.setCurrentItem(position);//displaying the image at the current position passed by the ImageDisplay Activity
-
-
-        /**
-         * setting up the recycler view indicator for the viewPager
-         */
+        imagePager.setCurrentItem(position);
         indicatorRecycler = view.findViewById(R.id.indicatorRecycler);
         indicatorRecycler.hasFixedSize();
         indicatorRecycler.setLayoutManager(new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false));
         RecyclerView.Adapter indicatorAdapter = new recyclerViewPagerImageIndicator(allImages,getContext(),this);
         indicatorRecycler.setAdapter(indicatorAdapter);
-
-        //adjusting the recyclerView indicator to the current position of the viewPager, also highlights the image in recyclerView with respect to the
-        //viewPager's position
         allImages.get(position).setSelected(true);
         previousSelected = position;
         indicatorAdapter.notifyDataSetChanged();
