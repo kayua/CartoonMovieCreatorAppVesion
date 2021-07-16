@@ -38,7 +38,6 @@ public class GalleryPlayer extends AppCompatActivity {
         editor.apply();
 
 
-
     }
 
     private void initializeViews() {
