@@ -23,12 +23,6 @@ import app.mosquito.appmosquito.appmosquito.GalleryPhotos.utils.pictureFacer;
 import app.mosquito.appmosquito.appmosquito.GalleryPhotos.utils.picture_Adapter;
 import app.mosquito.appmosquito.appmosquito.R;
 
-/**
- * Author CodeBoy722
- *
- * This Activity get a path to a folder that contains images from the MainActivity Intent and displays
- * all the images in the folder inside a RecyclerView
- */
 
 public class ImageDisplay extends AppCompatActivity implements itemClickListener {
 

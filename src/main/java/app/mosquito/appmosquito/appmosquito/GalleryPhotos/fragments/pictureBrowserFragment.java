@@ -180,15 +180,13 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
                 }
             });
 
-
-
             ((ViewPager) containerCollection).addView(view);
             return view;
         }
 
         @Override
         public void destroyItem(ViewGroup containerCollection, int position, Object view) {
-            getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+
             ((ViewPager) containerCollection).removeView((View) view);
         }
 
@@ -198,7 +196,10 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
         }
     }
 
-
-
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
 }
