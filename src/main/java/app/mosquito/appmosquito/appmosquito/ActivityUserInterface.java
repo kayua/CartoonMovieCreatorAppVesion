@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,7 +47,7 @@ public class ActivityUserInterface extends AppCompatActivity{
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(Color.argb(220,150,150,150));
 
-        TextView email_textview = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textView8);
+        //TextView email_textview = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textView8);
         String text = new String();
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
@@ -59,7 +58,7 @@ public class ActivityUserInterface extends AppCompatActivity{
         editor.putString("temp_select_filter", "0");
         editor.apply();
         text = "  Olá, "+usernameRegistered;
-        email_textview.setText(text);
+        //email_textview.setText(text);
 
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
