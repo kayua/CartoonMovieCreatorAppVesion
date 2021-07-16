@@ -70,8 +70,6 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
         pictureBrowserFragment browser = pictureBrowserFragment.newInstance(pics,position,ImageDisplay.this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            //browser.setEnterTransition(new Slide());
-            //browser.setExitTransition(new Slide()); uncomment this to use slide transition and comment the two lines below
             browser.setEnterTransition(new Fade());
             browser.setExitTransition(new Fade());
         }
