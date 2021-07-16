@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -73,7 +74,7 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.picture_browser, container, false);
-
+        getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mContentImageView =  root.findViewById(R.id.imasddgeda10);
 
         mStyleImageView =  root.findViewById(R.id.imasddageda10);

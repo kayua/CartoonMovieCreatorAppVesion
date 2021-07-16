@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.transition.Fade;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -43,7 +42,7 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_display);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         folderName = findViewById(R.id.foldername);
         folderName.setText(getIntent().getStringExtra("folderName"));
 
