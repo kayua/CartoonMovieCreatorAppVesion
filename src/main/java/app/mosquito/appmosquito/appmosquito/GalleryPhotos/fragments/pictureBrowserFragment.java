@@ -203,6 +203,7 @@ public class pictureBrowserFragment extends Fragment implements imageIndicatorLi
 
         @Override
         public void destroyItem(ViewGroup containerCollection, int position, Object view) {
+            getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
             ((ViewPager) containerCollection).removeView((View) view);
         }
 

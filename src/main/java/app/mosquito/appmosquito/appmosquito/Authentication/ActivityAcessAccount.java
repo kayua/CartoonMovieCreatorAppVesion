@@ -24,7 +24,6 @@ import app.mosquito.appmosquito.appmosquito.R;
 
 public class ActivityAcessAccount extends Activity {
 
-
     private FirebaseAuth mAuth;
 
 

@@ -18,7 +18,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -48,7 +47,6 @@ public class CameraFragment extends Fragment {
     CameraPreview mPreview;
     Camera mCamera;
     boolean isRecording = false;
-    private TextView userName;
 
     public static final String PREFS_NAME = "PersonalDatabase";
 
@@ -64,11 +62,8 @@ public class CameraFragment extends Fragment {
         homeViewModel = new ViewModelProvider(this).get(CameraViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         mCamera = getCameraInstance();
-
         mPreview = new CameraPreview(getContext(), mCamera);
-
         FrameLayout preview = (FrameLayout) root.findViewById(R.id.camera_preview);
-
         preview.addView(mPreview);
         ImageView captureButton = root.findViewById(R.id.button_record);
         captureButton.setOnClickListener(
@@ -103,8 +98,8 @@ public class CameraFragment extends Fragment {
 
         return root;
     }
-    private void castToFrames(){
 
+    private void castToFrames(){
 
         File videoFile = new File("/storage/emulated/0/Movies/MyCameraApp/VID_20210619_160213.mp4");
 
@@ -114,8 +109,6 @@ public class CameraFragment extends Fragment {
         retriever.setDataSource(videoFile.getAbsolutePath());
         ArrayList<Bitmap> rev = new ArrayList<Bitmap>();
 
-
-        //Create a new Media Player
         MediaPlayer mp = MediaPlayer.create(getContext(), videoFileUri);
         int millis = mp.getDuration();
         for (int i = 0; i < millis; i += 100) {
@@ -132,12 +125,13 @@ public class CameraFragment extends Fragment {
 
 
     }
+
     private boolean checkCameraHardware(Context context) {
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
-            // this device has a camera
+
             return true;
         } else {
-            // no camera on this device
+
             return false;
         }
     }
@@ -184,11 +178,10 @@ public class CameraFragment extends Fragment {
 
     private void releaseMediaRecorder() {
         if (mediaRecorder != null) {
-            mediaRecorder.reset();   // clear recorder configuration
-            mediaRecorder.release(); // release the recorder object
+            mediaRecorder.reset();
+            mediaRecorder.release();
             mediaRecorder = null;
-            mCamera.lock();           // lock camera for later use
-//
+            mCamera.lock();
         }
     }
 
