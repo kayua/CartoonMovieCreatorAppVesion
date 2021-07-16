@@ -194,7 +194,6 @@ public class CameraFragment extends Fragment {
         File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_MOVIES), "MyCameraApp");
 
-        // Create the storage directory if it does not exist
         if (!mediaStorageDir.exists()) {
             if (!mediaStorageDir.mkdirs()) {
                 Log.d("MyCameraApp", "failed to create directory");
@@ -202,7 +201,6 @@ public class CameraFragment extends Fragment {
             }
         }
 
-        // Create a media file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         File mediaFile;
         if (type == MEDIA_TYPE_IMAGE) {
@@ -229,8 +227,8 @@ public class CameraFragment extends Fragment {
             saveFolder.mkdirs();
         }
 
-
         int i = 1;
+
         for (Bitmap b : saveBitmapList) {
             ByteArrayOutputStream bytes = new ByteArrayOutputStream();
             b.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
