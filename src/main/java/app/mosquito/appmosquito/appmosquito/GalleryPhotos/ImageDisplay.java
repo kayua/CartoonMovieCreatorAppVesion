@@ -69,10 +69,6 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
     public void onPicClicked(PicHolder holder, int position, ArrayList<pictureFacer> pics) {
         pictureBrowserFragment browser = pictureBrowserFragment.newInstance(pics,position,ImageDisplay.this);
 
-        // Note that we need the API version check here because the actual transition classes (e.g. Fade)
-        // are not in the support library and are only available in API 21+. The methods we are calling on the Fragment
-        // ARE available in the support library (though they don't do anything on API < 21)
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             //browser.setEnterTransition(new Slide());
             //browser.setExitTransition(new Slide()); uncomment this to use slide transition and comment the two lines below
