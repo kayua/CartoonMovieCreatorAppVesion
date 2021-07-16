@@ -34,11 +34,11 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="202dp"
-            android:layout_height="140dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_image_user"
             android:padding="16dp"
-            android:paddingStart="20dp"
-            app:srcCompat="@drawable/icon_cartoon" />
+            android:paddingStart="20dp" />
 
 
     </LinearLayout>
