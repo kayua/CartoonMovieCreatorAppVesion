@@ -58,6 +58,25 @@
   </androidx.recyclerview.widget.RecyclerView>
 
   <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="130dp"
+      android:background="@drawable/linear_gradient"
+
+
+      android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/imasddgeda"
+        android:layout_width="32dp"
+        android:layout_height="36dp"
+
+        android:layout_gravity="top|left"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/ic_remove" />
+
+  </LinearLayout>
+  <LinearLayout
       android:layout_width="408dp"
       android:layout_height="185dp"
       android:layout_gravity="bottom"
@@ -93,24 +112,24 @@
 
         <ImageView
             android:id="@+id/imasddgeda10"
-            android:layout_width="129dp"
-            android:layout_height="109dp"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@drawable/example2" />
 
         <ImageView
             android:id="@+id/imasddageda10"
-            android:layout_width="129dp"
-            android:layout_height="109dp"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@drawable/example2" />
 
         <ImageView
             android:id="@+id/imasddgdeda10"
-            android:layout_width="129dp"
-            android:layout_height="109dp"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@drawable/example2" />
@@ -118,8 +137,8 @@
 
         <ImageView
             android:id="@+id/imasddgefda10"
-            android:layout_width="129dp"
-            android:layout_height="109dp"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@drawable/example2" />
@@ -127,8 +146,8 @@
 
         <ImageView
             android:id="@+id/imasddgedwa10"
-            android:layout_width="129dp"
-            android:layout_height="109dp"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@drawable/example2" />
@@ -136,16 +155,16 @@
 
         <ImageView
             android:id="@+id/imasddgedar10"
-            android:layout_width="129dp"
-            android:layout_height="109dp"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@drawable/example2" />
 
         <ImageView
             android:id="@+id/imasddgeda1w0"
-            android:layout_width="129dp"
-            android:layout_height="109dp"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@drawable/example2" />
