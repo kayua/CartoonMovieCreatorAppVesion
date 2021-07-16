@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
             ActivityCompat.requestPermissions(MainActivity.this,
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
-        //____________________________________________________________________________________
 
         empty =findViewById(R.id.empty);
 
@@ -69,11 +68,6 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
         changeStatusBarColor();
     }
 
-    /**1
-     * @return
-     * gets all folders with pictures on the device and loads each of them in a custom object imageFolder
-     * the returns an ArrayList of these custom objects
-     */
     private ArrayList<imageFolder> getPicturePaths(){
         ArrayList<imageFolder> picFolders = new ArrayList<>();
         ArrayList<String> picPaths = new ArrayList<>();
@@ -91,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
                 String folder = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.BUCKET_DISPLAY_NAME));
                 String datapath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA));
 
-                //String folderpaths =  datapath.replace(name,"");
                 String folderpaths = datapath.substring(0, datapath.lastIndexOf(folder+"/"));
                 folderpaths = folderpaths+folder+"/";
                 if (!picPaths.contains(folderpaths)) {
@@ -99,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
 
                     folds.setPath(folderpaths);
                     folds.setFolderName(folder);
-                    folds.setFirstPic(datapath);//if the folder has only one picture this line helps to set it as first so as to avoid blank image in itemview
+                    folds.setFirstPic(datapath);
                     folds.addpics();
                     picFolders.add(folds);
                 }else{

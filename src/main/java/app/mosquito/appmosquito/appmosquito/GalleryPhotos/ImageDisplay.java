@@ -88,11 +88,6 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
 
     }
 
-    /**
-     * This Method gets all the images in the folder paths passed as a String to the method and returns
-     * and ArrayList of pictureFacer a custom object that holds data of a given image
-     * @param path a String corresponding to a folder path on the device external storage
-     */
     public ArrayList<pictureFacer> getAllImagesByFolder(String path){
         ArrayList<pictureFacer> images = new ArrayList<>();
         Uri allVideosuri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
