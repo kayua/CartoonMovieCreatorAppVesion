@@ -64,12 +64,7 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
         }
     }
 
-    /**
-     *
-     * @param holder The ViewHolder for the clicked picture
-     * @param position The position in the grid of the picture that was clicked
-     * @param pics An ArrayList of all the items in the Adapter
-     */
+
     @Override
     public void onPicClicked(PicHolder holder, int position, ArrayList<pictureFacer> pics) {
         pictureBrowserFragment browser = pictureBrowserFragment.newInstance(pics,position,ImageDisplay.this);
