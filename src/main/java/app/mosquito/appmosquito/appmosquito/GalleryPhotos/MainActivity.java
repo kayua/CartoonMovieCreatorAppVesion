@@ -121,12 +121,6 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
 
     }
 
-    /**
-     * Each time an item in the RecyclerView is clicked this method from the implementation of the transitListerner
-     * in this activity is executed, this is possible because this class is passed as a parameter in the creation
-     * of the RecyclerView's Adapter, see the adapter class to understand better what is happening here
-     * @param pictureFolderPath a String corresponding to a folder path on the device external storage
-     */
     @Override
     public void onPicClicked(String pictureFolderPath,String folderName) {
         Intent move = new Intent(MainActivity.this,ImageDisplay.class);
@@ -136,9 +130,6 @@ public class MainActivity extends AppCompatActivity implements itemClickListener
     }
 
 
-    /**
-     * Default status bar height 24dp,with code API level 24
-     */
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void changeStatusBarColor()
     {
