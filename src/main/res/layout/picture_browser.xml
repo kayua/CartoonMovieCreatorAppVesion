@@ -68,7 +68,7 @@
     <ImageView
         android:id="@+id/imasddgeda"
         android:layout_width="32dp"
-        android:layout_height="36dp"
+        android:layout_height="32dp"
 
         android:layout_gravity="top|left"
         android:layout_marginStart="10dp"
