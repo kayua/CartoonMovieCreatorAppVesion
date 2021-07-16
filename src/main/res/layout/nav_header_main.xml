@@ -58,7 +58,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
-            android:background="@drawable/icon_temp" />
+            android:background="@drawable/icon_followers" />
 
         <LinearLayout
             android:layout_width="8dp"
@@ -72,7 +72,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
-            android:background="@drawable/icon_temp" />
+            android:background="@drawable/icon_camera" />
 
         <LinearLayout
             android:layout_width="8dp"
