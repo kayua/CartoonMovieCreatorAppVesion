@@ -73,6 +73,8 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/background_name"
                             android:padding="3dp"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
                             android:text="Kayuã Oleques Paim"
                             android:textColor="#13A5FF"
                             android:textSize="14sp"
