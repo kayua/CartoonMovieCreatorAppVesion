@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="#00FFFFFF"
     android:paddingLeft="8dp"
-    android:paddingTop="8dp"
+    android:paddingTop="10dp"
     android:paddingRight="8dp"
     android:paddingBottom="8dp"
     android:theme="@style/ThemeOverlay.AppCompat.Light">
@@ -16,7 +16,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="152dp"
+        android:layout_height="160dp"
         android:background="@drawable/temp_background"
         android:orientation="horizontal">
 
@@ -25,8 +25,8 @@
             android:id="@+id/imageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/button_design_fill"
 
             />
@@ -59,6 +59,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="32dp"
                         android:orientation="horizontal">
+
                         <LinearLayout
                             android:layout_width="10dp"
                             android:layout_height="32dp"
@@ -93,8 +94,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="399dp"
-        android:layout_height="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
         android:orientation="horizontal">
 
     </LinearLayout>
@@ -186,7 +187,7 @@
 
         <LinearLayout
             android:layout_width="262dp"
-            android:layout_height="197dp"
+            android:layout_height="200dp"
 
             android:background="@drawable/background_image_user"
             android:orientation="vertical">
@@ -206,7 +207,7 @@
                 <ImageView
                     android:id="@+id/imaxgceViewv5"
                     android:layout_width="116dp"
-                    android:layout_height="80dp"
+                    android:layout_height="82dp"
                     android:layout_marginTop="10dp"
                     android:alpha="0.8"
                     android:background="@drawable/temp_image1" />
@@ -221,7 +222,7 @@
                 <ImageView
                     android:id="@+id/imaxgceViewv"
                     android:layout_width="116dp"
-                    android:layout_height="80dp"
+                    android:layout_height="82dp"
                     android:layout_marginTop="10dp"
                     android:alpha="0.8"
 
@@ -245,7 +246,7 @@
                 <ImageView
                     android:id="@+id/imaxgceViewv5"
                     android:layout_width="116dp"
-                    android:layout_height="80dp"
+                    android:layout_height="82dp"
                     android:layout_marginTop="8dp"
                     android:alpha="0.8"
                     android:background="@drawable/temp_image3" />
@@ -260,7 +261,7 @@
                 <ImageView
                     android:id="@+id/imaxgceViewv"
                     android:layout_width="116dp"
-                    android:layout_height="80dp"
+                    android:layout_height="82dp"
                     android:layout_marginTop="8dp"
                     android:alpha="0.8"
 
@@ -301,7 +302,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="14dp"
+                    android:layout_width="17dp"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
@@ -311,12 +312,12 @@
                     android:id="@+id/imaxgceViewv5"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="16dp"
                     android:alpha="0.8"
                     android:background="@drawable/temp_image1" />
 
                 <LinearLayout
-                    android:layout_width="14dp"
+                    android:layout_width="16dp"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
@@ -326,13 +327,13 @@
                     android:id="@+id/imaxgceViewv"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="16dp"
                     android:alpha="0.8"
 
                     android:background="@drawable/temp_image2" />
 
                 <LinearLayout
-                    android:layout_width="14dp"
+                    android:layout_width="16dp"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
@@ -342,7 +343,7 @@
                     android:id="@+id/imaxgceViewv"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="16dp"
                     android:alpha="0.8"
 
                     android:background="@drawable/temp_image2" />
