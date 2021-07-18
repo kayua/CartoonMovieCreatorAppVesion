@@ -6,21 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by Burhanuddin Rashid on 14/05/21.
- *
- * @author <https://github.com/burhanrashid52>
- */
-class Emoji extends ja.burhanrashid52.photoeditor.Graphic {
+import app.mosquito.appmosquito.appmosquito.R;
 
-    private final ja.burhanrashid52.photoeditor.MultiTouchListener mMultiTouchListener;
+
+class Emoji extends Graphic {
+
+    private final MultiTouchListener mMultiTouchListener;
     private final Typeface mDefaultEmojiTypeface;
     private final ViewGroup mPhotoEditorView;
     private final PhotoEditorViewState mViewState;
     private TextView txtEmoji;
 
     public Emoji(ViewGroup photoEditorView,
-                 ja.burhanrashid52.photoeditor.MultiTouchListener multiTouchListener,
+                MultiTouchListener multiTouchListener,
                  PhotoEditorViewState viewState,
                  GraphicManager graphicManager,
                  Typeface defaultEmojiTypeface
@@ -42,15 +40,15 @@ class Emoji extends ja.burhanrashid52.photoeditor.Graphic {
     }
 
     private void setupGesture() {
-        ja.burhanrashid52.photoeditor.MultiTouchListener.OnGestureControl onGestureControl = buildGestureController(mPhotoEditorView, mViewState);
+       MultiTouchListener.OnGestureControl onGestureControl = buildGestureController(mPhotoEditorView, mViewState);
         mMultiTouchListener.setOnGestureControl(onGestureControl);
         View rootView = getRootView();
         rootView.setOnTouchListener(mMultiTouchListener);
     }
 
     @Override
-    ja.burhanrashid52.photoeditor.ViewType getViewType() {
-        return ja.burhanrashid52.photoeditor.ViewType.EMOJI;
+        ViewType getViewType() {
+        return ViewType.EMOJI;
     }
 
     @Override
