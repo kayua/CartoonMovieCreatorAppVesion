@@ -19,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import app.mosquito.appmosquito.appmosquito.R;
+
 public class StickerBSFragment extends BottomSheetDialogFragment {
 
     public StickerBSFragment() {
