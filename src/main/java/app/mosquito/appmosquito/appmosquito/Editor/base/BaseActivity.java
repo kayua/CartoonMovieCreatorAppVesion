@@ -14,9 +14,7 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.material.snackbar.Snackbar;
 
-/**
- * Created by Burhanuddin Rashid on 1/17/2018.
- */
+
 
 public class BaseActivity extends AppCompatActivity {
 

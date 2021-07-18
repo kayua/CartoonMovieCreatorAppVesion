@@ -26,11 +26,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.ChangeBounds;
 import androidx.transition.TransitionManager;
-
-import com.burhanrashid52.photoediting.base.BaseActivity;
-import com.burhanrashid52.photoediting.filters.FilterListener;
-import com.burhanrashid52.photoediting.filters.FilterViewAdapter;
-import com.burhanrashid52.photoediting.tools.EditingToolsAdapter;
+import app.mosquito.appmosquito.appmosquito.Editor.base.BaseActivity;
+import app.mosquito.appmosquito.appmosquito.Editor.filters.FilterListener;
+import app.mosquito.appmosquito.appmosquito.Editor.filters.FilterViewAdapter;
+import app.mosquito.appmosquito.appmosquito.Editor.tools.EditingToolsAdapter;
 import com.burhanrashid52.photoediting.tools.ToolType;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
