@@ -16,40 +16,15 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresPermission;
 import androidx.annotation.UiThread;
 
-import ja.burhanrashid52.photoeditor.shape.ShapeBuilder;
 
-/**
- * Created by Burhanuddin Rashid on 14/05/21.
- *
- * @author <https://github.com/burhanrashid52>
- */
 public interface PhotoEditor {
-    /**
-     * This will add image on {@link ja.burhanrashid52.photoeditor.PhotoEditorView} which you drag,rotate and scale using pinch
-     * if {@link ja.burhanrashid52.photoeditor.PhotoEditor.Builder#setPinchTextScalable(boolean)} enabled
-     *
-     * @param desiredImage bitmap image you want to add
-     */
+
     void addImage(Bitmap desiredImage);
 
-    /**
-     * This add the text on the {@link ja.burhanrashid52.photoeditor.PhotoEditorView} with provided parameters
-     * by default {@link TextView#setText(int)} will be 18sp
-     *
-     * @param text              text to display
-     * @param colorCodeTextView text color to be displayed
-     */
+
     @SuppressLint("ClickableViewAccessibility")
     void addText(String text, int colorCodeTextView);
 
-    /**
-     * This add the text on the {@link ja.burhanrashid52.photoeditor.PhotoEditorView} with provided parameters
-     * by default {@link TextView#setText(int)} will be 18sp
-     *
-     * @param textTypeface      typeface for custom font in the text
-     * @param text              text to display
-     * @param colorCodeTextView text color to be displayed
-     */
     @SuppressLint("ClickableViewAccessibility")
     void addText(@Nullable Typeface textTypeface, String text, int colorCodeTextView);
 
