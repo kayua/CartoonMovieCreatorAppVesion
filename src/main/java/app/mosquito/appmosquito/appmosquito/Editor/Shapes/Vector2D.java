@@ -12,7 +12,7 @@ class Vector2D extends PointF {
         super(x, y);
     }
 
-    static float getAngle(ja.burhanrashid52.photoeditor.Vector2D vector1, ja.burhanrashid52.photoeditor.Vector2D vector2) {
+    static float getAngle(Vector2D vector1,Vector2D vector2) {
         vector1.normalize();
         vector2.normalize();
         double degrees = (180.0 / Math.PI) * (Math.atan2(vector2.y, vector2.x) - Math.atan2(vector1.y, vector1.x));
