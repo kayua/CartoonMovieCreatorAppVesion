@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2010 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 package app.mosquito.appmosquito.appmosquito.Editor.Shapes;
 
@@ -20,57 +5,14 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-/**
- * Detects transformation gestures involving more than one pointer ("multitouch")
- * using the supplied {@link MotionEvent}s. The {@link OnScaleGestureListener}
- * callback will notify users when a particular gesture event has occurred.
- * This class should only be used with {@link MotionEvent}s reported via touch.
- *
- * To use this class:
- * <ul>
- *  <li>Create an instance of the {@code ScaleGestureDetector} for your
- *      {@link View}
- * </ul>
- */
 class ScaleGestureDetector {
     private static final String TAG = "ScaleGestureDetector";
 
-    /**
-     * The listener for receiving notifications when gestures occur.
-     * If you want to listen for all the different gestures then implement
-     * this interface. If you only want to listen for a subset it might
-     * be easier to extend {@link SimpleOnScaleGestureListener}.
-     *
-     * An application will receive events in the following order:
-     */
     interface OnScaleGestureListener {
-        /**
-         * Responds to scaling events for a gesture in progress.
-         * Reported by pointer motion.
-         *
-         * @param detector The detector reporting the event - use this to
-         *          retrieve extended info about event state.
-         * @return Whether or not the detector should consider this event
-         *          as handled. If an event was not handled, the detector
-         *          will continue to accumulate movement until an event is
-         *          handled. This can be useful if an application, for example,
-         *          only wants to update scaling factors if the change is
-         *          greater than 0.01.
-         */
-        boolean onScale(View view, ja.burhanrashid52.photoeditor.ScaleGestureDetector detector);
 
-        /**
-         * Responds to the beginning of a scaling gesture. Reported by
-         * new pointers going down.
-         *
-         * @param detector The detector reporting the event - use this to
-         *          retrieve extended info about event state.
-         * @return Whether or not the detector should continue recognizing
-         *          this gesture. For example, if a gesture is beginning
-         *          with a focal point outside of a region where it makes
-         *          sense, onScaleBegin() may return false to ignore the
-         *          rest of the gesture.
-         */
+        boolean onScale(View view, ScaleGestureDetector detector);
+
+
         boolean onScaleBegin(View view, ja.burhanrashid52.photoeditor.ScaleGestureDetector detector);
 
         /**

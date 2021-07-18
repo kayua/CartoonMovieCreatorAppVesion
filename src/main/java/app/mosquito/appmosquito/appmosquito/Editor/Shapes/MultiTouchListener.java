@@ -183,11 +183,11 @@ class MultiTouchListener implements OnTouchListener {
 
     private void firePhotoEditorSDKListener(View view, boolean isStart) {
         Object viewTag = view.getTag();
-        if (mOnPhotoEditorListener != null && viewTag != null && viewTag instanceof ja.burhanrashid52.photoeditor.ViewType) {
+        if (mOnPhotoEditorListener != null && viewTag != null && viewTag instanceof ViewType) {
             if (isStart)
-                mOnPhotoEditorListener.onStartViewChangeListener(((ja.burhanrashid52.photoeditor.ViewType) view.getTag()));
+                mOnPhotoEditorListener.onStartViewChangeListener(((ViewType) view.getTag()));
             else
-                mOnPhotoEditorListener.onStopViewChangeListener(((ja.burhanrashid52.photoeditor.ViewType) view.getTag()));
+                mOnPhotoEditorListener.onStopViewChangeListener(((ViewType) view.getTag()));
         }
     }
 
@@ -202,14 +202,14 @@ class MultiTouchListener implements OnTouchListener {
         this.onMultiTouchListener = onMultiTouchListener;
     }
 
-    private class ScaleGestureListener extends ja.burhanrashid52.photoeditor.ScaleGestureDetector.SimpleOnScaleGestureListener {
+    private class ScaleGestureListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
 
         private float mPivotX;
         private float mPivotY;
         private Vector2D mPrevSpanVector = new Vector2D();
 
         @Override
-        public boolean onScaleBegin(View view, ja.burhanrashid52.photoeditor.ScaleGestureDetector detector) {
+        public boolean onScaleBegin(View view, ScaleGestureDetector detector) {
             mPivotX = detector.getFocusX();
             mPivotY = detector.getFocusY();
             mPrevSpanVector.set(detector.getCurrentSpanVector());
@@ -217,7 +217,7 @@ class MultiTouchListener implements OnTouchListener {
         }
 
         @Override
-        public boolean onScale(View view, ja.burhanrashid52.photoeditor.ScaleGestureDetector detector) {
+        public boolean onScale(View view, ScaleGestureDetector detector) {
             TransformInfo info = new TransformInfo();
             info.deltaScale = isScaleEnabled ? detector.getScaleFactor() : 1.0f;
             info.deltaAngle = isRotateEnabled ? Vector2D.getAngle(mPrevSpanVector, detector.getCurrentSpanVector()) : 0.0f;
