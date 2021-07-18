@@ -65,24 +65,20 @@ public class PhotoEditorView extends RelativeLayout {
             }
         }
 
-        //Setup drawing view
         mDrawingView = new DrawingView(getContext());
         mDrawingView.setVisibility(GONE);
         mDrawingView.setId(shapeSrcId);
 
-        //Align brush to the size of image view
         LayoutParams brushParam = new LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         brushParam.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         brushParam.addRule(RelativeLayout.ALIGN_TOP, imgSrcId);
         brushParam.addRule(RelativeLayout.ALIGN_BOTTOM, imgSrcId);
 
-        //Setup GLSurface attributes
         mImageFilterView = new ImageFilterView(getContext());
         mImageFilterView.setId(glFilterId);
         mImageFilterView.setVisibility(GONE);
 
-        //Align brush to the size of image view
         LayoutParams imgFilterParam = new LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         imgFilterParam.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
@@ -99,22 +95,14 @@ public class PhotoEditorView extends RelativeLayout {
         });
 
 
-        //Add image source
         addView(mImgSource, imgSrcParam);
 
-        //Add Gl FilterView
         addView(mImageFilterView, imgFilterParam);
 
-        //Add brush view
         addView(mDrawingView, brushParam);
     }
 
 
-    /**
-     * Source image which you want to edit
-     *
-     * @return source ImageView
-     */
     public ImageView getSource() {
         return mImgSource;
     }
@@ -156,6 +144,4 @@ public class PhotoEditorView extends RelativeLayout {
         mImageFilterView.setSourceBitmap(mImgSource.getBitmap());
         mImageFilterView.setFilterEffect(customEffect);
     }
-
-    // endregion
 }
