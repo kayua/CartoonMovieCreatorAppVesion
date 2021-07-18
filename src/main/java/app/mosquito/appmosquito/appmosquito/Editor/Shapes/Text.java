@@ -6,12 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by Burhanuddin Rashid on 14/05/21.
- *
- * @author <https://github.com/burhanrashid52>
- */
-class Text extends ja.burhanrashid52.photoeditor.Graphic {
+import app.mosquito.appmosquito.appmosquito.R;
+
+class Text extends Graphic {
 
     private final MultiTouchListener mMultiTouchListener;
     private final Typeface mDefaultTextTypeface;
@@ -50,8 +47,8 @@ class Text extends ja.burhanrashid52.photoeditor.Graphic {
 
 
     @Override
-    ja.burhanrashid52.photoeditor.ViewType getViewType() {
-        return ja.burhanrashid52.photoeditor.ViewType.TEXT;
+    ViewType getViewType() {
+        return ViewType.TEXT;
     }
 
     @Override
