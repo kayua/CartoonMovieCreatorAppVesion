@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "128425117066",
+    "firebase_url": "https://appmosquito-default-rtdb.firebaseio.com",
+    "project_id": "appmosquito",
+    "storage_bucket": "appmosquito.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128425117066:android:3701ef8ba70af907663473",
+        "android_client_info": {
+          "package_name": "app.mosquito.appmosquito.appmosquito"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128425117066-qmjiaodlil0h43prna694vn7jgt0o9rh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyimt-L-7SYDHGdWcqZLu_kQ_fC60A8ss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128425117066-qmjiaodlil0h43prna694vn7jgt0o9rh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
