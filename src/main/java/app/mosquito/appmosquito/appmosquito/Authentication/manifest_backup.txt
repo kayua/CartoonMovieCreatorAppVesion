@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="app.mosquito.appmosquito.appmosquito">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.PERMISSION_GRANTED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission." />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.HardwareBuffer" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+
+    <application
+
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/aplication_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:screenOrientation="portrait"
+        android:theme="@style/Theme.AppMosquito"
+        android:requestLegacyExternalStorage="true">
+
+        <activity
+            android:name=".Authentication.ActivitySplashScreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBTA_mFf6oSglEz2nfklV-jQUAH4ri1Rao" />
+
+        <activity
+            android:name=".GalleryMovie.GalleryPlayer"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ActivityUserInterface"
+
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppMosquito"
+            />
+        <activity
+            android:name=".Authentication.ActivityRecoverPassword"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Authentication.ActivityRegisterAccount"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Authentication.ActivityStart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authentication.ActivityEmailChecking"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authentication.ActivityAcessAccount"
+            android:screenOrientation="portrait" />
+        <activity android:name=".GalleryPhotos.ImageDisplay" android:screenOrientation="portrait"/>
+
+    </application>
+
+</manifest>
