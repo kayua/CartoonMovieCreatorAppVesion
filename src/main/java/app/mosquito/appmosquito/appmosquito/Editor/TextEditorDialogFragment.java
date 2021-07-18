@@ -21,13 +21,12 @@ import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * Created by Burhanuddin Rashid on 1/16/2018.
- */
+import app.mosquito.appmosquito.appmosquito.R;
+
 
 public class TextEditorDialogFragment extends DialogFragment {
 
-    public static final String TAG = com.burhanrashid52.photoediting.TextEditorDialogFragment.class.getSimpleName();
+    public static final String TAG = TextEditorDialogFragment.class.getSimpleName();
     public static final String EXTRA_INPUT_TEXT = "extra_input_text";
     public static final String EXTRA_COLOR_CODE = "extra_color_code";
     private EditText mAddTextEditText;
@@ -40,22 +39,20 @@ public class TextEditorDialogFragment extends DialogFragment {
         void onDone(String inputText, int colorCode);
     }
 
-
-    //Show dialog with provide text and text color
-    public static com.burhanrashid52.photoediting.TextEditorDialogFragment show(@NonNull AppCompatActivity appCompatActivity,
+    public static TextEditorDialogFragment show(@NonNull AppCompatActivity appCompatActivity,
                                                                                 @NonNull String inputText,
                                                                                 @ColorInt int colorCode) {
         Bundle args = new Bundle();
         args.putString(EXTRA_INPUT_TEXT, inputText);
         args.putInt(EXTRA_COLOR_CODE, colorCode);
-        com.burhanrashid52.photoediting.TextEditorDialogFragment fragment = new com.burhanrashid52.photoediting.TextEditorDialogFragment();
+        TextEditorDialogFragment fragment = new TextEditorDialogFragment();
         fragment.setArguments(args);
         fragment.show(appCompatActivity.getSupportFragmentManager(), TAG);
         return fragment;
     }
 
-    //Show dialog with default text input as empty and text color white
-    public static com.burhanrashid52.photoediting.TextEditorDialogFragment show(@NonNull AppCompatActivity appCompatActivity) {
+
+    public static TextEditorDialogFragment show(@NonNull AppCompatActivity appCompatActivity) {
         return show(appCompatActivity,
                 "", ContextCompat.getColor(appCompatActivity, R.color.white));
     }
@@ -64,7 +61,7 @@ public class TextEditorDialogFragment extends DialogFragment {
     public void onStart() {
         super.onStart();
         Dialog dialog = getDialog();
-        //Make dialog full screen with transparent background
+
         if (dialog != null) {
             int width = ViewGroup.LayoutParams.MATCH_PARENT;
             int height = ViewGroup.LayoutParams.MATCH_PARENT;
@@ -91,9 +88,9 @@ public class TextEditorDialogFragment extends DialogFragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         addTextColorPickerRecyclerView.setLayoutManager(layoutManager);
         addTextColorPickerRecyclerView.setHasFixedSize(true);
-        com.burhanrashid52.photoediting.ColorPickerAdapter colorPickerAdapter = new com.burhanrashid52.photoediting.ColorPickerAdapter(getActivity());
-        //This listener will change the text color when clicked on any color from picker
-        colorPickerAdapter.setOnColorPickerClickListener(new com.burhanrashid52.photoediting.ColorPickerAdapter.OnColorPickerClickListener() {
+        ColorPickerAdapter colorPickerAdapter = new ColorPickerAdapter(getActivity());
+
+        colorPickerAdapter.setOnColorPickerClickListener(new ColorPickerAdapter.OnColorPickerClickListener() {
             @Override
             public void onColorPickerClickListener(int colorCode) {
                 mColorCode = colorCode;

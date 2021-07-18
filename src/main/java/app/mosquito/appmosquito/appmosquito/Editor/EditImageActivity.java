@@ -43,6 +43,7 @@ import app.mosquito.appmosquito.appmosquito.Editor.Shapes.SaveSettings;
 import app.mosquito.appmosquito.appmosquito.Editor.Shapes.TextStyleBuilder;
 import app.mosquito.appmosquito.appmosquito.Editor.Shapes.ViewType;
 import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeBuilder;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeType;
 import app.mosquito.appmosquito.appmosquito.Editor.Tools.EditingToolsAdapter;
 import app.mosquito.appmosquito.appmosquito.Editor.Tools.ToolType;
 import app.mosquito.appmosquito.appmosquito.R;
