@@ -13,38 +13,24 @@ class ScaleGestureDetector {
         boolean onScale(View view, ScaleGestureDetector detector);
 
 
-        boolean onScaleBegin(View view, ja.burhanrashid52.photoeditor.ScaleGestureDetector detector);
+        boolean onScaleBegin(View view, ScaleGestureDetector detector);
 
-        /**
-         * Responds to the end of a scale gesture. Reported by existing
-         * pointers going up.
-         *
-         * Once a scale has ended, {@link ja.burhanrashid52.photoeditor.ScaleGestureDetector#getFocusX()}
-         * and {@link ja.burhanrashid52.photoeditor.ScaleGestureDetector#getFocusY()} will return the location
-         * of the pointer remaining on the screen.
-         *
-         * @param detector The detector reporting the event - use this to
-         *          retrieve extended info about event state.
-         */
-        void onScaleEnd(View view, ja.burhanrashid52.photoeditor.ScaleGestureDetector detector);
+        void onScaleEnd(View view, ScaleGestureDetector detector);
     }
 
-    /**
-     * A convenience class to extend when you only want to listen for a subset
-     * of scaling-related events. This implements all methods in
-     */
+
     static class SimpleOnScaleGestureListener implements OnScaleGestureListener {
 
-        public boolean onScale(View view, ja.burhanrashid52.photoeditor.ScaleGestureDetector detector) {
+        public boolean onScale(View view, ScaleGestureDetector detector) {
             return false;
         }
 
-        public boolean onScaleBegin(View view, ja.burhanrashid52.photoeditor.ScaleGestureDetector detector) {
+        public boolean onScaleBegin(View view, ScaleGestureDetector detector) {
             return true;
         }
 
-        public void onScaleEnd(View view, ja.burhanrashid52.photoeditor.ScaleGestureDetector detector) {
-            // Intentionally empty
+        public void onScaleEnd(View view, ScaleGestureDetector detector) {
+
         }
     }
 
