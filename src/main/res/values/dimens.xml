@@ -9,5 +9,13 @@
     <dimen name="item_margin">1dp</dimen>
     <dimen name="item_margin_half">1dp</dimen>
     <dimen name="folder_column_width">120dp</dimen>
+
     <dimen name="picture_column_width">90dp</dimen>
+
+    <dimen name="editor_size">35dp</dimen>
+    <dimen name="normal_margin">8dp</dimen>
+    <dimen name="large_margin">16dp</dimen>
+    <dimen name="top_tool_icon_width">50dp</dimen>
+
+
 </resources>
