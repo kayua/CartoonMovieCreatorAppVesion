@@ -15,11 +15,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
- * Created by Burhanuddin Rashid on 18/05/21.
- *
- * @author <https://github.com/burhanrashid52>
- */
+
 class PhotoSaverTask extends AsyncTask<String, String, PhotoSaverTask.SaveResult> {
 
     public static final String TAG = "PhotoSaverTask";

@@ -1,10 +1,6 @@
 package app.mosquito.appmosquito.appmosquito.Editor.Shapes;
 
-/**
- * Created on 1/17/2018.
- * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>
- * <p></p>
- */
+
 
 interface BrushViewChangeListener {
     void onViewAdd(DrawingView drawingView);

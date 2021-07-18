@@ -1,16 +1,5 @@
 package app.mosquito.appmosquito.appmosquito.Editor.Shapes;
 
-/**
- * <p>
- * Type of pre-defined filter effect for {@link ja.burhanrashid52.photoeditor.ImageFilterView}
- * </p>
- *
- * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>
- * @version 0.1.2
- * @see android.media.effect.EffectFactory
- * @see android.media.effect.Effect
- * @since 2/14/2018
- */
 public enum PhotoFilter {
     NONE,
     AUTO_FIX,

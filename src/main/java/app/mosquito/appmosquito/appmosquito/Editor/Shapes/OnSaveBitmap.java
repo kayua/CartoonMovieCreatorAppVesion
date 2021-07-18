@@ -2,11 +2,7 @@ package app.mosquito.appmosquito.appmosquito.Editor.Shapes;
 
 import android.graphics.Bitmap;
 
-/**
- * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>
- * @version 0.1.2
- * @since 5/21/2018
- */
+
 public interface OnSaveBitmap {
     void onBitmapReady(Bitmap saveBitmap);
 

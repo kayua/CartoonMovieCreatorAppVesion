@@ -11,12 +11,7 @@ import javax.microedition.khronos.opengles.GL10;
 
 
 class BitmapUtil {
-    /**
-     * Remove transparency in edited bitmap
-     *
-     * @param source edited image
-     * @return bitmap without any transparency
-     */
+
     static Bitmap removeTransparency(Bitmap source) {
         int firstX = 0, firstY = 0;
         int lastX = source.getWidth();
@@ -62,14 +57,6 @@ class BitmapUtil {
         return Bitmap.createBitmap(source, firstX, firstY, lastX - firstX, lastY - firstY);
     }
 
-    /**
-     * Save filter bitmap from {@link ja.burhanrashid52.photoeditor.ImageFilterView}
-     *
-     * @param glSurfaceView surface view on which is image is drawn
-     * @param gl            open gl source to read pixels from {@link GLSurfaceView}
-     * @return save bitmap
-     * @throws OutOfMemoryError error when system is out of memory to load and save bitmap
-     */
     static Bitmap createBitmapFromGLSurface(GLSurfaceView glSurfaceView, GL10 gl) throws OutOfMemoryError {
         int x = 0, y = 0;
         int w = glSurfaceView.getWidth();
