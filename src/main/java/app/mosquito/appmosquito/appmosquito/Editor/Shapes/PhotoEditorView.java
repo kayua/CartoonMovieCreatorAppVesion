@@ -16,16 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-/**
- * <p>
- * This ViewGroup will have the {@link DrawingView} to draw paint on it with {@link ImageView}
- * which our source image
- * </p>
- *
- * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>
- * @version 0.1.1
- * @since 1/18/2018
- */
+import app.mosquito.appmosquito.appmosquito.R;
 
 public class PhotoEditorView extends RelativeLayout {
 
@@ -160,7 +151,7 @@ public class PhotoEditorView extends RelativeLayout {
         mImageFilterView.setFilterEffect(filterType);
     }
 
-    void setFilterEffect(ja.burhanrashid52.photoeditor.CustomEffect customEffect) {
+    void setFilterEffect(CustomEffect customEffect) {
         mImageFilterView.setVisibility(VISIBLE);
         mImageFilterView.setSourceBitmap(mImgSource.getBitmap());
         mImageFilterView.setFilterEffect(customEffect);
