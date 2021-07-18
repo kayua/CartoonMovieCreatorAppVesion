@@ -13,10 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import app.mosquito.appmosquito.appmosquito.R;
+
 public class PropertiesBSFragment extends BottomSheetDialogFragment implements SeekBar.OnSeekBarChangeListener {
 
     public PropertiesBSFragment() {
-        // Required empty public constructor
+
     }
 
     private Properties mProperties;

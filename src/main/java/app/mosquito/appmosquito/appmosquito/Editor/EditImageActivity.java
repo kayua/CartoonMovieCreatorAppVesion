@@ -417,7 +417,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
                 showBottomSheetDialogFragment(mShapeBSFragment);
                 break;
             case TEXT:
-                TextEditorDialogFragment textEditorDialogFragment = photoediting.TextEditorDialogFragment.show(this);
+                TextEditorDialogFragment textEditorDialogFragment = TextEditorDialogFragment.show(this);
                 textEditorDialogFragment.setOnTextEditorListener((inputText, colorCode) -> {
                     final TextStyleBuilder styleBuilder = new TextStyleBuilder();
                     styleBuilder.withTextColor(colorCode);

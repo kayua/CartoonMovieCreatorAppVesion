@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import app.mosquito.appmosquito.appmosquito.R;
+
 /**
  * Created by Burhanuddin Rashid on 14/05/21.
  *
@@ -55,7 +57,7 @@ abstract class Graphic {
             imgClose.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mGraphicManager.removeView(ja.burhanrashid52.photoeditor.Graphic.this);
+                    mGraphicManager.removeView(Graphic.this);
                 }
             });
         }
