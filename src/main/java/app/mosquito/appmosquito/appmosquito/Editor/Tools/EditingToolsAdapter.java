@@ -9,16 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.burhanrashid52.photoediting.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>
- * @version 0.1.2
- * @since 5/23/2018
- */
+import app.mosquito.appmosquito.appmosquito.R;
+
 public class EditingToolsAdapter extends RecyclerView.Adapter<EditingToolsAdapter.ViewHolder> {
 
     private List<ToolModel> mToolList = new ArrayList<>();
