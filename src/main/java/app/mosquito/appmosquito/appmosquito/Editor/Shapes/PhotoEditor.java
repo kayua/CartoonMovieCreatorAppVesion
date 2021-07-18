@@ -28,66 +28,19 @@ public interface PhotoEditor {
     @SuppressLint("ClickableViewAccessibility")
     void addText(@Nullable Typeface textTypeface, String text, int colorCodeTextView);
 
-    /**
-     * This add the text on the {@link ja.burhanrashid52.photoeditor.PhotoEditorView} with provided parameters
-     * by default {@link TextView#setText(int)} will be 18sp
-     *
-     * @param text         text to display
-     * @param styleBuilder text style builder with your style
-     */
     @SuppressLint("ClickableViewAccessibility")
-    void addText(String text, @Nullable ja.burhanrashid52.photoeditor.TextStyleBuilder styleBuilder);
+    void addText(String text, @Nullable TextStyleBuilder styleBuilder);
 
-    /**
-     * This will update text and color on provided view
-     *
-     * @param view      view on which you want update
-     * @param inputText text to update {@link TextView}
-     * @param colorCode color to update on {@link TextView}
-     */
     void editText(@NonNull View view, String inputText, int colorCode);
 
-    /**
-     * This will update the text and color on provided view
-     *
-     * @param view         root view where text view is a child
-     * @param textTypeface update typeface for custom font in the text
-     * @param inputText    text to update {@link TextView}
-     * @param colorCode    color to update on {@link TextView}
-     */
     void editText(@NonNull View view, @Nullable Typeface textTypeface, String inputText, int colorCode);
 
-    /**
-     * This will update the text and color on provided view
-     *
-     * @param view         root view where text view is a child
-     * @param inputText    text to update {@link TextView}
-     * @param styleBuilder style to apply on {@link TextView}
-     */
-    void editText(@NonNull View view, String inputText, @Nullable ja.burhanrashid52.photoeditor.TextStyleBuilder styleBuilder);
+    void editText(@NonNull View view, String inputText, @Nullable TextStyleBuilder styleBuilder);
 
-    /**
-     * Adds emoji to the {@link ja.burhanrashid52.photoeditor.PhotoEditorView} which you drag,rotate and scale using pinch
-     * if {@link ja.burhanrashid52.photoeditor.PhotoEditorImpl.Builder#setPinchTextScalable(boolean)} enabled
-     *
-     * @param emojiName unicode in form of string to display emoji
-     */
     void addEmoji(String emojiName);
 
-    /**
-     * Adds emoji to the {@link ja.burhanrashid52.photoeditor.PhotoEditorView} which you drag,rotate and scale using pinch
-     * if {@link ja.burhanrashid52.photoeditor.PhotoEditorImpl.Builder#setPinchTextScalable(boolean)} enabled
-     *
-     * @param emojiTypeface typeface for custom font to show emoji unicode in specific font
-     * @param emojiName     unicode in form of string to display emoji
-     */
     void addEmoji(Typeface emojiTypeface, String emojiName);
 
-    /**
-     * Enable/Disable drawing mode to draw on {@link ja.burhanrashid52.photoeditor.PhotoEditorView}
-     *
-     * @param brushDrawingMode true if mode is enabled
-     */
     void setBrushDrawingMode(boolean brushDrawingMode);
 
     /**
