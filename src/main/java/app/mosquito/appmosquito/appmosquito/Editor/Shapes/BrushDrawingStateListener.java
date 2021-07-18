@@ -16,31 +16,31 @@ public class BrushDrawingStateListener implements BrushViewChangeListener {
         mViewState = viewState;
     }
 
-    public void setOnPhotoEditorListener(@Nullable ja.burhanrashid52.photoeditor.OnPhotoEditorListener onPhotoEditorListener) {
+    public void setOnPhotoEditorListener(@Nullable OnPhotoEditorListener onPhotoEditorListener) {
         mOnPhotoEditorListener = onPhotoEditorListener;
     }
 
     @Override
-    public void onViewAdd(ja.burhanrashid52.photoeditor.DrawingView drawingView) {
+    public void onViewAdd(DrawingView drawingView) {
         if (mViewState.getRedoViewsCount() > 0) {
             mViewState.popRedoView();
         }
         mViewState.addAddedView(drawingView);
         if (mOnPhotoEditorListener != null) {
             mOnPhotoEditorListener.onAddViewListener(
-                    ja.burhanrashid52.photoeditor.ViewType.BRUSH_DRAWING,
+                    ViewType.BRUSH_DRAWING,
                     mViewState.getAddedViewsCount()
             );
         }
     }
 
     @Override
-    public void onViewRemoved(ja.burhanrashid52.photoeditor.DrawingView drawingView) {
+    public void onViewRemoved(DrawingView drawingView) {
         if (mViewState.getAddedViewsCount() > 0) {
             View removeView = mViewState.removeAddedView(
                     mViewState.getAddedViewsCount() - 1
             );
-            if (!(removeView instanceof ja.burhanrashid52.photoeditor.DrawingView)) {
+            if (!(removeView instanceof DrawingView)) {
                 mPhotoEditorView.removeView(removeView);
             }
             mViewState.pushRedoView(removeView);
@@ -48,7 +48,7 @@ public class BrushDrawingStateListener implements BrushViewChangeListener {
 
         if (mOnPhotoEditorListener != null) {
             mOnPhotoEditorListener.onRemoveViewListener(
-                    ja.burhanrashid52.photoeditor.ViewType.BRUSH_DRAWING,
+                    ViewType.BRUSH_DRAWING,
                     mViewState.getAddedViewsCount()
             );
         }
@@ -57,14 +57,14 @@ public class BrushDrawingStateListener implements BrushViewChangeListener {
     @Override
     public void onStartDrawing() {
         if (mOnPhotoEditorListener != null) {
-            mOnPhotoEditorListener.onStartViewChangeListener(ja.burhanrashid52.photoeditor.ViewType.BRUSH_DRAWING);
+            mOnPhotoEditorListener.onStartViewChangeListener(ViewType.BRUSH_DRAWING);
         }
     }
 
     @Override
     public void onStopDrawing() {
         if (mOnPhotoEditorListener != null) {
-            mOnPhotoEditorListener.onStopViewChangeListener(ja.burhanrashid52.photoeditor.ViewType.BRUSH_DRAWING);
+            mOnPhotoEditorListener.onStopViewChangeListener(ViewType.BRUSH_DRAWING);
         }
     }
 }
