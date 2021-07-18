@@ -103,7 +103,6 @@ public class TextEditorDialogFragment extends DialogFragment {
         mAddTextEditText.setTextColor(mColorCode);
         mInputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
 
-        //Make a callback on activity when user is done with text editing
         mAddTextDoneTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
