@@ -6,11 +6,6 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.IntRange;
 
 
-/**
- * <p>
- * Used to hold a Shape parameters: type, size, opacity and color.
- * </p>
- */
 public class ShapeBuilder {
 
     public static final float DEFAULT_SHAPE_SIZE = 25.0f;

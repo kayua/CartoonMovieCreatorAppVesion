@@ -10,12 +10,7 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 
-/**
- * Created on 18/01/2017.
- *
- * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>
- * <p></p>
- */
+
 class MultiTouchListener implements OnTouchListener {
 
     private static final int INVALID_POINTER_ID = -1;
@@ -27,7 +22,7 @@ class MultiTouchListener implements OnTouchListener {
     private float maximumScale = 10.0f;
     private int mActivePointerId = INVALID_POINTER_ID;
     private float mPrevX, mPrevY, mPrevRawX, mPrevRawY;
-    private ja.burhanrashid52.photoeditor.ScaleGestureDetector mScaleGestureDetector;
+    private ScaleGestureDetector mScaleGestureDetector;
 
     private int[] location = new int[2];
     private Rect outRect;

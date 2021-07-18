@@ -9,15 +9,7 @@ import java.nio.IntBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 
-/**
- * <p>
- * Bitmap utility class to perform different transformation on bitmap
- * </p>
- *
- * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>
- * @version 0.1.2
- * @since 5/21/2018
- */
+
 class BitmapUtil {
     /**
      * Remove transparency in edited bitmap

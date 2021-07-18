@@ -1,6 +1,6 @@
 package app.mosquito.appmosquito.appmosquito.Editor.Filters;
 
-import ja.burhanrashid52.photoeditor.PhotoFilter;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoFilter;
 
 public interface FilterListener {
     void onFilterSelected(PhotoFilter photoFilter);
