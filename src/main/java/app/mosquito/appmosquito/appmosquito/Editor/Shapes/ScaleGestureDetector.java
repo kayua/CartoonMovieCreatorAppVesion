@@ -360,23 +360,10 @@ class ScaleGestureDetector {
         return mPrevFingerDiffX;
     }
 
-    /**
-     * Return the previous y distance between the two pointers forming the
-     * gesture in progress.
-     *
-     * @return Previous distance between pointers in pixels.
-     */
     public float getPreviousSpanY() {
         return mPrevFingerDiffY;
     }
 
-    /**
-     * Return the scaling factor from the previous scale event to the current
-     * event. This value is defined as
-     * ({@link #getCurrentSpan()} / {@link #getPreviousSpan()}).
-     *
-     * @return The current scaling factor.
-     */
     public float getScaleFactor() {
         if (mScaleFactor == -1) {
             mScaleFactor = getCurrentSpan() / getPreviousSpan();
@@ -384,21 +371,11 @@ class ScaleGestureDetector {
         return mScaleFactor;
     }
 
-    /**
-     * Return the time difference in milliseconds between the previous
-     * accepted scaling event and the current scaling event.
-     *
-     * @return Time difference since the last scaling event in milliseconds.
-     */
+
     public long getTimeDelta() {
         return mTimeDelta;
     }
 
-    /**
-     * Return the event time of the current event being processed.
-     *
-     * @return Current event time in milliseconds.
-     */
     public long getEventTime() {
         return mCurrEvent.getEventTime();
     }
