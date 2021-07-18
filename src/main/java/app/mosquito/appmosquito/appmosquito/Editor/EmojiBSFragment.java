@@ -18,6 +18,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.ArrayList;
 
+import app.mosquito.appmosquito.appmosquito.R;
+
 public class EmojiBSFragment extends BottomSheetDialogFragment {
 
     public EmojiBSFragment() {
