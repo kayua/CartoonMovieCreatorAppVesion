@@ -26,32 +26,27 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.ChangeBounds;
 import androidx.transition.TransitionManager;
-import app.mosquito.appmosquito.appmosquito.Editor.Base.BaseActivity;
-import app.mosquito.appmosquito.appmosquito.Editor.Filters.FilterListener;
-import app.mosquito.appmosquito.appmosquito.Editor.Filters.FilterViewAdapter;
-import app.mosquito.appmosquito.appmosquito.Editor.Tools.EditingToolsAdapter;
-import com.burhanrashid52.photoediting.tools.ToolType;
+
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.io.File;
 import java.io.IOException;
 
-import ja.burhanrashid52.photoeditor.OnPhotoEditorListener;
-import ja.burhanrashid52.photoeditor.PhotoEditor;
-import ja.burhanrashid52.photoeditor.PhotoEditorView;
-import ja.burhanrashid52.photoeditor.PhotoFilter;
-import ja.burhanrashid52.photoeditor.SaveSettings;
-import ja.burhanrashid52.photoeditor.TextStyleBuilder;
-import ja.burhanrashid52.photoeditor.ViewType;
-import ja.burhanrashid52.photoeditor.shape.ShapeBuilder;
-import ja.burhanrashid52.photoeditor.shape.ShapeType;
+import app.mosquito.appmosquito.appmosquito.Editor.Base.BaseActivity;
+import app.mosquito.appmosquito.appmosquito.Editor.Filters.FilterListener;
+import app.mosquito.appmosquito.appmosquito.Editor.Filters.FilterViewAdapter;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.OnPhotoEditorListener;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoEditor;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoEditorView;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeBuilder;
+import app.mosquito.appmosquito.appmosquito.Editor.Tools.EditingToolsAdapter;
 
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
-import static com.burhanrashid52.photoediting.FileSaveHelper.isSdkHigherThan28;
+
 
 public class EditImageActivity extends BaseActivity implements OnPhotoEditorListener,
         View.OnClickListener,
-        com.burhanrashid52.photoediting.PropertiesBSFragment.Properties,
+        PropertiesBSFragment.Properties,
         ShapeBSFragment.Properties,
         com.burhanrashid52.photoediting.EmojiBSFragment.EmojiListener,
         com.burhanrashid52.photoediting.StickerBSFragment.StickerListener, EditingToolsAdapter.OnItemSelected, FilterListener {
@@ -65,11 +60,11 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
     PhotoEditor mPhotoEditor;
     private PhotoEditorView mPhotoEditorView;
-    private com.burhanrashid52.photoediting.PropertiesBSFragment mPropertiesBSFragment;
+    private PropertiesBSFragment mPropertiesBSFragment;
     private ShapeBSFragment mShapeBSFragment;
     private ShapeBuilder mShapeBuilder;
-    private com.burhanrashid52.photoediting.EmojiBSFragment mEmojiBSFragment;
-    private com.burhanrashid52.photoediting.StickerBSFragment mStickerBSFragment;
+    private EmojiBSFragment mEmojiBSFragment;
+    private StickerBSFragment mStickerBSFragment;
     private TextView mTxtCurrentTool;
     private Typeface mWonderFont;
     private RecyclerView mRvTools, mRvFilters;
