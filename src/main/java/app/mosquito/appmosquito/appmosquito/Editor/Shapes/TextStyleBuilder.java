@@ -4,7 +4,6 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,91 +11,41 @@ import androidx.annotation.NonNull;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * <p>
- * This class is used to wrap the styles to apply on the TextView on {@link PhotoEditor#addText(String, ja.burhanrashid52.photoeditor.TextStyleBuilder)} and {@link PhotoEditor#editText(View, String, ja.burhanrashid52.photoeditor.TextStyleBuilder)}
- * </p>
- *
- * @author <a href="https://github.com/Sulfkain">Christian Caballero</a>
- * @since 14/05/2019
- */
 public class TextStyleBuilder {
 
     private Map<TextStyle, Object> values = new HashMap<>();
     protected Map<TextStyle, Object> getValues() { return values; }
 
-    /**
-     * Set this textSize style
-     *
-     * @param size Size to apply on text
-     */
+
     public void withTextSize(@NonNull float size) {
         values.put(TextStyle.SIZE, size);
     }
 
-    /**
-     * Set this textShadow style
-     *
-     * @param radius Radius of the shadow to apply on text
-     * @param dx Horizontal distance of the shadow
-     * @param dy Vertical distance of the shadow
-     * @param color Color of the shadow
-     */
     public void withTextShadow(@NonNull float radius, @NonNull float dx, @NonNull float dy, @NonNull int color) {
-        ja.burhanrashid52.photoeditor.TextShadow shadow = new ja.burhanrashid52.photoeditor.TextShadow(radius, dx, dy, color);
+        TextShadow shadow = new TextShadow(radius, dx, dy, color);
         withTextShadow(shadow);
     }
 
-    /**
-     * Set this color style
-     *
-     * @param color Color to apply on text
-     */
     public void withTextColor(@NonNull int color) {
         values.put(TextStyle.COLOR, color);
     }
 
-    /**
-     * Set this {@link Typeface} style
-     *
-     * @param textTypeface TypeFace to apply on text
-     */
     public void withTextFont(@NonNull Typeface textTypeface) {
         values.put(TextStyle.FONT_FAMILY, textTypeface);
     }
 
-    /**
-     * Set this gravity style
-     *
-     * @param gravity Gravity style to apply on text
-     */
     public void withGravity(@NonNull int gravity) {
         values.put(TextStyle.GRAVITY, gravity);
     }
 
-    /**
-     * Set this background color
-     *
-     * @param background Background color to apply on text, this method overrides the preview set on {@link ja.burhanrashid52.photoeditor.TextStyleBuilder#withBackgroundDrawable(Drawable)}
-     */
     public void withBackgroundColor(@NonNull int background) {
         values.put(TextStyle.BACKGROUND, background);
     }
 
-    /**
-     * Set this background {@link Drawable}, this method overrides the preview set on {@link ja.burhanrashid52.photoeditor.TextStyleBuilder#withBackgroundColor(int)}
-     *
-     * @param bgDrawable Background drawable to apply on text
-     */
     public void withBackgroundDrawable(@NonNull Drawable bgDrawable) {
         values.put(TextStyle.BACKGROUND, bgDrawable);
     }
 
-    /**
-     * Set this textAppearance style
-     *
-     * @param textAppearance Text style to apply on text
-     */
     public void withTextAppearance(@NonNull int textAppearance) {
         values.put(TextStyle.TEXT_APPEARANCE, textAppearance);
     }
@@ -109,7 +58,7 @@ public class TextStyleBuilder {
         values.put(TextStyle.TEXT_FLAG,paintFlag);
     }
 
-    public void withTextShadow(ja.burhanrashid52.photoeditor.TextShadow textShadow) {
+    public void withTextShadow(TextShadow textShadow) {
         values.put(TextStyle.SHADOW, textShadow);
     }
 
@@ -117,11 +66,6 @@ public class TextStyleBuilder {
         values.put(TextStyle.BORDER,textBorder);
     }
 
-    /**
-     * Method to apply all the style setup on this Builder}
-     *
-     * @param textView TextView to apply the style
-     */
     void applyStyle(@NonNull TextView textView) {
         for (Map.Entry<TextStyle, Object> entry : values.entrySet()) {
             switch (entry.getKey()) {
@@ -181,8 +125,8 @@ public class TextStyleBuilder {
                 break;
 
                 case SHADOW: {
-                    if (entry.getValue() instanceof ja.burhanrashid52.photoeditor.TextShadow){
-                        ja.burhanrashid52.photoeditor.TextShadow textShadow=(ja.burhanrashid52.photoeditor.TextShadow) entry.getValue();
+                    if (entry.getValue() instanceof TextShadow){
+                        TextShadow textShadow=(TextShadow) entry.getValue();
                         applyTextShadow(textView,textShadow);
                     }
 
@@ -241,18 +185,15 @@ public class TextStyleBuilder {
         }
     }
 
-    // shadow
-    protected void applyTextShadow(TextView textView, ja.burhanrashid52.photoeditor.TextShadow textShadow) {
+    protected void applyTextShadow(TextView textView, TextShadow textShadow) {
         textView.setShadowLayer(textShadow.getRadius(), textShadow.getDx(), textShadow.getDy(), textShadow.getColor());
     }
-    // bold or italic
+
     protected void applyTextStyle(TextView textView, int typeface) {
         textView.setTypeface(textView.getTypeface(),typeface);
     }
 
-    // underline or strike
     protected void applyTextFlag(TextView textView, int flag) {
-//        textView.setPaintFlags(textView.getPaintFlags()|flag);
         textView.getPaint().setFlags(flag);
     }
 
@@ -264,9 +205,6 @@ public class TextStyleBuilder {
         }
     }
 
-    /**
-     * Enum to maintain current supported style properties used on on {@link PhotoEditor#addText(String, ja.burhanrashid52.photoeditor.TextStyleBuilder)} and {@link PhotoEditor#editText(View, String, ja.burhanrashid52.photoeditor.TextStyleBuilder)}
-     */
     protected enum TextStyle {
         SIZE("TextSize"),
         COLOR("TextColor"),
