@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Editor.tools;
+package app.mosquito.appmosquito.appmosquito.Editor.Tools;
 
 /**
  * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>

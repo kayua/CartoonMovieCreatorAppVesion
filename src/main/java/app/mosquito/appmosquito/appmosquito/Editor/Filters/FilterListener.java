@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Editor.filters;
+package app.mosquito.appmosquito.appmosquito.Editor.Filters;
 
 import ja.burhanrashid52.photoeditor.PhotoFilter;
 

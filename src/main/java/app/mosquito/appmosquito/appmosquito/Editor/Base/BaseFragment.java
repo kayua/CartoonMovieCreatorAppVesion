@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Editor.base;
+package app.mosquito.appmosquito.appmosquito.Editor.Base;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

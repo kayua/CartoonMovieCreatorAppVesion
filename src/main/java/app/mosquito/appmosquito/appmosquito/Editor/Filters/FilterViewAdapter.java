@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Editor.filters;
+package app.mosquito.appmosquito.appmosquito.Editor.Filters;
 
 import android.content.Context;
 import android.content.res.AssetManager;
