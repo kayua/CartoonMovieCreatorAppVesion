@@ -40,6 +40,7 @@ import app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoEditor;
 import app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoEditorView;
 import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeBuilder;
 import app.mosquito.appmosquito.appmosquito.Editor.Tools.EditingToolsAdapter;
+import app.mosquito.appmosquito.appmosquito.R;
 
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
@@ -48,10 +49,10 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         View.OnClickListener,
         PropertiesBSFragment.Properties,
         ShapeBSFragment.Properties,
-        com.burhanrashid52.photoediting.EmojiBSFragment.EmojiListener,
-        com.burhanrashid52.photoediting.StickerBSFragment.StickerListener, EditingToolsAdapter.OnItemSelected, FilterListener {
+        EmojiBSFragment.EmojiListener,
+        StickerBSFragment.StickerListener, EditingToolsAdapter.OnItemSelected, FilterListener {
 
-    private static final String TAG = com.burhanrashid52.photoediting.EditImageActivity.class.getSimpleName();
+    private static final String TAG = EditImageActivity.class.getSimpleName();
     public static final String FILE_PROVIDER_AUTHORITY = "com.burhanrashid52.photoeditor.fileprovider";
     private static final int CAMERA_REQUEST = 52;
     private static final int PICK_REQUEST = 53;
@@ -78,7 +79,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
     @VisibleForTesting
     Uri mSaveImageUri;
 
-    private com.burhanrashid52.photoediting.FileSaveHelper mSaveFileHelper;
+    private FileSaveHelper mSaveFileHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
