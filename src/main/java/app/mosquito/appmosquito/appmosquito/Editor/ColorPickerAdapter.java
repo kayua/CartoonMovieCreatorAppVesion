@@ -18,11 +18,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Ahmed Adel on 5/8/17.
- */
+import app.mosquito.appmosquito.appmosquito.R;
 
-public class ColorPickerAdapter extends RecyclerView.Adapter<com.burhanrashid52.photoediting.ColorPickerAdapter.ViewHolder> {
+
+public class ColorPickerAdapter extends RecyclerView.Adapter<ColorPickerAdapter.ViewHolder> {
 
     private Context context;
     private LayoutInflater inflater;
