@@ -16,25 +16,15 @@ import androidx.annotation.VisibleForTesting;
 
 import java.util.Stack;
 
-import ja.burhanrashid52.photoeditor.shape.AbstractShape;
-import ja.burhanrashid52.photoeditor.shape.BrushShape;
-import ja.burhanrashid52.photoeditor.shape.LineShape;
-import ja.burhanrashid52.photoeditor.shape.OvalShape;
-import ja.burhanrashid52.photoeditor.shape.RectangleShape;
-import ja.burhanrashid52.photoeditor.shape.ShapeAndPaint;
-import ja.burhanrashid52.photoeditor.shape.ShapeBuilder;
-import ja.burhanrashid52.photoeditor.shape.ShapeType;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.AbstractShape;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.BrushShape;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.LineShape;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.OvalShape;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.RectangleShape;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeAndPaint;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeBuilder;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeType;
 
-/**
- * <p>
- * This is custom drawing view used to do painting on user touch events it it will paint on canvas
- * as per attributes provided to the paint
- * </p>
- *
- * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>
- * @version 0.1.1
- * @since 12/1/18
- */
 public class DrawingView extends View {
 
     private final Stack<ShapeAndPaint> drawShapes = new Stack<>();
@@ -42,14 +32,12 @@ public class DrawingView extends View {
     private ShapeAndPaint currentShape;
     private ShapeBuilder currentShapeBuilder;
     private boolean isEnabled;
-    private ja.burhanrashid52.photoeditor.BrushViewChangeListener viewChangeListener;
+    private BrushViewChangeListener viewChangeListener;
 
-    // eraser parameters
     private boolean isErasing = false;
     static final float DEFAULT_ERASER_SIZE = 50.0f;
     private float mBrushEraserSize = DEFAULT_ERASER_SIZE;
 
-    // region constructors
     public DrawingView(Context context) {
         this(context, null);
     }
@@ -62,7 +50,7 @@ public class DrawingView extends View {
         super(context, attrs, defStyle);
         setupBrushDrawing();
     }
-    // endregion
+
 
     private Paint createPaint() {
         Paint paint = new Paint();
@@ -72,35 +60,34 @@ public class DrawingView extends View {
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER));
-
-        // apply shape builder parameters
         paint.setStrokeWidth(currentShapeBuilder.getShapeSize());
         paint.setAlpha(currentShapeBuilder.getShapeOpacity());
         paint.setColor(currentShapeBuilder.getShapeColor());
-
         return paint;
     }
 
     private Paint createEraserPaint() {
+
         Paint paint = createPaint();
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         return paint;
     }
 
     private void setupBrushDrawing() {
-        //Caution: This line is to disable hardware acceleration to make eraser feature work properly
+
         setLayerType(LAYER_TYPE_HARDWARE, null);
         setVisibility(View.GONE);
         currentShapeBuilder = new ShapeBuilder();
     }
 
     void clearAll() {
+
         drawShapes.clear();
         redoShapes.clear();
         invalidate();
     }
 
-    void setBrushViewChangeListener(ja.burhanrashid52.photoeditor.BrushViewChangeListener brushViewChangeListener) {
+    void setBrushViewChangeListener(BrushViewChangeListener brushViewChangeListener) {
         viewChangeListener = brushViewChangeListener;
     }
 
@@ -111,12 +98,6 @@ public class DrawingView extends View {
         }
     }
 
-    /**
-     * Handle touch event to draw paint on canvas i.e brush drawing
-     *
-     * @param event points having touch info
-     * @return true if handling touch events
-     */
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(@NonNull MotionEvent event) {
@@ -187,9 +168,7 @@ public class DrawingView extends View {
 
     private void endShape(float touchX, float touchY) {
         if (currentShape.getShape().hasBeenTapped()) {
-            // just a tap, this is not a shape, so remove it
             drawShapes.remove(currentShape);
-            //handleTap(touchX, touchY);
         }
 
         if (viewChangeListener != null) {
@@ -221,7 +200,7 @@ public class DrawingView extends View {
         return !redoShapes.empty();
     }
 
-    // region eraser
+
     void brushEraser() {
         isEnabled = true;
         isErasing = true;
@@ -234,9 +213,7 @@ public class DrawingView extends View {
     float getEraserSize() {
         return mBrushEraserSize;
     }
-    // endregion
 
-    // region Setters/Getters
     public void setShapeBuilder(ShapeBuilder shapeBuilder) {
         currentShapeBuilder = shapeBuilder;
     }
@@ -267,7 +244,6 @@ public class DrawingView extends View {
     Pair<Stack<ShapeAndPaint>, Stack<ShapeAndPaint>> getDrawingPath() {
         return new Pair<>(drawShapes, redoShapes);
     }
-    // endregion
 
 }
 
