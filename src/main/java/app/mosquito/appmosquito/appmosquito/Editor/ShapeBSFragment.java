@@ -14,12 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import ja.burhanrashid52.photoeditor.shape.ShapeType;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeType;
+import app.mosquito.appmosquito.appmosquito.R;
+
 
 public class ShapeBSFragment extends BottomSheetDialogFragment implements SeekBar.OnSeekBarChangeListener {
 
     public ShapeBSFragment() {
-        // Required empty public constructor
+
     }
 
     private Properties mProperties;
@@ -71,7 +73,7 @@ public class ShapeBSFragment extends BottomSheetDialogFragment implements SeekBa
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         rvColor.setLayoutManager(layoutManager);
         rvColor.setHasFixedSize(true);
-        com.burhanrashid52.photoediting.ColorPickerAdapter colorPickerAdapter = new com.burhanrashid52.photoediting.ColorPickerAdapter(getActivity());
+        ColorPickerAdapter colorPickerAdapter = new ColorPickerAdapter(getActivity());
         colorPickerAdapter.setOnColorPickerClickListener(colorCode -> {
             if (mProperties != null) {
                 dismiss();
