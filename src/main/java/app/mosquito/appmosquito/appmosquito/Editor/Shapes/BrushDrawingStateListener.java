@@ -4,19 +4,14 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-/**
- * Created by Burhanuddin Rashid on 17/05/21.
- *
- * @author <https://github.com/burhanrashid52>
- */
-public class BrushDrawingStateListener implements ja.burhanrashid52.photoeditor.BrushViewChangeListener {
-    private final ja.burhanrashid52.photoeditor.PhotoEditorView mPhotoEditorView;
-    private final ja.burhanrashid52.photoeditor.PhotoEditorViewState mViewState;
+public class BrushDrawingStateListener implements BrushViewChangeListener {
+    private final PhotoEditorView mPhotoEditorView;
+    private final PhotoEditorViewState mViewState;
     private @Nullable
-    ja.burhanrashid52.photoeditor.OnPhotoEditorListener mOnPhotoEditorListener;
+    OnPhotoEditorListener mOnPhotoEditorListener;
 
-    BrushDrawingStateListener(ja.burhanrashid52.photoeditor.PhotoEditorView photoEditorView,
-                              ja.burhanrashid52.photoeditor.PhotoEditorViewState viewState) {
+    BrushDrawingStateListener(PhotoEditorView photoEditorView,
+                              PhotoEditorViewState viewState) {
         mPhotoEditorView = photoEditorView;
         mViewState = viewState;
     }
