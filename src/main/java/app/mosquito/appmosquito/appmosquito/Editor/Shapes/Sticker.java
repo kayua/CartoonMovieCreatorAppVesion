@@ -5,12 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-/**
- * Created by Burhanuddin Rashid on 14/05/21.
- *
- * @author <https://github.com/burhanrashid52>
- */
-class Sticker extends ja.burhanrashid52.photoeditor.Graphic {
+import app.mosquito.appmosquito.appmosquito.R;
+
+class Sticker extends Graphic {
 
     private final MultiTouchListener mMultiTouchListener;
     private final ViewGroup mPhotoEditorView;
@@ -42,8 +39,8 @@ class Sticker extends ja.burhanrashid52.photoeditor.Graphic {
 
 
     @Override
-    ja.burhanrashid52.photoeditor.ViewType getViewType() {
-        return ja.burhanrashid52.photoeditor.ViewType.IMAGE;
+    ViewType getViewType() {
+        return ViewType.IMAGE;
     }
 
     @Override
