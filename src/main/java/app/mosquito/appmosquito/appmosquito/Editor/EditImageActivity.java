@@ -38,11 +38,17 @@ import app.mosquito.appmosquito.appmosquito.Editor.Filters.FilterViewAdapter;
 import app.mosquito.appmosquito.appmosquito.Editor.Shapes.OnPhotoEditorListener;
 import app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoEditor;
 import app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoEditorView;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoFilter;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.SaveSettings;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.TextStyleBuilder;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.ViewType;
 import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeBuilder;
 import app.mosquito.appmosquito.appmosquito.Editor.Tools.EditingToolsAdapter;
+import app.mosquito.appmosquito.appmosquito.Editor.Tools.ToolType;
 import app.mosquito.appmosquito.appmosquito.R;
 
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
+import static app.mosquito.appmosquito.appmosquito.Editor.FileSaveHelper.isSdkHigherThan28;
 
 
 public class EditImageActivity extends BaseActivity implements OnPhotoEditorListener,
@@ -93,9 +99,9 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
         mWonderFont = Typeface.createFromAsset(getAssets(), "beyond_wonderland.ttf");
 
-        mPropertiesBSFragment = new com.burhanrashid52.photoediting.PropertiesBSFragment();
-        mEmojiBSFragment = new com.burhanrashid52.photoediting.EmojiBSFragment();
-        mStickerBSFragment = new com.burhanrashid52.photoediting.StickerBSFragment();
+        mPropertiesBSFragment = new PropertiesBSFragment();
+        mEmojiBSFragment = new EmojiBSFragment();
+        mStickerBSFragment = new StickerBSFragment();
         mShapeBSFragment = new ShapeBSFragment();
         mStickerBSFragment.setStickerListener(this);
         mEmojiBSFragment.setEmojiListener(this);
@@ -110,32 +116,25 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         mRvFilters.setLayoutManager(llmFilters);
         mRvFilters.setAdapter(mFilterViewAdapter);
 
-        // NOTE(lucianocheng): Used to set integration testing parameters to PhotoEditor
+
         boolean pinchTextScalable = getIntent().getBooleanExtra(PINCH_TEXT_SCALABLE_INTENT_KEY, true);
 
-        //Typeface mTextRobotoTf = ResourcesCompat.getFont(this, R.font.roboto_medium);
-        //Typeface mEmojiTypeFace = Typeface.createFromAsset(getAssets(), "emojione-android.ttf");
 
         mPhotoEditor = new PhotoEditor.Builder(this, mPhotoEditorView)
-                .setPinchTextScalable(pinchTextScalable) // set flag to make text scalable when pinch
-                //.setDefaultTextTypeface(mTextRobotoTf)
-                //.setDefaultEmojiTypeface(mEmojiTypeFace)
-                .build(); // build photo editor sdk
-
+                .setPinchTextScalable(pinchTextScalable)
+                .build();
         mPhotoEditor.setOnPhotoEditorListener(this);
 
-        //Set Image Dynamically
         mPhotoEditorView.getSource().setImageResource(R.drawable.paris_tower);
 
-        mSaveFileHelper = new com.burhanrashid52.photoediting.FileSaveHelper(this);
+        mSaveFileHelper = new FileSaveHelper(this);
     }
 
     private void handleIntentImage(ImageView source) {
         Intent intent = getIntent();
         if (intent != null) {
-            // NOTE(lucianocheng): Using "yoda conditions" here to guard against
-            //                     a null Action in the Intent.
-            if (Intent.ACTION_EDIT.equals(intent.getAction()) ||
+
+             if (Intent.ACTION_EDIT.equals(intent.getAction()) ||
                     ACTION_NEXTGEN_EDIT.equals(intent.getAction())) {
                 try {
                     Uri uri = intent.getData();
@@ -196,8 +195,8 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
     @Override
     public void onEditTextChangeListener(final View rootView, String text, int colorCode) {
-        com.burhanrashid52.photoediting.TextEditorDialogFragment textEditorDialogFragment =
-                com.burhanrashid52.photoediting.TextEditorDialogFragment.show(this, text, colorCode);
+        TextEditorDialogFragment textEditorDialogFragment =
+                TextEditorDialogFragment.show(this, text, colorCode);
         textEditorDialogFragment.setOnTextEditorListener((inputText, newColorCode) -> {
             final TextStyleBuilder styleBuilder = new TextStyleBuilder();
             styleBuilder.withTextColor(newColorCode);
@@ -417,7 +416,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
                 showBottomSheetDialogFragment(mShapeBSFragment);
                 break;
             case TEXT:
-                com.burhanrashid52.photoediting.TextEditorDialogFragment textEditorDialogFragment = com.burhanrashid52.photoediting.TextEditorDialogFragment.show(this);
+                TextEditorDialogFragment textEditorDialogFragment = photoediting.TextEditorDialogFragment.show(this);
                 textEditorDialogFragment.setOnTextEditorListener((inputText, colorCode) -> {
                     final TextStyleBuilder styleBuilder = new TextStyleBuilder();
                     styleBuilder.withTextColor(colorCode);
