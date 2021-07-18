@@ -19,18 +19,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresPermission;
 
-import ja.burhanrashid52.photoeditor.shape.ShapeBuilder;
+import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeBuilder;
+import app.mosquito.appmosquito.appmosquito.R;
 
-/**
- * <p>
- * This class in initialize by {@link PhotoEditor.Builder} using a builder pattern with multiple
- * editing attributes
- * </p>
- *
- * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>
- * @version 0.1.1
- * @since 18/01/2017
- */
 class PhotoEditorImpl implements PhotoEditor {
 
     private static final String TAG = "PhotoEditor";
@@ -164,19 +155,13 @@ class PhotoEditorImpl implements PhotoEditor {
         addToEditor(emoji);
     }
 
-    private void addToEditor(ja.burhanrashid52.photoeditor.Graphic graphic) {
+    private void addToEditor(Graphic graphic) {
         clearHelperBox();
         mGraphicManager.addView(graphic);
         // Change the in-focus view
         viewState.setCurrentSelectedView(graphic.getRootView());
     }
 
-    /**
-     * Create a new instance and scalable touchview
-     *
-     * @param isPinchScalable true if make pinch-scalable, false otherwise.
-     * @return scalable multitouch listener
-     */
     @NonNull
     private MultiTouchListener getMultiTouchListener(final boolean isPinchScalable) {
         return new MultiTouchListener(
@@ -278,7 +263,7 @@ class PhotoEditorImpl implements PhotoEditor {
     }
 
     @Override
-    public void setFilterEffect(ja.burhanrashid52.photoeditor.CustomEffect customEffect) {
+    public void setFilterEffect(CustomEffect customEffect) {
         parentView.setFilterEffect(customEffect);
     }
 
@@ -302,7 +287,7 @@ class PhotoEditorImpl implements PhotoEditor {
         parentView.saveFilter(new OnSaveBitmap() {
             @Override
             public void onBitmapReady(Bitmap saveBitmap) {
-                ja.burhanrashid52.photoeditor.PhotoSaverTask photoSaverTask = new ja.burhanrashid52.photoeditor.PhotoSaverTask(parentView, mBoxHelper);
+                PhotoSaverTask photoSaverTask = new PhotoSaverTask(parentView, mBoxHelper);
                 photoSaverTask.setOnSaveListener(onSaveListener);
                 photoSaverTask.setSaveSettings(saveSettings);
                 photoSaverTask.execute(imagePath);
@@ -327,7 +312,7 @@ class PhotoEditorImpl implements PhotoEditor {
         parentView.saveFilter(new OnSaveBitmap() {
             @Override
             public void onBitmapReady(Bitmap saveBitmap) {
-                ja.burhanrashid52.photoeditor.PhotoSaverTask photoSaverTask = new ja.burhanrashid52.photoeditor.PhotoSaverTask(parentView, mBoxHelper);
+                PhotoSaverTask photoSaverTask = new PhotoSaverTask(parentView, mBoxHelper);
                 photoSaverTask.setOnSaveBitmap(onSaveBitmap);
                 photoSaverTask.setSaveSettings(saveSettings);
                 photoSaverTask.saveBitmap();
@@ -352,11 +337,9 @@ class PhotoEditorImpl implements PhotoEditor {
         return viewState.getAddedViewsCount() == 0 && viewState.getRedoViewsCount() == 0;
     }
 
-    // region Shape
     @Override
     public void setShape(ShapeBuilder shapeBuilder) {
         drawingView.setShapeBuilder(shapeBuilder);
     }
-    // endregion
 
 }
