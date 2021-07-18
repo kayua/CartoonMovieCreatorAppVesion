@@ -41,32 +41,22 @@ import static android.media.effect.EffectFactory.EFFECT_SHARPEN;
 import static android.media.effect.EffectFactory.EFFECT_TEMPERATURE;
 import static android.media.effect.EffectFactory.EFFECT_TINT;
 import static android.media.effect.EffectFactory.EFFECT_VIGNETTE;
-import static ja.burhanrashid52.photoeditor.PhotoFilter.*;
-import static ja.burhanrashid52.photoeditor.PhotoFilter.NONE;
+import static app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoFilter.NONE;
 
-/**
- * <p>
- * Filter Images using ImageFilterView
- * </p>
- *
- * @author <a href="https://github.com/burhanrashid52">Burhanuddin Rashid</a>
- * @version 0.1.2
- * @since 2/14/2018
- */
 class ImageFilterView extends GLSurfaceView implements GLSurfaceView.Renderer {
 
     private static final String TAG = "ImageFilterView";
     private int[] mTextures = new int[2];
     private EffectContext mEffectContext;
     private Effect mEffect;
-    private ja.burhanrashid52.photoeditor.TextureRenderer mTexRenderer = new ja.burhanrashid52.photoeditor.TextureRenderer();
+    private TextureRenderer mTexRenderer = new TextureRenderer();
     private int mImageWidth;
     private int mImageHeight;
     private boolean mInitialized = false;
     private PhotoFilter mCurrentEffect;
     private Bitmap mSourceBitmap;
-    private ja.burhanrashid52.photoeditor.CustomEffect mCustomEffect;
-    private ja.burhanrashid52.photoeditor.OnSaveBitmap mOnSaveBitmap;
+    private CustomEffect mCustomEffect;
+    private OnSaveBitmap mOnSaveBitmap;
     private boolean isSaveImage = false;
 
     public ImageFilterView(Context context) {
@@ -87,9 +77,7 @@ class ImageFilterView extends GLSurfaceView implements GLSurfaceView.Renderer {
     }
 
     void setSourceBitmap(Bitmap sourceBitmap) {
-       /* if (mSourceBitmap != null && mSourceBitmap.sameAs(sourceBitmap)) {
-            //mCurrentEffect = NONE;
-        }*/
+
         mSourceBitmap = sourceBitmap;
         mInitialized = false;
     }
@@ -110,14 +98,14 @@ class ImageFilterView extends GLSurfaceView implements GLSurfaceView.Renderer {
     public void onDrawFrame(GL10 gl) {
 
         if (!mInitialized) {
-            //Only need to do this once
+
             mEffectContext = EffectContext.createWithCurrentGlContext();
             mTexRenderer.init();
             loadTextures();
             mInitialized = true;
         }
         if (mCurrentEffect != NONE || mCustomEffect != null) {
-            //if an effect is chosen initialize it and apply it to the texture
+
             initEffect();
             applyEffect();
         }
@@ -143,33 +131,30 @@ class ImageFilterView extends GLSurfaceView implements GLSurfaceView.Renderer {
         requestRender();
     }
 
-    void setFilterEffect(ja.burhanrashid52.photoeditor.CustomEffect customEffect) {
+    void setFilterEffect(CustomEffect customEffect) {
         mCustomEffect = customEffect;
         requestRender();
     }
 
 
-    void saveBitmap(ja.burhanrashid52.photoeditor.OnSaveBitmap onSaveBitmap) {
+    void saveBitmap(OnSaveBitmap onSaveBitmap) {
         mOnSaveBitmap = onSaveBitmap;
         isSaveImage = true;
         requestRender();
     }
 
     private void loadTextures() {
-        // Generate textures
+
         GLES20.glGenTextures(2, mTextures, 0);
 
-        // Load input bitmap
         if (mSourceBitmap != null) {
             mImageWidth = mSourceBitmap.getWidth();
             mImageHeight = mSourceBitmap.getHeight();
             mTexRenderer.updateTextureSize(mImageWidth, mImageHeight);
 
-            // Upload to texture
             GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextures[0]);
             GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, mSourceBitmap, 0);
 
-            // Set texture parameters
             GLToolbox.initTexParams();
         }
     }
@@ -186,7 +171,7 @@ class ImageFilterView extends GLSurfaceView implements GLSurfaceView.Renderer {
                 mEffect.setParameter(param.getKey(), param.getValue());
             }
         } else {
-            // Initialize the correct effect based on the selected menu/action item
+
             switch (mCurrentEffect) {
 
                 case AUTO_FIX:
@@ -287,11 +272,13 @@ class ImageFilterView extends GLSurfaceView implements GLSurfaceView.Renderer {
 
     private void renderResult() {
         if (mCurrentEffect != NONE || mCustomEffect != null) {
-            // if no effect is chosen, just render the original bitmap
+
             mTexRenderer.renderTexture(mTextures[1]);
+
         } else {
-            // render the result of applyEffect()
+
             mTexRenderer.renderTexture(mTextures[0]);
+
         }
     }
 }
