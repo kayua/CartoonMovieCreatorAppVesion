@@ -5,11 +5,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-/**
- * Created by Burhanuddin Rashid on 18/05/21.
- *
- * @author <https://github.com/burhanrashid52>
- */
+import app.mosquito.appmosquito.appmosquito.R;
+
 class BoxHelper {
     private final ViewGroup mViewGroup;
     private final PhotoEditorViewState mViewState;
