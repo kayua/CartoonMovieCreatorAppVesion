@@ -41,53 +41,28 @@ public class SaveSettings {
         private Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.PNG;
         private int compressQuality = 100;
 
-        /**
-         * Define a flag to enable transparency while saving image
-         *
-         * @param transparencyEnabled true if enabled
-         * @return Builder
-         * @see ja.burhanrashid52.photoeditor.BitmapUtil#removeTransparency(Bitmap)
-         */
         public Builder setTransparencyEnabled(boolean transparencyEnabled) {
             isTransparencyEnabled = transparencyEnabled;
             return this;
         }
 
-        /**
-         * Define a flag to clear the view after saving the image
-         *
-         * @param clearViewsEnabled true if you want to clear all the views on {@link ja.burhanrashid52.photoeditor.PhotoEditorView}
-         * @return Builder
-         */
         public Builder setClearViewsEnabled(boolean clearViewsEnabled) {
             isClearViewsEnabled = clearViewsEnabled;
             return this;
         }
 
-        /**
-         * Set the compression format for the file to save: JPEG, PNG or WEBP
-         * @see{android.graphics.Bitmap.CompressFormat}
-         * @param compressFormat JPEG, PNG or WEBP
-         * @return Builder
-         */
         public Builder setCompressFormat(@NonNull Bitmap.CompressFormat compressFormat) {
             this.compressFormat = compressFormat;
             return this;
         }
 
-        /**
-         * Set the expected compression quality for the output, a number between
-         * 0 and 100
-         * @param compressQuality An integer from 0 to 100
-         * @return Builder
-         */
         public Builder setCompressQuality(@IntRange(from=0,to=100) int compressQuality) {
             this.compressQuality = compressQuality;
             return this;
         }
 
-        public ja.burhanrashid52.photoeditor.SaveSettings build() {
-            return new ja.burhanrashid52.photoeditor.SaveSettings(this);
+        public SaveSettings build() {
+            return new SaveSettings(this);
         }
     }
 }
