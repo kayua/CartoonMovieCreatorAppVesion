@@ -45,7 +45,7 @@ class MultiTouchListener implements OnTouchListener {
                        PhotoEditorViewState viewState
     ) {
         mIsPinchScalable = isPinchScalable;
-        mScaleGestureDetector = new ja.burhanrashid52.photoeditor.ScaleGestureDetector(new ScaleGestureListener());
+        mScaleGestureDetector = new ScaleGestureDetector((ScaleGestureDetector.OnScaleGestureListener) new ScaleGestureListener());
         mGestureListener = new GestureDetector(new GestureListener());
         this.deleteView = deleteView;
         this.parentView = parentView;
