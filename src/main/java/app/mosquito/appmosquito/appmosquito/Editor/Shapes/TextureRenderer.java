@@ -49,15 +49,11 @@ class TextureRenderer {
     private static final int FLOAT_SIZE_BYTES = 4;
 
     void init() {
-        mProgram = GLToolbox.createProgram(VERTEX_SHADER, FRAGMENT_SHADER);
 
-        // Bind attributes and uniforms
-        mTexSamplerHandle = GLES20.glGetUniformLocation(mProgram,
-                "tex_sampler");
+        mProgram = GLToolbox.createProgram(VERTEX_SHADER, FRAGMENT_SHADER);
+        mTexSamplerHandle = GLES20.glGetUniformLocation(mProgram, "tex_sampler");
         mTexCoordHandle = GLES20.glGetAttribLocation(mProgram, "a_texcoord");
         mPosCoordHandle = GLES20.glGetAttribLocation(mProgram, "a_position");
-
-        // Setup coordinate buffers
         mTexVertices = ByteBuffer.allocateDirect(
                 TEX_VERTICES.length * FLOAT_SIZE_BYTES)
                 .order(ByteOrder.nativeOrder()).asFloatBuffer();
@@ -68,38 +64,31 @@ class TextureRenderer {
         mPosVertices.put(POS_VERTICES).position(0);
     }
 
-    public void tearDown() {
-        GLES20.glDeleteProgram(mProgram);
-    }
+    public void tearDown() { GLES20.glDeleteProgram(mProgram); }
 
     void updateTextureSize(int texWidth, int texHeight) {
+
         mTexWidth = texWidth;
         mTexHeight = texHeight;
         computeOutputVertices();
+
     }
 
     void updateViewSize(int viewWidth, int viewHeight) {
+
         mViewWidth = viewWidth;
         mViewHeight = viewHeight;
         computeOutputVertices();
     }
 
     void renderTexture(int texId) {
-        // Bind default FBO
-        GLES20.glBindFramebuffer(GLES20.GL_FRAMEBUFFER, 0);
 
-        // Use our shader program
+        GLES20.glBindFramebuffer(GLES20.GL_FRAMEBUFFER, 0);
         GLES20.glUseProgram(mProgram);
         GLToolbox.checkGlError("glUseProgram");
-
-        // Set viewport
         GLES20.glViewport(0, 0, mViewWidth, mViewHeight);
         GLToolbox.checkGlError("glViewport");
-
-        // Disable blending
         GLES20.glDisable(GLES20.GL_BLEND);
-
-        // Set the vertex attributes
         GLES20.glVertexAttribPointer(mTexCoordHandle, 2, GLES20.GL_FLOAT, false,
                 0, mTexVertices);
         GLES20.glEnableVertexAttribArray(mTexCoordHandle);
