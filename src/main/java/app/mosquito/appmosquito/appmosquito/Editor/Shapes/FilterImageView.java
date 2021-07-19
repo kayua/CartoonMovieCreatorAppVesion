@@ -10,7 +10,6 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.util.AttributeSet;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 
@@ -41,88 +40,134 @@ class FilterImageView extends AppCompatImageView {
     @Override
     public void setImageBitmap(Bitmap bm) {
         super.setImageBitmap(bm);
+
         if (mOnImageChangedListener != null) {
+
             mOnImageChangedListener.onBitmapLoaded(getBitmap());
+
         }
+
     }
 
     @Override
     public void setImageIcon(@Nullable Icon icon) {
         super.setImageIcon(icon);
+
         if (mOnImageChangedListener != null) {
+
             mOnImageChangedListener.onBitmapLoaded(getBitmap());
+
         }
+
     }
 
     @Override
     public void setImageMatrix(Matrix matrix) {
         super.setImageMatrix(matrix);
+
         if (mOnImageChangedListener != null) {
+
             mOnImageChangedListener.onBitmapLoaded(getBitmap());
+
         }
+
     }
 
     @Override
     public void setImageState(int[] state, boolean merge) {
         super.setImageState(state, merge);
+
         if (mOnImageChangedListener != null) {
+
             mOnImageChangedListener.onBitmapLoaded(getBitmap());
+
         }
+
     }
 
     @Override
     public void setImageTintList(@Nullable ColorStateList tint) {
         super.setImageTintList(tint);
+
         if (mOnImageChangedListener != null) {
+
             mOnImageChangedListener.onBitmapLoaded(getBitmap());
+
         }
+
     }
 
     @Override
     public void setImageTintMode(@Nullable PorterDuff.Mode tintMode) {
         super.setImageTintMode(tintMode);
+
         if (mOnImageChangedListener != null) {
+
             mOnImageChangedListener.onBitmapLoaded(getBitmap());
+
         }
+
     }
 
     @Override
     public void setImageDrawable(@Nullable Drawable drawable) {
         super.setImageDrawable(drawable);
+
         if (mOnImageChangedListener != null) {
+
             mOnImageChangedListener.onBitmapLoaded(getBitmap());
+
         }
+
     }
 
     @Override
     public void setImageResource(int resId) {
         super.setImageResource(resId);
+
         if (mOnImageChangedListener != null) {
+
             mOnImageChangedListener.onBitmapLoaded(getBitmap());
+
         }
+
     }
 
     @Override
     public void setImageURI(@Nullable Uri uri) {
         super.setImageURI(uri);
+
         if (mOnImageChangedListener != null) {
+
             mOnImageChangedListener.onBitmapLoaded(getBitmap());
+
         }
+
     }
 
     @Override
     public void setImageLevel(int level) {
         super.setImageLevel(level);
+
         if (mOnImageChangedListener != null) {
+
             mOnImageChangedListener.onBitmapLoaded(getBitmap());
+
         }
+
     }
 
     @Nullable
     Bitmap getBitmap() {
+
         if (getDrawable() != null) {
+
             return ((BitmapDrawable) getDrawable()).getBitmap();
+
         }
+
         return null;
+
     }
+
 }
