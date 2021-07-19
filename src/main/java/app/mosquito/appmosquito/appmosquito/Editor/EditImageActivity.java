@@ -479,7 +479,9 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
     @Override
     public void onToolSelected(ToolType toolType) {
+
         switch (toolType) {
+
             case SHAPE:
                 mPhotoEditor.setBrushDrawingMode(true);
                 mShapeBuilder = new ShapeBuilder();
@@ -487,7 +489,9 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
                 mTxtCurrentTool.setText(R.string.label_shape);
                 showBottomSheetDialogFragment(mShapeBSFragment);
                 break;
+
             case TEXT:
+
                 TextEditorDialogFragment textEditorDialogFragment = TextEditorDialogFragment.show(this);
                 textEditorDialogFragment.setOnTextEditorListener((inputText, colorCode) -> {
                     final TextStyleBuilder styleBuilder = new TextStyleBuilder();
@@ -497,42 +501,57 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
                     mTxtCurrentTool.setText(R.string.label_text);
                 });
                 break;
+
             case ERASER:
+
                 mPhotoEditor.brushEraser();
                 mTxtCurrentTool.setText(R.string.label_eraser_mode);
                 break;
+
             case FILTER:
+
                 mTxtCurrentTool.setText(R.string.label_filter);
                 showFilter(true);
                 break;
+
             case EMOJI:
+
                 showBottomSheetDialogFragment(mEmojiBSFragment);
                 break;
+
             case STICKER:
+
                 showBottomSheetDialogFragment(mStickerBSFragment);
                 break;
+
         }
+
     }
 
     private void showBottomSheetDialogFragment(BottomSheetDialogFragment fragment) {
-        if (fragment == null || fragment.isAdded()) {
-            return;
-        }
+
+        if (fragment == null || fragment.isAdded()) { return; }
+
         fragment.show(getSupportFragmentManager(), fragment.getTag());
+
     }
 
 
     void showFilter(boolean isVisible) {
+
         mIsFilterVisible = isVisible;
         mConstraintSet.clone(mRootView);
 
         if (isVisible) {
+
             mConstraintSet.clear(mRvFilters.getId(), ConstraintSet.START);
             mConstraintSet.connect(mRvFilters.getId(), ConstraintSet.START,
                     ConstraintSet.PARENT_ID, ConstraintSet.START);
             mConstraintSet.connect(mRvFilters.getId(), ConstraintSet.END,
                     ConstraintSet.PARENT_ID, ConstraintSet.END);
+
         } else {
+
             mConstraintSet.connect(mRvFilters.getId(), ConstraintSet.START,
                     ConstraintSet.PARENT_ID, ConstraintSet.END);
             mConstraintSet.clear(mRvFilters.getId(), ConstraintSet.END);
@@ -542,19 +561,27 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         changeBounds.setDuration(350);
         changeBounds.setInterpolator(new AnticipateOvershootInterpolator(1.0f));
         TransitionManager.beginDelayedTransition(mRootView, changeBounds);
-
         mConstraintSet.applyTo(mRootView);
     }
 
     @Override
     public void onBackPressed() {
+
         if (mIsFilterVisible) {
+
             showFilter(false);
             mTxtCurrentTool.setText(R.string.app_name);
+
         } else if (!mPhotoEditor.isCacheEmpty()) {
+
             showSaveDialog();
+
         } else {
+
             super.onBackPressed();
+
         }
+
     }
+
 }
