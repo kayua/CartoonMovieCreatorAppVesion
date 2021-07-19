@@ -5,7 +5,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import app.mosquito.appmosquito.appmosquito.R;
 
 class Text extends Graphic {
@@ -17,12 +16,11 @@ class Text extends Graphic {
     private final PhotoEditorViewState mViewState;
     private TextView mTextView;
 
-    public Text(ViewGroup photoEditorView,
-                MultiTouchListener multiTouchListener,
-                PhotoEditorViewState viewState,
-                Typeface defaultTextTypeface,
+    public Text(ViewGroup photoEditorView, MultiTouchListener multiTouchListener,
+                PhotoEditorViewState viewState, Typeface defaultTextTypeface,
                 GraphicManager graphicManager
     ) {
+
         super(photoEditorView.getContext(), graphicManager);
         mPhotoEditorView = photoEditorView;
         mViewState = viewState;
@@ -30,19 +28,24 @@ class Text extends Graphic {
         mDefaultTextTypeface = defaultTextTypeface;
         mGraphicManager = graphicManager;
         setupGesture();
+
     }
 
     void buildView(String text, TextStyleBuilder styleBuilder) {
+
         mTextView.setText(text);
-        if (styleBuilder != null)
-            styleBuilder.applyStyle(mTextView);
+
+        if (styleBuilder != null) styleBuilder.applyStyle(mTextView);
+
     }
 
     private void setupGesture() {
+
         MultiTouchListener.OnGestureControl onGestureControl = buildGestureController(mPhotoEditorView, mViewState);
         mMultiTouchListener.setOnGestureControl(onGestureControl);
         View rootView = getRootView();
         rootView.setOnTouchListener(mMultiTouchListener);
+
     }
 
 
