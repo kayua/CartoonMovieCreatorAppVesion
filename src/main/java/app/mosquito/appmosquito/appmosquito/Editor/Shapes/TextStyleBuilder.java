@@ -135,6 +135,7 @@ public class TextStyleBuilder {
                 }
 
                 break;
+
                 case TEXT_FLAG:{
 
                     int flag=(int) entry.getValue();
@@ -147,6 +148,7 @@ public class TextStyleBuilder {
                 case SHADOW: {
 
                     if (entry.getValue() instanceof TextShadow){
+
                         TextShadow textShadow=(TextShadow) entry.getValue();
                         applyTextShadow(textView,textShadow);
 
@@ -154,14 +156,20 @@ public class TextStyleBuilder {
 
                 }
                 case BORDER: {
+
                     if (entry.getValue() instanceof TextBorder){
+
                         TextBorder textBorder=(TextBorder) entry.getValue();
                         applyTextBorder(textView,textBorder);
+
                     }
 
                 }
+
             }
+
         }
+
     }
 
     protected void applyTextSize(TextView textView, float size) {
@@ -189,45 +197,66 @@ public class TextStyleBuilder {
     }
 
     protected void applyBackgroundDrawable(TextView textView, Drawable bg) {
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+
             textView.setBackground(bg);
+
         } else {
+
             textView.setBackgroundDrawable(bg);
+
         }
+
     }
 
-    // border
     protected  void applyTextBorder(TextView textView,TextBorder textBorder){
+
         GradientDrawable gd = new GradientDrawable();
         gd.setCornerRadius(textBorder.getCorner());
         gd.setStroke(textBorder.getStrokeWidth(), textBorder.getStrokeColor());
         gd.setColor(textBorder.getBackGroundColor());
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             textView.setBackground(gd);
         }
+
     }
 
     protected void applyTextShadow(TextView textView, TextShadow textShadow) {
+
         textView.setShadowLayer(textShadow.getRadius(), textShadow.getDx(), textShadow.getDy(), textShadow.getColor());
+
     }
 
     protected void applyTextStyle(TextView textView, int typeface) {
+
         textView.setTypeface(textView.getTypeface(),typeface);
+
     }
 
     protected void applyTextFlag(TextView textView, int flag) {
+
         textView.getPaint().setFlags(flag);
+
     }
 
     protected void applyTextAppearance(TextView textView, int styleAppearance) {
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
             textView.setTextAppearance(styleAppearance);
+
         } else {
+
             textView.setTextAppearance(textView.getContext(), styleAppearance);
+
         }
+
     }
 
     protected enum TextStyle {
+
         SIZE("TextSize"),
         COLOR("TextColor"),
         GRAVITY("Gravity"),
@@ -245,5 +274,7 @@ public class TextStyleBuilder {
 
         private String property;
         public String getProperty() {return property;}
+
     }
+
 }
