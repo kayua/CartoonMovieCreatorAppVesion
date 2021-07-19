@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import app.mosquito.appmosquito.appmosquito.R;
 
 class Sticker extends Graphic {
@@ -14,42 +13,38 @@ class Sticker extends Graphic {
     private final PhotoEditorViewState mViewState;
     private ImageView imageView;
 
-    public Sticker(ViewGroup photoEditorView,
-                   MultiTouchListener multiTouchListener,
-                   PhotoEditorViewState viewState,
-                   GraphicManager graphicManager
+    public Sticker(ViewGroup photoEditorView, MultiTouchListener multiTouchListener,
+                   PhotoEditorViewState viewState, GraphicManager graphicManager
+
     ) {
+
         super(photoEditorView.getContext(), graphicManager);
         mPhotoEditorView = photoEditorView;
         mViewState = viewState;
         mMultiTouchListener = multiTouchListener;
         setupGesture();
+
     }
 
-    void buildView(Bitmap desiredImage) {
-        imageView.setImageBitmap(desiredImage);
-    }
+    void buildView(Bitmap desiredImage) { imageView.setImageBitmap(desiredImage); }
 
     private void setupGesture() {
+
         MultiTouchListener.OnGestureControl onGestureControl = buildGestureController(mPhotoEditorView, mViewState);
         mMultiTouchListener.setOnGestureControl(onGestureControl);
         View rootView = getRootView();
         rootView.setOnTouchListener(mMultiTouchListener);
+
     }
 
 
     @Override
-    ViewType getViewType() {
-        return ViewType.IMAGE;
-    }
+    ViewType getViewType() { return ViewType.IMAGE; }
 
     @Override
-    int getLayoutId() {
-        return R.layout.view_photo_editor_image;
-    }
+    int getLayoutId() { return R.layout.view_photo_editor_image; }
 
     @Override
-    void setupView(View rootView) {
-        imageView = rootView.findViewById(R.id.imgPhotoEditorImage);
-    }
+    void setupView(View rootView) { imageView = rootView.findViewById(R.id.imgPhotoEditorImage); }
+
 }
