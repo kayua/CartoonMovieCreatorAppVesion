@@ -301,10 +301,10 @@ class ScaleGestureDetector {
             mInvalidGesture = true;
             Log.e(TAG, "Invalid MotionEvent stream detected.", new Throwable());
 
-            if (mGestureInProgress) {
+            if (mGestureInProgress) { mListener.onScaleEnd(view, this); }
 
-                mListener.onScaleEnd(view, this); }
             return;
+
         }
 
         final float px0 = prev.getX(prevIndex0);
@@ -333,47 +333,41 @@ class ScaleGestureDetector {
         mTimeDelta = curr.getEventTime() - prev.getEventTime();
         mCurrPressure = curr.getPressure(currIndex0) + curr.getPressure(currIndex1);
         mPrevPressure = prev.getPressure(prevIndex0) + prev.getPressure(prevIndex1);
+
     }
 
     private void reset() {
-        if (mPrevEvent != null) {
-            mPrevEvent.recycle();
-            mPrevEvent = null;
-        }
-        if (mCurrEvent != null) {
-            mCurrEvent.recycle();
-            mCurrEvent = null;
-        }
+
+        if (mPrevEvent != null) { mPrevEvent.recycle(); mPrevEvent = null; }
+        if (mCurrEvent != null) { mCurrEvent.recycle();mCurrEvent = null; }
+
         mGestureInProgress = false;
         mActiveId0 = -1;
         mActiveId1 = -1;
         mInvalidGesture = false;
     }
 
-    boolean isInProgress() {
-        return mGestureInProgress;
-    }
+    boolean isInProgress() { return mGestureInProgress; }
 
-    float getFocusX() {
-        return mFocusX;
-    }
+    float getFocusX() { return mFocusX; }
 
-    float getFocusY() {
-        return mFocusY;
-    }
+    float getFocusY() { return mFocusY; }
 
     private float getCurrentSpan() {
+
         if (mCurrLen == -1) {
+
             final float cvx = mCurrFingerDiffX;
             final float cvy = mCurrFingerDiffY;
             mCurrLen = (float) Math.sqrt(cvx * cvx + cvy * cvy);
+
         }
+
         return mCurrLen;
+
     }
 
-    Vector2D getCurrentSpanVector() {
-        return mCurrSpanVector;
-    }
+    Vector2D getCurrentSpanVector() { return mCurrSpanVector; }
 
 
     public float getCurrentSpanX() {
