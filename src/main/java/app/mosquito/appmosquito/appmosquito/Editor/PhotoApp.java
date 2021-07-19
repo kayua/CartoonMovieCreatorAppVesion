@@ -5,6 +5,7 @@ import android.content.Context;
 
 
 public class PhotoApp extends Application {
+
     private static PhotoApp sPhotoApp;
     private static final String TAG = PhotoApp.class.getSimpleName();
 
@@ -15,11 +16,8 @@ public class PhotoApp extends Application {
 
     }
 
-    public static PhotoApp getPhotoApp() {
-        return sPhotoApp;
-    }
+    public static PhotoApp getPhotoApp() { return sPhotoApp; }
 
-    public Context getContext() {
-        return sPhotoApp.getContext();
-    }
+    public Context getContext() { return sPhotoApp.getContext(); }
+
 }
