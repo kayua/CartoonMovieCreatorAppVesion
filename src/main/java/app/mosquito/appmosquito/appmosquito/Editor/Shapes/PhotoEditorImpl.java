@@ -78,6 +78,7 @@ class PhotoEditorImpl implements PhotoEditor {
 
     @Override
     public void addImage(Bitmap desiredImage) {
+
         MultiTouchListener multiTouchListener = getMultiTouchListener(true);
         Sticker sticker = new Sticker(parentView, multiTouchListener, viewState, mGraphicManager);
         sticker.buildView(desiredImage);
