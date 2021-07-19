@@ -3,49 +3,64 @@ package app.mosquito.appmosquito.appmosquito.Editor.Shapes;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-
 import androidx.annotation.Nullable;
 
 class GraphicManager {
+
     private final ViewGroup mViewGroup;
     private final PhotoEditorViewState mViewState;
     private OnPhotoEditorListener mOnPhotoEditorListener;
 
     public GraphicManager(ViewGroup viewGroup, PhotoEditorViewState viewState) {
+
         mViewGroup = viewGroup;
         mViewState = viewState;
+
     }
 
     public void addView(Graphic graphic) {
+
         View view = graphic.getRootView();
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         mViewGroup.addView(view, params);
-
         mViewState.addAddedView(view);
+
         if (mOnPhotoEditorListener != null)
+
             mOnPhotoEditorListener.onAddViewListener(graphic.getViewType(), mViewState.getAddedViewsCount());
+
     }
 
     public void removeView(Graphic graphic) {
+
         View view = graphic.getRootView();
+
         if (mViewState.containsAddedView(view)) {
             mViewGroup.removeView(view);
             mViewState.removeAddedView(view);
             mViewState.pushRedoView(view);
+
             if (mOnPhotoEditorListener != null) {
+
                 mOnPhotoEditorListener.onRemoveViewListener(
                         graphic.getViewType(),
                         mViewState.getAddedViewsCount()
+
                 );
+
             }
+
         }
+
     }
 
     public void updateView(View view) {
+
         mViewGroup.updateViewLayout(view, view.getLayoutParams());
         mViewState.replaceAddedView(view);
+
     }
 
     public void setOnPhotoEditorListener(OnPhotoEditorListener onPhotoEditorListener) {
