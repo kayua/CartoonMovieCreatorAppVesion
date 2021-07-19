@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
@@ -26,12 +25,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.ChangeBounds;
 import androidx.transition.TransitionManager;
-
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-
 import java.io.File;
 import java.io.IOException;
-
 import app.mosquito.appmosquito.appmosquito.Editor.Base.BaseActivity;
 import app.mosquito.appmosquito.appmosquito.Editor.Filters.FilterListener;
 import app.mosquito.appmosquito.appmosquito.Editor.Filters.FilterViewAdapter;
@@ -51,8 +47,8 @@ import app.mosquito.appmosquito.appmosquito.R;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 import static app.mosquito.appmosquito.appmosquito.Editor.FileSaveHelper.isSdkHigherThan28;
 
-
 public class EditImageActivity extends BaseActivity implements OnPhotoEditorListener,
+
         View.OnClickListener,
         PropertiesBSFragment.Properties,
         ShapeBSFragment.Properties,
@@ -65,7 +61,6 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
     private static final int PICK_REQUEST = 53;
     public static final String ACTION_NEXTGEN_EDIT = "action_nextgen_edit";
     public static final String PINCH_TEXT_SCALABLE_INTENT_KEY = "PINCH_TEXT_SCALABLE";
-
     PhotoEditor mPhotoEditor;
     private PhotoEditorView mPhotoEditorView;
     private PropertiesBSFragment mPropertiesBSFragment;
@@ -93,13 +88,9 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         super.onCreate(savedInstanceState);
         makeFullScreen();
         setContentView(R.layout.activity_edit_image);
-
         initViews();
-
         handleIntentImage(mPhotoEditorView.getSource());
-
         mWonderFont = Typeface.createFromAsset(getAssets(), "beyond_wonderland.ttf");
-
         mPropertiesBSFragment = new PropertiesBSFragment();
         mEmojiBSFragment = new EmojiBSFragment();
         mStickerBSFragment = new StickerBSFragment();
@@ -108,31 +99,26 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         mEmojiBSFragment.setEmojiListener(this);
         mPropertiesBSFragment.setPropertiesChangeListener(this);
         mShapeBSFragment.setPropertiesChangeListener(this);
-
         LinearLayoutManager llmTools = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRvTools.setLayoutManager(llmTools);
         mRvTools.setAdapter(mEditingToolsAdapter);
-
         LinearLayoutManager llmFilters = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRvFilters.setLayoutManager(llmFilters);
         mRvFilters.setAdapter(mFilterViewAdapter);
-
-
         boolean pinchTextScalable = getIntent().getBooleanExtra(PINCH_TEXT_SCALABLE_INTENT_KEY, true);
-
-
         mPhotoEditor = new PhotoEditor.Builder(this, mPhotoEditorView)
                 .setPinchTextScalable(pinchTextScalable)
                 .build();
         mPhotoEditor.setOnPhotoEditorListener(this);
-
         mPhotoEditorView.getSource().setImageResource(R.drawable.paris_tower);
-
         mSaveFileHelper = new FileSaveHelper(this);
+
     }
 
     private void handleIntentImage(ImageView source) {
+
         Intent intent = getIntent();
+
         if (intent != null) {
 
              if (Intent.ACTION_EDIT.equals(intent.getAction()) ||
