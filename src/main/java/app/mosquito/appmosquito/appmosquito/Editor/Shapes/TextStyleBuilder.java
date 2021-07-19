@@ -5,9 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,118 +14,142 @@ public class TextStyleBuilder {
     private Map<TextStyle, Object> values = new HashMap<>();
     protected Map<TextStyle, Object> getValues() { return values; }
 
-
-    public void withTextSize(@NonNull float size) {
-        values.put(TextStyle.SIZE, size);
-    }
+    public void withTextSize(@NonNull float size) { values.put(TextStyle.SIZE, size); }
 
     public void withTextShadow(@NonNull float radius, @NonNull float dx, @NonNull float dy, @NonNull int color) {
+
         TextShadow shadow = new TextShadow(radius, dx, dy, color);
         withTextShadow(shadow);
+
     }
 
-    public void withTextColor(@NonNull int color) {
-        values.put(TextStyle.COLOR, color);
-    }
+    public void withTextColor(@NonNull int color) { values.put(TextStyle.COLOR, color); }
 
     public void withTextFont(@NonNull Typeface textTypeface) {
+
         values.put(TextStyle.FONT_FAMILY, textTypeface);
+
     }
 
-    public void withGravity(@NonNull int gravity) {
-        values.put(TextStyle.GRAVITY, gravity);
-    }
+    public void withGravity(@NonNull int gravity) { values.put(TextStyle.GRAVITY, gravity); }
 
     public void withBackgroundColor(@NonNull int background) {
+
         values.put(TextStyle.BACKGROUND, background);
+
     }
 
     public void withBackgroundDrawable(@NonNull Drawable bgDrawable) {
+
         values.put(TextStyle.BACKGROUND, bgDrawable);
+
     }
 
     public void withTextAppearance(@NonNull int textAppearance) {
+
         values.put(TextStyle.TEXT_APPEARANCE, textAppearance);
+
     }
 
-    public void withTextStyle(int typeface){
-        values.put(TextStyle.TEXT_STYLE,typeface);
-    }
+    public void withTextStyle(int typeface){ values.put(TextStyle.TEXT_STYLE,typeface); }
 
-    public void withTextFlag(int paintFlag){
-        values.put(TextStyle.TEXT_FLAG,paintFlag);
-    }
+    public void withTextFlag(int paintFlag){ values.put(TextStyle.TEXT_FLAG,paintFlag); }
 
-    public void withTextShadow(TextShadow textShadow) {
-        values.put(TextStyle.SHADOW, textShadow);
-    }
+    public void withTextShadow(TextShadow textShadow) { values.put(TextStyle.SHADOW, textShadow); }
 
-    public void withTextBorder(TextBorder textBorder){
-        values.put(TextStyle.BORDER,textBorder);
-    }
+    public void withTextBorder(TextBorder textBorder){ values.put(TextStyle.BORDER,textBorder); }
 
     void applyStyle(@NonNull TextView textView) {
+
         for (Map.Entry<TextStyle, Object> entry : values.entrySet()) {
+
             switch (entry.getKey()) {
-                case SIZE: {
-                    final float size = (float) entry.getValue();
+
+                case SIZE: { final float size = (float) entry.getValue();
                     applyTextSize(textView, size);
                 }
+
                 break;
 
-                case COLOR: {
-                    final int color = (int) entry.getValue();
+                case COLOR: { final int color = (int) entry.getValue();
+
                     applyTextColor(textView, color);
+
                 }
+
                 break;
 
                 case FONT_FAMILY: {
+
                     final Typeface typeface = (Typeface) entry.getValue();
                     applyFontFamily(textView, typeface);
+
                 }
+
                 break;
 
                 case GRAVITY: {
+
                     final int gravity = (int) entry.getValue();
                     applyGravity(textView, gravity);
                 }
+
                 break;
 
                 case BACKGROUND: {
+
                     if (entry.getValue() instanceof Drawable) {
+
                         final Drawable bg = (Drawable) entry.getValue();
                         applyBackgroundDrawable(textView, bg);
 
                     } else if (entry.getValue() instanceof Integer) {
+
                         final int color = (Integer) entry.getValue();
                         applyBackgroundColor(textView, color);
+
                     }
+
                 }
+
                 break;
 
                 case TEXT_APPEARANCE: {
+
                     if (entry.getValue() instanceof Integer) {
+
                         final int styleAppearance = (Integer)entry.getValue();
                         applyTextAppearance(textView, styleAppearance);
+
                     }
+
                 }
+
                 break;
 
                 case TEXT_STYLE:{
+
                     final int typeface=(int) entry.getValue();
                     applyTextStyle(textView,typeface);
+
                 }
+
                 break;
                 case TEXT_FLAG:{
+
                     int flag=(int) entry.getValue();
                     applyTextFlag(textView,flag);
+
                 }
+
                 break;
 
                 case SHADOW: {
+
                     if (entry.getValue() instanceof TextShadow){
                         TextShadow textShadow=(TextShadow) entry.getValue();
                         applyTextShadow(textView,textShadow);
+
                     }
 
                 }
