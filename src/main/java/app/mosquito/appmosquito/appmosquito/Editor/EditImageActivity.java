@@ -123,26 +123,43 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
              if (Intent.ACTION_EDIT.equals(intent.getAction()) ||
                     ACTION_NEXTGEN_EDIT.equals(intent.getAction())) {
-                try {
+
+                 try {
+
                     Uri uri = intent.getData();
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                     source.setImageBitmap(bitmap);
-                } catch (IOException e) {
+
+                 } catch (IOException e) {
+
                     e.printStackTrace();
-                }
-            } else {
+
+                 }
+
+             } else {
+
                 String intentType = intent.getType();
+
                 if (intentType != null && intentType.startsWith("image/")) {
+
                     Uri imageUri = intent.getData();
+
                     if (imageUri != null) {
+
                         source.setImageURI(imageUri);
+
                     }
+
                 }
-            }
+
+             }
+
         }
+
     }
 
     private void initViews() {
+
         ImageView imgUndo;
         ImageView imgRedo;
         ImageView imgCamera;
@@ -150,31 +167,23 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         ImageView imgSave;
         ImageView imgClose;
         ImageView imgShare;
-
         mPhotoEditorView = findViewById(R.id.photoEditorView);
         mTxtCurrentTool = findViewById(R.id.txtCurrentTool);
         mRvTools = findViewById(R.id.rvConstraintTools);
         mRvFilters = findViewById(R.id.rvFilterView);
         mRootView = findViewById(R.id.rootView);
-
         imgUndo = findViewById(R.id.imgUndo);
         imgUndo.setOnClickListener(this);
-
         imgRedo = findViewById(R.id.imgRedo);
         imgRedo.setOnClickListener(this);
-
         imgCamera = findViewById(R.id.imgCamera);
         imgCamera.setOnClickListener(this);
-
         imgGallery = findViewById(R.id.imgGallery);
         imgGallery.setOnClickListener(this);
-
         imgSave = findViewById(R.id.imgSave);
         imgSave.setOnClickListener(this);
-
         imgClose = findViewById(R.id.imgClose);
         imgClose.setOnClickListener(this);
-
         imgShare = findViewById(R.id.imgShare);
         imgShare.setOnClickListener(this);
 
@@ -182,202 +191,278 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
     @Override
     public void onEditTextChangeListener(final View rootView, String text, int colorCode) {
+
         TextEditorDialogFragment textEditorDialogFragment =
                 TextEditorDialogFragment.show(this, text, colorCode);
+
         textEditorDialogFragment.setOnTextEditorListener((inputText, newColorCode) -> {
+
             final TextStyleBuilder styleBuilder = new TextStyleBuilder();
             styleBuilder.withTextColor(newColorCode);
-
             mPhotoEditor.editText(rootView, inputText, styleBuilder);
             mTxtCurrentTool.setText(R.string.label_text);
+
         });
+
     }
 
     @Override
     public void onAddViewListener(ViewType viewType, int numberOfAddedViews) {
+
         Log.d(TAG, "onAddViewListener() called with: viewType = [" + viewType + "], numberOfAddedViews = [" + numberOfAddedViews + "]");
+
     }
 
     @Override
     public void onRemoveViewListener(ViewType viewType, int numberOfAddedViews) {
+
         Log.d(TAG, "onRemoveViewListener() called with: viewType = [" + viewType + "], numberOfAddedViews = [" + numberOfAddedViews + "]");
+
     }
 
     @Override
     public void onStartViewChangeListener(ViewType viewType) {
+
         Log.d(TAG, "onStartViewChangeListener() called with: viewType = [" + viewType + "]");
+
     }
 
     @Override
     public void onStopViewChangeListener(ViewType viewType) {
+
         Log.d(TAG, "onStopViewChangeListener() called with: viewType = [" + viewType + "]");
+
     }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
+
         switch (view.getId()) {
 
             case R.id.imgUndo:
+
                 mPhotoEditor.undo();
                 break;
 
             case R.id.imgRedo:
+
                 mPhotoEditor.redo();
                 break;
 
             case R.id.imgSave:
+
                 saveImage();
                 break;
 
             case R.id.imgClose:
+
                 onBackPressed();
                 break;
+
             case R.id.imgShare:
+
                 shareImage();
                 break;
 
             case R.id.imgCamera:
+
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
                 break;
 
             case R.id.imgGallery:
+
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_REQUEST);
                 break;
+
         }
+
     }
 
     private void shareImage() {
+
         if (mSaveImageUri == null) {
+
             showSnackbar(getString(R.string.msg_save_image_to_share));
             return;
+
         }
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("image/*");
         intent.putExtra(Intent.EXTRA_STREAM, buildFileProviderUri(mSaveImageUri));
         startActivity(Intent.createChooser(intent, getString(R.string.msg_share_image)));
+
     }
 
     private Uri buildFileProviderUri(@NonNull Uri uri) {
+
         return FileProvider.getUriForFile(this,
                 FILE_PROVIDER_AUTHORITY,
                 new File(uri.getPath()));
+
     }
 
 
     private void saveImage() {
+
         final String fileName = System.currentTimeMillis() + ".png";
         final boolean hasStoragePermission =
                 ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PERMISSION_GRANTED;
+
         if (hasStoragePermission || isSdkHigherThan28()) {
+
             showLoading("Saving...");
             mSaveFileHelper.createFile(fileName, (fileCreated, filePath, error, uri) -> {
+
                 if (fileCreated) {
+
                     SaveSettings saveSettings = new SaveSettings.Builder()
                             .setClearViewsEnabled(true)
                             .setTransparencyEnabled(true)
                             .build();
 
                     mPhotoEditor.saveAsFile(filePath, saveSettings, new PhotoEditor.OnSaveListener() {
+
                         @Override
                         public void onSuccess(@NonNull String imagePath) {
+
                             mSaveFileHelper.notifyThatFileIsNowPubliclyAvailable(getContentResolver());
                             hideLoading();
                             showSnackbar("Image Saved Successfully");
                             mSaveImageUri = uri;
                             mPhotoEditorView.getSource().setImageURI(mSaveImageUri);
+
                         }
+
 
                         @Override
                         public void onFailure(@NonNull Exception exception) {
+
                             hideLoading();
                             showSnackbar("Failed to save Image");
+
                         }
+
                     });
 
+
                 } else {
+
                     hideLoading();
                     showSnackbar(error);
+
                 }
+
             });
+
         } else {
+
             requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
         }
+
     }
 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         super.onActivityResult(requestCode, resultCode, data);
+
         if (resultCode == RESULT_OK) {
+
             switch (requestCode) {
+
                 case CAMERA_REQUEST:
+
                     mPhotoEditor.clearAllViews();
                     Bitmap photo = (Bitmap) data.getExtras().get("data");
                     mPhotoEditorView.getSource().setImageBitmap(photo);
                     break;
+
                 case PICK_REQUEST:
+
                     try {
                         mPhotoEditor.clearAllViews();
                         Uri uri = data.getData();
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                         mPhotoEditorView.getSource().setImageBitmap(bitmap);
+
                     } catch (IOException e) {
+
                         e.printStackTrace();
                     }
+
                     break;
             }
+
         }
+
     }
 
+
     @Override
+
     public void onColorChanged(int colorCode) {
+
         mPhotoEditor.setShape(mShapeBuilder.withShapeColor(colorCode));
         mTxtCurrentTool.setText(R.string.label_brush);
+
     }
 
     @Override
     public void onOpacityChanged(int opacity) {
+
         mPhotoEditor.setShape(mShapeBuilder.withShapeOpacity(opacity));
         mTxtCurrentTool.setText(R.string.label_brush);
+
     }
 
     @Override
     public void onShapeSizeChanged(int shapeSize) {
+
         mPhotoEditor.setShape(mShapeBuilder.withShapeSize(shapeSize));
         mTxtCurrentTool.setText(R.string.label_brush);
+
     }
 
     @Override
     public void onShapePicked(ShapeType shapeType) {
+
         mPhotoEditor.setShape(mShapeBuilder.withShapeType(shapeType));
+
     }
 
     @Override
     public void onEmojiClick(String emojiUnicode) {
+
         mPhotoEditor.addEmoji(emojiUnicode);
         mTxtCurrentTool.setText(R.string.label_emoji);
+
     }
 
     @Override
     public void onStickerClick(Bitmap bitmap) {
+
         mPhotoEditor.addImage(bitmap);
         mTxtCurrentTool.setText(R.string.label_sticker);
+
     }
 
     @Override
     public void isPermissionGranted(boolean isGranted, String permission) {
-        if (isGranted) {
-            saveImage();
-        }
+
+        if (isGranted) { saveImage(); }
+
     }
 
     private void showSaveDialog() {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(getString(R.string.msg_save_image));
         builder.setPositiveButton("Save", (dialog, which) -> saveImage());
