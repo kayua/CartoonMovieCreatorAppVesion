@@ -23,9 +23,7 @@ import app.mosquito.appmosquito.appmosquito.R;
 
 public class StickerBSFragment extends BottomSheetDialogFragment {
 
-    public StickerBSFragment() {
-        // Required empty public constructor
-    }
+    public StickerBSFragment() { }
 
     private StickerListener mStickerListener;
 
@@ -41,21 +39,25 @@ public class StickerBSFragment extends BottomSheetDialogFragment {
 
         @Override
         public void onStateChanged(@NonNull View bottomSheet, int newState) {
+
             if (newState == BottomSheetBehavior.STATE_HIDDEN) {
+
                 dismiss();
+
             }
 
         }
 
         @Override
-        public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-        }
+        public void onSlide(@NonNull View bottomSheet, float slideOffset) { }
+
     };
 
 
     @SuppressLint("RestrictedApi")
     @Override
     public void setupDialog(Dialog dialog, int style) {
+
         super.setupDialog(dialog, style);
         View contentView = View.inflate(getContext(), R.layout.fragment_bottom_sticker_emoji_dialog, null);
         dialog.setContentView(contentView);
@@ -63,15 +65,18 @@ public class StickerBSFragment extends BottomSheetDialogFragment {
         CoordinatorLayout.Behavior behavior = params.getBehavior();
 
         if (behavior != null && behavior instanceof BottomSheetBehavior) {
+
             ((BottomSheetBehavior) behavior).setBottomSheetCallback(mBottomSheetBehaviorCallback);
+
         }
+
         ((View) contentView.getParent()).setBackgroundColor(getResources().getColor(android.R.color.transparent));
         RecyclerView rvEmoji = contentView.findViewById(R.id.rvEmoji);
-
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 3);
         rvEmoji.setLayoutManager(gridLayoutManager);
         StickerAdapter stickerAdapter = new StickerAdapter();
         rvEmoji.setAdapter(stickerAdapter);
+
     }
 
     @Override
@@ -88,52 +93,68 @@ public class StickerBSFragment extends BottomSheetDialogFragment {
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_sticker, parent, false);
             return new ViewHolder(view);
+
         }
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
+
             holder.imgSticker.setImageResource(stickerList[position]);
+
         }
 
         @Override
-        public int getItemCount() {
-            return stickerList.length;
-        }
+        public int getItemCount() { return stickerList.length; }
 
         class ViewHolder extends RecyclerView.ViewHolder {
+
             ImageView imgSticker;
 
             ViewHolder(View itemView) {
+
                 super(itemView);
                 imgSticker = itemView.findViewById(R.id.imgSticker);
 
                 itemView.setOnClickListener(new View.OnClickListener() {
+
                     @Override
                     public void onClick(View v) {
+
                         if (mStickerListener != null) {
                             mStickerListener.onStickerClick(
                                     BitmapFactory.decodeResource(getResources(),
                                             stickerList[getLayoutPosition()]));
                         }
+
                         dismiss();
+
                     }
+
                 });
+
             }
+
         }
+
     }
 
     private String convertEmoji(String emoji) {
+
         String returnedEmoji = "";
+
         try {
+
             int convertEmojiToInt = Integer.parseInt(emoji.substring(2), 16);
             returnedEmoji = getEmojiByUnicode(convertEmojiToInt);
+
         } catch (NumberFormatException e) {
+
             returnedEmoji = "";
         }
+
         return returnedEmoji;
+
     }
 
-    private String getEmojiByUnicode(int unicode) {
-        return new String(Character.toChars(unicode));
-    }
+    private String getEmojiByUnicode(int unicode) { return new String(Character.toChars(unicode)); }
 }
