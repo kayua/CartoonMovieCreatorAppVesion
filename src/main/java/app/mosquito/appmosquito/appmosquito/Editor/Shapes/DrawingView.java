@@ -53,6 +53,7 @@ public class DrawingView extends View {
 
 
     private Paint createPaint() {
+
         Paint paint = new Paint();
         paint.setAntiAlias(true);
         paint.setDither(true);
@@ -64,6 +65,7 @@ public class DrawingView extends View {
         paint.setAlpha(currentShapeBuilder.getShapeOpacity());
         paint.setColor(currentShapeBuilder.getShapeColor());
         return paint;
+
     }
 
     private Paint createEraserPaint() {
@@ -71,6 +73,7 @@ public class DrawingView extends View {
         Paint paint = createPaint();
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         return paint;
+
     }
 
     private void setupBrushDrawing() {
@@ -88,157 +91,212 @@ public class DrawingView extends View {
     }
 
     void setBrushViewChangeListener(BrushViewChangeListener brushViewChangeListener) {
+
         viewChangeListener = brushViewChangeListener;
+
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+
         for (ShapeAndPaint shape : drawShapes) {
+
             shape.getShape().draw(canvas, shape.getPaint());
+
         }
+
     }
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(@NonNull MotionEvent event) {
+
         if (isEnabled) {
+
             float touchX = event.getX();
             float touchY = event.getY();
+
             switch (event.getAction()) {
+
                 case MotionEvent.ACTION_DOWN:
                     onTouchEventDown(touchX, touchY);
                     break;
+
                 case MotionEvent.ACTION_MOVE:
                     onTouchEventMove(touchX, touchY);
                     break;
+
                 case MotionEvent.ACTION_UP:
                     onTouchEventUp(touchX, touchY);
                     break;
+
             }
+
             invalidate();
             return true;
+
         } else {
+
             return false;
+
         }
+
     }
 
     private void onTouchEventDown(float touchX, float touchY) {
+
         createShape();
+
         if (currentShape != null && currentShape.getShape() != null) {
             currentShape.getShape().startShape(touchX, touchY);
+
         }
+
     }
 
     private void onTouchEventMove(float touchX, float touchY) {
+
         if (currentShape != null && currentShape.getShape() != null) {
             currentShape.getShape().moveShape(touchX, touchY);
+
         }
+
     }
 
     private void onTouchEventUp(float touchX, float touchY) {
+
         if (currentShape != null && currentShape.getShape() != null) {
             currentShape.getShape().stopShape();
             endShape(touchX, touchY);
+
         }
+
     }
 
 
     private void createShape() {
+
         final AbstractShape shape;
         Paint paint = createPaint();
+
         if (isErasing) {
+
             shape = new BrushShape();
             paint = createEraserPaint();
+
         } else if (currentShapeBuilder.getShapeType() == ShapeType.OVAL) {
+
             shape = new OvalShape();
+
         } else if (currentShapeBuilder.getShapeType() == ShapeType.RECTANGLE) {
+
             shape = new RectangleShape();
+
         } else if (currentShapeBuilder.getShapeType() == ShapeType.LINE) {
+
             shape = new LineShape();
+
         } else {
+
             shape = new BrushShape();
         }
+
         currentShape = new ShapeAndPaint(shape, paint);
         drawShapes.push(currentShape);
 
         if (viewChangeListener != null) {
+
             viewChangeListener.onStartDrawing();
+
         }
+
     }
 
     private void endShape(float touchX, float touchY) {
+
         if (currentShape.getShape().hasBeenTapped()) {
+
             drawShapes.remove(currentShape);
+
         }
 
         if (viewChangeListener != null) {
+
             viewChangeListener.onStopDrawing();
             viewChangeListener.onViewAdd(this);
         }
     }
 
     boolean undo() {
+
         if (!drawShapes.empty()) {
+
             redoShapes.push(drawShapes.pop());
             invalidate();
+
         }
+
         if (viewChangeListener != null) {
+
             viewChangeListener.onViewRemoved(this);
+
         }
+
         return !drawShapes.empty();
+
     }
 
     boolean redo() {
+
         if (!redoShapes.empty()) {
+
             drawShapes.push(redoShapes.pop());
             invalidate();
+
         }
 
         if (viewChangeListener != null) {
+
             viewChangeListener.onViewAdd(this);
+
         }
+
         return !redoShapes.empty();
+
     }
 
 
     void brushEraser() {
+
         isEnabled = true;
         isErasing = true;
     }
 
-    void setBrushEraserSize(float brushEraserSize) {
-        mBrushEraserSize = brushEraserSize;
-    }
+    void setBrushEraserSize(float brushEraserSize) { mBrushEraserSize = brushEraserSize; }
 
-    float getEraserSize() {
-        return mBrushEraserSize;
-    }
+    float getEraserSize() { return mBrushEraserSize; }
 
-    public void setShapeBuilder(ShapeBuilder shapeBuilder) {
-        currentShapeBuilder = shapeBuilder;
-    }
+    public void setShapeBuilder(ShapeBuilder shapeBuilder) { currentShapeBuilder = shapeBuilder; }
 
     void enableDrawing(boolean brushDrawMode) {
+
         isEnabled = brushDrawMode;
         isErasing = !brushDrawMode;
+
         if (brushDrawMode) {
+
             setVisibility(View.VISIBLE);
         }
+
     }
 
-    boolean isDrawingEnabled() {
-        return isEnabled;
-    }
-
-    @VisibleForTesting
-    ShapeAndPaint getCurrentShape() {
-        return currentShape;
-    }
+    boolean isDrawingEnabled() { return isEnabled; }
 
     @VisibleForTesting
-    ShapeBuilder getCurrentShapeBuilder() {
-        return currentShapeBuilder;
-    }
+    ShapeAndPaint getCurrentShape() { return currentShape; }
+
+    @VisibleForTesting
+    ShapeBuilder getCurrentShapeBuilder() { return currentShapeBuilder; }
 
     @VisibleForTesting
     Pair<Stack<ShapeAndPaint>, Stack<ShapeAndPaint>> getDrawingPath() {
