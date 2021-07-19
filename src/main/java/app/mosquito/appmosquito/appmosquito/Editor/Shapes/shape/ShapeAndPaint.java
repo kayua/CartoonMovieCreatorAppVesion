@@ -4,6 +4,7 @@ import android.graphics.Paint;
 
 
 public class ShapeAndPaint {
+
     private final AbstractShape shape;
     private final Paint paint;
 

@@ -4,9 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.opengl.GLException;
 import android.opengl.GLSurfaceView;
-
 import java.nio.IntBuffer;
-
 import javax.microedition.khronos.opengles.GL10;
 
 

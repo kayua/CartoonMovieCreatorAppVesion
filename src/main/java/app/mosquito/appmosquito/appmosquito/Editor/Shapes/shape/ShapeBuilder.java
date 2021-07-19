@@ -21,7 +21,7 @@ public class ShapeBuilder {
 
 
     public ShapeBuilder() {
-        // default values
+
         withShapeType(ShapeType.BRUSH);
         withShapeSize(DEFAULT_SHAPE_SIZE);
         withShapeOpacity(DEFAULT_SHAPE_OPACITY);
