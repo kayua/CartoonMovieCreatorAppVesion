@@ -83,27 +83,34 @@ class PhotoEditorImpl implements PhotoEditor {
         Sticker sticker = new Sticker(parentView, multiTouchListener, viewState, mGraphicManager);
         sticker.buildView(desiredImage);
         addToEditor(sticker);
+
     }
 
     @Override
     public void addText(String text, final int colorCodeTextView) {
+
         addText(null, text, colorCodeTextView);
+
     }
 
     @Override
     public void addText(@Nullable Typeface textTypeface, String text, final int colorCodeTextView) {
+
         final TextStyleBuilder styleBuilder = new TextStyleBuilder();
 
         styleBuilder.withTextColor(colorCodeTextView);
+
         if (textTypeface != null) {
             styleBuilder.withTextFont(textTypeface);
         }
 
         addText(text, styleBuilder);
+
     }
 
     @Override
     public void addText(String text, @Nullable TextStyleBuilder styleBuilder) {
+
         drawingView.enableDrawing(false);
         MultiTouchListener multiTouchListener = getMultiTouchListener(isTextPinchScalable);
         Text textGraphic = new Text(parentView, multiTouchListener, viewState, mDefaultTextTypeface, mGraphicManager);
@@ -113,15 +120,21 @@ class PhotoEditorImpl implements PhotoEditor {
 
     @Override
     public void editText(@NonNull View view, String inputText, int colorCode) {
+
         editText(view, null, inputText, colorCode);
+
     }
 
     @Override
     public void editText(@NonNull View view, @Nullable Typeface textTypeface, String inputText, int colorCode) {
+
         final TextStyleBuilder styleBuilder = new TextStyleBuilder();
         styleBuilder.withTextColor(colorCode);
+
         if (textTypeface != null) {
+
             styleBuilder.withTextFont(textTypeface);
+
         }
 
         editText(view, inputText, styleBuilder);
@@ -129,104 +142,138 @@ class PhotoEditorImpl implements PhotoEditor {
 
     @Override
     public void editText(@NonNull View view, String inputText, @Nullable TextStyleBuilder styleBuilder) {
+
         TextView inputTextView = view.findViewById(R.id.tvPhotoEditorText);
+
         if (inputTextView != null && viewState.containsAddedView(view) && !TextUtils.isEmpty(inputText)) {
+
             inputTextView.setText(inputText);
+
             if (styleBuilder != null)
+
                 styleBuilder.applyStyle(inputTextView);
+
             mGraphicManager.updateView(view);
+
         }
+
     }
 
     @Override
-    public void addEmoji(String emojiName) {
-        addEmoji(null, emojiName);
-    }
+    public void addEmoji(String emojiName) { addEmoji(null, emojiName); }
 
 
     @Override
     public void addEmoji(Typeface emojiTypeface, String emojiName) {
+
         drawingView.enableDrawing(false);
         MultiTouchListener multiTouchListener = getMultiTouchListener(true);
         Emoji emoji = new Emoji(parentView, multiTouchListener, viewState, mGraphicManager, mDefaultEmojiTypeface);
         emoji.buildView(emojiTypeface, emojiName);
         addToEditor(emoji);
+
     }
 
     private void addToEditor(Graphic graphic) {
+
         clearHelperBox();
         mGraphicManager.addView(graphic);
-        // Change the in-focus view
         viewState.setCurrentSelectedView(graphic.getRootView());
+
     }
 
     @NonNull
     private MultiTouchListener getMultiTouchListener(final boolean isPinchScalable) {
+
         return new MultiTouchListener(
-                deleteView,
-                parentView,
-                this.imageView,
-                isPinchScalable,
-                mOnPhotoEditorListener,
-                this.viewState);
+
+                deleteView, parentView, this.imageView, isPinchScalable,
+                mOnPhotoEditorListener, this.viewState);
     }
 
     @Override
     public void setBrushDrawingMode(boolean brushDrawingMode) {
+
         if (drawingView != null) {
+
             drawingView.enableDrawing(brushDrawingMode);
+
         }
+
     }
 
     @Override
     public Boolean getBrushDrawableMode() {
+
         return drawingView != null && drawingView.isDrawingEnabled();
+
     }
 
 
     @Override
     public void setBrushSize(float size) {
+
         if (drawingView != null && drawingView.getCurrentShapeBuilder() != null) {
+
             drawingView.getCurrentShapeBuilder().withShapeSize(size);
+
         }
+
     }
 
     @Override
     public void setOpacity(@IntRange(from = 0, to = 100) int opacity) {
+
         if (drawingView != null && drawingView.getCurrentShapeBuilder() != null) {
+
             opacity = (int) ((opacity / 100.0) * 255.0);
             drawingView.getCurrentShapeBuilder().withShapeOpacity(opacity);
+
         }
+
     }
 
     @Override
     public void setBrushColor(@ColorInt int color) {
+
         if (drawingView != null && drawingView.getCurrentShapeBuilder() != null) {
+
             drawingView.getCurrentShapeBuilder().withShapeColor(color);
+
         }
+
     }
 
     @Override
     public float getBrushSize() {
+
         if (drawingView != null && drawingView.getCurrentShapeBuilder() != null) {
+
             return drawingView.getCurrentShapeBuilder().getShapeSize();
+
         }
+
         return 0;
+
     }
 
     @Override
     public int getBrushColor() {
+
         if (drawingView != null && drawingView.getCurrentShapeBuilder() != null) {
+
             return drawingView.getCurrentShapeBuilder().getShapeColor();
+
         }
+
         return 0;
+
     }
 
     @Override
     public void setBrushEraserSize(float brushEraserSize) {
-        if (drawingView != null) {
-            drawingView.setBrushEraserSize(brushEraserSize);
-        }
+
+        if (drawingView != null) { drawingView.setBrushEraserSize(brushEraserSize); }
     }
 
     @Override
