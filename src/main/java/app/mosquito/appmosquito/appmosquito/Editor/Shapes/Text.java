@@ -48,33 +48,39 @@ class Text extends Graphic {
 
     }
 
+    @Override
+    ViewType getViewType() { return ViewType.TEXT; }
 
     @Override
-    ViewType getViewType() {
-        return ViewType.TEXT;
-    }
-
-    @Override
-    int getLayoutId() {
-        return R.layout.view_photo_editor_text;
-    }
+    int getLayoutId() { return R.layout.view_photo_editor_text; }
 
     @Override
     void setupView(View rootView) {
+
         mTextView = rootView.findViewById(R.id.tvPhotoEditorText);
+
         if (mTextView != null && mDefaultTextTypeface != null) {
+
             mTextView.setGravity(Gravity.CENTER);
             mTextView.setTypeface(mDefaultTextTypeface);
+
         }
+
     }
 
     @Override
     void updateView(View view) {
+
         String textInput = mTextView.getText().toString();
         int currentTextColor = mTextView.getCurrentTextColor();
         OnPhotoEditorListener photoEditorListener = mGraphicManager.getOnPhotoEditorListener();
+
         if (photoEditorListener != null) {
+
             photoEditorListener.onEditTextChangeListener(view, textInput, currentTextColor);
+
         }
+
     }
+
 }
