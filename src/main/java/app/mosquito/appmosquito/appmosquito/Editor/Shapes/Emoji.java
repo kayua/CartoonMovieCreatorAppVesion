@@ -32,39 +32,48 @@ class Emoji extends Graphic {
     }
 
     void buildView(Typeface emojiTypeface, String emojiName) {
+
         if (emojiTypeface != null) {
             txtEmoji.setTypeface(emojiTypeface);
         }
+
         txtEmoji.setTextSize(56);
         txtEmoji.setText(emojiName);
     }
 
     private void setupGesture() {
+
        MultiTouchListener.OnGestureControl onGestureControl = buildGestureController(mPhotoEditorView, mViewState);
         mMultiTouchListener.setOnGestureControl(onGestureControl);
         View rootView = getRootView();
         rootView.setOnTouchListener(mMultiTouchListener);
+
     }
 
     @Override
-        ViewType getViewType() {
-        return ViewType.EMOJI;
-    }
+        ViewType getViewType() { return ViewType.EMOJI; }
 
     @Override
-    int getLayoutId() {
-        return R.layout.view_photo_editor_text;
-    }
+    int getLayoutId() { return R.layout.view_photo_editor_text; }
 
     @Override
     void setupView(View rootView) {
+
         txtEmoji = rootView.findViewById(R.id.tvPhotoEditorText);
+
         if (txtEmoji != null) {
+
             if (mDefaultEmojiTypeface != null) {
+
                 txtEmoji.setTypeface(mDefaultEmojiTypeface);
+
             }
+
             txtEmoji.setGravity(Gravity.CENTER);
             txtEmoji.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+
         }
+
     }
+
 }
