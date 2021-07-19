@@ -59,7 +59,6 @@ public interface PhotoEditor {
 
     float getEraserSize();
 
-
     float getBrushSize();
 
     int getBrushColor();
@@ -76,7 +75,6 @@ public interface PhotoEditor {
     void clearHelperBox();
 
     void setFilterEffect(CustomEffect customEffect);
-
 
     void setFilterEffect(PhotoFilter filterType);
 

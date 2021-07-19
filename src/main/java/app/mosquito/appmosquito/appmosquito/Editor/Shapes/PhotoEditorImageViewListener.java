@@ -3,8 +3,6 @@ package app.mosquito.appmosquito.appmosquito.Editor.Shapes;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
-// A listener for the image view that helps with the focus view logic.
-// i.e when you press on an empty space without stickers, it will de-select the focused sticker.
 class PhotoEditorImageViewListener extends GestureDetector.SimpleOnGestureListener {
 
     interface OnSingleTapUpCallback {
@@ -24,8 +22,6 @@ class PhotoEditorImageViewListener extends GestureDetector.SimpleOnGestureListen
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
         onSingleTapUpCallback.onSingleTapUp();
-        // Returning false when there is no in focus view will pass the
-        // touch event to the zoom layout logic.
         return !(viewState.getCurrentSelectedView() == null);
     }
 

@@ -12,13 +12,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.ColorInt;
 import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresPermission;
-
 import app.mosquito.appmosquito.appmosquito.Editor.Shapes.shape.ShapeBuilder;
 import app.mosquito.appmosquito.appmosquito.R;
 
@@ -41,6 +39,7 @@ class PhotoEditorImpl implements PhotoEditor {
 
     @SuppressLint("ClickableViewAccessibility")
     protected PhotoEditorImpl(Builder builder) {
+
         this.context = builder.context;
         this.parentView = builder.parentView;
         this.imageView = builder.imageView;
@@ -49,11 +48,9 @@ class PhotoEditorImpl implements PhotoEditor {
         this.isTextPinchScalable = builder.isTextPinchScalable;
         this.mDefaultTextTypeface = builder.textTypeface;
         this.mDefaultEmojiTypeface = builder.emojiTypeface;
-
         this.viewState = new PhotoEditorViewState();
         this.mGraphicManager = new GraphicManager(builder.parentView, this.viewState);
         this.mBoxHelper = new BoxHelper(builder.parentView, this.viewState);
-
         mBrushDrawingStateListener = new BrushDrawingStateListener(builder.parentView, this.viewState);
         this.drawingView.setBrushViewChangeListener(mBrushDrawingStateListener);
 
