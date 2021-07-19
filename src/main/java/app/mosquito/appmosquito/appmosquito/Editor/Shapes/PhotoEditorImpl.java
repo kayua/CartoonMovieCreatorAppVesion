@@ -282,10 +282,7 @@ class PhotoEditorImpl implements PhotoEditor {
     }
 
     @Override
-    public void brushEraser() {
-        if (drawingView != null)
-            drawingView.brushEraser();
-    }
+    public void brushEraser() { if (drawingView != null) drawingView.brushEraser(); }
 
     @Override
     public boolean undo() {
