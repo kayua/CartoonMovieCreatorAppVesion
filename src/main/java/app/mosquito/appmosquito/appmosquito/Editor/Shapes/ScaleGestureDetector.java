@@ -6,12 +6,12 @@ import android.view.MotionEvent;
 import android.view.View;
 
 class ScaleGestureDetector {
+
     private static final String TAG = "ScaleGestureDetector";
 
     interface OnScaleGestureListener {
 
         boolean onScale(View view, ScaleGestureDetector detector);
-
 
         boolean onScaleBegin(View view, ScaleGestureDetector detector);
 
@@ -55,9 +55,7 @@ class ScaleGestureDetector {
     private float mCurrPressure;
     private float mPrevPressure;
     private long mTimeDelta;
-
     private boolean mInvalidGesture;
-
     private int mActiveId0;
     private int mActiveId1;
     private boolean mActive0MostRecent;
@@ -68,11 +66,10 @@ class ScaleGestureDetector {
     }
 
     boolean onTouchEvent(View view, MotionEvent event) {
+
         final int action = event.getActionMasked();
 
-        if (action == MotionEvent.ACTION_DOWN) {
-            reset(); // Start fresh
-        }
+        if (action == MotionEvent.ACTION_DOWN) { reset(); }
 
         boolean handled = true;
         if (mInvalidGesture) {
