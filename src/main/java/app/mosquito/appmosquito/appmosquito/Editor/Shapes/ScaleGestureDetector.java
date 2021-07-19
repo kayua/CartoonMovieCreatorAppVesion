@@ -370,45 +370,42 @@ class ScaleGestureDetector {
     Vector2D getCurrentSpanVector() { return mCurrSpanVector; }
 
 
-    public float getCurrentSpanX() {
-        return mCurrFingerDiffX;
-    }
+    public float getCurrentSpanX() { return mCurrFingerDiffX; }
 
-    public float getCurrentSpanY() {
-        return mCurrFingerDiffY;
-    }
-
+    public float getCurrentSpanY() { return mCurrFingerDiffY; }
 
     private float getPreviousSpan() {
+
         if (mPrevLen == -1) {
+
             final float pvx = mPrevFingerDiffX;
             final float pvy = mPrevFingerDiffY;
             mPrevLen = (float) Math.sqrt(pvx * pvx + pvy * pvy);
+
         }
+
         return mPrevLen;
+
     }
 
-    public float getPreviousSpanX() {
-        return mPrevFingerDiffX;
-    }
+    public float getPreviousSpanX() { return mPrevFingerDiffX; }
 
-    public float getPreviousSpanY() {
-        return mPrevFingerDiffY;
-    }
+    public float getPreviousSpanY() { return mPrevFingerDiffY; }
 
     public float getScaleFactor() {
+
         if (mScaleFactor == -1) {
+
             mScaleFactor = getCurrentSpan() / getPreviousSpan();
+
         }
+
         return mScaleFactor;
+
     }
 
+    public long getTimeDelta() { return mTimeDelta; }
 
-    public long getTimeDelta() {
-        return mTimeDelta;
-    }
+    public long getEventTime() { return mCurrEvent.getEventTime(); }
 
-    public long getEventTime() {
-        return mCurrEvent.getEventTime();
-    }
 }
