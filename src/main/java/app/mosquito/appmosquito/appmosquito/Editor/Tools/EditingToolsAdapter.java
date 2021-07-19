@@ -20,6 +20,7 @@ public class EditingToolsAdapter extends RecyclerView.Adapter<EditingToolsAdapte
     private OnItemSelected mOnItemSelected;
 
     public EditingToolsAdapter(OnItemSelected onItemSelected) {
+
         mOnItemSelected = onItemSelected;
         mToolList.add(new ToolModel("Shape", R.drawable.ic_oval, ToolType.SHAPE));
         mToolList.add(new ToolModel("Text", R.drawable.ic_text, ToolType.TEXT));
@@ -29,19 +30,20 @@ public class EditingToolsAdapter extends RecyclerView.Adapter<EditingToolsAdapte
         mToolList.add(new ToolModel("Sticker", R.drawable.ic_sticker, ToolType.STICKER));
     }
 
-    public interface OnItemSelected {
-        void onToolSelected(ToolType toolType);
-    }
+    public interface OnItemSelected { void onToolSelected(ToolType toolType);}
 
     class ToolModel {
+
         private String mToolName;
         private int mToolIcon;
         private ToolType mToolType;
 
         ToolModel(String toolName, int toolIcon, ToolType toolType) {
+
             mToolName = toolName;
             mToolIcon = toolIcon;
             mToolType = toolType;
+
         }
 
     }
@@ -51,30 +53,37 @@ public class EditingToolsAdapter extends RecyclerView.Adapter<EditingToolsAdapte
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.row_editing_tools, parent, false);
+
         return new ViewHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         ToolModel item = mToolList.get(position);
         holder.txtTool.setText(item.mToolName);
         holder.imgToolIcon.setImageResource(item.mToolIcon);
+
     }
 
     @Override
-    public int getItemCount() {
-        return mToolList.size();
-    }
+    public int getItemCount() { return mToolList.size(); }
 
     class ViewHolder extends RecyclerView.ViewHolder {
+
         ImageView imgToolIcon;
         TextView txtTool;
 
         ViewHolder(View itemView) {
+
             super(itemView);
             imgToolIcon = itemView.findViewById(R.id.imgToolIcon);
             txtTool = itemView.findViewById(R.id.txtTool);
             itemView.setOnClickListener(v -> mOnItemSelected.onToolSelected(mToolList.get(getLayoutPosition()).mToolType));
+
         }
+
     }
+
 }

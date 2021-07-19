@@ -4,6 +4,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 
 class LinePath {
+
     private final Paint mDrawPaint;
     private final Path mDrawPath;
 

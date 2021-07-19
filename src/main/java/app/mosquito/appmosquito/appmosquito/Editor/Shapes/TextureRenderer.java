@@ -96,40 +96,48 @@ class TextureRenderer {
                 0, mPosVertices);
         GLES20.glEnableVertexAttribArray(mPosCoordHandle);
         GLToolbox.checkGlError("vertex attribute setup");
-
-        // Set the input texture
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
         GLToolbox.checkGlError("glActiveTexture");
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, texId);
         GLToolbox.checkGlError("glBindTexture");
         GLES20.glUniform1i(mTexSamplerHandle, 0);
-
-        // Draw
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
         GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP, 0, 4);
+
     }
 
     private void computeOutputVertices() {
+
         if (mPosVertices != null) {
+
             float imgAspectRatio = mTexWidth / (float) mTexHeight;
             float viewAspectRatio = mViewWidth / (float) mViewHeight;
             float relativeAspectRatio = viewAspectRatio / imgAspectRatio;
             float x0, y0, x1, y1;
+
             if (relativeAspectRatio > 1.0f) {
+
                 x0 = -1.0f / relativeAspectRatio;
                 y0 = -1.0f;
                 x1 = 1.0f / relativeAspectRatio;
                 y1 = 1.0f;
+
             } else {
+
                 x0 = -1.0f;
                 y0 = -relativeAspectRatio;
                 x1 = 1.0f;
                 y1 = relativeAspectRatio;
+
             }
+
             float[] coords = new float[]{x0, y0, x1, y0, x0, y1, x1, y1};
             mPosVertices.put(coords).position(0);
+
         }
+
     }
+
 
 }
