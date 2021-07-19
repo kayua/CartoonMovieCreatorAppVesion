@@ -75,6 +75,21 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/ic_remove" />
 
+    <LinearLayout
+        android:layout_width="298dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"></LinearLayout>
+
+    <ImageView
+        android:id="@+id/imasddgeda2"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+
+        android:layout_gravity="top|left"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/icon_pen" />
+
   </LinearLayout>
   <LinearLayout
       android:layout_width="408dp"
