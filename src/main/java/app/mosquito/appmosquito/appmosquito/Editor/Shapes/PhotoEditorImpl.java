@@ -306,7 +306,9 @@ class PhotoEditorImpl implements PhotoEditor {
 
     @Override
     public void setFilterEffect(CustomEffect customEffect) {
+
         parentView.setFilterEffect(customEffect);
+
     }
 
     @Override
@@ -325,10 +327,14 @@ class PhotoEditorImpl implements PhotoEditor {
     public void saveAsFile(@NonNull final String imagePath,
                            @NonNull final SaveSettings saveSettings,
                            @NonNull final OnSaveListener onSaveListener) {
+
         Log.d(TAG, "Image Path: " + imagePath);
+
         parentView.saveFilter(new OnSaveBitmap() {
+
             @Override
             public void onBitmapReady(Bitmap saveBitmap) {
+
                 PhotoSaverTask photoSaverTask = new PhotoSaverTask(parentView, mBoxHelper);
                 photoSaverTask.setOnSaveListener(onSaveListener);
                 photoSaverTask.setSaveSettings(saveSettings);
@@ -351,7 +357,9 @@ class PhotoEditorImpl implements PhotoEditor {
     @SuppressLint("StaticFieldLeak")
     public void saveAsBitmap(@NonNull final SaveSettings saveSettings,
                              @NonNull final OnSaveBitmap onSaveBitmap) {
+
         parentView.saveFilter(new OnSaveBitmap() {
+
             @Override
             public void onBitmapReady(Bitmap saveBitmap) {
                 PhotoSaverTask photoSaverTask = new PhotoSaverTask(parentView, mBoxHelper);
@@ -369,19 +377,21 @@ class PhotoEditorImpl implements PhotoEditor {
 
     @Override
     public void setOnPhotoEditorListener(@NonNull OnPhotoEditorListener onPhotoEditorListener) {
+
         this.mOnPhotoEditorListener = onPhotoEditorListener;
         mGraphicManager.setOnPhotoEditorListener(mOnPhotoEditorListener);
         mBrushDrawingStateListener.setOnPhotoEditorListener(mOnPhotoEditorListener);
+
     }
 
     @Override
     public boolean isCacheEmpty() {
+
         return viewState.getAddedViewsCount() == 0 && viewState.getRedoViewsCount() == 0;
+
     }
 
     @Override
-    public void setShape(ShapeBuilder shapeBuilder) {
-        drawingView.setShapeBuilder(shapeBuilder);
-    }
+    public void setShape(ShapeBuilder shapeBuilder) { drawingView.setShapeBuilder(shapeBuilder); }
 
 }
