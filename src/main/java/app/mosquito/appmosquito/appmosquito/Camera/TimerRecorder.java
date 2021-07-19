@@ -2,10 +2,10 @@
 package app.mosquito.appmosquito.appmosquito.Camera;
 
 public class TimerRecorder {
+
     public final static String CPU = "CPU";
     public final static String GPU = "GPU";
     public final static String NNAPI = "NNAPI";
-
     private static String predictType = CPU;
     private static String predictTime;
     private static String transformTime;

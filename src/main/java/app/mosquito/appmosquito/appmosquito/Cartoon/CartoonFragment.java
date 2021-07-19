@@ -49,39 +49,31 @@ public class CartoonFragment extends Fragment {
 
     private ImageView mContentImageView;
     private ImageView mStyleImageView;
-
     private Bitmap mContentImage;
     private Bitmap mStyleImage;
-
     private RadioGroup mRadioGroup;
     private Button mTransferButton;
-
     private final static int REQUEST_CONTENT_IMG = 1;
     private final static int REQUEST_STYLE_IMG = 2;
-
     private final static int STYLE_IMG_SIZE = 256;
     private final static int CONTENT_IMG_SIZE = 384;
     private final static int DIM_BATCH_SIZE = 1;
     private final static int DIM_PIXEL_SIZE = 3;
-
     private final static int USING_CPU = 1;
     private final static int USING_GPU = 2;
     private final static int USING_NNAPI = 3;
-
     private int mDelegationMode = USING_CPU;
-
     private final static String PREDICT_MODEL = "style_predict.tflite";
     private final static String TRANSFORM_MODE = "style_transform.tflite";
-
     private final static int IMAGE_MEAN = 0;
     private final static int IMAGE_STD = 255;
 
     @SuppressLint("MissingPermission")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View rootView = inflater.inflate(R.layout.activity_main_change, container, false);
         mContentImageView = rootView.findViewById(R.id.content_img);
-
         mContentImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,7 +149,9 @@ public class CartoonFragment extends Fragment {
                 }
             }
         });
+
         return rootView;
+
     }
 
 
@@ -199,10 +193,10 @@ public class CartoonFragment extends Fragment {
     }
 
     private TensorImage getInputTensorImage(Interpreter tflite, Bitmap inputBitmap) {
+
         DataType imageDataType = tflite.getInputTensor(/* imageTensorIndex */0).dataType();
         TensorImage inputTensorImage = new TensorImage(imageDataType);
         inputTensorImage.load(inputBitmap);
-
         ImageProcessor imageProcessor =
                 new ImageProcessor.Builder().add(new NormalizeOp(IMAGE_MEAN, IMAGE_STD)).build();
 
@@ -210,6 +204,7 @@ public class CartoonFragment extends Fragment {
     }
 
     private Bitmap convertOutputToBmp(float[] output) {
+
         Bitmap result = Bitmap.createBitmap(
                 CONTENT_IMG_SIZE, CONTENT_IMG_SIZE, Bitmap.Config.ARGB_8888);
         int[] pixels = new int[CONTENT_IMG_SIZE * CONTENT_IMG_SIZE];
