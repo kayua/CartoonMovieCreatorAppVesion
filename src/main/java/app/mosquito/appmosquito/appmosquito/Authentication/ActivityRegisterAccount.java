@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ public class ActivityRegisterAccount extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.auth_register);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount);
         EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthUser);
         EditText textBoxEmail = (EditText) findViewById(R.id.editTextAuthEmailRegisterApp);

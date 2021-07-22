@@ -3,6 +3,7 @@ package app.mosquito.appmosquito.appmosquito.Authentication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Switch;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,7 @@ public class ActivityRecoverPassword extends AppCompatActivity {
 
         setContentView(R.layout.auth_recovery);
         TextView goBack= (TextView) findViewById(R.id.textView18);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         goBack.setOnClickListener(new View.OnClickListener() {

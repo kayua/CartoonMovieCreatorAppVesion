@@ -3,6 +3,7 @@ package app.mosquito.appmosquito.appmosquito.Authentication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,7 @@ public class ActivityEmailChecking extends AppCompatActivity {
         setContentView(R.layout.auth_email);
         TextView textViewGoBackInit = findViewById(R.id.textViewEmailGoBackInit);
         Button buttonGoUserInterface = findViewById(R.id.buttonAuthAcessEmail);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         textViewGoBackInit.setOnClickListener(new View.OnClickListener() {
 

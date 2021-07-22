@@ -55,7 +55,9 @@ public class ActivitySplashScreen extends AppCompatActivity {
 
             }
         };
+
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
         try {
             usernameRegistered = settings.getString("email", "");
             passwordRegistered = settings.getString("password", "");

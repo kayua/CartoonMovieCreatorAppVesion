@@ -3,6 +3,7 @@ package app.mosquito.appmosquito.appmosquito.Authentication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ public class ActivityStart extends AppCompatActivity {
 
         setContentView(R.layout.auth_start);
         Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         buttonAcess.setOnClickListener( new View.OnClickListener() {
 
             @Override
