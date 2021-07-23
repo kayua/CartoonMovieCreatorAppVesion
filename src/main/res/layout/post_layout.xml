@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="379dp"
-            android:layout_height="571dp"
+            android:layout_height="565dp"
             android:layout_margin="8dp"
             android:background="@drawable/background_post"
             android:orientation="vertical">
@@ -294,6 +294,11 @@
 
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"/>
 
         </LinearLayout>
 
