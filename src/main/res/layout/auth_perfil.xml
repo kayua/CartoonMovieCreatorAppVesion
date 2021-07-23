@@ -11,19 +11,6 @@
     android:soundEffectsEnabled="true"
     tools:context=".Authentication.ActivityRegisterAccount">
 
-    <ImageView
-        android:id="@+id/iconAuthAcess3"
-        android:layout_width="match_parent"
-        android:layout_height="460dp"
-        android:background="@drawable/button_design_fill_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="ContentDescription,MissingConstraints" />
-
     <TextView
         android:id="@+id/textViewEmailGoBackInit2"
         android:layout_width="wrap_content"
@@ -104,27 +91,18 @@
         tools:ignore="MissingConstraints" />
 
 
-    <EditText
-        android:id="@+id/editTextAuthEmailRegisterApp"
-        android:layout_width="260dp"
-        android:layout_height="53dp"
-        android:backgroundTint="#BF03ADD8"
-        android:ems="10"
-        android:hint="@string/email_user"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:textColor="#03ADD8"
-        android:textColorHighlight="#636363"
-        android:textColorHint="#A4A6A6"
-        android:textSize="16sp"
+    <ImageView
+        android:id="@+id/iconAuthAcess3"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:background="@drawable/button_design_fill_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544"
-        tools:ignore="MissingConstraints" />
-
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextAuthUser"
@@ -145,7 +123,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.414"
+        app:layout_constraintVertical_bias="0.429"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -161,7 +139,7 @@
         app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.488"
+        app:layout_constraintVertical_bias="0.502"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -182,23 +160,23 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67"
+        app:layout_constraintVertical_bias="0.684"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/password"
+        android:text="Empresa/Cargo"
         android:textColor="#03ADD8"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61"
+        app:layout_constraintVertical_bias="0.624"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -214,7 +192,28 @@
         app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364"
+        app:layout_constraintVertical_bias="0.378"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextAuthEmailRegisterApp"
+        android:layout_width="260dp"
+        android:layout_height="53dp"
+        android:backgroundTint="#BF03ADD8"
+        android:ems="10"
+        android:hint="@string/email_user"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:textColor="#03ADD8"
+        android:textColorHighlight="#636363"
+        android:textColorHint="#A4A6A6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -240,7 +239,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.865"
-        app:srcCompat="@drawable/button_design_fill"
+        android:background="@drawable/button_design_fill"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -253,7 +252,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.864"
-        app:srcCompat="@drawable/button_design_fill"
+        android:background="@drawable/button_design_fill"
         tools:ignore="MissingConstraints" />
 
 
