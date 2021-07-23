@@ -122,7 +122,7 @@
         android:id="@+id/textViewAuthAcessBar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_mosquito"
+        android:text="App We"
         android:textColor="#FF03ADD8"
         android:textSize="12sp"
         android:textStyle="bold"

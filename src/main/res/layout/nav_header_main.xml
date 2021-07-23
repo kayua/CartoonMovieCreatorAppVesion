@@ -148,7 +148,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
-            android:background="@drawable/plus" />
+            android:background="@drawable/dots" />
 
         <LinearLayout
             android:layout_width="8dp"
