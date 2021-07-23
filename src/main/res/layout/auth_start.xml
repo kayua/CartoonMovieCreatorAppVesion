@@ -20,21 +20,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Shared Your Movies"
-        android:textColor="#0396BC"
+        android:textColor="#029BC3"
         android:textIsSelectable="false"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.321" />
+        app:layout_constraintVertical_bias="0.302" />
 
     <ImageView
         android:id="@+id/imageViewAuthLogo"
-        android:layout_width="150dp"
-        android:layout_height="148dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:alpha="1.0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

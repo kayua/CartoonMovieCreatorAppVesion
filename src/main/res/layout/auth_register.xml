@@ -11,6 +11,18 @@
     android:soundEffectsEnabled="true"
     tools:context=".Authentication.ActivityRegisterAccount">
 
+    <ImageView
+        android:id="@+id/iconAuthAcess3"
+        android:layout_width="match_parent"
+        android:layout_height="490dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/button_design_fill_white"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <Button
         android:id="@+id/buttonAuthFacebook"
@@ -35,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/terms"
-        android:textColor="#F9FBFB"
+        android:textColor="#03ADD8"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/acess_with"
-        android:textColor="#F9FBFB"
+        android:textColor="#03ADD8"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email"
-        android:textColor="#F9FBFB"
+        android:textColor="#03ADD8"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -155,7 +167,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password"
-        android:textColor="#F9FBFB"
+        android:textColor="#03ADD8"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -171,7 +183,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/user"
-        android:textColor="#F9FBFB"
+        android:textColor="#03ADD8"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -231,6 +243,7 @@
         app:layout_constraintVertical_bias="0.077"
         app:srcCompat="@drawable/icon_cartoon"
         tools:ignore="ContentDescription,MissingConstraints" />
+
 
     <Button
         android:id="@+id/buttonAuthGoogle"
