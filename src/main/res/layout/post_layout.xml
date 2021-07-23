@@ -191,6 +191,12 @@
                         android:layout_width="39dp"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/cameras" />
+                    <LinearLayout
+                        android:layout_width="4dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="65dp"
@@ -205,19 +211,28 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="10dp"
+                                android:layout_height="11dp"
                                 android:orientation="vertical"></LinearLayout>
 
                             <TextView
                                 android:id="@+id/textView8"
                                 android:layout_width="65dp"
                                 android:layout_height="wrap_content"
-                                android:text="TextView" />
+                                android:text="10 mil" />
                         </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="12dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
                     </LinearLayout>
 
                 </LinearLayout>
-
+                <LinearLayout
+                    android:layout_width="12dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"/>
                 <LinearLayout
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
@@ -228,6 +243,12 @@
                         android:layout_width="39dp"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/cameras" />
+                    <LinearLayout
+                        android:layout_width="4dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="65dp"
@@ -242,19 +263,28 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="10dp"
+                                android:layout_height="11dp"
                                 android:orientation="vertical"></LinearLayout>
 
                             <TextView
                                 android:id="@+id/textView8"
                                 android:layout_width="65dp"
                                 android:layout_height="wrap_content"
-                                android:text="TextView" />
+                                android:text="320 " />
                         </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="12dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
                     </LinearLayout>
 
                 </LinearLayout>
-
+                <LinearLayout
+                    android:layout_width="12dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"/>
                 <LinearLayout
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
@@ -265,6 +295,12 @@
                         android:layout_width="39dp"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/cameras" />
+                    <LinearLayout
+                        android:layout_width="4dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="65dp"
@@ -279,20 +315,24 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="10dp"
+                                android:layout_height="11dp"
                                 android:orientation="vertical"></LinearLayout>
 
                             <TextView
                                 android:id="@+id/textView8"
                                 android:layout_width="65dp"
                                 android:layout_height="wrap_content"
-                                android:text="TextView" />
+                                android:text="100º" />
                         </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="12dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
                     </LinearLayout>
 
                 </LinearLayout>
-
-
             </LinearLayout>
 
             <LinearLayout
