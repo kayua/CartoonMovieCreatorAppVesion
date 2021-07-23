@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="379dp"
-            android:layout_height="414dp"
+            android:layout_height="521dp"
             android:layout_margin="8dp"
             android:background="@drawable/background_post"
             android:orientation="vertical">
@@ -108,7 +108,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical" />
 
 
             </LinearLayout>
@@ -158,9 +158,10 @@
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="match_parent"
+                android:layout_width="361dp"
                 android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                android:layout_margin="10dp"
+                android:background="@drawable/original" />
 
         </LinearLayout>
 
