@@ -168,7 +168,7 @@
 
     <LinearLayout
         android:layout_width="270dp"
-        android:layout_height="197dp"
+        android:layout_height="207dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -180,13 +180,13 @@
 
         <LinearLayout
             android:layout_width="264dp"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
             android:background="@drawable/background_image_user"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="268dp"
-                android:layout_height="97dp"
+                android:layout_height="100dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -199,7 +199,7 @@
                 <ImageView
                     android:id="@+id/imageViewSidebarGallery1"
                     android:layout_width="126dp"
-                    android:layout_height="82dp"
+                    android:layout_height="96dp"
                     android:layout_marginTop="4dp"
 
                     android:background="@drawable/temp_image1" />
@@ -214,7 +214,7 @@
                 <ImageView
                     android:id="@+id/imageViewSidebarGallery2"
                     android:layout_width="126dp"
-                    android:layout_height="82dp"
+                    android:layout_height="96dp"
                     android:layout_marginTop="4dp"
 
                     android:background="@drawable/temp_image2" />
@@ -223,7 +223,7 @@
 
             <LinearLayout
                 android:layout_width="263dp"
-                android:layout_height="97dp"
+                android:layout_height="111dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -235,13 +235,13 @@
 
                 <ImageView
                     android:id="@+id/imageViewSidebarGallery3"
-                    android:layout_width="116dp"
-                    android:layout_height="82dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_width="126dp"
+                    android:layout_height="101dp"
+                    android:layout_marginTop="2dp"
                     android:background="@drawable/temp_image3" />
 
                 <LinearLayout
-                    android:layout_width="8dp"
+                    android:layout_width="4dp"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
@@ -249,25 +249,25 @@
 
                 <ImageView
                     android:id="@+id/imageViewSidebarGallery4"
-                    android:layout_width="116dp"
-                    android:layout_height="82dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_width="126dp"
+                    android:layout_height="101dp"
+                    android:layout_marginTop="2dp"
 
                     android:background="@drawable/temp_image4" />
 
             </LinearLayout>
 
+
+
         </LinearLayout>
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="263dp"
         android:layout_height="16dp"
         android:orientation="horizontal">
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="267dp"
         android:layout_height="97dp"
