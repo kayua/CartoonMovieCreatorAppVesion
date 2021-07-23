@@ -14,7 +14,7 @@
     <ImageView
         android:id="@+id/iconAuthAcess3"
         android:layout_width="match_parent"
-        android:layout_height="490dp"
+        android:layout_height="485dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
