@@ -6,22 +6,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_color"
-    android:hapticFeedbackEnabled="true"
-    android:soundEffectsEnabled="true">
+    android:background="#03add8">
 
     <ImageView
-        android:id="@+id/iconAuthAcess4"
+        android:id="@+id/imageVkkkkk"
         android:layout_width="match_parent"
-        android:layout_height="478dp"
+        android:layout_height="471dp"
+        android:background="@drawable/button_design_fill_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/button_design_fill_white"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textViewAuthUserAcess"
@@ -240,7 +236,7 @@
         android:id="@+id/imageView13"
         android:layout_width="91dp"
         android:layout_height="87dp"
-        android:foreground="@drawable/icon_cartoon"
+        android:foreground="@drawable/logo_blue_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
