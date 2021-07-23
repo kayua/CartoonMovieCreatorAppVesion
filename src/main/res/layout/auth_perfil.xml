@@ -11,6 +11,19 @@
     android:soundEffectsEnabled="true"
     tools:context=".Authentication.ActivityRegisterAccount">
 
+    <ImageView
+        android:id="@+id/iconAuthAcess3"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:background="@drawable/button_design_fill_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
     <TextView
         android:id="@+id/textViewEmailGoBackInit2"
         android:layout_width="wrap_content"
@@ -91,19 +104,6 @@
         tools:ignore="MissingConstraints" />
 
 
-    <ImageView
-        android:id="@+id/iconAuthAcess3"
-        android:layout_width="match_parent"
-        android:layout_height="460dp"
-        android:background="@drawable/button_design_fill_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="ContentDescription,MissingConstraints" />
-
     <EditText
         android:id="@+id/editTextAuthUser"
         android:layout_width="260dp"
@@ -111,7 +111,7 @@
         android:backgroundTint="#BF03ADD8"
         android:ems="10"
         android:foregroundTint="#FFFFFF"
-        android:hint="@string/user_name"
+        android:hint="Ex: 20/10/2000"
         android:inputType="textPersonName"
         android:padding="8dp"
         android:textColor="#03ADD8"
@@ -148,7 +148,7 @@
         android:layout_height="52dp"
         android:backgroundTint="#BF03ADD8"
         android:ems="10"
-        android:hint="@string/password_char"
+        android:hint="Ex: Comerciante"
         android:inputType="textPassword"
         android:padding="8dp"
         android:textColor="#082830"
@@ -201,7 +201,7 @@
         android:layout_height="53dp"
         android:backgroundTint="#BF03ADD8"
         android:ems="10"
-        android:hint="@string/email_user"
+        android:hint="Ex: Porto Alegre - RS"
         android:inputType="textPersonName"
         android:padding="8dp"
         android:textColor="#03ADD8"
