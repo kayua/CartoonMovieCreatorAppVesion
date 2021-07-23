@@ -14,7 +14,7 @@
     <ImageView
         android:id="@+id/iconAuthAcess3"
         android:layout_width="match_parent"
-        android:layout_height="485dp"
+        android:layout_height="478dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -113,9 +113,9 @@
         android:hint="@string/user_name"
         android:inputType="textPersonName"
         android:padding="8dp"
-        android:textColor="#FBFBFB"
-        android:textColorHighlight="#C8C7C7"
-        android:textColorHint="#D3D0D0"
+        android:textColor="#03ADD8"
+        android:textColorHighlight="#03ADD8"
+        android:textColorHint="#A4A6A6"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -194,6 +194,7 @@
         app:layout_constraintVertical_bias="0.34"
         tools:ignore="MissingConstraints" />
 
+
     <TextView
         android:id="@+id/textViewAuthUser5"
         android:layout_width="wrap_content"
@@ -207,9 +208,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238"
+        app:layout_constraintVertical_bias="0.214"
         tools:ignore="MissingConstraints" />
-
 
     <EditText
         android:id="@+id/editTextAuthEmailRegisterApp"
@@ -234,13 +234,13 @@
 
     <ImageView
         android:id="@+id/iconAuthAcess"
-        android:layout_width="133dp"
-        android:layout_height="165dp"
+        android:layout_width="135dp"
+        android:layout_height="148dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053"
+        app:layout_constraintVertical_bias="0.005"
         app:srcCompat="@drawable/logo_blue_white"
         tools:ignore="ContentDescription,MissingConstraints" />
 
