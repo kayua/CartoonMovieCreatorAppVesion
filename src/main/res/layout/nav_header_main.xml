@@ -304,7 +304,7 @@
                     android:layout_height="64dp"
                     android:layout_marginTop="16dp"
                     android:alpha="0.8"
-                    android:background="@drawable/temp_image1" />
+                    android:background="@drawable/msbox" />
 
                 <LinearLayout
                     android:layout_width="16dp"
@@ -320,7 +320,7 @@
                     android:layout_marginTop="16dp"
                     android:alpha="0.8"
 
-                    android:background="@drawable/temp_image2" />
+                    android:background="@drawable/h" />
 
                 <LinearLayout
                     android:layout_width="16dp"
@@ -335,7 +335,7 @@
                     android:layout_height="64dp"
                     android:layout_marginTop="16dp"
                     android:alpha="0.8"
-                    android:background="@drawable/temp_image2" />
+                    android:background="@drawable/brush" />
 
             </LinearLayout>
 
