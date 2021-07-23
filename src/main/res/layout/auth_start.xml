@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alpha="1.0"
-    android:background="@drawable/gradient_color"
+    android:background="@drawable/blank_image"
     android:clickable="true"
     android:hapticFeedbackEnabled="true"
     android:soundEffectsEnabled="true"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cartoon"
-        android:textColor="#FBF9F9"
+        android:textColor="#03ADD8"
         android:textIsSelectable="false"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Movie Creator"
-        android:textColor="#FBF9F9"
+        android:textColor="#03ADD8"
         android:textIsSelectable="false"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -46,22 +46,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.352" />
-
-    <Button
-        android:id="@+id/buttonAuthRegister"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:background="@drawable/button_design_fill"
-        android:onClick="createUser"
-        android:text="@string/register"
-        android:textColor="#40A5EC"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.881" />
 
     <ImageView
         android:id="@+id/imageViewAuthLogo"
@@ -82,21 +66,36 @@
         android:background="@drawable/button_design_empty"
         android:onClick="createUser"
         android:text="@string/acess"
-        android:textColor="#FAF9F9"
+        android:textColor="#03ADD8"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.764" />
+        app:layout_constraintVertical_bias="0.778" />
+
+    <Button
+        android:id="@+id/buttonAuthRegister"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:background="@drawable/button_design_fill"
+        android:onClick="createUser"
+        android:text="@string/register"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.894" />
 
     <TextView
         android:id="@+id/textViewAuthDirectAcess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/acess_free"
-        android:textColor="#FFFFFF"
+        android:textColor="#03ADD8"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
