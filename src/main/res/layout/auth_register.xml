@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_color"
+    android:background="#12a0ef"
     android:hapticFeedbackEnabled="true"
     android:soundEffectsEnabled="true"
     tools:context=".Authentication.ActivityRegisterAccount">
@@ -231,19 +231,18 @@
         app:layout_constraintVertical_bias="0.504"
         tools:ignore="MissingConstraints" />
 
+
     <ImageView
         android:id="@+id/iconAuthAcess"
-        android:layout_width="98dp"
-        android:layout_height="121dp"
+        android:layout_width="133dp"
+        android:layout_height="165dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077"
-        app:srcCompat="@drawable/icon_cartoon"
+        app:layout_constraintVertical_bias="0.053"
+        app:srcCompat="@drawable/we_blue"
         tools:ignore="ContentDescription,MissingConstraints" />
-
 
     <Button
         android:id="@+id/buttonAuthGoogle"
