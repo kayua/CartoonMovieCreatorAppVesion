@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#12a0ef"
+    android:background="#03add8"
     android:hapticFeedbackEnabled="true"
     android:soundEffectsEnabled="true"
     tools:context=".Authentication.ActivityRegisterAccount">
@@ -241,7 +241,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.053"
-        app:srcCompat="@drawable/we_blue"
+        app:srcCompat="@drawable/logo_blue_white"
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <Button
