@@ -6,21 +6,11 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
 import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
 public class ActivityPerfil extends Activity {
-
-    private FirebaseAuth mAuth;
 
 
     @Override
@@ -37,23 +27,7 @@ public class ActivityPerfil extends Activity {
     }
     private void acess(String textBoxUsername, String textBoxPassword){
 
-        mAuth.signInWithEmailAndPassword(textBoxUsername, textBoxPassword)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
 
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            screen_user();
-
-                        } else {
-
-
-                            toast();
-
-                        }
-                    }
-                });
 
     }
     private void screen_user() {
@@ -69,7 +43,6 @@ public class ActivityPerfil extends Activity {
 
     public void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
 
     }
 }
