@@ -23,7 +23,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/button_design_fill" />
+            android:background="@drawable/icon_general_user" />
 
         <LinearLayout
             android:layout_width="305dp"
