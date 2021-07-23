@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#03add8">
-
     <ImageView
         android:id="@+id/imageVkkkkk"
         android:layout_width="match_parent"
@@ -15,6 +14,7 @@
         android:background="@drawable/button_design_fill_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -29,10 +29,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221"
+        app:layout_constraintVertical_bias="0.244"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -84,6 +84,7 @@
         app:layout_constraintVertical_bias="0.861"
         tools:ignore="MissingConstraints" />
 
+
     <EditText
         android:id="@+id/editTextAuthUser"
         android:layout_width="260dp"
@@ -102,7 +103,7 @@
         app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.438"
+        app:layout_constraintVertical_bias="0.414"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -118,23 +119,7 @@
         app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/password"
-        android:textColor="#03ADD8"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522"
+        app:layout_constraintVertical_bias="0.353"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -155,7 +140,7 @@
         app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.592"
+        app:layout_constraintVertical_bias="0.568"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -171,7 +156,22 @@
         app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65"
+        app:layout_constraintVertical_bias="0.627"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textColor="#03ADD8"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -216,7 +216,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.853"
-        app:srcCompat="@drawable/button_design_fill"
+        android:background="@drawable/button_design_fill"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -229,19 +229,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.853"
-        app:srcCompat="@drawable/button_design_fill"
+        android:background="@drawable/button_design_fill"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="91dp"
-        android:layout_height="87dp"
+        android:layout_width="117dp"
+        android:layout_height="107dp"
         android:foreground="@drawable/logo_blue_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.066" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="239dp"
+        android:layout_height="27dp"
+        android:buttonTint="#03add8"
+        android:text="Salvar minhas informações"
+        android:textColor="#03add8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.401"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.687" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
