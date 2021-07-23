@@ -14,33 +14,32 @@
     <ImageView
         android:id="@+id/iconAuthAcess3"
         android:layout_width="match_parent"
-        android:layout_height="478dp"
+        android:layout_height="460dp"
+        android:background="@drawable/button_design_fill_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/button_design_fill_white"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonAuthFacebook"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/button_design_fill"
-        android:backgroundTint="#3B5998"
-        android:foreground="@drawable/icon_facebook"
-
-        android:text=""
-        android:textColor="#DD4B39"
+    <TextView
+        android:id="@+id/textViewEmailGoBackInit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go_back"
+        android:textColor="#03ADD8"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956"
+        app:layout_constraintVertical_bias="0.932"
         tools:ignore="MissingConstraints" />
+
 
     <TextView
         android:id="@+id/textView7"
@@ -50,12 +49,10 @@
         android:textColor="#03ADD8"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -69,10 +66,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26"
+        app:layout_constraintVertical_bias="0.227"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -80,7 +77,7 @@
         android:layout_width="282dp"
         android:layout_height="49dp"
         android:background="@drawable/button_design_fill"
-        android:text="@string/acess"
+        android:text="próximo"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -106,20 +103,28 @@
         app:layout_constraintVertical_bias="0.872"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonAuthAcessTwitter"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/button_design_fill"
-        android:backgroundTint="#55ACEE"
-        android:foreground="@drawable/icon_twitter"
+
+    <EditText
+        android:id="@+id/editTextAuthEmailRegisterApp"
+        android:layout_width="260dp"
+        android:layout_height="53dp"
+        android:backgroundTint="#BF03ADD8"
+        android:ems="10"
+        android:hint="@string/email_user"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:textColor="#03ADD8"
+        android:textColorHighlight="#636363"
+        android:textColorHint="#A4A6A6"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955"
+        app:layout_constraintVertical_bias="0.544"
         tools:ignore="MissingConstraints" />
+
 
     <EditText
         android:id="@+id/editTextAuthUser"
@@ -140,7 +145,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389"
+        app:layout_constraintVertical_bias="0.414"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -153,10 +158,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464"
+        app:layout_constraintVertical_bias="0.488"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -177,7 +182,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.645"
+        app:layout_constraintVertical_bias="0.67"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -190,10 +195,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.586"
+        app:layout_constraintVertical_bias="0.61"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -206,38 +211,16 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34"
-        tools:ignore="MissingConstraints" />
-
-
-    <EditText
-        android:id="@+id/editTextAuthEmailRegisterApp"
-        android:layout_width="260dp"
-        android:layout_height="53dp"
-        android:backgroundTint="#BF03ADD8"
-        android:ems="10"
-        android:hint="@string/email_user"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:textColor="#03ADD8"
-        android:textColorHighlight="#636363"
-        android:textColorHint="#A4A6A6"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519"
+        app:layout_constraintVertical_bias="0.364"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/iconAuthAcess"
-        android:layout_width="134dp"
-        android:layout_height="130dp"
+        android:layout_width="98dp"
+        android:layout_height="93dp"
         android:background="@drawable/icon_general_user"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -246,23 +229,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.057"
         tools:ignore="ContentDescription,MissingConstraints" />
-
-    <Button
-        android:id="@+id/buttonAuthGoogle"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/button_design_fill"
-        android:backgroundTint="#DD4B39"
-        android:foreground="@drawable/icon_google"
-        android:text=""
-        android:textColor="#DD4B39"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.317"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956"
-        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView16"
