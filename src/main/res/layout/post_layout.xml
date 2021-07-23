@@ -218,7 +218,7 @@
                                 android:id="@+id/textView8"
                                 android:layout_width="65dp"
                                 android:layout_height="wrap_content"
-                                android:text="10 mil" />
+                                android:text="TextView" />
                         </LinearLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -270,7 +270,7 @@
                                 android:id="@+id/textView8"
                                 android:layout_width="65dp"
                                 android:layout_height="wrap_content"
-                                android:text="320 " />
+                                android:text="TextView" />
                         </LinearLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -322,7 +322,7 @@
                                 android:id="@+id/textView8"
                                 android:layout_width="65dp"
                                 android:layout_height="wrap_content"
-                                android:text="100º" />
+                                android:text="TextView" />
                         </LinearLayout>
                     </LinearLayout>
                     <LinearLayout
