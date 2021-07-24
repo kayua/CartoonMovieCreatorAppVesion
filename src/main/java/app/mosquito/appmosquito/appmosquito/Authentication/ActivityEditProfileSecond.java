@@ -18,8 +18,7 @@ public class ActivityEditProfileSecond extends Activity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.auth_perfil);
-
+        setContentView(R.layout.auth_profile_second);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
