@@ -79,6 +79,7 @@ public class ActivityAcessAccount extends Activity {
                 });
 
     }
+
     private void screen_user() {
         Intent i = new Intent(ActivityAcessAccount.this, ActivityUserInterface.class);
         finish();
