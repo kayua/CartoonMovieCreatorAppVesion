@@ -10,7 +10,7 @@ import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityPerfil extends Activity {
+public class ActivityEditPerfil extends Activity {
 
 
     @Override
@@ -31,7 +31,7 @@ public class ActivityPerfil extends Activity {
 
     }
     private void screen_user() {
-        Intent i = new Intent(ActivityPerfil.this, ActivityUserInterface.class);
+        Intent i = new Intent(ActivityEditPerfil.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
     }
