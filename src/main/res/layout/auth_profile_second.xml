@@ -206,7 +206,7 @@
         android:id="@+id/iconAuthAcess"
         android:layout_width="98dp"
         android:layout_height="93dp"
-        android:background="@drawable/icon_general_user"
+        android:background="@drawable/aa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
