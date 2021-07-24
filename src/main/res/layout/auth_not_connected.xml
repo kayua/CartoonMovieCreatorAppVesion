@@ -9,22 +9,6 @@
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
     tools:context=".Authentication.ActivitySplashScreen">
 
-    <TextView
-        android:id="@+id/textViewEmailGoBackInit3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" Sair do aplicativo"
-        android:textColor="#03ADD8"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932"
-        tools:ignore="MissingConstraints" />
-
     <Button
         android:id="@+id/buttonAuthAcessRegisterAccount2"
         android:layout_width="282dp"
@@ -38,7 +22,33 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
+        app:layout_constraintVertical_bias="0.806" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="50dp"
+        android:layout_height="1dp"
+        android:background="@drawable/button_design_fill"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.884"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="50dp"
+        android:layout_height="1dp"
+        android:background="@drawable/button_design_fill"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.883"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textViewAuthAcessBar4"
@@ -53,45 +63,36 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.872"
+        app:layout_constraintVertical_bias="0.892"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="50dp"
-        android:layout_height="1dp"
-        android:background="@drawable/button_design_fill"
+    <TextView
+        android:id="@+id/textViewEmailGoBackInit3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Sair do aplicativo"
+        android:textColor="#03ADD8"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView20"
-        android:layout_width="50dp"
-        android:layout_height="1dp"
-        android:background="@drawable/button_design_fill"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.246"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.864"
+        app:layout_constraintVertical_bias="0.952"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="239dp"
-        android:layout_height="255dp"
+        android:layout_width="174dp"
+        android:layout_height="176dp"
         android:background="@drawable/not_connected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.228"
+        app:layout_constraintVertical_bias="0.302"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -104,25 +105,25 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663" />
+        app:layout_constraintVertical_bias="0.625" />
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="278dp"
-        android:layout_height="133dp"
+        android:layout_width="244dp"
+        android:layout_height="114dp"
         android:text="Infelizmente parece que você está sem conexão com a internet. Por favor, certifique-se que possui conexão com a internet e tente novamente"
         android:textColor="#03ADD8"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.628" />
+        app:layout_constraintVertical_bias="0.643" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
