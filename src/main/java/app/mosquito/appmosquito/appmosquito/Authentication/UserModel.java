@@ -3,8 +3,6 @@ package app.mosquito.appmosquito.appmosquito.Authentication;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Random;
-
 public class UserModel {
 
     String idUser;
@@ -26,14 +24,6 @@ public class UserModel {
         this.userSchooling = userSchooling;
         this.userFavoriteWord = userFavoriteWord;
         this.userGender = userGender;
-    }
-
-    public static int getRandomId() {
-
-        Random random = new Random();
-
-        return random.nextInt((100000000 - 999999999 ) + 1) + 100000000;
-
     }
 
     public String getIdUser() { return idUser; }

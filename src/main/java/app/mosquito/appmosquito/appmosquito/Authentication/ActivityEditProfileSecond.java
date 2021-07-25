@@ -10,6 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Random;
+
 import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
@@ -17,6 +26,7 @@ import app.mosquito.appmosquito.appmosquito.R;
 public class ActivityEditProfileSecond extends Activity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
+    private DatabaseReference firebaseDatabase;
     UserModel newUser = null;
 
     @Override
@@ -100,6 +110,14 @@ public class ActivityEditProfileSecond extends Activity {
 
     }
 
+    public static int getRandomId() {
+
+        Random random = new Random();
+
+        return random.nextInt((100000000 - 999999999 ) + 1) + 100000000;
+
+    }
+
     private void saveOnFirebase(){
 
         String birthDate = "";
@@ -125,12 +143,30 @@ public class ActivityEditProfileSecond extends Activity {
 
         }
 
-        //newUser = new UserModel(birthDate, city, company, gender, schooling, favoriteWord);
+        newUser = new UserModel(birthDate, city, company, gender, schooling, favoriteWord);
 
 
 
 
     }
+
+    private int getUniqueId(){
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user_id_list");
+        DatabaseReference idReference = reference.child("user_id");
+        String randomNumber = Integer.toString(getRandomId());
+
+        Firebase firebase = new Firebase(Constants.FIREBASE_URL_USER_TASKS).child(Utils.encodeEmail(unProcessedEmail));
+
+        Query queryRef = firebase.orderByChild("title").startAt("#" + mHashTag)
+
+        String list_key = idReference.getKey();
+
+        return 1;
+    }
+
+
+
     @Override
     public void onStart() {
         super.onStart();
