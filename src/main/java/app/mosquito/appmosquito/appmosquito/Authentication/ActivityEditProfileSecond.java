@@ -28,20 +28,20 @@ public class ActivityEditProfileSecond extends Activity {
 
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
 
-        EditText userBirthDate =  findViewById(R.id.editTextAuthUser);
+        EditText userGender =  findViewById(R.id.editTextAuthUser);
 
-        EditText userCity =  findViewById(R.id.editTextAuthEmailRegisterApp);
+        EditText userSchooling =  findViewById(R.id.editTextAuthEmailRegisterApp);
 
-        EditText userCompany =  findViewById(R.id.editTextAuthPasswordApp);
+        EditText userFavoriteWord =  findViewById(R.id.editTextAuthPasswordApp);
 
         next_step.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                String birthDate = userBirthDate.getText().toString();
-                String city = userCity.getText().toString();
-                String company = userCompany.getText().toString();
+                String birthDate = userGender.getText().toString();
+                String city = userSchooling.getText().toString();
+                String company = userFavoriteWord.getText().toString();
 
                 if(birthDate.equals("")){ birthDate = "Não informado"; }
 
