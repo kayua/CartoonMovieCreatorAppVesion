@@ -38,15 +38,17 @@ public class ActivityEditProfileFirst extends Activity {
             @Override
             public void onClick(View view) {
 
-                String BirthDate = userBirthDate.getText().toString();
+                String birthDate = userBirthDate.getText().toString();
+                String city = userCity.getText().toString();
+                String company = userCompany.getText().toString();
 
-                if(BirthDate.equals("")){
+                if(birthDate.equals("")){ birthDate = "Não informado"; }
 
-                    BirthDate = "Não informado";
+                if(city.equals("")){ city = "Não informado"; }
 
-                }
+                if(company.equals("")){ company = "Não informado"; }
 
-                store_login(String birthDate, String city, String company)
+                store_login(birthDate, city, company);
 
             }
 
