@@ -171,8 +171,7 @@ public class ActivityEditProfileSecond extends Activity {
 
             randomNumber = Integer.toString(getRandomId());
 
-            Log.i("ID:", "ERRO");
-            if(getIdFirebase(randomNumber)){break;}
+            if(getIdFirebase(randomNumber)){break;}  // verificar isso depois
             break;
         }
 
