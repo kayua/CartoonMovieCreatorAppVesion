@@ -10,6 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+
 import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
@@ -17,6 +23,7 @@ import app.mosquito.appmosquito.appmosquito.R;
 public class ActivityEditProfileSecond extends Activity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
+    UserModel newUser = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +106,37 @@ public class ActivityEditProfileSecond extends Activity {
 
     }
 
+    private void saveOnFirebase(){
+
+        String
+        try {
+            usernameRegistered = settings.getString("email", "");
+            passwordRegistered = settings.getString("password", "");
+            mAuth.signInWithEmailAndPassword(usernameRegistered ,
+                    passwordRegistered).addOnCompleteListener(this,
+                    new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+
+                            if (!task.isSuccessful()) {
+                                screen_start();
+                            }else{
+                                screen_user();
+                            }
+
+
+                        } });
+        }catch (Exception e){
+
+            screen_start();
+        }
+
+        newUser = new UserModel();
+
+
+
+
+    }
     @Override
     public void onStart() {
         super.onStart();
