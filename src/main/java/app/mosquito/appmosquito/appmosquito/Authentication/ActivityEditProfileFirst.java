@@ -49,7 +49,7 @@ public class ActivityEditProfileFirst extends Activity {
                 if(company.equals("")){ company = "Não informado"; }
 
                 store_login(birthDate, city, company);
-
+                nextScreen();
             }
 
         });
@@ -66,6 +66,14 @@ public class ActivityEditProfileFirst extends Activity {
 
     }
 
+
+    private void nextScreen() {
+
+        Intent i = new Intent(ActivityEditProfileFirst.this, ActivityEditProfileSecond.class);
+        finish();
+        startActivity(i);
+
+    }
     private void store_login(String birthDate, String city, String company) {
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
