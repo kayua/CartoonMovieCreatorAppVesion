@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +27,10 @@ import app.mosquito.appmosquito.appmosquito.R;
 public class ActivityEditProfileSecond extends Activity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
-    private DatabaseReference firebaseDatabase;
+
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+
     UserModel newUser = null;
 
     @Override
@@ -156,16 +160,56 @@ public class ActivityEditProfileSecond extends Activity {
         DatabaseReference idReference = reference.child("user_id");
         String randomNumber = Integer.toString(getRandomId());
 
-        Firebase firebase = new Firebase(Constants.FIREBASE_URL_USER_TASKS).child(Utils.encodeEmail(unProcessedEmail));
-
-        Query queryRef = firebase.orderByChild("title").startAt("#" + mHashTag)
 
         String list_key = idReference.getKey();
 
         return 1;
     }
 
+    private void getIdFirebase(String key) {
 
+        Query query;
+
+        if (key.equals("")){
+            query = databaseReference.child("user_id_list").orderByChild("user_id");
+
+        }else{
+
+            query = databaseReference.child("user_id_list").orderByChild("user_id").startAt(key).endAt(key+"\uf8ff");
+        }
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){// separo cada objeto contido na dataSnapshot
+                    Pessoa p = objSnapshot.getValue(Pessoa.class);// salvo cada um deles na variavel pessoa;
+                    listPessoa.add(p);// adiciono na list<Pessoa>
+                }
+
+                // inicializo o arrayAdapter passando o contexto da aplicação
+                // a tipo de layout da lista, e a list<Pessoa> contendo os objetos
+                arrayAdapterPessoa = new ArrayAdapter<Pessoa>(Pesquisa.this,
+                        android.R.layout.simple_list_item_1,listPessoa);
+
+                // incluo na ListView o arrayAdapter
+                listVPesquisa.setAdapter(arrayAdapterPessoa);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    private void initializeFirebase() {
+
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+
+    }
 
     @Override
     public void onStart() {
