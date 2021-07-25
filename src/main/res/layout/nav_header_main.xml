@@ -120,7 +120,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
-            android:background="@drawable/cameras" />
+            android:background="@drawable/msbox" />
 
         <LinearLayout
             android:layout_width="8dp"
@@ -305,7 +305,7 @@
                     android:layout_height="64dp"
                     android:layout_marginTop="16dp"
                     android:alpha="0.8"
-                    android:background="@drawable/msbox" />
+                    android:background="@drawable/cameras" />
 
                 <LinearLayout
                     android:layout_width="16dp"
