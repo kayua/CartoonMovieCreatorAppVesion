@@ -93,9 +93,9 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imagceViedwcv2"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:id="@+id/imagceViedwcacv2"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
                 android:layout_gravity="center"
                 android:background="@drawable/icon_temp"
                 android:foreground="@drawable/followers" />
@@ -124,9 +124,9 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/imagceViedwcv2"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:id="@+id/imagceViedwcacv2"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
                 android:layout_gravity="center"
                 android:background="@drawable/icon_temp"
                 android:foreground="@drawable/followers" />
@@ -155,9 +155,9 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/imagceViedwcv2"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:id="@+id/imagceViedwcacv2"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
                 android:layout_gravity="center"
                 android:background="@drawable/icon_temp"
                 android:foreground="@drawable/followers" />
