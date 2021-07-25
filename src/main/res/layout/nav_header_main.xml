@@ -93,11 +93,11 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imagceViedwcacv2"
-                android:layout_width="34dp"
-                android:layout_height="34dp"
+                android:id="@+id/imagceViedcwcacv2"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
                 android:layout_gravity="center"
-                android:background="@drawable/icon_temp"
+                android:background="@drawable/icon_background"
                 android:foreground="@drawable/followers" />
 
             <LinearLayout
@@ -108,7 +108,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/dasdsdasfas"
+                android:id="@+id/dasdsdcasfas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -125,10 +125,10 @@
 
             <ImageView
                 android:id="@+id/imagceViedwcacv2"
-                android:layout_width="34dp"
-                android:layout_height="34dp"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
                 android:layout_gravity="center"
-                android:background="@drawable/icon_temp"
+                android:background="@drawable/icon_background"
                 android:foreground="@drawable/followers" />
 
             <LinearLayout
@@ -156,10 +156,10 @@
 
             <ImageView
                 android:id="@+id/imagceViedwcacv2"
-                android:layout_width="34dp"
-                android:layout_height="34dp"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
                 android:layout_gravity="center"
-                android:background="@drawable/icon_temp"
+                android:background="@drawable/icon_background"
                 android:foreground="@drawable/followers" />
 
             <LinearLayout
