@@ -14,7 +14,7 @@
     <ImageView
         android:id="@+id/iconAuthAcess3"
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="440dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -47,7 +47,7 @@
         android:layout_width="282dp"
         android:layout_height="49dp"
         android:background="@drawable/button_design_fill"
-        android:text="@string/acess"
+        android:text="Próximo"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -88,22 +88,21 @@
         app:layout_constraintVertical_bias="0.955"
         tools:ignore="MissingConstraints" />
 
+
     <TextView
         android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/password"
+        android:layout_width="283dp"
+        android:layout_height="42dp"
+        android:text="Adicione uma imagem ao seu perfil. Click sobre o icone de usuário."
         android:textColor="#03ADD8"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.586"
+        app:layout_constraintVertical_bias="0.605"
         tools:ignore="MissingConstraints" />
-
 
     <Button
         android:id="@+id/buttonAuthGoogle"
@@ -150,16 +149,15 @@
 
     <ImageView
         android:id="@+id/imageView23"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
         android:background="@drawable/icon_general_user"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269" />
-
+        app:layout_constraintVertical_bias="0.195" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
