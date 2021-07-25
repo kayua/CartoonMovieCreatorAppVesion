@@ -178,12 +178,17 @@ public class ActivityEditProfileSecond extends Activity {
             query = databaseReference.child("user_id_list").orderByChild("user_id").startAt(key).endAt(key+"\uf8ff");
         }
 
+        boolean searchValue = false;
+
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){// separo cada objeto contido na dataSnapshot
-                    Pessoa p = objSnapshot.getValue(Pessoa.class);// salvo cada um deles na variavel pessoa;
-                    listPessoa.add(p);// adiciono na list<Pessoa>
+                for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
+
+                    if (key == objSnapshot.getValue()) {
+
+                        searchValue=true;
+                    }
                 }
 
                 // inicializo o arrayAdapter passando o contexto da aplicação
