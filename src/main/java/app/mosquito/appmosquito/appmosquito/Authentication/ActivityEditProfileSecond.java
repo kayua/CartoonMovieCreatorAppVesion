@@ -70,6 +70,7 @@ public class ActivityEditProfileSecond extends Activity {
                 if(favoriteWord.equals("")){ favoriteWord = "Não informado"; }
 
                 store_login(gender, schooling, favoriteWord);
+                saveOnFirebase();
                 nextScreen();
 
             }
