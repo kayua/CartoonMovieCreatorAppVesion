@@ -108,45 +108,30 @@ public class ActivityEditProfileSecond extends Activity {
 
     private void saveOnFirebase(){
 
-        String gender ;
-        String schooling;
-        String favoriteWord;
-        String birthDate;
-        String city;
-        String company;
+        String birthDate = "";
+        String city = "";
+        String company = "";
+        String gender = "";
+        String schooling = "";
+        String favoriteWord = "";
+
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
-
         try {
 
-            usernameRegistered = settings.getString("email", "");
-            passwordRegistered = settings.getString("password", "");
-            usernameRegistered = settings.getString("email", "");
+            birthDate = settings.getString("email", "");
+            city = settings.getString("password", "");
+            company = settings.getString("email", "");
             gender = settings.getString("password", "");
             schooling = settings.getString("email", "");
             favoriteWord = settings.getString("password", "");
 
-            mAuth.signInWithEmailAndPassword(usernameRegistered ,
-                    passwordRegistered).addOnCompleteListener(this,
-                    new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-
-                            if (!task.isSuccessful()) {
-                                screen_start();
-                            }else{
-                                screen_user();
-                            }
-
-
-                        } });
         }catch (Exception e){
 
-            screen_start();
         }
 
-        newUser = new UserModel();
+        newUser = new UserModel(birthDate, city, company, gender, schooling, favoriteWord);
 
 
 
