@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
@@ -26,10 +27,26 @@ public class ActivityEditProfileFirst extends Activity {
 
         Button next_step =  findViewById(R.id.buttonAuthAcessRegisterAccount);
 
+        EditText userBirthDate =  findViewById(R.id.editTextAuthUser);
+
+        EditText userCity =  findViewById(R.id.editTextAuthEmailRegisterApp);
+
+        EditText userCompany =  findViewById(R.id.editTextAuthPasswordApp);
+
         next_step.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+
+                String BirthDate = userBirthDate.getText().toString();
+
+                if(BirthDate.equals("")){
+
+                    BirthDate = "Não informado";
+
+                }
+
+                store_login(String birthDate, String city, String company)
 
             }
 
