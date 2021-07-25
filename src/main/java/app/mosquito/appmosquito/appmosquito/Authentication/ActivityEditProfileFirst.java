@@ -25,6 +25,7 @@ public class ActivityEditProfileFirst extends Activity {
 
         setContentView(R.layout.auth_profile_first);
 
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Button next_step =  findViewById(R.id.buttonAuthAcessRegisterAccount);
 
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
@@ -67,9 +68,6 @@ public class ActivityEditProfileFirst extends Activity {
         });
 
 
-
-
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
     }
 
