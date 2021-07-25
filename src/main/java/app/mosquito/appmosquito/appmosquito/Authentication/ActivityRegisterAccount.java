@@ -35,12 +35,13 @@ public class ActivityRegisterAccount extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        if(!isOnline(Context context)){
+        if(!(isOnline(getApplicationContext()))){
 
             Intent i = new Intent(ActivityRegisterAccount.this, ActivityNotConnected.class);
             finish();
             startActivity(i);
         }
+
         mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.auth_register);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);

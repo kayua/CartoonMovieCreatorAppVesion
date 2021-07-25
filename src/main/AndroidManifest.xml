@@ -33,7 +33,7 @@
         android:requestLegacyExternalStorage="true">
 
         <activity
-            android:name=".Authentication.ActivityNotConnected"
+            android:name=".Authentication.ActivitySplashScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -68,6 +68,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Authentication.ActivityAcessAccount"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authentication.ActivityNotConnected"
             android:screenOrientation="portrait" />
         <activity android:name=".GalleryPhotos.ImageDisplay" android:screenOrientation="portrait"/>
 
