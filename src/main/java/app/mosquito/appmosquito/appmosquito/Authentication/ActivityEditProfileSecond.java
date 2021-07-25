@@ -85,13 +85,13 @@ public class ActivityEditProfileSecond extends Activity {
 
     }
 
-    private void store_login(String birthDate, String city, String company) {
+    private void store_login(String gender, String schooling, String favoriteWord) {
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("gender", birthDate);
-        editor.putString("schooling",city);
-        editor.putString("favoriteWord", company);
+        editor.putString("gender", gender);
+        editor.putString("schooling", schooling);
+        editor.putString("favoriteWord", favoriteWord);
         editor.apply();
 
     }
