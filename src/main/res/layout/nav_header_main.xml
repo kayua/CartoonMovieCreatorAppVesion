@@ -92,18 +92,47 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="22dp"
+                android:layout_width="16dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/imagceViedwcv2"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:background="@drawable/icon_temp"
+                android:foreground="@drawable/followers" />
 
+            <LinearLayout
+                android:layout_width="4dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dasdsdasfas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="1 mil"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="12dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/imagceViewv2"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:id="@+id/imagceViedwcv2"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:layout_gravity="center"
                 android:background="@drawable/icon_temp"
                 android:foreground="@drawable/followers" />
@@ -116,13 +145,45 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/dasdsdasfas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="1 Seguidor"
+                android:text="1 k"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="12dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imagceViedwcv2"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:background="@drawable/icon_temp"
+                android:foreground="@drawable/followers" />
+
+            <LinearLayout
+                android:layout_width="8dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dasdsdasfas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="10 k"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
         </LinearLayout>
     </LinearLayout>
 
