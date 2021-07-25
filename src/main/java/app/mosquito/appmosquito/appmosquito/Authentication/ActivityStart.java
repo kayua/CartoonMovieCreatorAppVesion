@@ -22,7 +22,7 @@ public class ActivityStart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.auth_start);
-        Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount);
+        Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         buttonAcess.setOnClickListener( new View.OnClickListener() {
 

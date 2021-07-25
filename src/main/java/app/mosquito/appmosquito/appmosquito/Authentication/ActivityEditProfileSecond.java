@@ -28,29 +28,32 @@ public class ActivityEditProfileSecond extends Activity {
 
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
 
-        EditText userGender =  findViewById(R.id.editTextAuthUser);
+        EditText userGender =  findViewById(R.id.editTextAuthGender);
 
-        EditText userSchooling =  findViewById(R.id.editTextAuthEmailRegisterApp);
+        EditText userSchooling =  findViewById(R.id.editTextAuthSchooling);
 
-        EditText userFavoriteWord =  findViewById(R.id.editTextAuthPasswordApp);
+        EditText userFavoriteWord =  findViewById(R.id.editTextAuthFavoriteWord);
+
+        Button next_step =  findViewById(R.id.buttonAuthAcessRegisterAccount3);
 
         next_step.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                String birthDate = userGender.getText().toString();
-                String city = userSchooling.getText().toString();
-                String company = userFavoriteWord.getText().toString();
+                String gender = userGender.getText().toString();
+                String schooling = userSchooling.getText().toString();
+                String favoriteWord = userFavoriteWord.getText().toString();
 
-                if(birthDate.equals("")){ birthDate = "Não informado"; }
+                if(gender.equals("")){ gender = "Não informado"; }
 
-                if(city.equals("")){ city = "Não informado"; }
+                if(schooling.equals("")){ schooling = "Não informado"; }
 
-                if(company.equals("")){ company = "Não informado"; }
+                if(favoriteWord.equals("")){ favoriteWord = "Não informado"; }
 
-                store_login(birthDate, city, company);
+                store_login(gender, schooling, favoriteWord);
                 nextScreen();
+
             }
 
         });

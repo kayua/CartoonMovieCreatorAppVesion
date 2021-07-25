@@ -33,8 +33,8 @@ public class ActivityAcessAccount extends Activity {
         setContentView(R.layout.auth_acess);
 
         mAuth = FirebaseAuth.getInstance();
-        Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount);
-        EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthUser);
+        Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
+        EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthGender);
         EditText textBoxPassword = (EditText) findViewById(R.id.editTextAuthPassword);
         TextView recovery = (TextView ) findViewById(R.id.textView25);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);

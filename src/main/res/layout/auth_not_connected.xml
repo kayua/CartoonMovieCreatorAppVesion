@@ -10,7 +10,7 @@
     tools:context=".Authentication.ActivitySplashScreen">
 
     <Button
-        android:id="@+id/buttonAuthAcessRegisterAccount2"
+        android:id="@+id/buttonAuthAcessRegisterAccount3"
         android:layout_width="282dp"
         android:layout_height="49dp"
         android:background="@drawable/button_design_fill"

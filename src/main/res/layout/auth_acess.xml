@@ -53,7 +53,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthAcessRegisterAccount"
+        android:id="@+id/buttonAuthAcessRegisterAccount3"
         android:layout_width="273dp"
         android:layout_height="51dp"
         android:background="@drawable/button_design_fill"
@@ -86,7 +86,7 @@
 
 
     <EditText
-        android:id="@+id/editTextAuthUser"
+        android:id="@+id/editTextAuthGender"
         android:layout_width="260dp"
         android:layout_height="53dp"
         android:backgroundTint="#BF03ADD8"

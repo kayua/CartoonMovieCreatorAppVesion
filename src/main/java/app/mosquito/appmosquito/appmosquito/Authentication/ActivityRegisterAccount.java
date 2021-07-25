@@ -45,10 +45,10 @@ public class ActivityRegisterAccount extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.auth_register);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount);
-        EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthUser);
-        EditText textBoxEmail = (EditText) findViewById(R.id.editTextAuthEmailRegisterApp);
-        EditText textBoxPassword = (EditText) findViewById(R.id.editTextAuthPasswordApp);
+        Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
+        EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthGender);
+        EditText textBoxEmail = (EditText) findViewById(R.id.editTextAuthSchooling);
+        EditText textBoxPassword = (EditText) findViewById(R.id.editTextAuthFavoriteWord);
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override

@@ -25,15 +25,15 @@ public class ActivityEditProfileFirst extends Activity {
         setContentView(R.layout.auth_profile_first);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        Button next_step =  findViewById(R.id.buttonAuthAcessRegisterAccount);
+        Button next_step =  findViewById(R.id.buttonAuthAcessRegisterAccount3);
 
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
 
-        EditText userBirthDate =  findViewById(R.id.editTextAuthUser);
+        EditText userBirthDate =  findViewById(R.id.editTextAuthGender);
 
-        EditText userCity =  findViewById(R.id.editTextAuthEmailRegisterApp);
+        EditText userCity =  findViewById(R.id.editTextAuthSchooling);
 
-        EditText userCompany =  findViewById(R.id.editTextAuthPasswordApp);
+        EditText userCompany =  findViewById(R.id.editTextAuthFavoriteWord);
 
         next_step.setOnClickListener(new View.OnClickListener() {
 

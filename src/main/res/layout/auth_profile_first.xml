@@ -59,7 +59,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthAcessRegisterAccount"
+        android:id="@+id/buttonAuthAcessRegisterAccount3"
         android:layout_width="282dp"
         android:layout_height="49dp"
         android:background="@drawable/button_design_fill"
@@ -91,7 +91,7 @@
 
 
     <EditText
-        android:id="@+id/editTextAuthUser"
+        android:id="@+id/editTextAuthGender"
         android:layout_width="260dp"
         android:layout_height="53dp"
         android:backgroundTint="#BF03ADD8"
@@ -129,7 +129,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextAuthPasswordApp"
+        android:id="@+id/editTextAuthFavoriteWord"
         android:layout_width="260dp"
         android:layout_height="52dp"
         android:backgroundTint="#BF03ADD8"
@@ -182,7 +182,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextAuthEmailRegisterApp"
+        android:id="@+id/editTextAuthSchooling"
         android:layout_width="260dp"
         android:layout_height="53dp"
         android:backgroundTint="#BF03ADD8"
