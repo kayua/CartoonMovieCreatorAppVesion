@@ -116,7 +116,7 @@
         android:id="@+id/textViewAuthUser3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cidade natal"
+        android:text="Gênero"
         android:textColor="#03ADD8"
         android:textSize="17sp"
         android:textStyle="bold"
