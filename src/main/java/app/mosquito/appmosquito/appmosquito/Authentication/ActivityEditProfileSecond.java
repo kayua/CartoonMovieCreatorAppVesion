@@ -178,7 +178,8 @@ public class ActivityEditProfileSecond extends Activity {
             query = databaseReference.child("user_id_list").orderByChild("user_id").startAt(key).endAt(key+"\uf8ff");
         }
 
-        boolean searchValue = false;
+        final boolean[] searchValue = new boolean[1];
+        searchValue[0]=false;
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -187,7 +188,7 @@ public class ActivityEditProfileSecond extends Activity {
 
                     if (key == objSnapshot.getValue()) {
 
-                        searchValue=true;
+                        searchValue[0] =true;
                     }
                 }
 
