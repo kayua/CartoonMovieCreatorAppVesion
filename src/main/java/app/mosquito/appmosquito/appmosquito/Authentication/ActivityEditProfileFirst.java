@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
@@ -26,6 +26,8 @@ public class ActivityEditProfileFirst extends Activity {
         setContentView(R.layout.auth_profile_first);
 
         Button next_step =  findViewById(R.id.buttonAuthAcessRegisterAccount);
+
+        TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
 
         EditText userBirthDate =  findViewById(R.id.editTextAuthUser);
 
@@ -54,13 +56,26 @@ public class ActivityEditProfileFirst extends Activity {
 
         });
 
+        goBack.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                previousScreen();
+            }
+
+        });
+
+
+
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
     }
 
-    private void screen_user() {
+    private void previousScreen() {
 
-        Intent i = new Intent(ActivityEditProfileFirst.this, ActivityUserInterface.class);
+        Intent i = new Intent(ActivityEditProfileFirst.this,ActivityRegisterAccount.class);
         finish();
         startActivity(i);
 
