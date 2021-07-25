@@ -81,9 +81,10 @@ public class ActivityRegisterAccount extends AppCompatActivity {
                                     store_login(textBoxUsername.getText().toString(),
                                             textBoxEmail.getText().toString(),
                                             textBoxPassword.getText().toString());
+
                                     screen_email_verification();
-                                }
-                                else {
+
+                                } else {
 
                                     Toast.makeText(
                                             getApplicationContext(),
@@ -94,19 +95,28 @@ public class ActivityRegisterAccount extends AppCompatActivity {
                                 }
                             }
                         });
+
             }
+
         });
 
     }
 
     public static boolean isOnline(Context context) {
+
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
+
         if (netInfo != null && netInfo.isConnected())
+
             return true;
+
         else
+
             return false;
+
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -120,7 +130,6 @@ public class ActivityRegisterAccount extends AppCompatActivity {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
-
 
     private void store_login(String username, String email, String password) {
 
@@ -148,10 +157,9 @@ public class ActivityRegisterAccount extends AppCompatActivity {
         editor.apply();
     }
 
-
     private void screen_email_verification(){
 
-        Intent i = new Intent(ActivityRegisterAccount.this, ActivityEmailChecking.class);
+        Intent i = new Intent(ActivityRegisterAccount.this, ActivityEditProfileFirst.class);
         finish();
         startActivity(i);
     }

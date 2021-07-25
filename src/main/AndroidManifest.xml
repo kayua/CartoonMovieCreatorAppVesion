@@ -48,30 +48,38 @@
         <activity
             android:name=".GalleryMovie.GalleryPlayer"
             android:screenOrientation="portrait"/>
+
         <activity
             android:name=".ActivityUserInterface"
 
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppMosquito"
             />
+
         <activity
             android:name=".Authentication.ActivityRecoverPassword"
             android:screenOrientation="portrait"/>
+
         <activity
             android:name=".Authentication.ActivityRegisterAccount"
             android:screenOrientation="portrait"/>
+
         <activity
             android:name=".Authentication.ActivityStart"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".Authentication.ActivityEmailChecking"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".Authentication.ActivityAcessAccount"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".Authentication.ActivityNotConnected"
             android:screenOrientation="portrait" />
+
         <activity android:name=".GalleryPhotos.ImageDisplay" android:screenOrientation="portrait"/>
 
     </application>

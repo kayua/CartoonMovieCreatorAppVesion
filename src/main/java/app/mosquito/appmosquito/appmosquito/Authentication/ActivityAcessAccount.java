@@ -25,7 +25,6 @@ public class ActivityAcessAccount extends Activity {
 
     private FirebaseAuth mAuth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -58,6 +57,7 @@ public class ActivityAcessAccount extends Activity {
         });
 
     }
+
     private void acess(String textBoxUsername, String textBoxPassword){
 
         mAuth.signInWithEmailAndPassword(textBoxUsername, textBoxPassword)
