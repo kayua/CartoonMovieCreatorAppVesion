@@ -108,10 +108,22 @@ public class ActivityEditProfileSecond extends Activity {
 
     private void saveOnFirebase(){
 
-        String
+        String gender = new String();
+        String schooling = new String();;
+        String favoriteWord = new String();
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
         try {
+
+
             usernameRegistered = settings.getString("email", "");
             passwordRegistered = settings.getString("password", "");
+            usernameRegistered = settings.getString("email", "");
+            gender = settings.getString("password", "");
+            schooling = settings.getString("email", "");
+            favoriteWord = settings.getString("password", "");
+
             mAuth.signInWithEmailAndPassword(usernameRegistered ,
                     passwordRegistered).addOnCompleteListener(this,
                     new OnCompleteListener<AuthResult>() {
