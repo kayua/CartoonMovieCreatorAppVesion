@@ -9,7 +9,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import app.mosquito.appmosquito.appmosquito.R;
 
@@ -79,7 +78,6 @@ public class ActivityEditProfileFirst extends Activity {
 
     }
 
-
     private void nextScreen() {
 
         Intent i = new Intent(ActivityEditProfileFirst.this, ActivityEditProfileSecond.class);
@@ -87,6 +85,7 @@ public class ActivityEditProfileFirst extends Activity {
         startActivity(i);
 
     }
+
     private void store_login(String birthDate, String city, String company) {
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
@@ -98,15 +97,12 @@ public class ActivityEditProfileFirst extends Activity {
 
     }
 
-    private void toast() {
-        Toast.makeText(getApplicationContext(), "Não foi possível encontrar sua conta. Verificar se o preenchimento está correto.", Toast.LENGTH_SHORT).show();
-            }
     @Override
-
     public void onStart() {
         super.onStart();
 
     }
+
 }
 
 
