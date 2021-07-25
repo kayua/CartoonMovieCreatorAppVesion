@@ -39,6 +39,9 @@ public class ActivityEditProfileSecond extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.auth_profile_second);
+
+        initializeFirebase();
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
@@ -147,23 +150,28 @@ public class ActivityEditProfileSecond extends Activity {
 
         }
 
-        newUser = new UserModel(birthDate, city, company, gender, schooling, favoriteWord);
-
-
-
-
-    }
-
-    private int getUniqueId(){
+        String uniqueId = getUniqueId();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user_id_list");
         DatabaseReference idReference = reference.child("user_id");
-        String randomNumber = Integer.toString(getRandomId());
+        idReference.setValue (uniqueId);
+
+    }
+
+    private String getUniqueId(){
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user_id_list");
+        DatabaseReference idReference = reference.child("user_id");
+        String randomNumber;
+
+        while (true){
+
+            randomNumber = Integer.toString(getRandomId());
+            if(getIdFirebase(randomNumber)){break;}
+        }
 
 
-        String list_key = idReference.getKey();
-
-        return 1;
+        return randomNumber;
     }
 
     private boolean getIdFirebase(String key) {
