@@ -83,6 +83,10 @@
             android:name=".Authentication.ActivityEditProfileFirst"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".Authentication.ActivityEditProfileSecond"
+            android:screenOrientation="portrait" />
+
         <activity android:name=".GalleryPhotos.ImageDisplay" android:screenOrientation="portrait"/>
 
     </application>
