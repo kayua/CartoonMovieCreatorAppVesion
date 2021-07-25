@@ -108,14 +108,17 @@ public class ActivityEditProfileSecond extends Activity {
 
     private void saveOnFirebase(){
 
-        String gender = new String();
-        String schooling = new String();;
-        String favoriteWord = new String();
+        String gender ;
+        String schooling;
+        String favoriteWord;
+        String birthDate;
+        String city;
+        String company;
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
-        try {
 
+        try {
 
             usernameRegistered = settings.getString("email", "");
             passwordRegistered = settings.getString("password", "");
