@@ -157,7 +157,7 @@ public class ActivityEditProfileSecond extends Activity {
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user_id_list");
         DatabaseReference idReference = reference.child("user_id");
-        idReference.setValue (uniqueId);
+        idReference.push().setValue (uniqueId);
 
     }
 
@@ -201,7 +201,7 @@ public class ActivityEditProfileSecond extends Activity {
                 for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
 
                     if (key.equals(Objects.requireNonNull(objSnapshot.getValue()).toString())) {
-                        Log.i(": > ", objSnapshot.getValue().toString());
+                        Log.i(": > ************************ ", objSnapshot.getValue().toString());
                         searchValue[0] =true;
                     }
                 }
