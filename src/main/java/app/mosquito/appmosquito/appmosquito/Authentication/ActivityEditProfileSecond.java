@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
 import java.util.Random;
 
 import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
@@ -122,7 +124,7 @@ public class ActivityEditProfileSecond extends Activity {
 
         Random random = new Random();
 
-        return random.nextInt((100000000 - 999999999 ) + 1) + 100000000;
+        return random.nextInt((999999999-100000000) + 1) + 100000000;
 
     }
 
@@ -168,7 +170,10 @@ public class ActivityEditProfileSecond extends Activity {
         while (true){
 
             randomNumber = Integer.toString(getRandomId());
+
+            Log.i("ID:", "ERRO");
             if(getIdFirebase(randomNumber)){break;}
+            break;
         }
 
 
@@ -195,11 +200,12 @@ public class ActivityEditProfileSecond extends Activity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
 
-                    if (key == objSnapshot.getValue()) {
-
+                    if (key.equals(Objects.requireNonNull(objSnapshot.getValue()).toString())) {
+                        Log.i(": > ", objSnapshot.getValue().toString());
                         searchValue[0] =true;
                     }
                 }
+
 
 
             }
