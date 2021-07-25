@@ -166,7 +166,7 @@ public class ActivityEditProfileSecond extends Activity {
         return 1;
     }
 
-    private void getIdFirebase(String key) {
+    private boolean getIdFirebase(String key) {
 
         Query query;
 
@@ -192,13 +192,7 @@ public class ActivityEditProfileSecond extends Activity {
                     }
                 }
 
-                // inicializo o arrayAdapter passando o contexto da aplicação
-                // a tipo de layout da lista, e a list<Pessoa> contendo os objetos
-                arrayAdapterPessoa = new ArrayAdapter<Pessoa>(Pesquisa.this,
-                        android.R.layout.simple_list_item_1,listPessoa);
 
-                // incluo na ListView o arrayAdapter
-                listVPesquisa.setAdapter(arrayAdapterPessoa);
             }
 
             @Override
@@ -206,7 +200,7 @@ public class ActivityEditProfileSecond extends Activity {
 
             }
         });
-
+        return searchValue[0];
     }
 
     private void initializeFirebase() {
