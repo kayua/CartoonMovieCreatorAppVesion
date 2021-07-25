@@ -79,6 +79,9 @@
         <activity
             android:name=".Authentication.ActivityNotConnected"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".Authentication.ActivityEditProfileFirst"
+            android:screenOrientation="portrait" />
 
         <activity android:name=".GalleryPhotos.ImageDisplay" android:screenOrientation="portrait"/>
 
