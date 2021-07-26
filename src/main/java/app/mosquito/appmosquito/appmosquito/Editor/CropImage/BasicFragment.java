@@ -2,6 +2,7 @@ package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -14,32 +15,29 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.PermissionRequest;
 
-import com.isseiaoki.simplecropview.callback.CropCallback;
-import com.isseiaoki.simplecropview.callback.LoadCallback;
-import com.isseiaoki.simplecropview.callback.SaveCallback;
-import com.isseiaoki.simplecropview.util.Logger;
-import com.isseiaoki.simplecropview.util.Utils;
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+import androidx.fragment.app.Fragment;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import permissions.dispatcher.NeedsPermission;
-import permissions.dispatcher.OnShowRationale;
-import permissions.dispatcher.PermissionRequest;
-import permissions.dispatcher.RuntimePermissions;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.CropCallback;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.LoadCallback;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.SaveCallback;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Logger;
+import app.mosquito.appmosquito.appmosquito.R;
+
 
 @RuntimePermissions public class BasicFragment extends Fragment {
-  private static final String TAG = com.example.simplecropviewsample.BasicFragment.class.getSimpleName();
+  private static final String TAG = BasicFragment.class.getSimpleName();
 
   private static final int REQUEST_PICK_IMAGE = 10011;
   private static final int REQUEST_SAF_PICK_IMAGE = 10012;
@@ -47,18 +45,16 @@ import permissions.dispatcher.RuntimePermissions;
   private static final String KEY_FRAME_RECT = "FrameRect";
   private static final String KEY_SOURCE_URI = "SourceUri";
 
-  // Views ///////////////////////////////////////////////////////////////////////////////////////
   private CropImageView mCropView;
   private Bitmap.CompressFormat mCompressFormat = Bitmap.CompressFormat.JPEG;
   private RectF mFrameRect = null;
   private Uri mSourceUri = null;
 
-  // Note: only the system can call this constructor by reflection.
   public BasicFragment() {
   }
 
-  public static com.example.simplecropviewsample.BasicFragment newInstance() {
-    com.example.simplecropviewsample.BasicFragment fragment = new com.example.simplecropviewsample.BasicFragment();
+  public static BasicFragment newInstance() {
+    BasicFragment fragment = new BasicFragment();
     Bundle args = new Bundle();
     fragment.setArguments(args);
     return fragment;
@@ -190,7 +186,7 @@ import permissions.dispatcher.RuntimePermissions;
   }
 
   public void showProgress() {
-    com.example.simplecropviewsample.ProgressDialogFragment f = com.example.simplecropviewsample.ProgressDialogFragment.getInstance();
+    ProgressDialogFragment f = ProgressDialogFragment.getInstance();
     getFragmentManager().beginTransaction().add(f, PROGRESS_DIALOG).commitAllowingStateLoss();
   }
 
@@ -198,7 +194,7 @@ import permissions.dispatcher.RuntimePermissions;
     if (!isResumed()) return;
     android.support.v4.app.FragmentManager manager = getFragmentManager();
     if (manager == null) return;
-    com.example.simplecropviewsample.ProgressDialogFragment f = (com.example.simplecropviewsample.ProgressDialogFragment) manager.findFragmentByTag(PROGRESS_DIALOG);
+    ProgressDialogFragment f = (ProgressDialogFragment) manager.findFragmentByTag(PROGRESS_DIALOG);
     if (f != null) {
       getFragmentManager().beginTransaction().remove(f).commitAllowingStateLoss();
     }
@@ -301,7 +297,7 @@ import permissions.dispatcher.RuntimePermissions;
     public void onClick(View v) {
       switch (v.getId()) {
         case R.id.buttonDone:
-          BasicFragmentPermissionsDispatcher.cropImageWithCheck(com.example.simplecropviewsample.BasicFragment.this);
+          BasicFragmentPermissionsDispatcher.cropImageWithCheck(BasicFragment.this);
           break;
         case R.id.buttonFitImage:
           mCropView.setCropMode(CropImageView.CropMode.FIT_IMAGE);
@@ -340,13 +336,11 @@ import permissions.dispatcher.RuntimePermissions;
           mCropView.rotateImage(CropImageView.RotateDegrees.ROTATE_90D);
           break;
         case R.id.buttonPickImage:
-          BasicFragmentPermissionsDispatcher.pickImageWithCheck(com.example.simplecropviewsample.BasicFragment.this);
+          BasicFragmentPermissionsDispatcher.pickImageWithCheck(BasicFragment.this);
           break;
       }
     }
   };
-
-  // Callbacks ///////////////////////////////////////////////////////////////////////////////////
 
   private final LoadCallback mLoadCallback = new LoadCallback() {
     @Override
@@ -375,7 +369,7 @@ import permissions.dispatcher.RuntimePermissions;
     @Override
     public void onSuccess(Uri outputUri) {
       dismissProgress();
-      ((com.example.simplecropviewsample.BasicActivity) getActivity()).startResultActivity(outputUri);
+      ((BasicActivity) getActivity()).startResultActivity(outputUri);
     }
 
     @Override
