@@ -1,5 +1,6 @@
 package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 
+import android.app.Notification;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -28,18 +29,8 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
-import android.widget.ImageView;
 
-import com.isseiaoki.simplecropview.animation.SimpleValueAnimator;
-import com.isseiaoki.simplecropview.animation.SimpleValueAnimatorListener;
-import com.isseiaoki.simplecropview.animation.ValueAnimatorV14;
-import com.isseiaoki.simplecropview.animation.ValueAnimatorV8;
-import com.isseiaoki.simplecropview.callback.Callback;
-import com.isseiaoki.simplecropview.callback.CropCallback;
-import com.isseiaoki.simplecropview.callback.LoadCallback;
-import com.isseiaoki.simplecropview.callback.SaveCallback;
-import com.isseiaoki.simplecropview.util.Logger;
-import com.isseiaoki.simplecropview.util.Utils;
+import androidx.annotation.NonNull;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -49,17 +40,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import io.reactivex.Completable;
-import io.reactivex.CompletableEmitter;
-import io.reactivex.CompletableOnSubscribe;
-import io.reactivex.Single;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.animation.SimpleValueAnimator;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.animation.SimpleValueAnimatorListener;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.Callback;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.LoadCallback;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Logger;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Utils;
+import app.mosquito.appmosquito.appmosquito.R;
 
-@SuppressWarnings("unused") public class CropImageView extends ImageView {
-  private static final String TAG = com.isseiaoki.simplecropview.CropImageView.class.getSimpleName();
+
+@SuppressWarnings("unused") public class CropImageView extends androidx.appcompat.widget.AppCompatImageView {
+  private static final String TAG = CropImageView.class.getSimpleName();
 
   // Constants ///////////////////////////////////////////////////////////////////////////////////
 
@@ -1416,40 +1407,16 @@ import io.reactivex.functions.Consumer;
     mAngle = mExifRotation;
   }
 
-  /**
-   * Load image from Uri.
-   * This method is deprecated. Use loadAsync(Uri, LoadCallback) instead.
-   *
-   * @param sourceUri Image Uri
-   * @param callback Callback
-   *
-   * @see #loadAsync(Uri, LoadCallback)
-   */
+
   public void startLoad(final Uri sourceUri, final LoadCallback callback) {
     loadAsync(sourceUri, callback);
   }
 
-  /**
-   * Load image from Uri.
-   *
-   * @param sourceUri Image Uri
-   * @param callback Callback
-   *
-   * @see #loadAsync(Uri, boolean, RectF, LoadCallback)
-   */
+
   public void loadAsync(final Uri sourceUri, final LoadCallback callback) {
     loadAsync(sourceUri, false, null, callback);
   }
 
-  /**
-   * Load image from Uri.
-   *
-   * @param sourceUri Image Uri
-   * @param callback Callback
-   *
-   * @see #load(Uri)
-   * @see #loadAsCompletable(Uri, boolean, RectF)
-   */
   public void loadAsync(final Uri sourceUri, final boolean useThumbnail,
                         final RectF initialFrameRect, final LoadCallback callback) {
 
@@ -1485,13 +1452,7 @@ import io.reactivex.functions.Consumer;
     });
   }
 
-  /**
-   * Load image from Uri with RxJava2
-   *
-   * @param sourceUri Image Uri
-   *
-   * @see #load(Uri)
-   */
+
   public Completable loadAsCompletable(final Uri sourceUri) {
     return loadAsCompletable(sourceUri, false, null);
   }
@@ -1535,7 +1496,7 @@ import io.reactivex.functions.Consumer;
       public void accept(@NonNull Disposable disposable) throws Exception {
         mIsLoading.set(true);
       }
-    }).doFinally(new Action() {
+    }).doFinally(new Notification.Action() {
       @Override
       public void run() throws Exception {
         mIsLoading.set(false);
@@ -1550,8 +1511,8 @@ import io.reactivex.functions.Consumer;
    *
    * @return Builder
    */
-  public com.isseiaoki.simplecropview.LoadRequest load(Uri sourceUri) {
-    return new com.isseiaoki.simplecropview.LoadRequest(this, sourceUri);
+  public LoadRequest load(Uri sourceUri) {
+    return new LoadRequest(this, sourceUri);
   }
 
   private void applyThumbnail(Uri sourceUri) {
@@ -1601,12 +1562,7 @@ import io.reactivex.functions.Consumer;
     return sampledBitmap;
   }
 
-  /**
-   * Rotate image
-   *
-   * @param degrees rotation angle
-   * @param durationMillis animation duration in milliseconds
-   */
+
   public void rotateImage(RotateDegrees degrees, int durationMillis) {
     if (mIsRotating) {
       getAnimator().cancelAnimation();
@@ -1884,14 +1840,7 @@ import io.reactivex.functions.Consumer;
     });
   }
 
-  /**
-   * Save image with RxJava2
-   *
-   * @param bitmap Bitmap for saving
-   * @param saveUri Uri for saving the cropped image
-   *
-   * @return Single of saving image
-   */
+
   public Single<Uri> saveAsSingle(final Bitmap bitmap, final Uri saveUri) {
     return Single.fromCallable(new Callable<Uri>() {
 
@@ -1904,7 +1853,7 @@ import io.reactivex.functions.Consumer;
       public void accept(@NonNull Disposable disposable) throws Exception {
         mIsSaving.set(true);
       }
-    }).doFinally(new Action() {
+    }).doFinally(new Notification.Action() {
       @Override
       public void run() throws Exception {
         mIsSaving.set(false);
@@ -1919,8 +1868,8 @@ import io.reactivex.functions.Consumer;
    *
    * @return Builder
    */
-  public com.isseiaoki.simplecropview.SaveRequest save(Bitmap bitmap) {
-    return new com.isseiaoki.simplecropview.SaveRequest(this, bitmap);
+  public SaveRequest save(Bitmap bitmap) {
+    return new SaveRequest(this, bitmap);
   }
 
   private Bitmap cropImage() throws IOException, IllegalStateException {
@@ -1950,14 +1899,6 @@ import io.reactivex.functions.Consumer;
     return cropped;
   }
 
-  /**
-   * Get frame position relative to the source bitmap.
-   * @see #load(Uri)
-   * @see #loadAsync(Uri, boolean, RectF, LoadCallback)
-   * @see #loadAsCompletable(Uri, boolean, RectF)
-   *
-   * @return getCroppedBitmap area boundaries.
-   */
   public RectF getActualCropRect() {
     if(mImageRect == null) return null;
     float offsetX = (mImageRect.left / mScale);
