@@ -34,7 +34,7 @@ public class RoundImage extends Drawable {
     @Override
     public void draw(Canvas canvas) {
         //canvas.drawCircle(mRectF, mPaint);
-        canvas.drawCircle(260.0f, 180.0f, 180.0f, mPaint);
+        canvas.drawCircle(260.0f, 195.0f, 235.0f, mPaint);
     }
 
     @Override

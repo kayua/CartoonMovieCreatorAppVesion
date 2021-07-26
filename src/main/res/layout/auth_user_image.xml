@@ -149,8 +149,8 @@
 
     <ImageView
         android:id="@+id/imageView23"
-        android:layout_width="260dp"
-        android:layout_height="260dp"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:background="@drawable/icon_general_user"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
