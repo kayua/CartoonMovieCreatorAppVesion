@@ -134,13 +134,11 @@ import app.mosquito.appmosquito.appmosquito.R;
   }
 
   @Override
-  public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                         @NonNull int[] grantResults) {
+  public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     BasicFragmentPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
   }
 
-  // Bind views //////////////////////////////////////////////////////////////////////////////////
 
   private void bindViews(View view) {
     mCropView = (CropImageView) view.findViewById(R.id.cropImageView);
