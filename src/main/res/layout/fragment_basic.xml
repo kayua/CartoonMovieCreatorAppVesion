@@ -6,32 +6,22 @@
     android:orientation="vertical"
     >
 
-  <com.isseiaoki.simplecropview.CropImageView
+  <CropImageView
       android:id="@+id/cropImageView"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_weight="1"
       android:padding="@dimen/spacing_xlarge"
-      custom:scv_background_color="@color/windowBackground"
-      custom:scv_crop_mode="fit_image"
-      custom:scv_frame_color="@color/colorAccent"
-      custom:scv_frame_stroke_weight="1dp"
-      custom:scv_guide_color="@color/colorAccent"
-      custom:scv_guide_show_mode="show_always"
-      custom:scv_guide_stroke_weight="1dp"
-      custom:scv_handle_color="@color/colorAccent"
-      custom:scv_handle_show_mode="show_always"
-      custom:scv_handle_size="14dp"
-      custom:scv_min_frame_size="50dp"
-      custom:scv_overlay_color="@color/overlay"
-      custom:scv_touch_padding="8dp"
+      android:scv_background_color="@color/windowBackground"
+      android:scv_crop_mode="fit_image"
+
       />
 
   <View
       android:layout_width="match_parent"
       android:layout_height="1dp"
-      android:layout_marginLeft="@dimen/spacing_small"
-      android:layout_marginRight="@dimen/spacing_small"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="8dp"
       android:background="@color/divider"
       />
 
@@ -48,8 +38,8 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/spacing_xsmall"
-        android:paddingRight="@dimen/spacing_xsmall"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         >
 
       <Button
@@ -57,10 +47,10 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
-          android:layout_margin="@dimen/spacing_xsmall"
-          android:padding="@dimen/spacing_xsmall"
+          android:layout_margin="8dp"
+          android:padding="8dp"
           android:text="FIT IMAGE"
-          style="@style/AppTheme.Button.Borderless"
+
           />
 
       <Button
@@ -68,10 +58,9 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
-          android:layout_margin="@dimen/spacing_xsmall"
-          android:padding="@dimen/spacing_xsmall"
+          android:layout_margin="8dp"
+          android:padding="8dp"
           android:text="SQUARE"
-          style="@style/AppTheme.Button.Borderless"
           />
 
       <Button
@@ -79,40 +68,38 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
-          android:layout_margin="@dimen/spacing_xsmall"
-          android:padding="@dimen/spacing_xsmall"
+          android:layout_margin="8dp"
+          android:padding="8dp"
           android:text="3:4"
-          style="@style/AppTheme.Button.Borderless"
           />
+
       <Button
           android:id="@+id/button4_3"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
-          android:layout_margin="@dimen/spacing_xsmall"
-          android:padding="@dimen/spacing_xsmall"
+          android:layout_margin="8dp"
+          android:padding="8dp"
           android:text="4:3"
-          style="@style/AppTheme.Button.Borderless"
           />
       <Button
           android:id="@+id/button9_16"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
-          android:layout_margin="@dimen/spacing_xsmall"
-          android:padding="@dimen/spacing_xsmall"
+          android:layout_margin="8dp"
+          android:padding="8dp"
           android:text="9:16"
-          style="@style/AppTheme.Button.Borderless"
+
           />
       <Button
           android:id="@+id/button16_9"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
-          android:layout_margin="@dimen/spacing_xsmall"
-          android:padding="@dimen/spacing_xsmall"
+          android:layout_margin="8dp"
+          android:padding="8dp"
           android:text="16:9"
-          style="@style/AppTheme.Button.Borderless"
           />
 
       <Button
@@ -120,10 +107,9 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
-          android:layout_margin="@dimen/spacing_small"
-          android:padding="@dimen/spacing_xsmall"
+          android:layout_margin="8dp"
+          android:padding="8dp"
           android:text="7:5"
-          style="@style/AppTheme.Button.Borderless"
           />
 
       <Button

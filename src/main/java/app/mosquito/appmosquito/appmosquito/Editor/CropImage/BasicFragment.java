@@ -1,6 +1,7 @@
 package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
@@ -158,7 +159,7 @@ import app.mosquito.appmosquito.appmosquito.R;
     view.findViewById(R.id.buttonShowCircleButCropAsSquare).setOnClickListener(btnListener);
   }
 
-  @NeedsPermission(Manifest.permission.READ_EXTERNAL_STORAGE) public void pickImage() {
+  public void pickImage() {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
       startActivityForResult(new Intent(Intent.ACTION_GET_CONTENT).setType("image/*"),
           REQUEST_PICK_IMAGE);
@@ -170,17 +171,16 @@ import app.mosquito.appmosquito.appmosquito.R;
     }
   }
 
-  @NeedsPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) public void cropImage() {
+  public void cropImage() {
     showProgress();
     mCropView.crop(mSourceUri).execute(mCropCallback);
   }
 
-  @OnShowRationale(Manifest.permission.READ_EXTERNAL_STORAGE)
+
   public void showRationaleForPick(PermissionRequest request) {
     showRationaleDialog(R.string.permission_pick_rationale, request);
   }
 
-  @OnShowRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)
   public void showRationaleForCrop(PermissionRequest request) {
     showRationaleDialog(R.string.permission_crop_rationale, request);
   }
