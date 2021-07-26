@@ -11,9 +11,8 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_weight="1"
-      android:padding="@dimen/spacing_xlarge"
-      android:scv_background_color="@color/windowBackground"
-      android:scv_crop_mode="fit_image"
+      android:padding="8dp"
+
 
       />
 
@@ -117,10 +116,9 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
-          android:layout_margin="@dimen/spacing_xsmall"
-          android:padding="@dimen/spacing_xsmall"
+          android:layout_margin="8dp"
+          android:padding="8dp"
           android:text="FREE"
-          style="@style/AppTheme.Button.Borderless"
           />
 
       <Button
@@ -128,10 +126,9 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
-          android:layout_margin="@dimen/spacing_xsmall"
-          android:padding="@dimen/spacing_xsmall"
+          android:layout_margin="8dp"
+          android:padding="8dp"
           android:text="CIRCLE"
-          style="@style/AppTheme.Button.Borderless"
           />
 
       <Button
@@ -139,10 +136,10 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
-          android:layout_margin="@dimen/spacing_xsmall"
-          android:padding="@dimen/spacing_xsmall"
+          android:layout_margin="8dp"
+          android:padding="8dp"
           android:text="CIRCLE_SQUARE"
-          style="@style/AppTheme.Button.Borderless"
+
           />
 
     </LinearLayout>
@@ -151,8 +148,8 @@
   <View
       android:layout_width="match_parent"
       android:layout_height="1dp"
-      android:layout_marginLeft="@dimen/spacing_small"
-      android:layout_marginRight="@dimen/spacing_small"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="8dp"
       android:background="@color/divider"
       />
 
@@ -170,9 +167,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginRight="@dimen/spacing"
+        android:layout_marginRight="8dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:padding="@dimen/spacing"
+        android:padding="8dp"
         android:src="@drawable/ic_photo_library_black_24dp"
         />
 
@@ -187,7 +184,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:background="?attr/selectableItemBackgroundBorderless"
-          android:padding="@dimen/spacing"
+          android:padding="8dp"
           android:src="@drawable/ic_rotate_left_black_24dp"
           />
       <ImageButton
@@ -195,7 +192,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:background="?attr/selectableItemBackgroundBorderless"
-          android:padding="@dimen/spacing"
+          android:padding="8dp"
           android:src="@drawable/ic_rotate_right_black_24dp"
           />
 
