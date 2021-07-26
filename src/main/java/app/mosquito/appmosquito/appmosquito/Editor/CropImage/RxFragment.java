@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -26,11 +27,18 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Logger;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Utils;
 import app.mosquito.appmosquito.appmosquito.R;
+import io.reactivex.CompletableSource;
+import io.reactivex.SingleSource;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class RxFragment extends Fragment {
   private static final String TAG = RxFragment.class.getSimpleName();
@@ -121,6 +129,7 @@ public class RxFragment extends Fragment {
     }
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.N)
   private Disposable loadImage(final Uri uri) {
     mSourceUri = uri;
     return new RxPermissions(getActivity()).request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -154,6 +163,7 @@ public class RxFragment extends Fragment {
         });
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.N)
   private Disposable cropImage() {
     return mCropView.crop(mSourceUri)
         .executeAsSingle()
@@ -318,7 +328,9 @@ public class RxFragment extends Fragment {
     public void onClick(View v) {
       switch (v.getId()) {
         case R.id.buttonDone:
-          mDisposable.add(cropImage());
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            mDisposable.add(cropImage());
+          }
           break;
         case R.id.buttonFitImage:
           mCropView.setCropMode(CropImageView.CropMode.FIT_IMAGE);
