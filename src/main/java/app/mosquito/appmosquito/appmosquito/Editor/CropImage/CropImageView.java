@@ -42,8 +42,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.animation.SimpleValueAnimator;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.animation.SimpleValueAnimatorListener;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.animation.ValueAnimatorV14;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.animation.ValueAnimatorV8;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.Callback;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.CropCallback;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.LoadCallback;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.SaveCallback;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Logger;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Utils;
 import app.mosquito.appmosquito.appmosquito.R;
@@ -1786,7 +1790,7 @@ import app.mosquito.appmosquito.appmosquito.R;
       public void accept(@NonNull Disposable disposable) throws Exception {
         mIsCropping.set(true);
       }
-    }).doFinally(new Action() {
+    }).doFinally(new Notification.Action() {
       @Override
       public void run() throws Exception {
         mIsCropping.set(false);
@@ -1805,8 +1809,8 @@ import app.mosquito.appmosquito.appmosquito.R;
    *
    * @return Builder
    */
-  public com.isseiaoki.simplecropview.CropRequest crop(Uri sourceUri) {
-    return new com.isseiaoki.simplecropview.CropRequest(this, sourceUri);
+  public CropRequest crop(Uri sourceUri) {
+    return new CropRequest(this, sourceUri);
   }
 
   /**
