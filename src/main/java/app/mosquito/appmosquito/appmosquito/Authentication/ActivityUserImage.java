@@ -3,9 +3,12 @@ package app.mosquito.appmosquito.appmosquito.Authentication;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -17,7 +20,7 @@ import app.mosquito.appmosquito.appmosquito.R;
 
 public class ActivityUserImage extends Activity {
 
-
+    String picturePath;
     @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,18 +31,8 @@ public class ActivityUserImage extends Activity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
-        ImageView imageView1;
-        RoundImage roundedImage;
-        int PICK_IMAGE = 1;
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
 
-        imageView1 = (ImageView) findViewById(R.id.imageView23);
-        Bitmap bm = BitmapFactory.decodeResource(getResources(),R.drawable.example2);
-        roundedImage = new RoundImage(bm);
-        imageView1.setImageDrawable(roundedImage);
+        int PICK_IMAGE = 1;
 
         ImageView buttonLoadImage = (ImageView) findViewById(R.id.imageView23);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
@@ -81,11 +74,17 @@ public class ActivityUserImage extends Activity {
             cursor.moveToFirst();
 
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            String picturePath = cursor.getString(columnIndex);
+            picturePath = cursor.getString(columnIndex);
             cursor.close();
 
-            ImageView imageView = (ImageView) findViewById(R.id.imgView);
+            ImageView imageView = (ImageView) findViewById(R.id.imageView23);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+            ImageView imageView1;
+            RoundImage roundedImage;
+            imageView1 = (ImageView) findViewById(R.id.imageView23);
+            Bitmap bm = BitmapFactory.decodeFile(picturePath);
+            roundedImage = new RoundImage(bm);
+            imageView1.setImageDrawable(roundedImage);
 
         }
 
