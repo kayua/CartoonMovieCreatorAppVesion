@@ -1,10 +1,13 @@
 package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import app.mosquito.appmosquito.appmosquito.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -16,8 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     findViewById(R.id.basic_sample_button).setOnClickListener(this);
     findViewById(R.id.rx_sample_button).setOnClickListener(this);
 
-    // apply custom font
-    com.example.simplecropviewsample.FontUtils.setFont(findViewById(R.id.root_layout));
+    FontUtils.setFont(findViewById(R.id.root_layout));
 
     initToolbar();
   }
@@ -38,6 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
     ActionBar actionBar = getSupportActionBar();
-    com.example.simplecropviewsample.FontUtils.setTitle(actionBar, "SimpleCropView");
+    FontUtils.setTitle(actionBar, "SimpleCropView");
   }
 }

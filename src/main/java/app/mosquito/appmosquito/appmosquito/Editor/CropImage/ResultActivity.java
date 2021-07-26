@@ -9,26 +9,28 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.isseiaoki.simplecropview.util.Utils;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Utils;
+import app.mosquito.appmosquito.appmosquito.R;
+
 public class ResultActivity extends AppCompatActivity {
-  private static final String TAG = com.example.simplecropviewsample.ResultActivity.class.getSimpleName();
+  private static final String TAG = ResultActivity.class.getSimpleName();
   private ImageView mImageView;
   private ExecutorService mExecutor;
 
   public static Intent createIntent(Activity activity, Uri uri) {
-    Intent intent = new Intent(activity, com.example.simplecropviewsample.ResultActivity.class);
+    Intent intent = new Intent(activity, ResultActivity.class);
     intent.setData(uri);
     return intent;
   }
