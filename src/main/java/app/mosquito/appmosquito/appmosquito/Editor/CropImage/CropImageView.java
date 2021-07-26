@@ -51,6 +51,12 @@ import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.SaveCallba
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Logger;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Utils;
 import app.mosquito.appmosquito.appmosquito.R;
+import io.reactivex.Completable;
+import io.reactivex.CompletableEmitter;
+import io.reactivex.CompletableOnSubscribe;
+import io.reactivex.Single;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 
 @SuppressWarnings("unused") public class CropImageView extends androidx.appcompat.widget.AppCompatImageView {
@@ -1461,15 +1467,7 @@ import app.mosquito.appmosquito.appmosquito.R;
     return loadAsCompletable(sourceUri, false, null);
   }
 
-  /**
-   * Load image from Uri with RxJava2
-   *
-   * @param sourceUri Image Uri
-   *
-   * @see #load(Uri)
-   *
-   * @return Completable of loading image
-   */
+
   public Completable loadAsCompletable(final Uri sourceUri, final boolean useThumbnail,
                                        final RectF initialFrameRect) {
     return Completable.create(new CompletableOnSubscribe() {
@@ -1865,13 +1863,6 @@ import app.mosquito.appmosquito.appmosquito.R;
     });
   }
 
-  /**
-   * Save image with Builder Pattern
-   *
-   * @param bitmap image for saving
-   *
-   * @return Builder
-   */
   public SaveRequest save(Bitmap bitmap) {
     return new SaveRequest(this, bitmap);
   }

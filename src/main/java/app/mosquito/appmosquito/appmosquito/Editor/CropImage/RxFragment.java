@@ -30,6 +30,7 @@ import java.util.function.Consumer;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Logger;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Utils;
 import app.mosquito.appmosquito.appmosquito.R;
+import io.reactivex.disposables.CompositeDisposable;
 
 public class RxFragment extends Fragment {
   private static final String TAG = RxFragment.class.getSimpleName();
@@ -40,7 +41,6 @@ public class RxFragment extends Fragment {
   private static final String KEY_FRAME_RECT = "FrameRect";
   private static final String KEY_SOURCE_URI = "SourceUri";
 
-  // Views ///////////////////////////////////////////////////////////////////////////////////////
   private CropImageView mCropView;
   private CompositeDisposable mDisposable = new CompositeDisposable();
   private Bitmap.CompressFormat mCompressFormat = Bitmap.CompressFormat.JPEG;

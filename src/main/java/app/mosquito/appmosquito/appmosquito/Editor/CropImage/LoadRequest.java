@@ -4,6 +4,7 @@ import android.graphics.RectF;
 import android.net.Uri;
 
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.LoadCallback;
+import io.reactivex.Completable;
 
 
 public class LoadRequest {

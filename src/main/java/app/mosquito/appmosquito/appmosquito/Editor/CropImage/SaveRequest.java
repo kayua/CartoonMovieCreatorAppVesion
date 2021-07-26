@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.SaveCallback;
+import io.reactivex.Single;
 
 
 public class SaveRequest {
