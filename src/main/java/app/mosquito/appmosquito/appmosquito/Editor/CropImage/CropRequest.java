@@ -3,9 +3,7 @@ package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 import android.graphics.Bitmap;
 import android.net.Uri;
 
-import com.isseiaoki.simplecropview.callback.CropCallback;
-
-import io.reactivex.Single;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.CropCallback;
 
 public class CropRequest {
 
@@ -21,24 +19,24 @@ public class CropRequest {
     this.sourceUri = sourceUri;
   }
 
-  public com.isseiaoki.simplecropview.CropRequest outputWidth(int outputWidth) {
+  public CropRequest outputWidth(int outputWidth) {
     this.outputWidth = outputWidth;
     this.outputHeight = 0;
     return this;
   }
 
-  public com.isseiaoki.simplecropview.CropRequest outputHeight(int outputHeight) {
+  public CropRequest outputHeight(int outputHeight) {
     this.outputHeight = outputHeight;
     this.outputWidth = 0;
     return this;
   }
 
-  public com.isseiaoki.simplecropview.CropRequest outputMaxWidth(int outputMaxWidth) {
+  public CropRequest outputMaxWidth(int outputMaxWidth) {
     this.outputMaxWidth = outputMaxWidth;
     return this;
   }
 
-  public com.isseiaoki.simplecropview.CropRequest outputMaxHeight(int outputMaxHeight) {
+  public CropRequest outputMaxHeight(int outputMaxHeight) {
     this.outputMaxHeight = outputMaxHeight;
     return this;
   }

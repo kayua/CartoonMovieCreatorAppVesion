@@ -3,9 +3,8 @@ package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 import android.graphics.RectF;
 import android.net.Uri;
 
-import com.isseiaoki.simplecropview.callback.LoadCallback;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.LoadCallback;
 
-import io.reactivex.Completable;
 
 public class LoadRequest {
 
@@ -20,17 +19,17 @@ public class LoadRequest {
     this.sourceUri = sourceUri;
   }
 
-  public com.isseiaoki.simplecropview.LoadRequest initialFrameScale(float initialFrameScale) {
+  public LoadRequest initialFrameScale(float initialFrameScale) {
     this.initialFrameScale = initialFrameScale;
     return this;
   }
 
-  public com.isseiaoki.simplecropview.LoadRequest initialFrameRect(RectF initialFrameRect) {
+  public LoadRequest initialFrameRect(RectF initialFrameRect) {
     this.initialFrameRect = initialFrameRect;
     return this;
   }
 
-  public com.isseiaoki.simplecropview.LoadRequest useThumbnail(boolean useThumbnail) {
+  public LoadRequest useThumbnail(boolean useThumbnail) {
     this.useThumbnail = useThumbnail;
     return this;
   }
