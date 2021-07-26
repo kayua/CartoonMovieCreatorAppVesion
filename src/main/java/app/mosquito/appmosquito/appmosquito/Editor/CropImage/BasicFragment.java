@@ -24,6 +24,7 @@ import android.webkit.PermissionRequest;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -33,6 +34,7 @@ import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.CropCallba
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.LoadCallback;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.SaveCallback;
 import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Logger;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Utils;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
@@ -192,7 +194,7 @@ import app.mosquito.appmosquito.appmosquito.R;
 
   public void dismissProgress() {
     if (!isResumed()) return;
-    android.support.v4.app.FragmentManager manager = getFragmentManager();
+    FragmentManager manager = getFragmentManager();
     if (manager == null) return;
     ProgressDialogFragment f = (ProgressDialogFragment) manager.findFragmentByTag(PROGRESS_DIALOG);
     if (f != null) {

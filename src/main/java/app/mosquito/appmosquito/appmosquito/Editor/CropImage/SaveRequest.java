@@ -3,9 +3,8 @@ package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 import android.graphics.Bitmap;
 import android.net.Uri;
 
-import com.isseiaoki.simplecropview.callback.SaveCallback;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.callback.SaveCallback;
 
-import io.reactivex.Single;
 
 public class SaveRequest {
 
@@ -19,12 +18,12 @@ public class SaveRequest {
     this.image = image;
   }
 
-  public com.isseiaoki.simplecropview.SaveRequest compressFormat(Bitmap.CompressFormat compressFormat) {
+  public SaveRequest compressFormat(Bitmap.CompressFormat compressFormat) {
     this.compressFormat = compressFormat;
     return this;
   }
 
-  public com.isseiaoki.simplecropview.SaveRequest compressQuality(int compressQuality) {
+  public SaveRequest compressQuality(int compressQuality) {
     this.compressQuality = compressQuality;
     return this;
   }
