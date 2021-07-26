@@ -2,6 +2,7 @@ package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Notification;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,33 +14,24 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.isseiaoki.simplecropview.util.Logger;
-import com.isseiaoki.simplecropview.util.Utils;
-import com.tbruyelle.rxpermissions2.RxPermissions;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.function.Consumer;
 
-import io.reactivex.CompletableSource;
-import io.reactivex.SingleSource;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
-import io.reactivex.functions.Predicate;
-import io.reactivex.schedulers.Schedulers;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Logger;
+import app.mosquito.appmosquito.appmosquito.Editor.CropImage.util.Utils;
+import app.mosquito.appmosquito.appmosquito.R;
 
 public class RxFragment extends Fragment {
-  private static final String TAG = com.example.simplecropviewsample.RxFragment.class.getSimpleName();
+  private static final String TAG = RxFragment.class.getSimpleName();
 
   private static final int REQUEST_PICK_IMAGE = 10011;
   private static final int REQUEST_SAF_PICK_IMAGE = 10012;
@@ -58,8 +50,8 @@ public class RxFragment extends Fragment {
   public RxFragment() {
   }
 
-  public static com.example.simplecropviewsample.RxFragment newInstance() {
-    com.example.simplecropviewsample.RxFragment fragment = new com.example.simplecropviewsample.RxFragment();
+  public static RxFragment newInstance() {
+    RxFragment fragment = new RxFragment();
     Bundle args = new Bundle();
     fragment.setArguments(args);
     return fragment;
@@ -150,7 +142,7 @@ public class RxFragment extends Fragment {
         })
         .subscribeOn(Schedulers.newThread())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Action() {
+        .subscribe(new Notification.Action() {
           @Override
           public void run() throws Exception {
           }
@@ -180,7 +172,7 @@ public class RxFragment extends Fragment {
             showProgress();
           }
         })
-        .doFinally(new Action() {
+        .doFinally(new Notification.Action() {
           @Override
           public void run() throws Exception {
             dismissProgress();
