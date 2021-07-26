@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Editor;
+package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,11 +9,11 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-public class BasicActivity extends AppCompatActivity {
-  private static final String TAG = com.example.simplecropviewsample.BasicActivity.class.getSimpleName();
+public class RxActivity extends AppCompatActivity {
+  private static final String TAG = com.example.simplecropviewsample.RxActivity.class.getSimpleName();
 
   public static Intent createIntent(Activity activity) {
-    return new Intent(activity, com.example.simplecropviewsample.BasicActivity.class);
+    return new Intent(activity, com.example.simplecropviewsample.RxActivity.class);
   }
 
   // Lifecycle Method ////////////////////////////////////////////////////////////////////////////
@@ -21,15 +21,15 @@ public class BasicActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
     setContentView(R.layout.activity_basic);
 
     if(savedInstanceState == null){
-      getSupportFragmentManager().beginTransaction().add(R.id.container, BasicFragment.newInstance()).commit();
+      getSupportFragmentManager().beginTransaction().add(R.id.container, com.example.simplecropviewsample.RxFragment.newInstance()).commit();
     }
 
     // apply custom font
     com.example.simplecropviewsample.FontUtils.setFont(findViewById(R.id.root_layout));
+
     initToolbar();
   }
 
@@ -48,7 +48,7 @@ public class BasicActivity extends AppCompatActivity {
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
     ActionBar actionBar = getSupportActionBar();
-    com.example.simplecropviewsample.FontUtils.setTitle(actionBar, "Basic Sample");
+    com.example.simplecropviewsample.FontUtils.setTitle(actionBar, "Rx Sample");
     actionBar.setDisplayHomeAsUpEnabled(true);
     actionBar.setHomeButtonEnabled(true);
   }

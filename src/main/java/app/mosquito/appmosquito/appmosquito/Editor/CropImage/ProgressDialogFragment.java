@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Editor;
+package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 
 import android.app.Dialog;
 import android.content.DialogInterface;

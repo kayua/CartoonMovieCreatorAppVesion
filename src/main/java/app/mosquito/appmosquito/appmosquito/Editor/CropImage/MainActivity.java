@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Editor;
+package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;

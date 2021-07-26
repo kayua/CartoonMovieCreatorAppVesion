@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Editor;
+package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 
 import android.content.Context;
 import android.graphics.Typeface;

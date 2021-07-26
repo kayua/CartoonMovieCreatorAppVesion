@@ -1,11 +1,10 @@
-package app.mosquito.appmosquito.appmosquito.Editor;
+package app.mosquito.appmosquito.appmosquito.Editor.CropImage;
 
 import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
@@ -14,33 +13,33 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.isseiaoki.simplecropview.CropImageView;
-import com.isseiaoki.simplecropview.callback.CropCallback;
-import com.isseiaoki.simplecropview.callback.LoadCallback;
-import com.isseiaoki.simplecropview.callback.SaveCallback;
 import com.isseiaoki.simplecropview.util.Logger;
 import com.isseiaoki.simplecropview.util.Utils;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import permissions.dispatcher.NeedsPermission;
-import permissions.dispatcher.OnShowRationale;
-import permissions.dispatcher.PermissionRequest;
-import permissions.dispatcher.RuntimePermissions;
+import io.reactivex.CompletableSource;
+import io.reactivex.SingleSource;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
+import io.reactivex.schedulers.Schedulers;
 
-@RuntimePermissions public class BasicFragment extends Fragment {
-  private static final String TAG = com.example.simplecropviewsample.BasicFragment.class.getSimpleName();
+public class RxFragment extends Fragment {
+  private static final String TAG = com.example.simplecropviewsample.RxFragment.class.getSimpleName();
 
   private static final int REQUEST_PICK_IMAGE = 10011;
   private static final int REQUEST_SAF_PICK_IMAGE = 10012;
@@ -50,16 +49,17 @@ import permissions.dispatcher.RuntimePermissions;
 
   // Views ///////////////////////////////////////////////////////////////////////////////////////
   private CropImageView mCropView;
+  private CompositeDisposable mDisposable = new CompositeDisposable();
   private Bitmap.CompressFormat mCompressFormat = Bitmap.CompressFormat.JPEG;
   private RectF mFrameRect = null;
   private Uri mSourceUri = null;
 
   // Note: only the system can call this constructor by reflection.
-  public BasicFragment() {
+  public RxFragment() {
   }
 
-  public static com.example.simplecropviewsample.BasicFragment newInstance() {
-    com.example.simplecropviewsample.BasicFragment fragment = new com.example.simplecropviewsample.BasicFragment();
+  public static com.example.simplecropviewsample.RxFragment newInstance() {
+    com.example.simplecropviewsample.RxFragment fragment = new com.example.simplecropviewsample.RxFragment();
     Bundle args = new Bundle();
     fragment.setArguments(args);
     return fragment;
@@ -83,8 +83,6 @@ import permissions.dispatcher.RuntimePermissions;
     // bind Views
     bindViews(view);
 
-    mCropView.setDebug(true);
-
     if (savedInstanceState != null) {
       // restore data
       mFrameRect = savedInstanceState.getParcelable(KEY_FRAME_RECT);
@@ -94,13 +92,9 @@ import permissions.dispatcher.RuntimePermissions;
     if (mSourceUri == null) {
       // default data
       mSourceUri = getUriFromDrawableResId(getContext(), R.drawable.sample5);
-      Log.e("aoki", "mSourceUri = "+mSourceUri);
     }
     // load image
-    mCropView.load(mSourceUri)
-        .initialFrameRect(mFrameRect)
-        .useThumbnail(true)
-        .execute(mLoadCallback);
+    mDisposable.add(loadImage(mSourceUri));
   }
 
   @Override
@@ -112,6 +106,12 @@ import permissions.dispatcher.RuntimePermissions;
   }
 
   @Override
+  public void onDestroyView() {
+    super.onDestroyView();
+    mDisposable.dispose();
+  }
+
+  @Override
   public void onActivityResult(int requestCode, int resultCode, Intent result) {
     super.onActivityResult(requestCode, resultCode, result);
     if (resultCode == Activity.RESULT_OK) {
@@ -119,28 +119,86 @@ import permissions.dispatcher.RuntimePermissions;
       mFrameRect = null;
       switch (requestCode) {
         case REQUEST_PICK_IMAGE:
-          mSourceUri = result.getData();
-          mCropView.load(mSourceUri)
-              .initialFrameRect(mFrameRect)
-              .useThumbnail(true)
-              .execute(mLoadCallback);
+          mDisposable.add(loadImage(result.getData()));
           break;
         case REQUEST_SAF_PICK_IMAGE:
-          mSourceUri = Utils.ensureUriPermission(getContext(), result);
-          mCropView.load(mSourceUri)
-              .initialFrameRect(mFrameRect)
-              .useThumbnail(true)
-              .execute(mLoadCallback);
+          mDisposable.add(loadImage(Utils.ensureUriPermission(getContext(), result)));
           break;
       }
     }
   }
 
-  @Override
-  public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                         @NonNull int[] grantResults) {
-    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    BasicFragmentPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+  private Disposable loadImage(final Uri uri) {
+    mSourceUri = uri;
+    return new RxPermissions(getActivity()).request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        .filter(new Predicate<Boolean>() {
+          @Override
+          public boolean test(@io.reactivex.annotations.NonNull Boolean granted)
+              throws Exception {
+            return granted;
+          }
+        })
+        .flatMapCompletable(new Function<Boolean, CompletableSource>() {
+          @Override
+          public CompletableSource apply(@io.reactivex.annotations.NonNull Boolean aBoolean)
+              throws Exception {
+            return mCropView.load(uri)
+                .useThumbnail(true)
+                .initialFrameRect(mFrameRect)
+                .executeAsCompletable();
+          }
+        })
+        .subscribeOn(Schedulers.newThread())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new Action() {
+          @Override
+          public void run() throws Exception {
+          }
+        }, new Consumer<Throwable>() {
+          @Override
+          public void accept(@NonNull Throwable throwable) throws Exception {
+          }
+        });
+  }
+
+  private Disposable cropImage() {
+    return mCropView.crop(mSourceUri)
+        .executeAsSingle()
+        .flatMap(new Function<Bitmap, SingleSource<Uri>>() {
+          @Override
+          public SingleSource<Uri> apply(@io.reactivex.annotations.NonNull Bitmap bitmap)
+              throws Exception {
+            return mCropView.save(bitmap)
+                .compressFormat(mCompressFormat)
+                .executeAsSingle(createSaveUri());
+          }
+        })
+        .doOnSubscribe(new Consumer<Disposable>() {
+          @Override
+          public void accept(@io.reactivex.annotations.NonNull Disposable disposable)
+              throws Exception {
+            showProgress();
+          }
+        })
+        .doFinally(new Action() {
+          @Override
+          public void run() throws Exception {
+            dismissProgress();
+          }
+        })
+        .subscribeOn(Schedulers.newThread())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new Consumer<Uri>() {
+          @Override
+          public void accept(@io.reactivex.annotations.NonNull Uri uri) throws Exception {
+            ((RxActivity) getActivity()).startResultActivity(uri);
+          }
+        }, new Consumer<Throwable>() {
+          @Override
+          public void accept(@io.reactivex.annotations.NonNull Throwable throwable)
+              throws Exception {
+          }
+        });
   }
 
   // Bind views //////////////////////////////////////////////////////////////////////////////////
@@ -163,7 +221,7 @@ import permissions.dispatcher.RuntimePermissions;
     view.findViewById(R.id.buttonShowCircleButCropAsSquare).setOnClickListener(btnListener);
   }
 
-  @NeedsPermission(Manifest.permission.READ_EXTERNAL_STORAGE) public void pickImage() {
+  public void pickImage() {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
       startActivityForResult(new Intent(Intent.ACTION_GET_CONTENT).setType("image/*"),
           REQUEST_PICK_IMAGE);
@@ -175,23 +233,8 @@ import permissions.dispatcher.RuntimePermissions;
     }
   }
 
-  @NeedsPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) public void cropImage() {
-    showProgress();
-    mCropView.crop(mSourceUri).execute(mCropCallback);
-  }
-
-  @OnShowRationale(Manifest.permission.READ_EXTERNAL_STORAGE)
-  public void showRationaleForPick(PermissionRequest request) {
-    showRationaleDialog(R.string.permission_pick_rationale, request);
-  }
-
-  @OnShowRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-  public void showRationaleForCrop(PermissionRequest request) {
-    showRationaleDialog(R.string.permission_crop_rationale, request);
-  }
-
   public void showProgress() {
-    com.example.simplecropviewsample.ProgressDialogFragment f = com.example.simplecropviewsample.ProgressDialogFragment.getInstance();
+    ProgressDialogFragment f = ProgressDialogFragment.getInstance();
     getFragmentManager().beginTransaction().add(f, PROGRESS_DIALOG).commitAllowingStateLoss();
   }
 
@@ -199,7 +242,7 @@ import permissions.dispatcher.RuntimePermissions;
     if (!isResumed()) return;
     android.support.v4.app.FragmentManager manager = getFragmentManager();
     if (manager == null) return;
-    com.example.simplecropviewsample.ProgressDialogFragment f = (com.example.simplecropviewsample.ProgressDialogFragment) manager.findFragmentByTag(PROGRESS_DIALOG);
+    ProgressDialogFragment f = (ProgressDialogFragment) manager.findFragmentByTag(PROGRESS_DIALOG);
     if (f != null) {
       getFragmentManager().beginTransaction().remove(f).commitAllowingStateLoss();
     }
@@ -266,7 +309,6 @@ import permissions.dispatcher.RuntimePermissions;
   }
 
   public static String getMimeType(Bitmap.CompressFormat format) {
-    Logger.i("getMimeType CompressFormat = " + format);
     switch (format) {
       case JPEG:
         return "jpeg";
@@ -276,25 +318,6 @@ import permissions.dispatcher.RuntimePermissions;
     return "png";
   }
 
-  public static Uri createTempUri(Context context) {
-    return Uri.fromFile(new File(context.getCacheDir(), "cropped"));
-  }
-
-  private void showRationaleDialog(@StringRes int messageResId, final PermissionRequest request) {
-    new AlertDialog.Builder(getActivity()).setPositiveButton(R.string.button_allow,
-        new DialogInterface.OnClickListener() {
-          @Override
-          public void onClick(@NonNull DialogInterface dialog, int which) {
-            request.proceed();
-          }
-        }).setNegativeButton(R.string.button_deny, new DialogInterface.OnClickListener() {
-      @Override
-      public void onClick(@NonNull DialogInterface dialog, int which) {
-        request.cancel();
-      }
-    }).setCancelable(false).setMessage(messageResId).show();
-  }
-
   // Handle button event /////////////////////////////////////////////////////////////////////////
 
   private final View.OnClickListener btnListener = new View.OnClickListener() {
@@ -302,7 +325,7 @@ import permissions.dispatcher.RuntimePermissions;
     public void onClick(View v) {
       switch (v.getId()) {
         case R.id.buttonDone:
-          BasicFragmentPermissionsDispatcher.cropImageWithCheck(com.example.simplecropviewsample.BasicFragment.this);
+          mDisposable.add(cropImage());
           break;
         case R.id.buttonFitImage:
           mCropView.setCropMode(CropImageView.CropMode.FIT_IMAGE);
@@ -341,47 +364,9 @@ import permissions.dispatcher.RuntimePermissions;
           mCropView.rotateImage(CropImageView.RotateDegrees.ROTATE_90D);
           break;
         case R.id.buttonPickImage:
-          BasicFragmentPermissionsDispatcher.pickImageWithCheck(com.example.simplecropviewsample.BasicFragment.this);
+          pickImage();
           break;
       }
-    }
-  };
-
-  // Callbacks ///////////////////////////////////////////////////////////////////////////////////
-
-  private final LoadCallback mLoadCallback = new LoadCallback() {
-    @Override
-    public void onSuccess() {
-    }
-
-    @Override
-    public void onError(Throwable e) {
-    }
-  };
-
-  private final CropCallback mCropCallback = new CropCallback() {
-    @Override
-    public void onSuccess(Bitmap cropped) {
-      mCropView.save(cropped)
-          .compressFormat(mCompressFormat)
-          .execute(createSaveUri(), mSaveCallback);
-    }
-
-    @Override
-    public void onError(Throwable e) {
-    }
-  };
-
-  private final SaveCallback mSaveCallback = new SaveCallback() {
-    @Override
-    public void onSuccess(Uri outputUri) {
-      dismissProgress();
-      ((com.example.simplecropviewsample.BasicActivity) getActivity()).startResultActivity(outputUri);
-    }
-
-    @Override
-    public void onError(Throwable e) {
-      dismissProgress();
     }
   };
 }
