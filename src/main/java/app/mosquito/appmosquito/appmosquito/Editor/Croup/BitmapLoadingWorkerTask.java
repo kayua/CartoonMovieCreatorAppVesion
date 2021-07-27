@@ -26,7 +26,7 @@ final class BitmapLoadingWorkerTask extends AsyncTask<Void, Void, BitmapLoadingW
   // region: Fields and Consts
 
   /** Use a WeakReference to ensure the ImageView can be garbage collected */
-  private final WeakReference<com.theartofdev.edmodo.cropper.CropImageView> mCropImageViewReference;
+  private final WeakReference<CropImageView> mCropImageViewReference;
 
   /** The Android URI of the image to load */
   private final Uri mUri;
@@ -41,7 +41,7 @@ final class BitmapLoadingWorkerTask extends AsyncTask<Void, Void, BitmapLoadingW
   private final int mHeight;
   // endregion
 
-  public BitmapLoadingWorkerTask(com.theartofdev.edmodo.cropper.CropImageView cropImageView, Uri uri) {
+  public BitmapLoadingWorkerTask(CropImageView cropImageView, Uri uri) {
     mUri = uri;
     mCropImageViewReference = new WeakReference<>(cropImageView);
 

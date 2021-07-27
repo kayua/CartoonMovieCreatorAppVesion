@@ -26,7 +26,7 @@ final class BitmapCroppingWorkerTask
   // region: Fields and Consts
 
   /** Use a WeakReference to ensure the ImageView can be garbage collected */
-  private final WeakReference<com.theartofdev.edmodo.cropper.CropImageView> mCropImageViewReference;
+  private final WeakReference<CropImageView> mCropImageViewReference;
 
   /** the bitmap to crop */
   private final Bitmap mBitmap;
@@ -71,7 +71,7 @@ final class BitmapCroppingWorkerTask
   private final boolean mFlipVertically;
 
   /** The option to handle requested width/height */
-  private final com.theartofdev.edmodo.cropper.CropImageView.RequestSizeOptions mReqSizeOptions;
+  private final CropImageView.RequestSizeOptions mReqSizeOptions;
 
   /** the Android Uri to save the cropped image to */
   private final Uri mSaveUri;
@@ -84,7 +84,7 @@ final class BitmapCroppingWorkerTask
   // endregion
 
   BitmapCroppingWorkerTask(
-      com.theartofdev.edmodo.cropper.CropImageView cropImageView,
+      CropImageView cropImageView,
       Bitmap bitmap,
       float[] cropPoints,
       int degreesRotated,
@@ -95,7 +95,7 @@ final class BitmapCroppingWorkerTask
       int reqHeight,
       boolean flipHorizontally,
       boolean flipVertically,
-      com.theartofdev.edmodo.cropper.CropImageView.RequestSizeOptions options,
+      CropImageView.RequestSizeOptions options,
       Uri saveUri,
       Bitmap.CompressFormat saveCompressFormat,
       int saveCompressQuality) {
@@ -122,7 +122,7 @@ final class BitmapCroppingWorkerTask
   }
 
   BitmapCroppingWorkerTask(
-      com.theartofdev.edmodo.cropper.CropImageView cropImageView,
+      CropImageView cropImageView,
       Uri uri,
       float[] cropPoints,
       int degreesRotated,
@@ -135,7 +135,7 @@ final class BitmapCroppingWorkerTask
       int reqHeight,
       boolean flipHorizontally,
       boolean flipVertically,
-      com.theartofdev.edmodo.cropper.CropImageView.RequestSizeOptions options,
+      CropImageView.RequestSizeOptions options,
       Uri saveUri,
       Bitmap.CompressFormat saveCompressFormat,
       int saveCompressQuality) {
@@ -173,14 +173,14 @@ final class BitmapCroppingWorkerTask
    * @return the decoded bitmap data
    */
   @Override
-  protected com.theartofdev.edmodo.cropper.BitmapCroppingWorkerTask.Result doInBackground(Void... params) {
+  protected BitmapCroppingWorkerTask.Result doInBackground(Void... params) {
     try {
       if (!isCancelled()) {
 
-        com.theartofdev.edmodo.cropper.BitmapUtils.BitmapSampled bitmapSampled;
+        BitmapUtils.BitmapSampled bitmapSampled;
         if (mUri != null) {
           bitmapSampled =
-              com.theartofdev.edmodo.cropper.BitmapUtils.cropBitmap(
+              BitmapUtils.cropBitmap(
                   mContext,
                   mUri,
                   mCropPoints,
@@ -196,7 +196,7 @@ final class BitmapCroppingWorkerTask
                   mFlipVertically);
         } else if (mBitmap != null) {
           bitmapSampled =
-              com.theartofdev.edmodo.cropper.BitmapUtils.cropBitmapObjectHandleOOM(
+              BitmapUtils.cropBitmapObjectHandleOOM(
                   mBitmap,
                   mCropPoints,
                   mDegreesRotated,
@@ -210,12 +210,12 @@ final class BitmapCroppingWorkerTask
         }
 
         Bitmap bitmap =
-            com.theartofdev.edmodo.cropper.BitmapUtils.resizeBitmap(bitmapSampled.bitmap, mReqWidth, mReqHeight, mReqSizeOptions);
+            BitmapUtils.resizeBitmap(bitmapSampled.bitmap, mReqWidth, mReqHeight, mReqSizeOptions);
 
         if (mSaveUri == null) {
           return new Result(bitmap, bitmapSampled.sampleSize);
         } else {
-          com.theartofdev.edmodo.cropper.BitmapUtils.writeBitmapToUri(
+          BitmapUtils.writeBitmapToUri(
               mContext, bitmap, mSaveUri, mSaveCompressFormat, mSaveCompressQuality);
           if (bitmap != null) {
             bitmap.recycle();
@@ -239,7 +239,7 @@ final class BitmapCroppingWorkerTask
     if (result != null) {
       boolean completeCalled = false;
       if (!isCancelled()) {
-        com.theartofdev.edmodo.cropper.CropImageView cropImageView = mCropImageViewReference.get();
+        CropImageView cropImageView = mCropImageViewReference.get();
         if (cropImageView != null) {
           completeCalled = true;
           cropImageView.onImageCroppingAsyncComplete(result);
