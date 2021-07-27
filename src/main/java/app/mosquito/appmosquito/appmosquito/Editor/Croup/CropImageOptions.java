@@ -32,13 +32,13 @@ public class CropImageOptions implements Parcelable {
   public static final Creator<CropImageOptions> CREATOR =
       new Creator<CropImageOptions>() {
         @Override
-        public com.theartofdev.edmodo.cropper.CropImageOptions createFromParcel(Parcel in) {
-          return new com.theartofdev.edmodo.cropper.CropImageOptions(in);
+        public CropImageOptions createFromParcel(Parcel in) {
+          return new CropImageOptions(in);
         }
 
         @Override
-        public com.theartofdev.edmodo.cropper.CropImageOptions[] newArray(int size) {
-          return new com.theartofdev.edmodo.cropper.CropImageOptions[size];
+        public CropImageOptions[] newArray(int size) {
+          return new CropImageOptions[size];
         }
       };
 

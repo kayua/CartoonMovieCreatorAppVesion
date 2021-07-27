@@ -236,7 +236,7 @@ public class CropImageActivity extends AppCompatActivity
   }
 
   @Override
-  public void onSetImageUriComplete(com.theartofdev.edmodo.cropper.CropImageView view, Uri uri, Exception error) {
+  public void onSetImageUriComplete(CropImageView view, Uri uri, Exception error) {
     if (error == null) {
       if (mOptions.initialCropWindowRectangle != null) {
         mCropImageView.setCropRect(mOptions.initialCropWindowRectangle);
@@ -250,7 +250,7 @@ public class CropImageActivity extends AppCompatActivity
   }
 
   @Override
-  public void onCropImageComplete(com.theartofdev.edmodo.cropper.CropImageView view, com.theartofdev.edmodo.cropper.CropImageView.CropResult result) {
+  public void onCropImageComplete(CropImageView view, CropImageView.CropResult result) {
     setResult(result.getUri(), result.getError(), result.getSampleSize());
   }
 
@@ -299,7 +299,7 @@ public class CropImageActivity extends AppCompatActivity
 
   /** Result with cropped image data or error if failed. */
   protected void setResult(Uri uri, Exception error, int sampleSize) {
-    int resultCode = error == null ? RESULT_OK : com.theartofdev.edmodo.cropper.CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE;
+    int resultCode = error == null ? RESULT_OK : CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE;
     setResult(resultCode, getResultIntent(uri, error, sampleSize));
     finish();
   }
@@ -312,8 +312,8 @@ public class CropImageActivity extends AppCompatActivity
 
   /** Get intent instance to be used for the result of this activity. */
   protected Intent getResultIntent(Uri uri, Exception error, int sampleSize) {
-    com.theartofdev.edmodo.cropper.CropImage.ActivityResult result =
-        new com.theartofdev.edmodo.cropper.CropImage.ActivityResult(
+    CropImage.ActivityResult result =
+        new CropImage.ActivityResult(
             mCropImageView.getImageUri(),
             uri,
             error,
@@ -324,7 +324,7 @@ public class CropImageActivity extends AppCompatActivity
             sampleSize);
     Intent intent = new Intent();
     intent.putExtras(getIntent());
-    intent.putExtra(com.theartofdev.edmodo.cropper.CropImage.CROP_IMAGE_EXTRA_RESULT, result);
+    intent.putExtra(CropImage.CROP_IMAGE_EXTRA_RESULT, result);
     return intent;
   }
 

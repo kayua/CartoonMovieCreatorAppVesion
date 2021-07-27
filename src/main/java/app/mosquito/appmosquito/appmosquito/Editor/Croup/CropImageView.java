@@ -1,15 +1,3 @@
-// "Therefore those skilled at the unorthodox
-// are infinite as heaven and earth,
-// inexhaustible as the great rivers.
-// When they come to an end,
-// they begin again,
-// like the days and months;
-// they die and are reborn,
-// like the four seasons."
-//
-// - Sun Tsu,
-// "The Art of War"
-
 package app.mosquito.appmosquito.appmosquito.Editor.Croup;
 
 import android.app.Activity;
@@ -39,6 +27,8 @@ import androidx.exifinterface.media.ExifInterface;
 import java.lang.ref.WeakReference;
 import java.util.UUID;
 
+import app.mosquito.appmosquito.appmosquito.R;
+
 /** Custom view that provides cropping capabilities to an image. */
 public class CropImageView extends FrameLayout {
 
@@ -66,7 +56,7 @@ public class CropImageView extends FrameLayout {
   private final float[] mScaleImagePoints = new float[8];
 
   /** Animation class to smooth animate zoom-in/out */
-  private com.theartofdev.edmodo.cropper.CropImageAnimation mAnimation;
+  private CropImageAnimation mAnimation;
 
   private Bitmap mBitmap;
 
@@ -183,7 +173,7 @@ public class CropImageView extends FrameLayout {
   public CropImageView(Context context, AttributeSet attrs) {
     super(context, attrs);
 
-    com.theartofdev.edmodo.cropper.CropImageOptions options = null;
+    CropImageOptions options = null;
     Intent intent = context instanceof Activity ? ((Activity) context).getIntent() : null;
     if (intent != null) {
       Bundle bundle = intent.getBundleExtra(CropImage.CROP_IMAGE_EXTRA_BUNDLE);
@@ -194,7 +184,7 @@ public class CropImageView extends FrameLayout {
 
     if (options == null) {
 
-      options = new com.theartofdev.edmodo.cropper.CropImageOptions();
+      options = new CropImageOptions();
 
       if (attrs != null) {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CropImageView, 0, 0);
@@ -651,7 +641,7 @@ public class CropImageView extends FrameLayout {
     int orgHeight = bitmap.getHeight() * loadedSampleSize;
 
     // get the rectangle for the points (it may be larger than original if rotation is not stright)
-    return com.theartofdev.edmodo.cropper.BitmapUtils.getRectFromPoints(
+    return BitmapUtils.getRectFromPoints(
         points,
         orgWidth,
         orgHeight,
@@ -770,8 +760,8 @@ public class CropImageView extends FrameLayout {
           && (mLoadedSampleSize > 1 || options == RequestSizeOptions.SAMPLING)) {
         int orgWidth = mBitmap.getWidth() * mLoadedSampleSize;
         int orgHeight = mBitmap.getHeight() * mLoadedSampleSize;
-        com.theartofdev.edmodo.cropper.BitmapUtils.BitmapSampled bitmapSampled =
-            com.theartofdev.edmodo.cropper.BitmapUtils.cropBitmap(
+        BitmapUtils.BitmapSampled bitmapSampled =
+            BitmapUtils.cropBitmap(
                 getContext(),
                 mLoadedImageUri,
                 getCropPoints(),
