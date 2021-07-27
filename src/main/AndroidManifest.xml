@@ -34,7 +34,7 @@
 
         <activity
 
-            android:name=".Authentication.ActivityUserImage"
+            android:name=".Authentication.ActivitySplashScreen"
             android:screenOrientation="portrait">
 
             <intent-filter>
