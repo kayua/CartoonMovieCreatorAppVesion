@@ -69,13 +69,11 @@ final class BitmapLoadingWorkerTask extends AsyncTask<Void, Void, BitmapLoadingW
     try {
       if (!isCancelled()) {
 
-        com.theartofdev.edmodo.cropper.BitmapUtils.BitmapSampled decodeResult =
-            com.theartofdev.edmodo.cropper.BitmapUtils.decodeSampledBitmap(mContext, mUri, mWidth, mHeight);
+        BitmapUtils.BitmapSampled decodeResult = BitmapUtils.decodeSampledBitmap(mContext, mUri, mWidth, mHeight);
 
         if (!isCancelled()) {
 
-          com.theartofdev.edmodo.cropper.BitmapUtils.RotateBitmapResult rotateResult =
-              com.theartofdev.edmodo.cropper.BitmapUtils.rotateBitmapByExif(decodeResult.bitmap, mContext, mUri);
+          BitmapUtils.RotateBitmapResult rotateResult = BitmapUtils.rotateBitmapByExif(decodeResult.bitmap, mContext, mUri);
 
           return new Result(
               mUri, rotateResult.bitmap, decodeResult.sampleSize, rotateResult.degrees);
@@ -97,7 +95,7 @@ final class BitmapLoadingWorkerTask extends AsyncTask<Void, Void, BitmapLoadingW
     if (result != null) {
       boolean completeCalled = false;
       if (!isCancelled()) {
-        com.theartofdev.edmodo.cropper.CropImageView cropImageView = mCropImageViewReference.get();
+        CropImageView cropImageView = mCropImageViewReference.get();
         if (cropImageView != null) {
           completeCalled = true;
           cropImageView.onSetImageUriAsyncComplete(result);
