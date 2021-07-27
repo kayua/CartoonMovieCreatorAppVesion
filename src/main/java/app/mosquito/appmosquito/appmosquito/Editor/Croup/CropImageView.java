@@ -1675,16 +1675,16 @@ public class CropImageView extends FrameLayout {
                 ? 0
                 : Math.max(
                         Math.min(
-                            width / 2 - cropRect.centerX(), -com.theartofdev.edmodo.cropper.BitmapUtils.getRectLeft(mImagePoints)),
-                        getWidth() - com.theartofdev.edmodo.cropper.BitmapUtils.getRectRight(mImagePoints))
+                            width / 2 - cropRect.centerX(), - BitmapUtils.getRectLeft(mImagePoints)),
+                        getWidth() - BitmapUtils.getRectRight(mImagePoints))
                     / scaleX;
         mZoomOffsetY =
-            height > com.theartofdev.edmodo.cropper.BitmapUtils.getRectHeight(mImagePoints)
+            height > BitmapUtils.getRectHeight(mImagePoints)
                 ? 0
                 : Math.max(
                         Math.min(
-                            height / 2 - cropRect.centerY(), -com.theartofdev.edmodo.cropper.BitmapUtils.getRectTop(mImagePoints)),
-                        getHeight() - com.theartofdev.edmodo.cropper.BitmapUtils.getRectBottom(mImagePoints))
+                            height / 2 - cropRect.centerY(), - BitmapUtils.getRectTop(mImagePoints)),
+                        getHeight() - BitmapUtils.getRectBottom(mImagePoints))
                     / scaleY;
       } else {
         // adjust the zoomed area so the crop window rectangle will be inside the area in case it
@@ -1798,9 +1798,9 @@ public class CropImageView extends FrameLayout {
       // Get the scale factor between the actual Bitmap dimensions and the displayed dimensions for
       // width/height.
       float scaleFactorWidth =
-          100f * mLoadedSampleSize / com.theartofdev.edmodo.cropper.BitmapUtils.getRectWidth(mScaleImagePoints);
+          100f * mLoadedSampleSize / BitmapUtils.getRectWidth(mScaleImagePoints);
       float scaleFactorHeight =
-          100f * mLoadedSampleSize / com.theartofdev.edmodo.cropper.BitmapUtils.getRectHeight(mScaleImagePoints);
+          100f * mLoadedSampleSize / BitmapUtils.getRectHeight(mScaleImagePoints);
       mCropOverlayView.setCropWindowLimits(
           getWidth(), getHeight(), scaleFactorWidth, scaleFactorHeight);
     }
@@ -1964,7 +1964,7 @@ public class CropImageView extends FrameLayout {
      * @param uri the URI of the image that was loading
      * @param error if error occurred during loading will contain the error, otherwise null.
      */
-    void onSetImageUriComplete(com.theartofdev.edmodo.cropper.CropImageView view, Uri uri, Exception error);
+    void onSetImageUriComplete(CropImageView view, Uri uri, Exception error);
   }
   // endregion
 
@@ -1981,7 +1981,7 @@ public class CropImageView extends FrameLayout {
      * @param view The crop image view that cropping of image was complete.
      * @param result the crop image result data (with cropped image or error)
      */
-    void onCropImageComplete(com.theartofdev.edmodo.cropper.CropImageView view, CropResult result);
+    void onCropImageComplete(CropImageView view, CropResult result);
   }
   // endregion
 
