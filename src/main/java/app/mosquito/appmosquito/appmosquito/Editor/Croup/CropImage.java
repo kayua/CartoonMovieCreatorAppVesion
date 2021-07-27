@@ -166,17 +166,6 @@ public final class CropImage {
         context, context.getString(R.string.pick_image_intent_chooser_title), false, true);
   }
 
-  /**
-   * Create a chooser intent to select the source to get image from.<br>
-   * The source can be camera's (ACTION_IMAGE_CAPTURE) or gallery's (ACTION_GET_CONTENT).<br>
-   * All possible sources are added to the intent chooser.
-   *
-   * @param context used to access Android APIs, like content resolve, it is your
-   *     activity/fragment/widget.
-   * @param title the title to use for the chooser UI
-   * @param includeDocuments if to include KitKat documents activity containing all sources
-   * @param includeCamera if to include camera intents
-   */
   public static Intent getPickImageChooserIntent(
       @NonNull Context context,
       CharSequence title,
