@@ -55,16 +55,10 @@ public class ActivityRegisterAccount extends AppCompatActivity {
         editor.apply();
     }
 
-    private void screenInitial(){
-
-        Intent i = new Intent(ActivityRegisterAccount .this, ActivityAcessAccount.class);
-        finish();
-        startActivity(i);
-    }
 
     private void screenProfileEditFirst(){
 
-        Intent i = new Intent(ActivityRegisterAccount .this, ActivityEditProfileFirst.class);
+        Intent i = new Intent(ActivityRegisterAccount .this, ActivityUserImage.class);
         finish();
         startActivity(i);
     }
