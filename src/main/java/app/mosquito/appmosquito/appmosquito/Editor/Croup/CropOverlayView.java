@@ -426,10 +426,10 @@ public class CropOverlayView extends View {
    */
   private void initCropWindow() {
 
-    float leftLimit = Math.max(com.theartofdev.edmodo.cropper.BitmapUtils.getRectLeft(mBoundsPoints), 0);
-    float topLimit = Math.max(com.theartofdev.edmodo.cropper.BitmapUtils.getRectTop(mBoundsPoints), 0);
-    float rightLimit = Math.min(com.theartofdev.edmodo.cropper.BitmapUtils.getRectRight(mBoundsPoints), getWidth());
-    float bottomLimit = Math.min(com.theartofdev.edmodo.cropper.BitmapUtils.getRectBottom(mBoundsPoints), getHeight());
+    float leftLimit = Math.max(BitmapUtils.getRectLeft(mBoundsPoints), 0);
+    float topLimit = Math.max(BitmapUtils.getRectTop(mBoundsPoints), 0);
+    float rightLimit = Math.min(BitmapUtils.getRectRight(mBoundsPoints), getWidth());
+    float bottomLimit = Math.min(BitmapUtils.getRectBottom(mBoundsPoints), getHeight());
 
     if (rightLimit <= leftLimit || bottomLimit <= topLimit) {
       return;
