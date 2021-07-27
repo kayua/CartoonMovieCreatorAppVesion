@@ -778,7 +778,7 @@ public class CropImageView extends FrameLayout {
         croppedBitmap = bitmapSampled.bitmap;
       } else {
         croppedBitmap =
-            com.theartofdev.edmodo.cropper.BitmapUtils.cropBitmapObjectHandleOOM(
+            BitmapUtils.cropBitmapObjectHandleOOM(
                     mBitmap,
                     getCropPoints(),
                     mDegreesRotated,
@@ -790,7 +790,7 @@ public class CropImageView extends FrameLayout {
                 .bitmap;
       }
 
-      croppedBitmap = com.theartofdev.edmodo.cropper.BitmapUtils.resizeBitmap(croppedBitmap, reqWidth, reqHeight, options);
+      croppedBitmap = BitmapUtils.resizeBitmap(croppedBitmap, reqWidth, reqHeight, options);
     }
 
     return croppedBitmap;
@@ -968,7 +968,7 @@ public class CropImageView extends FrameLayout {
     Bitmap setBitmap;
     int degreesRotated = 0;
     if (bitmap != null && exif != null) {
-      com.theartofdev.edmodo.cropper.BitmapUtils.RotateBitmapResult result = com.theartofdev.edmodo.cropper.BitmapUtils.rotateBitmapByExif(bitmap, exif);
+      BitmapUtils.RotateBitmapResult result = BitmapUtils.rotateBitmapByExif(bitmap, exif);
       setBitmap = result.bitmap;
       degreesRotated = result.degrees;
       mInitialDegreesRotated = result.degrees;
@@ -1044,9 +1044,9 @@ public class CropImageView extends FrameLayout {
       boolean flipAxes =
           !mCropOverlayView.isFixAspectRatio()
               && ((degrees > 45 && degrees < 135) || (degrees > 215 && degrees < 305));
-      com.theartofdev.edmodo.cropper.BitmapUtils.RECT.set(mCropOverlayView.getCropWindowRect());
-      float halfWidth = (flipAxes ? com.theartofdev.edmodo.cropper.BitmapUtils.RECT.height() : com.theartofdev.edmodo.cropper.BitmapUtils.RECT.width()) / 2f;
-      float halfHeight = (flipAxes ? com.theartofdev.edmodo.cropper.BitmapUtils.RECT.width() : com.theartofdev.edmodo.cropper.BitmapUtils.RECT.height()) / 2f;
+      BitmapUtils.RECT.set(mCropOverlayView.getCropWindowRect());
+      float halfWidth = (flipAxes ? BitmapUtils.RECT.height() : BitmapUtils.RECT.width()) / 2f;
+      float halfHeight = (flipAxes ? BitmapUtils.RECT.width() : BitmapUtils.RECT.height()) / 2f;
       if (flipAxes) {
         boolean isFlippedHorizontally = mFlipHorizontally;
         mFlipHorizontally = mFlipVertically;
@@ -1055,13 +1055,13 @@ public class CropImageView extends FrameLayout {
 
       mImageMatrix.invert(mImageInverseMatrix);
 
-      com.theartofdev.edmodo.cropper.BitmapUtils.POINTS[0] = com.theartofdev.edmodo.cropper.BitmapUtils.RECT.centerX();
-      com.theartofdev.edmodo.cropper.BitmapUtils.POINTS[1] = com.theartofdev.edmodo.cropper.BitmapUtils.RECT.centerY();
-      com.theartofdev.edmodo.cropper.BitmapUtils.POINTS[2] = 0;
-      com.theartofdev.edmodo.cropper.BitmapUtils.POINTS[3] = 0;
-      com.theartofdev.edmodo.cropper.BitmapUtils.POINTS[4] = 1;
-      com.theartofdev.edmodo.cropper.BitmapUtils.POINTS[5] = 0;
-      mImageInverseMatrix.mapPoints(com.theartofdev.edmodo.cropper.BitmapUtils.POINTS);
+      BitmapUtils.POINTS[0] = BitmapUtils.RECT.centerX();
+      BitmapUtils.POINTS[1] = BitmapUtils.RECT.centerY();
+      BitmapUtils.POINTS[2] = 0;
+      BitmapUtils.POINTS[3] = 0;
+      BitmapUtils.POINTS[4] = 1;
+      BitmapUtils.POINTS[5] = 0;
+      mImageInverseMatrix.mapPoints(BitmapUtils.POINTS);
 
       // This is valid because degrees is not negative.
       mDegreesRotated = (mDegreesRotated + degrees) % 360;
@@ -1069,35 +1069,35 @@ public class CropImageView extends FrameLayout {
       applyImageMatrix(getWidth(), getHeight(), true, false);
 
       // adjust the zoom so the crop window size remains the same even after image scale change
-      mImageMatrix.mapPoints(com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2, com.theartofdev.edmodo.cropper.BitmapUtils.POINTS);
+      mImageMatrix.mapPoints(BitmapUtils.POINTS2, BitmapUtils.POINTS);
       mZoom /=
           Math.sqrt(
-              Math.pow(com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[4] - com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[2], 2)
-                  + Math.pow(com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[5] - com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[3], 2));
+              Math.pow(BitmapUtils.POINTS2[4] - BitmapUtils.POINTS2[2], 2)
+                  + Math.pow(BitmapUtils.POINTS2[5] - BitmapUtils.POINTS2[3], 2));
       mZoom = Math.max(mZoom, 1);
 
       applyImageMatrix(getWidth(), getHeight(), true, false);
 
-      mImageMatrix.mapPoints(com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2, com.theartofdev.edmodo.cropper.BitmapUtils.POINTS);
+      mImageMatrix.mapPoints(BitmapUtils.POINTS2, BitmapUtils.POINTS);
 
       // adjust the width/height by the changes in scaling to the image
       double change =
           Math.sqrt(
-              Math.pow(com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[4] - com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[2], 2)
-                  + Math.pow(com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[5] - com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[3], 2));
+              Math.pow(BitmapUtils.POINTS2[4] - BitmapUtils.POINTS2[2], 2)
+                  + Math.pow(BitmapUtils.POINTS2[5] - BitmapUtils.POINTS2[3], 2));
       halfWidth *= change;
       halfHeight *= change;
 
       // calculate the new crop window rectangle to center in the same location and have proper
       // width/height
-      com.theartofdev.edmodo.cropper.BitmapUtils.RECT.set(
-          com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[0] - halfWidth,
-          com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[1] - halfHeight,
-          com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[0] + halfWidth,
-          com.theartofdev.edmodo.cropper.BitmapUtils.POINTS2[1] + halfHeight);
+      BitmapUtils.RECT.set(
+          BitmapUtils.POINTS2[0] - halfWidth,
+          BitmapUtils.POINTS2[1] - halfHeight,
+          BitmapUtils.POINTS2[0] + halfWidth,
+          BitmapUtils.POINTS2[1] + halfHeight);
 
       mCropOverlayView.resetCropOverlayView();
-      mCropOverlayView.setCropWindowRect(com.theartofdev.edmodo.cropper.BitmapUtils.RECT);
+      mCropOverlayView.setCropWindowRect(BitmapUtils.RECT);
       applyImageMatrix(getWidth(), getHeight(), true, false);
       handleCropWindowChanged(false, false);
 
@@ -1329,12 +1329,12 @@ public class CropImageView extends FrameLayout {
     if (mSaveBitmapToInstanceState && imageUri == null && mImageResource < 1) {
       mSaveInstanceStateBitmapUri =
           imageUri =
-              com.theartofdev.edmodo.cropper.BitmapUtils.writeTempStateStoreBitmap(
+              BitmapUtils.writeTempStateStoreBitmap(
                   getContext(), mBitmap, mSaveInstanceStateBitmapUri);
     }
     if (imageUri != null && mBitmap != null) {
       String key = UUID.randomUUID().toString();
-      com.theartofdev.edmodo.cropper.BitmapUtils.mStateBitmap = new Pair<>(key, new WeakReference<>(mBitmap));
+      BitmapUtils.mStateBitmap = new Pair<>(key, new WeakReference<>(mBitmap));
       bundle.putString("LOADED_IMAGE_STATE_BITMAP_KEY", key);
     }
     if (mBitmapLoadingWorkerTask != null) {
@@ -1350,12 +1350,12 @@ public class CropImageView extends FrameLayout {
     bundle.putInt("DEGREES_ROTATED", mDegreesRotated);
     bundle.putParcelable("INITIAL_CROP_RECT", mCropOverlayView.getInitialCropWindowRect());
 
-    com.theartofdev.edmodo.cropper.BitmapUtils.RECT.set(mCropOverlayView.getCropWindowRect());
+    BitmapUtils.RECT.set(mCropOverlayView.getCropWindowRect());
 
     mImageMatrix.invert(mImageInverseMatrix);
-    mImageInverseMatrix.mapRect(com.theartofdev.edmodo.cropper.BitmapUtils.RECT);
+    mImageInverseMatrix.mapRect(BitmapUtils.RECT);
 
-    bundle.putParcelable("CROP_WINDOW_RECT", com.theartofdev.edmodo.cropper.BitmapUtils.RECT);
+    bundle.putParcelable("CROP_WINDOW_RECT", BitmapUtils.RECT);
     bundle.putString("CROP_SHAPE", mCropOverlayView.getCropShape().name());
     bundle.putBoolean("CROP_AUTO_ZOOM_ENABLED", mAutoZoomEnabled);
     bundle.putInt("CROP_MAX_ZOOM", mMaxZoom);
@@ -1382,10 +1382,10 @@ public class CropImageView extends FrameLayout {
           String key = bundle.getString("LOADED_IMAGE_STATE_BITMAP_KEY");
           if (key != null) {
             Bitmap stateBitmap =
-                com.theartofdev.edmodo.cropper.BitmapUtils.mStateBitmap != null && com.theartofdev.edmodo.cropper.BitmapUtils.mStateBitmap.first.equals(key)
-                    ? com.theartofdev.edmodo.cropper.BitmapUtils.mStateBitmap.second.get()
+                BitmapUtils.mStateBitmap != null && BitmapUtils.mStateBitmap.first.equals(key)
+                    ? BitmapUtils.mStateBitmap.second.get()
                     : null;
-            com.theartofdev.edmodo.cropper.BitmapUtils.mStateBitmap = null;
+            BitmapUtils.mStateBitmap = null;
             if (stateBitmap != null && !stateBitmap.isRecycled()) {
               setBitmap(stateBitmap, 0, uri, bundle.getInt("LOADED_SAMPLE_SIZE"), 0);
             }
@@ -1594,7 +1594,7 @@ public class CropImageView extends FrameLayout {
           if (animate) {
             if (mAnimation == null) {
               // lazy create animation single instance
-              mAnimation = new com.theartofdev.edmodo.cropper.CropImageAnimation(mImageView, mCropOverlayView);
+              mAnimation = new CropImageAnimation(mImageView, mCropOverlayView);
             }
             // set the state for animation to start from
             mAnimation.setStartState(mImagePoints, mImageMatrix);
@@ -1635,24 +1635,24 @@ public class CropImageView extends FrameLayout {
       if (mDegreesRotated > 0) {
         mImageMatrix.postRotate(
             mDegreesRotated,
-            com.theartofdev.edmodo.cropper.BitmapUtils.getRectCenterX(mImagePoints),
-            com.theartofdev.edmodo.cropper.BitmapUtils.getRectCenterY(mImagePoints));
+            BitmapUtils.getRectCenterX(mImagePoints),
+            BitmapUtils.getRectCenterY(mImagePoints));
         mapImagePointsByImageMatrix();
       }
 
       // scale the image to the image view, image rect transformed to know new width/height
       float scale =
           Math.min(
-              width / com.theartofdev.edmodo.cropper.BitmapUtils.getRectWidth(mImagePoints),
-              height / com.theartofdev.edmodo.cropper.BitmapUtils.getRectHeight(mImagePoints));
+              width / BitmapUtils.getRectWidth(mImagePoints),
+              height / BitmapUtils.getRectHeight(mImagePoints));
       if (mScaleType == ScaleType.FIT_CENTER
           || (mScaleType == ScaleType.CENTER_INSIDE && scale < 1)
           || (scale > 1 && mAutoZoomEnabled)) {
         mImageMatrix.postScale(
             scale,
             scale,
-            com.theartofdev.edmodo.cropper.BitmapUtils.getRectCenterX(mImagePoints),
-            com.theartofdev.edmodo.cropper.BitmapUtils.getRectCenterY(mImagePoints));
+            BitmapUtils.getRectCenterX(mImagePoints),
+            BitmapUtils.getRectCenterY(mImagePoints));
         mapImagePointsByImageMatrix();
       }
 
@@ -1662,8 +1662,8 @@ public class CropImageView extends FrameLayout {
       mImageMatrix.postScale(
           scaleX,
           scaleY,
-          com.theartofdev.edmodo.cropper.BitmapUtils.getRectCenterX(mImagePoints),
-          com.theartofdev.edmodo.cropper.BitmapUtils.getRectCenterY(mImagePoints));
+          BitmapUtils.getRectCenterX(mImagePoints),
+          BitmapUtils.getRectCenterY(mImagePoints));
       mapImagePointsByImageMatrix();
 
       mImageMatrix.mapRect(cropRect);
@@ -1671,7 +1671,7 @@ public class CropImageView extends FrameLayout {
       if (center) {
         // set the zoomed area to be as to the center of cropping window as possible
         mZoomOffsetX =
-            width > com.theartofdev.edmodo.cropper.BitmapUtils.getRectWidth(mImagePoints)
+            width > BitmapUtils.getRectWidth(mImagePoints)
                 ? 0
                 : Math.max(
                         Math.min(
