@@ -42,25 +42,12 @@ final class CropWindowMoveHandler {
   /** The type of crop window move that is handled. */
   private final Type mType;
 
-  /**
-   * Holds the x and y offset between the exact touch location and the exact handle location that is
-   * activated. There may be an offset because we allow for some leeway (specified by mHandleRadius)
-   * in activating a handle. However, we want to maintain these offset values while the handle is
-   * being dragged so that the handle doesn't jump.
-   */
+
   private final PointF mTouchOffset = new PointF();
   // endregion
 
-  /**
-   * @param edgeMoveType the type of move this handler is executing
-   * @param horizontalEdge the primary edge associated with this handle; may be null
-   * @param verticalEdge the secondary edge associated with this handle; may be null
-   * @param cropWindowHandler main crop window handle to get and update the crop window edges
-   * @param touchX the location of the initial toch possition to measure move distance
-   * @param touchY the location of the initial toch possition to measure move distance
-   */
   public CropWindowMoveHandler(
-          Type type, com.theartofdev.edmodo.cropper.CropWindowHandler cropWindowHandler, float touchX, float touchY) {
+          Type type, CropWindowHandler cropWindowHandler, float touchX, float touchY) {
     mType = type;
     mMinCropWidth = cropWindowHandler.getMinCropWidth();
     mMinCropHeight = cropWindowHandler.getMinCropHeight();
@@ -69,29 +56,6 @@ final class CropWindowMoveHandler {
     calculateTouchOffset(cropWindowHandler.getRect(), touchX, touchY);
   }
 
-  /**
-   * Updates the crop window by change in the toch location.<br>
-   * Move type handled by this instance, as initialized in creation, affects how the change in toch
-   * location changes the crop window position and size.<br>
-   * After the crop window position/size is changed by toch move it may result in values that
-   * vialate contraints: outside the bounds of the shown bitmap, smaller/larger than min/max size or
-   * missmatch in aspect ratio. So a series of fixes is executed on "secondary" edges to adjust it
-   * by the "primary" edge movement.<br>
-   * Primary is the edge directly affected by move type, secondary is the other edge.<br>
-   * The crop window is changed by directly setting the Edge coordinates.
-   *
-   * @param x the new x-coordinate of this handle
-   * @param y the new y-coordinate of this handle
-   * @param bounds the bounding rectangle of the image
-   * @param viewWidth The bounding image view width used to know the crop overlay is at view edges.
-   * @param viewHeight The bounding image view height used to know the crop overlay is at view
-   *     edges.
-   * @param parentView the parent View containing the image
-   * @param snapMargin the maximum distance (in pixels) at which the crop window should snap to the
-   *     image
-   * @param fixedAspectRatio is the aspect ration fixed and 'targetAspectRatio' should be used
-   * @param aspectRatio the aspect ratio to maintain
-   */
   public void move(
       RectF rect,
       float x,
