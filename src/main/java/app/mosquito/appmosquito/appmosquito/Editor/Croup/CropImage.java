@@ -46,6 +46,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.mosquito.appmosquito.appmosquito.R;
+
 /**
  * Helper to simplify crop image work like starting pick-image acitvity and handling camera/gallery
  * intents.<br>
@@ -406,44 +408,19 @@ public final class CropImage {
     }
   }
 
-  /**
-   * Create {@link ActivityBuilder} instance to open image picker for cropping and then start {@link
-   * CropImageActivity} to crop the selected image.<br>
-   * Result will be received in {@link Activity#onActivityResult(int, int, Intent)} and can be
-   * retrieved using {@link #getActivityResult(Intent)}.
-   *
-   * @return builder for Crop Image Activity
-   */
   public static ActivityBuilder activity() {
     return new ActivityBuilder(null);
   }
 
-  /**
-   * Create {@link ActivityBuilder} instance to start {@link CropImageActivity} to crop the given
-   * image.<br>
-   * Result will be received in {@link Activity#onActivityResult(int, int, Intent)} and can be
-   * retrieved using {@link #getActivityResult(Intent)}.
-   *
-   * @param uri the image Android uri source to crop or null to start a picker
-   * @return builder for Crop Image Activity
-   */
+
   public static ActivityBuilder activity(@Nullable Uri uri) {
     return new ActivityBuilder(uri);
   }
 
-  /**
-   * Get {@link CropImageActivity} result data object for crop image activity started using {@link
-   * #activity(Uri)}.
-   *
-   * @param data result data intent as received in {@link Activity#onActivityResult(int, int,
-   *     Intent)}.
-   * @return Crop Image Activity Result object or null if none exists
-   */
+
   public static ActivityResult getActivityResult(@Nullable Intent data) {
     return data != null ? (ActivityResult) data.getParcelableExtra(CROP_IMAGE_EXTRA_RESULT) : null;
   }
-
-  // region: Inner class: ActivityBuilder
 
   /** Builder used for creating Image Crop Activity by user request. */
   public static final class ActivityBuilder {
@@ -453,11 +430,11 @@ public final class CropImage {
     private final Uri mSource;
 
     /** Options for image crop UX */
-    private final com.theartofdev.edmodo.cropper.CropImageOptions mOptions;
+    private final CropImageOptions mOptions;
 
     private ActivityBuilder(@Nullable Uri source) {
       mSource = source;
-      mOptions = new com.theartofdev.edmodo.cropper.CropImageOptions();
+      mOptions = new CropImageOptions();
     }
 
     /** Get {@link CropImageActivity} intent to start the activity. */
@@ -474,7 +451,7 @@ public final class CropImage {
       Bundle bundle = new Bundle();
       bundle.putParcelable(CROP_IMAGE_EXTRA_SOURCE, mSource);
       bundle.putParcelable(CROP_IMAGE_EXTRA_OPTIONS, mOptions);
-      intent.putExtra(com.theartofdev.edmodo.cropper.CropImage.CROP_IMAGE_EXTRA_BUNDLE, bundle);
+      intent.putExtra(CropImage.CROP_IMAGE_EXTRA_BUNDLE, bundle);
       return intent;
     }
 
@@ -543,7 +520,7 @@ public final class CropImage {
      * To set square/circle crop shape set aspect ratio to 1:1.<br>
      * <i>Default: RECTANGLE</i>
      */
-    public ActivityBuilder setCropShape(@NonNull com.theartofdev.edmodo.cropper.CropImageView.CropShape cropShape) {
+    public ActivityBuilder setCropShape(@NonNull CropImageView.CropShape cropShape) {
       mOptions.cropShape = cropShape;
       return this;
     }
@@ -574,7 +551,7 @@ public final class CropImage {
      * whether the guidelines should be on, off, or only showing when resizing.<br>
      * <i>Default: ON_TOUCH</i>
      */
-    public ActivityBuilder setGuidelines(@NonNull com.theartofdev.edmodo.cropper.CropImageView.Guidelines guidelines) {
+    public ActivityBuilder setGuidelines(@NonNull CropImageView.Guidelines guidelines) {
       mOptions.guidelines = guidelines;
       return this;
     }
@@ -583,7 +560,7 @@ public final class CropImage {
      * The initial scale type of the image in the crop image view<br>
      * <i>Default: FIT_CENTER</i>
      */
-    public ActivityBuilder setScaleType(@NonNull com.theartofdev.edmodo.cropper.CropImageView.ScaleType scaleType) {
+    public ActivityBuilder setScaleType(@NonNull CropImageView.ScaleType scaleType) {
       mOptions.scaleType = scaleType;
       return this;
     }
@@ -818,13 +795,8 @@ public final class CropImage {
       return this;
     }
 
-    /**
-     * the size to resize the cropped image to.<br>
-     * Uses {@link com.theartofdev.edmodo.cropper.CropImageView.RequestSizeOptions#RESIZE_INSIDE} option.<br>
-     * <i>Default: 0, 0 - not set, will not resize</i>
-     */
     public ActivityBuilder setRequestedSize(int reqWidth, int reqHeight) {
-      return setRequestedSize(reqWidth, reqHeight, com.theartofdev.edmodo.cropper.CropImageView.RequestSizeOptions.RESIZE_INSIDE);
+      return setRequestedSize(reqWidth, reqHeight, CropImageView.RequestSizeOptions.RESIZE_INSIDE);
     }
 
     /**
@@ -832,7 +804,7 @@ public final class CropImage {
      * <i>Default: 0, 0 - not set, will not resize</i>
      */
     public ActivityBuilder setRequestedSize(
-        int reqWidth, int reqHeight, com.theartofdev.edmodo.cropper.CropImageView.RequestSizeOptions options) {
+        int reqWidth, int reqHeight, CropImageView.RequestSizeOptions options) {
       mOptions.outputRequestWidth = reqWidth;
       mOptions.outputRequestHeight = reqHeight;
       mOptions.outputRequestSizeOptions = options;
@@ -947,7 +919,7 @@ public final class CropImage {
   // region: Inner class: ActivityResult
 
   /** Result data of Crop Image Activity. */
-  public static final class ActivityResult extends com.theartofdev.edmodo.cropper.CropImageView.CropResult implements Parcelable {
+  public static final class ActivityResult extends CropImageView.CropResult implements Parcelable {
 
     public static final Creator<ActivityResult> CREATOR =
         new Creator<ActivityResult>() {
