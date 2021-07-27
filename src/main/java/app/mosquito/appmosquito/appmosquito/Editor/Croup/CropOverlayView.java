@@ -580,9 +580,9 @@ public class CropOverlayView extends View {
 
     if (mCropWindowHandler.showGuidelines()) {
       // Determines whether guidelines should be drawn or not
-      if (mGuidelines == com.theartofdev.edmodo.cropper.CropImageView.Guidelines.ON) {
+      if (mGuidelines == CropImageView.Guidelines.ON) {
         drawGuidelines(canvas);
-      } else if (mGuidelines == com.theartofdev.edmodo.cropper.CropImageView.Guidelines.ON_TOUCH && mMoveHandler != null) {
+      } else if (mGuidelines == CropImageView.Guidelines.ON_TOUCH && mMoveHandler != null) {
         // Draw only when resizing
         drawGuidelines(canvas);
       }
@@ -598,12 +598,12 @@ public class CropOverlayView extends View {
 
     RectF rect = mCropWindowHandler.getRect();
 
-    float left = Math.max(com.theartofdev.edmodo.cropper.BitmapUtils.getRectLeft(mBoundsPoints), 0);
-    float top = Math.max(com.theartofdev.edmodo.cropper.BitmapUtils.getRectTop(mBoundsPoints), 0);
-    float right = Math.min(com.theartofdev.edmodo.cropper.BitmapUtils.getRectRight(mBoundsPoints), getWidth());
-    float bottom = Math.min(com.theartofdev.edmodo.cropper.BitmapUtils.getRectBottom(mBoundsPoints), getHeight());
+    float left = Math.max(BitmapUtils.getRectLeft(mBoundsPoints), 0);
+    float top = Math.max(BitmapUtils.getRectTop(mBoundsPoints), 0);
+    float right = Math.min(BitmapUtils.getRectRight(mBoundsPoints), getWidth());
+    float bottom = Math.min(BitmapUtils.getRectBottom(mBoundsPoints), getHeight());
 
-    if (mCropShape == com.theartofdev.edmodo.cropper.CropImageView.CropShape.RECTANGLE) {
+    if (mCropShape == CropImageView.CropShape.RECTANGLE) {
       if (!isNonStraightAngleRotated() || Build.VERSION.SDK_INT <= 17) {
         canvas.drawRect(left, top, right, rect.top, mBackgroundPaint);
         canvas.drawRect(left, rect.bottom, right, bottom, mBackgroundPaint);
@@ -629,7 +629,7 @@ public class CropOverlayView extends View {
       }
     } else {
       mPath.reset();
-        if (Build.VERSION.SDK_INT <= 17 && mCropShape == com.theartofdev.edmodo.cropper.CropImageView.CropShape.OVAL) {
+        if (Build.VERSION.SDK_INT <= 17 && mCropShape == CropImageView.CropShape.OVAL) {
         mDrawRect.set(rect.left + 2, rect.top + 2, rect.right - 2, rect.bottom - 2);
       } else {
         mDrawRect.set(rect.left, rect.top, rect.right, rect.bottom);
@@ -659,7 +659,7 @@ public class CropOverlayView extends View {
       float oneThirdCropWidth = rect.width() / 3;
       float oneThirdCropHeight = rect.height() / 3;
 
-      if (mCropShape == com.theartofdev.edmodo.cropper.CropImageView.CropShape.OVAL) {
+      if (mCropShape == CropImageView.CropShape.OVAL) {
 
         float w = rect.width() / 2 - sw;
         float h = rect.height() / 2 - sw;
@@ -701,7 +701,7 @@ public class CropOverlayView extends View {
       RectF rect = mCropWindowHandler.getRect();
       rect.inset(w / 2, w / 2);
 
-      if (mCropShape == com.theartofdev.edmodo.cropper.CropImageView.CropShape.RECTANGLE) {
+      if (mCropShape == CropImageView.CropShape.RECTANGLE) {
         // Draw rectangle crop window border.
         canvas.drawRect(rect, mBorderPaint);
       } else {
@@ -721,7 +721,7 @@ public class CropOverlayView extends View {
       // for rectangle crop shape we allow the corners to be offset from the borders
       float w =
           cornerWidth / 2
-              + (mCropShape == com.theartofdev.edmodo.cropper.CropImageView.CropShape.RECTANGLE ? mBorderCornerOffset : 0);
+              + (mCropShape == CropImageView.CropShape.RECTANGLE ? mBorderCornerOffset : 0);
 
       RectF rect = mCropWindowHandler.getRect();
       rect.inset(w, w);
@@ -899,10 +899,10 @@ public class CropOverlayView extends View {
    */
   private boolean calculateBounds(RectF rect) {
 
-    float left = com.theartofdev.edmodo.cropper.BitmapUtils.getRectLeft(mBoundsPoints);
-    float top = com.theartofdev.edmodo.cropper.BitmapUtils.getRectTop(mBoundsPoints);
-    float right = com.theartofdev.edmodo.cropper.BitmapUtils.getRectRight(mBoundsPoints);
-    float bottom = com.theartofdev.edmodo.cropper.BitmapUtils.getRectBottom(mBoundsPoints);
+    float left = BitmapUtils.getRectLeft(mBoundsPoints);
+    float top = BitmapUtils.getRectTop(mBoundsPoints);
+    float right = BitmapUtils.getRectRight(mBoundsPoints);
+    float bottom = BitmapUtils.getRectBottom(mBoundsPoints);
 
     if (!isNonStraightAngleRotated()) {
       mCalcBounds.set(left, top, right, bottom);
