@@ -180,50 +180,40 @@ final class CropWindowHandler {
     return type != null ? new CropWindowMoveHandler(type, this, x, y) : null;
   }
 
-  // region: Private methods
 
-  /**
-   * Determines which, if any, of the handles are pressed given the touch coordinates, the bounding
-   * box, and the touch radius.
-   *
-   * @param x the x-coordinate of the touch point
-   * @param y the y-coordinate of the touch point
-   * @param targetRadius the target radius in pixels
-   * @return the Handle that was pressed; null if no Handle was pressed
-   */
   private CropWindowMoveHandler.Type getRectanglePressedMoveType(
       float x, float y, float targetRadius) {
     CropWindowMoveHandler.Type moveType = null;
 
     // Note: corner-handles take precedence, then side-handles, then center.
-    if (com.theartofdev.edmodo.cropper.CropWindowHandler.isInCornerTargetZone(x, y, mEdges.left, mEdges.top, targetRadius)) {
+    if (CropWindowHandler.isInCornerTargetZone(x, y, mEdges.left, mEdges.top, targetRadius)) {
       moveType = CropWindowMoveHandler.Type.TOP_LEFT;
-    } else if (com.theartofdev.edmodo.cropper.CropWindowHandler.isInCornerTargetZone(
+    } else if (CropWindowHandler.isInCornerTargetZone(
         x, y, mEdges.right, mEdges.top, targetRadius)) {
       moveType = CropWindowMoveHandler.Type.TOP_RIGHT;
-    } else if (com.theartofdev.edmodo.cropper.CropWindowHandler.isInCornerTargetZone(
+    } else if (CropWindowHandler.isInCornerTargetZone(
         x, y, mEdges.left, mEdges.bottom, targetRadius)) {
       moveType = CropWindowMoveHandler.Type.BOTTOM_LEFT;
-    } else if (com.theartofdev.edmodo.cropper.CropWindowHandler.isInCornerTargetZone(
+    } else if (CropWindowHandler.isInCornerTargetZone(
         x, y, mEdges.right, mEdges.bottom, targetRadius)) {
       moveType = CropWindowMoveHandler.Type.BOTTOM_RIGHT;
-    } else if (com.theartofdev.edmodo.cropper.CropWindowHandler.isInCenterTargetZone(
+    } else if (CropWindowHandler.isInCenterTargetZone(
             x, y, mEdges.left, mEdges.top, mEdges.right, mEdges.bottom)
         && focusCenter()) {
       moveType = CropWindowMoveHandler.Type.CENTER;
-    } else if (com.theartofdev.edmodo.cropper.CropWindowHandler.isInHorizontalTargetZone(
+    } else if (CropWindowHandler.isInHorizontalTargetZone(
         x, y, mEdges.left, mEdges.right, mEdges.top, targetRadius)) {
       moveType = CropWindowMoveHandler.Type.TOP;
-    } else if (com.theartofdev.edmodo.cropper.CropWindowHandler.isInHorizontalTargetZone(
+    } else if (CropWindowHandler.isInHorizontalTargetZone(
         x, y, mEdges.left, mEdges.right, mEdges.bottom, targetRadius)) {
       moveType = CropWindowMoveHandler.Type.BOTTOM;
-    } else if (com.theartofdev.edmodo.cropper.CropWindowHandler.isInVerticalTargetZone(
+    } else if (CropWindowHandler.isInVerticalTargetZone(
         x, y, mEdges.left, mEdges.top, mEdges.bottom, targetRadius)) {
       moveType = CropWindowMoveHandler.Type.LEFT;
-    } else if (com.theartofdev.edmodo.cropper.CropWindowHandler.isInVerticalTargetZone(
+    } else if (CropWindowHandler.isInVerticalTargetZone(
         x, y, mEdges.right, mEdges.top, mEdges.bottom, targetRadius)) {
       moveType = CropWindowMoveHandler.Type.RIGHT;
-    } else if (com.theartofdev.edmodo.cropper.CropWindowHandler.isInCenterTargetZone(
+    } else if (CropWindowHandler.isInCenterTargetZone(
             x, y, mEdges.left, mEdges.top, mEdges.right, mEdges.bottom)
         && !focusCenter()) {
       moveType = CropWindowMoveHandler.Type.CENTER;
