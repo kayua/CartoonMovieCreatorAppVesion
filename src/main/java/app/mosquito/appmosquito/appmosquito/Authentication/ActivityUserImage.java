@@ -34,7 +34,7 @@ public class ActivityUserImage extends Activity {
 
         int PICK_IMAGE = 1;
 
-        ImageView buttonLoadImage = (ImageView) findViewById(R.id.imageView23);
+        ImageView buttonLoadImage = (ImageView) findViewById(R.id.imageView18);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -77,11 +77,11 @@ public class ActivityUserImage extends Activity {
             picturePath = cursor.getString(columnIndex);
             cursor.close();
 
-            ImageView imageView = (ImageView) findViewById(R.id.imageView23);
+            ImageView imageView = (ImageView) findViewById(R.id.imageView18);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
             ImageView imageView1;
             RoundImage roundedImage;
-            imageView1 = (ImageView) findViewById(R.id.imageView23);
+            imageView1 = (ImageView) findViewById(R.id.imageView18);
             Bitmap bm = BitmapFactory.decodeFile(picturePath);
             roundedImage = new RoundImage(bm);
             imageView1.setImageDrawable(roundedImage);

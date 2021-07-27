@@ -11,6 +11,8 @@
     android:soundEffectsEnabled="true"
     tools:context=".Authentication.ActivityRegisterAccount">
 
+
+
     <ImageView
         android:id="@+id/iconAuthAcess3"
         android:layout_width="match_parent"
@@ -23,24 +25,6 @@
         app:layout_constraintVertical_bias="1.0"
         android:background="@drawable/button_design_fill_white"
         tools:ignore="ContentDescription,MissingConstraints" />
-
-    <Button
-        android:id="@+id/buttonAuthFacebook"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/button_design_fill"
-        android:backgroundTint="#3B5998"
-        android:foreground="@drawable/icon_facebook"
-
-        android:text=""
-        android:textColor="#DD4B39"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956"
-        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonAuthAcessRegisterAccount3"
@@ -73,21 +57,6 @@
         app:layout_constraintVertical_bias="0.872"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonAuthAcessTwitter"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/button_design_fill"
-        android:backgroundTint="#55ACEE"
-        android:foreground="@drawable/icon_twitter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955"
-        tools:ignore="MissingConstraints" />
-
 
     <TextView
         android:id="@+id/textView22"
@@ -104,36 +73,37 @@
         app:layout_constraintVertical_bias="0.605"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonAuthGoogle"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/button_design_fill"
-        android:backgroundTint="#DD4B39"
-        android:foreground="@drawable/icon_google"
-        android:text=""
-        android:textColor="#DD4B39"
+
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imageView18"
+        android:layout_width="216dp"
+        android:layout_height="210dp"
+        android:src="@drawable/icon_general_user"
+        app:civ_border_color="#BCF1EEEE"
+        app:civ_border_width="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.2" />
 
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="50dp"
-        android:layout_height="1dp"
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go_back"
+        android:textColor="#FF03ADD8"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865"
-        app:srcCompat="@drawable/button_design_fill"
+        app:layout_constraintVertical_bias="0.949"
         tools:ignore="MissingConstraints" />
-
     <ImageView
         android:id="@+id/imageView17"
         android:layout_width="50dp"
@@ -144,20 +114,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.864"
-        app:srcCompat="@drawable/button_design_fill"
+        android:background="@drawable/button_design_fill"
         tools:ignore="MissingConstraints" />
-
     <ImageView
-        android:id="@+id/imageView23"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:background="@drawable/icon_general_user"
+        android:id="@+id/imageView16"
+        android:layout_width="50dp"
+        android:layout_height="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.742"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195" />
-
-
+        app:layout_constraintVertical_bias="0.865"
+        android:background="@drawable/button_design_fill"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

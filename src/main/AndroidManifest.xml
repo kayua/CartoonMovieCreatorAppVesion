@@ -33,12 +33,17 @@
         android:requestLegacyExternalStorage="true">
 
         <activity
-            android:name=".Editor.Croup.MainActivity"
+
+            android:name=".Authentication.ActivityUserImage"
             android:screenOrientation="portrait">
+
             <intent-filter>
+
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+
             </intent-filter>
+
         </activity>
 
         <meta-data
@@ -51,10 +56,8 @@
 
         <activity
             android:name=".ActivityUserInterface"
-
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppMosquito"
-            />
+            android:theme="@style/Theme.AppMosquito" />
 
         <activity
             android:name=".Authentication.ActivityRecoverPassword"

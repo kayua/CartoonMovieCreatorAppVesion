@@ -87,8 +87,8 @@
 
     <EditText
         android:id="@+id/editTextAuthGender"
-        android:layout_width="260dp"
-        android:layout_height="53dp"
+        android:layout_width="257dp"
+        android:layout_height="52dp"
         android:backgroundTint="#BF03ADD8"
         android:ems="10"
         android:hint="@string/user_or_email"
