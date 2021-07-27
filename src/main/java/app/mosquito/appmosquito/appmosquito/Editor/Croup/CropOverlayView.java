@@ -41,7 +41,7 @@ public class CropOverlayView extends View {
   private boolean mMultiTouchEnabled;
 
   /** Handler from crop window stuff, moving and knowing possition. */
-  private final com.theartofdev.edmodo.cropper.CropWindowHandler mCropWindowHandler = new com.theartofdev.edmodo.cropper.CropWindowHandler();
+  private final CropWindowHandler mCropWindowHandler = new CropWindowHandler();
 
   /** Listener to publicj crop window changes */
   private CropWindowChangeListener mCropWindowChangeListener;
@@ -96,7 +96,7 @@ public class CropOverlayView extends View {
   private float mSnapRadius;
 
   /** The Handle that is currently pressed; null if no Handle is pressed. */
-  private com.theartofdev.edmodo.cropper.CropWindowMoveHandler mMoveHandler;
+  private CropWindowMoveHandler mMoveHandler;
 
   /**
    * Flag indicating if the crop area should always be a certain aspect ratio (indicated by
@@ -117,10 +117,10 @@ public class CropOverlayView extends View {
   private float mTargetAspectRatio = ((float) mAspectRatioX) / mAspectRatioY;
 
   /** Instance variables for customizable attributes */
-  private com.theartofdev.edmodo.cropper.CropImageView.Guidelines mGuidelines;
+  private CropImageView.Guidelines mGuidelines;
 
   /** The shape of the cropping area - rectangle/circular. */
-  private com.theartofdev.edmodo.cropper.CropImageView.CropShape mCropShape;
+  private CropImageView.CropShape mCropShape;
 
   /** the initial crop window rectangle to set */
   private final Rect mInitialCropWindowRect = new Rect();
@@ -189,23 +189,23 @@ public class CropOverlayView extends View {
   /** Resets the crop overlay view. */
   public void resetCropOverlayView() {
     if (initializedCropWindow) {
-      setCropWindowRect(com.theartofdev.edmodo.cropper.BitmapUtils.EMPTY_RECT_F);
+      setCropWindowRect(BitmapUtils.EMPTY_RECT_F);
       initCropWindow();
       invalidate();
     }
   }
 
   /** The shape of the cropping area - rectangle/circular. */
-  public com.theartofdev.edmodo.cropper.CropImageView.CropShape getCropShape() {
+  public CropImageView.CropShape getCropShape() {
     return mCropShape;
   }
 
   /** The shape of the cropping area - rectangle/circular. */
-  public void setCropShape(com.theartofdev.edmodo.cropper.CropImageView.CropShape cropShape) {
+  public void setCropShape(CropImageView.CropShape cropShape) {
     if (mCropShape != cropShape) {
       mCropShape = cropShape;
         if (Build.VERSION.SDK_INT <= 17) {
-        if (mCropShape == com.theartofdev.edmodo.cropper.CropImageView.CropShape.OVAL) {
+        if (mCropShape == CropImageView.CropShape.OVAL) {
           mOriginalLayerType = getLayerType();
           if (mOriginalLayerType != View.LAYER_TYPE_SOFTWARE) {
             // TURN off hardware acceleration
@@ -224,7 +224,7 @@ public class CropOverlayView extends View {
   }
 
   /** Get the current guidelines option set. */
-  public com.theartofdev.edmodo.cropper.CropImageView.Guidelines getGuidelines() {
+  public CropImageView.Guidelines getGuidelines() {
     return mGuidelines;
   }
 
@@ -232,7 +232,7 @@ public class CropOverlayView extends View {
    * Sets the guidelines for the CropOverlayView to be either on, off, or to show when resizing the
    * application.
    */
-  public void setGuidelines(com.theartofdev.edmodo.cropper.CropImageView.Guidelines guidelines) {
+  public void setGuidelines(CropImageView.Guidelines guidelines) {
     if (mGuidelines != guidelines) {
       mGuidelines = guidelines;
       if (initializedCropWindow) {
@@ -363,7 +363,7 @@ public class CropOverlayView extends View {
 
   /** Set crop window initial rectangle to be used instead of default. */
   public void setInitialCropWindowRect(Rect rect) {
-    mInitialCropWindowRect.set(rect != null ? rect : com.theartofdev.edmodo.cropper.BitmapUtils.EMPTY_RECT);
+    mInitialCropWindowRect.set(rect != null ? rect : BitmapUtils.EMPTY_RECT);
     if (initializedCropWindow) {
       initCropWindow();
       invalidate();
@@ -384,7 +384,7 @@ public class CropOverlayView extends View {
    * Sets all initial values, but does not call initCropWindow to reset the views.<br>
    * Used once at the very start to initialize the attributes.
    */
-  public void setInitialAttributeValues(com.theartofdev.edmodo.cropper.CropImageOptions options) {
+  public void setInitialAttributeValues(CropImageOptions options) {
 
     mCropWindowHandler.setInitialAttributeValues(options);
 
