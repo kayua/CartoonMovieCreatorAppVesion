@@ -36,6 +36,7 @@ public class ActivityRegisterAccount extends AppCompatActivity {
 
                 store_login(textBoxUsername.getText().toString(), textBoxEmail.getText().toString(),
                             textBoxPassword.getText().toString());
+                screenProfileEditFirst();
             }
 
         });
@@ -54,9 +55,16 @@ public class ActivityRegisterAccount extends AppCompatActivity {
         editor.apply();
     }
 
-    private void screen_user(){
+    private void screenInitial(){
 
         Intent i = new Intent(ActivityRegisterAccount .this, ActivityAcessAccount.class);
+        finish();
+        startActivity(i);
+    }
+
+    private void screenProfileEditFirst(){
+
+        Intent i = new Intent(ActivityRegisterAccount .this, ActivityEditProfileFirst.class);
         finish();
         startActivity(i);
     }
