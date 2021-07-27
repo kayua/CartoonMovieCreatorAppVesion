@@ -887,16 +887,7 @@ public class CropOverlayView extends View {
     }
   }
 
-  /**
-   * Calculate the bounding rectangle for current crop window, handle non-straight rotation angles.
-   * <br>
-   * If the rotation angle is straight then the bounds rectangle is the bitmap rectangle, otherwsie
-   * we find the max rectangle that is within the image bounds starting from the crop window
-   * rectangle.
-   *
-   * @param rect the crop window rectangle to start finsing bounded rectangle from
-   * @return true - non straight rotation in place, false - otherwise.
-   */
+
   private boolean calculateBounds(RectF rect) {
 
     float left = BitmapUtils.getRectLeft(mBoundsPoints);
