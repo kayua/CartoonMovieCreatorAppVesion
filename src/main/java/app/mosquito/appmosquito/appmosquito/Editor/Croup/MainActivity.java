@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_base_croup);
   }
 
   /** Start pick image activity with chooser. */
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         .setCropShape(CropImageView.CropShape.OVAL)
         .setCropMenuCropButtonTitle("Done")
         .setRequestedSize(400, 400)
-        .setCropMenuCropButtonIcon(R.drawable.ic_launcher)
+        .setCropMenuCropButtonIcon(R.drawable.arrow)
         .start(this);
   }
 
@@ -46,13 +46,14 @@ public class MainActivity extends AppCompatActivity {
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
     // handle result of CropImageActivity
+    super.onActivityResult(requestCode, resultCode, data);
     if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
       CropImage.ActivityResult result = CropImage.getActivityResult(data);
       if (resultCode == RESULT_OK) {
         ((ImageView) findViewById(R.id.quick_start_cropped_image)).setImageURI(result.getUri());
         Toast.makeText(
                 this, "Cropping successful, Sample: " + result.getSampleSize(), Toast.LENGTH_LONG)
-            .show();
+                .show();
       } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
         Toast.makeText(this, "Cropping failed: " + result.getError(), Toast.LENGTH_LONG).show();
       }
