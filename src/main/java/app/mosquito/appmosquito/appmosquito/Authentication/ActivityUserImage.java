@@ -11,8 +11,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
@@ -20,6 +20,7 @@ import app.mosquito.appmosquito.appmosquito.R;
 
 public class ActivityUserImage extends Activity {
 
+    private static int RESULT_LOAD_IMAGE = 1;
     String picturePath;
     @SuppressLint("WrongThread")
     @Override
@@ -29,7 +30,7 @@ public class ActivityUserImage extends Activity {
 
         setContentView(R.layout.auth_user_image);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
 
 
         int PICK_IMAGE = 1;
@@ -48,15 +49,18 @@ public class ActivityUserImage extends Activity {
             }
         });
 
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                screenProfileEditFirst();
+            }
+        });
 
     }
 
-    private void screen_user() {
-        Intent i = new Intent(ActivityUserImage.this, ActivityUserInterface.class);
-        finish();
-        startActivity(i);
-    }
-    private static int RESULT_LOAD_IMAGE = 1;
+
 
 
 
@@ -91,15 +95,26 @@ public class ActivityUserImage extends Activity {
 
     }
 
-    private void toast() {
-        Toast.makeText(getApplicationContext(), "Não foi possível encontrar sua conta. Verificar se o preenchimento está correto.", Toast.LENGTH_SHORT).show();
-    }
     @Override
-
     public void onStart() {
         super.onStart();
 
     }
+
+
+    private void screenProfileEditFirst(){
+
+        Intent i = new Intent(ActivityUserImage.this, ActivityEditProfileFirst.class);
+        finish();
+        startActivity(i);
+    }
+
+    private void screen_user() {
+        Intent i = new Intent(ActivityUserImage.this, ActivityUserInterface.class);
+        finish();
+        startActivity(i);
+    }
+
 }
 
 
