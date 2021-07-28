@@ -31,8 +31,8 @@ public class UserImage extends Activity {
 
         setContentView(R.layout.layout_authentication_user_image);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        Button buttonRegister = (Button) findViewById(R.id.buttonSecondNext);
-        ImageView buttonLoadImage = (ImageView) findViewById(R.id.imageView18);
+        Button buttonRegister = (Button) findViewById(R.id.buttonUserLogin);
+        ImageView buttonLoadImage = (ImageView) findViewById(R.id.imageViewUserEdit);
 
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
 
@@ -79,7 +79,7 @@ public class UserImage extends Activity {
 
             cursor.close();
 
-            ImageView imageView = (ImageView) findViewById(R.id.imageView18);
+            ImageView imageView = (ImageView) findViewById(R.id.imageViewUserEdit);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
             storeLogin(picturePath);
 

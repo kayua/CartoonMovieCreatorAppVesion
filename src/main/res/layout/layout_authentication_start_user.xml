@@ -16,7 +16,6 @@
 
 
     <TextView
-        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Shared Your Movies"
@@ -32,7 +31,6 @@
         app:layout_constraintVertical_bias="0.302" />
 
     <ImageView
-        android:id="@+id/imageViewAuthLogo"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:alpha="1.0"
@@ -44,11 +42,10 @@
         app:srcCompat="@drawable/logo_white_background" />
 
     <Button
-        android:id="@+id/buttonSecondNext"
+        android:id="@+id/buttonUserLogin"
         android:layout_width="293dp"
         android:layout_height="55dp"
         android:background="@drawable/button_design_empty"
-        android:onClick="createUser"
         android:text="@string/acess"
         android:textColor="#03ADD8"
         android:textSize="12sp"
@@ -59,11 +56,10 @@
         app:layout_constraintVertical_bias="0.778" />
 
     <Button
-        android:id="@+id/buttonAuthRegister"
+        android:id="@+id/buttonStartRegister"
         android:layout_width="296dp"
         android:layout_height="56dp"
         android:background="@drawable/button_design_fill"
-        android:onClick="createUser"
         android:text="@string/register"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
@@ -75,7 +71,7 @@
         app:layout_constraintVertical_bias="0.894" />
 
     <TextView
-        android:id="@+id/textViewAuthDirectAcess"
+        android:id="@+id/textViewStartDirect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/acess_free"

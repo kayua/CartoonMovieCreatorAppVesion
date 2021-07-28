@@ -28,7 +28,7 @@ public class RegisterProfileSecond extends Activity {
         setContentView(R.layout.layout_authentication_first_step);
 
         ImageView imageView = (ImageView) findViewById(R.id.imageViewFirst);
-        Button buttonNext =  findViewById(R.id.buttonSecondNext);
+        Button buttonNext =  findViewById(R.id.buttonUserLogin);
         TextView goBack =  findViewById(R.id.textViewSecondGoBack);
         EditText userBirthDate =  findViewById(R.id.editTextSecondGender);
         EditText userCity =  findViewById(R.id.editTextSecondCity);

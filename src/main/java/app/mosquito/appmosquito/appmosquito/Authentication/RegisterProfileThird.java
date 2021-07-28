@@ -49,7 +49,7 @@ public class RegisterProfileThird extends Activity {
         EditText editTextUserSchooling =  findViewById(R.id.editTextSecondCity);
         EditText userFavoriteWord =  findViewById(R.id.editTextSecondCompany);
 
-        Button buttonNextStep =  findViewById(R.id.buttonSecondNext);
+        Button buttonNextStep =  findViewById(R.id.buttonUserLogin);
 
         String picturePath = userData.getString("imageUser", "");
 
