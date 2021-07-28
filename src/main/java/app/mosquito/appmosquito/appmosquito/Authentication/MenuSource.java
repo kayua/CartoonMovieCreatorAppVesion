@@ -21,55 +21,63 @@ public class MenuSource extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.auth_start);
-        Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.auth_start);
+
+
+        Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
+        Button buttonRegister = (Button) findViewById(R.id.buttonAuthRegister);
+        TextView textViewDirectAcess = findViewById(R.id.textViewAuthDirectAcess);
+
         buttonAcess.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                screen_acess_account();
+                screenAcessAccount();
             }});
 
-        Button buttonRegister = (Button) findViewById(R.id.buttonAuthRegister);
+
         buttonRegister.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                screen_register();
+                screenRegister();
             }});
 
-        TextView DirectAcess = findViewById(R.id.textViewAuthDirectAcess);
-        DirectAcess.setOnClickListener( new View.OnClickListener() {
+
+
+        textViewDirectAcess.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                screen_user();
+                screenUser();
             }});
+
     }
 
 
-    private void screen_acess_account(){
+    private void screenAcessAccount(){
 
         Intent i = new Intent(MenuSource.this, AcessAccount.class);
         finish();
         startActivity(i);
+
     }
 
-    private void screen_user(){
+    private void screenUser(){
 
         Intent i = new Intent(MenuSource.this, MainUserInterface.class);
         finish();
         startActivity(i);
     }
 
-    private void screen_register(){
-
+    private void screenRegister(){
 
         Intent i = new Intent(MenuSource.this, RegisterProfileFirst.class);
         finish();
         startActivity(i);
 
     }
+
 
 }
