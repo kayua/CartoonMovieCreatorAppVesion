@@ -66,8 +66,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="bottom"
-            android:background="@drawable/input_circle_normal"
-            android:src="@drawable/send"/>
+            android:background="@drawable/arrow"
+            android:src="@drawable/dots"/>
 
     </LinearLayout>
 

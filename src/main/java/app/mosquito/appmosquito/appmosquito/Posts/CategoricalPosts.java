@@ -1,5 +1,5 @@
 package app.mosquito.appmosquito.appmosquito.Posts;
 
-public enum Categoria {
+public enum CategoricalPosts {
     JAVA, HTML, ANDROID
 }

@@ -36,7 +36,7 @@
                 android:foregroundTint="#FAF9F9"
                 android:listSelector="@drawable/arrow"
                 android:scrollbarThumbHorizontal="@drawable/arrow"
-                android:scrollbarThumbVertical="@drawable/button_round">
+                android:scrollbarThumbVertical="@drawable/exo_controls_previous">
 
             </ListView>
 
@@ -56,7 +56,7 @@
                     android:id="@+id/editTextTextMultiLine3"
                     android:layout_width="287dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/msgbox"
+                    android:background="@drawable/background_menu"
                     android:ems="10"
                     android:gravity="start|top"
                     android:hint=" Digite a mensagem"
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:clickable="true"
-                    app:srcCompat="@drawable/send" />
+                    app:srcCompat="@drawable/dots" />
 
             </LinearLayout>
         </LinearLayout>

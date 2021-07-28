@@ -13,12 +13,12 @@ import app.mosquito.appmosquito.appmosquito.R;
 
 
 
-public class AdapterCursosPersonalizado extends BaseAdapter {
+public class ViewAdapter extends BaseAdapter {
 
-    private final List<Curso> cursos;
+    private final List<PostStructure> cursos;
     private final Activity act;
 
-    public AdapterCursosPersonalizado(List<Curso> cursos, Activity act) {
+    public ViewAdapter(List<PostStructure> cursos, Activity act) {
         this.cursos = cursos;
         this.act = act;
     }
@@ -42,13 +42,13 @@ public class AdapterCursosPersonalizado extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
-        Curso curso = cursos.get(position);
+        PostStructure curso = cursos.get(position);
 
         View view = null;
 
-        Categoria categoria = curso.getCategoria();
+        CategoricalPosts categoria = curso.getCategoria();
 
-        if (categoria.equals(Categoria.JAVA)) {
+        if (categoria.equals(CategoricalPosts.JAVA)) {
             view = act.getLayoutInflater().inflate(R.layout.lista_curso_personalizada, parent, false);
             TextView nome = (TextView)
                     view.findViewById(R.id.lista_curso_personalizada_nome);
@@ -60,7 +60,7 @@ public class AdapterCursosPersonalizado extends BaseAdapter {
             nome.setText(curso.getNome());
             descricao.setText(curso.getDescricao());
 
-        } else if (categoria.equals(Categoria.ANDROID)) {
+        } else if (categoria.equals(CategoricalPosts.ANDROID)) {
             view = act.getLayoutInflater().inflate(R.layout.list_msg, parent, false);
             TextView nome = (TextView)
                     view.findViewById(R.id.lista_curso_personalizada_nome);

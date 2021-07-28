@@ -7,13 +7,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,8 +33,8 @@ public class MessageFragment extends Fragment {
         ListView list = root.findViewById(R.id.chat_list_view);
         EditText textEdit = root.findViewById(R.id.chat_edit_text1);
         ListView lista = (ListView) root.findViewById(R.id.chat_list_view);
-        List<Curso> cursos = todosOsCursos();
-        AdapterCursosPersonalizado adapter = new AdapterCursosPersonalizado(cursos, getActivity());
+        List<PostStructure> cursos = todosOsCursos();
+        ViewAdapter adapter = new ViewAdapter(cursos, getActivity());
         lista.setAdapter(adapter);
 
 
@@ -48,18 +46,18 @@ public class MessageFragment extends Fragment {
         });
         return root;
     }
-    private List<Curso> todosOsCursos() {
+    private List<PostStructure> todosOsCursos() {
     return new ArrayList<>(Arrays.asList(
-            new Curso("Java", "Olá mundo. kkkkkk\n testando...1 2 3", EstadoAtual.FINALIZADO, Categoria.JAVA),
-            new Curso("Android", "Funcionado", EstadoAtual.FINALIZADO, Categoria.ANDROID),
-            new Curso("Java", "Hi, who are you?", EstadoAtual.FINALIZADO, Categoria.JAVA),
-            new Curso("Java", "H1, I'am fine.", EstadoAtual.FINALIZADO, Categoria.JAVA),
-            new Curso("Android", "sdasdasdas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
-            new Curso("Android", "asdasdasdasas\ndasdasdasd", EstadoAtual.FINALIZADO, Categoria.ANDROID),
-            new Curso("Java", "Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
-            new Curso("Android", "good", EstadoAtual.FINALIZADO, Categoria.ANDROID),
-            new Curso("Java", "Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, Categoria.JAVA),
-            new Curso("Android", "boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID),
-            new Curso("Android", "boas de práticas", EstadoAtual.FINALIZADO, Categoria.ANDROID)));
+            new PostStructure("Java", "Olá mundo. kkkkkk\n testando...1 2 3", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
+            new PostStructure("Android", "Funcionado", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID),
+            new PostStructure("Java", "Hi, who are you?", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
+            new PostStructure("Java", "H1, I'am fine.", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
+            new PostStructure("Android", "sdasdasdas", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID),
+            new PostStructure("Android", "asdasdasdasas\ndasdasdasd", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID),
+            new PostStructure("Java", "Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
+            new PostStructure("Android", "good", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID),
+            new PostStructure("Java", "Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
+            new PostStructure("Android", "boas de práticas", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID),
+            new PostStructure("Android", "boas de práticas", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID)));
 }
 }

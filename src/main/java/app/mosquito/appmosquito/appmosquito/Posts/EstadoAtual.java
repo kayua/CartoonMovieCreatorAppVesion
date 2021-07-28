@@ -1,8 +1,5 @@
 package app.mosquito.appmosquito.appmosquito.Posts;
 
-/**
- * Created by alex on 02/07/17.
- */
 
 public enum EstadoAtual {
 

@@ -28,7 +28,7 @@
             android:layout_marginRight="12dp"
             android:layout_marginBottom="12dp"
             android:alpha="1.0"
-            android:background="@drawable/text_round_other"
+            android:background="@drawable/rounded_border_tv"
             android:gravity="center|right"
             android:padding="8dp"
             android:text="descriçao"

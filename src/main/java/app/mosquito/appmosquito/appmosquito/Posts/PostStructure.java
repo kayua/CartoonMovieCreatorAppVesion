@@ -1,13 +1,13 @@
 package app.mosquito.appmosquito.appmosquito.Posts;
 
-public class Curso {
+public class PostStructure {
 
     private String nome;
     private String descricao;
     private EstadoAtual estado;
-    private Categoria categoria;
+    private CategoricalPosts categoria;
 
-    public Curso(String nome, String descricao, EstadoAtual estado, Categoria categoria) {
+    public PostStructure(String nome, String descricao, EstadoAtual estado, CategoricalPosts categoria) {
         this.nome = nome;
         this.descricao = descricao;
         this.estado = estado;
@@ -26,28 +26,21 @@ public class Curso {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
 
-    public EstadoAtual getEstado() {
-        return estado;
-    }
+    public EstadoAtual getEstado() { return estado; }
 
-    public void setEstado(EstadoAtual estado) {
-        this.estado = estado;
-    }
+    public void setEstado(EstadoAtual estado) { this.estado = estado; }
 
-    public Categoria getCategoria() {
+    public CategoricalPosts getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
+    public void setCategoria(CategoricalPosts categoria) { this.categoria = categoria; }
 
     @Override
     public String toString() {
+
         return "Curso: " + nome + " Descrição: " +
                 descricao + " Estado: " + estado;
     }
