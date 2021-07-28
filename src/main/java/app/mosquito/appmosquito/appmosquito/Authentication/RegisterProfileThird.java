@@ -45,11 +45,11 @@ public class RegisterProfileThird extends Activity {
         writeFirebase();
 
         TextView textViewGoBack =  findViewById(R.id.textViewEmailGoBackInit2);
-        EditText editTextUserGender =  findViewById(R.id.editTextAuthGender);
+        EditText editTextUserGender =  findViewById(R.id.editTextAcessEmail);
         EditText editTextUserSchooling =  findViewById(R.id.editTextAuthSchooling);
         EditText userFavoriteWord =  findViewById(R.id.editTextAuthFavoriteWord);
 
-        Button buttonNextStep =  findViewById(R.id.buttonAuthAcessRegisterAccount3);
+        Button buttonNextStep =  findViewById(R.id.buttonAcessLogin);
 
         String picturePath = userData.getString("imageUser", "");
 

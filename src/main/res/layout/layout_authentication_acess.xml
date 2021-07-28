@@ -7,8 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#03add8">
+
     <ImageView
-        android:id="@+id/imageVkkkkk"
         android:layout_width="match_parent"
         android:layout_height="464dp"
         android:background="@drawable/button_design_fill_white"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textViewAuthUserAcess"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/acess"
@@ -36,7 +36,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthFacebook"
+        android:id="@+id/buttonAcessFacebook"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:background="@drawable/button_design_fill"
@@ -53,11 +53,10 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthAcessRegisterAccount3"
+        android:id="@+id/buttonAcessLogin"
         android:layout_width="273dp"
         android:layout_height="51dp"
         android:background="@drawable/button_design_fill"
-
         android:text="@string/acess"
         android:textColor="#FFFFFF"
         android:textSize="13sp"
@@ -69,7 +68,7 @@
         app:layout_constraintVertical_bias="0.794" />
 
     <TextView
-        android:id="@+id/textViewAuthAcessBar"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/acess_with"
@@ -86,7 +85,7 @@
 
 
     <EditText
-        android:id="@+id/editTextAuthGender"
+        android:id="@+id/editTextAcessEmail"
         android:layout_width="257dp"
         android:layout_height="52dp"
         android:backgroundTint="#BF03ADD8"
@@ -107,7 +106,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textViewAuthUser"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/user"
@@ -123,7 +122,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextAuthPassword"
+        android:id="@+id/editTextAcessPassword"
         android:layout_width="260dp"
         android:layout_height="52dp"
         android:backgroundTint="#BF03ADD8"
@@ -144,7 +143,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/textViewAcessForget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/recovery"
@@ -160,7 +159,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView22"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password"
@@ -175,7 +174,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthAcessTwitter"
+        android:id="@+id/buttonAcessTwiter"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:background="@drawable/button_design_fill"
@@ -190,7 +189,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthGoogle"
+        android:id="@+id/buttonAcessGoogle"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:background="@drawable/button_design_fill"
@@ -207,7 +206,6 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView16"
         android:layout_width="50dp"
         android:layout_height="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -219,8 +217,8 @@
         android:background="@drawable/button_design_fill"
         tools:ignore="MissingConstraints" />
 
+
     <ImageView
-        android:id="@+id/imageView17"
         android:layout_width="50dp"
         android:layout_height="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -233,7 +231,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/imageViewStaticAcess"
         android:layout_width="117dp"
         android:layout_height="107dp"
         android:foreground="@drawable/logo_blue_white"
@@ -244,7 +242,7 @@
         app:layout_constraintVertical_bias="0.066" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxAcessSave"
         android:layout_width="239dp"
         android:layout_height="27dp"
         android:buttonTint="#03add8"

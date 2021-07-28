@@ -28,9 +28,9 @@ public class RegisterProfileSecond extends Activity {
         setContentView(R.layout.layout_authentication_first_step);
 
         ImageView imageView = (ImageView) findViewById(R.id.imageViedw);
-        Button buttonNext =  findViewById(R.id.buttonAuthAcessRegisterAccount3);
+        Button buttonNext =  findViewById(R.id.buttonAcessLogin);
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
-        EditText userBirthDate =  findViewById(R.id.editTextAuthGender);
+        EditText userBirthDate =  findViewById(R.id.editTextAcessEmail);
         EditText userCity =  findViewById(R.id.editTextAuthSchooling);
         EditText userCompany =  findViewById(R.id.editTextAuthFavoriteWord);
 

@@ -59,7 +59,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAuthAcessRegisterAccount3"
+        android:id="@+id/buttonAcessLogin"
         android:layout_width="282dp"
         android:layout_height="49dp"
         android:background="@drawable/button_design_fill"
@@ -91,7 +91,7 @@
 
 
     <EditText
-        android:id="@+id/editTextAuthGender"
+        android:id="@+id/editTextAcessEmail"
         android:layout_width="260dp"
         android:layout_height="53dp"
         android:backgroundTint="#BF03ADD8"
@@ -166,7 +166,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textViewAuthUser"
+        android:id="@+id/textViewStaticAcess2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gênero"

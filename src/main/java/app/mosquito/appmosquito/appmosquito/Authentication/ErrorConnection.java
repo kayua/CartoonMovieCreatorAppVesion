@@ -21,8 +21,8 @@ public class ErrorConnection extends Activity {
         setContentView(R.layout.layout_authentication_error_connection);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Button buttonRetry = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
-        TextView textVieCloseApp = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
+        Button buttonRetry = (Button) findViewById(R.id.buttonAcessLogin);
+        TextView textVieCloseApp = (Button) findViewById(R.id.buttonAcessLogin);
 
 
 
