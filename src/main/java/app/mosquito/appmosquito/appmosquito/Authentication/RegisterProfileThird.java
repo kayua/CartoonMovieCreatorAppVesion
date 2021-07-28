@@ -136,11 +136,11 @@ public class RegisterProfileThird extends Activity {
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference tasksRef = rootRef.child("user_registers").push();
         tasksRef.setValue( userClass);
-        uploadImage(userData.getString("imageUser", ""));
+        uploadImage(userData.getString("imageUser", ""), userData.getString("email", ""));
 
     }
 
-    private void uploadImage(String filePath) {
+    private void uploadImage(String filePath, String userProfile) {
 
         FirebaseStorage storage;
         StorageReference storageReference;
@@ -148,23 +148,25 @@ public class RegisterProfileThird extends Activity {
         storageReference = storage.getReference();
 
         Uri file = Uri.fromFile(new File(filePath));
-        StorageReference riversRef = storageReference.child("images/"+file.getLastPathSegment());
+        StorageReference riversRef = storageReference.child("user_"+userProfile+"/"+file.getLastPathSegment());
         UploadTask uploadTask = riversRef.putFile(file);
 
         uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
 
-            }
+            @Override
+            public void onFailure(@NonNull Exception exception) {}
+
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-            }
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {}
+
         });
     }
+
     @Override
     public void onStart() {
+
         super.onStart();
 
     }
