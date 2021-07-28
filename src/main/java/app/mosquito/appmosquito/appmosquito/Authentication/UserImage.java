@@ -14,7 +14,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import app.mosquito.appmosquito.appmosquito.MainUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
@@ -34,6 +33,7 @@ public class UserImage extends Activity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
         ImageView buttonLoadImage = (ImageView) findViewById(R.id.imageView18);
+
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -41,6 +41,7 @@ public class UserImage extends Activity {
 
                 Intent i = new Intent( Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
+
             }
         });
 
@@ -50,7 +51,9 @@ public class UserImage extends Activity {
             public void onClick(View arg0) {
 
                 screenProfileEditFirst();
+
             }
+
         });
 
     }
@@ -63,14 +66,17 @@ public class UserImage extends Activity {
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
 
             Uri selectedImage = data.getData();
+
             String[] filePathColumn = { MediaStore.Images.Media.DATA };
 
             Cursor cursor = getContentResolver().query(selectedImage,
                     filePathColumn, null, null, null);
+
             cursor.moveToFirst();
 
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
             picturePath = cursor.getString(columnIndex);
+
             cursor.close();
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView18);
@@ -85,6 +91,7 @@ public class UserImage extends Activity {
 
     @Override
     public void onStart() {
+
         super.onStart();
 
     }
@@ -96,11 +103,6 @@ public class UserImage extends Activity {
         startActivity(i);
     }
 
-    private void screen_user() {
-        Intent i = new Intent(UserImage.this, MainUserInterface.class);
-        finish();
-        startActivity(i);
-    }
 
     private void storeLogin(String imageUser) {
 

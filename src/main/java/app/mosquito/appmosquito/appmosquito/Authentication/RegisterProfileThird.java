@@ -38,52 +38,47 @@ public class RegisterProfileThird extends Activity {
 
         super.onCreate(savedInstanceState);
 
+        SharedPreferences userData = getSharedPreferences(PREFS_NAME, 0);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.auth_profile_second);
         writeFirebase();
 
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
-
-        EditText userGender =  findViewById(R.id.editTextAuthGender);
-
-        EditText userSchooling =  findViewById(R.id.editTextAuthSchooling);
-
+        TextView textViewGoBack =  findViewById(R.id.textViewEmailGoBackInit2);
+        EditText editTextUserGender =  findViewById(R.id.editTextAuthGender);
+        EditText editTextUserSchooling =  findViewById(R.id.editTextAuthSchooling);
         EditText userFavoriteWord =  findViewById(R.id.editTextAuthFavoriteWord);
 
-        Button next_step =  findViewById(R.id.buttonAuthAcessRegisterAccount3);
+        Button buttonNextStep =  findViewById(R.id.buttonAuthAcessRegisterAccount3);
 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-
-
-        String picturePath = settings.getString("imageUser", "");
+        String picturePath = userData.getString("imageUser", "");
 
         ImageView imageView = (ImageView) findViewById(R.id.imageViedwa);
         imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
 
-        next_step.setOnClickListener(new View.OnClickListener() {
+        buttonNextStep.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                String gender = userGender.getText().toString();
-                String schooling = userSchooling.getText().toString();
-                String favoriteWord = userFavoriteWord.getText().toString();
+                String stringGender = editTextUserGender.getText().toString();
+                String stringSchooling = editTextUserSchooling.getText().toString();
+                String stringFavoriteWord = userFavoriteWord.getText().toString();
 
-                if(gender.equals("")){ gender = "Não informado"; }
+                if(stringGender.equals("")){ stringGender = "@String/uninformed"; }
 
-                if(schooling.equals("")){ schooling = "Não informado"; }
+                if(stringSchooling.equals("")){ stringSchooling = "@String/uninformed"; }
 
-                if(favoriteWord.equals("")){ favoriteWord = "Não informado"; }
+                if(stringFavoriteWord.equals("")){ stringFavoriteWord = "@String/uninformed"; }
 
-                storeLogin(gender, schooling, favoriteWord);
+                storeLogin(stringGender, stringSchooling, stringFavoriteWord);
                 nextScreen();
 
             }
 
         });
 
-        goBack.setOnClickListener(new View.OnClickListener() {
+        textViewGoBack.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -92,7 +87,6 @@ public class RegisterProfileThird extends Activity {
             }
 
         });
-
 
     }
 
@@ -114,35 +108,35 @@ public class RegisterProfileThird extends Activity {
 
     private void storeLogin(String gender, String schooling, String favoriteWord) {
 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("gender", gender);
-        editor.putString("schooling", schooling);
-        editor.putString("favoriteWord", favoriteWord);
-        editor.apply();
+        SharedPreferences userData = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editUserData = userData.edit();
+        editUserData.putString("gender", gender);
+        editUserData.putString("schooling", schooling);
+        editUserData.putString("favoriteWord", favoriteWord);
+        editUserData.apply();
 
     }
 
     private void writeFirebase(){
 
 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences userData = getSharedPreferences(PREFS_NAME, 0);
 
-        UserModel person = new UserModel();
+        UserModel userClass = new UserModel();
 
-        person.setUserName(settings.getString("username", ""));
-        person.setUserCity(settings.getString("city", ""));
-        person.setUserBirthDate(settings.getString("birthDate", ""));
-        person.setUserSchooling(settings.getString("schooling", ""));
-        person.setUserFavoriteWord(settings.getString("favoriteWord", ""));
-        person.setUserGender(settings.getString("gender", ""));
-        person.setPhoto(settings.getString("imageUser", ""));
-        person.setUserCompany(settings.getString("company", ""));
-        person.setUserEmail(settings.getString("email", ""));
+        userClass.setUserName(userData.getString("username", ""));
+        userClass.setUserCity(userData.getString("city", ""));
+        userClass.setUserBirthDate(userData.getString("birthDate", ""));
+        userClass.setUserSchooling(userData.getString("schooling", ""));
+        userClass.setUserFavoriteWord(userData.getString("favoriteWord", ""));
+        userClass.setUserGender(userData.getString("gender", ""));
+        userClass.setPhoto(userData.getString("imageUser", ""));
+        userClass.setUserCompany(userData.getString("company", ""));
+        userClass.setUserEmail(userData.getString("email", ""));
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference tasksRef = rootRef.child("user_registers").push();
-        tasksRef.setValue( person);
-        uploadImage(settings.getString("imageUser", ""));
+        tasksRef.setValue( userClass);
+        uploadImage(userData.getString("imageUser", ""));
 
     }
 
