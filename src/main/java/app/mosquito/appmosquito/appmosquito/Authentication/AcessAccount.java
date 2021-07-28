@@ -42,18 +42,19 @@ public class AcessAccount extends Activity {
 
             @Override
             public void onClick(View view) {
-                acess(textBoxUsername.getText().toString(),textBoxPassword.getText().toString());
+                acessProcessing(textBoxUsername.getText().toString(),textBoxPassword.getText().toString());
                 Log.i(textBoxUsername.getText().toString(),textBoxPassword.getText().toString()); }});
 
         recovery.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+
                 Intent i = new Intent(getApplicationContext(), RecoverPassword.class);
                 finish();
                 startActivity(i); }});}
 
-    private void acess(String textBoxUsername, String textBoxPassword){
+    private void acessProcessing(String textBoxUsername, String textBoxPassword){
 
         processingAuth.signInWithEmailAndPassword(textBoxUsername, textBoxPassword)
 
@@ -64,6 +65,7 @@ public class AcessAccount extends Activity {
 
                             FirebaseUser userToken = processingAuth.getCurrentUser();
                             screenUser();
+
                         } else {
 
                             errorAcess();
@@ -74,24 +76,30 @@ public class AcessAccount extends Activity {
 
                 });
 
-    }
+        }
 
     private void screenUser() {
+
         Intent i = new Intent(AcessAccount.this, MainUserInterface.class);
         finish();
         startActivity(i);
+
     }
 
     private void errorAcess() {
-        Toast.makeText(getApplicationContext(), "Não foi possível encontrar sua conta. Verificar se o preenchimento está correto.", Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(getApplicationContext(), "@string/errorAcessAccount", Toast.LENGTH_SHORT).show();
+
             }
     @Override
 
     public void onStart() {
+
         super.onStart();
         FirebaseUser currentUser = processingAuth.getCurrentUser();
 
     }
+
 }
 
 
