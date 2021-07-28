@@ -13,22 +13,19 @@ public class UserModel {
     String userSchooling;
     String userFavoriteWord;
     String userGender;
+    String userPhoto;
 
-    public UserModel(String idUser, String userFirstName, String userSecondName, String userCity, String userBirthDate, String userSchooling, String userFavoriteWord, String userGender) {
+    public UserModel() {
 
-        this.idUser = idUser;
-        this.userFirstName = userFirstName;
-        this.userSecondName = userSecondName;
-        this.userCity = userCity;
-        this.userBirthDate = userBirthDate;
-        this.userSchooling = userSchooling;
-        this.userFavoriteWord = userFavoriteWord;
-        this.userGender = userGender;
     }
 
     public String getIdUser() { return idUser; }
 
     public void setIdUser(String idUser) { this.idUser = idUser; }
+
+    public String getPhoto() { return userPhoto; }
+
+    public void setPhoto(String userPhoto) { this.userPhoto = userPhoto; }
 
     public String getUserFirstName() { return userFirstName; }
 

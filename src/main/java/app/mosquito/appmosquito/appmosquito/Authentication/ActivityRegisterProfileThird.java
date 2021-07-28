@@ -114,9 +114,12 @@ public class ActivityRegisterProfileThird extends Activity {
 
     private void writeFirebase(){
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference ref = database.child("appmosquito-default-rtdb");//if rootNode exist
-        database.setValue("TestRefValue");
+        DatabaseReference mDatabase;
+
+        mDatabase =  FirebaseDatabase.getInstance().getReference();
+        DatabaseReference a = mDatabase.child("user_registers");
+        a.setValue("Hello World");
+
     }
 
     @Override
