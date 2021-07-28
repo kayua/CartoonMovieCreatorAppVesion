@@ -25,7 +25,7 @@ public class UserModel {
     public String getUserSchooling() { return userSchooling; }
     public String getUserFavoriteWord() { return userFavoriteWord; }
     public String getUserGender() { return userGender; }
-    public String getUserEmail() { return userGender; }
+    public String getUserEmail() { return userEmail; }
 
     public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
     public void setUserCompany(String userEmail) { this.userCompany = userCompany; }

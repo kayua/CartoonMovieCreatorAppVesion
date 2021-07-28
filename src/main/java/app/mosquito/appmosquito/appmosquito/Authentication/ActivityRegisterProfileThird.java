@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -12,8 +13,17 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.File;
 
 import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
@@ -128,13 +138,38 @@ public class ActivityRegisterProfileThird extends Activity {
         person.setUserGender(settings.getString("gender", ""));
         person.setPhoto(settings.getString("imageUser", ""));
         person.setUserCompany(settings.getString("company", ""));
-
+        person.setUserEmail(settings.getString("email", ""));
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference tasksRef = rootRef.child("user_registers").push();
         tasksRef.setValue( person);
+        uploadImage(settings.getString("imageUser", ""));
 
     }
 
+    private void uploadImage(String filePath) {
+
+        FirebaseStorage storage ;
+        StorageReference storageReference;
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference();
+
+        Uri file = Uri.fromFile(new File(filePath));
+        StorageReference riversRef = storageReference.child("images/"+file.getLastPathSegment());
+        UploadTask uploadTask = riversRef.putFile(file);
+
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle unsuccessful uploads
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+                // ...
+            }
+        });
+    }
     @Override
     public void onStart() {
         super.onStart();
