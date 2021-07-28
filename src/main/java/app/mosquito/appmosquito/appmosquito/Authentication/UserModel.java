@@ -18,7 +18,7 @@ public class UserModel {
 
     public void userCompany(String userPhoto) { this.userCompany = userPhoto; }
     public String getUserBirthDate() { return userBirthDate; }
-    public String getUserFirstName() { return userName; }
+    public String getUserName() { return userName; }
     public String userCompany() { return userCompany; }
     public String getPhoto() { return userPhoto; }
     public String getUserCity() { return userCity; }
@@ -28,8 +28,9 @@ public class UserModel {
     public String getUserEmail() { return userGender; }
 
     public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
+    public void setUserCompany(String userEmail) { this.userCompany = userCompany; }
     public void setPhoto(String userPhoto) { this.userPhoto = userPhoto; }
-    public void setUserFirstName(String userFirstName) { this.userName = userFirstName; }
+    public void setUserName(String userFirstName) { this.userName = userFirstName; }
     public void setUserCity(String userCity) { this.userCity = userCity; }
     public void setUserBirthDate(String userBirthDate) { this.userBirthDate = userBirthDate; }
     public void setUserSchooling(String userSchooling) { this.userSchooling = userSchooling; }

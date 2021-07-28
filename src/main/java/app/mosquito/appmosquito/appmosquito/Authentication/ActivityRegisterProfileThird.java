@@ -120,17 +120,14 @@ public class ActivityRegisterProfileThird extends Activity {
 
         UserModel person = new UserModel();
 
-        String userName = settings.getString("username", "");
-        String userCity = settings.getString("city", "");
-        String userBirthDate = settings.getString("birthDate", "");
-        String userSchooling = settings.getString("schooling", "");
-        String userFavoriteWord = settings.getString("favoriteWord", "");
-        String userGender = settings.getString("gender", "");
-        String userPhoto = settings.getString("imageUser", "");
-        String userCompany = settings.getString("company", "");
-
-
-
+        person.setUserName(settings.getString("username", ""));
+        person.setUserCity(settings.getString("city", ""));
+        person.setUserBirthDate(settings.getString("birthDate", ""));
+        person.setUserSchooling(settings.getString("schooling", ""));
+        person.setUserFavoriteWord(settings.getString("favoriteWord", ""));
+        person.setUserGender(settings.getString("gender", ""));
+        person.setPhoto(settings.getString("imageUser", ""));
+        person.setUserCompany(settings.getString("company", ""));
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference tasksRef = rootRef.child("user_registers").push();
