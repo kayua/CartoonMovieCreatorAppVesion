@@ -4,24 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.Objects;
-import java.util.Random;
 
 import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
@@ -74,7 +65,6 @@ public class ActivityEditProfileSecond extends Activity {
                 if(favoriteWord.equals("")){ favoriteWord = "Não informado"; }
 
                 store_login(gender, schooling, favoriteWord);
-                saveOnFirebase();
                 nextScreen();
 
             }
@@ -90,7 +80,6 @@ public class ActivityEditProfileSecond extends Activity {
             }
 
         });
-
 
 
     }
