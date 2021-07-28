@@ -3,11 +3,13 @@ package app.mosquito.appmosquito.appmosquito.Authentication;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +41,14 @@ public class ActivityRegisterProfileThird extends Activity {
         EditText userFavoriteWord =  findViewById(R.id.editTextAuthFavoriteWord);
 
         Button next_step =  findViewById(R.id.buttonAuthAcessRegisterAccount3);
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+
+        String picturePath = settings.getString("imageUser", "");
+
+        ImageView imageView = (ImageView) findViewById(R.id.imageViedwa);
+        imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
 
         next_step.setOnClickListener(new View.OnClickListener() {
 

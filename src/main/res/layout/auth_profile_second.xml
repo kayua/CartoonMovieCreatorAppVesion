@@ -202,18 +202,19 @@
         app:layout_constraintVertical_bias="0.558"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/iconAuthAcess"
-        android:layout_width="98dp"
-        android:layout_height="93dp"
-        android:background="@drawable/aa"
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imageViedwa"
+        android:layout_width="114dp"
+        android:layout_height="98dp"
+        android:src="@drawable/icon_general_user"
+        app:civ_border_color="#BCF1EEEE"
+        app:civ_border_width="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.047" />
 
     <ImageView
         android:id="@+id/imageView16"

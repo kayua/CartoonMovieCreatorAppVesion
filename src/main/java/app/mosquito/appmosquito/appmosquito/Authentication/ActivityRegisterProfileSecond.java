@@ -3,11 +3,13 @@ package app.mosquito.appmosquito.appmosquito.Authentication;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import app.mosquito.appmosquito.appmosquito.R;
@@ -25,6 +27,15 @@ public class ActivityRegisterProfileSecond extends Activity {
         setContentView(R.layout.auth_profile_first);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+
+        String picturePath = settings.getString("imageUser", "");
+
+        ImageView imageView = (ImageView) findViewById(R.id.imageViedw);
+        imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+
         Button next_step =  findViewById(R.id.buttonAuthAcessRegisterAccount3);
 
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);

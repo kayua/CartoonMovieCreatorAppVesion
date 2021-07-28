@@ -32,19 +32,13 @@ public class ActivityUserImage extends Activity {
         setContentView(R.layout.auth_user_image);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
-
-
-        int PICK_IMAGE = 1;
-
         ImageView buttonLoadImage = (ImageView) findViewById(R.id.imageView18);
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
 
-                Intent i = new Intent(
-                        Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                Intent i = new Intent( Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
             }
