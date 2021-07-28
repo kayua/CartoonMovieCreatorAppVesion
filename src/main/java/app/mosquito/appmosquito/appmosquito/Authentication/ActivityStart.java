@@ -66,7 +66,7 @@ public class ActivityStart extends AppCompatActivity {
     private void screen_register(){
 
 
-        Intent i = new Intent(ActivityStart.this, ActivityRegisterAccount.class);
+        Intent i = new Intent(ActivityStart.this, ActivityRegisterProfileFirst.class);
         finish();
         startActivity(i);
 

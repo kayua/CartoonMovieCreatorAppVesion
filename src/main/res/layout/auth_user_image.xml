@@ -9,7 +9,7 @@
     android:background="#03add8"
     android:hapticFeedbackEnabled="true"
     android:soundEffectsEnabled="true"
-    tools:context=".Authentication.ActivityRegisterAccount">
+    tools:context=".Authentication.ActivityRegisterProfileFirst">
 
 
 

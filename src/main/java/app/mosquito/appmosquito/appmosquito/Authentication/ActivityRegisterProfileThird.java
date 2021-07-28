@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -18,17 +17,9 @@ import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityEditProfileSecond extends Activity {
+public class ActivityRegisterProfileThird extends Activity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
-
-    private FirebaseDatabase firebaseDatabase;
-    private DatabaseReference databaseReference;
-
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-
-    UserModel newUser = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +27,7 @@ public class ActivityEditProfileSecond extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.auth_profile_second);
-
+        writeFirebase();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
@@ -64,7 +55,7 @@ public class ActivityEditProfileSecond extends Activity {
 
                 if(favoriteWord.equals("")){ favoriteWord = "Não informado"; }
 
-                store_login(gender, schooling, favoriteWord);
+                storeLogin(gender, schooling, favoriteWord);
                 nextScreen();
 
             }
@@ -86,7 +77,7 @@ public class ActivityEditProfileSecond extends Activity {
 
     private void previousScreen() {
 
-        Intent i = new Intent(ActivityEditProfileSecond.this,ActivityEditProfileFirst.class);
+        Intent i = new Intent(ActivityRegisterProfileThird.this, ActivityRegisterProfileSecond.class);
         finish();
         startActivity(i);
 
@@ -94,13 +85,13 @@ public class ActivityEditProfileSecond extends Activity {
 
     private void nextScreen() {
 
-        Intent i = new Intent(ActivityEditProfileSecond.this, ActivityUserInterface.class);
+        Intent i = new Intent(ActivityRegisterProfileThird.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
 
     }
 
-    private void store_login(String gender, String schooling, String favoriteWord) {
+    private void storeLogin(String gender, String schooling, String favoriteWord) {
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
@@ -110,6 +101,15 @@ public class ActivityEditProfileSecond extends Activity {
         editor.apply();
 
     }
+
+
+    private void writeFirebase(){
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference ref = database.child("appmosquito-default-rtdb");//if rootNode exist
+        database.setValue("TestRefValue");
+    }
+
 
     @Override
     public void onStart() {

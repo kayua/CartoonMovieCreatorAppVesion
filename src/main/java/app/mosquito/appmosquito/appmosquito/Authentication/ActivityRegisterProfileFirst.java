@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityRegisterAccount extends AppCompatActivity {
+public class ActivityRegisterProfileFirst extends AppCompatActivity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
 
@@ -58,7 +58,7 @@ public class ActivityRegisterAccount extends AppCompatActivity {
 
     private void screenProfileEditFirst(){
 
-        Intent i = new Intent(ActivityRegisterAccount .this, ActivityUserImage.class);
+        Intent i = new Intent(ActivityRegisterProfileFirst.this, ActivityUserImage.class);
         finish();
         startActivity(i);
     }

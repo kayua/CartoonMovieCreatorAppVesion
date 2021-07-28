@@ -13,7 +13,7 @@ import android.widget.TextView;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityEditProfileFirst extends Activity {
+public class ActivityRegisterProfileSecond extends Activity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
 
@@ -66,13 +66,11 @@ public class ActivityEditProfileFirst extends Activity {
 
         });
 
-
-
     }
 
     private void previousScreen() {
 
-        Intent i = new Intent(ActivityEditProfileFirst.this,ActivityRegisterAccount.class);
+        Intent i = new Intent(ActivityRegisterProfileSecond.this, ActivityRegisterProfileFirst.class);
         finish();
         startActivity(i);
 
@@ -80,7 +78,7 @@ public class ActivityEditProfileFirst extends Activity {
 
     private void nextScreen() {
 
-        Intent i = new Intent(ActivityEditProfileFirst.this, ActivityEditProfileSecond.class);
+        Intent i = new Intent(ActivityRegisterProfileSecond.this, ActivityRegisterProfileThird.class);
         finish();
         startActivity(i);
 

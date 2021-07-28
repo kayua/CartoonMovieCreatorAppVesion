@@ -34,7 +34,7 @@
 
         <activity
 
-            android:name=".Authentication.ActivitySplashScreen"
+            android:name=".Authentication.ActivityRegisterProfileThird"
             android:screenOrientation="portrait">
 
             <intent-filter>
@@ -64,7 +64,7 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".Authentication.ActivityRegisterAccount"
+            android:name=".Authentication.ActivityRegisterProfileFirst"
             android:screenOrientation="portrait"/>
 
         <activity
@@ -83,11 +83,11 @@
             android:name=".Authentication.ActivityNotConnected"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Authentication.ActivityEditProfileFirst"
+            android:name=".Authentication.ActivityRegisterProfileSecond"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".Authentication.ActivityEditProfileSecond"
+            android:name=".Authentication.ActivityRegisterProfileThird"
             android:screenOrientation="portrait" />
 
         <activity
