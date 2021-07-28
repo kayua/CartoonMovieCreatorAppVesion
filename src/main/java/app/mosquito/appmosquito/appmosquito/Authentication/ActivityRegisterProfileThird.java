@@ -30,6 +30,7 @@ public class ActivityRegisterProfileThird extends Activity {
 
         setContentView(R.layout.auth_profile_second);
         writeFirebase();
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
@@ -114,11 +115,26 @@ public class ActivityRegisterProfileThird extends Activity {
 
     private void writeFirebase(){
 
-        DatabaseReference mDatabase;
 
-        mDatabase =  FirebaseDatabase.getInstance().getReference();
-        DatabaseReference a = mDatabase.child("user_registers");
-        a.setValue("Hello World");
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+        UserModel person = new UserModel();
+
+        String userName = settings.getString("username", "");
+        String userCity = settings.getString("city", "");
+        String userBirthDate = settings.getString("birthDate", "");
+        String userSchooling = settings.getString("schooling", "");
+        String userFavoriteWord = settings.getString("favoriteWord", "");
+        String userGender = settings.getString("gender", "");
+        String userPhoto = settings.getString("imageUser", "");
+        String userCompany = settings.getString("company", "");
+
+
+
+
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference tasksRef = rootRef.child("user_registers").push();
+        tasksRef.setValue( person);
 
     }
 
