@@ -25,7 +25,7 @@ public class MenuSource extends AppCompatActivity {
         setContentView(R.layout.layout_authentication_start_user);
 
 
-        Button buttonAcess = (Button) findViewById(R.id.buttonFirstNext);
+        Button buttonAcess = (Button) findViewById(R.id.buttonSecondNext);
         Button buttonRegister = (Button) findViewById(R.id.buttonAuthRegister);
         TextView textViewDirectAcess = findViewById(R.id.textViewAuthDirectAcess);
 

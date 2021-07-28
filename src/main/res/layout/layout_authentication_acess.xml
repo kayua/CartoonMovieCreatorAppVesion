@@ -53,7 +53,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonFirstNext"
+        android:id="@+id/buttonSecondNext"
         android:layout_width="273dp"
         android:layout_height="51dp"
         android:background="@drawable/button_design_fill"
@@ -85,7 +85,7 @@
 
 
     <EditText
-        android:id="@+id/editTextFirstBirth"
+        android:id="@+id/editTextSecondGender"
         android:layout_width="257dp"
         android:layout_height="52dp"
         android:backgroundTint="#BF03ADD8"

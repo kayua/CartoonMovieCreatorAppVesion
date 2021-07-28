@@ -12,7 +12,6 @@
     tools:context=".Authentication.RegisterProfileFirst">
 
     <ImageView
-        android:id="@+id/iconAuthAcess3"
         android:layout_width="match_parent"
         android:layout_height="460dp"
         android:background="@drawable/button_design_fill_white"
@@ -25,7 +24,7 @@
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
-        android:id="@+id/textViewFirstGoBack"
+        android:id="@+id/textViewSecondGoBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/go_back"
@@ -42,7 +41,6 @@
 
 
     <TextView
-        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Para adicionar um foto ao perfil\n click no icone acima."
@@ -59,7 +57,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonFirstNext"
+        android:id="@+id/buttonSecondNext"
         android:layout_width="282dp"
         android:layout_height="49dp"
         android:background="@drawable/button_design_fill"
@@ -74,7 +72,6 @@
         app:layout_constraintVertical_bias="0.813" />
 
     <TextView
-        android:id="@+id/textViewAuthAcessBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/acess_with"
@@ -91,7 +88,7 @@
 
 
     <EditText
-        android:id="@+id/editTextFirstBirth"
+        android:id="@+id/editTextSecondGender"
         android:layout_width="260dp"
         android:layout_height="53dp"
         android:backgroundTint="#BF03ADD8"
@@ -113,7 +110,6 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textViewAuthUser3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Escolaridade"
@@ -129,7 +125,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextFirstCompany"
+        android:id="@+id/editTextSecondCompany"
         android:layout_width="260dp"
         android:layout_height="52dp"
         android:backgroundTint="#BF03ADD8"
@@ -150,7 +146,6 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Palavra favorita"
@@ -166,7 +161,6 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textViewStaticAcess2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gênero"
@@ -182,7 +176,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextFirstCity"
+        android:id="@+id/editTextSecondCity"
         android:layout_width="260dp"
         android:layout_height="53dp"
         android:backgroundTint="#BF03ADD8"
@@ -203,7 +197,7 @@
         tools:ignore="MissingConstraints" />
 
     <com.mikhaellopez.circularimageview.CircularImageView
-        android:id="@+id/imageViedwa"
+        android:id="@+id/imageViewSecondImage"
         android:layout_width="114dp"
         android:layout_height="98dp"
         android:src="@drawable/icon_general_user"
@@ -217,7 +211,6 @@
         app:layout_constraintVertical_bias="0.047" />
 
     <ImageView
-        android:id="@+id/imageView16"
         android:layout_width="50dp"
         android:layout_height="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -230,7 +223,6 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView17"
         android:layout_width="50dp"
         android:layout_height="1dp"
         app:layout_constraintBottom_toBottomOf="parent"

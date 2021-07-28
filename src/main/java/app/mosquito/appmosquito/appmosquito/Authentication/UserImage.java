@@ -31,7 +31,7 @@ public class UserImage extends Activity {
 
         setContentView(R.layout.layout_authentication_user_image);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        Button buttonRegister = (Button) findViewById(R.id.buttonFirstNext);
+        Button buttonRegister = (Button) findViewById(R.id.buttonSecondNext);
         ImageView buttonLoadImage = (ImageView) findViewById(R.id.imageView18);
 
         buttonLoadImage.setOnClickListener(new View.OnClickListener() {

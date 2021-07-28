@@ -38,7 +38,7 @@
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
-        android:id="@+id/textViewFirstGoBack"
+        android:id="@+id/textViewSecondGoBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/go_back"
@@ -71,7 +71,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonFirstNext"
+        android:id="@+id/buttonSecondNext"
         android:layout_width="282dp"
         android:layout_height="49dp"
         android:background="@drawable/button_design_fill"
@@ -103,7 +103,7 @@
 
 
     <EditText
-        android:id="@+id/editTextFirstBirth"
+        android:id="@+id/editTextSecondGender"
         android:layout_width="260dp"
         android:layout_height="53dp"
         android:backgroundTint="#BF03ADD8"
@@ -140,7 +140,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextFirstCompany"
+        android:id="@+id/editTextSecondCompany"
         android:layout_width="260dp"
         android:layout_height="52dp"
         android:backgroundTint="#BF03ADD8"
@@ -191,7 +191,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextFirstCity"
+        android:id="@+id/editTextSecondCity"
         android:layout_width="260dp"
         android:layout_height="53dp"
         android:backgroundTint="#BF03ADD8"

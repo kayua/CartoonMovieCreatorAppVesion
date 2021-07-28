@@ -28,11 +28,11 @@ public class RegisterProfileSecond extends Activity {
         setContentView(R.layout.layout_authentication_first_step);
 
         ImageView imageView = (ImageView) findViewById(R.id.imageViewFirst);
-        Button buttonNext =  findViewById(R.id.buttonFirstNext);
-        TextView goBack =  findViewById(R.id.textViewFirstGoBack);
-        EditText userBirthDate =  findViewById(R.id.editTextFirstBirth);
-        EditText userCity =  findViewById(R.id.editTextFirstCity);
-        EditText userCompany =  findViewById(R.id.editTextFirstCompany);
+        Button buttonNext =  findViewById(R.id.buttonSecondNext);
+        TextView goBack =  findViewById(R.id.textViewSecondGoBack);
+        EditText userBirthDate =  findViewById(R.id.editTextSecondGender);
+        EditText userCity =  findViewById(R.id.editTextSecondCity);
+        EditText userCompany =  findViewById(R.id.editTextSecondCompany);
 
         SharedPreferences userData = getSharedPreferences(PREFS_NAME, 0);
         String picturePath = userData.getString("imageUser", "");
