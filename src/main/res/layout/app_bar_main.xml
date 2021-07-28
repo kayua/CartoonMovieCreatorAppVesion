@@ -9,7 +9,7 @@
 
 
 
-    tools:context=".ActivityUserInterface">
+    tools:context=".MainUserInterface">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

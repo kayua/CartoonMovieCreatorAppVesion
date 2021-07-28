@@ -7,7 +7,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
+import app.mosquito.appmosquito.appmosquito.MainUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
@@ -58,7 +58,7 @@ public class MenuSource extends AppCompatActivity {
 
     private void screen_user(){
 
-        Intent i = new Intent(MenuSource.this, ActivityUserInterface.class);
+        Intent i = new Intent(MenuSource.this, MainUserInterface.class);
         finish();
         startActivity(i);
     }

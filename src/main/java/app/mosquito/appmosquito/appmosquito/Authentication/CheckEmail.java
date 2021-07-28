@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
-import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
+import app.mosquito.appmosquito.appmosquito.MainUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class CheckEmail extends AppCompatActivity {
@@ -62,7 +62,7 @@ public class CheckEmail extends AppCompatActivity {
     }
 
     private void screen_user() {
-        Intent i = new Intent(CheckEmail.this, ActivityUserInterface.class);
+        Intent i = new Intent(CheckEmail.this, MainUserInterface.class);
         finish();
         startActivity(i);
     }

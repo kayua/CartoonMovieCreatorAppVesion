@@ -16,14 +16,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
+import app.mosquito.appmosquito.appmosquito.MainUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
 public class AcessAccount extends Activity {
 
-    private FirebaseAuth mAuth;
+    private FirebaseAuth processingAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,41 +31,37 @@ public class AcessAccount extends Activity {
 
         setContentView(R.layout.auth_acess);
 
-        mAuth = FirebaseAuth.getInstance();
+        processingAuth = FirebaseAuth.getInstance();
         Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
         EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthGender);
         EditText textBoxPassword = (EditText) findViewById(R.id.editTextAuthPassword);
         TextView recovery = (TextView ) findViewById(R.id.textView25);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         buttonAcess.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 acess(textBoxUsername.getText().toString(),textBoxPassword.getText().toString());
-                Log.i(textBoxUsername.getText().toString(),textBoxPassword.getText().toString());
-            }
-        });
+                Log.i(textBoxUsername.getText().toString(),textBoxPassword.getText().toString()); }});
+
         recovery.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), RecoverPassword.class);
                 finish();
-                startActivity(i);
-            }
-        });
-
-    }
+                startActivity(i); }});}
 
     private void acess(String textBoxUsername, String textBoxPassword){
 
-        mAuth.signInWithEmailAndPassword(textBoxUsername, textBoxPassword)
+        processingAuth.signInWithEmailAndPassword(textBoxUsername, textBoxPassword)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            FirebaseUser user = processingAuth.getCurrentUser();
                             screen_user();
 
                         } else {
@@ -81,7 +76,7 @@ public class AcessAccount extends Activity {
     }
 
     private void screen_user() {
-        Intent i = new Intent(AcessAccount.this, ActivityUserInterface.class);
+        Intent i = new Intent(AcessAccount.this, MainUserInterface.class);
         finish();
         startActivity(i);
     }
@@ -93,7 +88,7 @@ public class AcessAccount extends Activity {
 
     public void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        FirebaseUser currentUser = processingAuth.getCurrentUser();
 
     }
 }

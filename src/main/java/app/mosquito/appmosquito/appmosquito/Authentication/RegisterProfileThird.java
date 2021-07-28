@@ -25,7 +25,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 
-import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
+import app.mosquito.appmosquito.appmosquito.MainUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
@@ -106,7 +106,7 @@ public class RegisterProfileThird extends Activity {
 
     private void nextScreen() {
 
-        Intent i = new Intent(RegisterProfileThird.this, ActivityUserInterface.class);
+        Intent i = new Intent(RegisterProfileThird.this, MainUserInterface.class);
         finish();
         startActivity(i);
 

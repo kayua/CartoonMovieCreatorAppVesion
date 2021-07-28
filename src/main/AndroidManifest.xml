@@ -55,7 +55,7 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ActivityUserInterface"
+            android:name=".MainUserInterface"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppMosquito" />
 

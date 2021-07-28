@@ -24,7 +24,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import app.mosquito.appmosquito.appmosquito.Settings.SettingsFragment;
 
-public class ActivityUserInterface extends AppCompatActivity{
+public class MainUserInterface extends AppCompatActivity{
 
     private AppBarConfiguration mAppBarConfiguration;
     String usernameRegistered;

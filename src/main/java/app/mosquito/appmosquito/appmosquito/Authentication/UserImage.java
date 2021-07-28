@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
+import app.mosquito.appmosquito.appmosquito.MainUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
@@ -97,7 +97,7 @@ public class UserImage extends Activity {
     }
 
     private void screen_user() {
-        Intent i = new Intent(UserImage.this, ActivityUserInterface.class);
+        Intent i = new Intent(UserImage.this, MainUserInterface.class);
         finish();
         startActivity(i);
     }

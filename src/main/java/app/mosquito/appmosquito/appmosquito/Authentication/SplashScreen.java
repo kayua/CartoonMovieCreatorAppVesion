@@ -5,17 +5,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
+import app.mosquito.appmosquito.appmosquito.MainUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class SplashScreen extends AppCompatActivity {
@@ -23,76 +20,71 @@ public class SplashScreen extends AppCompatActivity {
     String usernameRegistered;
     String passwordRegistered;
     public static final String PREFS_NAME = "PersonalDatabase";
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseAuth authProcessing;
+    private FirebaseAuth.AuthStateListener authListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_splash_screen);
-
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        Handler delayInit = new Handler();
+        delayInit.postDelayed(new Runnable() {
 
             @Override
             public void run() {
 
-                authentication();
+                authenticationProcessing();
             }}, 3500);
 
        }
 
-    private void authentication(){
+    private void authenticationProcessing(){
 
-        mAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        authProcessing = FirebaseAuth.getInstance();
+        authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
+                FirebaseUser userToken = firebaseAuth.getCurrentUser();
 
             }
         };
 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences userData = getSharedPreferences(PREFS_NAME, 0);
 
         try {
-            usernameRegistered = settings.getString("email", "");
-            passwordRegistered = settings.getString("password", "");
-            mAuth.signInWithEmailAndPassword(usernameRegistered ,
+
+            usernameRegistered = userData.getString("email", "");
+            passwordRegistered = userData.getString("password", "");
+            authProcessing.signInWithEmailAndPassword(usernameRegistered ,
                     passwordRegistered).addOnCompleteListener(this,
                     new OnCompleteListener<AuthResult>() {
+
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            if (!task.isSuccessful()) {
-                                screen_start();
-                            }else{
-                                screen_user();
-                            }
-
+                            if (!task.isSuccessful()) { screenFirstUse(); }else{ screenUser(); }
 
                         } });
+
+
         }catch (Exception e){
 
-            screen_start();
+            screenFirstUse();
         }
-
 
     }
 
-    private void screen_user(){
+    private void screenUser(){
 
-        Intent i = new Intent(SplashScreen.this, ActivityUserInterface.class);
+        Intent i = new Intent(SplashScreen.this, MainUserInterface.class);
         finish();
         startActivity(i);
     }
 
-    private void screen_start(){
-
-
+    private void screenFirstUse(){
 
         Intent i = new Intent(SplashScreen.this, MenuSource.class);
         finish();
