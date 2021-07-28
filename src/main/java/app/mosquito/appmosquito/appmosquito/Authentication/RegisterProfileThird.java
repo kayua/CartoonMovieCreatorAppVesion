@@ -29,7 +29,7 @@ import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityRegisterProfileThird extends Activity {
+public class RegisterProfileThird extends Activity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
 
@@ -98,7 +98,7 @@ public class ActivityRegisterProfileThird extends Activity {
 
     private void previousScreen() {
 
-        Intent i = new Intent(ActivityRegisterProfileThird.this, RegisterProfileSecond.class);
+        Intent i = new Intent(RegisterProfileThird.this, RegisterProfileSecond.class);
         finish();
         startActivity(i);
 
@@ -106,7 +106,7 @@ public class ActivityRegisterProfileThird extends Activity {
 
     private void nextScreen() {
 
-        Intent i = new Intent(ActivityRegisterProfileThird.this, ActivityUserInterface.class);
+        Intent i = new Intent(RegisterProfileThird.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
 

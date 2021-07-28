@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
-public class ActivitySplashScreen extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
 
     String usernameRegistered;
     String passwordRegistered;
@@ -85,7 +85,7 @@ public class ActivitySplashScreen extends AppCompatActivity {
 
     private void screen_user(){
 
-        Intent i = new Intent(ActivitySplashScreen.this, ActivityUserInterface.class);
+        Intent i = new Intent(SplashScreen.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
     }
@@ -94,7 +94,7 @@ public class ActivitySplashScreen extends AppCompatActivity {
 
 
 
-        Intent i = new Intent(ActivitySplashScreen.this, ActivityStart.class);
+        Intent i = new Intent(SplashScreen.this, MenuSource.class);
         finish();
         startActivity(i);
     }

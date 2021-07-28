@@ -11,7 +11,7 @@ import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityStart extends AppCompatActivity {
+public class MenuSource extends AppCompatActivity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
 
@@ -51,14 +51,14 @@ public class ActivityStart extends AppCompatActivity {
 
     private void screen_acess_account(){
 
-        Intent i = new Intent(ActivityStart.this, AcessAccount.class);
+        Intent i = new Intent(MenuSource.this, AcessAccount.class);
         finish();
         startActivity(i);
     }
 
     private void screen_user(){
 
-        Intent i = new Intent(ActivityStart.this, ActivityUserInterface.class);
+        Intent i = new Intent(MenuSource.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
     }
@@ -66,7 +66,7 @@ public class ActivityStart extends AppCompatActivity {
     private void screen_register(){
 
 
-        Intent i = new Intent(ActivityStart.this, RegisterProfileFirst.class);
+        Intent i = new Intent(MenuSource.this, RegisterProfileFirst.class);
         finish();
         startActivity(i);
 

@@ -39,7 +39,7 @@ public class RegisterProfileFirst extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         if(!(isOnline(getApplicationContext()))){
 
-            Intent i = new Intent(RegisterProfileFirst.this, NotConnected.class);
+            Intent i = new Intent(RegisterProfileFirst.this, ErrorConnection.class);
             finish();
             startActivity(i);
         }
@@ -149,7 +149,7 @@ public class RegisterProfileFirst extends AppCompatActivity {
 
     private void screenRegisterProfileSecond(){
 
-        Intent i = new Intent(RegisterProfileFirst.this, ActivityUserImage.class);
+        Intent i = new Intent(RegisterProfileFirst.this, UserImage.class);
         finish();
         startActivity(i);
     }

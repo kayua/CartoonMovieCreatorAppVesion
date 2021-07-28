@@ -86,7 +86,7 @@ public class RegisterProfileSecond extends Activity {
 
     private void nextScreen() {
 
-        Intent i = new Intent(RegisterProfileSecond.this, ActivityRegisterProfileThird.class);
+        Intent i = new Intent(RegisterProfileSecond.this, RegisterProfileThird.class);
         finish();
         startActivity(i);
 

@@ -7,7 +7,7 @@
     android:alpha="1"
     android:background="@drawable/background_menu"
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-    tools:context=".Authentication.ActivitySplashScreen">
+    tools:context=".Authentication.SplashScreen">
 
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="391dp"

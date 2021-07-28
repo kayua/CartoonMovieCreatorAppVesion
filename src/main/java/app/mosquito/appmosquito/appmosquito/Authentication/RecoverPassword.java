@@ -35,7 +35,7 @@ public class RecoverPassword extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), ActivityStart.class);
+                Intent i = new Intent(getApplicationContext(), MenuSource.class);
                 finish();
                 startActivity(i);
 

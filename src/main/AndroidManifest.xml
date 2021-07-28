@@ -65,11 +65,11 @@
 
 
         <activity
-            android:name=".Authentication.ActivityStart"
+            android:name=".Authentication.MenuSource"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".Authentication.EmailChecking"
+            android:name=".Authentication.CheckEmail"
             android:screenOrientation="portrait" />
 
         <activity
@@ -77,7 +77,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".Authentication.NotConnected"
+            android:name=".Authentication.ErrorConnection"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Authentication.RegisterProfileSecond"
@@ -85,11 +85,11 @@
 
 
         <activity
-            android:name=".Authentication.ActivityUserImage"
+            android:name=".Authentication.UserImage"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".Authentication.ActivityRegisterProfileThird"
+            android:name=".Authentication.RegisterProfileThird"
             android:screenOrientation="portrait" />
 
 

@@ -18,7 +18,7 @@ import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityUserImage extends Activity {
+public class UserImage extends Activity {
 
     private static int RESULT_LOAD_IMAGE = 1;
     public static final String PREFS_NAME = "PersonalDatabase";
@@ -90,13 +90,13 @@ public class ActivityUserImage extends Activity {
 
     private void screenProfileEditFirst(){
 
-        Intent i = new Intent(ActivityUserImage.this, RegisterProfileSecond.class);
+        Intent i = new Intent(UserImage.this, RegisterProfileSecond.class);
         finish();
         startActivity(i);
     }
 
     private void screen_user() {
-        Intent i = new Intent(ActivityUserImage.this, ActivityUserInterface.class);
+        Intent i = new Intent(UserImage.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
     }
