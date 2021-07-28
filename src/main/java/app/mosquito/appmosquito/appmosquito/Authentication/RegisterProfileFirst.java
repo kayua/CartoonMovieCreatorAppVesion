@@ -30,35 +30,43 @@ import app.mosquito.appmosquito.appmosquito.R;
 public class RegisterProfileFirst extends AppCompatActivity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseAuth processingAuth;
+    private FirebaseAuth.AuthStateListener AuthenticationListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         if(!(isOnline(getApplicationContext()))){
 
-            Intent i = new Intent(RegisterProfileFirst.this, ErrorConnection.class);
-            finish();
-            startActivity(i);
+            screenErrorConnection();
+
         }
 
-        mAuth = FirebaseAuth.getInstance();
+
+        processingAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.auth_register);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
         EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthGender);
         EditText textBoxEmail = (EditText) findViewById(R.id.editTextAuthSchooling);
         EditText textBoxPassword = (EditText) findViewById(R.id.editTextAuthFavoriteWord);
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        AuthenticationListener = new FirebaseAuth.AuthStateListener() {
+
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
                 FirebaseUser user = firebaseAuth.getCurrentUser();
+
                 if (user != null) {
+
                     Log.d("AUTH", "onAuthStateChanged:signed_in:" + user.getUid());
+
                 } else {
+
                     Log.d("AUTH", "onAuthStateChanged:signed_out");
                 }
 
@@ -71,7 +79,7 @@ public class RegisterProfileFirst extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                mAuth.createUserWithEmailAndPassword(
+                processingAuth.createUserWithEmailAndPassword(
 
                         textBoxEmail.getText().toString(), textBoxPassword.getText().toString())
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -81,25 +89,27 @@ public class RegisterProfileFirst extends AppCompatActivity {
                             {
                                 if (task.isSuccessful()) {
 
-                                    store_login(textBoxUsername.getText().toString(), textBoxEmail.getText().toString(), textBoxPassword.getText().toString());
+                                    String userName = textBoxUsername.getText().toString();
+                                    String userEmail = textBoxEmail.getText().toString();
+                                    String userPassword = textBoxEmail.getText().toString();
 
-                                    screenRegisterProfileSecond();
+                                    storeUserData(userName, userEmail, userPassword);
+
+                                    screenNext();
 
                                 } else {
 
-                                    Toast.makeText(
-                                            getApplicationContext(),
-                                            "Esse email já foi registrado",
-                                            Toast.LENGTH_LONG)
-                                            .show();
+                                    Toast.makeText(getApplicationContext(), "@string/emailRegistered", Toast.LENGTH_LONG).show();
 
                                     textBoxEmail.setHintTextColor(Color.RED);
                                     textBoxEmail.setTextColor(Color.RED);
-                                    textBoxEmail.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
-
+                                    textBoxEmail.getBackground().mutate().setColorFilter(
+                                                 getResources().getColor(android.R.color.holo_red_light),
+                                                 PorterDuff.Mode.SRC_ATOP);
 
                                 }
                             }
+
                         });
 
             }
@@ -110,8 +120,8 @@ public class RegisterProfileFirst extends AppCompatActivity {
 
     public static boolean isOnline(Context context) {
 
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        ConnectivityManager managerConnectionService = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = managerConnectionService.getActiveNetworkInfo();
 
         if (netInfo != null && netInfo.isConnected())
 
@@ -125,19 +135,34 @@ public class RegisterProfileFirst extends AppCompatActivity {
 
     @Override
     public void onStart() {
+
         super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
+        processingAuth.addAuthStateListener(AuthenticationListener);
+
     }
 
     @Override
     public void onStop() {
+
         super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
+
+        if (AuthenticationListener != null) {
+
+            processingAuth.removeAuthStateListener(AuthenticationListener);
+
         }
+
     }
 
-    private void store_login(String username, String email, String password) {
+    private void screenErrorConnection(){
+
+        Intent i = new Intent(RegisterProfileFirst.this, ErrorConnection.class);
+        finish();
+        startActivity(i);
+
+    }
+
+    private void storeUserData(String username, String email, String password) {
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
@@ -147,7 +172,7 @@ public class RegisterProfileFirst extends AppCompatActivity {
         editor.apply();
     }
 
-    private void screenRegisterProfileSecond(){
+    private void screenNext(){
 
         Intent i = new Intent(RegisterProfileFirst.this, UserImage.class);
         finish();
