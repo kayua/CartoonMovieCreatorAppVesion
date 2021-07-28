@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
-public class ActivityEmailChecking extends AppCompatActivity {
+public class EmailChecking extends AppCompatActivity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
 
@@ -62,13 +62,13 @@ public class ActivityEmailChecking extends AppCompatActivity {
     }
 
     private void screen_user() {
-        Intent i = new Intent(ActivityEmailChecking.this, ActivityUserInterface.class);
+        Intent i = new Intent(EmailChecking.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
     }
 
     private void screen_start() {
-        Intent i = new Intent(ActivityEmailChecking.this, ActivityStart.class);
+        Intent i = new Intent(EmailChecking.this, ActivityStart.class);
         finish();
         startActivity(i);
     }

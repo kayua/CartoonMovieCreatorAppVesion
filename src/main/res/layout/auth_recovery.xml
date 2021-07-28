@@ -10,7 +10,7 @@
     android:clickable="true"
     android:hapticFeedbackEnabled="true"
     android:soundEffectsEnabled="true"
-    tools:context=".Authentication.ActivityRegisterProfileFirst">
+    tools:context=".Authentication.RegisterProfileFirst">
 
     <ImageView
         android:id="@+id/imageVkkkkk2"

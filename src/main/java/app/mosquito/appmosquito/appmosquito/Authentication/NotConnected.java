@@ -10,7 +10,7 @@ import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityNotConnected extends Activity {
+public class NotConnected extends Activity {
 
 
     @Override
@@ -31,7 +31,7 @@ public class ActivityNotConnected extends Activity {
 
     }
     private void screen_user() {
-        Intent i = new Intent(ActivityNotConnected.this, ActivityUserInterface.class);
+        Intent i = new Intent(NotConnected.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
     }

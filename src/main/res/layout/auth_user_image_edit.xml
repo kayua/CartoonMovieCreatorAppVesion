@@ -9,7 +9,7 @@
     android:background="#03add8"
     android:hapticFeedbackEnabled="true"
     android:soundEffectsEnabled="true"
-    tools:context=".Authentication.ActivityRegisterProfileFirst">
+    tools:context=".Authentication.RegisterProfileFirst">
 
     <com.isseiaoki.simplecropview.CropImageView
 

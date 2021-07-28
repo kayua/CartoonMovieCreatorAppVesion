@@ -51,7 +51,7 @@ public class ActivityStart extends AppCompatActivity {
 
     private void screen_acess_account(){
 
-        Intent i = new Intent(ActivityStart.this, ActivityAcessAccount.class);
+        Intent i = new Intent(ActivityStart.this, AcessAccount.class);
         finish();
         startActivity(i);
     }
@@ -66,7 +66,7 @@ public class ActivityStart extends AppCompatActivity {
     private void screen_register(){
 
 
-        Intent i = new Intent(ActivityStart.this, ActivityRegisterProfileFirst.class);
+        Intent i = new Intent(ActivityStart.this, RegisterProfileFirst.class);
         finish();
         startActivity(i);
 

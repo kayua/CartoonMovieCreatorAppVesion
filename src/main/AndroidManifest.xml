@@ -34,7 +34,7 @@
 
         <activity
 
-            android:name=".Authentication.ActivityRegisterProfileFirst"
+            android:name=".Authentication.RegisterProfileFirst"
             android:screenOrientation="portrait">
 
             <intent-filter>
@@ -60,7 +60,7 @@
             android:theme="@style/Theme.AppMosquito" />
 
         <activity
-            android:name=".Authentication.ActivityRecoverPassword"
+            android:name=".Authentication.RecoverPassword"
             android:screenOrientation="portrait"/>
 
 
@@ -69,18 +69,18 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".Authentication.ActivityEmailChecking"
+            android:name=".Authentication.EmailChecking"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".Authentication.ActivityAcessAccount"
+            android:name=".Authentication.AcessAccount"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".Authentication.ActivityNotConnected"
+            android:name=".Authentication.NotConnected"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Authentication.ActivityRegisterProfileSecond"
+            android:name=".Authentication.RegisterProfileSecond"
             android:screenOrientation="portrait" />
 
 

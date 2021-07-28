@@ -27,7 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityRegisterProfileFirst extends AppCompatActivity {
+public class RegisterProfileFirst extends AppCompatActivity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
     private FirebaseAuth mAuth;
@@ -39,7 +39,7 @@ public class ActivityRegisterProfileFirst extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         if(!(isOnline(getApplicationContext()))){
 
-            Intent i = new Intent(ActivityRegisterProfileFirst.this, ActivityNotConnected.class);
+            Intent i = new Intent(RegisterProfileFirst.this, NotConnected.class);
             finish();
             startActivity(i);
         }
@@ -149,7 +149,7 @@ public class ActivityRegisterProfileFirst extends AppCompatActivity {
 
     private void screenRegisterProfileSecond(){
 
-        Intent i = new Intent(ActivityRegisterProfileFirst.this, ActivityUserImage.class);
+        Intent i = new Intent(RegisterProfileFirst.this, ActivityUserImage.class);
         finish();
         startActivity(i);
     }

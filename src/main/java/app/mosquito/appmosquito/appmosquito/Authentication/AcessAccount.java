@@ -21,7 +21,7 @@ import app.mosquito.appmosquito.appmosquito.ActivityUserInterface;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityAcessAccount extends Activity {
+public class AcessAccount extends Activity {
 
     private FirebaseAuth mAuth;
 
@@ -50,7 +50,7 @@ public class ActivityAcessAccount extends Activity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), ActivityRecoverPassword.class);
+                Intent i = new Intent(getApplicationContext(), RecoverPassword.class);
                 finish();
                 startActivity(i);
             }
@@ -81,7 +81,7 @@ public class ActivityAcessAccount extends Activity {
     }
 
     private void screen_user() {
-        Intent i = new Intent(ActivityAcessAccount.this, ActivityUserInterface.class);
+        Intent i = new Intent(AcessAccount.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
     }

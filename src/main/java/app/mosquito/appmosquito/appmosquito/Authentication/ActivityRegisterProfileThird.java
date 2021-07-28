@@ -98,7 +98,7 @@ public class ActivityRegisterProfileThird extends Activity {
 
     private void previousScreen() {
 
-        Intent i = new Intent(ActivityRegisterProfileThird.this, ActivityRegisterProfileSecond.class);
+        Intent i = new Intent(ActivityRegisterProfileThird.this, RegisterProfileSecond.class);
         finish();
         startActivity(i);
 
@@ -148,7 +148,7 @@ public class ActivityRegisterProfileThird extends Activity {
 
     private void uploadImage(String filePath) {
 
-        FirebaseStorage storage ;
+        FirebaseStorage storage;
         StorageReference storageReference;
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
@@ -160,13 +160,12 @@ public class ActivityRegisterProfileThird extends Activity {
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
-                // Handle unsuccessful uploads
+
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
-                // ...
+
             }
         });
     }

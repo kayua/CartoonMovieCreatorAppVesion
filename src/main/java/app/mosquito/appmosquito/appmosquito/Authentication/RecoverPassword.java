@@ -11,13 +11,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ActivityRecoverPassword extends AppCompatActivity {
+public class RecoverPassword extends AppCompatActivity {
 
     public static final String PREFS_NAME = "PersonalDatabase";
     private FirebaseAuth.AuthStateListener mAuthListener;
     private Switch active_email_notification, active_realtime_notification, active_infestations_detect;
 
-    public ActivityRecoverPassword() {
+    public RecoverPassword() {
     }
 
 

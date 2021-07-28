@@ -90,7 +90,7 @@ public class ActivityUserImage extends Activity {
 
     private void screenProfileEditFirst(){
 
-        Intent i = new Intent(ActivityUserImage.this, ActivityRegisterProfileSecond.class);
+        Intent i = new Intent(ActivityUserImage.this, RegisterProfileSecond.class);
         finish();
         startActivity(i);
     }
