@@ -45,7 +45,6 @@ public class RegisterProfileFirst extends AppCompatActivity {
 
         }
 
-
         processingAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.auth_register);
 
@@ -164,12 +163,12 @@ public class RegisterProfileFirst extends AppCompatActivity {
 
     private void storeUserData(String username, String email, String password) {
 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("username", username);
-        editor.putString("email", email);
+        SharedPreferences userData = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editUserData = userData.edit();
+        editUserData.putString("username", username);
+        editUserData.putString("email", email);
+        editUserData.apply();
 
-        editor.apply();
     }
 
     private void screenNext(){
