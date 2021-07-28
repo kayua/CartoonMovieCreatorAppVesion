@@ -56,32 +56,33 @@ public class AcessAccount extends Activity {
     private void acess(String textBoxUsername, String textBoxPassword){
 
         processingAuth.signInWithEmailAndPassword(textBoxUsername, textBoxPassword)
+
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            FirebaseUser user = processingAuth.getCurrentUser();
-                            screen_user();
-
+                            FirebaseUser userToken = processingAuth.getCurrentUser();
+                            screenUser();
                         } else {
 
-
-                            toast();
+                            errorAcess();
 
                         }
+
                     }
+
                 });
 
     }
 
-    private void screen_user() {
+    private void screenUser() {
         Intent i = new Intent(AcessAccount.this, MainUserInterface.class);
         finish();
         startActivity(i);
     }
 
-    private void toast() {
+    private void errorAcess() {
         Toast.makeText(getApplicationContext(), "Não foi possível encontrar sua conta. Verificar se o preenchimento está correto.", Toast.LENGTH_SHORT).show();
             }
     @Override
