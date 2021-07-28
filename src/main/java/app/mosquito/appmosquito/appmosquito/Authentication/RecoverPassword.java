@@ -18,7 +18,6 @@ public class RecoverPassword extends AppCompatActivity {
     public static final String PREFS_NAME = "PersonalDatabase";
     private FirebaseAuth.AuthStateListener AuthenticationListener;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

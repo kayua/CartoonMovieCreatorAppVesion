@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+
     <RelativeLayout android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
         <app.mosquito.appmosquito.appmosquito.GalleryPhotos.utils.AutoFitRecyclerView android:id="@+id/folderRecycler" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="12dp" android:background="@color/white" android:clipToPadding="false" android:columnWidth="@dimen/folder_column_width">
             <!-- app:fastScrollEnabled="true"
