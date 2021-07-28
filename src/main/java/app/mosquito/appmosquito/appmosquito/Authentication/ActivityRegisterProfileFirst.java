@@ -81,9 +81,7 @@ public class ActivityRegisterProfileFirst extends AppCompatActivity {
                             {
                                 if (task.isSuccessful()) {
 
-                                    store_login(textBoxUsername.getText().toString(),
-                                            textBoxEmail.getText().toString(),
-                                            textBoxPassword.getText().toString());
+                                    store_login(textBoxUsername.getText().toString(), textBoxEmail.getText().toString(), textBoxPassword.getText().toString());
 
                                     screenRegisterProfileSecond();
 
@@ -151,16 +149,10 @@ public class ActivityRegisterProfileFirst extends AppCompatActivity {
 
     private void screenRegisterProfileSecond(){
 
-        Intent i = new Intent(ActivityRegisterProfileFirst.this, ActivityRegisterProfileSecond.class);
+        Intent i = new Intent(ActivityRegisterProfileFirst.this, ActivityUserImage.class);
         finish();
         startActivity(i);
     }
 
-    private void screen_user(){
-
-        Intent i = new Intent(ActivityRegisterProfileFirst .this, ActivityAcessAccount.class);
-        finish();
-        startActivity(i);
-    }
 
 }

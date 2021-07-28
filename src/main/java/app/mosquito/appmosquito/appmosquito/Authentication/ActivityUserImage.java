@@ -3,8 +3,8 @@ package app.mosquito.appmosquito.appmosquito.Authentication;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,6 +21,7 @@ import app.mosquito.appmosquito.appmosquito.R;
 public class ActivityUserImage extends Activity {
 
     private static int RESULT_LOAD_IMAGE = 1;
+    public static final String PREFS_NAME = "PersonalDatabase";
     String picturePath;
     @SuppressLint("WrongThread")
     @Override
@@ -60,13 +61,9 @@ public class ActivityUserImage extends Activity {
 
     }
 
-
-
-
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
@@ -83,12 +80,8 @@ public class ActivityUserImage extends Activity {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView18);
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-            ImageView imageView1;
-            RoundImage roundedImage;
-            imageView1 = (ImageView) findViewById(R.id.imageView18);
-            Bitmap bm = BitmapFactory.decodeFile(picturePath);
-            roundedImage = new RoundImage(bm);
-            imageView1.setImageDrawable(roundedImage);
+            storeLogin(picturePath);
+
 
         }
 
@@ -101,7 +94,6 @@ public class ActivityUserImage extends Activity {
 
     }
 
-
     private void screenProfileEditFirst(){
 
         Intent i = new Intent(ActivityUserImage.this, ActivityRegisterProfileSecond.class);
@@ -113,6 +105,15 @@ public class ActivityUserImage extends Activity {
         Intent i = new Intent(ActivityUserImage.this, ActivityUserInterface.class);
         finish();
         startActivity(i);
+    }
+
+    private void storeLogin(String imageUser) {
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("imageUser", imageUser);
+
+        editor.apply();
     }
 
 }
