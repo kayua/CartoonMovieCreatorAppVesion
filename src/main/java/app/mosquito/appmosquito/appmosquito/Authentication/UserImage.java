@@ -23,6 +23,7 @@ public class UserImage extends Activity {
     private static int RESULT_LOAD_IMAGE = 1;
     public static final String PREFS_NAME = "PersonalDatabase";
     String picturePath;
+
     @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,6 @@ public class UserImage extends Activity {
             public void onClick(View arg0) {
 
                 Intent i = new Intent( Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
             }
         });
@@ -61,6 +61,7 @@ public class UserImage extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
+
             Uri selectedImage = data.getData();
             String[] filePathColumn = { MediaStore.Images.Media.DATA };
 
