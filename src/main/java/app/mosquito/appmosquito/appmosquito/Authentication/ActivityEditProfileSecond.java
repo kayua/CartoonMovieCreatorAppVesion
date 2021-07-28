@@ -46,8 +46,6 @@ public class ActivityEditProfileSecond extends Activity {
 
         setContentView(R.layout.auth_profile_second);
 
-        initializeFirebase();
-
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
@@ -121,111 +119,6 @@ public class ActivityEditProfileSecond extends Activity {
         editor.putString("schooling", schooling);
         editor.putString("favoriteWord", favoriteWord);
         editor.apply();
-
-    }
-
-    public static int getRandomId() {
-
-        Random random = new Random();
-
-        return random.nextInt((999999999-100000000) + 1) + 100000000;
-
-    }
-
-    private void saveOnFirebase(){
-
-        String birthDate = "";
-        String city = "";
-        String company = "";
-        String gender = "";
-        String schooling = "";
-        String favoriteWord = "";
-
-
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-
-        try {
-
-            birthDate = settings.getString("email", "");
-            city = settings.getString("password", "");
-            company = settings.getString("email", "");
-            gender = settings.getString("password", "");
-            schooling = settings.getString("email", "");
-            favoriteWord = settings.getString("password", "");
-
-        }catch (Exception e){
-
-        }
-
-        String uniqueId = getUniqueId();
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user_id_list");
-        DatabaseReference idReference = reference.child("user_id");
-        idReference.push().setValue (uniqueId);
-
-    }
-
-    private String getUniqueId(){
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user_id_list");
-        DatabaseReference idReference = reference.child("user_id");
-        String randomNumber;
-
-        while (true){
-
-            randomNumber = Integer.toString(getRandomId());
-
-            if(getIdFirebase(randomNumber)){break;}  // verificar isso depois
-            break;
-        }
-
-
-        return randomNumber;
-    }
-
-    private boolean getIdFirebase(String key) {
-
-        Query query;
-
-        if (key.equals("")){
-            query = databaseReference.child("user_id_list").orderByChild("user_id");
-
-        }else{
-
-            query = databaseReference.child("user_id_list").orderByChild("user_id").startAt(key).endAt(key+"\uf8ff");
-        }
-
-        final boolean[] searchValue = new boolean[1];
-        searchValue[0]=false;
-
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
-
-                    if (key.equals(Objects.requireNonNull(objSnapshot.getValue()).toString())) {
-                        Log.i(": > ************************ ", objSnapshot.getValue().toString());
-                        searchValue[0] =true;
-                    }
-                }
-
-
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        return searchValue[0];
-    }
-
-    private void initializeFirebase() {
-
-        FirebaseApp.initializeApp(this);
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference();
 
     }
 
