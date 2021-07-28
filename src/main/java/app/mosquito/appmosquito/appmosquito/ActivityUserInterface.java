@@ -2,10 +2,12 @@ package app.mosquito.appmosquito.appmosquito;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,6 +70,10 @@ public class ActivityUserInterface extends AppCompatActivity{
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        ImageView imageView = (ImageView ) navigationView.getHeaderView(0).findViewById(R.id.imageView18s);
+        String picturePath = settings.getString("imageUser", "");
+
+        imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);

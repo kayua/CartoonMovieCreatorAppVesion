@@ -29,10 +29,7 @@ public class ActivityRegisterProfileSecond extends Activity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-
-
         String picturePath = settings.getString("imageUser", "");
-
         ImageView imageView = (ImageView) findViewById(R.id.imageViedw);
         imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
 

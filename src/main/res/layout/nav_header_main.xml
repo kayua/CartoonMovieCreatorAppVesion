@@ -23,7 +23,7 @@
             android:orientation="horizontal">
 
             <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/imageView18"
+                android:id="@+id/imageView18s"
 
                 android:src="@drawable/icon_general_user"
                 app:civ_border_color="#BCF1EEEE"
