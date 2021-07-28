@@ -88,6 +88,10 @@
             android:name=".Authentication.ActivityUserImage"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".Authentication.ActivityRegisterProfileThird"
+            android:screenOrientation="portrait" />
+
 
         <activity android:name=".GalleryPhotos.ImageDisplay" android:screenOrientation="portrait"/>
 
