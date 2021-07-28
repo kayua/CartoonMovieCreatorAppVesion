@@ -53,7 +53,8 @@ public class ActivityUserInterface extends AppCompatActivity{
         String text = new String();
 
 
-    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
         usernameRegistered = settings.getString("username", "");
         passwordRegistered = settings.getString("password", "");
         SharedPreferences.Editor editor = settings.edit();
