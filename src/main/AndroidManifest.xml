@@ -34,7 +34,7 @@
 
         <activity
 
-            android:name=".Authentication.ActivityRegisterProfileThird"
+            android:name=".Authentication.ActivityRegisterProfileFirst"
             android:screenOrientation="portrait">
 
             <intent-filter>
@@ -63,9 +63,6 @@
             android:name=".Authentication.ActivityRecoverPassword"
             android:screenOrientation="portrait"/>
 
-        <activity
-            android:name=".Authentication.ActivityRegisterProfileFirst"
-            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".Authentication.ActivityStart"
@@ -86,9 +83,6 @@
             android:name=".Authentication.ActivityRegisterProfileSecond"
             android:screenOrientation="portrait" />
 
-        <activity
-            android:name=".Authentication.ActivityRegisterProfileThird"
-            android:screenOrientation="portrait" />
 
         <activity
             android:name=".Authentication.ActivityUserImage"
