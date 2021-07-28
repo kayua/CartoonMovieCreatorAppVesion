@@ -18,7 +18,7 @@ public class ErrorConnection extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.auth_not_connected);
+        setContentView(R.layout.layout_authentication_error_connection);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Button buttonRetry = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);

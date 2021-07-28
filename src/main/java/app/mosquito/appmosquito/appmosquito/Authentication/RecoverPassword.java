@@ -26,7 +26,7 @@ public class RecoverPassword extends AppCompatActivity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.auth_recovery);
+        setContentView(R.layout.layout_authentication_recovery);
         TextView textViewMenuSource= (TextView) findViewById(R.id.textView18);
 
         textViewMenuSource.setOnClickListener(new View.OnClickListener() {

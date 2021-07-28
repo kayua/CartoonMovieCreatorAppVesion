@@ -43,7 +43,7 @@ public class RegisterProfileFirst extends AppCompatActivity {
         }
 
         processingAuth = FirebaseAuth.getInstance();
-        setContentView(R.layout.auth_register);
+        setContentView(R.layout.layout_authentication_register);
 
         Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
         EditText textBoxUsername = (EditText) findViewById(R.id.editTextAuthGender);

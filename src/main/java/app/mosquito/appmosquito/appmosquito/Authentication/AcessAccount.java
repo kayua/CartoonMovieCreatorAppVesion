@@ -29,7 +29,7 @@ public class AcessAccount extends Activity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.auth_acess);
+        setContentView(R.layout.layout_authentication_acess);
 
         processingAuth = FirebaseAuth.getInstance();
         Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);

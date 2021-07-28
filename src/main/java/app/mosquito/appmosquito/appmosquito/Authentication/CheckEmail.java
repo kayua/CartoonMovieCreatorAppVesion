@@ -24,7 +24,7 @@ public class CheckEmail extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.auth_email);
+        setContentView(R.layout.layout_authentication_email);
         TextView textViewGoBackInit = findViewById(R.id.textViewEmailGoBackInit);
         Button buttonGoUserInterface = findViewById(R.id.buttonAuthAcessEmail);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
