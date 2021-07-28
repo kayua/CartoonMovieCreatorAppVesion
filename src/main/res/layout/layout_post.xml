@@ -196,6 +196,7 @@
                     <ImageView
                         android:id="@+id/imageView9"
                         android:layout_width="39dp"
+                        android:layout_marginTop="4dp"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/cameras" />
                     <LinearLayout
@@ -247,6 +248,7 @@
 
                     <ImageView
                         android:id="@+id/imageView9"
+                        android:layout_marginTop="4dp"
                         android:layout_width="39dp"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/cameras" />
@@ -299,6 +301,7 @@
 
                     <ImageView
                         android:id="@+id/imageView9"
+                        android:layout_marginTop="4dp"
                         android:layout_width="39dp"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/cameras" />
