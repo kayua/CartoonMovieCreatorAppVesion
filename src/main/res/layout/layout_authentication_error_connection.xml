@@ -10,7 +10,7 @@
     tools:context=".Authentication.SplashScreen">
 
     <Button
-        android:id="@+id/buttonAcessLogin"
+        android:id="@+id/buttonFirstNext"
         android:layout_width="282dp"
         android:layout_height="49dp"
         android:background="@drawable/button_design_fill"
@@ -83,7 +83,6 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView2"
         android:layout_width="174dp"
         android:layout_height="176dp"
         android:background="@drawable/not_connected"
@@ -96,19 +95,18 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Problemas com a conexão"
         android:textColor="#03ADD8"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="0.114" />
 
     <TextView
         android:id="@+id/textView14"
