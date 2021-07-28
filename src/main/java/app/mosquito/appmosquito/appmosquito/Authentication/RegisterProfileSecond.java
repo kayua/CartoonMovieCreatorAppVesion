@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import app.mosquito.appmosquito.appmosquito.R;
 
 
@@ -24,42 +23,53 @@ public class RegisterProfileSecond extends Activity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.auth_profile_first);
-
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        String picturePath = settings.getString("imageUser", "");
+        setContentView(R.layout.auth_profile_first);
+
         ImageView imageView = (ImageView) findViewById(R.id.imageViedw);
-        imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-
-        Button next_step =  findViewById(R.id.buttonAuthAcessRegisterAccount3);
-
+        Button buttonNext =  findViewById(R.id.buttonAuthAcessRegisterAccount3);
         TextView goBack =  findViewById(R.id.textViewEmailGoBackInit2);
-
         EditText userBirthDate =  findViewById(R.id.editTextAuthGender);
-
         EditText userCity =  findViewById(R.id.editTextAuthSchooling);
-
         EditText userCompany =  findViewById(R.id.editTextAuthFavoriteWord);
 
-        next_step.setOnClickListener(new View.OnClickListener() {
+        SharedPreferences userData = getSharedPreferences(PREFS_NAME, 0);
+        String picturePath = userData.getString("imageUser", "");
+        imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+
+
+        buttonNext.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                String birthDate = userBirthDate.getText().toString();
-                String city = userCity.getText().toString();
-                String company = userCompany.getText().toString();
+                String stringBirthDate = userBirthDate.getText().toString();
+                String stringCity = userCity.getText().toString();
+                String stringCompany = userCompany.getText().toString();
 
-                if(birthDate.equals("")){ birthDate = "Não informado"; }
+                if(stringBirthDate.equals("")){
 
-                if(city.equals("")){ city = "Não informado"; }
+                    stringBirthDate = "@string/uninformed";
 
-                if(company.equals("")){ company = "Não informado"; }
+                }
 
-                store_login(birthDate, city, company);
+                if(stringCity.equals("")){
+
+                    stringCity = "@string/uninformed";
+
+                }
+
+                if(stringCompany.equals("")){
+
+                    stringCompany = "@string/uninformed";
+
+                }
+
+                storeUserData(stringBirthDate, stringCity, stringCompany);
+
                 nextScreen();
+
             }
 
         });
@@ -70,6 +80,7 @@ public class RegisterProfileSecond extends Activity {
             public void onClick(View view) {
 
                 previousScreen();
+
             }
 
         });
@@ -92,19 +103,20 @@ public class RegisterProfileSecond extends Activity {
 
     }
 
-    private void store_login(String birthDate, String city, String company) {
+    private void storeUserData(String birthDate, String city, String company) {
 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("birthDate", birthDate);
-        editor.putString("city",city);
-        editor.putString("company", company);
-        editor.apply();
+        SharedPreferences userData = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editUserData = userData.edit();
+        editUserData.putString("birthDate", birthDate);
+        editUserData.putString("city",city);
+        editUserData.putString("company", company);
+        editUserData.apply();
 
     }
 
     @Override
     public void onStart() {
+
         super.onStart();
 
     }

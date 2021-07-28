@@ -2,6 +2,7 @@
 
     <string name="errorAcessAccount">Não foi possível encontrar sua conta. Verificar se o preenchimento está correto.</string>
     <string name="emailRegistered">Esse email já foi registrado.</string>
+    <string name="uninformed">Esse email já foi registrado.</string>
 
 
 
