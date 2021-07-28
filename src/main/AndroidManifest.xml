@@ -34,7 +34,7 @@
 
         <activity
 
-            android:name=".Authentication.RegisterProfileFirst"
+            android:name=".MainUserInterface"
             android:screenOrientation="portrait">
 
             <intent-filter>
@@ -54,10 +54,6 @@
             android:name=".GalleryMovie.GalleryPlayer"
             android:screenOrientation="portrait"/>
 
-        <activity
-            android:name=".MainUserInterface"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppMosquito" />
 
         <activity
             android:name=".Authentication.RecoverPassword"
