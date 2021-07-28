@@ -22,7 +22,7 @@ public class MenuSource extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.auth_start);
+        setContentView(R.layout.layout_authentication_start_user);
 
 
         Button buttonAcess = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);

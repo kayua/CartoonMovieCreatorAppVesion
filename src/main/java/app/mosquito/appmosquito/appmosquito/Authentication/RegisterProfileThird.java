@@ -41,7 +41,7 @@ public class RegisterProfileThird extends Activity {
         SharedPreferences userData = getSharedPreferences(PREFS_NAME, 0);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.auth_profile_second);
+        setContentView(R.layout.layout_authentication_second_step);
         writeFirebase();
 
         TextView textViewGoBack =  findViewById(R.id.textViewEmailGoBackInit2);

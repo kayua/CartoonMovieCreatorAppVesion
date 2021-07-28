@@ -25,7 +25,7 @@ public class RegisterProfileSecond extends Activity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.auth_profile_first);
+        setContentView(R.layout.layout_authentication_first_step);
 
         ImageView imageView = (ImageView) findViewById(R.id.imageViedw);
         Button buttonNext =  findViewById(R.id.buttonAuthAcessRegisterAccount3);

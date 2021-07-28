@@ -29,7 +29,7 @@ public class UserImage extends Activity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.auth_user_image);
+        setContentView(R.layout.layout_authentication_user_image);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Button buttonRegister = (Button) findViewById(R.id.buttonAuthAcessRegisterAccount3);
         ImageView buttonLoadImage = (ImageView) findViewById(R.id.imageView18);
