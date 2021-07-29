@@ -66,7 +66,7 @@ public class MessageFragment extends Fragment {
         postTwo.setPostName("Segundo Post");
         postTwo.setPostUserName("Kayuã Oleques Paim");
         postTwo.setPostDate("28/07/21 23:36");
-        postTwo.setPostCategorical(CategoricalPosts.postText);
+        postTwo.setPostCategorical(CategoricalPosts.postProfile);
         postTwo.setPostLocalization("Alegrete - RS");
         postTwo.setPostText("Texto de exemplo post");
         postTwo.setPostNumberLikes(100);

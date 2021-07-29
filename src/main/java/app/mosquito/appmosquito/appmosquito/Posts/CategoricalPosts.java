@@ -1,3 +1,3 @@
 package app.mosquito.appmosquito.appmosquito.Posts;
 
-public enum CategoricalPosts { postMovie, postText, postPhoto }
+public enum CategoricalPosts { postMovie, postText, postPhoto, postProfile }
