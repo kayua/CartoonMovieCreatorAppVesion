@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.List;
 
@@ -49,19 +47,21 @@ public class ViewAdapter extends BaseAdapter {
         CategoricalPosts categoria = curso.getCategoria();
 
         if (categoria.equals(CategoricalPosts.JAVA)) {
-            view = act.getLayoutInflater().inflate(R.layout.lista_curso_personalizada, parent, false);
-            TextView nome = (TextView)
-                    view.findViewById(R.id.lista_curso_personalizada_nome);
-            TextView descricao = (TextView)
-                    view.findViewById(R.id.lista_curso_personalizada_descricao);
-            ImageView imagem = (ImageView)
-                    view.findViewById(R.id.lista_curso_personalizada_imagem);
-            imagem.setImageResource(R.drawable.ponte_arrabid);
-            nome.setText(curso.getNome());
-            descricao.setText(curso.getDescricao());
+
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_text, parent, false);
+            //TextView nome = (TextView)
+            //        view.findViewById(R.id.lista_curso_personalizada_nome);
+            //TextView descricao = (TextView)
+            //        view.findViewById(R.id.lista_curso_personalizada_descricao);
+            //ImageView imagem = (ImageView)
+            //        view.findViewById(R.id.lista_curso_personalizada_imagem);
+
+            //imagem.setImageResource(R.drawable.ponte_arrabid);
+            //nome.setText(curso.getNome());
+            //descricao.setText(curso.getDescricao());
 
         } else if (categoria.equals(CategoricalPosts.ANDROID)) {
-            view = act.getLayoutInflater().inflate(R.layout.layout_post, parent, false);
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_images, parent, false);
             //TextView nome = (TextView)
             //        view.findViewById(R.id.lista_curso_personalizada_nome);
             // TextView descricao = (TextView)
