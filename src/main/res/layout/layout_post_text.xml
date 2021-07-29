@@ -65,7 +65,7 @@
                         android:text="Kayuã Oleques Paim"
                         android:textColor="#838181"
                         android:textColorHint="#757474"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -77,9 +77,9 @@
                         android:id="@+id/textView2"
                         android:layout_width="138dp"
                         android:layout_height="wrap_content"
-                        android:text="Text Example"
+                        android:text="Publicado em: 28/07/21 22:06"
                         android:textColor="#333333"
-                        android:textSize="8sp"
+                        android:textSize="9sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -123,11 +123,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="10dp"
+                    android:layout_width="16dp"
                     android:layout_height="29dp"
                     android:orientation="vertical">
 
@@ -148,11 +148,12 @@
                     <TextView
                         android:id="@+id/textView"
                         android:layout_width="315dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="42dp"
                         android:text="Frio extremo aqui, essa mensagem é um teste de texto de múltiplas linhas. Obrigado!"
                         android:textAlignment="viewStart"
-                        android:textColor="#454545"
-                        android:textSize="12sp"
+                        android:textColor="#555454"
+                        android:textSize="13sp"
+
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -200,7 +201,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/cameras" />
+                        app:srcCompat="@drawable/h" />
 
                 </LinearLayout>
 

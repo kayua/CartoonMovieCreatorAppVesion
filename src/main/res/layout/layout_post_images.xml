@@ -19,6 +19,8 @@
             android:background="@drawable/background_post"
             android:orientation="vertical">
 
+
+            // Remover isso
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="74dp"
@@ -47,12 +49,12 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="112dp"
+                    android:layout_width="161dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="133dp"
                         android:layout_height="15dp"
                         android:orientation="vertical">
 
@@ -60,11 +62,12 @@
 
                     <TextView
                         android:id="@+id/textView"
-                        android:layout_width="match_parent"
+                        android:layout_width="161dp"
                         android:layout_height="wrap_content"
-                        android:text="Text Example"
-                        android:textColor="#333333"
-                        android:textSize="12sp"
+                        android:text="Kayuã Oleques Paim"
+                        android:textColor="#838181"
+                        android:textColorHint="#757474"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -74,23 +77,23 @@
 
                     <TextView
                         android:id="@+id/textView2"
-                        android:layout_width="match_parent"
+                        android:layout_width="138dp"
                         android:layout_height="wrap_content"
-                        android:text="Text Example"
+                        android:text="Publicado em: 28/07/21 22:06"
                         android:textColor="#333333"
-                        android:textSize="8sp"
+                        android:textSize="9sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="104dp"
+                    android:layout_width="53dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="105dp"
                     android:layout_height="32dp"
                     android:orientation="vertical">
 
@@ -120,9 +123,10 @@
 
             </LinearLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -134,7 +138,7 @@
 
                 <LinearLayout
                     android:layout_width="366dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -146,12 +150,20 @@
 
                     <TextView
                         android:id="@+id/textView"
-                        android:layout_width="match_parent"
+                        android:layout_width="315dp"
                         android:layout_height="wrap_content"
-                        android:text="Text Example"
-                        android:textColor="#333333"
-                        android:textSize="12sp"
+                        android:text="Frio extremo aqui, essa mensagem é um teste de texto de múltiplas linhas. Obrigado!"
+                        android:textAlignment="viewStart"
+                        android:textColor="#555454"
+                        android:textSize="13sp"
                         android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:orientation="vertical">
 
                 </LinearLayout>
 
