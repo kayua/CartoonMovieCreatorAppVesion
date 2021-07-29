@@ -42,6 +42,7 @@
 
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_marginRight="2dp"
                         android:layout_marginTop="10dp"
                         app:srcCompat="@drawable/icon_share" />
 
@@ -49,6 +50,7 @@
 
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_marginRight="2dp"
                         android:layout_marginTop="10dp"
                         app:srcCompat="@drawable/h" />
 
@@ -92,10 +94,10 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="98dp"
-                    android:layout_marginTop="122dp"
-                    android:layout_marginEnd="97dp"
-                    android:layout_marginBottom="61dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="105dp"
+                    android:layout_marginEnd="95dp"
+                    android:layout_marginBottom="78dp"
                     android:src="@drawable/icon_general_user"
                     app:civ_border_color="#BCF1EEEE"
                     app:civ_border_width="1dp"
@@ -168,6 +170,7 @@
 
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_marginLeft="2dp"
                         android:layout_marginTop="10dp"
                         app:srcCompat="@drawable/h" />
 
@@ -175,6 +178,7 @@
 
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_marginLeft="2dp"
                         android:layout_marginTop="10dp"
                         app:srcCompat="@drawable/cameras" />
                 </LinearLayout>
