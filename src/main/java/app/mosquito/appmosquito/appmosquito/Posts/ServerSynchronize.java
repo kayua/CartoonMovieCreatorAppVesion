@@ -23,7 +23,6 @@ public class ServerSynchronize extends AppCompatActivity {
 
     private List<PostStructure> allTypePosts() {
 
-        // "Java", "    Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie
         PostStructure postOne = new PostStructure();
         PostStructure postTwo = new PostStructure();
         PostStructure postThree = new PostStructure();
@@ -36,6 +35,7 @@ public class ServerSynchronize extends AppCompatActivity {
         postOne.setPostNumberLikes(100);
         postOne.setPostNumberShares(31);
         postOne.setPostNumberComments(31);
+        postOne.setPostText("Texto de exemplo post");
         postOne.setPostState(EstadoAtual.FAZENDO);
 
         postTwo.setPostName("Segundo Post");
@@ -43,6 +43,7 @@ public class ServerSynchronize extends AppCompatActivity {
         postTwo.setPostDate("28/07/21 23:36");
         postTwo.setPostCategorical(CategoricalPosts.postPhoto);
         postTwo.setPostLocalization("Alegrete - RS");
+        postOne.setPostText("Texto de exemplo post");
         postTwo.setPostNumberLikes(100);
         postTwo.setPostNumberShares(31);
         postTwo.setPostNumberComments(31);
@@ -51,13 +52,13 @@ public class ServerSynchronize extends AppCompatActivity {
         postThree.setPostName("Terceiro Post");
         postThree.setPostUserName("Kayuã Oleques Paim");
         postThree.setPostDate("28/07/21 23:36");
+        postOne.setPostText("Texto de exemplo post");
         postThree.setPostCategorical(CategoricalPosts.postPhoto);
         postThree.setPostLocalization("Alegrete - RS");
         postThree.setPostNumberLikes(100);
         postThree.setPostNumberShares(31);
         postThree.setPostNumberComments(31);
         postThree.setPostState(EstadoAtual.FAZENDO);
-
 
         return new ArrayList<>(Arrays.asList(postOne, postTwo, postThree));
     }
