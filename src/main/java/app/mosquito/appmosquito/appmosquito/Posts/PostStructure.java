@@ -26,8 +26,13 @@ public class PostStructure {
 
     public String getDatePost(){return datePost;}
 
-    public String getlocalizationPost(){return localizationPost;}
+    public String getLocalizationPost(){return localizationPost;}
 
+    public int getNumberSharesPost(){return numberShares;}
+
+    public int getNumberLikes(){return numberLikes;}
+
+    public int getLocalizationPost(){return localizationPost;}
 
 
 
