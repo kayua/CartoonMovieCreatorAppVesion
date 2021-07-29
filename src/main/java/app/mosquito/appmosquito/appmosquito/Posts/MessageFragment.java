@@ -48,16 +48,16 @@ public class MessageFragment extends Fragment {
     }
     private List<PostStructure> todosOsCursos() {
     return new ArrayList<>(Arrays.asList(
-            new PostStructure("Java", "Olá mundo. kkkkkk\n testando...1 2 3", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-            new PostStructure("Android", "Funcionado", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID),
-            new PostStructure("Java", "Hi, who are you?", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-            new PostStructure("Java", "H1, I'am fine.", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-            new PostStructure("Android", "sdasdasdas", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID),
-            new PostStructure("Android", "asdasdasdasas\ndasdasdasd", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID),
-            new PostStructure("Java", "Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-            new PostStructure("Android", "good", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID),
-            new PostStructure("Java", "Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-            new PostStructure("Android", "boas de práticas", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID),
-            new PostStructure("Android", "boas de práticas", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID)));
+            new PostStructure("Java", "Olá mundo. kkkkkk\n testando...1 2 3", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+            new PostStructure("Android", "Funcionado", EstadoAtual.FINALIZADO, CategoricalPosts.postPhoto),
+            new PostStructure("Java", "Hi, who are you?", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+            new PostStructure("Java", "H1, I'am fine.", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+            new PostStructure("Android", "sdasdasdas", EstadoAtual.FINALIZADO, CategoricalPosts.postPhoto),
+            new PostStructure("Android", "asdasdasdasas\ndasdasdasd", EstadoAtual.FINALIZADO, CategoricalPosts.postPhoto),
+            new PostStructure("Java", "Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+            new PostStructure("Android", "good", EstadoAtual.FINALIZADO, CategoricalPosts.postPhoto),
+            new PostStructure("Java", "Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+            new PostStructure("Android", "boas de práticas", EstadoAtual.FINALIZADO, CategoricalPosts.postPhoto),
+            new PostStructure("Android", "boas de práticas", EstadoAtual.FINALIZADO, CategoricalPosts.postPhoto)));
 }
 }

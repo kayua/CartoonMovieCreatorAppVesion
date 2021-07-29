@@ -26,18 +26,18 @@ public class ServerSynchronize extends AppCompatActivity {
 
     private List<PostStructure> todosOsCursos() {
         return new ArrayList<>(Arrays.asList(
-                new PostStructure("Java", "    Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-                new PostStructure("HTML e CSS", "    HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.HTML),
-                new PostStructure("Java", "básico de Java", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-                new PostStructure("HTML e CSS", "HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.HTML),
-                new PostStructure("Java", "  básico de Java", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-                new PostStructure("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.HTML),
-                new PostStructure("Java", "  básico de Java", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-                new PostStructure("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.HTML),
-                new PostStructure("Java", "  básico de Java", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-                new PostStructure("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.HTML),
-                new PostStructure("Java", "  básico de Java", EstadoAtual.FINALIZADO, CategoricalPosts.JAVA),
-                new PostStructure("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.HTML),
-                new PostStructure("Android", "  boas de práticas", EstadoAtual.FINALIZADO, CategoricalPosts.ANDROID)));
+                new PostStructure("Java", "    Olá mundo. kkkkkk", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+                new PostStructure("HTML e CSS", "    HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.postText),
+                new PostStructure("Java", "básico de Java", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+                new PostStructure("HTML e CSS", "HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.postText),
+                new PostStructure("Java", "  básico de Java", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+                new PostStructure("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.postText),
+                new PostStructure("Java", "  básico de Java", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+                new PostStructure("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.postText),
+                new PostStructure("Java", "  básico de Java", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+                new PostStructure("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.postText),
+                new PostStructure("Java", "  básico de Java", EstadoAtual.FINALIZADO, CategoricalPosts.postMovie),
+                new PostStructure("HTML e CSS", "  HTML 5 e suas novidades", EstadoAtual.FAZENDO, CategoricalPosts.postText),
+                new PostStructure("Android", "  boas de práticas", EstadoAtual.FINALIZADO, CategoricalPosts.postPhoto)));
     }
 }

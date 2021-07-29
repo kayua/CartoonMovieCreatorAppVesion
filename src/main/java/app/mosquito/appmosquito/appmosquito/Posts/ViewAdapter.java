@@ -46,7 +46,7 @@ public class ViewAdapter extends BaseAdapter {
 
         CategoricalPosts categoria = curso.getPostCategorical();
 
-        if (categoria.equals(CategoricalPosts.JAVA)) {
+        if (categoria.equals(CategoricalPosts.postMovie)) {
 
             view = act.getLayoutInflater().inflate(R.layout.layout_post_multi_images, parent, false);
             //TextView nome = (TextView)
@@ -60,7 +60,7 @@ public class ViewAdapter extends BaseAdapter {
             //nome.setText(curso.getNome());
             //descricao.setText(curso.getDescricao());
 
-        } else if (categoria.equals(CategoricalPosts.ANDROID)) {
+        } else if (categoria.equals(CategoricalPosts.postPhoto)) {
             view = act.getLayoutInflater().inflate(R.layout.layout_post_image, parent, false);
             //TextView nome = (TextView)
             //        view.findViewById(R.id.lista_curso_personalizada_nome);
