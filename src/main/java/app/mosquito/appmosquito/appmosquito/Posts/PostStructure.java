@@ -17,47 +17,43 @@ public class PostStructure {
 
     public PostStructure() { }
 
-    public String getPostName() {
-        return postName;
-    }
+    public String getPostName() { return postName; }
 
-    public String getPostUserName(){return postUserName;}
+    public void setPostName(String postName) { this.postName = postName; }
 
-    public String getPostDate(){return postDate;}
+    public String getPostUserName() { return postUserName; }
 
-    public String getPostLocalization(){return postLocalization;}
+    public void setPostUserName(String postUserName) { this.postUserName = postUserName; }
 
-    public int getNumberSharesPost(){return postNumberLikes;}
+    public String getPostDate() { return postDate; }
 
-    public int getPostNumberShares(){return postNumberShares;}
+    public void setPostDate(String postDate) { this.postDate = postDate; }
 
-    public int getCommentsPost(){return postNumberComments;}
+    public String getPostText() { return postText; }
 
-    public int getPostState(){return postNumberShares;}
+    public void setPostText(String postText) { this.postText = postText; }
 
-    public int getCommentsPost(){return postNumberComments;}
+    public String getPostLocalization() { return postLocalization; }
 
+    public void setPostLocalization(String postLocalization) { this.postLocalization = postLocalization; }
 
+    public int getPostNumberLikes() { return postNumberLikes; }
 
+    public void setPostNumberLikes(int postNumberLikes) { this.postNumberLikes = postNumberLikes; }
 
+    public int getPostNumberShares() { return postNumberShares; }
 
-    public void setPostName(String postName) {
-        this.postName = postName;
-    }
+    public void setPostNumberShares(int postNumberShares) { this.postNumberShares = postNumberShares; }
 
-    public String getPostNumberLikes() {
-        return postNumberLikes;
-    }
+    public int getPostNumberComments() { return postNumberComments; }
 
-    public void setPostNumberLikes(String postNumberLikes) { this.postNumberLikes = postNumberLikes; }
+    public void setPostNumberComments(int postNumberComments) { this.postNumberComments = postNumberComments; }
 
-    public EstadoAtual getState() { return postState; }
+    public EstadoAtual getPostState() { return postState; }
 
     public void setPostState(EstadoAtual postState) { this.postState = postState; }
 
-    public CategoricalPosts getPostCategorical() {
-        return postCategorical;
-    }
+    public CategoricalPosts getPostCategorical() { return postCategorical; }
 
     public void setPostCategorical(CategoricalPosts postCategorical) { this.postCategorical = postCategorical; }
 
