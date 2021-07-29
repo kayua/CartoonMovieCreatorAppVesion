@@ -235,7 +235,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/cameras" />
+                        app:srcCompat="@drawable/h" />
 
                 </LinearLayout>
 
