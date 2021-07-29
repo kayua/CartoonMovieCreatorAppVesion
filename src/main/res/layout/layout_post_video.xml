@@ -61,7 +61,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/tasdextView"
                         android:layout_width="161dp"
                         android:layout_height="wrap_content"
                         android:text="Kayuã Oleques Paim"
@@ -149,7 +149,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/textdddView"
                         android:layout_width="315dp"
                         android:layout_height="wrap_content"
                         android:text="Frio extremo aqui, essa mensagem é um teste de texto de múltiplas linhas. Obrigado!"

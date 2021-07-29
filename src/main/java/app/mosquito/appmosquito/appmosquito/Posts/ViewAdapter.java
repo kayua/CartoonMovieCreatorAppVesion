@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.List;
 
 import app.mosquito.appmosquito.appmosquito.R;
-
 
 
 public class ViewAdapter extends BaseAdapter {
@@ -39,28 +39,22 @@ public class ViewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-
         PostStructure curso = PostList.get(position);
-
         View view = null;
 
-        CategoricalPosts categoria = curso.getPostCategorical();
+        CategoricalPosts Categorical = curso.getPostCategorical();
 
-        if (categoria.equals(CategoricalPosts.postMovie)) {
+        if (Categorical.equals(CategoricalPosts.postText)) {
 
-            view = act.getLayoutInflater().inflate(R.layout.layout_post_multi_images, parent, false);
-            //TextView nome = (TextView)
-            //        view.findViewById(R.id.lista_curso_personalizada_nome);
-            //TextView descricao = (TextView)
-            //        view.findViewById(R.id.lista_curso_personalizada_descricao);
-            //ImageView imagem = (ImageView)
-            //        view.findViewById(R.id.lista_curso_personalizada_imagem);
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_text, parent, false);
 
-            //imagem.setImageResource(R.drawable.ponte_arrabid);
-            //nome.setText(curso.getNome());
+            TextView postUserName = (TextView) view.findViewById(R.id.tasdextView);
+            TextView postText = (TextView) view.findViewById(R.id.textdddView);
+            TextView postDate = (TextView) view.findViewById(R.id.texdtView2);
+
             //descricao.setText(curso.getDescricao());
 
-        } else if (categoria.equals(CategoricalPosts.postPhoto)) {
+        } else if (Categorical.equals(CategoricalPosts.postPhoto)) {
             view = act.getLayoutInflater().inflate(R.layout.layout_posts_image, parent, false);
             //TextView nome = (TextView)
             //        view.findViewById(R.id.lista_curso_personalizada_nome);

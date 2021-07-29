@@ -74,7 +74,7 @@
                         android:orientation="vertical"></LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/texdtView2"
                         android:layout_width="138dp"
                         android:layout_height="wrap_content"
                         android:text="Publicado em: 28/07/21 22:06"
