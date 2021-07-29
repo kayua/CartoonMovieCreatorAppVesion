@@ -22,7 +22,6 @@ public class MessageFragment extends Fragment {
 
     private MessageViewModel galleryViewModel;
 
-
     ArrayAdapter<String> adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,

@@ -61,7 +61,7 @@ public class ViewAdapter extends BaseAdapter {
             //descricao.setText(curso.getDescricao());
 
         } else if (categoria.equals(CategoricalPosts.postPhoto)) {
-            view = act.getLayoutInflater().inflate(R.layout.layout_post_image, parent, false);
+            view = act.getLayoutInflater().inflate(R.layout.layout_posts_image, parent, false);
             //TextView nome = (TextView)
             //        view.findViewById(R.id.lista_curso_personalizada_nome);
             // TextView descricao = (TextView)
