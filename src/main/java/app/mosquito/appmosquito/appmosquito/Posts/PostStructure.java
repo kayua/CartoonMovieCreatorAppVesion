@@ -18,43 +18,25 @@ public class PostStructure {
     public PostStructure() { }
 
     public String getPostName() { return postName; }
-
-    public void setPostName(String postName) { this.postName = postName; }
-
     public String getPostUserName() { return postUserName; }
-
-    public void setPostUserName(String postUserName) { this.postUserName = postUserName; }
-
     public String getPostDate() { return postDate; }
-
-    public void setPostDate(String postDate) { this.postDate = postDate; }
-
     public String getPostText() { return postText; }
-
-    public void setPostText(String postText) { this.postText = postText; }
-
     public String getPostLocalization() { return postLocalization; }
-
-    public void setPostLocalization(String postLocalization) { this.postLocalization = postLocalization; }
-
     public int getPostNumberLikes() { return postNumberLikes; }
-
-    public void setPostNumberLikes(int postNumberLikes) { this.postNumberLikes = postNumberLikes; }
-
     public int getPostNumberShares() { return postNumberShares; }
-
-    public void setPostNumberShares(int postNumberShares) { this.postNumberShares = postNumberShares; }
-
     public int getPostNumberComments() { return postNumberComments; }
-
-    public void setPostNumberComments(int postNumberComments) { this.postNumberComments = postNumberComments; }
-
     public EstadoAtual getPostState() { return postState; }
-
-    public void setPostState(EstadoAtual postState) { this.postState = postState; }
-
     public CategoricalPosts getPostCategorical() { return postCategorical; }
 
+    public void setPostUserName(String postUserName) { this.postUserName = postUserName; }
+    public void setPostName(String postName) { this.postName = postName; }
+    public void setPostDate(String postDate) { this.postDate = postDate; }
+    public void setPostText(String postText) { this.postText = postText; }
+    public void setPostLocalization(String postLocalization) { this.postLocalization = postLocalization; }
+    public void setPostNumberLikes(int postNumberLikes) { this.postNumberLikes = postNumberLikes; }
+    public void setPostNumberShares(int postNumberShares) { this.postNumberShares = postNumberShares; }
+    public void setPostNumberComments(int postNumberComments) { this.postNumberComments = postNumberComments; }
+    public void setPostState(EstadoAtual postState) { this.postState = postState; }
     public void setPostCategorical(CategoricalPosts postCategorical) { this.postCategorical = postCategorical; }
 
     @Override
