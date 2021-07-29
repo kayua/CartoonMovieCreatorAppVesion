@@ -2,31 +2,33 @@ package app.mosquito.appmosquito.appmosquito.Posts;
 
 public class PostStructure {
 
-    private String nome;
-    private String descricao;
+    private String nomePost;
+    private String usernamePost;
+    private String datePost;
+    private String textPost;
+
+    private int numberShares;
+    private int numberLikes;
+    private int numberComments;
+
     private EstadoAtual estado;
     private CategoricalPosts categoria;
 
-    public PostStructure(String nome, String descricao, EstadoAtual estado, CategoricalPosts categoria) {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.estado = estado;
-        this.categoria = categoria;
+    public PostStructure() { }
+
+    public String getNomePost() {
+        return nomePost;
     }
 
-    public String getNome() {
-        return nome;
+    public void setNomePost(String nomePost) {
+        this.nomePost = nomePost;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getNumberShares() {
+        return numberShares;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) { this.descricao = descricao; }
+    public void setNumberShares(String numberShares) { this.numberShares = numberShares; }
 
     public EstadoAtual getEstado() { return estado; }
 
@@ -41,7 +43,7 @@ public class PostStructure {
     @Override
     public String toString() {
 
-        return "Curso: " + nome + " Descrição: " +
-                descricao + " Estado: " + estado;
+        return "Curso: " + nomePost + " Descrição: " +
+                numberShares + " Estado: " + estado;
     }
 }
