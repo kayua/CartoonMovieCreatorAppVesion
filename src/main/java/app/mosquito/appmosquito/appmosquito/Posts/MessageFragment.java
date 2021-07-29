@@ -65,9 +65,9 @@ public class MessageFragment extends Fragment {
         postTwo.setPostName("Segundo Post");
         postTwo.setPostUserName("Kayuã Oleques Paim");
         postTwo.setPostDate("28/07/21 23:36");
-        postTwo.setPostCategorical(CategoricalPosts.postPhoto);
+        postTwo.setPostCategorical(CategoricalPosts.postText);
         postTwo.setPostLocalization("Alegrete - RS");
-        postOne.setPostText("Texto de exemplo post");
+        postTwo.setPostText("Texto de exemplo post");
         postTwo.setPostNumberLikes(100);
         postTwo.setPostNumberShares(31);
         postTwo.setPostNumberComments(31);
@@ -76,7 +76,7 @@ public class MessageFragment extends Fragment {
         postThree.setPostName("Terceiro Post");
         postThree.setPostUserName("Kayuã Oleques Paim");
         postThree.setPostDate("28/07/21 23:36");
-        postOne.setPostText("Texto de exemplo post");
+        postThree.setPostText("Texto de exemplo post");
         postThree.setPostCategorical(CategoricalPosts.postMovie);
         postThree.setPostLocalization("Alegrete - RS");
         postThree.setPostNumberLikes(100);

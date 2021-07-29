@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import java.util.List;
 
 import app.mosquito.appmosquito.appmosquito.R;
@@ -16,8 +15,8 @@ public class ViewAdapter extends BaseAdapter {
     private final List<PostStructure> PostList;
     private final Activity act;
 
-    public ViewAdapter(List<PostStructure> postInformations, Activity act) {
-        this.PostList = postInformations;
+    public ViewAdapter(List<PostStructure> postInformation, Activity act) {
+        this.PostList = postInformation;
         this.act = act;
     }
 
@@ -39,10 +38,10 @@ public class ViewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        PostStructure curso = PostList.get(position);
+        PostStructure typePosts = PostList.get(position);
         View view = null;
 
-        CategoricalPosts Categorical = curso.getPostCategorical();
+        CategoricalPosts Categorical = typePosts.getPostCategorical();
 
         if (Categorical.equals(CategoricalPosts.postText)) {
 
@@ -52,9 +51,9 @@ public class ViewAdapter extends BaseAdapter {
             TextView postText = (TextView) view.findViewById(R.id.textdddView);
             TextView postDate = (TextView) view.findViewById(R.id.texdtView2);
 
-            postUserName.setText(curso.getPostUserName());
-            postText.setText(curso.getPostText());
-            postDate.setText(curso.getPostDate());
+            postUserName.setText(typePosts.getPostUserName());
+            postText.setText(typePosts.getPostText());
+            postDate.setText(typePosts.getPostDate());
 
 
         } else if (Categorical.equals(CategoricalPosts.postPhoto)) {
@@ -65,9 +64,9 @@ public class ViewAdapter extends BaseAdapter {
             TextView postText = (TextView) view.findViewById(R.id.texasdasdtView);
             TextView postDate = (TextView) view.findViewById(R.id.textView2);
 
-            postUserName.setText(curso.getPostUserName());
-            postText.setText(curso.getPostText());
-            postDate.setText(curso.getPostDate());
+            postUserName.setText(typePosts.getPostUserName());
+            postText.setText(typePosts.getPostText());
+            postDate.setText(typePosts.getPostDate());
 
         } else if (Categorical.equals(CategoricalPosts.postMovie)) {
 
@@ -77,9 +76,9 @@ public class ViewAdapter extends BaseAdapter {
             TextView postText = (TextView) view.findViewById(R.id.textdddView);
             TextView postDate = (TextView) view.findViewById(R.id.textVsdasiew2);
 
-            postUserName.setText(curso.getPostUserName());
-            postText.setText(curso.getPostText());
-            postDate.setText(curso.getPostDate());
+            postUserName.setText(typePosts.getPostUserName());
+            postText.setText(typePosts.getPostText());
+            postDate.setText(typePosts.getPostDate());
 
         }
 
