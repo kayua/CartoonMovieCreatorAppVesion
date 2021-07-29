@@ -6,6 +6,8 @@ public class PostStructure {
     private String usernamePost;
     private String datePost;
     private String textPost;
+    private String localizationPost;
+
 
     private int numberShares;
     private int numberLikes;
@@ -19,6 +21,15 @@ public class PostStructure {
     public String getNomePost() {
         return nomePost;
     }
+
+    public String getUsernamePost(){return usernamePost;}
+
+    public String getDatePost(){return datePost;}
+
+    public String getlocalizationPost(){return localizationPost;}
+
+
+
 
     public void setNomePost(String nomePost) {
         this.nomePost = nomePost;
