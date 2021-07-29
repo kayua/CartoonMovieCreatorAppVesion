@@ -22,20 +22,103 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="360dp"
+                android:layout_height="320dp"
                 android:orientation="vertical">
 
 
+                <TextView
+                    android:id="@+id/tasdextView2"
+                    android:layout_width="202dp"
+                    android:layout_height="23dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="99dp"
+                    android:layout_marginTop="235dp"
+                    android:layout_marginEnd="98dp"
+                    android:layout_marginBottom="82dp"
+                    android:text="Kayuã Oleques Paim"
+                    android:textAlignment="center"
+                    android:textColor="#838181"
+                    android:textColorHint="#757474"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@drawable/example12" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imageViewSecondImage"
+                    android:layout_width="204dp"
+                    android:layout_height="177dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="86dp"
+                    android:layout_marginEnd="95dp"
+                    android:layout_marginBottom="97dp"
+                    android:src="@drawable/icon_general_user"
+                    app:civ_border_color="#BCF1EEEE"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.047" />
+
                 <LinearLayout
-                    android:layout_width="123dp"
-                    android:layout_height="50dp"
+                    android:layout_width="128dp"
+                    android:layout_height="54dp"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="257dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="9dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/icon_share" />
+
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/h" />
+
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/cameras" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="129dp"
+                    android:layout_height="52dp"
 
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="6dp"
-                    android:layout_marginTop="290dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="259dp"
+                    android:layout_marginBottom="9dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -61,53 +144,6 @@
                         android:layout_marginTop="10dp"
                         app:srcCompat="@drawable/cameras" />
                 </LinearLayout>
-
-                <TextView
-                    android:id="@+id/tasdextView2"
-                    android:layout_width="200dp"
-                    android:layout_height="20dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="101dp"
-                    android:layout_marginTop="259dp"
-                    android:layout_marginEnd="98dp"
-                    android:layout_marginBottom="81dp"
-                    android:text="Kayuã Oleques Paim"
-                    android:textAlignment="center"
-                    android:textColor="#838181"
-                    android:textColorHint="#757474"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:background="@drawable/example12" />
-
-                <com.mikhaellopez.circularimageview.CircularImageView
-                    android:id="@+id/imageViewSecondImage"
-                    android:layout_width="204dp"
-                    android:layout_height="177dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="105dp"
-                    android:layout_marginEnd="95dp"
-                    android:layout_marginBottom="78dp"
-                    android:src="@drawable/icon_general_user"
-                    app:civ_border_color="#BCF1EEEE"
-                    app:civ_border_width="1dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.047" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -149,41 +185,6 @@
                         app:srcCompat="@drawable/cameras" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="123dp"
-                    android:layout_height="49dp"
-
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="287dp"
-                    android:layout_marginEnd="9dp"
-                    android:layout_marginBottom="24dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/icon_share" />
-
-                    <ImageView
-
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/h" />
-
-                    <ImageView
-
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/cameras" />
-                </LinearLayout>
             </RelativeLayout>
 
         </LinearLayout>
