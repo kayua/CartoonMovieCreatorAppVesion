@@ -26,6 +26,40 @@
                 android:orientation="vertical">
 
 
+                <LinearLayout
+                    android:layout_width="123dp"
+                    android:layout_height="50dp"
+
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="250dp"
+                    android:layout_marginBottom="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/icon_share" />
+
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/h" />
+
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/cameras" />
+                </LinearLayout>
+
                 <TextView
                     android:id="@+id/tasdextView2"
                     android:layout_width="161dp"
@@ -35,9 +69,9 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="125dp"
-                    android:layout_marginTop="297dp"
+                    android:layout_marginTop="309dp"
                     android:layout_marginEnd="112dp"
-                    android:layout_marginBottom="43dp"
+                    android:layout_marginBottom="31dp"
                     android:text="Kayuã Oleques Paim"
                     android:textColor="#838181"
                     android:textColorHint="#757474"
@@ -47,7 +81,7 @@
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="180dp"
                     android:background="@drawable/example12" />
 
                 <com.mikhaellopez.circularimageview.CircularImageView
@@ -112,17 +146,15 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="122dp"
-                    android:layout_height="52dp"
+                    android:layout_width="123dp"
+                    android:layout_height="49dp"
 
-                    android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="269dp"
-                    android:layout_marginTop="242dp"
+                    android:layout_marginTop="250dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="66dp"
+                    android:layout_marginBottom="61dp"
                     android:orientation="horizontal">
 
                     <ImageView
