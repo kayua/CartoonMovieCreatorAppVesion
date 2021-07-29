@@ -64,17 +64,18 @@
 
                 <TextView
                     android:id="@+id/tasdextView2"
-                    android:layout_width="161dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="125dp"
-                    android:layout_marginTop="283dp"
-                    android:layout_marginEnd="112dp"
-                    android:layout_marginBottom="57dp"
+                    android:layout_marginStart="101dp"
+                    android:layout_marginTop="258dp"
+                    android:layout_marginEnd="100dp"
+                    android:layout_marginBottom="81dp"
                     android:text="Kayuã Oleques Paim"
+                    android:textAlignment="center"
                     android:textColor="#838181"
                     android:textColorHint="#757474"
                     android:textSize="15sp"
@@ -118,6 +119,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
