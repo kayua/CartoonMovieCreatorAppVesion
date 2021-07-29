@@ -46,6 +46,7 @@ public class MessageFragment extends Fragment {
         return root;
     }
     private List<PostStructure> todosOsCursos() {
+
         PostStructure postOne = new PostStructure();
         PostStructure postTwo = new PostStructure();
         PostStructure postThree = new PostStructure();

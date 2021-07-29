@@ -52,19 +52,35 @@ public class ViewAdapter extends BaseAdapter {
             TextView postText = (TextView) view.findViewById(R.id.textdddView);
             TextView postDate = (TextView) view.findViewById(R.id.texdtView2);
 
-            //descricao.setText(curso.getDescricao());
+            postUserName.setText(curso.getPostUserName());
+            postText.setText(curso.getPostText());
+            postDate.setText(curso.getPostDate());
+
 
         } else if (Categorical.equals(CategoricalPosts.postPhoto)) {
+
             view = act.getLayoutInflater().inflate(R.layout.layout_posts_image, parent, false);
-            //TextView nome = (TextView)
-            //        view.findViewById(R.id.lista_curso_personalizada_nome);
-            // TextView descricao = (TextView)
-            //        view.findViewById(R.id.lista_curso_personalizada_descricao);
-            // ImageView imagem = (ImageView)
-            //         view.findViewById(R.id.lista_curso_personalizada_imagem);
-            // imagem.setImageResource(R.drawable.ponte_arrabid);
-            // nome.setText(curso.getNome());
-            // descricao.setText(curso.getDescricao());
+
+            TextView postUserName = (TextView) view.findViewById(R.id.textVieasdw);
+            TextView postText = (TextView) view.findViewById(R.id.texasdasdtView);
+            TextView postDate = (TextView) view.findViewById(R.id.textView2);
+
+            postUserName.setText(curso.getPostUserName());
+            postText.setText(curso.getPostText());
+            postDate.setText(curso.getPostDate());
+
+        } else if (Categorical.equals(CategoricalPosts.postMovie)) {
+
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_video, parent, false);
+
+            TextView postUserName = (TextView) view.findViewById(R.id.tasdextView);
+            TextView postText = (TextView) view.findViewById(R.id.textdddView);
+            TextView postDate = (TextView) view.findViewById(R.id.textVsdasiew2);
+
+            postUserName.setText(curso.getPostUserName());
+            postText.setText(curso.getPostText());
+            postDate.setText(curso.getPostDate());
+
         }
 
         return view;
