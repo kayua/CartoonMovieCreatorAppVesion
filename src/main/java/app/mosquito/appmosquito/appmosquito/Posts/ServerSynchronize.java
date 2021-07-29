@@ -61,5 +61,6 @@ public class ServerSynchronize extends AppCompatActivity {
         postThree.setPostState(EstadoAtual.FAZENDO);
 
         return new ArrayList<>(Arrays.asList(postOne, postTwo, postThree));
+
     }
 }

@@ -13,22 +13,22 @@ import app.mosquito.appmosquito.appmosquito.R;
 
 public class ViewAdapter extends BaseAdapter {
 
-    private final List<PostStructure> cursos;
+    private final List<PostStructure> PostList;
     private final Activity act;
 
-    public ViewAdapter(List<PostStructure> cursos, Activity act) {
-        this.cursos = cursos;
+    public ViewAdapter(List<PostStructure> postInformations, Activity act) {
+        this.PostList = postInformations;
         this.act = act;
     }
 
     @Override
     public int getCount() {
-        return cursos.size();
+        return PostList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return cursos.get(position);
+        return PostList.get(position);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class ViewAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
-        PostStructure curso = cursos.get(position);
+        PostStructure curso = PostList.get(position);
 
         View view = null;
 
