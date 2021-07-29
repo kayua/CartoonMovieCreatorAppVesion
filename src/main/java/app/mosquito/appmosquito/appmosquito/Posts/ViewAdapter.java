@@ -48,6 +48,14 @@ public class ViewAdapter extends BaseAdapter {
 
             view = act.getLayoutInflater().inflate(R.layout.layout_post_text, parent, false);
 
+            TextView postUserName = (TextView) view.findViewById(R.id.dasccdasasdg);
+            TextView postText = (TextView) view.findViewById(R.id.dasdasasdg);
+            TextView postDate = (TextView) view.findViewById(R.id.texdtView2);
+
+            postUserName.setText(curso.getPostUserName());
+            postText.setText(curso.getPostText());
+            postDate.setText(curso.getPostDate());
+
 
         } else if (Categorical.equals(CategoricalPosts.postPhoto)) {
 
