@@ -48,7 +48,7 @@ public class ViewAdapter extends BaseAdapter {
 
         if (categoria.equals(CategoricalPosts.JAVA)) {
 
-            view = act.getLayoutInflater().inflate(R.layout.layout_post_text, parent, false);
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_multi_images, parent, false);
             //TextView nome = (TextView)
             //        view.findViewById(R.id.lista_curso_personalizada_nome);
             //TextView descricao = (TextView)
@@ -61,7 +61,7 @@ public class ViewAdapter extends BaseAdapter {
             //descricao.setText(curso.getDescricao());
 
         } else if (categoria.equals(CategoricalPosts.ANDROID)) {
-            view = act.getLayoutInflater().inflate(R.layout.layout_post_images, parent, false);
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_image, parent, false);
             //TextView nome = (TextView)
             //        view.findViewById(R.id.lista_curso_personalizada_nome);
             // TextView descricao = (TextView)
