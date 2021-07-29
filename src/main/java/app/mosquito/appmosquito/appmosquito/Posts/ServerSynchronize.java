@@ -35,11 +35,30 @@ public class ServerSynchronize extends AppCompatActivity {
         postOne.setPostLocalization("Alegrete - RS");
         postOne.setPostNumberLikes(100);
         postOne.setPostNumberShares(31);
+        postOne.setPostNumberComments(31);
+        postOne.setPostState(EstadoAtual.FAZENDO);
+
+        postTwo.setPostName("Segundo Post");
+        postTwo.setPostUserName("Kayuã Oleques Paim");
+        postTwo.setPostDate("28/07/21 23:36");
+        postTwo.setPostCategorical(CategoricalPosts.postPhoto);
+        postTwo.setPostLocalization("Alegrete - RS");
+        postTwo.setPostNumberLikes(100);
+        postTwo.setPostNumberShares(31);
+        postTwo.setPostNumberComments(31);
+        postTwo.setPostState(EstadoAtual.FAZENDO);
+
+        postThree.setPostName("Terceiro Post");
+        postThree.setPostUserName("Kayuã Oleques Paim");
+        postThree.setPostDate("28/07/21 23:36");
+        postThree.setPostCategorical(CategoricalPosts.postPhoto);
+        postThree.setPostLocalization("Alegrete - RS");
+        postThree.setPostNumberLikes(100);
+        postThree.setPostNumberShares(31);
+        postThree.setPostNumberComments(31);
+        postThree.setPostState(EstadoAtual.FAZENDO);
 
 
-
-
-
-        return new ArrayList<>(Arrays.asList(postOne, postTwo, postThree, postFour, postFive, postSix));
+        return new ArrayList<>(Arrays.asList(postOne, postTwo, postThree));
     }
 }
