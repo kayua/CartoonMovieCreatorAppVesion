@@ -44,7 +44,7 @@ public class ViewAdapter extends BaseAdapter {
 
         View view = null;
 
-        CategoricalPosts categoria = curso.getCategorical();
+        CategoricalPosts categoria = curso.getPostCategorical();
 
         if (categoria.equals(CategoricalPosts.JAVA)) {
 

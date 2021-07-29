@@ -12,8 +12,8 @@ public class PostStructure {
     private int postNumberShares;
     private int postNumberComments;
 
-    private EstadoAtual state;
-    private CategoricalPosts categorical;
+    private EstadoAtual postState;
+    private CategoricalPosts postCategorical;
 
     public PostStructure() { }
 
@@ -33,7 +33,7 @@ public class PostStructure {
 
     public int getCommentsPost(){return postNumberComments;}
 
-    public int getState(){return postNumberShares;}
+    public int getPostState(){return postNumberShares;}
 
     public int getCommentsPost(){return postNumberComments;}
 
@@ -51,20 +51,20 @@ public class PostStructure {
 
     public void setPostNumberLikes(String postNumberLikes) { this.postNumberLikes = postNumberLikes; }
 
-    public EstadoAtual getState() { return state; }
+    public EstadoAtual getState() { return postState; }
 
-    public void setState(EstadoAtual state) { this.state = state; }
+    public void setPostState(EstadoAtual postState) { this.postState = postState; }
 
-    public CategoricalPosts getCategorical() {
-        return categorical;
+    public CategoricalPosts getPostCategorical() {
+        return postCategorical;
     }
 
-    public void setCategorical(CategoricalPosts categorical) { this.categorical = categorical; }
+    public void setPostCategorical(CategoricalPosts postCategorical) { this.postCategorical = postCategorical; }
 
     @Override
     public String toString() {
 
         return "Curso: " + postName + " Descrição: " +
-                postNumberLikes + " Estado: " + state;
+                postNumberLikes + " Estado: " + postState;
     }
 }
