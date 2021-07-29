@@ -2,64 +2,69 @@ package app.mosquito.appmosquito.appmosquito.Posts;
 
 public class PostStructure {
 
-    private String nomePost;
-    private String usernamePost;
-    private String datePost;
-    private String textPost;
-    private String localizationPost;
+    private String postName;
+    private String postUserName;
+    private String postDate;
+    private String postText;
+    private String postLocalization;
 
+    private int postNumberLikes;
+    private int postNumberShares;
+    private int postNumberComments;
 
-    private int numberShares;
-    private int numberLikes;
-    private int numberComments;
-
-    private EstadoAtual estado;
-    private CategoricalPosts categoria;
+    private EstadoAtual state;
+    private CategoricalPosts categorical;
 
     public PostStructure() { }
 
-    public String getNomePost() {
-        return nomePost;
+    public String getPostName() {
+        return postName;
     }
 
-    public String getUsernamePost(){return usernamePost;}
+    public String getPostUserName(){return postUserName;}
 
-    public String getDatePost(){return datePost;}
+    public String getPostDate(){return postDate;}
 
-    public String getLocalizationPost(){return localizationPost;}
+    public String getPostLocalization(){return postLocalization;}
 
-    public int getNumberSharesPost(){return numberShares;}
+    public int getNumberSharesPost(){return postNumberLikes;}
 
-    public int getNumberLikes(){return numberLikes;}
+    public int getPostNumberShares(){return postNumberShares;}
 
-    public int getLocalizationPost(){return localizationPost;}
+    public int getCommentsPost(){return postNumberComments;}
+
+    public int getState(){return postNumberShares;}
+
+    public int getCommentsPost(){return postNumberComments;}
 
 
 
-    public void setNomePost(String nomePost) {
-        this.nomePost = nomePost;
+
+
+    public void setPostName(String postName) {
+        this.postName = postName;
     }
 
-    public String getNumberShares() {
-        return numberShares;
+    public String getPostNumberLikes() {
+        return postNumberLikes;
     }
 
-    public void setNumberShares(String numberShares) { this.numberShares = numberShares; }
+    public void setPostNumberLikes(String postNumberLikes) { this.postNumberLikes = postNumberLikes; }
 
-    public EstadoAtual getEstado() { return estado; }
+    public EstadoAtual getState() { return state; }
 
-    public void setEstado(EstadoAtual estado) { this.estado = estado; }
+    public void setState(EstadoAtual state) { this.state = state; }
 
-    public CategoricalPosts getCategoria() {
-        return categoria;
+    public CategoricalPosts getCategorical() {
+        return categorical;
     }
 
-    public void setCategoria(CategoricalPosts categoria) { this.categoria = categoria; }
+    public void setCategorical(CategoricalPosts categorical) { this.categorical = categorical; }
 
     @Override
     public String toString() {
 
-        return "Curso: " + nomePost + " Descrição: " +
-                numberShares + " Estado: " + estado;
+        return "Curso: " + postName + " Descrição: " +
+                postNumberLikes + " Estado: " + state;
     }
 }
