@@ -1,7 +1,7 @@
-package app.mosquito.appmosquito.appmosquito.Posts.Profile;
+package app.mosquito.appmosquito.appmosquito.Posts.BarFollower;
 
 
-public enum ProfileEstadoAtual {
+public enum FollowerState {
 
     FAZENDO {
         @Override

@@ -12,7 +12,7 @@ public class ProfileStructure {
     private int postNumberShares;
     private int postNumberComments;
 
-    private ProfileEstadoAtual postState;
+    private ProfileState postState;
     private ProfileCategorical postCategorical;
 
     public ProfileStructure() { }
@@ -25,7 +25,7 @@ public class ProfileStructure {
     public int getPostNumberLikes() { return postNumberLikes; }
     public int getPostNumberShares() { return postNumberShares; }
     public int getPostNumberComments() { return postNumberComments; }
-    public ProfileEstadoAtual getPostState() { return postState; }
+    public ProfileState getPostState() { return postState; }
     public ProfileCategorical getPostCategorical() { return postCategorical; }
 
     public void setPostUserName(String postUserName) { this.postUserName = postUserName; }
@@ -36,7 +36,7 @@ public class ProfileStructure {
     public void setPostNumberLikes(int postNumberLikes) { this.postNumberLikes = postNumberLikes; }
     public void setPostNumberShares(int postNumberShares) { this.postNumberShares = postNumberShares; }
     public void setPostNumberComments(int postNumberComments) { this.postNumberComments = postNumberComments; }
-    public void setPostState(ProfileEstadoAtual postState) { this.postState = postState; }
+    public void setPostState(ProfileState postState) { this.postState = postState; }
     public void setPostCategorical(ProfileCategorical postCategorical) { this.postCategorical = postCategorical; }
 
     @Override

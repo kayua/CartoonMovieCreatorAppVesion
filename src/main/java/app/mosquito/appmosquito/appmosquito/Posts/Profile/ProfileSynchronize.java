@@ -40,7 +40,7 @@ public class ProfileSynchronize extends AppCompatActivity {
         postOne.setPostNumberShares(31);
         postOne.setPostNumberComments(31);
         postOne.setPostText("Texto de exemplo post");
-        postOne.setPostState(ProfileEstadoAtual.FAZENDO);
+        postOne.setPostState(ProfileState.FAZENDO);
 
         postTwo.setPostName("Segundo Post");
         postTwo.setPostUserName("Kayuã Oleques Paim");
@@ -51,7 +51,7 @@ public class ProfileSynchronize extends AppCompatActivity {
         postTwo.setPostNumberLikes(100);
         postTwo.setPostNumberShares(31);
         postTwo.setPostNumberComments(31);
-        postTwo.setPostState(ProfileEstadoAtual.FAZENDO);
+        postTwo.setPostState(ProfileState.FAZENDO);
 
         postThree.setPostName("Terceiro Post");
         postThree.setPostUserName("Kayuã Oleques Paim");
@@ -62,7 +62,7 @@ public class ProfileSynchronize extends AppCompatActivity {
         postThree.setPostNumberLikes(100);
         postThree.setPostNumberShares(31);
         postThree.setPostNumberComments(31);
-        postThree.setPostState(ProfileEstadoAtual.FAZENDO);
+        postThree.setPostState(ProfileState.FAZENDO);
 
         return new ArrayList<>(Arrays.asList(postOne, postTwo, postThree));
 
