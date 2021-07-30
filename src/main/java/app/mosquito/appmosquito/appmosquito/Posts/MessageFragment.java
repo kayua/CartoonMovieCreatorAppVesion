@@ -57,7 +57,7 @@ public class MessageFragment extends Fragment {
         postOne.setPostName("Primeiro Post");
         postOne.setPostUserName("Kayuã Oleques Paim");
         postOne.setPostDate("28/07/21 23:36");
-        postOne.setPostCategorical(CategoricalPosts.postSuggest);
+        postOne.setPostCategorical(PostCategorical.postSuggest);
         postOne.setPostLocalization("Alegrete - RS");
         postOne.setPostNumberLikes(100);
         postOne.setPostNumberShares(31);
@@ -70,7 +70,7 @@ public class MessageFragment extends Fragment {
         postThree.setPostUserName("Kayuã Oleques Paim");
         postThree.setPostDate("28/07/21 23:36");
         postThree.setPostText("Texto de exemplo post");
-        postThree.setPostCategorical(CategoricalPosts.postMovie);
+        postThree.setPostCategorical(PostCategorical.postMovie);
         postThree.setPostLocalization("Alegrete - RS");
         postThree.setPostNumberLikes(100);
         postThree.setPostNumberShares(31);
@@ -81,7 +81,7 @@ public class MessageFragment extends Fragment {
         postFour.setPostUserName("Kayuã Oleques Paim");
         postFour.setPostDate("28/07/21 23:36");
         postFour.setPostText("Texto de exemplo post");
-        postFour.setPostCategorical(CategoricalPosts.postText);
+        postFour.setPostCategorical(PostCategorical.postText);
         postFour.setPostLocalization("Alegrete - RS");
         postFour.setPostNumberLikes(100);
         postFour.setPostNumberShares(31);
@@ -92,7 +92,7 @@ public class MessageFragment extends Fragment {
         postHeader.setPostUserName("Kayuã Oleques Paim");
         postHeader.setPostDate("28/07/21 23:36");
         postHeader.setPostText("Texto de exemplo post");
-        postHeader.setPostCategorical(CategoricalPosts.postText);
+        postHeader.setPostCategorical(PostCategorical.postText);
         postHeader.setPostLocalization("Alegrete - RS");
         postHeader.setPostNumberLikes(100);
         postHeader.setPostNumberShares(31);

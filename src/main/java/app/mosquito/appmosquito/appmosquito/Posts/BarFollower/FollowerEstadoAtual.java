@@ -1,7 +1,7 @@
 package app.mosquito.appmosquito.appmosquito.Posts.BarFollower;
 
 
-public enum EstadoAtualFollower {
+public enum FollowerEstadoAtual {
 
     FAZENDO {
         @Override

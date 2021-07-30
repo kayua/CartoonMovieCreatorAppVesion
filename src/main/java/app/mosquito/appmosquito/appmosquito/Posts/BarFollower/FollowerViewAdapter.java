@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Posts;
+package app.mosquito.appmosquito.appmosquito.Posts.BarFollower;
 
 import android.app.Activity;
 import android.view.View;
@@ -8,15 +8,17 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import app.mosquito.appmosquito.appmosquito.Posts.PostCategorical;
+import app.mosquito.appmosquito.appmosquito.Posts.PostStructure;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ViewAdapter extends BaseAdapter {
+public class FollowerViewAdapter extends BaseAdapter {
 
     private final List<PostStructure> PostList;
     private final Activity act;
 
-    public ViewAdapter(List<PostStructure> postInformations, Activity act) {
+    public FollowerViewAdapter(List<PostStructure> postInformations, Activity act) {
         this.PostList = postInformations;
         this.act = act;
     }

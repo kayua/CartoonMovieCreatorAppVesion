@@ -1,6 +1,6 @@
 package app.mosquito.appmosquito.appmosquito.Posts.BarFollower;
 
-import app.mosquito.appmosquito.appmosquito.Posts.CategoricalPosts;
+import app.mosquito.appmosquito.appmosquito.Posts.PostCategorical;
 import app.mosquito.appmosquito.appmosquito.Posts.EstadoAtual;
 
 public class FollowerStructure {
@@ -14,7 +14,7 @@ public class FollowerStructure {
     private int postNumberShares;
     private int postNumberComments;
     private EstadoAtual postState;
-    private CategoricalPosts postCategorical;
+    private PostCategorical postCategorical;
 
     public FollowerStructure() { }
 
@@ -27,7 +27,7 @@ public class FollowerStructure {
     public int getPostNumberShares() { return postNumberShares; }
     public int getPostNumberComments() { return postNumberComments; }
     public EstadoAtual getPostState() { return postState; }
-    public CategoricalPosts getPostCategorical() { return postCategorical; }
+    public PostCategorical getPostCategorical() { return postCategorical; }
 
     public void setPostUserName(String postUserName) { this.postUserName = postUserName; }
     public void setPostName(String postName) { this.postName = postName; }
@@ -38,7 +38,7 @@ public class FollowerStructure {
     public void setPostNumberShares(int postNumberShares) { this.postNumberShares = postNumberShares; }
     public void setPostNumberComments(int postNumberComments) { this.postNumberComments = postNumberComments; }
     public void setPostState(EstadoAtual postState) { this.postState = postState; }
-    public void setPostCategorical(CategoricalPosts postCategorical) { this.postCategorical = postCategorical; }
+    public void setPostCategorical(PostCategorical postCategorical) { this.postCategorical = postCategorical; }
 
     @Override
     public String toString() {
