@@ -7,11 +7,9 @@ public class PostStructure {
     private String postDate;
     private String postText;
     private String postLocalization;
-
     private int postNumberLikes;
     private int postNumberShares;
     private int postNumberComments;
-
     private EstadoAtual postState;
     private CategoricalPosts postCategorical;
 
