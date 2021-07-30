@@ -19,22 +19,22 @@ import java.util.List;
 
 import app.mosquito.appmosquito.appmosquito.R;
 
-public class PostFragment extends Fragment {
+public class MakePostFragment extends Fragment {
 
-    private PostViewModel galleryViewModel;
+    private MakePostViewModel galleryViewModel;
 
     ArrayAdapter<String> adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel = new ViewModelProvider(this).get(PostViewModel.class);
+        galleryViewModel = new ViewModelProvider(this).get(MakePostViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_message, container, false);
         ListView list = root.findViewById(R.id.chat_list_view);
 
         ListView lista = (ListView) root.findViewById(R.id.chat_list_view);
-        List<PostStructure> cursos = todosOsCursos();
-        PostViewAdapter adapter = new PostViewAdapter(cursos, getActivity());
+        List<MakePostStructure> cursos = todosOsCursos();
+        MakePostViewAdapter adapter = new MakePostViewAdapter(cursos, getActivity());
         lista.setAdapter(adapter);
 
 
@@ -46,58 +46,58 @@ public class PostFragment extends Fragment {
         });
         return root;
     }
-    private List<PostStructure> todosOsCursos() {
+    private List<MakePostStructure> todosOsCursos() {
 
-        PostStructure postOne = new PostStructure();
-        PostStructure postTwo = new PostStructure();
-        PostStructure postThree = new PostStructure();
-        PostStructure postFour = new PostStructure();
-        PostStructure postHeader = new PostStructure();
+        MakePostStructure postOne = new MakePostStructure();
+        MakePostStructure postTwo = new MakePostStructure();
+        MakePostStructure postThree = new MakePostStructure();
+        MakePostStructure postFour = new MakePostStructure();
+        MakePostStructure postHeader = new MakePostStructure();
 
         postOne.setPostName("Primeiro Post");
         postOne.setPostUserName("Kayuã Oleques Paim");
         postOne.setPostDate("28/07/21 23:36");
-        postOne.setPostCategorical(PostCategorical.postSuggest);
+        postOne.setPostCategorical(MakePostCategorical.postSuggest);
         postOne.setPostLocalization("Alegrete - RS");
         postOne.setPostNumberLikes(100);
         postOne.setPostNumberShares(31);
         postOne.setPostNumberComments(31);
         postOne.setPostText("Texto de exemplo post");
-        postOne.setPostState(PostState.FAZENDO);
+        postOne.setPostState(MakePostState.FAZENDO);
 
 
         postThree.setPostName("Terceiro Post");
         postThree.setPostUserName("Kayuã Oleques Paim");
         postThree.setPostDate("28/07/21 23:36");
         postThree.setPostText("Texto de exemplo post");
-        postThree.setPostCategorical(PostCategorical.postMovie);
+        postThree.setPostCategorical(MakePostCategorical.postMovie);
         postThree.setPostLocalization("Alegrete - RS");
         postThree.setPostNumberLikes(100);
         postThree.setPostNumberShares(31);
         postThree.setPostNumberComments(31);
-        postThree.setPostState(PostState.FAZENDO);
+        postThree.setPostState(MakePostState.FAZENDO);
 
         postFour.setPostName("Terceiro Post");
         postFour.setPostUserName("Kayuã Oleques Paim");
         postFour.setPostDate("28/07/21 23:36");
         postFour.setPostText("Texto de exemplo post");
-        postFour.setPostCategorical(PostCategorical.postText);
+        postFour.setPostCategorical(MakePostCategorical.postText);
         postFour.setPostLocalization("Alegrete - RS");
         postFour.setPostNumberLikes(100);
         postFour.setPostNumberShares(31);
         postFour.setPostNumberComments(31);
-        postFour.setPostState(PostState.FAZENDO);
+        postFour.setPostState(MakePostState.FAZENDO);
 
         postHeader.setPostName("Terceiro Post");
         postHeader.setPostUserName("Kayuã Oleques Paim");
         postHeader.setPostDate("28/07/21 23:36");
         postHeader.setPostText("Texto de exemplo post");
-        postHeader.setPostCategorical(PostCategorical.postText);
+        postHeader.setPostCategorical(MakePostCategorical.postText);
         postHeader.setPostLocalization("Alegrete - RS");
         postHeader.setPostNumberLikes(100);
         postHeader.setPostNumberShares(31);
         postHeader.setPostNumberComments(31);
-        postHeader.setPostState(PostState.FAZENDO);
+        postHeader.setPostState(MakePostState.FAZENDO);
 
     return new ArrayList<>(Arrays.asList(postHeader, postOne, postThree, postFour));
 }

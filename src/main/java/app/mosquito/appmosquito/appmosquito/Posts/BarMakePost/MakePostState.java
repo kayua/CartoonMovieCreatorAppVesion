@@ -1,7 +1,7 @@
 package app.mosquito.appmosquito.appmosquito.Posts.BarMakePost;
 
 
-public enum PostState {
+public enum MakePostState {
 
     FAZENDO {
         @Override

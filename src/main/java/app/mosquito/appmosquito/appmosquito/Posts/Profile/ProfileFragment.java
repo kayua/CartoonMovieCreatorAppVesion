@@ -33,8 +33,8 @@ public class ProfileFragment extends Fragment {
         ListView list = root.findViewById(R.id.chat_list_view);
 
         ListView lista = (ListView) root.findViewById(R.id.chat_list_view);
-        List<PostStructure> cursos = todosOsCursos();
-        ViewAdapter adapter = new ViewAdapter(cursos, getActivity());
+        List<ProfileStructure> cursos = todosOsCursos();
+        ProfileViewAdapter adapter = new ProfileViewAdapter(cursos, getActivity());
         lista.setAdapter(adapter);
 
 
@@ -46,44 +46,44 @@ public class ProfileFragment extends Fragment {
         });
         return root;
     }
-    private List<PostStructure> todosOsCursos() {
+    private List<ProfileStructure> todosOsCursos() {
 
-        PostStructure postOne = new PostStructure();
-        PostStructure postTwo = new PostStructure();
-        PostStructure postThree = new PostStructure();
+        ProfileStructure postOne = new ProfileStructure();
+        ProfileStructure postTwo = new ProfileStructure();
+        ProfileStructure postThree = new ProfileStructure();
 
         postOne.setPostName("Primeiro Post");
         postOne.setPostUserName("Kayuã Oleques Paim");
         postOne.setPostDate("28/07/21 23:36");
-        postOne.setPostCategorical(CategoricalPosts.postPhoto);
+        postOne.setPostCategorical(ProfileCategorical.postPhoto);
         postOne.setPostLocalization("Alegrete - RS");
         postOne.setPostNumberLikes(100);
         postOne.setPostNumberShares(31);
         postOne.setPostNumberComments(31);
         postOne.setPostText("Texto de exemplo post");
-        postOne.setPostState(EstadoAtual.FAZENDO);
+        postOne.setPostState(ProfileEstadoAtual.FAZENDO);
 
         postTwo.setPostName("Segundo Post");
         postTwo.setPostUserName("Kayuã Oleques Paim");
         postTwo.setPostDate("28/07/21 23:36");
-        postTwo.setPostCategorical(CategoricalPosts.postText);
+        postTwo.setPostCategorical(ProfileCategorical.postText);
         postTwo.setPostLocalization("Alegrete - RS");
         postTwo.setPostText("Texto de exemplo post");
         postTwo.setPostNumberLikes(100);
         postTwo.setPostNumberShares(31);
         postTwo.setPostNumberComments(31);
-        postTwo.setPostState(EstadoAtual.FAZENDO);
+        postTwo.setPostState(ProfileEstadoAtual.FAZENDO);
 
         postThree.setPostName("Terceiro Post");
         postThree.setPostUserName("Kayuã Oleques Paim");
         postThree.setPostDate("28/07/21 23:36");
         postThree.setPostText("Texto de exemplo post");
-        postThree.setPostCategorical(CategoricalPosts.postMovie);
+        postThree.setPostCategorical(ProfileCategorical.postMovie);
         postThree.setPostLocalization("Alegrete - RS");
         postThree.setPostNumberLikes(100);
         postThree.setPostNumberShares(31);
         postThree.setPostNumberComments(31);
-        postThree.setPostState(EstadoAtual.FAZENDO);
+        postThree.setPostState(ProfileEstadoAtual.FAZENDO);
 
     return new ArrayList<>(Arrays.asList(postOne, postTwo, postThree));
 }

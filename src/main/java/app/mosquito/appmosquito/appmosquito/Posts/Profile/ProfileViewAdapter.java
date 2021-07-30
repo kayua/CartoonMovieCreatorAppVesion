@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Posts.BarMakePost;
+package app.mosquito.appmosquito.appmosquito.Posts.Profile;
 
 import android.app.Activity;
 import android.view.View;
@@ -11,12 +11,12 @@ import java.util.List;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class PostViewAdapter extends BaseAdapter {
+public class ProfileViewAdapter extends BaseAdapter {
 
-    private final List<PostStructure> PostList;
+    private final List<ProfileStructure> PostList;
     private final Activity act;
 
-    public PostViewAdapter(List<PostStructure> postInformations, Activity act) {
+    public ProfileViewAdapter(List<ProfileStructure> postInformations, Activity act) {
         this.PostList = postInformations;
         this.act = act;
     }
@@ -39,24 +39,25 @@ public class PostViewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        PostStructure curso = PostList.get(position);
+        ProfileStructure curso = PostList.get(position);
         View view = null;
 
-        PostCategorical Categorical = curso.getPostCategorical();
+        ProfileCategorical Categorical = curso.getPostCategorical();
 
-        if (Categorical.equals(PostCategorical.postText)) {
+        if (Categorical.equals(ProfileCategorical.postText)) {
 
-            view = act.getLayoutInflater().inflate(R.layout.layout_post_make, parent, false);
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_text, parent, false);
 
-            //TextView postUserName = (TextView) view.findViewById(R.id.dasccdasasdg);
-            //TextView postText = (TextView) view.findViewById(R.id.dasdasasdg);
-            //TextView postDate = (TextView) view.findViewById(R.id.texdtView2);
-            //postUserName.setText(curso.getPostUserName());
-            //postText.setText(curso.getPostText());
-            //postDate.setText(curso.getPostDate());
+            TextView postUserName = (TextView) view.findViewById(R.id.dasccdasasdg);
+            TextView postText = (TextView) view.findViewById(R.id.dasdasasdg);
+            TextView postDate = (TextView) view.findViewById(R.id.texdtView2);
+
+            postUserName.setText(curso.getPostUserName());
+            postText.setText(curso.getPostText());
+            postDate.setText(curso.getPostDate());
 
 
-        } else if (Categorical.equals(PostCategorical.postPhoto)) {
+        } else if (Categorical.equals(ProfileCategorical.postPhoto)) {
 
             view = act.getLayoutInflater().inflate(R.layout.layout_posts_image, parent, false);
 
@@ -68,7 +69,7 @@ public class PostViewAdapter extends BaseAdapter {
             postText.setText(curso.getPostText());
             postDate.setText(curso.getPostDate());
 
-        } else if (Categorical.equals(PostCategorical.postMovie)) {
+        } else if (Categorical.equals(ProfileCategorical.postMovie)) {
 
             view = act.getLayoutInflater().inflate(R.layout.layout_post_video, parent, false);
 
@@ -80,11 +81,8 @@ public class PostViewAdapter extends BaseAdapter {
             postText.setText(curso.getPostText());
             postDate.setText(curso.getPostDate());
 
-        }else if (Categorical.equals(PostCategorical.postSuggest)) {
-
-            view = act.getLayoutInflater().inflate(R.layout.layout_post_suggestion, parent, false);
-
         }
+
         return view;
     }
 }
