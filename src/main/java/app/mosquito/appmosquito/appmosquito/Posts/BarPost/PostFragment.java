@@ -49,7 +49,6 @@ public class PostFragment extends Fragment {
     private List<PostStructure> todosOsCursos() {
 
         PostStructure postOne = new PostStructure();
-        PostStructure postTwo = new PostStructure();
         PostStructure postThree = new PostStructure();
         PostStructure postFour = new PostStructure();
         PostStructure postHeader = new PostStructure();
@@ -57,7 +56,7 @@ public class PostFragment extends Fragment {
         postOne.setPostName("Primeiro Post");
         postOne.setPostUserName("Kayuã Oleques Paim");
         postOne.setPostDate("28/07/21 23:36");
-        postOne.setPostCategorical(PostCategorical.postSuggest);
+        postOne.setPostCategorical(PostCategorical.postMovie);
         postOne.setPostLocalization("Alegrete - RS");
         postOne.setPostNumberLikes(100);
         postOne.setPostNumberShares(31);
@@ -92,7 +91,7 @@ public class PostFragment extends Fragment {
         postHeader.setPostUserName("Kayuã Oleques Paim");
         postHeader.setPostDate("28/07/21 23:36");
         postHeader.setPostText("Texto de exemplo post");
-        postHeader.setPostCategorical(PostCategorical.postText);
+        postHeader.setPostCategorical(PostCategorical.postSuggest);
         postHeader.setPostLocalization("Alegrete - RS");
         postHeader.setPostNumberLikes(100);
         postHeader.setPostNumberShares(31);
@@ -101,4 +100,6 @@ public class PostFragment extends Fragment {
 
     return new ArrayList<>(Arrays.asList(postHeader, postOne, postThree, postFour));
 }
+
+
 }

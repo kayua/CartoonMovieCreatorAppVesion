@@ -7,80 +7,397 @@
 
     android:id="@+id/displayContainer">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="320dp"
 
+        android:layout_height="126dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_margin="6dp"
-            android:orientation="vertical">
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/background_post"
+                android:gravity="center|center_horizontal|top"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="14dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="366dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" />
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imageViewSecondImage"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/icon_general_user"
+                    app:civ_border_color="#BCF1EEEE"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.047" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical" />
+                    android:layout_height="32dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center|top"
+                        android:text="Brasileiro"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|top"
+                        android:text="Seguidores 32 Mi"
+                        android:textColor="#202020"
+                        android:textSize="8sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="70dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/button_design_fill"
+                    android:text="Seguir"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/background_post"
+                android:gravity="center|center_horizontal|top"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imageView24"
-                    android:layout_width="47dp"
-                    android:layout_height="43dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="58dp"
-                    android:layout_marginBottom="53dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/aa" />
 
-                <ScrollView
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imageViewSecondImage"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/icon_general_user"
+                    app:civ_border_color="#BCF1EEEE"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.047" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="32dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
 
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical" />
-                </ScrollView>
-            </RelativeLayout>
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center|top"
+                        android:text="Brasileiro"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|top"
+                        android:text="Seguidores 32 Mi"
+                        android:textColor="#202020"
+                        android:textSize="8sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="70dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/button_design_fill"
+                    android:text="Seguir"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/background_post"
+                android:gravity="center|center_horizontal|top"
+                android:orientation="vertical">
 
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imageViewSecondImage"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/icon_general_user"
+                    app:civ_border_color="#BCF1EEEE"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.047" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center|top"
+                        android:text="Brasileiro"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|top"
+                        android:text="Seguidores 32 Mi"
+                        android:textColor="#202020"
+                        android:textSize="8sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="70dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/button_design_fill"
+                    android:text="Seguir"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/background_post"
+                android:gravity="center|center_horizontal|top"
+                android:orientation="vertical">
+
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imageViewSecondImage"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/icon_general_user"
+                    app:civ_border_color="#BCF1EEEE"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.047" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center|top"
+                        android:text="Brasileiro"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|top"
+                        android:text="Seguidores 32 Mi"
+                        android:textColor="#202020"
+                        android:textSize="8sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="70dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/button_design_fill"
+                    android:text="Seguir"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/background_post"
+                android:gravity="center|center_horizontal|top"
+                android:orientation="vertical">
+
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imageViewSecondImage"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/icon_general_user"
+                    app:civ_border_color="#BCF1EEEE"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.047" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center|top"
+                        android:text="Brasileiro"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|top"
+                        android:text="Seguidores 32 Mi"
+                        android:textColor="#202020"
+                        android:textSize="8sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="70dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/button_design_fill"
+                    android:text="Seguir"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/background_post"
+                android:gravity="center|center_horizontal|top"
+                android:orientation="vertical">
+
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imageViewSecondImage"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/icon_general_user"
+                    app:civ_border_color="#BCF1EEEE"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.047" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center|top"
+                        android:text="Brasileiro"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|top"
+                        android:text="Seguidores 32 Mi"
+                        android:textColor="#202020"
+                        android:textSize="8sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="70dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/button_design_fill"
+                    android:text="Seguir"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </LinearLayout>
 
 
-    </LinearLayout>
-
+    </ScrollView>
 
 </FrameLayout>
