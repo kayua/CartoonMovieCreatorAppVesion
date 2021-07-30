@@ -1,7 +1,7 @@
 package app.mosquito.appmosquito.appmosquito.Posts.BarFollower;
 
-import app.mosquito.appmosquito.appmosquito.Posts.PostCategorical;
-import app.mosquito.appmosquito.appmosquito.Posts.PostState;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostCategorical;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostState;
 
 public class FollowerStructure {
 

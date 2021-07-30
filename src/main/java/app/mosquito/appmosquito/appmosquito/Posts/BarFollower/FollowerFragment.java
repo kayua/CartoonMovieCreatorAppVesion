@@ -17,22 +17,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import app.mosquito.appmosquito.appmosquito.Posts.PostCategorical;
-import app.mosquito.appmosquito.appmosquito.Posts.PostState;
-import app.mosquito.appmosquito.appmosquito.Posts.MessageViewModel;
-import app.mosquito.appmosquito.appmosquito.Posts.PostStructure;
-import app.mosquito.appmosquito.appmosquito.Posts.PostViewAdapter;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostCategorical;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostState;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostViewModel;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostStructure;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostViewAdapter;
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class FollowerFragment extends Fragment {
 
-    private MessageViewModel galleryViewModel;
+    private PostViewModel galleryViewModel;
 
     ArrayAdapter<String> adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel = new ViewModelProvider(this).get(MessageViewModel.class);
+        galleryViewModel = new ViewModelProvider(this).get(PostViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_message, container, false);
         ListView list = root.findViewById(R.id.chat_list_view);

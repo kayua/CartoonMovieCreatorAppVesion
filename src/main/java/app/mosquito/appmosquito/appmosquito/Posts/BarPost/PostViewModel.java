@@ -1,14 +1,14 @@
-package app.mosquito.appmosquito.appmosquito.Posts;
+package app.mosquito.appmosquito.appmosquito.Posts.BarPost;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class MessageViewModel extends ViewModel {
+public class PostViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public MessageViewModel() {
+    public PostViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is gallery fragment");
     }

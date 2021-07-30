@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import app.mosquito.appmosquito.appmosquito.Posts.PostCategorical;
-import app.mosquito.appmosquito.appmosquito.Posts.PostState;
-import app.mosquito.appmosquito.appmosquito.Posts.PostStructure;
-import app.mosquito.appmosquito.appmosquito.Posts.PostViewAdapter;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostCategorical;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostState;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostStructure;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostViewAdapter;
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class FollowerSynchronize extends AppCompatActivity {

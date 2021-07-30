@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Posts;
+package app.mosquito.appmosquito.appmosquito.Posts.BarPost;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,15 +19,15 @@ import java.util.List;
 
 import app.mosquito.appmosquito.appmosquito.R;
 
-public class MessageFragment extends Fragment {
+public class PostFragment extends Fragment {
 
-    private MessageViewModel galleryViewModel;
+    private PostViewModel galleryViewModel;
 
     ArrayAdapter<String> adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel = new ViewModelProvider(this).get(MessageViewModel.class);
+        galleryViewModel = new ViewModelProvider(this).get(PostViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_message, container, false);
         ListView list = root.findViewById(R.id.chat_list_view);

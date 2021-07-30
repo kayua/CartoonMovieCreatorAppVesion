@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import app.mosquito.appmosquito.appmosquito.Posts.PostCategorical;
-import app.mosquito.appmosquito.appmosquito.Posts.PostStructure;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostCategorical;
+import app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostStructure;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
