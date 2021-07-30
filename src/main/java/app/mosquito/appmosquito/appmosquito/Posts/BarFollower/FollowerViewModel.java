@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Posts;
+package app.mosquito.appmosquito.appmosquito.Posts.BarFollower;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Posts;
+package app.mosquito.appmosquito.appmosquito.Posts.BarFollower;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +17,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import app.mosquito.appmosquito.appmosquito.Posts.CategoricalPosts;
+import app.mosquito.appmosquito.appmosquito.Posts.EstadoAtual;
+import app.mosquito.appmosquito.appmosquito.Posts.MessageViewModel;
+import app.mosquito.appmosquito.appmosquito.Posts.PostStructure;
+import app.mosquito.appmosquito.appmosquito.Posts.ViewAdapter;
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class FollowerFragment extends Fragment {
