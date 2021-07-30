@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="360dp">
+        android:layout_height="330dp">
 
 
         <LinearLayout
@@ -34,9 +34,9 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="101dp"
+                    android:layout_marginStart="96dp"
                     android:layout_marginTop="226dp"
-                    android:layout_marginEnd="98dp"
+                    android:layout_marginEnd="103dp"
                     android:layout_marginBottom="73dp"
                     android:text="Kayuã Oleques Paim"
                     android:textAlignment="center"
@@ -74,51 +74,17 @@
                     app:layout_constraintVertical_bias="0.047" />
 
                 <LinearLayout
-                    android:layout_width="128dp"
-                    android:layout_height="54dp"
-
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="257dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="9dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/icon_share" />
-
-                    <ImageView
-
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/h" />
-
-                    <ImageView
-
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/cameras" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="129dp"
-                    android:layout_height="52dp"
+                    android:layout_width="212dp"
+                    android:layout_height="50dp"
 
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginTop="259dp"
-                    android:layout_marginBottom="9dp"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="254dp"
+                    android:layout_marginEnd="122dp"
+                    android:layout_marginBottom="16dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -143,6 +109,21 @@
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
                         app:srcCompat="@drawable/cameras" />
+
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/cameras" />
+
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/cameras" />
+
                 </LinearLayout>
 
                 <LinearLayout
