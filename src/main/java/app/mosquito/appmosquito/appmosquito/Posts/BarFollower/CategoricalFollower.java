@@ -1,3 +1,3 @@
-package app.mosquito.appmosquito.appmosquito.Posts;
+package app.mosquito.appmosquito.appmosquito.Posts.BarFollower;
 
 public enum CategoricalFollower { postMovie, postText, postPhoto, postSuggest }
