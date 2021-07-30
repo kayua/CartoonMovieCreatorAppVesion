@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -32,7 +31,7 @@ public class ProfileFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_message, container, false);
         ListView list = root.findViewById(R.id.chat_list_view);
-        EditText textEdit = root.findViewById(R.id.chat_edit_text1);
+
         ListView lista = (ListView) root.findViewById(R.id.chat_list_view);
         List<PostStructure> cursos = todosOsCursos();
         ViewAdapter adapter = new ViewAdapter(cursos, getActivity());
