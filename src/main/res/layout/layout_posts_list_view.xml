@@ -52,14 +52,8 @@
                     android:layout_height="wrap_content"
 
                     android:clickable="true"
-                    android:background="@drawable/aa"
+                    android:background="@drawable/background_name"
                      />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="59dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/msg_comentary" />
 
             </LinearLayout>
         </LinearLayout>
