@@ -80,6 +80,10 @@ public class ViewAdapter extends BaseAdapter {
             postText.setText(curso.getPostText());
             postDate.setText(curso.getPostDate());
 
+        }else if (Categorical.equals(CategoricalPosts.postSuggest)) {
+
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_suggestion, parent, false);
+
         }
         return view;
     }

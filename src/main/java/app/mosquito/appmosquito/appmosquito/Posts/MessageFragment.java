@@ -57,7 +57,7 @@ public class MessageFragment extends Fragment {
         postOne.setPostName("Primeiro Post");
         postOne.setPostUserName("Kayuã Oleques Paim");
         postOne.setPostDate("28/07/21 23:36");
-        postOne.setPostCategorical(CategoricalPosts.postPhoto);
+        postOne.setPostCategorical(CategoricalPosts.postSuggest);
         postOne.setPostLocalization("Alegrete - RS");
         postOne.setPostNumberLikes(100);
         postOne.setPostNumberShares(31);
