@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Profile;
+package app.mosquito.appmosquito.appmosquito.Posts.Profile;
 
 import android.app.Activity;
 import android.view.View;
