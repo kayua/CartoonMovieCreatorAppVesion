@@ -38,7 +38,7 @@
                     android:layout_marginTop="226dp"
                     android:layout_marginEnd="103dp"
                     android:layout_marginBottom="73dp"
-                    android:text="Kayuã Oleques Paim"
+                    android:text="Adicionar um botão para seguir"
                     android:textAlignment="center"
                     android:textColor="#838181"
                     android:textColorHint="#757474"
