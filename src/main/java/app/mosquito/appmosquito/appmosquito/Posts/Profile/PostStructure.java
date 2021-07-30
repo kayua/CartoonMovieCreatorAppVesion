@@ -1,21 +1,19 @@
 package app.mosquito.appmosquito.appmosquito.Posts.Profile;
 
-public class ProfileStructure {
+public class PostStructure {
 
     private String postName;
     private String postUserName;
     private String postDate;
     private String postText;
     private String postLocalization;
-
     private int postNumberLikes;
     private int postNumberShares;
     private int postNumberComments;
+    private PostState postState;
+    private PostCategorical postCategorical;
 
-    private ProfileState postState;
-    private ProfileCategorical postCategorical;
-
-    public ProfileStructure() { }
+    public PostStructure() { }
 
     public String getPostName() { return postName; }
     public String getPostUserName() { return postUserName; }
@@ -25,8 +23,8 @@ public class ProfileStructure {
     public int getPostNumberLikes() { return postNumberLikes; }
     public int getPostNumberShares() { return postNumberShares; }
     public int getPostNumberComments() { return postNumberComments; }
-    public ProfileState getPostState() { return postState; }
-    public ProfileCategorical getPostCategorical() { return postCategorical; }
+    public PostState getPostState() { return postState; }
+    public PostCategorical getPostCategorical() { return postCategorical; }
 
     public void setPostUserName(String postUserName) { this.postUserName = postUserName; }
     public void setPostName(String postName) { this.postName = postName; }
@@ -36,8 +34,8 @@ public class ProfileStructure {
     public void setPostNumberLikes(int postNumberLikes) { this.postNumberLikes = postNumberLikes; }
     public void setPostNumberShares(int postNumberShares) { this.postNumberShares = postNumberShares; }
     public void setPostNumberComments(int postNumberComments) { this.postNumberComments = postNumberComments; }
-    public void setPostState(ProfileState postState) { this.postState = postState; }
-    public void setPostCategorical(ProfileCategorical postCategorical) { this.postCategorical = postCategorical; }
+    public void setPostState(PostState postState) { this.postState = postState; }
+    public void setPostCategorical(PostCategorical postCategorical) { this.postCategorical = postCategorical; }
 
     @Override
     public String toString() {
