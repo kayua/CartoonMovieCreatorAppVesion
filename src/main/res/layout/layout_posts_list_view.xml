@@ -46,29 +46,20 @@
                 android:background="@android:color/transparent"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/button7"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-
-                <EditText
-                    android:id="@+id/editTextTextMultiLine3"
-                    android:layout_width="287dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/background_menu"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:hint=" Digite a mensagem"
-                    android:inputType="textMultiLine" />
-
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/floatingActionButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+
                     android:clickable="true"
-                    app:srcCompat="@drawable/dots" />
+                    android:background="@drawable/aa"
+                     />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="59dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/msg_comentary" />
 
             </LinearLayout>
         </LinearLayout>

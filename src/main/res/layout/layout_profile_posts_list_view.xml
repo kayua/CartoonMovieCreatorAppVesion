@@ -46,6 +46,13 @@
                 android:background="@android:color/transparent"
                 android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/imageView23"
+                    android:layout_width="59dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/msg_comentary" />
+
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/floatingActionButton"
                     android:layout_width="wrap_content"
