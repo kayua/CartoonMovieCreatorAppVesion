@@ -1,7 +1,7 @@
 package app.mosquito.appmosquito.appmosquito.Posts;
 
 
-public enum EstadoAtual {
+public enum PostState {
 
     FAZENDO {
         @Override

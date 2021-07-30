@@ -1,7 +1,7 @@
 package app.mosquito.appmosquito.appmosquito.Posts.BarFollower;
 
 import app.mosquito.appmosquito.appmosquito.Posts.PostCategorical;
-import app.mosquito.appmosquito.appmosquito.Posts.EstadoAtual;
+import app.mosquito.appmosquito.appmosquito.Posts.PostState;
 
 public class FollowerStructure {
 
@@ -13,7 +13,7 @@ public class FollowerStructure {
     private int postNumberLikes;
     private int postNumberShares;
     private int postNumberComments;
-    private EstadoAtual postState;
+    private PostState postState;
     private PostCategorical postCategorical;
 
     public FollowerStructure() { }
@@ -26,7 +26,7 @@ public class FollowerStructure {
     public int getPostNumberLikes() { return postNumberLikes; }
     public int getPostNumberShares() { return postNumberShares; }
     public int getPostNumberComments() { return postNumberComments; }
-    public EstadoAtual getPostState() { return postState; }
+    public PostState getPostState() { return postState; }
     public PostCategorical getPostCategorical() { return postCategorical; }
 
     public void setPostUserName(String postUserName) { this.postUserName = postUserName; }
@@ -37,7 +37,7 @@ public class FollowerStructure {
     public void setPostNumberLikes(int postNumberLikes) { this.postNumberLikes = postNumberLikes; }
     public void setPostNumberShares(int postNumberShares) { this.postNumberShares = postNumberShares; }
     public void setPostNumberComments(int postNumberComments) { this.postNumberComments = postNumberComments; }
-    public void setPostState(EstadoAtual postState) { this.postState = postState; }
+    public void setPostState(PostState postState) { this.postState = postState; }
     public void setPostCategorical(PostCategorical postCategorical) { this.postCategorical = postCategorical; }
 
     @Override

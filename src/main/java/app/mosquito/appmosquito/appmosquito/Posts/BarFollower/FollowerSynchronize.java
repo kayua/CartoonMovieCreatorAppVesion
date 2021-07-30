@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import app.mosquito.appmosquito.appmosquito.Posts.PostCategorical;
-import app.mosquito.appmosquito.appmosquito.Posts.EstadoAtual;
+import app.mosquito.appmosquito.appmosquito.Posts.PostState;
 import app.mosquito.appmosquito.appmosquito.Posts.PostStructure;
 import app.mosquito.appmosquito.appmosquito.Posts.ViewAdapter;
 import app.mosquito.appmosquito.appmosquito.R;
@@ -44,7 +44,7 @@ public class FollowerSynchronize extends AppCompatActivity {
         postOne.setPostNumberShares(31);
         postOne.setPostNumberComments(31);
         postOne.setPostText("Texto de exemplo post");
-        postOne.setPostState(EstadoAtual.FAZENDO);
+        postOne.setPostState(PostState.FAZENDO);
 
         postTwo.setPostName("Segundo Post");
         postTwo.setPostUserName("Kayuã Oleques Paim");
@@ -55,7 +55,7 @@ public class FollowerSynchronize extends AppCompatActivity {
         postTwo.setPostNumberLikes(100);
         postTwo.setPostNumberShares(31);
         postTwo.setPostNumberComments(31);
-        postTwo.setPostState(EstadoAtual.FAZENDO);
+        postTwo.setPostState(PostState.FAZENDO);
 
         postThree.setPostName("Terceiro Post");
         postThree.setPostUserName("Kayuã Oleques Paim");
@@ -66,7 +66,7 @@ public class FollowerSynchronize extends AppCompatActivity {
         postThree.setPostNumberLikes(100);
         postThree.setPostNumberShares(31);
         postThree.setPostNumberComments(31);
-        postThree.setPostState(EstadoAtual.FAZENDO);
+        postThree.setPostState(PostState.FAZENDO);
 
         return new ArrayList<>(Arrays.asList(postOne, postTwo, postThree));
 
