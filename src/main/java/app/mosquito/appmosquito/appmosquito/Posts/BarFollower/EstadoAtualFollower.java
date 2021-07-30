@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Posts;
+package app.mosquito.appmosquito.appmosquito.Posts.BarFollower;
 
 
 public enum EstadoAtualFollower {
