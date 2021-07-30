@@ -52,6 +52,7 @@ public class MessageFragment extends Fragment {
         PostStructure postTwo = new PostStructure();
         PostStructure postThree = new PostStructure();
         PostStructure postFour = new PostStructure();
+        PostStructure postHeader = new PostStructure();
 
         postOne.setPostName("Primeiro Post");
         postOne.setPostUserName("Kayuã Oleques Paim");
@@ -87,6 +88,17 @@ public class MessageFragment extends Fragment {
         postFour.setPostNumberComments(31);
         postFour.setPostState(EstadoAtual.FAZENDO);
 
-    return new ArrayList<>(Arrays.asList(postOne, postThree, postFour));
+        postHeader.setPostName("Terceiro Post");
+        postHeader.setPostUserName("Kayuã Oleques Paim");
+        postHeader.setPostDate("28/07/21 23:36");
+        postHeader.setPostText("Texto de exemplo post");
+        postHeader.setPostCategorical(CategoricalPosts.postText);
+        postHeader.setPostLocalization("Alegrete - RS");
+        postHeader.setPostNumberLikes(100);
+        postHeader.setPostNumberShares(31);
+        postHeader.setPostNumberComments(31);
+        postHeader.setPostState(EstadoAtual.FAZENDO);
+
+    return new ArrayList<>(Arrays.asList(postHeader, postOne, postThree, postFour));
 }
 }
