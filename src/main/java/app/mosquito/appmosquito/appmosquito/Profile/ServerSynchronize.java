@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.Followers;
+package app.mosquito.appmosquito.appmosquito.Profile;
 
 import android.os.Bundle;
 import android.widget.ListView;

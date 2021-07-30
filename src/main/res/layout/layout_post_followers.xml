@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="128dp"
             android:layout_height="167dp"
-            android:layout_margin="6dp"
+            android:layout_marginTop="6dp"
             android:background="@drawable/background_post"
             android:gravity="center|center_horizontal|top"
             android:orientation="vertical">
@@ -25,7 +25,7 @@
                 android:id="@+id/imageViewSecondImage"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
-                android:layout_margin="6dp"
+                android:layout_marginTop="6dp"
                 android:src="@drawable/icon_general_user"
                 app:civ_border_color="#BCF1EEEE"
                 app:civ_border_width="1dp"
@@ -39,22 +39,36 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginTop="4dp"
                 android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center|top"
+                    android:text="Brasileiro"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="Brasileiro" />
+                    android:layout_height="wrap_content"
+                    android:gravity="center|top"
+                    android:text="Seguidores 32 Mi"
+                    android:textColor="#202020"
+                    android:textSize="8sp" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="26dp"
                 android:background="@drawable/button_design_fill"
                 android:text="Seguir"
+                android:layout_marginTop="4dp"
                 android:textColor="#FFFFFF"
                 android:textSize="10sp"
                 android:textStyle="bold" />
