@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import app.mosquito.appmosquito.appmosquito.R;
 
-public class ServerSynchronize extends AppCompatActivity {
+public class PostSynchronize extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +16,7 @@ public class ServerSynchronize extends AppCompatActivity {
         setContentView(R.layout.layout_posts_list_view);
         ListView listPosts = (ListView) findViewById(R.id.lista);
         List<PostStructure> typePosts = allTypePosts();
-        ViewAdapter adapter = new ViewAdapter(typePosts, this);
+        PostViewAdapter adapter = new PostViewAdapter(typePosts, this);
         listPosts.setAdapter(adapter);
 
     }

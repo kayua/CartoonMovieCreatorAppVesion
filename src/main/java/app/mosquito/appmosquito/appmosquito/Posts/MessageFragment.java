@@ -34,7 +34,7 @@ public class MessageFragment extends Fragment {
 
         ListView lista = (ListView) root.findViewById(R.id.chat_list_view);
         List<PostStructure> cursos = todosOsCursos();
-        ViewAdapter adapter = new ViewAdapter(cursos, getActivity());
+        PostViewAdapter adapter = new PostViewAdapter(cursos, getActivity());
         lista.setAdapter(adapter);
 
 

@@ -21,7 +21,7 @@ import app.mosquito.appmosquito.appmosquito.Posts.PostCategorical;
 import app.mosquito.appmosquito.appmosquito.Posts.PostState;
 import app.mosquito.appmosquito.appmosquito.Posts.MessageViewModel;
 import app.mosquito.appmosquito.appmosquito.Posts.PostStructure;
-import app.mosquito.appmosquito.appmosquito.Posts.ViewAdapter;
+import app.mosquito.appmosquito.appmosquito.Posts.PostViewAdapter;
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class FollowerFragment extends Fragment {
@@ -39,7 +39,7 @@ public class FollowerFragment extends Fragment {
 
         ListView lista = (ListView) root.findViewById(R.id.chat_list_view);
         List<PostStructure> cursos = todosOsCursos();
-        ViewAdapter adapter = new ViewAdapter(cursos, getActivity());
+        PostViewAdapter adapter = new PostViewAdapter(cursos, getActivity());
         lista.setAdapter(adapter);
 
 

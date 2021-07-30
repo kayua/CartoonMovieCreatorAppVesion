@@ -12,7 +12,7 @@ import java.util.List;
 import app.mosquito.appmosquito.appmosquito.Posts.PostCategorical;
 import app.mosquito.appmosquito.appmosquito.Posts.PostState;
 import app.mosquito.appmosquito.appmosquito.Posts.PostStructure;
-import app.mosquito.appmosquito.appmosquito.Posts.ViewAdapter;
+import app.mosquito.appmosquito.appmosquito.Posts.PostViewAdapter;
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class FollowerSynchronize extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class FollowerSynchronize extends AppCompatActivity {
         setContentView(R.layout.layout_posts_list_view);
         ListView listPosts = (ListView) findViewById(R.id.lista);
         List<PostStructure> typePosts = allTypePosts();
-        ViewAdapter adapter = new ViewAdapter(typePosts, this);
+        PostViewAdapter adapter = new PostViewAdapter(typePosts, this);
         listPosts.setAdapter(adapter);
 
     }

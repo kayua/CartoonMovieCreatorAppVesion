@@ -11,12 +11,12 @@ import java.util.List;
 import app.mosquito.appmosquito.appmosquito.R;
 
 
-public class ViewAdapter extends BaseAdapter {
+public class PostViewAdapter extends BaseAdapter {
 
     private final List<PostStructure> PostList;
     private final Activity act;
 
-    public ViewAdapter(List<PostStructure> postInformations, Activity act) {
+    public PostViewAdapter(List<PostStructure> postInformations, Activity act) {
         this.PostList = postInformations;
         this.act = act;
     }
