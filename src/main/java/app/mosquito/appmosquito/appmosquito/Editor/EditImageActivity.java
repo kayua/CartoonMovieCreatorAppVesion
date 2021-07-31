@@ -12,9 +12,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.view.animation.TranslateAnimation;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
@@ -27,9 +27,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.ChangeBounds;
 import androidx.transition.TransitionManager;
+
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+
 import java.io.File;
 import java.io.IOException;
+
 import app.mosquito.appmosquito.appmosquito.Editor.Base.BaseActivity;
 import app.mosquito.appmosquito.appmosquito.Editor.Filters.FilterListener;
 import app.mosquito.appmosquito.appmosquito.Editor.Filters.FilterViewAdapter;
@@ -78,7 +81,8 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
     private ConstraintLayout mRootView;
     private final ConstraintSet mConstraintSet = new ConstraintSet();
     private boolean mIsFilterVisible;
-    Button myButton;
+    ImageView myButton;
+    ImageView myButtona;
 
     View myView;
     boolean isUp;
@@ -89,30 +93,35 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
     private FileSaveHelper mSaveFileHelper;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         makeFullScreen();
         setContentView(R.layout.activity_edit_image);
         initViews();
-        myButton = findViewById(R.id.button2dasd);
+        myButton = findViewById(R.id.imgShare);
         myView = findViewById(R.id.myd_view);
+        myButtona = findViewById(R.id.imageView25);
+
         myButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { onSlideViewButtonClick(view); }
 
-                onSlideViewButtonClick(view);
+        });
 
-            }
+        myButtona.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) { onSlideViewButtonClick(view); }
 
         });
 
         handleIntentImage(mPhotoEditorView.getSource());
         mWonderFont = Typeface.createFromAsset(getAssets(), "beyond_wonderland.ttf");
         mPropertiesBSFragment = new PropertiesBSFragment();
-
-
         mEmojiBSFragment = new EmojiBSFragment();
         mStickerBSFragment = new StickerBSFragment();
         mShapeBSFragment = new ShapeBSFragment();
