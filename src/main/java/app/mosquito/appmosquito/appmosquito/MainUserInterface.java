@@ -1,12 +1,14 @@
 package app.mosquito.appmosquito.appmosquito;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -22,6 +24,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import app.mosquito.appmosquito.appmosquito.Editor.EditImageActivity;
 import app.mosquito.appmosquito.appmosquito.Settings.SettingsFragment;
 
 public class MainUserInterface extends AppCompatActivity{
@@ -72,6 +75,23 @@ public class MainUserInterface extends AppCompatActivity{
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         ImageView imageView = (ImageView ) navigationView.getHeaderView(0).findViewById(R.id.imageView18s);
+        ImageView imageView_camera = (ImageView ) navigationView.getHeaderView(0).findViewById(R.id.imageViewIconSidebar1);
+
+
+        ImageView imageView_editor = (ImageView ) navigationView.getHeaderView(0).findViewById(R.id.imageViewIconSidebar3);
+        imageView_editor.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getApplicationContext(), EditImageActivity.class);
+                startActivity(i);
+
+            }
+
+        });
+
+
         String picturePath = settings.getString("imageUser", "");
 
         imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
