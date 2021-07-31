@@ -6,7 +6,6 @@
     android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
@@ -15,17 +14,74 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="?attr/actionBarSize" />
+        app:layout_constraintGuide_percent="0.9233926" />
 
     <app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoEditorView
         android:id="@+id/photoEditorView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/rvConstraintTools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <LinearLayout
+            android:id="@+id/my_view"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/gradient_color"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/imageView25"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                app:srcCompat="@drawable/arrow_down" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvConstraintTools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/tool_bg"
+                android:orientation="horizontal"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:listitem="@layout/row_editing_tools" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFilterView"
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:background="@color/tool_bg"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:listitem="@layout/row_filter_view" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button2dasd"
+            android:layout_width="135dp"
+            android:layout_height="90dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="151dp"
+            android:layout_marginBottom="594dp"
+            android:text="Button" />
+    </app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoEditorView>
 
     <ImageView
         android:id="@+id/imgUndo"
@@ -79,31 +135,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvConstraintTools"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/tool_bg"
-        android:orientation="horizontal"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/row_editing_tools" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvFilterView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/tool_bg"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="@+id/rvConstraintTools"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rvConstraintTools"
-        tools:listitem="@layout/row_filter_view" />
 
     <TextView
         android:id="@+id/txtCurrentTool"

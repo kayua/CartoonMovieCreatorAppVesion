@@ -11,6 +11,8 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AnticipateOvershootInterpolator;
+import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -76,6 +78,10 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
     private ConstraintLayout mRootView;
     private final ConstraintSet mConstraintSet = new ConstraintSet();
     private boolean mIsFilterVisible;
+    Button myButton;
+
+    View myView;
+    boolean isUp;
 
     @Nullable
     @VisibleForTesting
@@ -89,9 +95,23 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         makeFullScreen();
         setContentView(R.layout.activity_edit_image);
         initViews();
+        myButton = findViewById(R.id.button2dasd);
+        myButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                onSlideViewButtonClick(view);
+
+            }
+
+        });
+
         handleIntentImage(mPhotoEditorView.getSource());
         mWonderFont = Typeface.createFromAsset(getAssets(), "beyond_wonderland.ttf");
         mPropertiesBSFragment = new PropertiesBSFragment();
+
+
         mEmojiBSFragment = new EmojiBSFragment();
         mStickerBSFragment = new StickerBSFragment();
         mShapeBSFragment = new ShapeBSFragment();
@@ -582,6 +602,48 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
         }
 
+    }
+
+
+    public void slideUp(View view){
+        view.setVisibility(View.VISIBLE);
+        TranslateAnimation animate = new TranslateAnimation(
+                0,                 // fromXDelta
+                0,                 // toXDelta
+                view.getHeight(),  // fromYDelta
+                0);                // toYDelta
+        animate.setDuration(600);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.bringToFront();
+    }
+
+    // slide the view from its current position to below itself
+    public void slideDown(View view){
+        TranslateAnimation animate = new TranslateAnimation(
+                0,                 // fromXDelta
+                0,                 // toXDelta
+                0,                 // fromYDelta
+                view.getHeight()); // toYDelta
+        animate.setDuration(300);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.setEnabled(false);
+        view.setFocusableInTouchMode(false);
+        view.setFocusable(false);
+
+
+    }
+
+    public void onSlideViewButtonClick(View view) {
+        if (isUp) {
+            slideDown(myView);
+
+        } else {
+            slideUp(myView);
+
+        }
+        isUp = !isUp;
     }
 
 }
