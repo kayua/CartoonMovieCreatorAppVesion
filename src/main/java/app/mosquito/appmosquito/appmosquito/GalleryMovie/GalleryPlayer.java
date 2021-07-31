@@ -29,7 +29,7 @@ public class GalleryPlayer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_player);
+        setContentView(R.layout.layout_media_player);
         initializeViews();
         videoId = getIntent().getExtras().getLong("videoId");
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);

@@ -44,7 +44,7 @@ public class GalleryFragment extends Fragment implements itemClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         settingsViewModel = new ViewModelProvider(this).get(FiltersViewModel.class);
-        View root = inflater.inflate(R.layout.activity_main, container, false);
+        View root = inflater.inflate(R.layout.layout_gallery_main_display, container, false);
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
 
         if(ContextCompat.checkSelfPermission(root.getContext(),

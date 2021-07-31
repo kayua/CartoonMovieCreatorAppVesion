@@ -24,7 +24,7 @@
         android:id="@+id/nav_home"
         android:name="app.mosquito.appmosquito.appmosquito.GalleryPhotos.GalleryFragment"
         android:label="Galeria de imagens"
-        tools:layout="@layout/activity_main" />
+        tools:layout="@layout/layout_gallery_main_display" />
 
     <fragment
         android:id="@+id/nav_filters"
@@ -35,7 +35,7 @@
 
     <fragment
         android:id="@+id/nav_history"
-        android:name="app.mosquito.appmosquito.appmosquito.Cartoon.CartoonFragment"
+        android:name="app.mosquito.appmosquito.appmosquito.MachineLearning.CartoonFragment"
         android:label="@string/menu_history"
         tools:layout="@layout/fragment_history" />
 
