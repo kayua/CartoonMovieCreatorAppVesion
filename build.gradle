@@ -62,6 +62,7 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
     implementation 'androidx.viewpager:viewpager:1.0.0'
     testImplementation 'junit:junit:4.13.2'
+    compile 'com.sothree.slidinguppanel:library:3.4.0'
     //noinspection GradleDynamicVersion
     implementation 'com.google.maps.android:android-maps-utils:0.4+'
     implementation 'org.tensorflow:tensorflow-android:1.13.1'

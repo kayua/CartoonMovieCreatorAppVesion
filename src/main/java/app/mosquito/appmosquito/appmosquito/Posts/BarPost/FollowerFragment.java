@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,9 @@ import app.mosquito.appmosquito.appmosquito.R;
 
 public class FollowerFragment extends Fragment {
 
+    Button myButton;
+    View myView;
+    boolean isUp;
     private PostViewModel galleryViewModel;
 
     ArrayAdapter<String> adapter;
@@ -32,10 +36,13 @@ public class FollowerFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_message, container, false);
         ListView list = root.findViewById(R.id.chat_list_view);
 
-        ListView lista = (ListView) root.findViewById(R.id.chat_list_view);
-        List<PostStructure> cursos = todosOsCursos();
-        PostViewAdapter adapter = new PostViewAdapter(cursos, getActivity());
-        lista.setAdapter(adapter);
+        myView = root.findViewById(R.id.my_view);
+        myButton = root.findViewById(R.id.my_button);
+
+        // initialize as invisible (could also do in xml)
+        myView.setVisibility(View.INVISIBLE);
+        myButton.setText("Slide up");
+        isUp = false;
 
 
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -101,4 +108,6 @@ public class FollowerFragment extends Fragment {
 
     return new ArrayList<>(Arrays.asList(postHeader, postOne, postThree, postFour));
 }
+
+
 }

@@ -43,7 +43,16 @@
             android:paddingBottom="15dp"
             android:paddingLeft="12dp"
             android:paddingRight="20dp"
-            />
+            >
+
+            <Button
+                android:id="@+id/my_button"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                 />
+
+        </LinearLayout>
 
         <ImageButton
             android:id="@+id/enter_chat1"
@@ -57,4 +66,19 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/my_view"
+        android:background="#1D0BE11A"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </LinearLayout>
 </RelativeLayout>
+

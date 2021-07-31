@@ -9,11 +9,9 @@
     tools:ignore="NamespaceTypo">
 
 
-    <androidx.core.widget.NestedScrollView
-
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:alpha="1">
 
         <LinearLayout
@@ -54,12 +52,18 @@
                     android:layout_height="wrap_content"
 
                     android:clickable="true"
-                    android:background="@drawable/background_name"
+                    android:background="@drawable/aa"
                      />
+
+                z<ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="59dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/msg_comentary" />
 
             </LinearLayout>
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
 
 </LinearLayout>
