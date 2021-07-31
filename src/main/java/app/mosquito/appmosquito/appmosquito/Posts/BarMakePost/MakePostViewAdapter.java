@@ -46,7 +46,7 @@ public class MakePostViewAdapter extends BaseAdapter {
 
         if (Categorical.equals(MakePostCategorical.postText)) {
 
-            view = act.getLayoutInflater().inflate(R.layout.layout_post_make, parent, false);
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_page_make, parent, false);
 
             //TextView postUserName = (TextView) view.findViewById(R.id.dasccdasasdg);
             //TextView postText = (TextView) view.findViewById(R.id.dasdasasdg);

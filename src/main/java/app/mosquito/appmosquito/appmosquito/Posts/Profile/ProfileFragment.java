@@ -29,7 +29,7 @@ public class ProfileFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
 
-        View root = inflater.inflate(R.layout.fragment_message, container, false);
+        View root = inflater.inflate(R.layout.layout_post_page_main, container, false);
         ListView list = root.findViewById(R.id.chat_list_view);
 
         ListView lista = (ListView) root.findViewById(R.id.chat_list_view);
