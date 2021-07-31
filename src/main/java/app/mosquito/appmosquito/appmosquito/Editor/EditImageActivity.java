@@ -100,7 +100,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
         super.onCreate(savedInstanceState);
         makeFullScreen();
-        setContentView(R.layout.layout_editor_image);
+        setContentView(R.layout.layout_image_editor_image_list);
         conteudo = findViewById(R.id.imgShare);
         initViews();
         myButton = findViewById(R.id.imgShare);

@@ -75,7 +75,7 @@ public class TextEditorDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.layout_editor_text_diaglog, container, false);
+        return inflater.inflate(R.layout.layout_image_editor_text_dialog, container, false);
 
     }
 

@@ -33,7 +33,7 @@ public class PropertiesBSFragment extends BottomSheetDialogFragment implements S
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.layout_editor_bottom_properties, container, false);
+        return inflater.inflate(R.layout.layout_image_editor_bottom_properties, container, false);
 
     }
 
