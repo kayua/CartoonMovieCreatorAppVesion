@@ -45,6 +45,7 @@ public class CameraFragment extends Fragment {
     MediaRecorder mediaRecorder;
     CameraPreview mPreview;
     Camera mCamera;
+
     View myView;
     boolean isUp;
     boolean isRecording = false;
@@ -63,11 +64,13 @@ public class CameraFragment extends Fragment {
         homeViewModel = new ViewModelProvider(this).get(CameraViewModel.class);
         View root = inflater.inflate(R.layout.layout_camera_main, container, false);
         mCamera = getCameraInstance();
-
+        myView = root.findViewById(R.id.mydd_view);
         mPreview = new CameraPreview(getContext(), mCamera);
         FrameLayout preview = (FrameLayout) root.findViewById(R.id.camera_preview);
         preview.addView(mPreview);
         ImageView captureButton = root.findViewById(R.id.button_record);
+
+
         captureButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -95,7 +98,18 @@ public class CameraFragment extends Fragment {
                     }
                 });
         ImageView myButton_a = root.findViewById(R.id.imwgShare);
+        ImageView myButton_b = root.findViewById(R.id.imageVieaaw25);
 
+        myButton_b.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                onSlideViewButtonClick(view);
+
+            }
+
+        });
         myButton_a.setOnClickListener(new View.OnClickListener() {
 
             @Override

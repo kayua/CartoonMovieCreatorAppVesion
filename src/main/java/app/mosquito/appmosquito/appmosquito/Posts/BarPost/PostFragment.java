@@ -49,7 +49,6 @@ public class PostFragment extends Fragment {
         myButton = root.findViewById(R.id.enter_chat1);
 
         myButton_a = root.findViewById(R.id.imageView23);
-
         editor = root.findViewById(R.id.imageViedddw24);
 
         myButton_a.setOnClickListener(new View.OnClickListener() {
