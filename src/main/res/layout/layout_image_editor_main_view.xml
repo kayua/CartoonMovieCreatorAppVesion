@@ -34,14 +34,15 @@
             android:layout_height="260dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="1dp"
-            android:background="@drawable/gradient_color"
+            android:background="@drawable/button_design_fill_msg"
             android:orientation="vertical"
             tools:ignore="MissingConstraints">
 
             <ImageView
                 android:id="@+id/imageView25"
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
+                android:layout_width="320dp"
+                android:layout_gravity="center"
+                android:layout_height="30dp"
                 app:srcCompat="@drawable/arrow_down" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -151,11 +152,12 @@
 
     <ImageView
         android:id="@+id/imgShare"
-        android:layout_width="414dp"
-        android:layout_height="68dp"
-        android:background="#00FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="@drawable/button_design_fill_msg"
         android:padding="8dp"
-        android:src="@drawable/arrow_up"
+
+        android:foreground= "@drawable/arrow_up"
         app:layout_constraintBottom_toBottomOf="@+id/photoEditorView"
         app:layout_constraintEnd_toStartOf="@+id/imgUndo"
         app:layout_constraintStart_toEndOf="@+id/imgCamera" />
