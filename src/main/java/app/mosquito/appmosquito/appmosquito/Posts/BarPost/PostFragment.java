@@ -30,6 +30,9 @@ public class PostFragment extends Fragment {
     ImageView myButton_a;
     ImageView editor;
     View myView;
+    View myLayout;
+    ImageView epost;
+
     boolean isUp;
     ArrayAdapter<String> adapter;
     ListView lista;
@@ -47,6 +50,8 @@ public class PostFragment extends Fragment {
         lista.setAdapter(adapter);
         myView = root.findViewById(R.id.my_view);
         myButton = root.findViewById(R.id.enter_chat1);
+        View myLayout = root.findViewById(R.id.bottomlayout);
+
 
         myButton_a = root.findViewById(R.id.imageView23);
         editor = root.findViewById(R.id.imageViedddw24);
@@ -57,10 +62,24 @@ public class PostFragment extends Fragment {
             public void onClick(View view) {
 
                 onSlideViewButtonClick(view);
+                myLayout.bringToFront();
 
             }
 
         });
+
+        myButton_a.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                onSlideViewButtonClick(view);
+                myLayout.bringToFront();
+
+            }
+
+        });
+
 
         editor.setOnClickListener(new View.OnClickListener() {
 
@@ -106,11 +125,13 @@ public class PostFragment extends Fragment {
         animate.setDuration(600);
         animate.setFillAfter(true);
         view.startAnimation(animate);
+
+        myButton.bringToFront();
         view.bringToFront();
     }
 
-    // slide the view from its current position to below itself
     public void slideDown(View view){
+
         TranslateAnimation animate = new TranslateAnimation(
                 0,                 // fromXDelta
                 0,                 // toXDelta
@@ -122,7 +143,9 @@ public class PostFragment extends Fragment {
         view.setEnabled(false);
         view.setFocusableInTouchMode(false);
         view.setFocusable(false);
+        myButton.bringToFront();
         lista.bringToFront();
+
 
     }
 
