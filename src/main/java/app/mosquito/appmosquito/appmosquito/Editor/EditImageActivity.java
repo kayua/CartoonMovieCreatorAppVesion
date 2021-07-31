@@ -96,6 +96,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         setContentView(R.layout.activity_edit_image);
         initViews();
         myButton = findViewById(R.id.button2dasd);
+        myView = findViewById(R.id.myd_view);
         myButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
