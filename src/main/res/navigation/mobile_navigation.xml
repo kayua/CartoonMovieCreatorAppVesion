@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/nav_image"
-        android:name="app.mosquito.appmosquito.appmosquito.Posts.Profile.ProfileFragment"
+        android:name="app.mosquito.appmosquito.appmosquito.Camera.CameraFragment"
         android:label="Galeria de videos"
         tools:layout="@layout/layout_media_list" />
 
@@ -17,7 +17,7 @@
         android:id="@+id/nav_camera"
         android:name="app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostFragment"
         android:label="Câmera"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/layout_camera_main" />
 
    
     <fragment

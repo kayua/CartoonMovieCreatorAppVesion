@@ -18,9 +18,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -28,7 +30,9 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
 import app.mosquito.appmosquito.appmosquito.R;
+
 import static android.content.ContentValues.TAG;
 
 public class CameraFragment extends Fragment {
@@ -54,8 +58,9 @@ public class CameraFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = new ViewModelProvider(this).get(CameraViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root = inflater.inflate(R.layout.layout_camera_main, container, false);
         mCamera = getCameraInstance();
+
         mPreview = new CameraPreview(getContext(), mCamera);
         FrameLayout preview = (FrameLayout) root.findViewById(R.id.camera_preview);
         preview.addView(mPreview);

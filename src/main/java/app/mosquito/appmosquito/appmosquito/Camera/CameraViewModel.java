@@ -11,6 +11,7 @@ public class CameraViewModel extends ViewModel {
     private MutableLiveData<String> mText;
     private TextView userName;
     public CameraViewModel() {
+
         mText = new MutableLiveData<>();
         mText.setValue("This is home fragment");
     }
