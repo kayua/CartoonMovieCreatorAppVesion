@@ -61,7 +61,7 @@
             android:layout_marginLeft="4dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="4dp"
-            android:background="@drawable/arrow" />
+            android:background="@drawable/dots" />
 
     </LinearLayout>
 
@@ -77,7 +77,7 @@
             android:id="@+id/imageView23"
             android:layout_width="match_parent"
             android:layout_height="39dp"
-            app:srcCompat="@drawable/dots" />
+            app:srcCompat="@drawable/arrow_down" />
 
         <EditText
             android:id="@+id/editTextTextMultiLine7"

@@ -87,7 +87,7 @@ public class PostFragment extends Fragment {
                 0,                 // toXDelta
                 view.getHeight(),  // fromYDelta
                 0);                // toYDelta
-        animate.setDuration(500);
+        animate.setDuration(600);
         animate.setFillAfter(true);
         view.startAnimation(animate);
         view.bringToFront();
@@ -100,7 +100,7 @@ public class PostFragment extends Fragment {
                 0,                 // toXDelta
                 0,                 // fromYDelta
                 view.getHeight()); // toYDelta
-        animate.setDuration(750);
+        animate.setDuration(300);
         animate.setFillAfter(true);
         view.startAnimation(animate);
         view.setEnabled(false);
