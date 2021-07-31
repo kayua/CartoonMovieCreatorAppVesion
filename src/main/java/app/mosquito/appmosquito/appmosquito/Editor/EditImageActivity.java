@@ -99,6 +99,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.sky_blue_color_picker));
         makeFullScreen();
         setContentView(R.layout.layout_image_editor_main_view);
         conteudo = findViewById(R.id.imgShare);

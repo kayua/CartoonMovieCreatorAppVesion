@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -40,7 +41,7 @@ public class MainUserInterface extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sidebar_slid);
-
+        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.sky_blue_color_picker));
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
