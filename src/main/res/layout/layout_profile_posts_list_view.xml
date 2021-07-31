@@ -9,10 +9,10 @@
     tools:ignore="NamespaceTypo">
 
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbarThumbVertical="@null"
+        android:focusableInTouchMode="false"
         android:alpha="1">
 
         <LinearLayout
@@ -57,7 +57,7 @@
 
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 </LinearLayout>
