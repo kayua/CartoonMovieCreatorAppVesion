@@ -31,7 +31,7 @@ public class GalleryFragment extends Fragment {
     View root;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        root = inflater.inflate(R.layout.activity_videos, container, false);
+        root = inflater.inflate(R.layout.layout_media_list, container, false);
         checkPermissions();
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView_videos);
         recyclerView.setItemAnimator(null);
