@@ -47,7 +47,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvConstraintTools"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 android:background="@color/tool_bg"
                 android:orientation="horizontal"
                 android:paddingTop="4dp"
@@ -70,20 +70,6 @@
                 tools:listitem="@layout/row_filter_view" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/button2dasd"
-            android:layout_width="107dp"
-            android:layout_height="39dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-
-
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="227dp"
-            android:layout_marginEnd="77dp"
-            android:layout_marginBottom="278dp"
-            android:background="@drawable/arrow_up"
-            android:text="Button" />
     </app.mosquito.appmosquito.appmosquito.Editor.Shapes.PhotoEditorView>
 
     <ImageView
@@ -165,8 +151,8 @@
 
     <ImageView
         android:id="@+id/imgShare"
-        android:layout_width="71dp"
-        android:layout_height="39dp"
+        android:layout_width="414dp"
+        android:layout_height="68dp"
         android:background="#00FFFFFF"
         android:padding="8dp"
         android:src="@drawable/arrow_up"

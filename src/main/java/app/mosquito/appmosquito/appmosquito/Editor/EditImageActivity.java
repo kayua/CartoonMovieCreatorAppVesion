@@ -90,6 +90,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
     @Nullable
     @VisibleForTesting
     Uri mSaveImageUri;
+    View conteudo;
 
     private FileSaveHelper mSaveFileHelper;
 
@@ -100,6 +101,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         super.onCreate(savedInstanceState);
         makeFullScreen();
         setContentView(R.layout.activity_edit_image);
+        conteudo = findViewById(R.id.photoEditorView);
         initViews();
         myButton = findViewById(R.id.imgShare);
         myView = findViewById(R.id.myd_view);
@@ -200,6 +202,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         mPhotoEditorView = findViewById(R.id.photoEditorView);
         mTxtCurrentTool = findViewById(R.id.txtCurrentTool);
         mRvTools = findViewById(R.id.rvConstraintTools);
+
         mRvFilters = findViewById(R.id.rvFilterView);
         mRootView = findViewById(R.id.rootView);
         imgUndo = findViewById(R.id.imgUndo);
@@ -641,6 +644,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         view.setEnabled(false);
         view.setFocusableInTouchMode(false);
         view.setFocusable(false);
+        conteudo.bringToFront();
 
 
     }
