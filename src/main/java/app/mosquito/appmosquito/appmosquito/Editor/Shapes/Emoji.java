@@ -54,7 +54,7 @@ class Emoji extends Graphic {
         ViewType getViewType() { return ViewType.EMOJI; }
 
     @Override
-    int getLayoutId() { return R.layout.view_photo_editor_text; }
+    int getLayoutId() { return R.layout.layout_image_editor_text; }
 
     @Override
     void setupView(View rootView) {
