@@ -36,7 +36,7 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_display);
+        setContentView(R.layout.layout_gallery_display);
         folderName = findViewById(R.id.foldername);
         folderName.setText(getIntent().getStringExtra("folderName"));
         foldePath =  getIntent().getStringExtra("folderPath");
