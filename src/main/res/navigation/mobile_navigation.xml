@@ -30,7 +30,7 @@
         android:id="@+id/nav_filters"
         android:name="app.mosquito.appmosquito.appmosquito.Filters.FiltersFragment"
         android:label="@string/filters"
-        tools:layout="@layout/fragment_filters" />
+        tools:layout="@layout/layout_user_settings" />
 
 
     <fragment

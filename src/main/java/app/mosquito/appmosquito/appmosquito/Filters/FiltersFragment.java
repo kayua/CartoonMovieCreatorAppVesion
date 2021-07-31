@@ -19,7 +19,7 @@ public class FiltersFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         settingsViewModel = new ViewModelProvider(this).get(FiltersViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_filters, container, false);
+        View root = inflater.inflate(R.layout.layout_user_settings, container, false);
 
         return root;
         };

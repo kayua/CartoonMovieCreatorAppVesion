@@ -25,7 +25,7 @@
         android:background="@drawable/background_menu"
 
         android:fitsSystemWindows="false"
-        app:headerLayout="@layout/nav_header_main"
+        app:headerLayout="@layout/layout_sidebar_slid_form"
         app:menu="@menu/activity_main_drawer">
 
         <ImageView
