@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/imgToolIcon"
-        android:layout_width="@dimen/editor_size"
-        android:layout_height="@dimen/editor_size"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

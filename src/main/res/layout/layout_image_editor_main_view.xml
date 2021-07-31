@@ -47,7 +47,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvConstraintTools"
-                android:layout_width="360dp"
+                android:layout_width="316dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@color/colorButtonNormal"
@@ -63,7 +63,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvFilterView"
                 android:layout_width="match_parent"
-                android:layout_height="95dp"
+                android:layout_height="101dp"
                 android:background="@color/colorButtonNormal"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -78,7 +78,7 @@
         android:id="@+id/imgUndo"
         android:layout_width="@dimen/top_tool_icon_width"
         android:layout_height="wrap_content"
-        android:background="#000000"
+        android:background="#00120808"
         android:padding="8dp"
         android:src="@drawable/ic_undo"
         app:layout_constraintBottom_toTopOf="@+id/rvConstraintTools"

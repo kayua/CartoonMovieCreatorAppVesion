@@ -22,7 +22,7 @@
    
     <fragment
         android:id="@+id/nav_home"
-        android:name="app.mosquito.appmosquito.appmosquito.GalleryPhotos.GalleryFragment"
+        android:name="app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostFragment"
         android:label="Galeria de imagens"
         tools:layout="@layout/layout_gallery_main_display" />
 
