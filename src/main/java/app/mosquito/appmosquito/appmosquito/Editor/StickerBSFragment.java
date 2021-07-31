@@ -59,7 +59,7 @@ public class StickerBSFragment extends BottomSheetDialogFragment {
     public void setupDialog(Dialog dialog, int style) {
 
         super.setupDialog(dialog, style);
-        View contentView = View.inflate(getContext(), R.layout.fragment_bottom_sticker_emoji_dialog, null);
+        View contentView = View.inflate(getContext(), R.layout.layout_image_editor_bottom_sticker, null);
         dialog.setContentView(contentView);
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) contentView.getParent()).getLayoutParams();
         CoordinatorLayout.Behavior behavior = params.getBehavior();
