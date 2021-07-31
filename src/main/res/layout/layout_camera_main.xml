@@ -64,7 +64,7 @@
     <LinearLayout
         android:id="@+id/mydd_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="120dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/button_design_fill_msg"
         android:orientation="vertical"
