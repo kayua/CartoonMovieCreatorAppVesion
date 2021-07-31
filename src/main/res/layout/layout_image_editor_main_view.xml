@@ -47,8 +47,9 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvConstraintTools"
-                android:layout_width="match_parent"
-                android:layout_height="108dp"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="@color/colorButtonNormal"
                 android:orientation="horizontal"
                 android:paddingTop="4dp"
