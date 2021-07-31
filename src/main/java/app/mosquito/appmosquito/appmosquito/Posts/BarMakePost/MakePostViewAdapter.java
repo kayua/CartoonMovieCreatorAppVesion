@@ -70,7 +70,7 @@ public class MakePostViewAdapter extends BaseAdapter {
 
         } else if (Categorical.equals(MakePostCategorical.postMovie)) {
 
-            view = act.getLayoutInflater().inflate(R.layout.layout_post_video, parent, false);
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_page_video, parent, false);
 
             TextView postUserName = (TextView) view.findViewById(R.id.tasdextView);
             TextView postText = (TextView) view.findViewById(R.id.textdddView);
@@ -82,7 +82,7 @@ public class MakePostViewAdapter extends BaseAdapter {
 
         }else if (Categorical.equals(MakePostCategorical.postSuggest)) {
 
-            view = act.getLayoutInflater().inflate(R.layout.layout_post_suggestion, parent, false);
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_page_suggestion, parent, false);
 
         }
         return view;
