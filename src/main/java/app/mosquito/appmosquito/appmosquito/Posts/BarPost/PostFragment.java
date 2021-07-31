@@ -126,6 +126,7 @@ public class PostFragment extends Fragment {
 
         PostStructure postOne = new PostStructure();
         PostStructure postThree = new PostStructure();
+        PostStructure postTwo = new PostStructure();
         PostStructure postFour = new PostStructure();
         PostStructure postHeader = new PostStructure();
 
@@ -140,12 +141,23 @@ public class PostFragment extends Fragment {
         postOne.setPostText("Texto de exemplo post");
         postOne.setPostState(PostState.FAZENDO);
 
+        postTwo.setPostName("Primeiro Post");
+        postTwo.setPostUserName("Kayuã Oleques Paim");
+        postTwo.setPostDate("28/07/21 23:36");
+        postTwo.setPostCategorical(PostCategorical.postPhoto);
+        postTwo.setPostLocalization("Alegrete - RS");
+        postTwo.setPostNumberLikes(100);
+        postTwo.setPostNumberShares(31);
+        postTwo.setPostNumberComments(31);
+        postTwo.setPostText("Texto de exemplo post");
+        postTwo.setPostState(PostState.FAZENDO);
+
 
         postThree.setPostName("Terceiro Post");
         postThree.setPostUserName("Kayuã Oleques Paim");
         postThree.setPostDate("28/07/21 23:36");
         postThree.setPostText("Texto de exemplo post");
-        postThree.setPostCategorical(PostCategorical.postMovie);
+        postThree.setPostCategorical(PostCategorical.postText);
         postThree.setPostLocalization("Alegrete - RS");
         postThree.setPostNumberLikes(100);
         postThree.setPostNumberShares(31);
@@ -174,7 +186,7 @@ public class PostFragment extends Fragment {
         postHeader.setPostNumberComments(31);
         postHeader.setPostState(PostState.FAZENDO);
 
-    return new ArrayList<>(Arrays.asList(postHeader, postOne, postThree, postFour));
+    return new ArrayList<>(Arrays.asList(postHeader, postOne,postTwo, postThree, postFour));
 }
 
 

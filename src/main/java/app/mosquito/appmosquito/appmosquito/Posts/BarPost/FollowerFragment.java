@@ -71,6 +71,17 @@ public class FollowerFragment extends Fragment {
         postOne.setPostText("Texto de exemplo post");
         postOne.setPostState(PostState.FAZENDO);
 
+        postTwo.setPostName("Primeiro Post");
+        postTwo.setPostUserName("Kayuã Oleques Paim");
+        postTwo.setPostDate("28/07/21 23:36");
+        postTwo.setPostCategorical(PostCategorical.postPhoto);
+        postTwo.setPostLocalization("Alegrete - RS");
+        postTwo.setPostNumberLikes(100);
+        postTwo.setPostNumberShares(31);
+        postTwo.setPostNumberComments(31);
+        postTwo.setPostText("Texto de exemplo post");
+        postTwo.setPostState(PostState.FAZENDO);
+
 
         postThree.setPostName("Terceiro Post");
         postThree.setPostUserName("Kayuã Oleques Paim");
@@ -105,7 +116,7 @@ public class FollowerFragment extends Fragment {
         postHeader.setPostNumberComments(31);
         postHeader.setPostState(PostState.FAZENDO);
 
-    return new ArrayList<>(Arrays.asList(postHeader, postOne, postThree, postFour));
+    return new ArrayList<>(Arrays.asList(postHeader, postOne,postTwo, postThree, postFour));
 }
 
 
