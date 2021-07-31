@@ -56,7 +56,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/guideline"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:listitem="@layout/row_editing_tools" />
+                tools:listitem="@layout/layout_image_edito_tools" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvFilterView"

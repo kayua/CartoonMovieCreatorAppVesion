@@ -42,7 +42,7 @@ class Sticker extends Graphic {
     ViewType getViewType() { return ViewType.IMAGE; }
 
     @Override
-    int getLayoutId() { return R.layout.view_photo_editor_image; }
+    int getLayoutId() { return R.layout.layout_image_editor_view; }
 
     @Override
     void setupView(View rootView) { imageView = rootView.findViewById(R.id.imgPhotoEditorImage); }
