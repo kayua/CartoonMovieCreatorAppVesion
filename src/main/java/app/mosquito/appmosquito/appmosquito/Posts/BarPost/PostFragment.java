@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ public class PostFragment extends Fragment {
 
     private PostViewModel galleryViewModel;
     Button myButton;
+    ImageView myButton_a;
     View myView;
     boolean isUp;
     ArrayAdapter<String> adapter;
@@ -42,6 +44,18 @@ public class PostFragment extends Fragment {
         lista.setAdapter(adapter);
         myView = root.findViewById(R.id.my_view);
         myButton = root.findViewById(R.id.my_button);
+
+        myButton_a = root.findViewById(R.id.imageView23);
+
+        myButton_a.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                onSlideViewButtonClick(view);
+            }
+
+        });
         myButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
