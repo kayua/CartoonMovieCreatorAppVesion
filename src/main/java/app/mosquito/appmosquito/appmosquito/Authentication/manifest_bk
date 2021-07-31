@@ -87,10 +87,6 @@
             android:name=".Authentication.RegisterProfileThird"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".Editor.Base.BaseActivity" android:screenOrientation="portrait" />
-        <activity android:name=".Editor.EditImageActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
-
-
 
         <activity android:name=".GalleryPhotos.ImageDisplay" android:screenOrientation="portrait"/>
 
