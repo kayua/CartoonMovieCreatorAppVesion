@@ -37,7 +37,6 @@ public class FollowerFragment extends Fragment {
         ListView list = root.findViewById(R.id.chat_list_view);
 
         myView = root.findViewById(R.id.my_view);
-        myButton = root.findViewById(R.id.my_button);
 
         // initialize as invisible (could also do in xml)
         myView.setVisibility(View.INVISIBLE);
