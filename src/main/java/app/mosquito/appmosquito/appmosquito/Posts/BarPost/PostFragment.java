@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -25,11 +24,12 @@ import app.mosquito.appmosquito.appmosquito.R;
 public class PostFragment extends Fragment {
 
     private PostViewModel galleryViewModel;
-    Button myButton;
+    ImageView myButton;
     ImageView myButton_a;
     View myView;
     boolean isUp;
     ArrayAdapter<String> adapter;
+    ListView lista;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -38,12 +38,12 @@ public class PostFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_message, container, false);
         ListView list = root.findViewById(R.id.chat_list_view);
 
-        ListView lista = (ListView) root.findViewById(R.id.chat_list_view);
+        lista = (ListView) root.findViewById(R.id.chat_list_view);
         List<PostStructure> cursos = todosOsCursos();
         PostViewAdapter adapter = new PostViewAdapter(cursos, getActivity());
         lista.setAdapter(adapter);
         myView = root.findViewById(R.id.my_view);
-        myButton = root.findViewById(R.id.my_button);
+        myButton = root.findViewById(R.id.enter_chat1);
 
         myButton_a = root.findViewById(R.id.imageView23);
 
@@ -53,6 +53,7 @@ public class PostFragment extends Fragment {
             public void onClick(View view) {
 
                 onSlideViewButtonClick(view);
+
             }
 
         });
@@ -67,7 +68,7 @@ public class PostFragment extends Fragment {
         });
         // initialize as invisible (could also do in xml)
         myView.setVisibility(View.INVISIBLE);
-        myButton.setText("Slide up");
+
         isUp = false;
 
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -89,6 +90,7 @@ public class PostFragment extends Fragment {
         animate.setDuration(500);
         animate.setFillAfter(true);
         view.startAnimation(animate);
+        view.bringToFront();
     }
 
     // slide the view from its current position to below itself
@@ -98,18 +100,23 @@ public class PostFragment extends Fragment {
                 0,                 // toXDelta
                 0,                 // fromYDelta
                 view.getHeight()); // toYDelta
-        animate.setDuration(500);
+        animate.setDuration(750);
         animate.setFillAfter(true);
         view.startAnimation(animate);
+        view.setEnabled(false);
+        view.setFocusableInTouchMode(false);
+        view.setFocusable(false);
+        lista.bringToFront();
+
     }
 
     public void onSlideViewButtonClick(View view) {
         if (isUp) {
             slideDown(myView);
-            myButton.setText("Slide up");
+
         } else {
             slideUp(myView);
-            myButton.setText("Slide down");
+
         }
         isUp = !isUp;
     }
