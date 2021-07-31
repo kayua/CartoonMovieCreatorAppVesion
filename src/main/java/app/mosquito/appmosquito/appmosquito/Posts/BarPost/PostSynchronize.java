@@ -13,7 +13,7 @@ public class PostSynchronize extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_posts_list_view);
+        setContentView(R.layout.layout_post_page_list_view);
         ListView listPosts = (ListView) findViewById(R.id.lista);
         List<PostStructure> typePosts = allTypePosts();
         PostViewAdapter adapter = new PostViewAdapter(typePosts, this);

@@ -58,7 +58,7 @@ public class ProfileViewAdapter extends BaseAdapter {
 
         } else if (Categorical.equals(ProfileCategorical.postPhoto)) {
 
-            view = act.getLayoutInflater().inflate(R.layout.layout_posts_image, parent, false);
+            view = act.getLayoutInflater().inflate(R.layout.layout_post_page_image, parent, false);
 
             TextView postUserName = (TextView) view.findViewById(R.id.textVieasdw);
             TextView postText = (TextView) view.findViewById(R.id.texasdasdtView);
@@ -81,7 +81,7 @@ public class ProfileViewAdapter extends BaseAdapter {
 
         }else if (Categorical.equals(ProfileCategorical.postProfile)) {
 
-            view = act.getLayoutInflater().inflate(R.layout.layout_profile, parent, false);
+            view = act.getLayoutInflater().inflate(R.layout.layout_profile_view_header, parent, false);
 
         }
         return view;
