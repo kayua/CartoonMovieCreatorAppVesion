@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Camera.TransferredActivity">
 
-    <include layout="@layout/content_transferred" />
+    <include layout="@layout/layout_camera_tranference" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

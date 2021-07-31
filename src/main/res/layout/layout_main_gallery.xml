@@ -33,7 +33,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include
-        layout="@layout/content_main"
+        layout="@layout/layout_gallery_contents"
         android:background="#FFFFFF" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
