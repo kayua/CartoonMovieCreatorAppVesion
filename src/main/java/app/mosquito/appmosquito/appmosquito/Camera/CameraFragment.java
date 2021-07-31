@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -44,6 +45,8 @@ public class CameraFragment extends Fragment {
     MediaRecorder mediaRecorder;
     CameraPreview mPreview;
     Camera mCamera;
+    View myView;
+    boolean isUp;
     boolean isRecording = false;
 
     public static final String PREFS_NAME = "PersonalDatabase";
@@ -90,11 +93,19 @@ public class CameraFragment extends Fragment {
                             }
                         }
                     }
-                }
+                });
+        ImageView myButton_a = root.findViewById(R.id.imwgShare);
 
+        myButton_a.setOnClickListener(new View.OnClickListener() {
 
-        );
+            @Override
+            public void onClick(View view) {
 
+                onSlideViewButtonClick(view);
+
+            }
+
+        });
         return root;
     }
 
@@ -216,6 +227,45 @@ public class CameraFragment extends Fragment {
         }
 
         return mediaFile;
+    }
+
+    public void slideUp(View view){
+        view.setVisibility(View.VISIBLE);
+        TranslateAnimation animate = new TranslateAnimation(
+                0,
+                0,
+                view.getHeight(),
+                0);
+        animate.setDuration(600);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.bringToFront();
+    }
+
+    public void slideDown(View view){
+        TranslateAnimation animate = new TranslateAnimation(
+                0,
+                0,                 // toXDelta
+                0,                 // fromYDelta
+                view.getHeight()); // toYDelta
+        animate.setDuration(300);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.setEnabled(false);
+        view.setFocusableInTouchMode(false);
+        view.setFocusable(false);
+
+    }
+
+    public void onSlideViewButtonClick(View view) {
+        if (isUp) {
+            slideDown(myView);
+
+        } else {
+            slideUp(myView);
+
+        }
+        isUp = !isUp;
     }
 
     public void saveFrames(ArrayList<Bitmap> saveBitmapList) throws IOException {

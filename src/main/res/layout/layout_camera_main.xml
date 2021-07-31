@@ -104,4 +104,16 @@
             tools:ignore="MissingConstraints"
             tools:listitem="@layout/row_filter_view" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imwgShare"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+
+        android:background="@drawable/button_design_fill_msg"
+        android:foreground="@drawable/arrow_up"
+
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
