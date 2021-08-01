@@ -82,7 +82,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="198dp"
+                android:layout_height="200dp"
                 android:layout_margin="6dp"
                 android:background="@drawable/background_post"
                 android:orientation="vertical">
@@ -153,7 +153,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="64dp"
+                        android:layout_width="61dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
@@ -172,7 +172,7 @@
                             <ImageView
 
                                 android:id="@+id/imagdeView2"
-                                android:layout_width="37dp"
+                                android:layout_width="39dp"
                                 android:layout_height="21dp"
                                 android:layout_marginTop="12dp"
                                 android:background="@drawable/three_dot" />
