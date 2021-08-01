@@ -14,12 +14,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="265dp">
+        android:layout_height="255dp">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="253dp"
+            android:layout_height="246dp"
             android:background="@drawable/background_post_menu"
             android:orientation="vertical">
 
@@ -30,9 +30,9 @@
                 android:layout_height="21dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="177dp"
+                android:layout_marginTop="173dp"
                 android:layout_marginEnd="38dp"
-                android:text="Adicionar um botão para seguir"
+                android:text="Kayuã Oleques Paim"
                 android:textAlignment="center"
                 android:textColor="#838181"
                 android:textColorHint="#757474"
@@ -42,7 +42,7 @@
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="135dp"
                 android:background="@drawable/example12" />
 
             <com.mikhaellopez.circularimageview.CircularImageView
@@ -52,8 +52,8 @@
                 android:layout_height="108dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="89dp"
-                android:layout_marginBottom="82dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginBottom="79dp"
                 android:src="@drawable/icon_general_user"
                 app:civ_border_color="#BCF1EEEE"
                 app:civ_border_width="1dp"
@@ -65,45 +65,45 @@
                 app:layout_constraintVertical_bias="0.047" />
 
             <LinearLayout
-                android:layout_width="176dp"
-                android:layout_height="49dp"
+                android:layout_width="179dp"
+                android:layout_height="50dp"
 
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="197dp"
-                android:layout_marginEnd="46dp"
-                android:layout_marginBottom="7dp"
+                android:layout_marginTop="190dp"
+                android:layout_marginEnd="47dp"
+                android:layout_marginBottom="6dp"
                 android:orientation="horizontal">
 
                 <ImageView
 
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="4dp"
                     app:srcCompat="@drawable/icon_share" />
 
                 <ImageView
 
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="4dp"
                     app:srcCompat="@drawable/h" />
 
                 <ImageView
 
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="4dp"
                     app:srcCompat="@drawable/cameras" />
 
                 <ImageView
 
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:layout_marginTop="10dp"
                     app:srcCompat="@drawable/dots" />
 
@@ -348,7 +348,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_post_menu"
+
             android:orientation="vertical">
 
             <LinearLayout
