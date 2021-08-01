@@ -84,7 +84,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_margin="6dp"
-                android:background="@drawable/background_post"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -153,7 +152,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="61dp"
+                        android:layout_width="56dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
@@ -172,7 +171,7 @@
                             <ImageView
 
                                 android:id="@+id/imagdeView2"
-                                android:layout_width="39dp"
+                                android:layout_width="44dp"
                                 android:layout_height="21dp"
                                 android:layout_marginTop="12dp"
                                 android:background="@drawable/three_dot" />
@@ -216,7 +215,6 @@
                                 android:id="@+id/editTextTextMultiLine"
                                 android:layout_width="319dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:background="@drawable/design_text_box"
                                 android:ems="10"
                                 android:gravity="start|top"
