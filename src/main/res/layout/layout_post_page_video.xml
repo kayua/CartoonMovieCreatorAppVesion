@@ -191,8 +191,18 @@
                 android:gravity="right|center_horizontal"
                 android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="1dp"
+                    android:text="+10 k"
+                    android:textColor="#807F7F"
+                    android:textStyle="bold" />
+
                 <LinearLayout
-                    android:layout_width="10dp"
+                    android:layout_width="8dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical" />
 
