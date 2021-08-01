@@ -89,7 +89,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="74dp"
+                    android:layout_height="55dp"
                     android:orientation="horizontal">
 
                     <com.mikhaellopez.circularimageview.CircularImageView
@@ -116,7 +116,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="188dp"
+                        android:layout_width="185dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
@@ -172,7 +172,7 @@
                             <ImageView
 
                                 android:id="@+id/imagdeView2"
-                                android:layout_width="32dp"
+                                android:layout_width="37dp"
                                 android:layout_height="21dp"
                                 android:layout_marginTop="12dp"
                                 android:background="@drawable/three_dot" />
@@ -209,13 +209,13 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="72dp"
+                            android:layout_height="90dp"
                             android:orientation="vertical">
 
                             <EditText
                                 android:id="@+id/editTextTextMultiLine"
                                 android:layout_width="319dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="@drawable/design_text_box"
                                 android:ems="10"
