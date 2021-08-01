@@ -1,6 +1,5 @@
 package app.mosquito.appmosquito.appmosquito.Posts.BarPost;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import app.mosquito.appmosquito.appmosquito.Editor.EditImageActivity;
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class PostFragment extends Fragment {
@@ -54,7 +52,7 @@ public class PostFragment extends Fragment {
 
 
         myButton_a = root.findViewById(R.id.imageView23);
-        editor = root.findViewById(R.id.imageViedddw24);
+        //editor = root.findViewById(R.id.imageViedddw24);
 
         myButton_a.setOnClickListener(new View.OnClickListener() {
 
@@ -80,18 +78,6 @@ public class PostFragment extends Fragment {
 
         });
 
-
-        editor.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                Intent i = new Intent(getContext(), EditImageActivity.class);
-                startActivity(i);
-
-            }
-
-        });
         myButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
