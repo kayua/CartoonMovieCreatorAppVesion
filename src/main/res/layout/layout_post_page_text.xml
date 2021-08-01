@@ -151,7 +151,7 @@
                         android:layout_height="42dp"
                         android:text="Frio extremo aqui, essa mensagem é um teste de texto de múltiplas linhas. Obrigado!"
                         android:textAlignment="viewStart"
-                        android:textColor="#717070"
+                        android:textColor="#888888"
                         android:textSize="13sp"
 
                         android:textStyle="bold" />
