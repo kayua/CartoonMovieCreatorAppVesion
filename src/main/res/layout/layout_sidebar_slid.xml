@@ -22,7 +22,7 @@
         android:layout_width="290dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@drawable/background_menu"
+        android:background="@drawable/blank_image"
 
         android:fitsSystemWindows="false"
         app:headerLayout="@layout/layout_sidebar_slid_form"
