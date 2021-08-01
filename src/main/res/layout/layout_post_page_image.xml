@@ -245,8 +245,8 @@
 
                     <ImageView
                         android:id="@+id/imageView9"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
                         android:layout_marginTop="10dp"
                         app:srcCompat="@drawable/msg_comentary" />
 
@@ -259,8 +259,8 @@
 
                     <ImageView
                         android:id="@+id/imageView9"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
                         android:layout_marginTop="10dp"
                         app:srcCompat="@drawable/h" />
 
@@ -274,8 +274,8 @@
 
                     <ImageView
                         android:id="@+id/imageView9"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
                         android:layout_marginTop="10dp"
                         app:srcCompat="@drawable/icon_share" />
 
