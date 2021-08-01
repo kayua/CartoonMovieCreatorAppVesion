@@ -26,24 +26,5 @@
 
         android:fitsSystemWindows="false"
         app:headerLayout="@layout/layout_sidebar_slid_form"
-        app:menu="@menu/activity_main_drawer">
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:layout_gravity="bottom"
-            android:alpha="0.75"
-            android:background="#2F90B3" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_gravity="bottom"
-            android:text="                     Versão 1.0.0.2 Beta"
-            android:textColor="#CDF6F2F2" />
-
-
-    </com.google.android.material.navigation.NavigationView>
+        app:menu="@menu/activity_main_drawer"/>
 </androidx.drawerlayout.widget.DrawerLayout>
