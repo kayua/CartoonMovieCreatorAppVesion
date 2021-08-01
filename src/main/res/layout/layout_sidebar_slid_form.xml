@@ -48,12 +48,12 @@
             <com.mikhaellopez.circularimageview.CircularImageView
 
                 android:id="@+id/imageViewSecondImage"
-                android:layout_width="108dp"
-                android:layout_height="108dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="84dp"
-                android:layout_marginBottom="79dp"
+                android:layout_marginEnd="87dp"
+                android:layout_marginBottom="77dp"
                 android:src="@drawable/icon_general_user"
                 app:civ_border_color="#BCF1EEEE"
                 app:civ_border_width="1dp"
@@ -65,15 +65,15 @@
                 app:layout_constraintVertical_bias="0.047" />
 
             <LinearLayout
-                android:layout_width="179dp"
-                android:layout_height="50dp"
+                android:layout_width="202dp"
+                android:layout_height="47dp"
 
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="190dp"
-                android:layout_marginEnd="47dp"
-                android:layout_marginBottom="6dp"
+                android:layout_marginTop="192dp"
+                android:layout_marginEnd="33dp"
+                android:layout_marginBottom="7dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -97,8 +97,16 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginRight="3dp"
                     app:srcCompat="@drawable/cameras" />
+
+                <ImageView
+
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="4dp"
+                    app:srcCompat="@drawable/msg_comentary" />
 
                 <ImageView
 
