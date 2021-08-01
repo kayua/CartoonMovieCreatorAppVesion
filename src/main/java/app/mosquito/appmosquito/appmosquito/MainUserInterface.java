@@ -25,6 +25,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import app.mosquito.appmosquito.appmosquito.Camera.CameraActivity;
 import app.mosquito.appmosquito.appmosquito.Editor.EditImageActivity;
 import app.mosquito.appmosquito.appmosquito.Settings.SettingsFragment;
 
@@ -86,7 +87,17 @@ public class MainUserInterface extends AppCompatActivity{
             }
 
         });
+        imageView_camera.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getApplicationContext(), CameraActivity.class);
+                startActivity(i);
+
+            }
+
+        });
 
         String picturePath = settings.getString("imageUser", "");
 
