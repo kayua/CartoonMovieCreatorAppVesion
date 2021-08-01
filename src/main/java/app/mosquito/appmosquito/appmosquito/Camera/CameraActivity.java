@@ -1,6 +1,5 @@
 package app.mosquito.appmosquito.appmosquito.Camera;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -13,15 +12,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.io.ByteArrayOutputStream;
@@ -36,7 +32,7 @@ import app.mosquito.appmosquito.appmosquito.R;
 
 import static android.content.ContentValues.TAG;
 
-public class CameraFragment extends Fragment {
+public class CameraActivity extends AppCompatActivity {
 
     private CameraViewModel homeViewModel;
     public static final int MEDIA_TYPE_IMAGE = 1;
@@ -54,22 +50,18 @@ public class CameraFragment extends Fragment {
     public static final String PREFS_NAME = "PersonalDatabase";
 
     @Override
-    public void onAttach(Context context) {
-        this.context = context;
-        super.onAttach(context);
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.layout_camera_main);
 
-    @SuppressLint("WrongThread")
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = new ViewModelProvider(this).get(CameraViewModel.class);
-        View root = inflater.inflate(R.layout.layout_camera_main, container, false);
+
         mCamera = getCameraInstance();
-        myView = root.findViewById(R.id.mydd_view);
-        mPreview = new CameraPreview(getContext(), mCamera);
-        FrameLayout preview = (FrameLayout) root.findViewById(R.id.camera_preview);
+        myView = findViewById(R.id.mydd_view);
+        mPreview = new CameraPreview(getApplicationContext(), mCamera);
+        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         preview.addView(mPreview);
-        ImageView captureButton = root.findViewById(R.id.button_record);
+        ImageView captureButton = findViewById(R.id.button_record);
 
 
         captureButton.setOnClickListener(
@@ -98,8 +90,8 @@ public class CameraFragment extends Fragment {
                         }
                     }
                 });
-        ImageView myButton_a = root.findViewById(R.id.imwgShare);
-        ImageView myButton_b = root.findViewById(R.id.imageVieaaw25);
+        ImageView myButton_a = findViewById(R.id.imwgShare);
+        ImageView myButton_b = findViewById(R.id.imageVieaaw25);
 
         myButton_b.setOnClickListener(new View.OnClickListener() {
 
@@ -121,9 +113,8 @@ public class CameraFragment extends Fragment {
             }
 
         });
-        return root;
-    }
 
+    }
     private void castToFrames(){
 
         File videoFile = new File("/storage/emulated/0/Movies/MyCameraApp/VID_20210619_160213.mp4");
@@ -134,7 +125,7 @@ public class CameraFragment extends Fragment {
         retriever.setDataSource(videoFile.getAbsolutePath());
         ArrayList<Bitmap> rev = new ArrayList<Bitmap>();
 
-        MediaPlayer mp = MediaPlayer.create(getContext(), videoFileUri);
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), videoFileUri);
         int millis = mp.getDuration();
         for (int i = 0; i < millis; i += 100) {
             Bitmap bitmap = retriever.getFrameAtTime(i, MediaMetadataRetriever.OPTION_CLOSEST);
@@ -313,4 +304,8 @@ public class CameraFragment extends Fragment {
 
     }
 
+
+
 }
+
+

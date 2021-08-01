@@ -42,17 +42,12 @@ public class MainUserInterface extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sidebar_slid);
         getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.sky_blue_color_picker));
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-
         NavigationView navigationView = findViewById(R.id.nav_view);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(Color.argb(220,150,150,150));
-
         //TextView email_textview = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textView8);
         String text = new String();
 

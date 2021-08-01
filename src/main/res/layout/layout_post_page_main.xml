@@ -67,12 +67,12 @@
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="260dp">
+        android:layout_height="220dp">
 
         <ImageView
             android:id="@+id/imageView23"
             android:layout_width="match_parent"
-            android:layout_height="39dp"
+            android:layout_height="24dp"
             app:srcCompat="@drawable/arrow_down" />
 
         <LinearLayout
