@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
-        android:background="@drawable/background_post"
+
         android:orientation="vertical">
 
         <androidx.core.widget.NestedScrollView
@@ -34,27 +34,26 @@
                     app:srcCompat="@drawable/arrow_rigth" />
 
                 <LinearLayout
-                    android:layout_width="92dp"
-                    android:layout_height="104dp"
-                    android:layout_marginStart="-26dp"
+                    android:layout_width="72dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="-20dp"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="2dp"
+                    android:layout_marginTop="6dp"
                     android:layout_marginRight="4dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/background_post"
+                    android:layout_marginBottom="6dp"
+
                     android:gravity="center|center_horizontal|top"
                     android:orientation="vertical">
 
 
                     <com.mikhaellopez.circularimageview.CircularImageView
                         android:id="@+id/imageViewSecondImage"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
                         android:layout_marginTop="6dp"
                         android:src="@drawable/icon_general_user"
-                        app:civ_border_color="#BCF1EEEE"
-                        app:civ_border_width="1dp"
+                        app:civ_border_color="#BCCDCDCD"
+                        app:civ_border_width="2dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.498"
@@ -76,45 +75,36 @@
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
                             android:text="Brasileiro"
-                            android:textSize="10dp" />
+                            android:textColor="#1E1E1E"
+                            android:textColorHint="#1E1E1E"
+                            android:textSize="10dp"
+                            android:textStyle="normal|bold" />
 
                     </LinearLayout>
-
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="70dp"
-                        android:layout_height="16dp"
-                        android:layout_marginTop="4dp"
-                        android:background="@drawable/button_design_fill"
-                        android:text="Seguir"
-                        android:textColor="#FFFFFF"
-                        android:textSize="8sp"
-                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="92dp"
-                    android:layout_height="104dp"
+                    android:layout_width="72dp"
+                    android:layout_height="85dp"
                     android:layout_marginStart="4dp"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="2dp"
+                    android:layout_marginTop="6dp"
                     android:layout_marginRight="4dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/background_post"
+                    android:layout_marginBottom="6dp"
+
                     android:gravity="center|center_horizontal|top"
                     android:orientation="vertical">
 
 
                     <com.mikhaellopez.circularimageview.CircularImageView
                         android:id="@+id/imageViewSecondImage"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
                         android:layout_marginTop="6dp"
                         android:src="@drawable/icon_general_user"
-                        app:civ_border_color="#BCF1EEEE"
-                        app:civ_border_width="1dp"
+                        app:civ_border_color="#BCCDCDCD"
+                        app:civ_border_width="2dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.498"
@@ -136,44 +126,36 @@
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
                             android:text="Brasileiro"
-                            android:textSize="10dp" />
+                            android:textColor="#1E1E1E"
+                            android:textColorHint="#FFFFFF"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
-
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="70dp"
-                        android:layout_height="16dp"
-                        android:layout_marginTop="4dp"
-                        android:background="@drawable/button_design_fill"
-                        android:text="Seguir"
-                        android:textColor="#FFFFFF"
-                        android:textSize="8sp"
-                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="92dp"
-                    android:layout_height="104dp"
+                    android:layout_width="72dp"
+                    android:layout_height="85dp"
                     android:layout_marginStart="4dp"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="6dp"
                     android:layout_marginRight="4dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/background_post"
+                    android:layout_marginBottom="6dp"
+
                     android:gravity="center|center_horizontal|top"
                     android:orientation="vertical">
 
 
                     <com.mikhaellopez.circularimageview.CircularImageView
                         android:id="@+id/imageViewSecondImage"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
                         android:layout_marginTop="6dp"
                         android:src="@drawable/icon_general_user"
-                        app:civ_border_color="#BCF1EEEE"
-                        app:civ_border_width="1dp"
+                        app:civ_border_color="#BCCDCDCD"
+                        app:civ_border_width="2dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.498"
@@ -195,20 +177,61 @@
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
                             android:text="Brasileiro"
-                            android:textSize="10dp" />
+                            android:textColor="#1E1E1E"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="70dp"
-                        android:layout_height="16dp"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="72dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="6dp"
+
+                    android:gravity="center|center_horizontal|top"
+                    android:orientation="vertical">
+
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/imageViewSecondImage"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_marginTop="6dp"
+                        android:src="@drawable/icon_general_user"
+                        app:civ_border_color="#BCCDCDCD"
+                        app:civ_border_width="2dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.047" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:layout_gravity="top"
                         android:layout_marginTop="4dp"
-                        android:background="@drawable/button_design_fill"
-                        android:text="Seguir"
-                        android:textColor="#FFFFFF"
-                        android:textSize="8sp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
+                            android:gravity="center|top"
+                            android:text="Brasileiro"
+                            android:textColor="#1E1E1E"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
