@@ -28,9 +28,10 @@
 
                 <com.mikhaellopez.circularimageview.CircularImageView
                     android:id="@+id/imageViewSecondImage"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_margin="6dp"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="8dp"
                     android:src="@drawable/icon_general_user"
                     app:civ_border_color="#BCF1EEEE"
                     app:civ_border_width="1dp"

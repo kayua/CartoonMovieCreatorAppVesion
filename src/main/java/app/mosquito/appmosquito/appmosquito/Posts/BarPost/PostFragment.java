@@ -149,11 +149,14 @@ public class PostFragment extends Fragment {
 
     private List<PostStructure> todosOsCursos() {
 
+        PostStructure postHeader = new PostStructure();
         PostStructure postOne = new PostStructure();
         PostStructure postThree = new PostStructure();
         PostStructure postTwo = new PostStructure();
         PostStructure postFour = new PostStructure();
-        PostStructure postHeader = new PostStructure();
+
+        PostStructure postFive = new PostStructure();
+        PostStructure postSix = new PostStructure();
 
         postOne.setPostName("Primeiro Post");
         postOne.setPostUserName("Kayuã Oleques Paim");
@@ -211,7 +214,29 @@ public class PostFragment extends Fragment {
         postHeader.setPostNumberComments(31);
         postHeader.setPostState(PostState.FAZENDO);
 
-    return new ArrayList<>(Arrays.asList(postHeader, postOne,postTwo, postThree, postFour));
+        postFive.setPostName("Primeiro Post");
+        postFive.setPostUserName("Kayuã Oleques Paim");
+        postFive.setPostDate("28/07/21 23:36");
+        postFive.setPostCategorical(PostCategorical.postMovie);
+        postFive.setPostLocalization("Alegrete - RS");
+        postFive.setPostNumberLikes(100);
+        postFive.setPostNumberShares(31);
+        postFive.setPostNumberComments(31);
+        postFive.setPostText("Texto de exemplo post");
+        postFive.setPostState(PostState.FAZENDO);
+
+        postSix.setPostName("Primeiro Post");
+        postSix.setPostUserName("Kayuã Oleques Paim");
+        postSix.setPostDate("28/07/21 23:36");
+        postSix.setPostCategorical(PostCategorical.postPhoto);
+        postSix.setPostLocalization("Alegrete - RS");
+        postSix.setPostNumberLikes(100);
+        postSix.setPostNumberShares(31);
+        postSix.setPostNumberComments(31);
+        postSix.setPostText("Texto de exemplo post");
+        postSix.setPostState(PostState.FAZENDO);
+
+    return new ArrayList<>(Arrays.asList(postHeader, postOne,postTwo, postThree, postSix, postFour, postFive));
 }
 
 
