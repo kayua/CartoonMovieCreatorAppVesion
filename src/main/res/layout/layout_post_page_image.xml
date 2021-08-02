@@ -87,7 +87,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="64dp"
+                    android:layout_width="66dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
@@ -105,8 +105,8 @@
 
                         <ImageView
                             android:id="@+id/imagdeView2"
-                            android:layout_width="45dp"
-                            android:layout_height="21dp"
+                            android:layout_width="42dp"
+                            android:layout_height="18dp"
 
                             android:layout_marginTop="12dp"
                             android:background="@drawable/three_dot" />
@@ -127,7 +127,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="38dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -144,11 +144,11 @@
 
                     <TextView
                         android:id="@+id/texasdasdtView"
-                        android:layout_width="315dp"
+                        android:layout_width="321dp"
                         android:layout_height="wrap_content"
                         android:text="Frio extremo aqui, essa mensagem é um teste de texto de múltiplas linhas. Obrigado!"
                         android:textAlignment="viewStart"
-                        android:textColor="#7A7A7A"
+                        android:textColor="#737373"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 

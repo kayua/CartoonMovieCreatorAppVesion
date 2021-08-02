@@ -70,7 +70,7 @@ public class EmojiBSFragment extends BottomSheetDialogFragment {
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_image_editor_emoji, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_image_edito_emoji, parent, false);
             return new ViewHolder(view);
         }
 
