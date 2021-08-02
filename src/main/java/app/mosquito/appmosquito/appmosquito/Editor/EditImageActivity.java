@@ -631,6 +631,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         animate.setFillAfter(true);
         view.startAnimation(animate);
         view.bringToFront();
+        myButton.setVisibility(View.INVISIBLE);
     }
 
     // slide the view from its current position to below itself
@@ -646,6 +647,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         view.setEnabled(false);
         view.setFocusableInTouchMode(false);
         view.setFocusable(false);
+        myButton.setVisibility(View.VISIBLE);
         conteudo.bringToFront();
 
 

@@ -14,7 +14,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="255dp">
+        android:layout_height="264dp">
 
 
         <RelativeLayout
@@ -53,7 +53,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="87dp"
-                android:layout_marginBottom="77dp"
+                android:layout_marginBottom="86dp"
                 android:src="@drawable/icon_general_user"
                 app:civ_border_color="#BCF1EEEE"
                 app:civ_border_width="1dp"

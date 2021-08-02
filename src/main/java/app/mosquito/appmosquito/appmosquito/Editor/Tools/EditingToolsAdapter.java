@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -62,7 +61,7 @@ public class EditingToolsAdapter extends RecyclerView.Adapter<EditingToolsAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         ToolModel item = mToolList.get(position);
-        holder.txtTool.setText(item.mToolName);
+
         holder.imgToolIcon.setImageResource(item.mToolIcon);
 
     }
@@ -73,13 +72,11 @@ public class EditingToolsAdapter extends RecyclerView.Adapter<EditingToolsAdapte
     class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgToolIcon;
-        TextView txtTool;
 
         ViewHolder(View itemView) {
 
             super(itemView);
             imgToolIcon = itemView.findViewById(R.id.imgToolIcon);
-            txtTool = itemView.findViewById(R.id.txtTool);
             itemView.setOnClickListener(v -> mOnItemSelected.onToolSelected(mToolList.get(getLayoutPosition()).mToolType));
 
         }

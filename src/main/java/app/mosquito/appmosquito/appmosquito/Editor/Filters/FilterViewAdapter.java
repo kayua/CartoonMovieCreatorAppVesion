@@ -9,9 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class FilterViewAdapter extends RecyclerView.Adapter<FilterViewAdapter.Vi
         Pair<String, PhotoFilter> filterPair = mPairList.get(position);
         Bitmap fromAsset = getBitmapFromAsset(holder.itemView.getContext(), filterPair.first);
         holder.mImageFilterView.setImageBitmap(fromAsset);
-        holder.mTxtFilterName.setText(filterPair.second.name().replace("_", " "));
+
     }
 
     @Override
@@ -53,12 +54,11 @@ public class FilterViewAdapter extends RecyclerView.Adapter<FilterViewAdapter.Vi
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView mImageFilterView;
-        TextView mTxtFilterName;
 
         ViewHolder(View itemView) {
             super(itemView);
             mImageFilterView = itemView.findViewById(R.id.imgFilterView);
-            mTxtFilterName = itemView.findViewById(R.id.txtFilterName);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
