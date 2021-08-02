@@ -12,7 +12,7 @@
         android:id="@+id/chat_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#6DEDEDED"
+        android:background="#6DE4E4E4"
 
         android:clipToPadding="false"
         android:divider="@android:color/transparent"
