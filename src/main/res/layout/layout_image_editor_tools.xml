@@ -11,8 +11,8 @@
     <com.mikhaellopez.circularimageview.CircularImageView
 
         android:id="@+id/imgToolIcon"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         tools:src="@drawable/ic_brush"

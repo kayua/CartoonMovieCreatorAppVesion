@@ -28,13 +28,33 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvConstraintTools"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="12dp"
+            android:background="#00FFFFFF"
+            android:orientation="horizontal"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/layout_image_editor_tools" />
+
         <LinearLayout
             android:id="@+id/myd_view"
             android:layout_width="match_parent"
             android:layout_height="162dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="1dp"
-            android:background="@drawable/button_design_fill_msg"
+            android:background="@drawable/transparent"
             android:orientation="vertical"
             tools:ignore="MissingConstraints">
 
@@ -45,28 +65,14 @@
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/arrow_down" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvConstraintTools"
-                android:layout_width="331dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="-8dp"
-                android:background="#00FFFFFF"
-                android:orientation="horizontal"
 
-                android:paddingBottom="4dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toTopOf="@+id/guideline"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:listitem="@layout/layout_image_edito_tools" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvFilterView"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
                 android:layout_marginTop="-8dp"
-                android:background="@color/colorButtonNormal"
+                android:background="@drawable/transparent"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintStart_toEndOf="parent"
@@ -157,10 +163,11 @@
         android:id="@+id/imgShare"
         android:layout_width="match_parent"
         android:layout_height="32dp"
+        android:alpha="0.10"
         android:background="@drawable/button_design_fill_msg"
-        android:padding="8dp"
 
-        android:foreground= "@drawable/arrow_up"
+        android:foreground="@drawable/arrow_up"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/photoEditorView"
         app:layout_constraintEnd_toStartOf="@+id/imgUndo"
         app:layout_constraintStart_toEndOf="@+id/imgCamera" />

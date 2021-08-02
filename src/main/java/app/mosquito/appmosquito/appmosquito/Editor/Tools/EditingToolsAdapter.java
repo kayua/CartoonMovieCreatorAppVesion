@@ -51,7 +51,7 @@ public class EditingToolsAdapter extends RecyclerView.Adapter<EditingToolsAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.layout_image_edito_tools, parent, false);
+                .inflate(R.layout.layout_image_editor_tools, parent, false);
 
         return new ViewHolder(view);
 
