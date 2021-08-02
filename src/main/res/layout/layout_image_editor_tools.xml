@@ -17,7 +17,7 @@
         android:layout_alignParentBottom="true"
         tools:src="@drawable/ic_brush"
         app:civ_border_color="#BCF1EEEE"
-        app:civ_border_width="1dp"
+        app:civ_border_width="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
