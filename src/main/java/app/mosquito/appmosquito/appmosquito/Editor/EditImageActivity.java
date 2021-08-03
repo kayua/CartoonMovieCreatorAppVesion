@@ -127,8 +127,11 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
             @Override
             public void onClick(View view) {
+                if(isUp){onSlideViewButtonClick(myView);}else{
 
-                onSlideViewButtonClick(view);
+
+                }
+
             }
 
         });
@@ -557,11 +560,9 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
                 mTxtCurrentTool.setText(R.string.label_filter);
                 showFilter(true);
-                if(mIsFilterVisible){}else{
+                onSlideViewButtonClick(myView);
 
-                    onSlideViewButtonClick(myView);
 
-                }
 
 
                 break;
