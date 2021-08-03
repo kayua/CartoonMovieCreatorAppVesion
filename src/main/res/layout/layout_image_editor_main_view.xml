@@ -33,7 +33,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvConstraintTools"
             android:layout_width="match_parent"
-            android:layout_height="132dp"
+            android:layout_height="146dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
