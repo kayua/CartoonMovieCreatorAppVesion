@@ -6,8 +6,6 @@
     app:itemIconTint="#E30B0B"
     >
 
-
-
     <item
 
         android:id="@+id/action_settings2"

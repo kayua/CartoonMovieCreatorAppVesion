@@ -11,7 +11,8 @@
     <fragment
         android:id="@+id/nav_image"
         android:name="app.mosquito.appmosquito.appmosquito.Camera.CameraFragment"
-        android:label="Galeria de videos"
+        android:label=""
+
         tools:layout="@layout/layout_media_list" />
 
     <fragment
@@ -24,7 +25,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="app.mosquito.appmosquito.appmosquito.Posts.BarPost.PostFragment"
-        android:label="Galeria de imagens"
+        android:label=""
         tools:layout="@layout/layout_gallery_main_display" />
 
     <fragment
