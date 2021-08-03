@@ -123,6 +123,16 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
         });
 
+        mPhotoEditorView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                onSlideViewButtonClick(view);
+            }
+
+        });
+
         handleIntentImage(mPhotoEditorView.getSource());
         mWonderFont = Typeface.createFromAsset(getAssets(), "beyond_wonderland.ttf");
         mPropertiesBSFragment = new PropertiesBSFragment();
@@ -547,6 +557,13 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
                 mTxtCurrentTool.setText(R.string.label_filter);
                 showFilter(true);
+                if(mIsFilterVisible){}else{
+
+                    onSlideViewButtonClick(myView);
+
+                }
+
+
                 break;
 
             case EMOJI:
@@ -621,7 +638,10 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
 
     public void slideUp(View view){
+
         view.setVisibility(View.VISIBLE);
+        myButton.setVisibility(View.INVISIBLE);
+        mRvTools.setVisibility(View.INVISIBLE);
         TranslateAnimation animate = new TranslateAnimation(
                 0,                 // fromXDelta
                 0,                 // toXDelta
@@ -631,11 +651,14 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         animate.setFillAfter(true);
         view.startAnimation(animate);
         view.bringToFront();
-        myButton.setVisibility(View.INVISIBLE);
+
+
+
     }
 
     // slide the view from its current position to below itself
     public void slideDown(View view){
+
         TranslateAnimation animate = new TranslateAnimation(
                 0,                 // fromXDelta
                 0,                 // toXDelta
@@ -649,7 +672,8 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         view.setFocusable(false);
         myButton.setVisibility(View.VISIBLE);
         conteudo.bringToFront();
-
+        mRvTools.setVisibility(View.VISIBLE);
+        mRvTools.bringToFront();
 
     }
 

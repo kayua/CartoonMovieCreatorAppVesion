@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -36,6 +38,7 @@ public class MainUserInterface extends AppCompatActivity{
     String passwordRegistered;
     protected ActionBarDrawerToggle drawerToggle;
     public static final String PREFS_NAME = "PersonalDatabase";
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class MainUserInterface extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sidebar_slid);
         getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.sky_blue_color_picker));
+        getWindow().setNavigationBarDividerColor(R.color.sky_blue_color_picker);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

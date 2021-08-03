@@ -38,7 +38,8 @@
             android:layout_gravity="bottom"
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="18dp"
+
             android:background="#00FFFFFF"
             android:orientation="horizontal"
 
@@ -51,7 +52,7 @@
         <LinearLayout
             android:id="@+id/myd_view"
             android:layout_width="match_parent"
-            android:layout_height="162dp"
+            android:layout_height="124dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="1dp"
             android:background="@drawable/transparent"
@@ -64,7 +65,6 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/arrow_down" />
-
 
 
             <androidx.recyclerview.widget.RecyclerView

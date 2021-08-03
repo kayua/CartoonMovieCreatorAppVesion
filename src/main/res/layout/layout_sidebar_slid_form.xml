@@ -14,7 +14,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="264dp">
+        android:layout_height="270dp">
 
 
         <RelativeLayout
@@ -42,7 +42,7 @@
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="match_parent"
-                android:layout_height="135dp"
+                android:layout_height="138dp"
                 android:background="@drawable/example12" />
 
             <com.mikhaellopez.circularimageview.CircularImageView
@@ -164,7 +164,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="145dp"
         android:layout_marginTop="-2dp"
         android:background="@drawable/temp_background"
         android:orientation="vertical">
