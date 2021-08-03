@@ -46,7 +46,6 @@ public class MainUserInterface extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sidebar_slid);
         getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.sky_blue_color_picker));
-        getWindow().setNavigationBarDividerColor(R.color.sky_blue_color_picker);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
