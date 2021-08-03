@@ -46,6 +46,14 @@ public class MainUserInterface extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sidebar_slid);
         getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.sky_blue_color_picker));
+
+        View v = getWindow().getDecorView();
+
+        int options = View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR| View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+
+        v.setSystemUiVisibility(options);
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -54,6 +62,7 @@ public class MainUserInterface extends AppCompatActivity{
         toolbar.setTitleTextColor(Color.argb(220,150,150,150));
         //TextView email_textview = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textView8);
         String text = new String();
+
 
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
