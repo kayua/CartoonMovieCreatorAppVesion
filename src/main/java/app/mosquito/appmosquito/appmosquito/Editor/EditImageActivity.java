@@ -85,7 +85,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
     ImageView myButtona;
 
     View myView;
-    boolean isUp;
+    boolean isUp= true;
 
     @Nullable
     @VisibleForTesting
@@ -113,7 +113,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         initViews();
         myButton = findViewById(R.id.imgShare);
         myView = findViewById(R.id.myd_view);
-        onSlideViewButtonClick(myButton);
+        myView.setVisibility(View.INVISIBLE);
         onSlideViewButtonClick(myButton);
         myButton.setOnClickListener(new View.OnClickListener() {
 
@@ -642,6 +642,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
     public void slideUp(View view){
 
         view.setVisibility(View.VISIBLE);
+        mRvFilters.setVisibility(View.VISIBLE);
         myButton.setVisibility(View.INVISIBLE);
         mRvTools.setVisibility(View.INVISIBLE);
         TranslateAnimation animate = new TranslateAnimation(
@@ -672,7 +673,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         view.setEnabled(false);
         view.setFocusableInTouchMode(false);
         view.setFocusable(false);
-        myButton.setVisibility(View.VISIBLE);
+        mRvFilters.setVisibility(View.INVISIBLE);
         conteudo.bringToFront();
         mRvTools.setVisibility(View.VISIBLE);
         mRvTools.bringToFront();
