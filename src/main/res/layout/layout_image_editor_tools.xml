@@ -11,13 +11,14 @@
     <com.mikhaellopez.circularimageview.CircularImageView
 
         android:id="@+id/imgToolIcon"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="4dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         tools:src="@drawable/ic_brush"
         app:civ_border_color="#BCF1EEEE"
-        app:civ_border_width="3dp"
+        app:civ_border_width="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

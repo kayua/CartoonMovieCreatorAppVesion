@@ -33,7 +33,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvConstraintTools"
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="120dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -54,7 +54,7 @@
         <LinearLayout
             android:id="@+id/myd_view"
             android:layout_width="match_parent"
-            android:layout_height="138dp"
+            android:layout_height="120dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="1dp"
             android:background="@drawable/transparent"
@@ -65,7 +65,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvFilterView"
                 android:layout_width="match_parent"
-                android:layout_height="86dp"
+                android:layout_height="92dp"
                 android:background="@drawable/transparent"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
