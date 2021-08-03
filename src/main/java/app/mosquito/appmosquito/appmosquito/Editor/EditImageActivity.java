@@ -107,7 +107,6 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         initViews();
         myButton = findViewById(R.id.imgShare);
         myView = findViewById(R.id.myd_view);
-        myButtona = findViewById(R.id.imageView25);
 
         myButton.setOnClickListener(new View.OnClickListener() {
 
@@ -116,12 +115,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
         });
 
-        myButtona.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) { onSlideViewButtonClick(view); }
-
-        });
 
         mPhotoEditorView.setOnClickListener(new View.OnClickListener() {
 
