@@ -9,27 +9,27 @@
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="87dp"
 
 
-
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="4dp"
         android:orientation="vertical">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginTop="-4dp"
-            >
+            android:layout_marginTop="-4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="120dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="72dp"
-                    android:layout_height="85dp"
+                    android:layout_height="88dp"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
 
@@ -39,8 +39,8 @@
 
                     <com.mikhaellopez.circularimageview.CircularImageView
                         android:id="@+id/imageViewSecondImage"
-                        android:layout_width="62dp"
-                        android:layout_height="62dp"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
                         android:layout_marginStart="-2dp"
                         android:layout_marginTop="6dp"
                         android:src="@drawable/pessoa1"
@@ -66,7 +66,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
-                            android:text="Brasileiro"
+                            android:text="Bia"
                             android:textColor="#1E1E1E"
                             android:textColorHint="#1E1E1E"
                             android:textSize="10dp"
@@ -78,7 +78,7 @@
 
                 <LinearLayout
                     android:layout_width="72dp"
-                    android:layout_height="85dp"
+                    android:layout_height="88dp"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
 
@@ -114,7 +114,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
-                            android:text="Brasileiro"
+                            android:text="William"
                             android:textColor="#1E1E1E"
                             android:textColorHint="#1E1E1E"
                             android:textSize="10dp"
@@ -126,7 +126,7 @@
 
                 <LinearLayout
                     android:layout_width="72dp"
-                    android:layout_height="85dp"
+                    android:layout_height="88dp"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
 
@@ -136,8 +136,8 @@
 
                     <com.mikhaellopez.circularimageview.CircularImageView
                         android:id="@+id/imageViewSecondImage"
-                        android:layout_width="62dp"
-                        android:layout_height="62dp"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
                         android:layout_marginTop="6dp"
                         android:src="@drawable/pessoa2"
                         app:civ_border_color="#BCCDCDCD"
@@ -162,7 +162,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
-                            android:text="Brasileiro"
+                            android:text="Luisa"
                             android:textColor="#1E1E1E"
                             android:textColorHint="#1E1E1E"
                             android:textSize="10dp"
@@ -174,7 +174,7 @@
 
                 <LinearLayout
                     android:layout_width="72dp"
-                    android:layout_height="85dp"
+                    android:layout_height="88dp"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
 
@@ -210,7 +210,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
-                            android:text="Brasileiro"
+                            android:text="Vicente"
                             android:textColor="#1E1E1E"
                             android:textColorHint="#1E1E1E"
                             android:textSize="10dp"
@@ -222,7 +222,7 @@
 
                 <LinearLayout
                     android:layout_width="72dp"
-                    android:layout_height="85dp"
+                    android:layout_height="88dp"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
 
@@ -232,8 +232,8 @@
 
                     <com.mikhaellopez.circularimageview.CircularImageView
                         android:id="@+id/imageViewSecondImage"
-                        android:layout_width="62dp"
-                        android:layout_height="62dp"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
                         android:layout_marginTop="6dp"
                         android:src="@drawable/pessoa5"
                         app:civ_border_color="#BCCDCDCD"
@@ -258,7 +258,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
-                            android:text="Brasileiro"
+                            android:text="Marcele"
                             android:textColor="#1E1E1E"
                             android:textColorHint="#1E1E1E"
                             android:textSize="10dp"
