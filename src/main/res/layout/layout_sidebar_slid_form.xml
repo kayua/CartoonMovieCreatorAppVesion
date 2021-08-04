@@ -32,7 +32,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="177dp"
                 android:layout_marginEnd="38dp"
-                android:text="Kayuã Oleques Paim"
+                android:text="Christine  Ashley  Gates"
                 android:textAlignment="center"
                 android:textColor="#838181"
                 android:textColorHint="#757474"
@@ -43,7 +43,7 @@
                 android:id="@+id/imageView7"
                 android:layout_width="match_parent"
                 android:layout_height="138dp"
-                android:background="@drawable/example12" />
+                android:background="@drawable/rt" />
 
             <com.mikhaellopez.circularimageview.CircularImageView
 
@@ -54,9 +54,9 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="84dp"
                 android:layout_marginBottom="82dp"
-                android:src="@drawable/icon_general_user"
+                android:src="@drawable/pessoa8"
                 app:civ_border_color="#BCF1EEEE"
-                app:civ_border_width="1dp"
+                app:civ_border_width="3dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -181,7 +181,7 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/icon_general_user"
+                android:src="@drawable/pessoa8"
                 app:civ_border_color="#BCF1EEEE"
                 app:civ_border_width="4dp"
                 app:layout_constraintVertical_bias="0.2" />
@@ -371,7 +371,7 @@
                     android:layout_height="96dp"
                     android:layout_marginTop="4dp"
 
-                    android:background="@drawable/temp_image1" />
+                    android:background="@drawable/round_img" />
 
                 <LinearLayout
                     android:layout_width="4dp"
@@ -386,7 +386,7 @@
                     android:layout_height="96dp"
                     android:layout_marginTop="4dp"
 
-                    android:background="@drawable/temp_image2" />
+                    android:background="@drawable/p_" />
 
             </LinearLayout>
 

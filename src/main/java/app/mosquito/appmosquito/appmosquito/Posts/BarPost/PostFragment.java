@@ -159,7 +159,7 @@ public class PostFragment extends Fragment {
         PostStructure postSix = new PostStructure();
 
         postOne.setPostName("Primeiro Post");
-        postOne.setPostUserName("Kayuã Oleques Paim");
+        postOne.setPostUserName("John Willian Anders");
         postOne.setPostDate("28/07/21 23:36");
         postOne.setPostCategorical(PostCategorical.postMovie);
         postOne.setPostLocalization("Alegrete - RS");
@@ -170,7 +170,7 @@ public class PostFragment extends Fragment {
         postOne.setPostState(PostState.FAZENDO);
 
         postTwo.setPostName("Primeiro Post");
-        postTwo.setPostUserName("Kayuã Oleques Paim");
+        postTwo.setPostUserName("John Willian Anders");
         postTwo.setPostDate("28/07/21 23:36");
         postTwo.setPostCategorical(PostCategorical.postPhoto);
         postTwo.setPostLocalization("Alegrete - RS");
@@ -182,7 +182,7 @@ public class PostFragment extends Fragment {
 
 
         postThree.setPostName("Terceiro Post");
-        postThree.setPostUserName("Kayuã Oleques Paim");
+        postThree.setPostUserName("John Willian Anders");
         postThree.setPostDate("28/07/21 23:36");
         postThree.setPostText("Texto de exemplo post");
         postThree.setPostCategorical(PostCategorical.postText);
@@ -193,7 +193,7 @@ public class PostFragment extends Fragment {
         postThree.setPostState(PostState.FAZENDO);
 
         postFour.setPostName("Terceiro Post");
-        postFour.setPostUserName("Kayuã Oleques Paim");
+        postFour.setPostUserName("John Willian Anders");
         postFour.setPostDate("28/07/21 23:36");
         postFour.setPostText("Texto de exemplo post");
         postFour.setPostCategorical(PostCategorical.postText);

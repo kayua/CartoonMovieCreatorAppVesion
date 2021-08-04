@@ -28,7 +28,7 @@ public class PostSynchronize extends AppCompatActivity {
         PostStructure postThree = new PostStructure();
 
         postOne.setPostName("Primeiro Post");
-        postOne.setPostUserName("Kayuã Oleques Paim");
+        postOne.setPostUserName("John Willian Anders");
         postOne.setPostDate("28/07/21 23:36");
         postOne.setPostCategorical(PostCategorical.postPhoto);
         postOne.setPostLocalization("Alegrete - RS");
@@ -39,7 +39,7 @@ public class PostSynchronize extends AppCompatActivity {
         postOne.setPostState(PostState.FAZENDO);
 
         postTwo.setPostName("Segundo Post");
-        postTwo.setPostUserName("Kayuã Oleques Paim");
+        postTwo.setPostUserName("John Willian Anders");
         postTwo.setPostDate("28/07/21 23:36");
         postTwo.setPostCategorical(PostCategorical.postPhoto);
         postTwo.setPostLocalization("Alegrete - RS");
