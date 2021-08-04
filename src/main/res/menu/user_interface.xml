@@ -5,13 +5,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:itemIconTint="#E30B0B"
     >
+    <item
+
+    android:id="@+id/action_settings2"
+    android:checkable="true"
+    android:enabled="true"
+    android:icon="@drawable/icon_search"
+    android:orderInCategory="100"
+    android:title=""
+    android:visible="true"
+    android:onClick="screenView"
+    app:showAsAction="ifRoom" />
 
     <item
 
-        android:id="@+id/action_settings2"
+
         android:checkable="true"
         android:enabled="true"
-        android:icon="@drawable/icon_search"
+        android:icon="@drawable/person"
         android:orderInCategory="100"
         android:title=""
         android:visible="true"
