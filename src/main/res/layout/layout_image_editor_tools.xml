@@ -11,7 +11,7 @@
     <com.mikhaellopez.circularimageview.CircularImageView
 
         android:id="@+id/imgToolIcon"
-        android:alpha="0.70"
+        android:alpha="0.60"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_marginStart="4dp"

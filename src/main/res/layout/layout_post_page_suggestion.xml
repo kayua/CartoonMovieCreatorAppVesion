@@ -39,11 +39,11 @@
 
                     <com.mikhaellopez.circularimageview.CircularImageView
                         android:id="@+id/imageViewSecondImage"
-                        android:layout_width="58dp"
-                        android:layout_height="58dp"
-                        android:layout_marginTop="6dp"
+                        android:layout_width="62dp"
+                        android:layout_height="62dp"
                         android:layout_marginStart="-2dp"
-                        android:src="@drawable/icon_general_user"
+                        android:layout_marginTop="6dp"
+                        android:src="@drawable/pessoa1"
                         app:civ_border_color="#BCCDCDCD"
                         app:civ_border_width="3dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,7 +91,55 @@
                         android:layout_width="58dp"
                         android:layout_height="58dp"
                         android:layout_marginTop="6dp"
-                        android:src="@drawable/icon_general_user"
+                        android:src="@drawable/pessoa6"
+                        app:civ_border_color="#BCCDCDCD"
+                        app:civ_border_width="3dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.047" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
+                            android:gravity="center|top"
+                            android:text="Brasileiro"
+                            android:textColor="#1E1E1E"
+                            android:textColorHint="#1E1E1E"
+                            android:textSize="10dp"
+                            android:textStyle="normal|bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="72dp"
+                    android:layout_height="85dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+
+                    android:gravity="center|center_horizontal|top"
+                    android:orientation="vertical">
+
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/imageViewSecondImage"
+                        android:layout_width="62dp"
+                        android:layout_height="62dp"
+                        android:layout_marginTop="6dp"
+                        android:src="@drawable/pessoa2"
                         app:civ_border_color="#BCCDCDCD"
                         app:civ_border_width="3dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -139,55 +187,7 @@
                         android:layout_width="58dp"
                         android:layout_height="58dp"
                         android:layout_marginTop="6dp"
-                        android:src="@drawable/icon_general_user"
-                        app:civ_border_color="#BCCDCDCD"
-                        app:civ_border_width="3dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.498"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.047" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="15dp"
-                        android:layout_gravity="top"
-                        android:layout_marginTop="4dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textView5"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="2dp"
-                            android:gravity="center|top"
-                            android:text="Brasileiro"
-                            android:textColor="#1E1E1E"
-                            android:textColorHint="#1E1E1E"
-                            android:textSize="10dp"
-                            android:textStyle="normal|bold" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="72dp"
-                    android:layout_height="85dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
-
-                    android:gravity="center|center_horizontal|top"
-                    android:orientation="vertical">
-
-
-                    <com.mikhaellopez.circularimageview.CircularImageView
-                        android:id="@+id/imageViewSecondImage"
-                        android:layout_width="58dp"
-                        android:layout_height="58dp"
-                        android:layout_marginTop="6dp"
-                        android:src="@drawable/icon_general_user"
+                        android:src="@drawable/pessoa4"
                         app:civ_border_color="#BCCDCDCD"
                         app:civ_border_width="2dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -232,10 +232,10 @@
 
                     <com.mikhaellopez.circularimageview.CircularImageView
                         android:id="@+id/imageViewSecondImage"
-                        android:layout_width="58dp"
-                        android:layout_height="58dp"
+                        android:layout_width="62dp"
+                        android:layout_height="62dp"
                         android:layout_marginTop="6dp"
-                        android:src="@drawable/icon_general_user"
+                        android:src="@drawable/pessoa5"
                         app:civ_border_color="#BCCDCDCD"
                         app:civ_border_width="3dp"
                         app:layout_constraintBottom_toBottomOf="parent"
