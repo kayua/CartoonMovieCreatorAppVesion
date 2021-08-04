@@ -12,6 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="8dp"
+        android:alpha="0.85"
         android:scaleType="centerCrop"
         app:civ_border_color="#BCD8D7D7"
         app:civ_border_width="3dp"
