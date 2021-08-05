@@ -170,7 +170,7 @@ public class PostFragment extends Fragment {
         postOne.setPostState(PostState.FAZENDO);
 
         postTwo.setPostName("Primeiro Post");
-        postTwo.setPostUserName("John Willian Anders");
+        postTwo.setPostUserName("Max Willian Bezos");
         postTwo.setPostDate("28/07/21 23:36");
         postTwo.setPostCategorical(PostCategorical.postPhoto);
         postTwo.setPostLocalization("Alegrete - RS");
@@ -204,7 +204,7 @@ public class PostFragment extends Fragment {
         postFour.setPostState(PostState.FAZENDO);
 
         postHeader.setPostName("Terceiro Post");
-        postHeader.setPostUserName("Kayuã Oleques Paim");
+        postHeader.setPostUserName("Olívia Harley Anders");
         postHeader.setPostDate("28/07/21 23:36");
         postHeader.setPostText("Texto de exemplo post");
         postHeader.setPostCategorical(PostCategorical.postSuggest);
@@ -215,7 +215,7 @@ public class PostFragment extends Fragment {
         postHeader.setPostState(PostState.FAZENDO);
 
         postFive.setPostName("Primeiro Post");
-        postFive.setPostUserName("Kayuã Oleques Paim");
+        postFive.setPostUserName("Olívia Harley Anders");
         postFive.setPostDate("28/07/21 23:36");
         postFive.setPostCategorical(PostCategorical.postMovie);
         postFive.setPostLocalization("Alegrete - RS");
