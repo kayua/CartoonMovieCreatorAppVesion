@@ -30,7 +30,7 @@
                     android:layout_height="50dp"
                     android:layout_marginLeft="6dp"
                     android:layout_marginTop="8dp"
-                    android:src="@drawable/icon_general_user"
+                    android:src="@drawable/people11"
                     app:civ_border_color="#BCF1EEEE"
                     app:civ_border_width="1dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -166,14 +166,17 @@
 
 
             </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="340dp"
-                android:orientation="vertical" >
+                android:layout_height="303dp"
+                android:orientation="vertical">
+
                 <VideoView
                     android:id="@+id/videoView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/city_1" />
 
 
             </RelativeLayout>

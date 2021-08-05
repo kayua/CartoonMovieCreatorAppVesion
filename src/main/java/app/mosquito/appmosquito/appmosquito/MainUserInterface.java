@@ -3,7 +3,6 @@ package app.mosquito.appmosquito.appmosquito;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -111,9 +110,9 @@ public class MainUserInterface extends AppCompatActivity{
 
         });
 
-        String picturePath = settings.getString("imageUser", "");
+        //String picturePath = settings.getString("imageUser", "");
 
-        imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+        //imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);

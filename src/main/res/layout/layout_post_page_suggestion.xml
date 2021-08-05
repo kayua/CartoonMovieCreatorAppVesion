@@ -9,16 +9,26 @@
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="87dp"
+        android:layout_height="91dp"
 
 
         android:layout_marginTop="2dp"
         android:layout_marginBottom="4dp"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="4dp"
+            android:text="Pessoas que talvez você conheça"
+            android:textColor="#676767"
+            android:textSize="15sp" />
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_marginTop="-4dp">
 

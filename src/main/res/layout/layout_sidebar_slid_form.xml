@@ -371,7 +371,7 @@
                     android:layout_height="96dp"
                     android:layout_marginTop="4dp"
 
-                    android:background="@drawable/round_img" />
+                    android:background="@drawable/temp_image2" />
 
                 <LinearLayout
                     android:layout_width="4dp"
@@ -415,7 +415,7 @@
                     android:layout_height="96dp"
                     android:layout_marginTop="2dp"
 
-                    android:background="@drawable/temp_image4" />
+                    android:background="@drawable/reino_unido" />
 
             </LinearLayout>
 
