@@ -241,7 +241,7 @@
                 android:layout_width="38dp"
                 android:layout_height="38dp"
                 android:layout_gravity="center"
-                android:background="@drawable/icon_background"
+                android:background="@drawable/icon_background_ic"
                 android:foreground="@drawable/followers" />
 
             <LinearLayout
@@ -272,7 +272,7 @@
                 android:layout_width="38dp"
                 android:layout_height="38dp"
                 android:layout_gravity="center"
-                android:background="@drawable/icon_background"
+                android:background="@drawable/icon_background_ic"
                 android:foreground="@drawable/like" />
 
 
@@ -313,7 +313,7 @@
                 android:layout_width="38dp"
                 android:layout_height="38dp"
                 android:layout_gravity="center"
-                android:background="@drawable/icon_background"
+                android:background="@drawable/icon_background_ic"
                 android:foreground="@drawable/emogi" />
 
             <LinearLayout

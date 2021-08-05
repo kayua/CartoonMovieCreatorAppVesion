@@ -159,7 +159,7 @@ public class PostFragment extends Fragment {
         PostStructure postSix = new PostStructure();
 
         postOne.setPostName("Primeiro Post");
-        postOne.setPostUserName("John Willian Anders");
+        postOne.setPostUserName("Sarah Willian Scarlet");
         postOne.setPostDate("28/07/21 23:36");
         postOne.setPostCategorical(PostCategorical.postMovie);
         postOne.setPostLocalization("Alegrete - RS");
