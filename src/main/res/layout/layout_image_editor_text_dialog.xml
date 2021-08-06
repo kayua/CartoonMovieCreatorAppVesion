@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:background="@color/colorButtonNormal"
+
             tools:listitem="@layout/layout_image_editor_color_list" />
 
     </RelativeLayout>
