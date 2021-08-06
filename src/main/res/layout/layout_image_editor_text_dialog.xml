@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B3000000"
+    android:background="#00FFFFFF"
     android:orientation="vertical">
 
     <TextView
@@ -24,12 +24,12 @@
 
     <EditText
         android:id="@+id/add_text_edit_text"
-        style="@style/EditText"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/add_text_color_picker_relative_layout"
         android:layout_below="@+id/add_text_done_tv"
-        android:background="@null"
+        android:background="#00FFFFFF"
         android:gravity="center"
         android:inputType="textMultiLine"
         android:textSize="40sp" />
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:background="@android:color/black"
+            tools:background="@color/colorButtonNormal"
             tools:listitem="@layout/layout_image_editor_color_list" />
 
     </RelativeLayout>
