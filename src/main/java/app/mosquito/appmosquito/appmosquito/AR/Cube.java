@@ -19,7 +19,8 @@ public class Cube {
             -1.0f, -1.0f,  1.0f,
             1.0f, -1.0f,  1.0f,
             1.0f,  1.0f,  1.0f,
-            -1.0f,  1.0f,  1.0f
+            -1.0f,  1.0f,  1.0f,
+            -2.0f,  1.0f,  1.0f
     };
     private final float[] colors = {
             0.0f,  1.0f,  0.0f,  1.0f,
@@ -29,6 +30,7 @@ public class Cube {
             1.0f,  0.0f,  0.0f,  1.0f,
             1.0f,  0.0f,  0.0f,  1.0f,
             0.0f,  0.0f,  1.0f,  1.0f,
+            1.0f,  0.0f,  1.0f,  1.0f,
             1.0f,  0.0f,  1.0f,  1.0f
     };
 

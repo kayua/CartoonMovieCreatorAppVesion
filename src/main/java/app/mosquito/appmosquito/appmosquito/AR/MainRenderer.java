@@ -1,7 +1,12 @@
 package app.mosquito.appmosquito.appmosquito.AR;
 
+import android.content.Context;
+import android.content.res.AssetManager;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -9,11 +14,24 @@ import javax.microedition.khronos.opengles.GL10;
 class MainRenderer implements GLSurfaceView.Renderer {
 
     private Cube mCube;
+    MeshObjectLoader meshObjectLoader;
+
     private float mCubeRotation;
+    public InputStream myClass(Context myContext) throws IOException {
+        AssetManager mngr = myContext.getAssets();
+        InputStream is = mngr.open("male.obj");
+        return is;
+    }
+
+
+//save the context recievied via constructor in a local variable
 
     public MainRenderer() {
         mCube = new Cube();
+
     }
+
+
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
