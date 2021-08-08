@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.AR;
+package app.mosquito.appmosquito.appmosquito.AR.Engine;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -14,7 +14,7 @@ import javax.microedition.khronos.opengles.GL10;
 class MainRenderer implements GLSurfaceView.Renderer {
 
     private Cube mCube;
-    MeshObjectLoader meshObjectLoader;
+
 
     private float mCubeRotation;
     public InputStream myClass(Context myContext) throws IOException {

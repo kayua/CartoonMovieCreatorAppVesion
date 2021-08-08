@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.AR;
+package app.mosquito.appmosquito.appmosquito.AR.Engine;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -7,6 +7,7 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.opengles.GL10;
 
 public class Cube {
+
     private final FloatBuffer mVertexBuffer;
     private final FloatBuffer mColorBuffer;
     private final ByteBuffer  mIndexBuffer;
@@ -44,6 +45,7 @@ public class Cube {
     };
 
     public Cube() {
+
         ByteBuffer byteBuf = ByteBuffer.allocateDirect(vertices.length * 4);
         byteBuf.order(ByteOrder.nativeOrder());
         mVertexBuffer = byteBuf.asFloatBuffer();

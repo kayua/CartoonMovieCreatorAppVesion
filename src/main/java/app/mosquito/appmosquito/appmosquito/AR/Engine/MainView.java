@@ -1,10 +1,10 @@
-package app.mosquito.appmosquito.appmosquito.AR;
+package app.mosquito.appmosquito.appmosquito.AR.Engine;
 
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.opengl.GLSurfaceView;
 
-class MainView extends GLSurfaceView {
+public class MainView extends GLSurfaceView {
 
     public MainRenderer cr;
 

@@ -11,6 +11,8 @@ import android.view.WindowManager;
 
 import java.io.IOException;
 
+import app.mosquito.appmosquito.appmosquito.AR.Engine.MainView;
+
 public class MainActivity extends Activity implements SurfaceHolder.Callback {
     private Camera camera;
     private SurfaceView mSurfaceView;
