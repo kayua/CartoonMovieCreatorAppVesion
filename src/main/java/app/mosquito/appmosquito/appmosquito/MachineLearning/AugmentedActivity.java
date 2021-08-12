@@ -1,4 +1,4 @@
-package app.mosquito.appmosquito.appmosquito.AR;
+package app.mosquito.appmosquito.appmosquito.MachineLearning;
 
 import android.app.Activity;
 import android.graphics.PixelFormat;
@@ -11,8 +11,7 @@ import android.view.WindowManager;
 
 import java.io.IOException;
 
-import app.mosquito.appmosquito.appmosquito.AR.Engine.SurfaceComponent;
-import app.mosquito.appmosquito.appmosquito.R;
+import app.mosquito.appmosquito.appmosquito.MachineLearning.Engine.SurfaceComponent;
 
 public class AugmentedActivity extends Activity implements SurfaceHolder.Callback {
     private Camera camera;
@@ -26,11 +25,12 @@ public class AugmentedActivity extends Activity implements SurfaceHolder.Callbac
         super.onCreate(savedInstanceState);
 
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.tests);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        mSurfaceView = findViewById(R.id.surfaceView);
+
+        mSurfaceView = new SurfaceView(this);
+        addContentView(mSurfaceView, new WindowManager.LayoutParams(WindowManager.LayoutParams.FILL_PARENT, WindowManager.LayoutParams.FILL_PARENT));
         mSurfaceHolder = mSurfaceView.getHolder();
         mSurfaceHolder.addCallback(this);
         mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
