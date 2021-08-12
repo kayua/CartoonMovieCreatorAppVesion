@@ -6,7 +6,7 @@ import java.nio.FloatBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 
-public class Cube {
+public class objectModel {
 
     private final FloatBuffer mVertexBuffer;
     private final FloatBuffer mColorBuffer;
@@ -44,7 +44,7 @@ public class Cube {
             3, 0, 1, 3, 1, 2
     };
 
-    public Cube() {
+    public objectModel() {
 
         ByteBuffer byteBuf = ByteBuffer.allocateDirect(vertices.length * 4);
         byteBuf.order(ByteOrder.nativeOrder());
@@ -78,4 +78,7 @@ public class Cube {
         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
         gl.glDisableClientState(GL10.GL_COLOR_ARRAY);
     }
+
+
+
 }

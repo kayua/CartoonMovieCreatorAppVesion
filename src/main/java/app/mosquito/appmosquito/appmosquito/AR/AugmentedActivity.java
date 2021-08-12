@@ -11,14 +11,14 @@ import android.view.WindowManager;
 
 import java.io.IOException;
 
-import app.mosquito.appmosquito.appmosquito.AR.Engine.MainView;
+import app.mosquito.appmosquito.appmosquito.AR.Engine.SurfaceComponent;
 
-public class MainActivity extends Activity implements SurfaceHolder.Callback {
+public class AugmentedActivity extends Activity implements SurfaceHolder.Callback {
     private Camera camera;
     private SurfaceView mSurfaceView;
     SurfaceHolder mSurfaceHolder;
 
-    private MainView mGLSurfaceView;
+    private SurfaceComponent mGLSurfaceView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
         mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
         mSurfaceHolder.setFormat(PixelFormat.TRANSPARENT| WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 
-        mGLSurfaceView = new MainView(this);
+        mGLSurfaceView = new SurfaceComponent(this);
         addContentView(mGLSurfaceView, new WindowManager.LayoutParams(WindowManager.LayoutParams.FILL_PARENT, WindowManager.LayoutParams.FILL_PARENT));
 
     }

@@ -33,7 +33,7 @@
 
         <activity
 
-            android:name=".AR.MainActivity"
+            android:name=".AR.AugmentedActivity"
             android:screenOrientation="landscape">
 
             <intent-filter>
