@@ -13,23 +13,31 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-package app.mosquito.appmosquito.appmosquito.AR.pack;
+package org.tensorflow.lite.examples.classification.tflite;
 
 import android.app.Activity;
-
 import java.io.IOException;
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
 
-public class ClassifierFloatEfficientNet extends Classifier {
-
-
-  public ClassifierFloatEfficientNet(Activity activity, Device device, int numThreads)
+/** This TensorFlowLite classifier works with the float MobileNet model. */
+public class ClassifierFloatMobileNet extends Classifier {
+  /**
+   * Initializes a {@code ClassifierFloatMobileNet}.
+   *
+   * @param device a {@link Device} object to configure the hardware accelerator
+   * @param numThreads the number of threads during the inference
+   * @throws IOException if the model is not loaded correctly
+   */
+  public ClassifierFloatMobileNet(Activity activity, Device device, int numThreads)
       throws IOException {
     super(activity, device, numThreads);
   }
 
   @Override
   protected String getModelPath() {
-
-    return "efficientnet-lite0-fp32.tflite";
+    // you can download this file from
+    // see build.gradle for where to obtain this file. It should be auto
+    // downloaded into assets.
+    return "mobilenet_v1_1.0_224.tflite";
   }
 }

@@ -25,19 +25,32 @@ import android.graphics.Typeface;
 
 import java.util.Vector;
 
-
+/** A class that encapsulates the tedious bits of rendering legible, bordered text onto a canvas. */
 public class BorderedText {
   private final Paint interiorPaint;
   private final Paint exteriorPaint;
 
   private final float textSize;
 
+  /**
+   * Creates a left-aligned bordered text object with a white interior, and a black exterior with
+   * the specified text size.
+   *
+   * @param textSize text size in pixels
+   */
   public BorderedText(final float textSize) {
     this(Color.WHITE, Color.BLACK, textSize);
   }
 
+  /**
+   * Create a bordered text object with the specified interior and exterior colors, text size and
+   * alignment.
+   *
+   * @param interiorColor the interior text color
+   * @param exteriorColor the exterior text color
+   * @param textSize text size in pixels
+   */
   public BorderedText(final int interiorColor, final int exteriorColor, final float textSize) {
-
     interiorPaint = new Paint();
     interiorPaint.setTextSize(textSize);
     interiorPaint.setColor(interiorColor);

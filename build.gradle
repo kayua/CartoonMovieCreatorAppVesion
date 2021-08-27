@@ -82,7 +82,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.firebase:firebase-database:19.2.0'
     implementation 'com.writingminds:FFmpegAndroid:0.3.2'
-
+    implementation 'org.tensorflow:tensorflow-lite-task-vision:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
     implementation 'org.jcodec:jcodec:0.2.5'
     implementation 'org.jcodec:jcodec-android:0.2.5'
     compile 'com.isseiaoki:simplecropview:1.1.8'

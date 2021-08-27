@@ -13,7 +13,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-package app.mosquito.appmosquito.appmosquito.AR.pack;
+package org.tensorflow.lite.examples.classification.tflite;
+
+import static java.lang.Math.min;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -22,7 +24,11 @@ import android.graphics.RectF;
 import android.os.SystemClock;
 import android.os.Trace;
 import android.util.Log;
-
+import java.io.IOException;
+import java.nio.MappedByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
 import org.tensorflow.lite.support.common.FileUtil;
 import org.tensorflow.lite.support.image.TensorImage;
 import org.tensorflow.lite.support.label.Category;
@@ -33,13 +39,7 @@ import org.tensorflow.lite.task.vision.classifier.Classifications;
 import org.tensorflow.lite.task.vision.classifier.ImageClassifier;
 import org.tensorflow.lite.task.vision.classifier.ImageClassifier.ImageClassifierOptions;
 
-import java.io.IOException;
-import java.nio.MappedByteBuffer;
-import java.util.ArrayList;
-import java.util.List;
-
-import static java.lang.Math.min;
-
+/** A classifier specialized to label images using TensorFlow Lite. */
 public abstract class Classifier {
   public static final String TAG = "ClassifierWithTaskApi";
 
@@ -58,15 +58,26 @@ public abstract class Classifier {
     GPU
   }
 
+  /** Number of results to show in the UI. */
   private static final int MAX_RESULTS = 3;
 
+  /** Image size along the x axis. */
   private final int imageSizeX;
 
+  /** Image size along the y axis. */
   private final int imageSizeY;
-
+  /** An instance of the driver class to run model inference with Tensorflow Lite. */
   protected final ImageClassifier imageClassifier;
 
-
+  /**
+   * Creates a classifier with the provided configuration.
+   *
+   * @param activity The current Activity.
+   * @param model The model to use for classification.
+   * @param device The device to use for classification.
+   * @param numThreads The number of threads to use for classification.
+   * @return A classifier with the desired configuration.
+   */
   public static Classifier create(Activity activity, Model model, Device device, int numThreads)
       throws IOException {
     if (model == Model.QUANTIZED_MOBILENET) {
@@ -82,15 +93,27 @@ public abstract class Classifier {
     }
   }
 
+  /** An immutable result returned by a Classifier describing what was recognized. */
   public static class Recognition {
-
+    /**
+     * A unique identifier for what has been recognized. Specific to the class, not the instance of
+     * the object.
+     */
     private final String id;
+
+    /** Display name for the recognition. */
     private final String title;
+
+    /**
+     * A sortable score for how good the recognition is relative to others. Higher should be better.
+     */
     private final Float confidence;
+
+    /** Optional location within the source image for the location of the recognized object. */
     private RectF location;
 
     public Recognition(
-            final String id, final String title, final Float confidence, final RectF location) {
+        final String id, final String title, final Float confidence, final RectF location) {
       this.id = id;
       this.title = title;
       this.confidence = confidence;
@@ -140,6 +163,7 @@ public abstract class Classifier {
     }
   }
 
+  /** Initializes a {@code Classifier}. */
   protected Classifier(Activity activity, Device device, int numThreads) throws IOException {
     if (device != Device.CPU) {
       throw new IllegalArgumentException(
@@ -165,7 +189,7 @@ public abstract class Classifier {
     imageSizeX = imageShape[2];
   }
 
-
+  /** Runs inference and returns the classification results. */
   public List<Recognition> recognizeImage(final Bitmap bitmap, int sensorOrientation) {
     // Logs this method so that it can be analyzed with systrace.
     Trace.beginSection("recognizeImage");
@@ -174,7 +198,10 @@ public abstract class Classifier {
     int width = bitmap.getWidth();
     int height = bitmap.getHeight();
     int cropSize = min(width, height);
-
+    // TODO(b/169379396): investigate the impact of the resize algorithm on accuracy.
+    // Task Library resize the images using bilinear interpolation, which is slightly different from
+    // the nearest neighbor sampling algorithm used in lib_support. See
+    // https://github.com/tensorflow/examples/blob/0ef3d93e2af95d325c70ef3bcbbd6844d0631e07/lite/examples/image_classification/android/lib_support/src/main/java/org/tensorflow/lite/examples/classification/tflite/Classifier.java#L310.
     ImageProcessingOptions imageOptions =
         ImageProcessingOptions.builder()
             .setOrientation(getOrientation(sensorOrientation))
@@ -207,14 +234,22 @@ public abstract class Classifier {
     }
   }
 
+  /** Get the image size along the x axis. */
   public int getImageSizeX() {
     return imageSizeX;
   }
 
+  /** Get the image size along the y axis. */
   public int getImageSizeY() {
     return imageSizeY;
   }
 
+  /**
+   * Converts a list of {@link Classifications} objects into a list of {@link Recognition} objects
+   * to match the interface of other inference method, such as using the <a
+   * href="https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/android/lib_support">TFLite
+   * Support Library.</a>.
+   */
   private static List<Recognition> getRecognitions(List<Classifications> classifications) {
 
     final ArrayList<Recognition> recognitions = new ArrayList<>();

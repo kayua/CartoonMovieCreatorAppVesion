@@ -1,5 +1,5 @@
 
-package app.mosquito.appmosquito.appmosquito.AR.models;
+package app.mosquito.appmosquito.appmosquito.AR.detection;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -64,7 +64,6 @@ public abstract class Classifier {
   private final int imageSizeY;
 
   /** Optional GPU delegate for accleration. */
-  private GpuDelegate gpuDelegate = null;
 
   /** Optional NNAPI delegate for accleration. */
   private NnApiDelegate nnApiDelegate = null;
@@ -189,19 +188,7 @@ public abstract class Classifier {
         nnApiDelegate = new NnApiDelegate();
         tfliteOptions.addDelegate(nnApiDelegate);
         break;
-      case GPU:
-        CompatibilityList compatList = new CompatibilityList();
-        if(compatList.isDelegateSupportedOnThisDevice()){
-          // if the device has a supported GPU, add the GPU delegate
-          GpuDelegate.Options delegateOptions = compatList.getBestOptionsForThisDevice();
-          GpuDelegate gpuDelegate = new GpuDelegate(delegateOptions);
-          tfliteOptions.addDelegate(gpuDelegate);
-          Log.d(TAG, "GPU supported. GPU delegate created and added to options");
-        } else {
-          tfliteOptions.setUseXNNPACK(true);
-          Log.d(TAG, "GPU not supported. Default to CPU.");
-        }
-        break;
+
       case CPU:
         tfliteOptions.setUseXNNPACK(true);
         Log.d(TAG, "CPU execution");
@@ -272,10 +259,7 @@ public abstract class Classifier {
       tflite.close();
       tflite = null;
     }
-    if (gpuDelegate != null) {
-      gpuDelegate.close();
-      gpuDelegate = null;
-    }
+
     if (nnApiDelegate != null) {
       nnApiDelegate.close();
       nnApiDelegate = null;
