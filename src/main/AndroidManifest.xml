@@ -33,7 +33,7 @@
 
         <activity
 
-            android:name=".AR.DogBreedDetectorMain"
+            android:name=".AR.VideoProcessing"
             >
 
             <intent-filter>

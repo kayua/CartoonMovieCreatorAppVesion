@@ -78,6 +78,8 @@ public class Tfclassifier {
         Log.i("----------dasdasdajsknsabiuavsfiavsfihyavsfuavsi","sfbsiudfbsidf");
         Interpreter.Options options = new Interpreter.Options();
         options.setUseXNNPACK(true);
+        options.setAllowBufferHandleOutput(true);
+        options.setAllowFp16PrecisionForFp32(true);
 
         Interpreter interpreter = new Interpreter(model, options);
         int[] inputShape = interpreter.getInputTensor(0).shape();

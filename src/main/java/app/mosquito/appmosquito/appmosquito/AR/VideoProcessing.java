@@ -54,7 +54,7 @@ import java.util.concurrent.Executors;
 import app.mosquito.appmosquito.appmosquito.AR.Engine.SurfaceComponent;
 import app.mosquito.appmosquito.appmosquito.R;
 
-public class DogBreedDetectorMain extends AppCompatActivity {
+public class VideoProcessing extends AppCompatActivity {
     private LensFacing lensFacing;
     private String TAG;
     private int REQUEST_CODE_PERMISSIONS;
@@ -69,21 +69,23 @@ public class DogBreedDetectorMain extends AppCompatActivity {
 
     TextureView textureView;
 
-    private Tfclassifier tFliteClassifier = new Tfclassifier(DogBreedDetectorMain.this);
+    private Tfclassifier tFliteClassifier = new Tfclassifier(VideoProcessing.this);
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         this.setContentView(R.layout.mel);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         if (this.allPermissionsGranted()) {
             ((TextureView) this.findViewById(R.id.textureView)).post((Runnable) (new Runnable() {
                 public final void run() {
-                    DogBreedDetectorMain.this.startCamera();
+                    VideoProcessing.this.startCamera();
                 }
             }));
             ((TextureView) this.findViewById(R.id.textureView)).addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
                 public final void onLayoutChange(View n, int nu, int n2, int n3, int n4, int n5, int n6, int n7, int n8) {
-                    DogBreedDetectorMain.this.updateTransform();
+                    VideoProcessing.this.updateTransform();
                 }
             });
         } else {
@@ -93,7 +95,7 @@ public class DogBreedDetectorMain extends AppCompatActivity {
         this.tfLiteClassifier.initialize().addOnSuccessListener((OnSuccessListener) null).addOnFailureListener(new OnFailureListener() {
             public final void onFailure(Exception e) {
 
-                Log.e(DogBreedDetectorMain.this.TAG, "Error  setting up the classifier.", (Throwable) e);
+                Log.e(VideoProcessing.this.TAG, "Error  setting up the classifier.", (Throwable) e);
             }
         });
 
@@ -129,9 +131,9 @@ public class DogBreedDetectorMain extends AppCompatActivity {
         Preview preview = new Preview(previewConfig);
         preview.setOnPreviewOutputUpdateListener(new OnPreviewOutputUpdateListener() {
             public final void onUpdated(PreviewOutput it) {
-                TextureView textureView2 = (TextureView) DogBreedDetectorMain.this.findViewById(R.id.textureView);
+                TextureView textureView2 = (TextureView) VideoProcessing.this.findViewById(R.id.textureView);
                 textureView2.setSurfaceTexture(it.getSurfaceTexture());
-                DogBreedDetectorMain.this.updateTransform();
+                VideoProcessing.this.updateTransform();
             }
         });
         mGLSurfaceView = new SurfaceComponent(this);
@@ -153,8 +155,8 @@ public class DogBreedDetectorMain extends AppCompatActivity {
         analyzerUseCase.setAnalyzer((ImageAnalysis.Analyzer) (new ImageAnalysis.Analyzer() {
             public final void analyze(ImageProxy image, int rotationDegrees) {
 
-                Bitmap bitmap = DogBreedDetectorMain.this.toBitmap(image);
-                DogBreedDetectorMain.this.tfLiteClassifier.classifyAsync(bitmap).addOnSuccessListener(new OnSuccessListener() {
+                Bitmap bitmap = VideoProcessing.this.toBitmap(image);
+                VideoProcessing.this.tfLiteClassifier.classifyAsync(bitmap).addOnSuccessListener(new OnSuccessListener() {
                     // $FF: synthetic method
                     // $FF: bridge method
                     public void onSuccess(Object var1) {
@@ -162,7 +164,7 @@ public class DogBreedDetectorMain extends AppCompatActivity {
                     }
 
                     public final void onSuccess(String resultText) {
-                        TextView viewById = (TextView) DogBreedDetectorMain.this.findViewById(R.id.predictedTextView);
+                        TextView viewById = (TextView) VideoProcessing.this.findViewById(R.id.predictedTextView);
                         if (viewById != null) {
                             viewById.setText((CharSequence) resultText);
                         }
@@ -272,7 +274,7 @@ public class DogBreedDetectorMain extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public DogBreedDetectorMain() {
+    public VideoProcessing() {
         this.lensFacing = LensFacing.BACK;
         this.TAG = "MainActivity";
         this.REQUEST_CODE_PERMISSIONS = 101;

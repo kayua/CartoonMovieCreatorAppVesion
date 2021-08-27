@@ -13,12 +13,10 @@ import javax.microedition.khronos.opengles.GL10;
 class EngineRenderer implements GLSurfaceView.Renderer {
 
     private objectModel mCube;
-    float[][][][] input = new float[1][288][510][1];
-    boolean a= false;
-    float[][] output = new float[1][24];
+
 
     private float mCubeRotation;
-    Interpreter inp;
+
 
     public EngineRenderer( Interpreter interpreter) {
         mCube = new objectModel();
@@ -60,14 +58,6 @@ class EngineRenderer implements GLSurfaceView.Renderer {
         gl.glLoadIdentity();
 
         mCubeRotation -= 2.90f;
-
-        if(a == true){
-           // inp.run(input, output);
-            a = false;
-        }else{
-
-            a = true;
-        }
 
 
 
