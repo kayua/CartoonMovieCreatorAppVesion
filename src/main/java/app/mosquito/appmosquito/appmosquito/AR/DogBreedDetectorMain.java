@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.graphics.YuvImage;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import android.util.Log;
 import android.util.Rational;
 import android.util.Size;
 import android.view.Display;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.TextureView;
 import android.view.View;
 import android.view.WindowManager;
@@ -48,6 +51,7 @@ import java.util.HashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
+import app.mosquito.appmosquito.appmosquito.AR.Engine.SurfaceComponent;
 import app.mosquito.appmosquito.appmosquito.R;
 
 public class DogBreedDetectorMain extends AppCompatActivity {
@@ -58,7 +62,10 @@ public class DogBreedDetectorMain extends AppCompatActivity {
     private Tfclassifier tfLiteClassifier;
     private HashMap _$_findViewCache;
     private Executor executor = Executors.newSingleThreadExecutor();
+    private SurfaceView mSurfaceView;
+    SurfaceHolder mSurfaceHolder;
 
+    private SurfaceComponent mGLSurfaceView;
 
     TextureView textureView;
 
@@ -89,6 +96,8 @@ public class DogBreedDetectorMain extends AppCompatActivity {
                 Log.e(DogBreedDetectorMain.this.TAG, "Error  setting up the classifier.", (Throwable) e);
             }
         });
+
+
     }
 
     private void startCamera() {
@@ -125,6 +134,11 @@ public class DogBreedDetectorMain extends AppCompatActivity {
                 DogBreedDetectorMain.this.updateTransform();
             }
         });
+        mGLSurfaceView = new SurfaceComponent(this);
+        mGLSurfaceView.setZOrderOnTop(true);
+        mGLSurfaceView.getHolder().setFormat(PixelFormat.TRANSLUCENT);
+        addContentView(mGLSurfaceView, new WindowManager.LayoutParams(WindowManager.LayoutParams.FILL_PARENT, WindowManager.LayoutParams.FILL_PARENT));
+
         androidx.camera.core.ImageAnalysisConfig.Builder builder1 = new androidx.camera.core.ImageAnalysisConfig.Builder();
 
 

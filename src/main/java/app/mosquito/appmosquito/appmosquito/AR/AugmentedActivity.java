@@ -43,6 +43,7 @@ public class AugmentedActivity extends Activity implements SurfaceHolder.Callbac
         mSurfaceHolder.setFormat(PixelFormat.TRANSPARENT| WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
 
         mGLSurfaceView = new SurfaceComponent(this);
+        mGLSurfaceView.setAlpha(0.2f);
         addContentView(mGLSurfaceView, new WindowManager.LayoutParams(WindowManager.LayoutParams.FILL_PARENT, WindowManager.LayoutParams.FILL_PARENT));
 
     }

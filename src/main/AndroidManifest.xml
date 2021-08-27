@@ -33,7 +33,7 @@
 
         <activity
 
-            android:name=".AR.AugmentedActivity"
+            android:name=".AR.DogBreedDetectorMain"
             >
 
             <intent-filter>
