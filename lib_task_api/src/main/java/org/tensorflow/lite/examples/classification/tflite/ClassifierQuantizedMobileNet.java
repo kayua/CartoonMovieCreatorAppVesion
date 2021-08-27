@@ -16,8 +16,10 @@ limitations under the License.
 package org.tensorflow.lite.examples.classification.tflite;
 
 import android.app.Activity;
-import java.io.IOException;
+
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
+
+import java.io.IOException;
 
 /** This TensorFlow Lite classifier works with the quantized MobileNet model. */
 public class ClassifierQuantizedMobileNet extends Classifier {
