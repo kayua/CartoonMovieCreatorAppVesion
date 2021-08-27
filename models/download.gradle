@@ -1,5 +1,5 @@
 def modelFloatDownloadUrl = "https://tfhub.dev/tensorflow/lite-model/mobilenet_v1_1.0_224/1/metadata/1?lite-format=tflite"
-def modelFloatFile = "mobilenet_v1_1.0_224.tflite"
+def modelFloatFile = "mobilenet.tflite"
 def modelQuantDownloadUrl = "https://tfhub.dev/tensorflow/lite-model/mobilenet_v1_1.0_224_quantized/1/metadata/1?lite-format=tflite"
 def modelQuantFile = "mobilenet_v1_1.0_224_quant.tflite"
 def modelEfficientNetFloatDownloadUrl = "https://tfhub.dev/tensorflow/lite-model/efficientnet/lite0/fp32/2?lite-format=tflite"

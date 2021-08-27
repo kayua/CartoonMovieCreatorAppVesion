@@ -63,7 +63,9 @@ public class objectModel {
         mIndexBuffer.position(0);
     }
 
+
     public void draw(GL10 gl) {
+
         gl.glFrontFace(GL10.GL_CW);
 
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, mVertexBuffer);

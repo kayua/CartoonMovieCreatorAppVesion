@@ -1,7 +1,11 @@
 package app.mosquito.appmosquito.appmosquito.AR.Engine;
 
+import android.content.Context;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
+import android.os.Handler;
+
+import org.tensorflow.lite.Interpreter;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -9,19 +13,28 @@ import javax.microedition.khronos.opengles.GL10;
 class EngineRenderer implements GLSurfaceView.Renderer {
 
     private objectModel mCube;
-
+    float[][][][] input = new float[1][288][510][1];
+    boolean a= false;
+    float[][] output = new float[1][24];
 
     private float mCubeRotation;
+    Interpreter inp;
 
-
-    public EngineRenderer() {
+    public EngineRenderer( Interpreter interpreter) {
         mCube = new objectModel();
+        this.context=context;
+       // inp = interpreter;
+        Handler handler = new Handler();
+
 
     }
+    private Context context;
+
 
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+
         gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
 
         gl.glClearDepthf(1.0f);
@@ -47,6 +60,18 @@ class EngineRenderer implements GLSurfaceView.Renderer {
         gl.glLoadIdentity();
 
         mCubeRotation -= 2.90f;
+
+        if(a == true){
+           // inp.run(input, output);
+            a = false;
+        }else{
+
+            a = true;
+        }
+
+
+
+
     }
 
     @Override
