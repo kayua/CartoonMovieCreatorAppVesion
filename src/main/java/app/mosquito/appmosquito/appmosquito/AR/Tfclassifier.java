@@ -65,14 +65,20 @@ public class Tfclassifier {
     }
 
     //exw na ftiaxw ton intepreter kai na kanv load to montelo
-    private void initializeInterpreter() throws Exception {
+    private void initializeInterpreter() {
         AssetManager assetManager = this.con.getAssets();
-
-        ByteBuffer model = this.loadModelFile(assetManager, "model1.tflite");
-        this.labels = this.loadLines(this.con, "labels.txt");
+        ByteBuffer model = null;
+        try {
+            model = this.loadModelFile(assetManager, "model.tflite");
+            this.labels = this.loadLines(this.con, "labels.txt");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        Log.i("----------dasdasdajsknsabiuavsfiavsfihyavsfuavsi","sfbsiudfbsidf");
         Interpreter.Options options = new Interpreter.Options();
-        this.gpuDelegate = new GpuDelegate();
-        options.addDelegate((Delegate) this.gpuDelegate);
+        options.setUseXNNPACK(true);
+
         Interpreter interpreter = new Interpreter(model, options);
         int[] inputShape = interpreter.getInputTensor(0).shape();
         this.inputImageWidth = inputShape[1];
@@ -84,6 +90,7 @@ public class Tfclassifier {
 
     //methodos gia na kanw load to montelo
     private ByteBuffer loadModelFile(AssetManager assetManager, String filename) throws IOException {
+
         AssetFileDescriptor assetFileDescriptor = assetManager.openFd(filename);
 
         AssetFileDescriptor fileDescriptor = assetFileDescriptor;
