@@ -12,14 +12,14 @@ import javax.microedition.khronos.opengles.GL10;
 
 class EngineRenderer implements GLSurfaceView.Renderer {
 
-    private objectModel mCube;
+    private ModelRendering mCube;
 
 
     private float mCubeRotation;
 
 
     public EngineRenderer( Interpreter interpreter) {
-        mCube = new objectModel();
+        mCube = new ModelRendering();
         this.context=context;
        // inp = interpreter;
         Handler handler = new Handler();

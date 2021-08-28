@@ -64,7 +64,6 @@ public class Tfclassifier {
         return taskinit;
     }
 
-    //exw na ftiaxw ton intepreter kai na kanv load to montelo
     private void initializeInterpreter() {
         AssetManager assetManager = this.con.getAssets();
         ByteBuffer model = null;

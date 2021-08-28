@@ -6,19 +6,19 @@ import java.nio.FloatBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 
-public class objectModel {
+public class ModelRendering {
 
     private final FloatBuffer mVertexBuffer;
     private final FloatBuffer mColorBuffer;
     private final ByteBuffer  mIndexBuffer;
 
     private final float[] vertices = {
-            -1.0f,-1.0f,-1.0f, // triangle 1 : begin
-            -1.0f,-1.0f, 1.0f,
-            -1.0f, 1.0f, 1.0f, // triangle 1 : end
-            1.0f, 1.0f,-1.0f, // triangle 2 : begin
             -1.0f,-1.0f,-1.0f,
-            -1.0f, 1.0f,-1.0f, // triangle 2 : end
+            -1.0f,-1.0f, 1.0f,
+            -1.0f, 1.0f, 1.0f,
+            1.0f, 1.0f,-1.0f,
+            -1.0f,-1.0f,-1.0f,
+            -1.0f, 1.0f,-1.0f, 
             1.0f,-1.0f, 1.0f,
             -1.0f,-1.0f,-1.0f,
             1.0f,-1.0f,-1.0f,
@@ -99,7 +99,7 @@ public class objectModel {
             3, 0, 1, 3, 1, 2
     };
 
-    public objectModel() {
+    public ModelRendering() {
 
         ByteBuffer byteBuf = ByteBuffer.allocateDirect(vertices.length * 4);
         byteBuf.order(ByteOrder.nativeOrder());
