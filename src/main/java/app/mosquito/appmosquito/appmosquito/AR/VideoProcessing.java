@@ -59,7 +59,7 @@ public class VideoProcessing extends AppCompatActivity {
     private String TAG;
     private int REQUEST_CODE_PERMISSIONS;
     private String[] REQUIRED_PERMISSIONS;
-    private Tfclassifier tfLiteClassifier;
+    private ImageRecognize tfLiteClassifier;
     private HashMap _$_findViewCache;
     private Executor executor = Executors.newSingleThreadExecutor();
     private SurfaceView mSurfaceView;
@@ -69,7 +69,7 @@ public class VideoProcessing extends AppCompatActivity {
 
     TextureView textureView;
 
-    private Tfclassifier tFliteClassifier = new Tfclassifier(VideoProcessing.this);
+    private ImageRecognize tFliteClassifier = new ImageRecognize(VideoProcessing.this);
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -279,7 +279,7 @@ public class VideoProcessing extends AppCompatActivity {
         this.TAG = "MainActivity";
         this.REQUEST_CODE_PERMISSIONS = 101;
         this.REQUIRED_PERMISSIONS = new String[]{"android.permission.CAMERA"};
-        this.tfLiteClassifier = new Tfclassifier((Context) this);
+        this.tfLiteClassifier = new ImageRecognize((Context) this);
     }
 
 

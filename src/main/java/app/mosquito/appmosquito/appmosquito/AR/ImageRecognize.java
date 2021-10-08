@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 
-import org.tensorflow.lite.Delegate;
 import org.tensorflow.lite.Interpreter;
 import org.tensorflow.lite.gpu.GpuDelegate;
 
@@ -30,10 +29,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-public class Tfclassifier {
+public class ImageRecognize {
 
     //constructor
-    public Tfclassifier(Context context) {
+    public ImageRecognize(Context context) {
         super();
         this.con = context;
         this.labels = new ArrayList();
@@ -56,7 +55,7 @@ public class Tfclassifier {
         Task taskinit = Tasks.call((Executor) this.executorService, (Callable) (new Callable() {
 
             public final Void call() throws Exception {
-                Tfclassifier.this.initializeInterpreter();
+                ImageRecognize.this.initializeInterpreter();
                 return null;
             }
         }));
@@ -179,7 +178,7 @@ public class Tfclassifier {
 
 
             public final String call() {
-                return Tfclassifier.this.classify(bitmap);
+                return ImageRecognize.this.classify(bitmap);
             }
         }));
 
@@ -192,19 +191,19 @@ public class Tfclassifier {
 
 
             public final Void call() {
-                Interpreter interpreter = Tfclassifier.this.interpreter;
+                Interpreter interpreter = ImageRecognize.this.interpreter;
                 if (interpreter != null) {
                     interpreter.close();
                 }
 
-                if (Tfclassifier.this.gpuDelegate != null) {
-                    GpuDelegate gpu = Tfclassifier.this.gpuDelegate;
+                if (ImageRecognize.this.gpuDelegate != null) {
+                    GpuDelegate gpu = ImageRecognize.this.gpuDelegate;
                     if (gpu == null) {
 
                     }
 
                     gpu.close();
-                    Tfclassifier.this.gpuDelegate = (GpuDelegate) null;
+                    ImageRecognize.this.gpuDelegate = (GpuDelegate) null;
                 }
 
                 Log.d("TfliteClassifier", "Closed TFLite interpreter.");

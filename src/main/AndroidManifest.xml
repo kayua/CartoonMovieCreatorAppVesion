@@ -33,7 +33,7 @@
 
         <activity
 
-            android:name=".AR.VideoProcessing"
+            android:name=".MainUserInterface"
             >
 
             <intent-filter>
