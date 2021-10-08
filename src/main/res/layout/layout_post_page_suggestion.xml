@@ -9,7 +9,7 @@
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="91dp"
+        android:layout_height="110dp"
 
 
         android:layout_marginTop="2dp"
@@ -28,7 +28,7 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="91dp"
             android:layout_gravity="center"
             android:layout_marginTop="-4dp">
 
@@ -77,7 +77,7 @@
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
                             android:text="Bia"
-                            android:textColor="#1E1E1E"
+                            android:textColor="#4A4A4A"
                             android:textColorHint="#1E1E1E"
                             android:textSize="10dp"
                             android:textStyle="normal|bold" />
@@ -125,7 +125,7 @@
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
                             android:text="William"
-                            android:textColor="#1E1E1E"
+                            android:textColor="#4A4A4A"
                             android:textColorHint="#1E1E1E"
                             android:textSize="10dp"
                             android:textStyle="normal|bold" />
@@ -173,7 +173,7 @@
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
                             android:text="Luisa"
-                            android:textColor="#1E1E1E"
+                            android:textColor="#4A4A4A"
                             android:textColorHint="#1E1E1E"
                             android:textSize="10dp"
                             android:textStyle="normal|bold" />
@@ -199,7 +199,7 @@
                         android:layout_marginTop="6dp"
                         android:src="@drawable/pessoa4"
                         app:civ_border_color="#BCCDCDCD"
-                        app:civ_border_width="2dp"
+                        app:civ_border_width="3dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.498"
@@ -221,7 +221,7 @@
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
                             android:text="Vicente"
-                            android:textColor="#1E1E1E"
+                            android:textColor="#4A4A4A"
                             android:textColorHint="#1E1E1E"
                             android:textSize="10dp"
                             android:textStyle="normal|bold" />
@@ -269,7 +269,7 @@
                             android:layout_marginBottom="2dp"
                             android:gravity="center|top"
                             android:text="Marcele"
-                            android:textColor="#1E1E1E"
+                            android:textColor="#4A4A4A"
                             android:textColorHint="#1E1E1E"
                             android:textSize="10dp"
                             android:textStyle="normal|bold" />
