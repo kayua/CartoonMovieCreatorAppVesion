@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#03add8">
+    android:background="#FFFFFF">
 
     <ImageView
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/acess"
-        android:textColor="#F9FBFB"
+        android:textColor="#03ADD8"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,7 +59,7 @@
         android:background="@drawable/button_design_fill"
         android:text="@string/acess"
         android:textColor="#FFFFFF"
-        android:textSize="13sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -247,7 +247,7 @@
         android:layout_height="27dp"
         android:buttonTint="#03add8"
         android:text="Salvar minhas informações"
-        android:textColor="#03add8"
+        android:textColor="#4A4A4A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.401"
